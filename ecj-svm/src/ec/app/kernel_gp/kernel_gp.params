@@ -1,0 +1,98 @@
+# Copyright 2006 by Sean Luke and George Mason University
+# Licensed under the Academic Free License version 3.0
+# See the file "LICENSE" for more information
+
+parent.0 = ../../gp/koza/koza.params
+
+# the next four items are already defined in koza.params, but we
+# put them here to be clear.
+
+
+gp.type.a.size = 2
+gp.type.a.0 = double
+gp.type.a.1 = kernel_double
+gp.type.a.2 = constant
+
+# We have one function set, of class GPFunctionSet
+gp.fs.size = 1
+gp.fs.0 = ec.gp.GPFunctionSet
+# We'll call the function set "f0".
+gp.fs.0.name = f0
+
+
+#Node constraints
+gp.nc.size = 3
+
+gp.nc.0 = ec.gp.GPNodeConstraints
+gp.nc.0.name = nc_terminal
+gp.nc.0.returns = double
+gp.nc.0.size = 0
+
+gp.nc.1 = ec.gp.GPNodeConstraints
+gp.nc.1.name = nc_kernel
+gp.nc.1.returns = kernel_double
+gp.nc.1.size = 2
+gp.nc.1.child.0 = double
+gp.nc.1.child.1 = double
+
+gp.nc.2 = ec.gp.GPNodeConstraints
+gp.nc.2.name = nc_k-combination1
+gp.nc.2.returns = kernel_double
+gp.nc.2.size = 1
+gp.nc.2.child.0 = kernel_double
+
+gp.nc.3 = ec.gp.GPNodeConstraints
+gp.nc.3.name = nc_k-combination2
+gp.nc.3.returns = kernel_double
+gp.nc.3.size = 2
+gp.nc.3.child.0 = kernel_double
+gp.nc.3.child.1 = kernel_double
+
+gp.nc.4 = ec.gp.GPNodeConstraints
+gp.nc.4.name = nc_k-combination-c
+gp.nc.4.returns = kernel_double
+gp.nc.4.size = 2
+gp.nc.4.child.0 = kernel_double
+gp.nc.4.child.1 = constant
+
+gp.nc.5 = ec.gp.GPNodeConstraints
+gp.nc.5.name = nc_constant
+gp.nc.5.returns = constant
+gp.nc.5.size = 0 
+
+pop.subpop.0.species.fitness = ec.simple.SimpleFitness
+
+# We have five functions in the function set.  They are:
+gp.fs.0.size = 8
+gp.fs.0.func.0 = ec.app.kernel_gp.X
+gp.fs.0.func.0.nc = nc_terminal
+
+gp.fs.0.func.1 = ec.app.kernel_gp.Y
+gp.fs.0.func.1.nc = nc_terminal
+
+gp.fs.0.func.2 = ec.app.kernel_gp.Add
+gp.fs.0.func.2.nc = nc_k-combination2
+
+gp.fs.0.func.3 = ec.app.kernel_gp.Mul
+gp.fs.0.func.3.nc = nc_k-combination2
+
+gp.fs.0.func.4 = ec.app.kernel_gp.Exp
+gp.fs.0.func.4.nc = nc_k-combination1
+
+gp.fs.0.func.5 = ec.app.kernel_gp.aMul
+gp.fs.0.func.5.nc = nc_k-combination-c
+
+gp.fs.0.func.6 = ec.app.kernel_gp.RBF
+gp.fs.0.func.6.nc = nc_kernel
+
+gp.fs.0.func.7 = ec.app.kernel_gp.Poly
+gp.fs.0.func.7.nc = nc_kernel
+
+gp.fs.0.func.8 = ec.app.kernel_gp.Sigmoid
+gp.fs.0.func.8.nc = nc_kernel
+
+gp.fs.0.func.9 = ec.app.kernel_gp.ERCa
+gp.fs.0.func.9.nc = nc_constant
+
+eval.problem = ec.app.kernel_gp.MultiValuedRegression
+eval.problem.data = ec.app.kernel_gp.DoubleData
