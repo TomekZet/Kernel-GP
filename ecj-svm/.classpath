@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry including="libsvm/*.java" kind="src" path="libsvm"/>
+	<classpathentry excluding="*.html" including="**/*.java" kind="src" path="ecj-source"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="D:/studia/informatyka/semestr9/Magisterka/soft/jfreechart-1.0.14/lib/iText-2.1.5.jar"/>
+	<classpathentry kind="lib" path="D:/studia/informatyka/semestr9/Magisterka/soft/jfreechart-1.0.14/lib/jcommon-1.0.17.jar"/>
+	<classpathentry kind="lib" path="D:/studia/informatyka/semestr9/Magisterka/soft/jfreechart-1.0.14/lib/jfreechart-1.0.14.jar"/>
+	<classpathentry kind="lib" path="D:/studia/informatyka/semestr9/Magisterka/soft/jfreechart-1.0.14/lib/jfreechart-1.0.14-swt.jar"/>
+	<classpathentry kind="lib" path="D:/studia/informatyka/semestr9/Magisterka/soft/jfreechart-1.0.14/lib/swtgraphics2d.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Weka-3-6/libsvm.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Weka-3-6/weka.jar" sourcepath="C:/Program Files/Weka-3-6/weka-src.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

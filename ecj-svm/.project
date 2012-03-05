@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>ecj-svm</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>ecj-source</name>
+			<type>2</type>
+			<location>D:/studia/informatyka/semestr9/Magisterka/soft/ecj</location>
+		</link>
+		<link>
+			<name>libsvm</name>
+			<type>2</type>
+			<location>D:/studia/informatyka/semestr9/Magisterka/soft/libsvm-3.11/java</location>
+		</link>
+	</linkedResources>
+</projectDescription>
