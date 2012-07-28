@@ -54,7 +54,7 @@ public class ERCa extends ERC {
 	public void eval(EvolutionState state, int thread, GPData input,
 			ADFStack stack, GPIndividual individual, Problem problem) {
         DoubleData data = (DoubleData)input;
-        data.val.value = value;
+        data.val = value;
 	}
 
 	/* (non-Javadoc)

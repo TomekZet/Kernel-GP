@@ -3,12 +3,11 @@
   Licensed under the Academic Free License version 3.0
   See the file "LICENSE" for more information
 */
-
-
 package ec.app.kernel_gp;
+
 import ec.*;
 import ec.gp.*;
-import ec.util.*;
+import ec.util.Parameter;
 
 public class Add extends GPNode
     {

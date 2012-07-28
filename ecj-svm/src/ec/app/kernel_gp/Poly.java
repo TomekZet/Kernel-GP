@@ -47,6 +47,22 @@ public class Poly extends GPNode {
         
 		children[1].eval(state,thread,input,stack,individual,problem);
 		svm_node[] y = data.val;		   
+		
+		
+		DoubleData erc = (DoubleData)input;
+		
+		children[2].eval(state,thread,input,stack,individual,problem);
+		double gamma = erc.val;
+
+		children[3].eval(state,thread,input,stack,individual,problem);
+		double coef0 = erc.val;
+		
+		
+		IntegerData ercInt = (IntegerData)input;
+		
+		children[4].eval(state,thread,input,stack,individual,problem);
+		int degree = ercInt.val;
+	
 
 		DoubleData doubleData = (DoubleData)input;
 		
