@@ -6,15 +6,17 @@
 
 
 package ec.app.kernel_gp;
-import libsvm.svm_node;
 import ec.gp.*;
 
 public class DoubleData extends GPData
     {
     public double val;    // return value
 
-    public void copyTo(final GPData gpd)   // copy my stuff to another DoubleData
-        { ((DoubleData)gpd).val = val; }
+    public void copyTo(final GPData gpd)   // copy my stuff to another SVMNodeData
+        { 
+    		
+    		((DoubleData)gpd).val = this.val;
+    	}
     }
 
 

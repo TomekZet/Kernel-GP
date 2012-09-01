@@ -28,7 +28,7 @@ public class RBF extends GPNode {
         
 		children[1].eval(state,thread,input,stack,individual,problem);
 		svm_node[] y = data.val;		   
-
+		
 		DoubleData erc = (DoubleData)input;
 		
 		children[2].eval(state,thread,input,stack,individual,problem);

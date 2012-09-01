@@ -32,14 +32,14 @@ public class Add extends GPNode
         final GPIndividual individual,
         final Problem problem)
         {
-        double result;
-        DoubleData rd = ((DoubleData)(input));
-
-        children[0].eval(state,thread,input,stack,individual,problem);
-        result = rd.val;
-
-        children[1].eval(state,thread,input,stack,individual,problem);
-        rd.val = result + rd.val;
+	        double result;
+	        DoubleData rd = ((DoubleData)(input));
+	
+	        children[0].eval(state,thread,input,stack,individual,problem);
+	        result = rd.val;
+	
+	        children[1].eval(state,thread,input,stack,individual,problem);
+	        rd.val = result + rd.val;
         }
     }
 

@@ -19,7 +19,6 @@ public class SVMData extends GPData
 	 */
 	@Override
 	public void copyTo(GPData gpd) {
-		// TODO Auto-generated method stub
 		System.arraycopy(val,  0, ((SVMData)gpd).val, 0, val.length);
 	}
 }

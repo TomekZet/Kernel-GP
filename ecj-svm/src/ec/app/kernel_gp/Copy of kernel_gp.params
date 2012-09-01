@@ -4,43 +4,41 @@
 
 parent.0 = ../../../../lib/ecj/ec/gp/koza/koza.params
 
-#################################################
-gp.type.a.size = 3
+# the next four items are already defined in koza.params, but we
+# put them here to be clear.
+
+
+gp.type.a.size = 4
 
 #SVM nodes - svm_node objects vector
 gp.type.a.0.name = svmnodes
 
+#Kernel - svm kernel
+gp.type.a.1.name = kernel
+
 #ERC constant
-gp.type.a.1.name = constant
+gp.type.a.2.name = constant
 
-#A double value, returned by a Kernel
-gp.type.a.2.name = double
+#Liczba rzeczywista, zwracana przez kernele
+gp.type.a.3.name = double
 
-#################################################
-#Tree constraints
-gp.tc.size = 1
-gp.tc.0.returns = double
-gp.tc.0.name = tc0
-gp.tc.0.fset = f0
+# We have one function set, of class GPFunctionSet
+gp.fs.size = 1
+gp.fs.0 = ec.gp.GPFunctionSet
+# We'll call the function set "f0".
+gp.fs.0.name = f0
 
-gp.tc.0.init = ec.gp.koza.GrowBuilder
 
-# We set the default for HalfBuilder to be a ramp of 2--6,
-# with a grow probability of 0.5
-gp.koza.half.min-depth = 3
-gp.koza.half.max-depth = 6
-
-##################################################
 #Node constraints
 gp.nc.size = 6
 
-#Leaf - vector of svm_node
+#Leaf - return vector of svm_node
 gp.nc.0 = ec.gp.GPNodeConstraints
 gp.nc.0.name = nc_terminal
 gp.nc.0.returns = svmnodes
 gp.nc.0.size = 0
 
-#Standard kernel function 
+#Standard kernel function - 
 gp.nc.1 = ec.gp.GPNodeConstraints
 gp.nc.1.name = nc_kernel
 gp.nc.1.returns = double
@@ -71,19 +69,14 @@ gp.nc.4.size = 2
 gp.nc.4.child.0 = double
 gp.nc.4.child.1 = constant
 
-#Terminal with ERC constant
+#Terminal with ECR constant
 gp.nc.5 = ec.gp.GPNodeConstraints
 gp.nc.5.name = nc_constant
 gp.nc.5.returns = constant
 gp.nc.5.size = 0
 
-##################################################
-# We have one function set, of class GPFunctionSet
-gp.fs.size = 1
-gp.fs.0 = ec.gp.GPFunctionSet
 
-# We'll call the function set "f0".
-gp.fs.0.name = f0
+pop.subpop.0.species.fitness = ec.simple.SimpleFitness
 
 # We have five functions in the function set.  They are:
 gp.fs.0.size = 5
@@ -104,9 +97,9 @@ gp.fs.0.func.2.nc = nc_k-combination2
 gp.fs.0.func.3 = ec.app.kernel_gp.Mul
 gp.fs.0.func.3.nc = nc_k-combination2
 
-#Polynomial - standard kernel function  
-gp.fs.0.func.4 = ec.app.kernel_gp.Poly
-gp.fs.0.func.4.nc = nc_kernel
+#Expotential function used to produce one kernel from another
+## gp.fs.0.func.4 = ec.app.kernel_gp.Exp
+## gp.fs.0.func.4.nc = nc_k-combination1
 
 #Multiplication of kernel by double
 # gp.fs.0.func.5 = ec.app.kernel_gp.aMul
@@ -116,9 +109,9 @@ gp.fs.0.func.4.nc = nc_kernel
 # gp.fs.0.func.6 = ec.app.kernel_gp.RBF
 # gp.fs.0.func.6.nc = nc_kernel
 
-#Expotential function used to produce one kernel from another
-## gp.fs.0.func.7 = ec.app.kernel_gp.Exp
-## gp.fs.0.func.7.nc = nc_k-combination1
+#Polynomial - standard kernel function  
+gp.fs.0.func.7 = ec.app.kernel_gp.Poly
+gp.fs.0.func.7.nc = nc_kernel
 
 #Sigmoid - standard kernel function
 # gp.fs.0.func.8 = ec.app.kernel_gp.Sigmoid
@@ -139,7 +132,5 @@ gp.fs.0.func.4.nc = nc_kernel
 # gp.fs.0.func.13 = ec.app.kernel_gp.ERC_RBF_gamma
 # gp.fs.0.func.13.nc = nc_constant
 
-######################################################
-pop.subpop.0.species.fitness = ec.simple.SimpleFitness
 eval.problem = ec.app.kernel_gp.Kernel_GP_problem
-eval.problem.data = ec.app.kernel_gp.SVMNodeData
+eval.problem.data = ec.app.kernel_gp.DoubleData

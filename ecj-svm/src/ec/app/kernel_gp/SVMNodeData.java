@@ -13,12 +13,12 @@ import ec.gp.*;
 
 public class SVMNodeData extends GPData
     {
-    public libsvm.svm_node[] nodes;    // return value
+    public libsvm.svm_node[] val;    // return value
 
-    public void copyTo(final GPData gpd)   // copy my stuff to another DoubleData
+    public void copyTo(final GPData gpd)   // copy my stuff to another SVMNodeData
         { 
     		
-    		((SVMNodeData)gpd).nodes = Arrays.copyOf(nodes, nodes.length);
+    		((SVMNodeData)gpd).val = Arrays.copyOf(val, val.length);
     	}
     }
 

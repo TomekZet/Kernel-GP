@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 import java.util.Vector;
 
-import libsvm.SVM_GP;
+import libsvm.Svm_GP;
 import libsvm.svm_node;
 import libsvm.svm_parameter;
 import libsvm.svm_problem;
@@ -30,7 +30,7 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
   public svm_node[] currentX;
   public svm_node[] currentY;
   
-  public DoubleData input;
+  public SVMNodeData input;
   private svm_parameter svm_param;	
   private svm_problem svm_probl;		// set by read_problem
   private String input_file_name;		
@@ -39,7 +39,7 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
   public Object clone()
       {
 	  Kernel_GP_problem newobj = (Kernel_GP_problem) (super.clone());
-      newobj.input = (DoubleData)(input.clone());
+      newobj.input = (SVMNodeData)(input.clone());
       return newobj;
       }
 
@@ -50,8 +50,8 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
       super.setup(state,base);
 
       // set up our input -- don't want to use the default base, it's unsafe here
-      input = (DoubleData) state.parameters.getInstanceForParameterEq(
-          base.push(P_DATA), null, DoubleData.class);
+      input = (SVMNodeData) state.parameters.getInstanceForParameterEq(
+          base.push(P_DATA), null, SVMNodeData.class);
       input.setup(state,base.push(P_DATA));
       }
 
@@ -66,19 +66,31 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	      
 	      if (!ind.evaluated)  // don't bother reevaluating
 	          {
-	          SVM_GP.setInd(ind);
-	          SVM_GP.setInput(input);
-	          SVM_GP.setProblem(this);
-	          SVM_GP.setStack(stack);
-	          SVM_GP.setState(state);
-	          SVM_GP.setSubpopulation(subpopulation);
-	          SVM_GP.setThreadnum(threadnum);
+	          Svm_GP.setInd(ind);
+	          Svm_GP.setInput(input);
+	          Svm_GP.setProblem(this);
+	          Svm_GP.setStack(stack);
+	          Svm_GP.setState(state);
+	          Svm_GP.setSubpopulation(subpopulation);
+	          Svm_GP.setThreadnum(threadnum);
 	          
 	  		  double[] target = new double[svm_probl.l];
-	          SVM_GP.svm_cross_validation(svm_probl, svm_param, nr_fold, target);
+	      
+	  		
+	  		  //TODO: ustawić poniższe parametry
+	  		  Svm_GP.state = null; 
+	  		  Svm_GP.ind = null;
+	  		  Svm_GP.subpopulation = 0;
+	  		  Svm_GP.threadnum = 0;
+	  		  Svm_GP.problem = null;
+	  		  Svm_GP.input = null;
+	  		  Svm_GP.stack = null;
+	  		  
+	  		  
+	  		  Svm_GP.svm_cross_validation(svm_probl, svm_param, nr_fold, target);
 	    	  
-	              /*((GPIndividual)ind).trees[0].child.eval(
-	                  state,threadnum,input,stack,((GPIndividual)ind),this);*/
+//	          ((GPIndividual)ind).trees[0].child.eval(
+//	                  state,threadnum,input,stack,((GPIndividual)ind),this);
 	
 	//              result = Math.abs(expectedResult - input.x);
 	

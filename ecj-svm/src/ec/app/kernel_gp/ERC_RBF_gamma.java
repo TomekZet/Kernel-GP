@@ -13,7 +13,7 @@ import ec.gp.GPNode;
 import ec.util.Code;
 
 /**
- * @author Tomek
+ * @author Tomasz Ziętkiewicz
  *
  */
 public class ERC_RBF_gamma extends ERC {
@@ -53,7 +53,7 @@ public class ERC_RBF_gamma extends ERC {
 	@Override
 	public void eval(EvolutionState state, int thread, GPData input,
 			ADFStack stack, GPIndividual individual, Problem problem) {
-        DoubleData data = (DoubleData)input;
+		DoubleData data = (DoubleData)input;
         data.val = value;
 	}
 

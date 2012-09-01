@@ -12,8 +12,7 @@ public class Poly extends GPNode {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Poly";
 	}
 
 	@Override
@@ -24,7 +23,6 @@ public class Poly extends GPNode {
 			GPIndividual individual,
 			Problem problem) 
 	{
-		// TODO Auto-generated method stub
 
 /*        double result1;
         double result2;
@@ -47,7 +45,6 @@ public class Poly extends GPNode {
         
 		children[1].eval(state,thread,input,stack,individual,problem);
 		svm_node[] y = data.val;		   
-		
 		
 		DoubleData erc = (DoubleData)input;
 		

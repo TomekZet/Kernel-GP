@@ -6,7 +6,7 @@
 
 
 package ec.app.kernel_gp;
-import libsvm.SVM_GP;
+import libsvm.Svm_GP;
 import ec.*;
 import ec.gp.*;
 import ec.util.*;
@@ -34,8 +34,8 @@ public class Y extends GPNode
         final GPIndividual individual,
         final Problem problem)
         {
-		SVMNodeData data = (SVMNodeData)input;
-    	data.nodes = ((Kernel_GP_problem)problem).currentY;
+			SVMNodeData data = (SVMNodeData)input;
+	    	data.val = ((Kernel_GP_problem)problem).currentY;
         }
     }
 

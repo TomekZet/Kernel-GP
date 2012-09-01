@@ -32,7 +32,7 @@ public class Exp extends GPNode {
 			ADFStack stack, GPIndividual individual, Problem problem) {
         
 		children[0].eval(state,thread,input,stack,individual,problem);
-        DoubleData data = (DoubleData)input;
+		DoubleData data = (DoubleData)input;
 		data.val = Math.exp(data.val);
 
 	}

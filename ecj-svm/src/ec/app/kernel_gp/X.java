@@ -6,7 +6,7 @@
 
 
 package ec.app.kernel_gp;
-import libsvm.SVM_GP;
+import libsvm.Svm_GP;
 import ec.*;
 import ec.gp.*;
 import ec.util.*;
@@ -35,7 +35,7 @@ public class X extends GPNode
         final Problem problem)
         {
     		SVMNodeData data = (SVMNodeData)input;
-        	data.nodes = ((Kernel_GP_problem)problem).currentX;
+        	data.val = ((Kernel_GP_problem)problem).currentX;
         }
     }
 
