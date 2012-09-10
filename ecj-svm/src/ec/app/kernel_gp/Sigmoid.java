@@ -21,10 +21,8 @@ public class Sigmoid extends GPNode {
 		SVMData data = (SVMData)input;
 		
 		children[0].eval(state,thread,input,stack,individual,problem);
-        svm_node[] x = data.svm_val;
-        
-		children[1].eval(state,thread,input,stack,individual,problem);
-		svm_node[] y = data.svm_val;		   
+        svm_node[] x = data.X;
+      	svm_node[] y = data.Y;		   
 		
 //		SVMData erc = (SVMData)input;
 //		

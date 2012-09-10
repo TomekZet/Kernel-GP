@@ -92,6 +92,7 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	  		  
 	  		((GPIndividual)ind).trees[0].printTreeForHumans(state, 0);
 	  		((GPIndividual)ind).trees[1].printTreeForHumans(state, 0);
+	  		((GPIndividual)ind).trees[2].printTreeForHumans(state, 0);
 	  		  
 	  		Svm_GP.svm_cross_validation(svm_probl, svm_param, nr_fold, target);
 	    	  

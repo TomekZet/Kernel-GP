@@ -11,8 +11,9 @@ import libsvm.svm_node;
 
 public class SVMData extends GPData 
 {
-	  public svm_node[] svm_val;    // return value
-	  public double val;
+	  public svm_node[] X; //used by kernel functions
+	  public svm_node[] Y; //used by kernel functions	  
+	  public double val;  //USed by kernel agregation functions
 	  
 	
 	/* (non-Javadoc)
@@ -21,7 +22,8 @@ public class SVMData extends GPData
 	@Override
 	public void copyTo(GPData gpd) {
 		((SVMData)gpd).val = this.val;
-		System.arraycopy(svm_val,  0, ((SVMData)gpd).svm_val, 0, svm_val.length);
+		System.arraycopy(X,  0, ((SVMData)gpd).X, 0, X.length);
+		System.arraycopy(Y,  0, ((SVMData)gpd).Y, 0, Y.length);
 	}
 }
 

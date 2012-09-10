@@ -17,7 +17,7 @@ stat.file =	out.stat
 generations = 5
 quit-on-run-complete = true
 
-pop.subpop.0.size = 20
+pop.subpop.0.size = 50
 
 #####################################################
 
@@ -26,7 +26,7 @@ pop.subpop.0.size = 20
 # Each of our three trees uses a different tree constraints,
 # tc0, tc1
 
-pop.subpop.0.species.ind.numtrees = 2
+pop.subpop.0.species.ind.numtrees = 3
 
 # "The result-producing branch" (Koza-II p. 84)
 pop.subpop.0.species.ind.tree.0 = ec.gp.GPTree
@@ -36,6 +36,9 @@ pop.subpop.0.species.ind.tree.0.tc = tc0
 pop.subpop.0.species.ind.tree.1 = ec.gp.GPTree
 pop.subpop.0.species.ind.tree.1.tc = tc1
 
+# "ADF1 body" (Koza-II p. 84)
+pop.subpop.0.species.ind.tree.2 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.2.tc = tc2
 
 #################################################
 gp.type.a.size = 3
@@ -51,7 +54,7 @@ gp.type.a.2.name = double
 
 #################################################
 #Tree constraints
-gp.tc.size = 2
+gp.tc.size = 3
 
 gp.tc.0.returns = double
 gp.tc.0.name = tc0
@@ -63,6 +66,10 @@ gp.tc.1.name = tc1
 gp.tc.1.fset = f1
 gp.tc.1.init = ec.gp.koza.GrowBuilder
 
+gp.tc.2.returns = double
+gp.tc.2.name = tc2
+gp.tc.2.fset = f1
+gp.tc.2.init = ec.gp.koza.GrowBuilder
 
 # We set the default for HalfBuilder to be a ramp of 2--6,
 # with a grow probability of 0.5
@@ -73,13 +80,13 @@ gp.koza.half.max-depth = 6
 #Node constraints
 gp.nc.size = 6
 
-#Leaf - vector of svm_node
+#Leaf - vector of svm_nodes
 gp.nc.0 = ec.gp.GPNodeConstraints
 gp.nc.0.name = nc_terminal
 gp.nc.0.returns = svmnodes
 gp.nc.0.size = 0
 
-#Standard kernel function 
+#
 gp.nc.1 = ec.gp.GPNodeConstraints
 gp.nc.1.name = nc_double_terminal
 gp.nc.1.returns = double
@@ -89,9 +96,8 @@ gp.nc.1.size = 0
 gp.nc.2 = ec.gp.GPNodeConstraints
 gp.nc.2.name = nc_kernel
 gp.nc.2.returns = double
-gp.nc.2.size = 2
+gp.nc.2.size = 1
 gp.nc.2.child.0 = svmnodes
-gp.nc.2.child.1 = svmnodes
 
 #Constant modification of kernel - for ex. exp(kernel)
 gp.nc.3 = ec.gp.GPNodeConstraints
@@ -133,7 +139,7 @@ gp.fs.size = 2
 
 gp.fs.0 = ec.gp.GPFunctionSet
 gp.fs.0.name = f0
-gp.fs.0.size = 3
+gp.fs.0.size = 4
 
 #Addition function used to combine two kernels into one
 gp.fs.0.func.0 = ec.app.kernel_gp.Add
@@ -158,36 +164,38 @@ gp.fs.0.func.2.tree = 1
 gp.fs.0.func.2.name = ADF0
 gp.fs.0.func.2.nc = nc_double_terminal
 
+gp.fs.0.func.3 = ec.gp.ADF
+# tree 2 (the "ADF1 body")
+gp.fs.0.func.3.tree = 2
+gp.fs.0.func.3.name = ADF1
+gp.fs.0.func.3.nc = nc_double_terminal
+
 ##################################################
 #ADF tree function set
 
 gp.fs.1 = ec.gp.GPFunctionSet
 gp.fs.1.name = f1
-gp.fs.1.size = 6
+gp.fs.1.size = 5
 
 #Terminal with svm_node vector
 gp.fs.1.func.0 = ec.app.kernel_gp.X
 gp.fs.1.func.0.nc = nc_terminal
 
-#Terminal with svm_node vector
-gp.fs.1.func.1 = ec.app.kernel_gp.Y
-gp.fs.1.func.1.nc = nc_terminal
-
 #Polynomial - standard kernel function  
-gp.fs.1.func.2 = ec.app.kernel_gp.Poly
-gp.fs.1.func.2.nc = nc_kernel
+gp.fs.1.func.1 = ec.app.kernel_gp.Poly
+gp.fs.1.func.1.nc = nc_kernel
 
 #RBF - standard kernel function 
-gp.fs.1.func.3 = ec.app.kernel_gp.RBF
-gp.fs.1.func.3.nc = nc_kernel
+gp.fs.1.func.2 = ec.app.kernel_gp.RBF
+gp.fs.1.func.2.nc = nc_kernel
 
 #Sigmoid - standard kernel function
-gp.fs.1.func.4 = ec.app.kernel_gp.Sigmoid
-gp.fs.1.func.4.nc = nc_kernel
+gp.fs.1.func.3 = ec.app.kernel_gp.Sigmoid
+gp.fs.1.func.3.nc = nc_kernel
 
 #Linear - standard kernel function
-gp.fs.1.func.5 = ec.app.kernel_gp.Linear
-gp.fs.1.func.5.nc = nc_kernel
+gp.fs.1.func.4 = ec.app.kernel_gp.Linear
+gp.fs.1.func.4.nc = nc_kernel
 
 #######################
 

@@ -3,57 +3,71 @@ Generation: 0
 Best Individual:
 Subpopulation 0:
 Evaluated: true
-Fitness: Standardized=0.5855856 Adjusted=0.6306818 Hits=0
+Fitness: Standardized=0.48314604 Adjusted=0.67424244 Hits=0
 Tree 0:
- ADF0
+ (+ (+ ADF1 (* (* ADF0 ADF1) ADF1)) (* ADF0
+     (+ ADF1 ADF1)))
 Tree 1:
- (RBF x y)
+ (Poly x)
+Tree 2:
+ (RBF x)
 
 Generation: 1
 Best Individual:
 Subpopulation 0:
 Evaluated: true
-Fitness: Standardized=0.5621302 Adjusted=0.6401515 Hits=0
+Fitness: Standardized=0.4748603 Adjusted=0.6780303 Hits=0
 Tree 0:
- ADF0
+ (+ (+ ADF1 (+ (* ADF0 ADF1) (* ADF0 ADF1)))
+     ADF0)
 Tree 1:
- (RBF x y)
+ (RBF x)
+Tree 2:
+ (Poly x)
 
 Generation: 2
 Best Individual:
 Subpopulation 0:
 Evaluated: true
-Fitness: Standardized=0.5042735 Adjusted=0.66477275 Hits=0
+Fitness: Standardized=0.4873239 Adjusted=0.6723485 Hits=0
 Tree 0:
- ADF0
+ (+ (+ ADF1 (+ (* ADF0 ADF1) ADF1)) ADF0)
 Tree 1:
- (RBF x y)
+ (RBF x)
+Tree 2:
+ (Poly x)
 
 Generation: 3
 Best Individual:
 Subpopulation 0:
 Evaluated: true
-Fitness: Standardized=0.44262296 Adjusted=0.6931819 Hits=0
+Fitness: Standardized=0.4873239 Adjusted=0.6723485 Hits=0
 Tree 0:
- ADF0
+ ADF1
 Tree 1:
- (RBF x y)
+ (Poly x)
+Tree 2:
+ (RBF x)
 
 Generation: 4
 Best Individual:
 Subpopulation 0:
 Evaluated: true
-Fitness: Standardized=0.5042735 Adjusted=0.66477275 Hits=0
+Fitness: Standardized=0.45054945 Adjusted=0.68939394 Hits=0
 Tree 0:
- ADF0
+ (+ ADF1 ADF0)
 Tree 1:
- (RBF x y)
+ (Poly x)
+Tree 2:
+ (RBF x)
 
 Best Individual of Run:
 Subpopulation 0:
 Evaluated: true
-Fitness: Standardized=0.44262296 Adjusted=0.6931819 Hits=0
+Fitness: Standardized=0.45054945 Adjusted=0.68939394 Hits=0
 Tree 0:
- ADF0
+ (+ ADF1 ADF0)
 Tree 1:
- (RBF x y)
+ (Poly x)
+Tree 2:
+ (RBF x)
