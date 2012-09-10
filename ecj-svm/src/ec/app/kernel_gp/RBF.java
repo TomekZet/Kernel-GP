@@ -12,14 +12,12 @@ public class RBF extends GPNode {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return "RBF";
 	}
 
 	@Override
 	public void eval(EvolutionState state, int thread, GPData input,
 			ADFStack stack, GPIndividual individual, Problem problem) {
-		// TODO Auto-generated method stub
 
 		SVMData data = (SVMData)input;
 		
@@ -29,10 +27,11 @@ public class RBF extends GPNode {
 		children[1].eval(state,thread,input,stack,individual,problem);
 		svm_node[] y = data.svm_val;		   
 		
-		SVMData erc = (SVMData)input;
-		
-		children[2].eval(state,thread,input,stack,individual,problem);
-		double gamma = erc.val;
+//		SVMData erc = (SVMData)input;
+//		
+//		children[2].eval(state,thread,input,stack,individual,problem);
+//		double gamma = erc.val;
+		double gamma = ((Kernel_GP_problem)problem).svm_param.gamma;
 		
 		SVMData SVMData = (SVMData)input;
 				

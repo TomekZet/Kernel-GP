@@ -14,10 +14,10 @@ stat = ec.simple.SimpleStatistics
 stat.child.0.gather-full = true
 stat.file =	out.stat
 
-generations = 10
+generations = 5
 quit-on-run-complete = true
 
-pop.subpop.0.size = 100
+pop.subpop.0.size = 20
 
 #####################################################
 
@@ -163,7 +163,7 @@ gp.fs.0.func.2.nc = nc_double_terminal
 
 gp.fs.1 = ec.gp.GPFunctionSet
 gp.fs.1.name = f1
-gp.fs.1.size = 3
+gp.fs.1.size = 6
 
 #Terminal with svm_node vector
 gp.fs.1.func.0 = ec.app.kernel_gp.X
@@ -177,14 +177,19 @@ gp.fs.1.func.1.nc = nc_terminal
 gp.fs.1.func.2 = ec.app.kernel_gp.Poly
 gp.fs.1.func.2.nc = nc_kernel
 
-#######################
 #RBF - standard kernel function 
-# gp.fs.1.func.3 = ec.app.kernel_gp.RBF
-# gp.fs.1.func.3.nc = nc_kernel
+gp.fs.1.func.3 = ec.app.kernel_gp.RBF
+gp.fs.1.func.3.nc = nc_kernel
 
 #Sigmoid - standard kernel function
-# gp.fs.1.func.4 = ec.app.kernel_gp.Sigmoid
-# gp.fs.1.func.4.nc = nc_kernel
+gp.fs.1.func.4 = ec.app.kernel_gp.Sigmoid
+gp.fs.1.func.4.nc = nc_kernel
+
+#Linear - standard kernel function
+gp.fs.1.func.5 = ec.app.kernel_gp.Linear
+gp.fs.1.func.5.nc = nc_kernel
+
+#######################
 
 # gp.fs.1.func.5 = ec.app.kernel_gp.ERCa
 # gp.fs.1.func.5.nc = nc_constant

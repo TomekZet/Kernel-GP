@@ -36,7 +36,7 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
   private svm_problem svm_probl;		// set by read_problem
   private String train_file_name = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/vowel.scale";		
   private String test_file_name = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/vowel.scale.t";
-  private int nr_fold = 5;
+  private int nr_fold = 3;
 
   public Object clone()
       {

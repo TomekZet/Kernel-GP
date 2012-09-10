@@ -3,123 +3,57 @@ Generation: 0
 Best Individual:
 Subpopulation 0:
 Evaluated: true
-Fitness: Standardized=1.2278482 Adjusted=0.44886366 Hits=0
+Fitness: Standardized=0.5855856 Adjusted=0.6306818 Hits=0
 Tree 0:
- (* (+ (+ ADF0 ADF0) ADF0) (+ ADF0 (+ ADF0
-     ADF0)))
+ ADF0
 Tree 1:
- (Poly y y)
+ (RBF x y)
 
 Generation: 1
 Best Individual:
 Subpopulation 0:
 Evaluated: true
-Fitness: Standardized=1.2372882 Adjusted=0.4469697 Hits=0
+Fitness: Standardized=0.5621302 Adjusted=0.6401515 Hits=0
 Tree 0:
- (* (+ (+ (+ ADF0 (* (+ ADF0 ADF0) (+ ADF0
-     ADF0))) (+ ADF0 ADF0)) ADF0) (* ADF0 (+ ADF0
-     ADF0)))
+ ADF0
 Tree 1:
- (Poly y x)
+ (RBF x y)
 
 Generation: 2
 Best Individual:
 Subpopulation 0:
 Evaluated: true
-Fitness: Standardized=1.2372882 Adjusted=0.4469697 Hits=0
+Fitness: Standardized=0.5042735 Adjusted=0.66477275 Hits=0
 Tree 0:
- (* ADF0 (+ (+ (* ADF0 ADF0) ADF0) (* ADF0
-     ADF0)))
+ ADF0
 Tree 1:
- (Poly y x)
+ (RBF x y)
 
 Generation: 3
 Best Individual:
 Subpopulation 0:
 Evaluated: true
-Fitness: Standardized=1.1999998 Adjusted=0.4545455 Hits=0
+Fitness: Standardized=0.44262296 Adjusted=0.6931819 Hits=0
 Tree 0:
- (* (+ ADF0 (+ (* (+ ADF0 ADF0) (+ ADF0 ADF0))
-     (* (+ ADF0 ADF0) (* ADF0 ADF0)))) (* ADF0
-     (* (* ADF0 ADF0) ADF0)))
+ ADF0
 Tree 1:
- (Poly y y)
+ (RBF x y)
 
 Generation: 4
 Best Individual:
 Subpopulation 0:
 Evaluated: true
-Fitness: Standardized=1.2184875 Adjusted=0.45075756 Hits=0
+Fitness: Standardized=0.5042735 Adjusted=0.66477275 Hits=0
 Tree 0:
- (* (+ (* (* (* ADF0 (* ADF0 ADF0)) ADF0)
-     (+ (* ADF0 ADF0) ADF0)) ADF0) ADF0)
+ ADF0
 Tree 1:
- (Poly x y)
-
-Generation: 5
-Best Individual:
-Subpopulation 0:
-Evaluated: true
-Fitness: Standardized=1.1999998 Adjusted=0.4545455 Hits=0
-Tree 0:
- (+ ADF0 ADF0)
-Tree 1:
- (Poly y y)
-
-Generation: 6
-Best Individual:
-Subpopulation 0:
-Evaluated: true
-Fitness: Standardized=1.1999998 Adjusted=0.4545455 Hits=0
-Tree 0:
- (* ADF0 (* ADF0 (+ (+ ADF0 ADF0) (+ ADF0
-     ADF0))))
-Tree 1:
- (Poly y x)
-
-Generation: 7
-Best Individual:
-Subpopulation 0:
-Evaluated: true
-Fitness: Standardized=1.2278482 Adjusted=0.44886366 Hits=0
-Tree 0:
- (* (+ ADF0 ADF0) (* ADF0 ADF0))
-Tree 1:
- (Poly y y)
-
-Generation: 8
-Best Individual:
-Subpopulation 0:
-Evaluated: true
-Fitness: Standardized=1.2468085 Adjusted=0.44507575 Hits=0
-Tree 0:
- (+ ADF0 ADF0)
-Tree 1:
- (Poly y y)
-
-Generation: 9
-Best Individual:
-Subpopulation 0:
-Evaluated: true
-Fitness: Standardized=1.1728395 Adjusted=0.46022725 Hits=0
-Tree 0:
- (* (+ (+ (* (* (* (* (+ ADF0 ADF0) ADF0)
-     ADF0) (* ADF0 ADF0)) (* (+ ADF0 (* ADF0 ADF0))
-     (* (* ADF0 ADF0) (+ ADF0 ADF0)))) (+ ADF0
-     ADF0)) (+ (* ADF0 ADF0) (+ ADF0 ADF0))) (*
-     (+ (+ ADF0 ADF0) (+ ADF0 ADF0)) ADF0))
-Tree 1:
- (Poly y y)
+ (RBF x y)
 
 Best Individual of Run:
 Subpopulation 0:
 Evaluated: true
-Fitness: Standardized=1.1728395 Adjusted=0.46022725 Hits=0
+Fitness: Standardized=0.44262296 Adjusted=0.6931819 Hits=0
 Tree 0:
- (* (+ (+ (* (* (* (* (+ ADF0 ADF0) ADF0)
-     ADF0) (* ADF0 ADF0)) (* (+ ADF0 (* ADF0 ADF0))
-     (* (* ADF0 ADF0) (+ ADF0 ADF0)))) (+ ADF0
-     ADF0)) (+ (* ADF0 ADF0) (+ ADF0 ADF0))) (*
-     (+ (+ ADF0 ADF0) (+ ADF0 ADF0)) ADF0))
+ ADF0
 Tree 1:
- (Poly y y)
+ (RBF x y)
