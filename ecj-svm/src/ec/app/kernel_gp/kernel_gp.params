@@ -4,6 +4,39 @@
 
 parent.0 = ../../../../lib/ecj/ec/gp/koza/koza.params
 
+######################################################
+pop.subpop.0.species.fitness = ec.gp.koza.KozaFitness
+eval.problem = ec.app.kernel_gp.Kernel_GP_problem
+eval.problem.data = ec.app.kernel_gp.SVMData
+
+#stat = ec.gp.koza.KozaStatistics
+stat = ec.simple.SimpleStatistics
+stat.child.0.gather-full = true
+stat.file =	out.stat
+
+generations = 10
+quit-on-run-complete = true
+
+pop.subpop.0.size = 100
+
+#####################################################
+
+# First, we're gonna change the number of trees in
+# the individual, to accommodate the ADFs
+# Each of our three trees uses a different tree constraints,
+# tc0, tc1
+
+pop.subpop.0.species.ind.numtrees = 2
+
+# "The result-producing branch" (Koza-II p. 84)
+pop.subpop.0.species.ind.tree.0 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.0.tc = tc0
+
+# "ADF0 body" (Koza-II p. 84)
+pop.subpop.0.species.ind.tree.1 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.1.tc = tc1
+
+
 #################################################
 gp.type.a.size = 3
 
@@ -18,12 +51,18 @@ gp.type.a.2.name = double
 
 #################################################
 #Tree constraints
-gp.tc.size = 1
+gp.tc.size = 2
+
 gp.tc.0.returns = double
 gp.tc.0.name = tc0
 gp.tc.0.fset = f0
-
 gp.tc.0.init = ec.gp.koza.GrowBuilder
+
+gp.tc.1.returns = double
+gp.tc.1.name = tc1
+gp.tc.1.fset = f1
+gp.tc.1.init = ec.gp.koza.GrowBuilder
+
 
 # We set the default for HalfBuilder to be a ramp of 2--6,
 # with a grow probability of 0.5
@@ -42,104 +81,123 @@ gp.nc.0.size = 0
 
 #Standard kernel function 
 gp.nc.1 = ec.gp.GPNodeConstraints
-gp.nc.1.name = nc_kernel
+gp.nc.1.name = nc_double_terminal
 gp.nc.1.returns = double
-gp.nc.1.size = 2
-gp.nc.1.child.0 = svmnodes
-gp.nc.1.child.1 = svmnodes
+gp.nc.1.size = 0
+
+#Standard kernel function 
+gp.nc.2 = ec.gp.GPNodeConstraints
+gp.nc.2.name = nc_kernel
+gp.nc.2.returns = double
+gp.nc.2.size = 2
+gp.nc.2.child.0 = svmnodes
+gp.nc.2.child.1 = svmnodes
 
 #Constant modification of kernel - for ex. exp(kernel)
-gp.nc.2 = ec.gp.GPNodeConstraints
-gp.nc.2.name = nc_k-combination1
-gp.nc.2.returns = double
-gp.nc.2.size = 1
-gp.nc.2.child.0 = double
+gp.nc.3 = ec.gp.GPNodeConstraints
+gp.nc.3.name = nc_k-combination1
+gp.nc.3.returns = double
+gp.nc.3.size = 1
+gp.nc.3.child.0 = double
 
 #Combination of two kernels
-gp.nc.3 = ec.gp.GPNodeConstraints
-gp.nc.3.name = nc_k-combination2
-gp.nc.3.returns = double
-gp.nc.3.size = 2
-gp.nc.3.child.0 = double
-gp.nc.3.child.1 = double
-
-#Combination of kernel and ECR constant
 gp.nc.4 = ec.gp.GPNodeConstraints
-gp.nc.4.name = nc_k-combination-c
+gp.nc.4.name = nc_k-combination2
 gp.nc.4.returns = double
 gp.nc.4.size = 2
 gp.nc.4.child.0 = double
-gp.nc.4.child.1 = constant
+gp.nc.4.child.1 = double
+
+#Combination of kernel and ERC constant
+gp.nc.5 = ec.gp.GPNodeConstraints
+gp.nc.5.name = nc_k-combination-c
+gp.nc.5.returns = double
+gp.nc.5.size = 2
+gp.nc.5.child.0 = double
+gp.nc.5.child.1 = constant
 
 #Terminal with ERC constant
-gp.nc.5 = ec.gp.GPNodeConstraints
-gp.nc.5.name = nc_constant
-gp.nc.5.returns = constant
-gp.nc.5.size = 0
+gp.nc.6 = ec.gp.GPNodeConstraints
+gp.nc.6.name = nc_constant
+gp.nc.6.returns = constant
+gp.nc.6.size = 0
 
 ##################################################
-# We have one function set, of class GPFunctionSet
-gp.fs.size = 1
+# We have two function sets. First is a function set used by the main tree.
+The second is a set of functions used in ADF tree
+
+gp.fs.size = 2
+
+##################################################
+#Main tree function set
+
 gp.fs.0 = ec.gp.GPFunctionSet
-
-# We'll call the function set "f0".
 gp.fs.0.name = f0
-
-# We have five functions in the function set.  They are:
-gp.fs.0.size = 5
-
-#Terminal with svm_node vector
-gp.fs.0.func.0 = ec.app.kernel_gp.X
-gp.fs.0.func.0.nc = nc_terminal
-
-#Terminal with svm_node vector
-gp.fs.0.func.1 = ec.app.kernel_gp.Y
-gp.fs.0.func.1.nc = nc_terminal
-
-#Add function used to combine two kernels into one
-gp.fs.0.func.2 = ec.app.kernel_gp.Add
-gp.fs.0.func.2.nc = nc_k-combination2
+gp.fs.0.size = 3
 
 #Addition function used to combine two kernels into one
-gp.fs.0.func.3 = ec.app.kernel_gp.Mul
-gp.fs.0.func.3.nc = nc_k-combination2
+gp.fs.0.func.0 = ec.app.kernel_gp.Add
+gp.fs.0.func.0.nc = nc_k-combination2
 
-#Polynomial - standard kernel function  
-gp.fs.0.func.4 = ec.app.kernel_gp.Poly
-gp.fs.0.func.4.nc = nc_kernel
+#Multiplication function used to combine two kernels into one
+gp.fs.0.func.1 = ec.app.kernel_gp.Mul
+gp.fs.0.func.1.nc = nc_k-combination2
 
+####################
 #Multiplication of kernel by double
-# gp.fs.0.func.5 = ec.app.kernel_gp.aMul
-# gp.fs.0.func.5.nc = nc_k-combination-c
-
-#RBF - standard kernel function 
-# gp.fs.0.func.6 = ec.app.kernel_gp.RBF
-# gp.fs.0.func.6.nc = nc_kernel
+# gp.fs.0.func.2 = ec.app.kernel_gp.aMul
+# gp.fs.0.func.2.nc = nc_k-combination-c
 
 #Expotential function used to produce one kernel from another
-## gp.fs.0.func.7 = ec.app.kernel_gp.Exp
-## gp.fs.0.func.7.nc = nc_k-combination1
+## gp.fs.0.func.3 = ec.app.kernel_gp.Exp
+## gp.fs.0.func.3.nc = nc_k-combination1
+
+gp.fs.0.func.2 = ec.gp.ADF
+# tree 1 (the "ADF0 body")
+gp.fs.0.func.2.tree = 1
+gp.fs.0.func.2.name = ADF0
+gp.fs.0.func.2.nc = nc_double_terminal
+
+##################################################
+#ADF tree function set
+
+gp.fs.1 = ec.gp.GPFunctionSet
+gp.fs.1.name = f1
+gp.fs.1.size = 3
+
+#Terminal with svm_node vector
+gp.fs.1.func.0 = ec.app.kernel_gp.X
+gp.fs.1.func.0.nc = nc_terminal
+
+#Terminal with svm_node vector
+gp.fs.1.func.1 = ec.app.kernel_gp.Y
+gp.fs.1.func.1.nc = nc_terminal
+
+#Polynomial - standard kernel function  
+gp.fs.1.func.2 = ec.app.kernel_gp.Poly
+gp.fs.1.func.2.nc = nc_kernel
+
+#######################
+#RBF - standard kernel function 
+# gp.fs.1.func.3 = ec.app.kernel_gp.RBF
+# gp.fs.1.func.3.nc = nc_kernel
 
 #Sigmoid - standard kernel function
-# gp.fs.0.func.8 = ec.app.kernel_gp.Sigmoid
-# gp.fs.0.func.8.nc = nc_kernel
+# gp.fs.1.func.4 = ec.app.kernel_gp.Sigmoid
+# gp.fs.1.func.4.nc = nc_kernel
 
-# gp.fs.0.func.9 = ec.app.kernel_gp.ERCa
-# gp.fs.0.func.9.nc = nc_constant
+# gp.fs.1.func.5 = ec.app.kernel_gp.ERCa
+# gp.fs.1.func.5.nc = nc_constant
 
-# gp.fs.0.func.10 = ec.app.kernel_gp.ERC_Poly_gamma
-# gp.fs.0.func.10.nc = nc_constant
+# gp.fs.1.func.6 = ec.app.kernel_gp.ERC_Poly_gamma
+# gp.fs.1.func.6.nc = nc_constant
 
-# gp.fs.0.func.11 = ec.app.kernel_gp.ERC_Poly_coef
-# gp.fs.0.func.11.nc = nc_constant
+# gp.fs.1.func.7 = ec.app.kernel_gp.ERC_Poly_coef
+# gp.fs.1.func.7.nc = nc_constant
 
-# gp.fs.0.func.12 = ec.app.kernel_gp.ERC_Poly_degree
-# gp.fs.0.func.12.nc = nc_constant
+# gp.fs.1.func.8 = ec.app.kernel_gp.ERC_Poly_degree
+# gp.fs.1.func.8.nc = nc_constant
 
-# gp.fs.0.func.13 = ec.app.kernel_gp.ERC_RBF_gamma
-# gp.fs.0.func.13.nc = nc_constant
+# gp.fs.1.func.9 = ec.app.kernel_gp.ERC_RBF_gamma
+# gp.fs.1.func.9.nc = nc_constant
 
-######################################################
-pop.subpop.0.species.fitness = ec.simple.SimpleFitness
-eval.problem = ec.app.kernel_gp.Kernel_GP_problem
-eval.problem.data = ec.app.kernel_gp.SVMNodeData

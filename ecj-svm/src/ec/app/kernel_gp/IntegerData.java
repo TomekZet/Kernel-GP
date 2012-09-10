@@ -13,7 +13,7 @@ public class IntegerData extends GPData
     {
     public int val;    // return value
 
-    public void copyTo(final GPData gpd)   // copy my stuff to another DoubleData
+    public void copyTo(final GPData gpd)   // copy my stuff to another SVMData
         { ((IntegerData)gpd).val = val; }
     }
 

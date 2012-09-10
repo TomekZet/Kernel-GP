@@ -33,7 +33,7 @@ public class aMul extends GPNode
         final Problem problem)
         {
         double result;
-        DoubleData data = (DoubleData)input;
+        SVMData data = (SVMData)input;
 
         children[0].eval(state,thread,input,stack,individual,problem);
         result = data.val;

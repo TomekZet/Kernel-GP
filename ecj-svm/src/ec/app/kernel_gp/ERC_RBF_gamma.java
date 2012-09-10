@@ -53,7 +53,7 @@ public class ERC_RBF_gamma extends ERC {
 	@Override
 	public void eval(EvolutionState state, int thread, GPData input,
 			ADFStack stack, GPIndividual individual, Problem problem) {
-		DoubleData data = (DoubleData)input;
+		SVMData data = (SVMData)input;
         data.val = value;
 	}
 

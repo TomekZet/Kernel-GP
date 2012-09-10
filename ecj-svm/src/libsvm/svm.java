@@ -6,6 +6,7 @@ package libsvm;
 import java.io.*;
 import java.util.*;
 
+
 //
 // Kernel Cache
 //
@@ -132,8 +133,11 @@ abstract class QMatrix {
 	abstract void swap_index(int i, int j);
 };
 
+
+
+
 abstract class Kernel extends QMatrix {
-	private svm_node[][] x;
+	protected svm_node[][] x;
 	private final double[] x_square;
 
 	// svm_parameter
@@ -316,7 +320,7 @@ class Solver {
 	int[] active_set;
 	double[] G_bar;		// gradient, if we treat free variables as 0
 	int l;
-	boolean unshrink;	// XXX
+	boolean unshrink;	// 
 	
 	static final double INF = java.lang.Double.POSITIVE_INFINITY;
 
@@ -1308,7 +1312,7 @@ public class svm {
 
 	static void info(String s) 
 	{
-		svm_print_string.print(s);
+		//svm_print_string.print(s);
 	}
 
 	private static void solve_c_svc(svm_problem prob, svm_parameter param,
@@ -1329,7 +1333,7 @@ public class svm {
 		}
 
 		Solver s = new Solver();
-		s.Solve(l, new SVC_Q(prob,param,y), minus_ones, y,
+		s.Solve(l, new SVC_Q_GP(prob,param,y), minus_ones, y,
 			alpha, Cp, Cn, param.eps, si, param.shrinking);
 
 		double sum_alpha=0;

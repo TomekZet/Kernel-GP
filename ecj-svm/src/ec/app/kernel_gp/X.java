@@ -34,8 +34,8 @@ public class X extends GPNode
         final GPIndividual individual,
         final Problem problem)
         {
-    		SVMNodeData data = (SVMNodeData)input;
-        	data.val = ((Kernel_GP_problem)problem).currentX;
+    		SVMData data = (SVMData)input;
+        	data.svm_val = ((Kernel_GP_problem)problem).currentX;
         }
     }
 

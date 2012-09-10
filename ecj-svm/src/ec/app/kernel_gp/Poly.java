@@ -26,7 +26,7 @@ public class Poly extends GPNode {
 
 /*        double result1;
         double result2;
-        DoubleData data = ((DoubleData)(input));
+        SVMData data = ((SVMData)(input));
 
         children[0].eval(state,thread,input,stack,individual,problem);
         result1 = data.val;
@@ -41,29 +41,30 @@ public class Poly extends GPNode {
 		SVMData data = (SVMData)input;
 		
 		children[0].eval(state,thread,input,stack,individual,problem);
-        svm_node[] x = data.val;
+        svm_node[] x = data.svm_val;
         
 		children[1].eval(state,thread,input,stack,individual,problem);
-		svm_node[] y = data.val;		   
+		svm_node[] y = data.svm_val;		   
 		
-		DoubleData erc = (DoubleData)input;
-		
-		children[2].eval(state,thread,input,stack,individual,problem);
-		double gamma = erc.val;
+//		SVMData erc = (SVMData)input;
+//		
+//		children[2].eval(state,thread,input,stack,individual,problem);
+//		double gamma = erc.val;
+//
+//		children[3].eval(state,thread,input,stack,individual,problem);
+//		double coef0 = erc.val;
+//		Kernel_GP_problem
+//		
+//		IntegerData ercInt = (IntegerData)input;
+//		
+//		children[4].eval(state,thread,input,stack,individual,problem);
+//		int degree = ercInt.val;
 
-		children[3].eval(state,thread,input,stack,individual,problem);
-		double coef0 = erc.val;
-		
-		
-		IntegerData ercInt = (IntegerData)input;
-		
-		children[4].eval(state,thread,input,stack,individual,problem);
-		int degree = ercInt.val;
-	
-
-		DoubleData doubleData = (DoubleData)input;
-		
-		doubleData.val = powi(gamma*libsvm.SVC_Q_GP.dot(x,y)+coef0,degree);
+		int degree = ((Kernel_GP_problem)problem).svm_param.degree;
+		double coef0 = ((Kernel_GP_problem)problem).svm_param.coef0;	
+		double gamma = ((Kernel_GP_problem)problem).svm_param.gamma;
+			
+		data.val = powi(gamma*libsvm.SVC_Q_GP.dot(x,y)+coef0,degree);
 		
 	}
 

@@ -133,4 +133,4 @@ gp.fs.0.func.7.nc = nc_kernel
 # gp.fs.0.func.13.nc = nc_constant
 
 eval.problem = ec.app.kernel_gp.Kernel_GP_problem
-eval.problem.data = ec.app.kernel_gp.DoubleData
+eval.problem.data = ec.app.kernel_gp.SVMData

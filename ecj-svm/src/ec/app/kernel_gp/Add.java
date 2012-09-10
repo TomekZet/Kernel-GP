@@ -33,7 +33,7 @@ public class Add extends GPNode
         final Problem problem)
         {
 	        double result;
-	        DoubleData rd = ((DoubleData)(input));
+	        SVMData rd = ((SVMData)(input));
 	
 	        children[0].eval(state,thread,input,stack,individual,problem);
 	        result = rd.val;

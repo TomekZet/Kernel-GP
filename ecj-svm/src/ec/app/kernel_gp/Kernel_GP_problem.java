@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 import java.util.Vector;
 
+import libsvm.SVC_Q_GP;
 import libsvm.Svm_GP;
 import libsvm.svm_node;
 import libsvm.svm_parameter;
@@ -30,29 +31,39 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
   public svm_node[] currentX;
   public svm_node[] currentY;
   
-  public SVMNodeData input;
-  private svm_parameter svm_param;	
+  public GPData input;
+  public svm_parameter svm_param;	
   private svm_problem svm_probl;		// set by read_problem
-  private String input_file_name;		
-  private int nr_fold;
+  private String train_file_name = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/vowel.scale";		
+  private String test_file_name = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/vowel.scale.t";
+  private int nr_fold = 5;
 
   public Object clone()
       {
 	  Kernel_GP_problem newobj = (Kernel_GP_problem) (super.clone());
-      newobj.input = (SVMNodeData)(input.clone());
+      newobj.input = (GPData)(input.clone());
       return newobj;
       }
 
   public void setup(final EvolutionState state,
       final Parameter base)
       {
-      // very important, remember this
-      super.setup(state,base);
-
-      // set up our input -- don't want to use the default base, it's unsafe here
-      input = (SVMNodeData) state.parameters.getInstanceForParameterEq(
-          base.push(P_DATA), null, SVMNodeData.class);
-      input.setup(state,base.push(P_DATA));
+	      // very important, remember this
+	      super.setup(state,base);
+	
+	      this.set_params();
+	      try {
+	    	  this.read_problem();
+	      }
+	      catch (Exception e) {
+	    	  System.err.println(e);
+	      }
+	      
+	      
+	      // set up our input -- don't want to use the default base, it's unsafe here
+	      input = (GPData) state.parameters.getInstanceForParameterEq(
+	          base.push(P_DATA), null, GPData.class);
+	      input.setup(state,base.push(P_DATA));
       }
 
   public void evaluate(final EvolutionState state, 
@@ -66,33 +77,24 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	      
 	      if (!ind.evaluated)  // don't bother reevaluating
 	          {
-	          Svm_GP.setInd(ind);
-	          Svm_GP.setInput(input);
-	          Svm_GP.setProblem(this);
-	          Svm_GP.setStack(stack);
-	          Svm_GP.setState(state);
-	          Svm_GP.setSubpopulation(subpopulation);
-	          Svm_GP.setThreadnum(threadnum);
 	          
 	  		  double[] target = new double[svm_probl.l];
 	      
 	  		
-	  		  //TODO: ustawić poniższe parametry
-	  		  Svm_GP.state = null; 
-	  		  Svm_GP.ind = null;
-	  		  Svm_GP.subpopulation = 0;
-	  		  Svm_GP.threadnum = 0;
-	  		  Svm_GP.problem = null;
-	  		  Svm_GP.input = null;
-	  		  Svm_GP.stack = null;
+	  		  SVC_Q_GP.state = state; 
+	  		  SVC_Q_GP.ind = ((GPIndividual)ind);
+	  		  SVC_Q_GP.subpopulation = subpopulation;
+	  		  SVC_Q_GP.threadnum = threadnum;
+	  		  SVC_Q_GP.problem = this;
+	  		  SVC_Q_GP.input = input;
+	  		  SVC_Q_GP.stack = stack;
 	  		  
 	  		  
-	  		  Svm_GP.svm_cross_validation(svm_probl, svm_param, nr_fold, target);
+	  		((GPIndividual)ind).trees[0].printTreeForHumans(state, 0);
+	  		((GPIndividual)ind).trees[1].printTreeForHumans(state, 0);
+	  		  
+	  		Svm_GP.svm_cross_validation(svm_probl, svm_param, nr_fold, target);
 	    	  
-//	          ((GPIndividual)ind).trees[0].child.eval(
-//	                  state,threadnum,input,stack,((GPIndividual)ind),this);
-	
-	//              result = Math.abs(expectedResult - input.x);
 	
 	          for(i=0;i<svm_probl.l;i++)
 					if(target[i] == svm_probl.y[i])
@@ -101,13 +103,10 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	          System.out.print("Cross Validation Accuracy = "+100.0*accuracy+"%\n");
 	          
 	           }
-	      		SimpleFitness f = ((SimpleFitness)ind.fitness);
-	      		f.setFitness(state, accuracy, accuracy == 1.0);
-	          // the fitness better be KozaFitness!
+	      
 
-	      //KozaFitness f = ((KozaFitness)ind.fitness);
-	          //f.setStandardizedFitness(state,(float)accuracy);
-	          //f.hits = hits;
+	      KozaFitness f = ((KozaFitness)ind.fitness);
+	          f.setStandardizedFitness(state,(float)((1-accuracy)/(accuracy+0.000000001)));
 	          ind.evaluated = true;
       }
   
@@ -153,7 +152,7 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
   
 	private void read_problem() throws IOException
 	{
-		BufferedReader fp = new BufferedReader(new FileReader(input_file_name));
+		BufferedReader fp = new BufferedReader(new FileReader(train_file_name));
 		Vector<Double> vy = new Vector<Double>();
 		Vector<svm_node[]> vx = new Vector<svm_node[]>();
 		int max_index = 0;

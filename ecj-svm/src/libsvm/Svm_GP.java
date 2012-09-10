@@ -15,20 +15,24 @@ import ec.gp.GPData;
  *
  */
 
-public class SVM_GP extends svm {
+public class Svm_GP extends svm {
 	
-	static EvolutionState state; 
-    static Individual ind;
-    static int subpopulation;
-    static int threadnum;
-    static Kernel_GP_problem problem;
-    static GPData input;
-    static ADFStack stack;
+	public static EvolutionState state; 
+	public static Individual ind;
+	public static int subpopulation;
+	public static int threadnum;
+	public static Kernel_GP_problem problem;
+	public static GPData input;
+	public static ADFStack stack;
 	
+
 	private static void solve_c_svc(svm_problem prob, svm_parameter param,
 			double[] alpha, Solver.SolutionInfo si,
 			double Cp, double Cn)
 	{
+		
+		System.out.println("\n\nEntered solve_c_svs in Svm_GP.java\n\n");
+		
 		int l = prob.l;
 		double[] minus_ones = new double[l];
 		byte[] y = new byte[l];
@@ -44,10 +48,7 @@ public class SVM_GP extends svm {
 		
 		Solver s = new Solver();
 		s.Solve(l, 
-				new SVC_Q_GP(prob,param,y, state, 
-		         ind,  subpopulation,  threadnum,
-		         problem,  input,  stack),
-		        minus_ones, y,
+				new SVC_Q_GP(prob,param,y), minus_ones, y,
 			alpha, Cp, Cn, param.eps, si, param.shrinking);
 		
 		double sum_alpha=0;
@@ -66,7 +67,7 @@ public class SVM_GP extends svm {
 	}
 
 	public static void setState(EvolutionState state) {
-		SVM_GP.state = state;
+		Svm_GP.state = state;
 	}
 
 	public static Individual getInd() {
@@ -74,7 +75,7 @@ public class SVM_GP extends svm {
 	}
 
 	public static void setInd(Individual ind) {
-		SVM_GP.ind = ind;
+		Svm_GP.ind = ind;
 	}
 
 	public static int getSubpopulation() {
@@ -82,7 +83,7 @@ public class SVM_GP extends svm {
 	}
 
 	public static void setSubpopulation(int subpopulation) {
-		SVM_GP.subpopulation = subpopulation;
+		Svm_GP.subpopulation = subpopulation;
 	}
 
 	public static int getThreadnum() {
@@ -90,7 +91,7 @@ public class SVM_GP extends svm {
 	}
 
 	public static void setThreadnum(int threadnum) {
-		SVM_GP.threadnum = threadnum;
+		Svm_GP.threadnum = threadnum;
 	}
 
 	public static Kernel_GP_problem getProblem() {
@@ -98,7 +99,7 @@ public class SVM_GP extends svm {
 	}
 
 	public static void setProblem(Kernel_GP_problem problem) {
-		SVM_GP.problem = problem;
+		Svm_GP.problem = problem;
 	}
 
 	public static GPData getInput() {
@@ -106,7 +107,7 @@ public class SVM_GP extends svm {
 	}
 
 	public static void setInput(GPData input) {
-		SVM_GP.input = input;
+		Svm_GP.input = input;
 	}
 
 	public static ADFStack getStack() {
@@ -114,7 +115,7 @@ public class SVM_GP extends svm {
 	}
 
 	public static void setStack(ADFStack stack) {
-		SVM_GP.stack = stack;
+		Svm_GP.stack = stack;
 	}
 	
 }
