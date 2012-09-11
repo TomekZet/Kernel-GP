@@ -44,26 +44,22 @@ public class Poly extends GPNode {
         svm_node[] x = data.X;
 		svm_node[] y = data.Y;		   
 		
-//		SVMData erc = (SVMData)input;
-//		
-//		children[2].eval(state,thread,input,stack,individual,problem);
-//		double gamma = erc.val;
-//
-//		children[3].eval(state,thread,input,stack,individual,problem);
-//		double coef0 = erc.val;
-//		Kernel_GP_problem
-//		
-//		IntegerData ercInt = (IntegerData)input;
-//		
-//		children[4].eval(state,thread,input,stack,individual,problem);
-//		int degree = ercInt.val;
+		ERCData erc = new ERCData();
+		
+		children[1].eval(state,thread,erc,stack,individual,problem);
+		double gamma = erc.gamma;
 
-		int degree = ((Kernel_GP_problem)problem).svm_param.degree;
-		double coef0 = ((Kernel_GP_problem)problem).svm_param.coef0;	
-		double gamma = ((Kernel_GP_problem)problem).svm_param.gamma;
+		children[2].eval(state,thread,erc,stack,individual,problem);
+		double coef0 = erc.coef0;
+		
+		children[3].eval(state,thread,erc,stack,individual,problem);
+		int degree = erc.degree;
+
+//		int degree = ((Kernel_GP_problem)problem).svm_param.degree;
+//		double coef0 = ((Kernel_GP_problem)problem).svm_param.coef0;	
+//		double gamma = ((Kernel_GP_problem)problem).svm_param.gamma;
 			
 		data.val = powi(gamma*libsvm.SVC_Q_GP.dot(x,y)+coef0,degree);
-		
 	}
 
 	private static double powi(double base, int times)

@@ -20,7 +20,7 @@ public class aMul extends GPNode
         final Parameter individualBase)
         {
         super.checkConstraints(state,tree,typicalIndividual,individualBase);
-        if (children.length!=1)
+        if (children.length!=2)
             state.output.error("Incorrect number of children for node " + 
                 toStringForError() + " at " +
                 individualBase);
@@ -32,16 +32,14 @@ public class aMul extends GPNode
         final GPIndividual individual,
         final Problem problem)
         {
-        double result;
-        SVMData data = (SVMData)input;
-
-        children[0].eval(state,thread,input,stack,individual,problem);
-        result = data.val;
-        
-        children[1].eval(state,thread,input,stack,individual,problem);
-        data.val = data.val * result;
-        
-
+	        SVMData data = (SVMData)input;
+	
+	        children[0].eval(state,thread,input,stack,individual,problem);
+	        
+	        ERCData erc = new ERCData();
+	        children[1].eval(state,thread,erc,stack,individual,problem);
+	        
+	        data.val = data.val * erc.a;
         }
     }
 

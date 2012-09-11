@@ -24,17 +24,15 @@ public class Sigmoid extends GPNode {
         svm_node[] x = data.X;
       	svm_node[] y = data.Y;		   
 		
-//		SVMData erc = (SVMData)input;
-//		
-//		children[2].eval(state,thread,input,stack,individual,problem);
-//		double gamma = erc.val;
+		ERCData erc = new ERCData();
 		
-		double gamma = ((Kernel_GP_problem)problem).svm_param.gamma;
-		double coef0 = ((Kernel_GP_problem)problem).svm_param.coef0;
+		children[1].eval(state,thread,erc,stack,individual,problem);
+		double gamma = erc.gamma;
 		
-		SVMData SVMData = (SVMData)input;
-				
-		SVMData.val = Math.tanh(gamma*libsvm.SVC_Q_GP.dot(x,y)+coef0);
+		children[2].eval(state,thread,erc,stack,individual,problem);
+		double coef0 = erc.coef0;
+		
+		data.val = Math.tanh(gamma*libsvm.SVC_Q_GP.dot(x,y)+coef0);
 	}
 
 }

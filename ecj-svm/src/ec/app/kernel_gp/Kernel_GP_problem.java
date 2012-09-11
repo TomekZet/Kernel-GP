@@ -32,11 +32,11 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
   public svm_node[] currentY;
   
   public GPData input;
-  public svm_parameter svm_param;	
+  static public svm_parameter svm_param;	
   private svm_problem svm_probl;		// set by read_problem
-  private String train_file_name = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/vowel.scale";		
+  private String train_file_name = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/iris.scale";		
   private String test_file_name = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/vowel.scale.t";
-  private int nr_fold = 3;
+  private int nr_fold = 4;
 
   public Object clone()
       {

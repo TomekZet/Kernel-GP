@@ -20,21 +20,15 @@ public class RBF extends GPNode {
 			ADFStack stack, GPIndividual individual, Problem problem) {
 
 		SVMData data = (SVMData)input;
-		
 		children[0].eval(state,thread,input,stack,individual,problem);
         svm_node[] x = data.X;
 		svm_node[] y = data.Y;		   
 		
-//		SVMData erc = (SVMData)input;
-//		
-//		children[2].eval(state,thread,input,stack,individual,problem);
-//		double gamma = erc.val;
-		double gamma = ((Kernel_GP_problem)problem).svm_param.gamma;
-		
-		SVMData SVMData = (SVMData)input;
-				
-		//return Math.exp(-gamma*(x_square[i]+x_square[j]-2*dot(x[i],x[j])));
-		SVMData.val =	Math.exp(-gamma*(libsvm.SVC_Q_GP.dot(x,x) + libsvm.SVC_Q_GP.dot(y,y) -2*libsvm.SVC_Q_GP.dot(x,y)));
+		ERCData erc = new ERCData();
+		children[1].eval(state,thread,erc,stack,individual,problem);
+		double gamma = erc.gamma;
+						
+		data.val =	Math.exp(-gamma*(libsvm.SVC_Q_GP.dot(x,x) + libsvm.SVC_Q_GP.dot(y,y) -2*libsvm.SVC_Q_GP.dot(x,y)));
 
 	}
 	
