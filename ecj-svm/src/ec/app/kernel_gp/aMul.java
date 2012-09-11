@@ -12,7 +12,7 @@ import ec.util.*;
 
 public class aMul extends GPNode
     {
-    public String toString() { return "*"; }
+    public String toString() { return "a *"; }
 
     public void checkConstraints(final EvolutionState state,
         final int tree,

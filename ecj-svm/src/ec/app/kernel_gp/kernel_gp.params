@@ -117,7 +117,7 @@ gp.fs.size = 1
 
 gp.fs.0 = ec.gp.GPFunctionSet
 gp.fs.0.name = f0
-gp.fs.0.size = 7
+gp.fs.0.size = 8
 
 
 ##Functions producing kernel from other kernels
@@ -153,14 +153,14 @@ gp.fs.0.func.5.nc = nc_kernel
 gp.fs.0.func.6 = ec.app.kernel_gp.Linear
 gp.fs.0.func.6.nc = nc_kernel
 
+#Expotential function used to produce one kernel from another
+gp.fs.0.func.7 = ec.app.kernel_gp.Exp
+gp.fs.0.func.7.nc = nc_k-combination1
+
 ####################
 #Multiplication of kernel by double
 # gp.fs.0.func.2 = ec.app.kernel_gp.aMul
 # gp.fs.0.func.2.nc = nc_k-combination-c
-
-#Expotential function used to produce one kernel from another
-# gp.fs.0.func.3 = ec.app.kernel_gp.Exp
-# gp.fs.0.func.3.nc = nc_k-combination1
 
 #######################
 # gp.fs.0.func.5 = ec.app.kernel_gp.ERCa

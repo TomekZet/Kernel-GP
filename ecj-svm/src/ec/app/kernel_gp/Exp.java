@@ -13,7 +13,6 @@ public class Exp extends GPNode {
 	@Override
 	public void checkConstraints(EvolutionState state, int tree,
 			GPIndividual typicalIndividual, Parameter individualBase) {
-		// TODO Auto-generated method stub
 		super.checkConstraints(state, tree, typicalIndividual, individualBase);
         if (children.length!=1)
             state.output.error("Incorrect number of children for node " + 
@@ -23,17 +22,17 @@ public class Exp extends GPNode {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Exp";
 	}
 
 	@Override
 	public void eval(EvolutionState state, int thread, GPData input,
 			ADFStack stack, GPIndividual individual, Problem problem) {
         
-		children[0].eval(state,thread,input,stack,individual,problem);
-		SVMData data = (SVMData)input;
-		data.val = Math.exp(data.val);
+        SVMData rd = ((SVMData)(input));
+
+        children[0].eval(state,thread,input,stack,individual,problem);
+		rd.val = Math.exp(rd.val);
 
 	}
 

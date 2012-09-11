@@ -117,7 +117,7 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 		svm_param.svm_type = svm_param.C_SVC;
 		svm_param.kernel_type = svm_param.RBF;
 		svm_param.degree = 3;
-		svm_param.gamma = 0;	// 1/num_features
+		svm_param.gamma = 0;	// 1/num_features - set by read_problem
 		svm_param.coef0 = 0;
 		svm_param.nu = 0.5;
 		svm_param.cache_size = 100;
