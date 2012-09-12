@@ -36,7 +36,7 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
   private svm_problem svm_probl;		// set by read_problem
   private String train_file_name = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/iris.scale";		
   private String test_file_name = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/vowel.scale.t";
-  private int nr_fold = 4;
+  private int nr_fold = 5;
 
   public Object clone()
       {
@@ -79,7 +79,6 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	          {
 	          
 	  		  double[] target = new double[svm_probl.l];
-	      
 	  		
 	  		  SVC_Q_GP.state = state; 
 	  		  SVC_Q_GP.ind = ((GPIndividual)ind);
@@ -89,11 +88,9 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	  		  SVC_Q_GP.input = input;
 	  		  SVC_Q_GP.stack = stack;
 	  		  
-	  		  
 	  		((GPIndividual)ind).trees[0].printTreeForHumans(state, 0);
 	  		  
 	  		Svm_GP.svm_cross_validation(svm_probl, svm_param, nr_fold, target);
-	    	  
 	
 	          for(i=0;i<svm_probl.l;i++)
 					if(target[i] == svm_probl.y[i])
@@ -103,7 +100,6 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	          
 	           }
 	      
-
 	      KozaFitness f = ((KozaFitness)ind.fitness);
 	          f.setStandardizedFitness(state,(float)((1-accuracy)/(accuracy+0.000000001)));
 	          ind.evaluated = true;

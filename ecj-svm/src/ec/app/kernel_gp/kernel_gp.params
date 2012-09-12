@@ -19,9 +19,24 @@ quit-on-run-complete = true
 
 pop.subpop.0.size = 100
 
+pop.subpop.0.species.pipe = ec.breed.MultiBreedingPipeline
+pop.subpop.0.species.pipe.num-sources = 2
+	pop.subpop.0.species.pipe.source.0 = ec.gp.breed.MutateERCPipeline
+	pop.subpop.0.species.pipe.source.0.prob = 0.9 
+	pop.subpop.0.species.pipe.source.0.num-sources = 1
+	pop.subpop.0.species.pipe.source.1 = ec.breed.ReproductionPipeline
+	pop.subpop.0.species.pipe.source.1.prob = 0.1
+		pop.subpop.0.species.pipe.source.0.source.0 = ec.breed.MultiBreedingPipeline
+		pop.subpop.0.species.pipe.source.0.source.0.num-sources = 2 
+		pop.subpop.0.species.pipe.source.0.source.0.source.0 = ec.gp.koza.CrossoverPipeline
+		pop.subpop.0.species.pipe.source.0.source.0.source.0.prob = 0.9 
+		pop.subpop.0.species.pipe.source.0.source.0.source.1 = ec.breed.ReproductionPipeline
+		pop.subpop.0.species.pipe.source.0.source.0.source.1.prob = 0.1
+
 breed.reproduce.source.0 = ec.parsimony.BucketTournamentSelection
 gp.koza.xover.source.0 = ec.parsimony.BucketTournamentSelection
 gp.koza.mutate.source.0 = ec.parsimony.BucketTournamentSelection
+gp.breed.mutate-erc.source.0 = ec.parsimony.BucketTournamentSelection
 
 breed.reproduce.source.0.num-buckets = 10
 gp.koza.xover.source.0.num-buckets = 10
@@ -29,12 +44,11 @@ gp.koza.mutate.source.0.num-buckets = 10
 
 select.bucket-tournament.size = 7
 
-#ec.gp.breed.MutateERCPipeline
-
-#pop.subpop.0.species.pipe.source.0 = ec.parsimony.BucketTournamentSelection
-#pop.subpop.0.species.pipe.source.0.size = 7 
-#pop.subpop.0.species.pipe.source.0.num-buckets = 10 
-#pop.subpop.0.species.pipe.source.0.pick-worst = false
+gp.breed.mutate-erc.tries = 1
+gp.breed.mutate-erc.ns.0 = ec.gp.koza.KozaNodeSelector
+gp.breed.mutate-erc.ns.0.root = 0.1 
+gp.breed.mutate-erc.ns.0.terminal = 0.6 
+gp.breed.mutate-erc.ns.0.nonterminal = 0.3 
 #####################################################
 
 # First, we're gonna change the number of trees in

@@ -54,10 +54,6 @@ public class Poly extends GPNode {
 		
 		children[3].eval(state,thread,erc,stack,individual,problem);
 		int degree = erc.degree;
-
-//		int degree = ((Kernel_GP_problem)problem).svm_param.degree;
-//		double coef0 = ((Kernel_GP_problem)problem).svm_param.coef0;	
-//		double gamma = ((Kernel_GP_problem)problem).svm_param.gamma;
 			
 		data.val = powi(gamma*libsvm.SVC_Q_GP.dot(x,y)+coef0,degree);
 	}

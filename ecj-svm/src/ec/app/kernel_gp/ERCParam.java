@@ -37,6 +37,12 @@ public class ERCParam extends ERC {
 		coef0 = Kernel_GP_problem.svm_param.coef0;
 		degree = Kernel_GP_problem.svm_param.degree;
 		a = 1.0;
+		
+		gamma = mutate(state, thread, gamma, 0.0, 2.0, 0.1);
+		coef0 = mutate(state, thread, coef0, 0.0, 1.0, 0.1);
+		a = mutate(state, thread, a, -10.0, 10.0, 0.5);
+		degree = (int)(mutate(state, thread, (double)degree, 1.0, 6.0, 1.0));
+		
 	}
 
 	/* (non-Javadoc)
@@ -44,7 +50,6 @@ public class ERCParam extends ERC {
 	 */
 	@Override
 	public boolean nodeEquals(GPNode node) {
-		// TODO Auto-generated method stub
 		return (node.getClass() == this.getClass() 
 				&& ((ERCParam)node).gamma == this.gamma
 				&& ((ERCParam)node).coef0 == this.coef0
@@ -84,7 +89,7 @@ public class ERCParam extends ERC {
 		double v;
 		do
 			v = value + state.random[thread].nextGaussian() * step;
-		while( v < 0.0 || v >= 2.0);
+		while( v < min || v >= max);
 		return v;
 	}
 	
