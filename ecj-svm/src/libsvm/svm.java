@@ -2253,7 +2253,7 @@ public class svm {
 			}
 			else
 				for(j=begin;j<end;j++)
-					target[perm[j]] = svm_predict(submodel,prob.x[perm[j]]);
+					target[perm[j]] = Svm_predict_gp.svm_predict(submodel,prob.x[perm[j]]);
 		}
 	}
 

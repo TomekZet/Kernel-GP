@@ -61,33 +61,33 @@ public class SimpleEvolutionStateSVM extends SimpleEvolutionState {
     	Individual bestSoFar = (st.getBestSoFar())[0];
     	SVC_Q_GP.ind = bestSoFar;
 
-    	String trainFilepath = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/vowel.scale";
-    	String testFilepath =  "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/vowel.scale.t";
+    	String trainFilepath = 		"/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/dna.scale.tr";
+    	String validationFilepath = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/dna.scale.val";
 
     	String resultFilepath = "";
 		Kernel_GP_problem.read_problem(trainFilepath );
 		Kernel_GP_problem.set_svm_params();
     	
     	svm_model model = svm.svm_train(Kernel_GP_problem.svm_probl, Kernel_GP_problem.svm_params);
-
+    	DataOutputStream output = new DataOutputStream(System.out);
 		try 
 		{
-			BufferedReader input = new BufferedReader(new FileReader(testFilepath));
+			BufferedReader input = new BufferedReader(new FileReader(validationFilepath));
 //			DataOutputStream output = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(resultFilepath)));
-			DataOutputStream output = new DataOutputStream(System.out);
+			
 			
 	    	SVC_Q_GP.ind = bestSoFar;
 			
-			libsvm.svm_predict.predict(input,output,model,0);
+	    	accuracy = libsvm.Svm_predict_gp.predict(input,output,model,0);
 			input.close();
-			output.close();
 		} 
 		catch(FileNotFoundException e) 
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	
+		output.writeBytes("\nAccuracy = "+accuracy*100+"\n");
+		output.close();
     	return accuracy;
     }
 }

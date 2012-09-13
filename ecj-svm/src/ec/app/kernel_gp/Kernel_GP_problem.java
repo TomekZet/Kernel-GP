@@ -16,6 +16,8 @@ import java.util.Vector;
 
 import libsvm.SVC_Q_GP;
 import libsvm.Svm_GP;
+import libsvm.svm;
+import libsvm.svm_model;
 import libsvm.svm_node;
 import libsvm.svm_parameter;
 import libsvm.svm_problem;
@@ -34,9 +36,10 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
   public GPData input;
   static public svm_parameter svm_params;	
   static public svm_problem svm_probl;		// set by read_problem
-  private String train_file_name = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/vowel.scale";		
-//  private String test_file_name = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/vowel.scale.t";
-  private int nr_fold = 3;
+  private String train_file_name = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/dna.scale.tr";
+  private String test_file_name = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/dna.scale.t";
+  private int nr_fold = 10;
+  boolean cv = true;
 
   public Object clone()
       {
@@ -59,7 +62,6 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	    	  System.err.println(e);
 	      }
 	      
-	      
 	      // set up our input -- don't want to use the default base, it's unsafe here
 	      input = (GPData) state.parameters.getInstanceForParameterEq(
 	          base.push(P_DATA), null, GPData.class);
@@ -72,10 +74,14 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
       final int threadnum)
       {
       
+	  	  System.out.print("\n");
+	  	  ((GPIndividual)ind).trees[0].printTreeForHumans(state, 0);
+	  	  KozaFitness f = ((KozaFitness)ind.fitness);
+	  	
 	      if (!ind.evaluated)  // don't bother reevaluating
-	          {
+          {
 	  		  double[] target = new double[svm_probl.l];
-		      float accuracy = (float) 0.0;
+		      double accuracy =  0.0;
 		      int i;
 		      double correct = 0;
 	  		  
@@ -87,26 +93,49 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	  		  SVC_Q_GP.input = input;
 	  		  SVC_Q_GP.stack = stack;
 	  		  
-	  		 ((GPIndividual)ind).trees[0].printTreeForHumans(state, 0);
+	  		 
 	  		  
-	  		 Svm_GP.svm_cross_validation(svm_probl, svm_params, nr_fold, target);
-	
-	         for(i=0;i<svm_probl.l;i++){
-	        	  System.out.print(target[i]+"; ");
-	        	  if(target[i] == svm_probl.y[i])
-						++correct;
-	         }
-    	  	  System.out.print("\n");
-	          accuracy = (float) (correct/svm_probl.l);
-	          System.out.print("Cross Validation Accuracy = "+100.0*accuracy+"%\n");
-	      
-	          KozaFitness f = ((KozaFitness)ind.fitness);
-	          f.setStandardizedFitness(state,(float)((1-accuracy)/(accuracy+0.000000001)));
-	          System.out.print("Standardized Fitness = " + f.standardizedFitness() +"\n");
-	          System.out.print("Adjusted Fitness = " + f.fitness()+"\n");
+	  		 if(cv)
+	  		 {
+  			 	 Svm_GP.svm_cross_validation(svm_probl, svm_params, nr_fold, target);
+		
+		         for(i=0;i<svm_probl.l;i++){
+		        	  if(target[i] == svm_probl.y[i])
+							++correct;
+		         }
+		         accuracy = (correct/svm_probl.l);
+		       
+	  		  }
+	  		  else
+	  		  {
+
+	  	    	svm_model model = Svm_GP.svm_train(svm_probl, svm_params);
+
+	  			try 
+	  			{
+	  				BufferedReader input = new BufferedReader(new FileReader(test_file_name));
+	  				DataOutputStream output = new DataOutputStream(System.out);
+	  				
+	  				accuracy = libsvm.Svm_predict_gp.predict(input,output,model,0);
+	  				input.close();
+	  			}
+	  			catch(FileNotFoundException e) 
+	  			{
+	  				// TODO Auto-generated catch block
+	  				e.printStackTrace();
+	  			} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	  		  }
 	          
+	          f.setStandardizedFitness(state,(float)((1-accuracy)/(accuracy+0.00000000000000000001)));	          
 	          ind.evaluated = true;
-	          }
+	          System.out.print("Accuracy = "+100.0*accuracy+"%\n");
+          }
+	      System.out.print("Standardized Fitness = " + f.standardizedFitness() +"\n");
+	      System.out.print("Adjusted Fitness = " + f.fitness()+"\n\n");
+
       }
   
   

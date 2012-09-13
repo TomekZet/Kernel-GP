@@ -28,7 +28,7 @@ public class ERCParam extends ERC {
 	
 	@Override
 	public String toStringForHumans() {
-		return String.format("gamma:%f; coef0:%f; degree:%d; a:%f", gamma, coef0, degree, a);
+		return String.format("ERC");//gamma:%f; coef0:%f; degree:%d; a:%f", gamma, coef0, degree, a);
 	}
 	
 	@Override

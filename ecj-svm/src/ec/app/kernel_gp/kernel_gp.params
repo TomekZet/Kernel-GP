@@ -16,14 +16,20 @@ stat = ec.gp.koza.KozaStatistics
 stat.child.0.gather-full = true
 stat.file =	out.stat
 
-generations = 3
+generations = 2
 quit-on-run-complete = true
 
-pop.subpop.0.size = 10
+pop.subpop.0.size = 20
 
-gp.koza.xover.maxdepth = 5
-gp.koza.mutate.maxdepth = 5
-gp.koza.xover.maxdepth = 5
+gp.tc.0.init = ec.gp.koza.FullBuilder
+gp.tc.0.init.min-depth = 2
+gp.tc.0.init.max-depth = 4
+
+
+gp.koza.xover.maxdepth = 3
+gp.koza.mutate.maxdepth = 3
+gp.koza.grow.min-depth = 3
+gp.koza.grow.max-depth = 4
 
 pop.subpop.0.species.pipe = ec.breed.MultiBreedingPipeline
 pop.subpop.0.species.pipe.num-sources = 2
@@ -46,11 +52,11 @@ gp.breed.mutate-erc.source.0 = ec.parsimony.BucketTournamentSelection
 
 
 
-breed.reproduce.source.0.num-buckets = 10
-gp.koza.xover.source.0.num-buckets = 10
-gp.koza.mutate.source.0.num-buckets = 10
+breed.reproduce.source.0.num-buckets = 5
+gp.koza.xover.source.0.num-buckets = 5
+gp.koza.mutate.source.0.num-buckets = 5
 
-select.bucket-tournament.size = 7
+select.bucket-tournament.size = 5
 
 gp.breed.mutate-erc.tries = 1
 gp.breed.mutate-erc.ns.0 = ec.gp.koza.KozaNodeSelector
