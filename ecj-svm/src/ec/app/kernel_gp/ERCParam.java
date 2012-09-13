@@ -33,9 +33,9 @@ public class ERCParam extends ERC {
 	
 	@Override
 	public void resetNode(EvolutionState state, int thread) {
-		gamma = Kernel_GP_problem.svm_param.gamma;
-		coef0 = Kernel_GP_problem.svm_param.coef0;
-		degree = Kernel_GP_problem.svm_param.degree;
+		gamma = Kernel_GP_problem.svm_params.gamma;
+		coef0 = Kernel_GP_problem.svm_params.coef0;
+		degree = Kernel_GP_problem.svm_params.degree;
 		a = 1.0;
 		
 		gamma = mutate(state, thread, gamma, 0.0, 2.0, 0.1);

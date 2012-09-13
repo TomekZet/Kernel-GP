@@ -9,15 +9,21 @@ pop.subpop.0.species.fitness = ec.gp.koza.KozaFitness
 eval.problem = ec.app.kernel_gp.Kernel_GP_problem
 eval.problem.data = ec.app.kernel_gp.SVMData
 
+state = ec.app.kernel_gp.SimpleEvolutionStateSVM
+
 stat = ec.gp.koza.KozaStatistics
 #stat = ec.simple.SimpleStatistics
 stat.child.0.gather-full = true
 stat.file =	out.stat
 
-generations = 10
+generations = 3
 quit-on-run-complete = true
 
-pop.subpop.0.size = 100
+pop.subpop.0.size = 10
+
+gp.koza.xover.maxdepth = 5
+gp.koza.mutate.maxdepth = 5
+gp.koza.xover.maxdepth = 5
 
 pop.subpop.0.species.pipe = ec.breed.MultiBreedingPipeline
 pop.subpop.0.species.pipe.num-sources = 2
@@ -37,6 +43,8 @@ breed.reproduce.source.0 = ec.parsimony.BucketTournamentSelection
 gp.koza.xover.source.0 = ec.parsimony.BucketTournamentSelection
 gp.koza.mutate.source.0 = ec.parsimony.BucketTournamentSelection
 gp.breed.mutate-erc.source.0 = ec.parsimony.BucketTournamentSelection
+
+
 
 breed.reproduce.source.0.num-buckets = 10
 gp.koza.xover.source.0.num-buckets = 10

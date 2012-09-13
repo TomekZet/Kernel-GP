@@ -32,11 +32,11 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
   public svm_node[] currentY;
   
   public GPData input;
-  static public svm_parameter svm_param;	
-  private svm_problem svm_probl;		// set by read_problem
-  private String train_file_name = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/iris.scale";		
-  private String test_file_name = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/vowel.scale.t";
-  private int nr_fold = 5;
+  static public svm_parameter svm_params;	
+  static public svm_problem svm_probl;		// set by read_problem
+  private String train_file_name = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/vowel.scale";		
+//  private String test_file_name = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/vowel.scale.t";
+  private int nr_fold = 3;
 
   public Object clone()
       {
@@ -51,9 +51,9 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	      // very important, remember this
 	      super.setup(state,base);
 	
-	      this.set_params();
+	      set_svm_params();
 	      try {
-	    	  this.read_problem();
+	    	  read_problem(train_file_name);
 	      }
 	      catch (Exception e) {
 	    	  System.err.println(e);
@@ -71,15 +71,14 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
       final int subpopulation,
       final int threadnum)
       {
-	      float accuracy = (float) 0.0;
-	      int i;
-	      double total_correct = 0;
-	      
+      
 	      if (!ind.evaluated)  // don't bother reevaluating
 	          {
-	          
 	  		  double[] target = new double[svm_probl.l];
-	  		
+		      float accuracy = (float) 0.0;
+		      int i;
+		      double correct = 0;
+	  		  
 	  		  SVC_Q_GP.state = state; 
 	  		  SVC_Q_GP.ind = ((GPIndividual)ind);
 	  		  SVC_Q_GP.subpopulation = subpopulation;
@@ -88,43 +87,48 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	  		  SVC_Q_GP.input = input;
 	  		  SVC_Q_GP.stack = stack;
 	  		  
-	  		((GPIndividual)ind).trees[0].printTreeForHumans(state, 0);
+	  		 ((GPIndividual)ind).trees[0].printTreeForHumans(state, 0);
 	  		  
-	  		Svm_GP.svm_cross_validation(svm_probl, svm_param, nr_fold, target);
+	  		 Svm_GP.svm_cross_validation(svm_probl, svm_params, nr_fold, target);
 	
-	          for(i=0;i<svm_probl.l;i++)
-					if(target[i] == svm_probl.y[i])
-						++total_correct;
-	          accuracy = (float) (total_correct/svm_probl.l);
+	         for(i=0;i<svm_probl.l;i++){
+	        	  System.out.print(target[i]+"; ");
+	        	  if(target[i] == svm_probl.y[i])
+						++correct;
+	         }
+    	  	  System.out.print("\n");
+	          accuracy = (float) (correct/svm_probl.l);
 	          System.out.print("Cross Validation Accuracy = "+100.0*accuracy+"%\n");
-	          
-	           }
 	      
-	      KozaFitness f = ((KozaFitness)ind.fitness);
+	          KozaFitness f = ((KozaFitness)ind.fitness);
 	          f.setStandardizedFitness(state,(float)((1-accuracy)/(accuracy+0.000000001)));
+	          System.out.print("Standardized Fitness = " + f.standardizedFitness() +"\n");
+	          System.out.print("Adjusted Fitness = " + f.fitness()+"\n");
+	          
 	          ind.evaluated = true;
+	          }
       }
   
   
-  private void set_params()
+  public static void set_svm_params()
   {
-		svm_param = new svm_parameter();
+		svm_params = new svm_parameter();
 		// default values
-		svm_param.svm_type = svm_param.C_SVC;
-		svm_param.kernel_type = svm_param.RBF;
-		svm_param.degree = 3;
-		svm_param.gamma = 0;	// 1/num_features - set by read_problem
-		svm_param.coef0 = 0;
-		svm_param.nu = 0.5;
-		svm_param.cache_size = 100;
-		svm_param.C = 1;
-		svm_param.eps = 1e-3;
-		svm_param.p = 0.1;
-		svm_param.shrinking = 1;
-		svm_param.probability = 0;
-		svm_param.nr_weight = 0;
-		svm_param.weight_label = new int[0];
-		svm_param.weight = new double[0];
+		svm_params.svm_type = svm_params.C_SVC;
+		svm_params.kernel_type = svm_params.RBF;
+		svm_params.degree = 3;
+		svm_params.gamma = 0;	// 1/num_features - set by read_problem
+		svm_params.coef0 = 0;
+		svm_params.nu = 0.5;
+		svm_params.cache_size = 100;
+		svm_params.C = 1;
+		svm_params.eps = 1e-3;
+		svm_params.p = 0.1;
+		svm_params.shrinking = 1;
+		svm_params.probability = 0;
+		svm_params.nr_weight = 0;
+		svm_params.weight_label = new int[0];
+		svm_params.weight = new double[0];
 
   }
   
@@ -145,9 +149,9 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	}
   
   
-	private void read_problem() throws IOException
+	public static void read_problem(String file_name) throws IOException
 	{
-		BufferedReader fp = new BufferedReader(new FileReader(train_file_name));
+		BufferedReader fp = new BufferedReader(new FileReader(file_name));
 		Vector<Double> vy = new Vector<Double>();
 		Vector<svm_node[]> vx = new Vector<svm_node[]>();
 		int max_index = 0;
@@ -181,8 +185,8 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 		for(int i=0;i<svm_probl.l;i++)
 			svm_probl.y[i] = vy.elementAt(i);
 
-		if(svm_param.gamma == 0 && max_index > 0)
-			svm_param.gamma = 1.0/max_index;
+		if(svm_params.gamma == 0 && max_index > 0)
+			svm_params.gamma = 1.0/max_index;
 
 
 		fp.close();
