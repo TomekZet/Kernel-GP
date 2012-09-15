@@ -8,12 +8,8 @@
 # Ignore metadata eclipse folder
 /.metadata
 /nppBackup
-bin/
-.classpath
 .metadata/
-*.class
 
 # Package Files #
-*.jar
 *.war
 *.ear
