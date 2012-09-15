@@ -36,8 +36,8 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
   public GPData input;
   static public svm_parameter svm_params;	
   static public svm_problem svm_probl;		// set by read_problem
-  private String train_file_name = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/clinical+volumes.arff.tr";
-  private String test_file_name = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/clinical+volumes.arff.t";
+  private String train_file_name = "data/clinical+volumes.arff.tr";
+  private String test_file_name = "data/clinical+volumes.arff.t";
   private int nr_fold = 8;
   boolean cv = true;
 
