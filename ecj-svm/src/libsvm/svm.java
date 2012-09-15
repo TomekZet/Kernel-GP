@@ -169,6 +169,12 @@ abstract class Kernel extends QMatrix {
 
 	double kernel_function(int i, int j)
 	{
+		try {
+			throw new Exception("Wrong Kernel function used!");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		switch(kernel_type)
 		{
 			case svm_parameter.LINEAR:
@@ -229,6 +235,12 @@ abstract class Kernel extends QMatrix {
 	static double k_function(svm_node[] x, svm_node[] y,
 					svm_parameter param)
 	{
+		try {
+			throw new Exception("Wrong Kernel function used!");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		switch(param.kernel_type)
 		{
 			case svm_parameter.LINEAR:

@@ -1,0 +1,57 @@
+
+
+
+Generation 0
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 17.3
+Nodes/tree: [17.3]
+Avg Depth: 5.2
+Depth/tree: [5.2]
+Mean fitness raw: 0.85569495 adjusted: 0.566805 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=0.5498392 Adjusted=0.6452282 Hits=0
+Tree 0:
+ (Linear x)
+
+
+
+Generation 1
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 4.0
+Nodes/tree: [4.0]
+Avg Depth: 2.4
+Depth/tree: [2.4]
+Mean fitness raw: 0.5575289 adjusted: 0.6423237 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=0.50625 Adjusted=0.6639004 Hits=0
+Tree 0:
+ (a * (Linear x) ERC)
+
+
+
+Generation 2
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 3.6
+Nodes/tree: [3.6]
+Avg Depth: 2.6
+Depth/tree: [2.6]
+Mean fitness raw: 0.5530173 adjusted: 0.64460576 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=0.45619336 Adjusted=0.686722 Hits=0
+Tree 0:
+ (Linear x)

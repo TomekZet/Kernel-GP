@@ -36,9 +36,9 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
   public GPData input;
   static public svm_parameter svm_params;	
   static public svm_problem svm_probl;		// set by read_problem
-  private String train_file_name = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/dna.scale.tr";
-  private String test_file_name = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/dna.scale.t";
-  private int nr_fold = 10;
+  private String train_file_name = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/clinical+volumes.arff.tr";
+  private String test_file_name = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/clinical+volumes.arff.t";
+  private int nr_fold = 8;
   boolean cv = true;
 
   public Object clone()
@@ -93,8 +93,6 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	  		  SVC_Q_GP.input = input;
 	  		  SVC_Q_GP.stack = stack;
 	  		  
-	  		 
-	  		  
 	  		 if(cv)
 	  		 {
   			 	 Svm_GP.svm_cross_validation(svm_probl, svm_params, nr_fold, target);
@@ -108,8 +106,8 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	  		  }
 	  		  else
 	  		  {
-
-	  	    	svm_model model = Svm_GP.svm_train(svm_probl, svm_params);
+	  	    	
+	  			svm_model model = Svm_GP.svm_train(svm_probl, svm_params);
 
 	  			try 
 	  			{
@@ -158,7 +156,6 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 		svm_params.nr_weight = 0;
 		svm_params.weight_label = new int[0];
 		svm_params.weight = new double[0];
-
   }
   
 	private static int atoi(String s)

@@ -61,8 +61,8 @@ public class SimpleEvolutionStateSVM extends SimpleEvolutionState {
     	Individual bestSoFar = (st.getBestSoFar())[0];
     	SVC_Q_GP.ind = bestSoFar;
 
-    	String trainFilepath = 		"/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/dna.scale.tr";
-    	String validationFilepath = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/dna.scale.val";
+    	String trainFilepath = 		"/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/clinical+volumes.arff.tr";
+    	String validationFilepath = "/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/data/clinical+volumes.arff.val";
 
     	String resultFilepath = "";
 		Kernel_GP_problem.read_problem(trainFilepath );

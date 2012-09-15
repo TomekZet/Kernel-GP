@@ -19,8 +19,6 @@ public class Svm_predict_gp {
 		int correct = 0;
 		int total = 0;
 		double error = 0;
-		double sumv = 0, sumy = 0, sumvv = 0, sumyy = 0, sumvy = 0;
-
 
 		while(true)
 		{
@@ -46,11 +44,6 @@ public class Svm_predict_gp {
 			if(v == target)
 				++correct;
 			error += (v-target)*(v-target);
-			sumv += v;
-			sumy += target;
-			sumvv += v*v;
-			sumyy += target*target;
-			sumvy += v*target;
 			++total;
 		}
 		double accuracy = (double)correct/total;

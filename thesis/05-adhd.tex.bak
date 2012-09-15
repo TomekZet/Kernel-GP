@@ -1,0 +1,11 @@
+\chapter{Case study - klasyfikacja danych ADHD 200}
+\section{Opis zbioru danych}
+	\subsection{Surowe dane}
+	\subsection{Preprocessing}
+
+\section{Konstrukcja i selekcja cech}
+\section{Wyniki klasyfikacji}
+	\subsection{Kernel GP}
+	\subsection{Porównanie z innymi algorytmami}
+		\subsubsection*{SVM}
+		\subsubsection*{Inne klasyfikatory}
