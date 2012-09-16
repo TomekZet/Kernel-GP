@@ -39,7 +39,7 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
   private String train_file_name = "data/clinical+volumes.arff.tr";
   private String test_file_name = "data/clinical+volumes.arff.t";
   private int nr_fold = 8;
-  boolean cv = true;
+  boolean cv = false;
 
   public Object clone()
       {

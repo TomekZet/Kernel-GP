@@ -16,10 +16,10 @@ stat = ec.gp.koza.KozaStatistics
 stat.child.0.gather-full = true
 stat.file =	out.stat
 
-generations = 10
+generations = 5
 quit-on-run-complete = true
 
-pop.subpop.0.size = 10
+pop.subpop.0.size = 20
 
 gp.tc.0.init = ec.gp.koza.FullBuilder
 gp.tc.0.init.min-depth = 2
