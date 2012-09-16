@@ -16,34 +16,29 @@ import ec.util.Code;
  * @author Tomasz Ziętkiewicz
  *
  */
-public class ERCParam extends ERC {
+public abstract class ERCParam extends ERC {
 	
-	public double gamma;	//libsvm parameter
-	public double coef0;	//libsvm parameter
-	public int degree;		//libsvm parameter
-	public double a;		//a used in aMul function
+	double min;
+	double max;
+	double step;
+	public double val;
+	String name;
 	/* (non-Javadoc)
 	 * @see ec.gp.ERC#resetNode(ec.EvolutionState, int)
 	 */
 	
 	@Override
 	public String toStringForHumans() {
-		return String.format("ERC");//gamma:%f; coef0:%f; degree:%d; a:%f", gamma, coef0, degree, a);
+		return String.format("%s=%f",name, val);
 	}
 	
 	@Override
 	public void resetNode(EvolutionState state, int thread) {
-		gamma = Kernel_GP_problem.svm_params.gamma;
-		coef0 = Kernel_GP_problem.svm_params.coef0;
-		degree = Kernel_GP_problem.svm_params.degree;
-		a = 1.0;
-		
-		gamma = mutate(state, thread, gamma, 0.0, 2.0, 0.1);
-		coef0 = mutate(state, thread, coef0, 0.0, 1.0, 0.1);
-		a = mutate(state, thread, a, -10.0, 10.0, 0.5);
-		degree = (int)(mutate(state, thread, (double)degree, 1.0, 6.0, 1.0));
-		
+		val = getDefValue();
+		mutateERC(state, thread);
 	}
+	
+	abstract protected double getDefValue();
 
 	/* (non-Javadoc)
 	 * @see ec.gp.ERC#nodeEquals(ec.gp.GPNode)
@@ -51,10 +46,7 @@ public class ERCParam extends ERC {
 	@Override
 	public boolean nodeEquals(GPNode node) {
 		return (node.getClass() == this.getClass() 
-				&& ((ERCParam)node).gamma == this.gamma
-				&& ((ERCParam)node).coef0 == this.coef0
-				&& ((ERCParam)node).degree == this.degree
-				&& ((ERCParam)node).a == this.a);
+				&& ((ERCParam)node).val == this.val);
 	}
 
 	/* (non-Javadoc)
@@ -62,8 +54,7 @@ public class ERCParam extends ERC {
 	 */
 	@Override
 	public String encode() {
-		// TODO Auto-generated method stub
-		return Code.encode(gamma);
+		return Code.encode(val);
 	}
 
 	/* (non-Javadoc)
@@ -72,32 +63,22 @@ public class ERCParam extends ERC {
 	@Override
 	public void eval(EvolutionState state, int thread, GPData input,
 			ADFStack stack, GPIndividual individual, Problem problem) {
-		ERCData data = (ERCData)input;
-        data.gamma = gamma;
-        data.coef0 = coef0;
-        data.degree = degree;
-        data.a = a;
+		SVMData data = (SVMData)input;
+        data.val = val;
 	}
 
 	/* (non-Javadoc)
 	 * @see ec.gp.ERC#mutateERC(ec.EvolutionState, int)
 	 */
 	
-	protected double mutate(EvolutionState state, int thread,
-			double value, double min, double max, double step)
+	public void mutateERC(EvolutionState state, int thread)
 	{
 		double v;
 		do
-			v = value + state.random[thread].nextGaussian() * step;
+			v = val + state.random[thread].nextGaussian() * step;
 		while( v < min || v >= max);
-		return v;
+		val = v;
 	}
 	
-	@Override
-	public void mutateERC(EvolutionState state, int thread) {
-			gamma = mutate(state, thread, gamma, 0.0, 2.0, 0.01);
-			coef0 = mutate(state, thread, coef0, 0.0, 2.0, 0.01);
-			a = mutate(state, thread, a, -10.0, 10.0, 0.01);
-			degree = (int)(mutate(state, thread, (double)degree, 1.0, 5.0, 1.0));		
-	}
+
 }

@@ -35,11 +35,11 @@ public class aMul extends GPNode
 	        SVMData data = (SVMData)input;
 	
 	        children[0].eval(state,thread,input,stack,individual,problem);
+	        double val = data.val;
 	        
-	        ERCData erc = new ERCData();
-	        children[1].eval(state,thread,erc,stack,individual,problem);
+	        children[1].eval(state,thread,data,stack,individual,problem);
 	        
-	        data.val = data.val * erc.a;
+	        data.val = val * data.val;
         }
     }
 

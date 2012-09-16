@@ -34,10 +34,10 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
   public svm_node[] currentY;
   
   public GPData input;
-  static public svm_parameter svm_params;	
+  static public svm_parameter svm_params = new svm_parameter();	
   static public svm_problem svm_probl;		// set by read_problem
-  private String train_file_name = "data/clinical+volumes.arff.tr";
-  private String test_file_name = "data/clinical+volumes.arff.t";
+  private String train_file_name = "data/dna.scale.tr";
+  private String test_file_name = "data/dna.scale.t";
   private int nr_fold = 8;
   boolean cv = false;
 
@@ -54,7 +54,7 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	      // very important, remember this
 	      super.setup(state,base);
 	
-	      set_svm_params();
+	      //set_svm_params();
 	      try {
 	    	  read_problem(train_file_name);
 	      }
@@ -139,23 +139,23 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
   
   public static void set_svm_params()
   {
-		svm_params = new svm_parameter();
+//		svm_params = new svm_parameter();
 		// default values
 		svm_params.svm_type = svm_params.C_SVC;
 		svm_params.kernel_type = svm_params.RBF;
 		svm_params.degree = 3;
 		svm_params.gamma = 0;	// 1/num_features - set by read_problem
 		svm_params.coef0 = 0;
-		svm_params.nu = 0.5;
+//		svm_params.nu = 0.5;
 		svm_params.cache_size = 100;
 		svm_params.C = 1;
 		svm_params.eps = 1e-3;
 		svm_params.p = 0.1;
 		svm_params.shrinking = 1;
-		svm_params.probability = 0;
-		svm_params.nr_weight = 0;
-		svm_params.weight_label = new int[0];
-		svm_params.weight = new double[0];
+//		svm_params.probability = 0;
+//		svm_params.nr_weight = 0;
+//		svm_params.weight_label = new int[0];
+//		svm_params.weight = new double[0];
   }
   
 	private static int atoi(String s)

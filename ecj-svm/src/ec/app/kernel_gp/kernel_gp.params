@@ -16,10 +16,10 @@ stat = ec.gp.koza.KozaStatistics
 stat.child.0.gather-full = true
 stat.file =	out.stat
 
-generations = 5
+generations = 2
 quit-on-run-complete = true
 
-pop.subpop.0.size = 20
+pop.subpop.0.size = 10
 
 gp.tc.0.init = ec.gp.koza.FullBuilder
 gp.tc.0.init.min-depth = 2
@@ -77,16 +77,25 @@ pop.subpop.0.species.ind.tree.0 = ec.gp.GPTree
 pop.subpop.0.species.ind.tree.0.tc = tc0
 
 #################################################
-gp.type.a.size = 3
+gp.type.a.size = 6
 
 #SVM nodes - svm_node objects vector
 gp.type.a.0.name = svmnodes
 
-#ERC constant
-gp.type.a.1.name = constant
-
 #A double value, returned by a Kernel
-gp.type.a.2.name = double
+gp.type.a.1.name = double
+
+#ERC constant
+gp.type.a.2.name = c_gamma
+
+#ERC constant
+gp.type.a.3.name = c_degree
+
+#ERC constant
+gp.type.a.4.name = c_coef
+
+#ERC constant
+gp.type.a.5.name = c_a
 
 #################################################
 #Tree constraints
@@ -104,7 +113,7 @@ gp.koza.half.max-depth = 6
 
 ##################################################
 #Node constraints
-gp.nc.size = 10
+gp.nc.size = 13
 
 #Leaf - vector of svm_nodes
 gp.nc.0 = ec.gp.GPNodeConstraints
@@ -124,7 +133,7 @@ gp.nc.2.name = nc_kernel_1
 gp.nc.2.returns = double
 gp.nc.2.size = 2
 gp.nc.2.child.0 = svmnodes
-gp.nc.2.child.1 = constant
+gp.nc.2.child.1 = c_gamma
 
 #Standard kernel function with 2 constants
 gp.nc.3 = ec.gp.GPNodeConstraints
@@ -132,8 +141,8 @@ gp.nc.3.name = nc_kernel_2
 gp.nc.3.returns = double
 gp.nc.3.size = 3
 gp.nc.3.child.0 = svmnodes
-gp.nc.3.child.1 = constant
-gp.nc.3.child.2 = constant
+gp.nc.3.child.1 = c_gamma
+gp.nc.3.child.2 = c_coef
 
 #Standard kernel function with 3 constants
 gp.nc.4 = ec.gp.GPNodeConstraints
@@ -141,9 +150,9 @@ gp.nc.4.name = nc_kernel_3
 gp.nc.4.returns = double
 gp.nc.4.size = 4
 gp.nc.4.child.0 = svmnodes
-gp.nc.4.child.1 = constant
-gp.nc.4.child.2 = constant
-gp.nc.4.child.3 = constant
+gp.nc.4.child.1 = c_gamma
+gp.nc.4.child.2 = c_coef
+gp.nc.4.child.3 = c_degree
 
 #Constant modification of kernel - for ex. exp(kernel)
 gp.nc.5 = ec.gp.GPNodeConstraints
@@ -166,29 +175,47 @@ gp.nc.7.name = nc_k-combination-c
 gp.nc.7.returns = double
 gp.nc.7.size = 2
 gp.nc.7.child.0 = double
-gp.nc.7.child.1 = constant
-
-#Terminal with ERC constant
-gp.nc.8 = ec.gp.GPNodeConstraints
-gp.nc.8.name = nc_ercparam
-gp.nc.8.returns = constant
-gp.nc.8.size = 0
+gp.nc.7.child.1 = c_a
 
 #Standard kernel function with 0 constants
+gp.nc.8 = ec.gp.GPNodeConstraints
+gp.nc.8.name = nc_kernel_0
+gp.nc.8.returns = double
+gp.nc.8.size = 1
+gp.nc.8.child.0 = svmnodes
+
+#Terminal with ERC constant
 gp.nc.9 = ec.gp.GPNodeConstraints
-gp.nc.9.name = nc_kernel_0
-gp.nc.9.returns = double
-gp.nc.9.size = 1
-gp.nc.9.child.0 = svmnodes
+gp.nc.9.name = nc_ercgamma
+gp.nc.9.returns = c_gamma
+gp.nc.9.size = 0
+
+#Terminal with ERC constant
+gp.nc.10 = ec.gp.GPNodeConstraints
+gp.nc.10.name = nc_erccoef
+gp.nc.10.returns = c_coef
+gp.nc.10.size = 0
+
+#Terminal with ERC constant
+gp.nc.11 = ec.gp.GPNodeConstraints
+gp.nc.11.name = nc_ercdegree
+gp.nc.11.returns = c_degree
+gp.nc.11.size = 0
+
+#Terminal with ERC constant
+gp.nc.12 = ec.gp.GPNodeConstraints
+gp.nc.12.name = nc_erca
+gp.nc.12.returns = c_a
+gp.nc.12.size = 0
 
 ##################################################
-# We have tree with one functions set
+# We have one tree with one function set
 
 gp.fs.size = 1
 
 gp.fs.0 = ec.gp.GPFunctionSet
 gp.fs.0.name = f0
-gp.fs.0.size = 10
+gp.fs.0.size = 13
 
 
 ###Terminals
@@ -197,58 +224,53 @@ gp.fs.0.func.0 = ec.app.kernel_gp.X
 gp.fs.0.func.0.nc = nc_terminal
 
 # ERC - Ephemeral Random Constant
-gp.fs.0.func.1 = ec.app.kernel_gp.ERCParam
-gp.fs.0.func.1.nc = nc_ercparam
+gp.fs.0.func.1 = ec.app.kernel_gp.ERCgamma
+gp.fs.0.func.1.nc = nc_ercgamma
 
+# ERC - Ephemeral Random Constant
+gp.fs.0.func.2 = ec.app.kernel_gp.ERCcoef
+gp.fs.0.func.2.nc = nc_erccoef
+
+# ERC - Ephemeral Random Constant
+gp.fs.0.func.3 = ec.app.kernel_gp.ERCdegree
+gp.fs.0.func.3.nc = nc_ercdegree
+
+# ERC - Ephemeral Random Constant
+gp.fs.0.func.4 = ec.app.kernel_gp.ERCa
+gp.fs.0.func.4.nc = nc_erca
 
 ###Functions producing kernel from other kernel(s)
 #Addition function used to combine two kernels into one (k+k)
-gp.fs.0.func.2 = ec.app.kernel_gp.Add
-gp.fs.0.func.2.nc = nc_k-combination2
+gp.fs.0.func.5 = ec.app.kernel_gp.Add
+gp.fs.0.func.5.nc = nc_k-combination2
 
 #Multiplication function used to combine two kernels into one (k*k)
-gp.fs.0.func.3 = ec.app.kernel_gp.Mul
-gp.fs.0.func.3.nc = nc_k-combination2
+gp.fs.0.func.6 = ec.app.kernel_gp.Mul
+gp.fs.0.func.6.nc = nc_k-combination2
 
 #Expotential (e^k)
-gp.fs.0.func.4 = ec.app.kernel_gp.Exp
-gp.fs.0.func.4.nc = nc_k-combination1
+gp.fs.0.func.7 = ec.app.kernel_gp.Exp
+gp.fs.0.func.7.nc = nc_k-combination1
 
 #Multiplication of kernel by double (a*k)
-gp.fs.0.func.5 = ec.app.kernel_gp.aMul
-gp.fs.0.func.5.nc = nc_k-combination-c
+gp.fs.0.func.8 = ec.app.kernel_gp.aMul
+gp.fs.0.func.8.nc = nc_k-combination-c
 
-n
 ###Standard Kernels
 #Polynomial - standard kernel function  
-gp.fs.0.func.6 = ec.app.kernel_gp.Poly
-gp.fs.0.func.6.nc = nc_kernel_3
+gp.fs.0.func.9 = ec.app.kernel_gp.Poly
+gp.fs.0.func.9.nc = nc_kernel_3
 
 #RBF - standard kernel function 
-gp.fs.0.func.7 = ec.app.kernel_gp.RBF
-gp.fs.0.func.7.nc = nc_kernel_1
+gp.fs.0.func.10 = ec.app.kernel_gp.RBF
+gp.fs.0.func.10.nc = nc_kernel_1
 
 #Sigmoid - standard kernel function
-gp.fs.0.func.8 = ec.app.kernel_gp.Sigmoid
-gp.fs.0.func.8.nc = nc_kernel_2
+gp.fs.0.func.11 = ec.app.kernel_gp.Sigmoid
+gp.fs.0.func.11.nc = nc_kernel_2
 
 #Linear - standard kernel function
-gp.fs.0.func.9 = ec.app.kernel_gp.Linear
-gp.fs.0.func.9.nc = nc_kernel_0
+gp.fs.0.func.12 = ec.app.kernel_gp.Linear
+gp.fs.0.func.12.nc = nc_kernel_0
 
-
-
-#######################
-
-# gp.fs.0.func.6 = ec.app.kernel_gp.ERC_Poly_gamma
-# gp.fs.0.func.6.nc = nc_ercparam
-
-# gp.fs.0.func.7 = ec.app.kernel_gp.ERC_Poly_coef
-# gp.fs.0.func.7.nc = nc_ercparam
-
-# gp.fs.0.func.8 = ec.app.kernel_gp.ERC_Poly_degree
-# gp.fs.0.func.8.nc = nc_ercparam
-
-# gp.fs.0.func.9 = ec.app.kernel_gp.ERC_RBF_gamma
-# gp.fs.0.func.9.nc = nc_ercparam
 

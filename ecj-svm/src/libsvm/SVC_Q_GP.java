@@ -55,7 +55,7 @@ public class SVC_Q_GP extends SVC_Q {
 	
 	double kernel_function(int i, int j)
 	{
-		return SVC_Q_GP.k_function(x[i], x[j], new svm_parameter());
+		return SVC_Q_GP.k_function(x[i], x[j], null);
 	}
 
 	static double k_function(svm_node[] x, svm_node[] y,

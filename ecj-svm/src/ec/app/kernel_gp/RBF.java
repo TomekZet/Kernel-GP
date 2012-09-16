@@ -24,9 +24,8 @@ public class RBF extends GPNode {
         svm_node[] x = data.X;
 		svm_node[] y = data.Y;		   
 		
-		ERCData erc = new ERCData();
-		children[1].eval(state,thread,erc,stack,individual,problem);
-		double gamma = erc.gamma;
+		children[1].eval(state,thread,data,stack,individual,problem);
+		double gamma = data.val;
 						
 		data.val =	Math.exp(-gamma*(libsvm.SVC_Q_GP.dot(x,x) + libsvm.SVC_Q_GP.dot(y,y) -2*libsvm.SVC_Q_GP.dot(x,y)));
 
