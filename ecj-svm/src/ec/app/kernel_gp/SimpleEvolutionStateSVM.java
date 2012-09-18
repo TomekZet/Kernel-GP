@@ -20,6 +20,7 @@ import ec.Individual;
 import ec.gp.GPIndividual;
 import ec.gp.koza.KozaStatistics;
 import ec.simple.SimpleEvolutionState;
+import ec.util.Parameter;
 
 /**
  * @author tomek
@@ -61,8 +62,11 @@ public class SimpleEvolutionStateSVM extends SimpleEvolutionState {
     	Individual bestSoFar = (st.getBestSoFar())[0];
     	SVC_Q_GP.ind = bestSoFar;
 
-    	String trainFilepath = 		"data/data.tr";
-    	String validationFilepath = "data/data.val";
+	    Parameter train_path = new Parameter("train-file");
+	    Parameter validation_path = new Parameter("validation-file");
+	      
+	    String trainFilepath = this.parameters.getString(train_path, null);
+	    String validationFilepath = this.parameters.getString(validation_path, null);
 
     	String resultFilepath = "";
 		Kernel_GP_problem.read_problem(trainFilepath );

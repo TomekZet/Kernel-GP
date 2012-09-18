@@ -36,10 +36,11 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
   public GPData input;
   static public svm_parameter svm_params = new svm_parameter();	
   static public svm_problem svm_probl;		// set by read_problem
-  private String train_file_name = "data/data.tr";
-  private String test_file_name = "data/data.t";
-  private int nr_fold = 8;
-  boolean cv = false;
+  private String train_file_name;
+  private String test_file_name;
+  
+  private int nr_fold;
+  boolean cv;
 
   public Object clone()
       {
@@ -54,6 +55,17 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	      // very important, remember this
 	      super.setup(state,base);
 	
+	      
+	      Parameter train_path_param = new Parameter("train-file");
+	      Parameter test_path_param = new Parameter("test-file");
+	      Parameter cv_param = new Parameter("cross-validation");
+	      Parameter nr_fold_param = new Parameter("cv-folds");
+	      
+	      train_file_name = state.parameters.getString(train_path_param, null);
+	      test_file_name = state.parameters.getString(test_path_param, null);
+	      cv = state.parameters.getBoolean(cv_param, null, false);
+	      nr_fold = state.parameters.getInt(nr_fold_param, null, 4);
+
 	      //set_svm_params();
 	      try {
 	    	  read_problem(train_file_name);

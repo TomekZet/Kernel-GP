@@ -9,6 +9,15 @@ pop.subpop.0.species.fitness = ec.gp.koza.KozaFitness
 eval.problem = ec.app.kernel_gp.Kernel_GP_problem
 eval.problem.data = ec.app.kernel_gp.SVMData
 
+breedthreads = auto
+evalthreads = auto
+
+train-file = data/iris.scale.tr
+test-file = data/iris.scale.t
+validation-file = data/iris.scale.v
+cross-validation = true
+cv-folds = 10
+
 state = ec.app.kernel_gp.SimpleEvolutionStateSVM
 
 stat = ec.gp.koza.KozaStatistics
