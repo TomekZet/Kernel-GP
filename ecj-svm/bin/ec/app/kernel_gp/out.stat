@@ -1,0 +1,182 @@
+
+
+
+Generation 0
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 11.86
+Nodes/tree: [11.86]
+Avg Depth: 4.03
+Depth/tree: [4.03]
+Mean fitness raw: 2.914188 adjusted: 0.25548038 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=2.9141915 Adjusted=0.25548062 Hits=0
+Tree 0:
+ (+ (* (Linear x) (a * (RBF x gamma=0.108609)
+     a=0.969258)) (RBF x gamma=0.100148))
+
+
+
+Generation 1
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 3.41
+Nodes/tree: [3.41]
+Avg Depth: 2.04
+Depth/tree: [2.04]
+Mean fitness raw: 2.914188 adjusted: 0.25548038 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=2.9141915 Adjusted=0.25548062 Hits=0
+Tree 0:
+ (Sigmoid x gamma=0.116409 coef0=0.161944)
+
+
+
+Generation 2
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 2.81
+Nodes/tree: [2.81]
+Avg Depth: 2.01
+Depth/tree: [2.01]
+Mean fitness raw: 2.914188 adjusted: 0.25548038 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=2.9141915 Adjusted=0.25548062 Hits=0
+Tree 0:
+ (RBF x gamma=0.199504)
+
+
+
+Generation 3
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 2.35
+Nodes/tree: [2.35]
+Avg Depth: 2.0
+Depth/tree: [2.0]
+Mean fitness raw: 2.914188 adjusted: 0.25548038 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=2.9141915 Adjusted=0.25548062 Hits=0
+Tree 0:
+ (RBF x gamma=0.262801)
+
+
+
+Generation 4
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 2.02
+Nodes/tree: [2.02]
+Avg Depth: 2.0
+Depth/tree: [2.0]
+Mean fitness raw: 2.914188 adjusted: 0.25548038 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=2.9141915 Adjusted=0.25548062 Hits=0
+Tree 0:
+ (Linear x)
+
+
+
+Generation 5
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 2.0
+Nodes/tree: [2.0]
+Avg Depth: 2.0
+Depth/tree: [2.0]
+Mean fitness raw: 2.914188 adjusted: 0.25548038 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=2.9141915 Adjusted=0.25548062 Hits=0
+Tree 0:
+ (Linear x)
+
+
+
+Generation 6
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 2.0
+Nodes/tree: [2.0]
+Avg Depth: 2.0
+Depth/tree: [2.0]
+Mean fitness raw: 2.914188 adjusted: 0.25548038 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=2.9141915 Adjusted=0.25548062 Hits=0
+Tree 0:
+ (Linear x)
+
+
+
+Generation 7
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 2.0
+Nodes/tree: [2.0]
+Avg Depth: 2.0
+Depth/tree: [2.0]
+Mean fitness raw: 2.914188 adjusted: 0.25548038 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=2.9141915 Adjusted=0.25548062 Hits=0
+Tree 0:
+ (Linear x)
+
+
+
+Final Statistics
+================
+Total Individuals Evaluated: 800
+
+Best Individual of Run:
+Evaluated: true
+Fitness: Standardized=2.9141915 Adjusted=0.25548062 Hits=0
+Tree 0:
+ (+ (* (Linear x) (a * (RBF x gamma=0.108609)
+     a=0.969258)) (RBF x gamma=0.100148))
+
+
+
+Timings
+=======
+Initialization: 0.157 secs total, 1186 nodes, 7554.1396 nodes/sec
+Evaluating: 2966.534 secs total, 2845 nodes, 0.9590317 nodes/sec
+Breeding: 0.035 secs total, 1659 nodes, 47400.0 nodes/sec
+
+
+
+Memory Usage
+==============
+Initialization: 1619.7656 KB total, 1186 nodes, 0.7322047 nodes/KB
+Evaluating: 16038.68 KB total, 2845 nodes, 0.17738368 nodes/KB
+Breeding: 159.54688 KB total, 1659 nodes, 10.398198 nodes/KB

@@ -36,8 +36,8 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
   public GPData input;
   static public svm_parameter svm_params = new svm_parameter();	
   static public svm_problem svm_probl;		// set by read_problem
-  private String train_file_name = "data/dna.scale.tr";
-  private String test_file_name = "data/dna.scale.t";
+  private String train_file_name = "data/data.tr";
+  private String test_file_name = "data/data.t";
   private int nr_fold = 8;
   boolean cv = false;
 
