@@ -9,8 +9,8 @@ pop.subpop.0.species.fitness = ec.gp.koza.KozaFitness
 eval.problem = ec.app.kernel_gp.Kernel_GP_problem
 eval.problem.data = ec.app.kernel_gp.SVMData
 
-breedthreads = auto
-evalthreads = auto
+breedthreads = 1
+evalthreads = 1
 
 train-file = data/iris.scale.tr
 test-file = data/iris.scale.t

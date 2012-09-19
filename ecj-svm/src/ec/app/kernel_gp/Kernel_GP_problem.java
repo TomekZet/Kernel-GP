@@ -38,7 +38,6 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
   static public svm_problem svm_probl;		// set by read_problem
   private String train_file_name;
   private String test_file_name;
-  
   private int nr_fold;
   boolean cv;
 
@@ -66,14 +65,17 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	      cv = state.parameters.getBoolean(cv_param, null, false);
 	      nr_fold = state.parameters.getInt(nr_fold_param, null, 4);
 
-	      //set_svm_params();
-	      try {
-	    	  read_problem(train_file_name);
-	      }
-	      catch (Exception e) {
-	    	  System.err.println(e);
-	      }
+	      set_svm_params();
+	      if (svm_probl == null)
+	      {
+	    	  try {
 	      
+		    	  read_problem(train_file_name);
+		      }
+		      catch (Exception e) {
+		    	  System.err.println(e);
+		      }
+	      }
 	      // set up our input -- don't want to use the default base, it's unsafe here
 	      input = (GPData) state.parameters.getInstanceForParameterEq(
 	          base.push(P_DATA), null, GPData.class);

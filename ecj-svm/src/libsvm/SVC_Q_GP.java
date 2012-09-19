@@ -64,6 +64,8 @@ public class SVC_Q_GP extends SVC_Q {
 		//We have to assign 
 		problem.currentX = x;
 		problem.currentY = y;
+		//((SVMData)input).X = x;
+		//((SVMData)input).Y = y;
 		
 		((GPIndividual)ind).trees[0].child.eval(state,threadnum,input,stack,((GPIndividual)ind),problem);
 		SVMData data = (SVMData)input;
