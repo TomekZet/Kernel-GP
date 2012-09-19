@@ -17,6 +17,7 @@ import java.util.Vector;
 import libsvm.SVC_Q_GP;
 import libsvm.Svm_GP;
 import libsvm.svm;
+import libsvm.svm_gp_problem;
 import libsvm.svm_model;
 import libsvm.svm_node;
 import libsvm.svm_parameter;
@@ -32,8 +33,8 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 {
   public GPData input;
   static public svm_parameter svm_params = new svm_parameter();	
-  static public svm_problem svm_probl_train;		// set by read_problem
-  static public svm_problem svm_probl_test;
+  public svm_gp_problem svm_probl_train;		// set by read_problem
+  public svm_gp_problem svm_probl_test;
   private String train_file_name;
   private String test_file_name;
   private int nr_fold;
@@ -84,31 +85,34 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
       final int subpopulation,
       final int threadnum)
       {
-      
-	  	  System.out.print("\n");
-	  	  ((GPIndividual)ind).trees[0].printTreeForHumans(state, 0);
-	  	  System.out.flush();
-	  	  KozaFitness f = ((KozaFitness)ind.fitness);
+       	  KozaFitness f = ((KozaFitness)ind.fitness);
 	  	  long start = System.nanoTime();
+	  	  double accuracy =  0.0;
 	      
 	  	  if (!ind.evaluated)  // don't bother reevaluating
           {
 	  		  double[] target = new double[svm_probl_train.l];
-		      double accuracy =  0.0;
 		      int i;
 		      double correct = 0;
 	  		  
-	  		  SVC_Q_GP.state = state; 
-	  		  SVC_Q_GP.ind = ((GPIndividual)ind);
-	  		  SVC_Q_GP.subpopulation = subpopulation;
-	  		  SVC_Q_GP.threadnum = threadnum;
-	  		  SVC_Q_GP.problem = this;
-	  		  SVC_Q_GP.input = input;
-	  		  SVC_Q_GP.stack = stack;
+		      svm_probl_train.ind = ((GPIndividual)ind);
+//		      svm_probl_train.subpopulation = subpopulation;
+//		      svm_probl_train.state = state;
+//		      svm_probl_train.threadnum = threadnum;
+//		      svm_probl_train.problem = this;
+//		      svm_probl_train.input = input;
+//		      svm_probl_train.stack = stack;
+		      
+		      svm_probl_test.ind = ((GPIndividual)ind);
+//		      svm_probl_test.subpopulation = subpopulation;
+//		      svm_probl_test.threadnum = threadnum;
+//		      svm_probl_test.problem = this;
+//		      svm_probl_test.input = input;
+//		      svm_probl_test.stack = stack;
 	  		  
 	  		 if(cv)
 	  		 {
-  			 	 Svm_GP.svm_cross_validation(svm_probl_train, svm_params, nr_fold, target);
+	  			svm.svm_cross_validation(svm_probl_train, svm_params, nr_fold, target);
 		
 		         for(i=0;i<svm_probl_train.l;i++){
 		        	  if(target[i] == svm_probl_train.y[i])
@@ -116,25 +120,28 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 		         }
 		         accuracy = (correct/svm_probl_train.l);
 	  		  }
-
 	  		 else
 	  		  {
-	  			svm_model model = Svm_GP.svm_train(svm_probl_train, svm_params);
+	  			svm_model model = svm.svm_train(svm_probl_train, svm_params);
   				accuracy = libsvm.Svm_predict_gp.predict_problem(svm_probl_test, model);
 	  		  }
-	          f.setStandardizedFitness(state,(float)((1-accuracy)/(accuracy+0.00000000000000000001)));	          
+	          
+	  		  f.setStandardizedFitness(state,(float)((1-accuracy)/(accuracy+0.00000000000000000001)));	          
 	          ind.evaluated = true;
-	          if(cv)
-	        	  System.out.print("CV Accuracy = "+100.0*accuracy+"%\n");
-	          else
-	        	  System.out.print("Test Accuracy = "+100.0*accuracy+"%\n");
-	        	  
           }
 	  	  long time = System.nanoTime()-start;
 	  	  double time_seconds = (double)time/1000000000;
-	  	  System.out.printf("Time elapsed: %f\n", time_seconds);
-	  	  System.out.print("Standardized Fitness = " + f.standardizedFitness() +"\n");
-	      System.out.print("Adjusted Fitness = " + f.fitness()+"\n\n");
+	  	  System.out.print("\n");
+	  	  ((GPIndividual)ind).trees[0].printTreeForHumans(state, 0);
+          String message = "";
+	  	  if(cv)
+        	  message +="CV Accuracy = "+100.0*accuracy+"%\n";
+          else
+        	  message +="Test Accuracy = "+100.0*accuracy+"%\n";
+	  	  message += "Time elapsed: "+Double.toString(time_seconds)+"\n";
+	  	  message += "Standardized Fitness = " + f.standardizedFitness() +"\n";
+	      message += "Adjusted Fitness = " + f.fitness()+"\n\n";
+	  	  System.out.print(message);
       }
   
   
@@ -176,7 +183,7 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	}
   
   
-	public static svm_problem read_problem(String file_name) throws IOException
+	public static svm_gp_problem read_problem(String file_name) throws IOException
 	{
 		System.out.printf("Loaded file \"%s\"\n", file_name);
 		BufferedReader fp = new BufferedReader(new FileReader(file_name));
@@ -204,7 +211,7 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 			vx.addElement(x);
 		}
 
-		svm_problem svm_probl = new svm_problem();
+		svm_gp_problem svm_probl = new svm_gp_problem();
 		svm_probl.l = vy.size();
 		svm_probl.x = new svm_node[svm_probl.l][];
 		for(int i=0;i<svm_probl.l;i++)

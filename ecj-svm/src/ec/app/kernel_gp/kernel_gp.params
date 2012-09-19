@@ -12,11 +12,15 @@ eval.problem.data = ec.app.kernel_gp.SVMData
 breedthreads = auto
 evalthreads = auto
 
+
 train-file = data/dna.scale.tr
 test-file = data/dna.scale.t
 validation-file = dna/iris.scale.v
 cross-validation = false
 cv-folds = 10
+generations = 5
+pop.subpop.0.size = 100
+
 
 state = ec.app.kernel_gp.SimpleEvolutionStateSVM
 
@@ -25,15 +29,13 @@ stat = ec.gp.koza.KozaStatistics
 stat.child.0.gather-full = true
 stat.file =	out.stat
 
-generations = 10
 quit-on-run-complete = true
-
-pop.subpop.0.size = 50
+init = ec.gp.GPInitializer
+pop.subpop.0.duplicate-retries = 20
 
 gp.tc.0.init = ec.gp.koza.FullBuilder
 gp.tc.0.init.min-depth = 2
 gp.tc.0.init.max-depth = 4
-
 
 gp.koza.xover.maxdepth = 3
 gp.koza.mutate.maxdepth = 3
@@ -43,10 +45,10 @@ gp.koza.grow.max-depth = 4
 pop.subpop.0.species.pipe = ec.breed.MultiBreedingPipeline
 pop.subpop.0.species.pipe.num-sources = 2
 	pop.subpop.0.species.pipe.source.0 = ec.gp.breed.MutateERCPipeline
-	pop.subpop.0.species.pipe.source.0.prob = 0.9 
+	pop.subpop.0.species.pipe.source.0.prob = 0.8
 	pop.subpop.0.species.pipe.source.0.num-sources = 1
 	pop.subpop.0.species.pipe.source.1 = ec.breed.ReproductionPipeline
-	pop.subpop.0.species.pipe.source.1.prob = 0.1
+	pop.subpop.0.species.pipe.source.1.prob = 0.2
 		pop.subpop.0.species.pipe.source.0.source.0 = ec.breed.MultiBreedingPipeline
 		pop.subpop.0.species.pipe.source.0.source.0.num-sources = 2 
 		pop.subpop.0.species.pipe.source.0.source.0.source.0 = ec.gp.koza.CrossoverPipeline

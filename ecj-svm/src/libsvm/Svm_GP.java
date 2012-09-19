@@ -26,7 +26,7 @@ public class Svm_GP extends svm {
 	public static ADFStack stack;
 	
 
-	private static void solve_c_svc(svm_problem prob, svm_parameter param,
+	private static void solve_c_svc(svm_gp_problem prob, svm_parameter param,
 			double[] alpha, Solver.SolutionInfo si,
 			double Cp, double Cn)
 	{

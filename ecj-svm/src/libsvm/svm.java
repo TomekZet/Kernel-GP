@@ -230,69 +230,7 @@ abstract class Kernel extends QMatrix {
 		return sum;
 	}
 
-	static double k_function(svm_node[] x, svm_node[] y,
-					svm_parameter param)
-	{
-		try {
-			throw new Exception("Wrong Kernel function used!");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		switch(param.kernel_type)
-		{
-			case svm_parameter.LINEAR:
-				return dot(x,y);
-			case svm_parameter.POLY:
-				return powi(param.gamma*dot(x,y)+param.coef0,param.degree);
-			case svm_parameter.RBF:
-			{
-				double sum = 0;
-				int xlen = x.length;
-				int ylen = y.length;
-				int i = 0;
-				int j = 0;
-				while(i < xlen && j < ylen)
-				{
-					if(x[i].index == y[j].index)
-					{
-						double d = x[i++].value - y[j++].value;
-						sum += d*d;
-					}
-					else if(x[i].index > y[j].index)
-					{
-						sum += y[j].value * y[j].value;
-						++j;
-					}
-					else
-					{
-						sum += x[i].value * x[i].value;
-						++i;
-					}
-				}
-
-				while(i < xlen)
-				{
-					sum += x[i].value * x[i].value;
-					++i;
-				}
-
-				while(j < ylen)
-				{
-					sum += y[j].value * y[j].value;
-					++j;
-				}
-
-				return Math.exp(-param.gamma*sum);
-			}
-			case svm_parameter.SIGMOID:
-				return Math.tanh(param.gamma*dot(x,y)+param.coef0);
-			case svm_parameter.PRECOMPUTED:
-				return	x[(int)(y[0].value)].value;
-			default:
-				return 0;	// java
-		}
-	}
+	
 }
 
 // An SMO algorithm in Fan et al., JMLR 6(2005), p. 1889--1918
@@ -1325,7 +1263,7 @@ public class svm {
 		//svm_print_string.print(s);
 	}
 
-	private static void solve_c_svc(svm_problem prob, svm_parameter param,
+	private static void solve_c_svc(svm_gp_problem prob, svm_parameter param,
 					double[] alpha, Solver.SolutionInfo si,
 					double Cp, double Cn)
 	{
@@ -1512,7 +1450,7 @@ public class svm {
 	};
 
 	static decision_function svm_train_one(
-		svm_problem prob, svm_parameter param,
+			svm_gp_problem prob, svm_parameter param,
 		double Cp, double Cn)
 	{
 		double[] alpha = new double[prob.l];
@@ -1751,86 +1689,7 @@ public class svm {
 			svm.info("Exceeds max_iter in multiclass_prob\n");
 	}
 
-	// Cross-validation decision values for probability estimates
-	private static void svm_binary_svc_probability(svm_problem prob, svm_parameter param, double Cp, double Cn, double[] probAB)
-	{
-		int i;
-		int nr_fold = 5;
-		int[] perm = new int[prob.l];
-		double[] dec_values = new double[prob.l];
-
-		// random shuffle
-		for(i=0;i<prob.l;i++) perm[i]=i;
-		for(i=0;i<prob.l;i++)
-		{
-			int j = i+rand.nextInt(prob.l-i);
-			do {int _=perm[i]; perm[i]=perm[j]; perm[j]=_;} while(false);
-		}
-		for(i=0;i<nr_fold;i++)
-		{
-			int begin = i*prob.l/nr_fold;
-			int end = (i+1)*prob.l/nr_fold;
-			int j,k;
-			svm_problem subprob = new svm_problem();
-
-			subprob.l = prob.l-(end-begin);
-			subprob.x = new svm_node[subprob.l][];
-			subprob.y = new double[subprob.l];
-			
-			k=0;
-			for(j=0;j<begin;j++)
-			{
-				subprob.x[k] = prob.x[perm[j]];
-				subprob.y[k] = prob.y[perm[j]];
-				++k;
-			}
-			for(j=end;j<prob.l;j++)
-			{
-				subprob.x[k] = prob.x[perm[j]];
-				subprob.y[k] = prob.y[perm[j]];
-				++k;
-			}
-			int p_count=0,n_count=0;
-			for(j=0;j<k;j++)
-				if(subprob.y[j]>0)
-					p_count++;
-				else
-					n_count++;
-			
-			if(p_count==0 && n_count==0)
-				for(j=begin;j<end;j++)
-					dec_values[perm[j]] = 0;
-			else if(p_count > 0 && n_count == 0)
-				for(j=begin;j<end;j++)
-					dec_values[perm[j]] = 1;
-			else if(p_count == 0 && n_count > 0)
-				for(j=begin;j<end;j++)
-					dec_values[perm[j]] = -1;
-			else
-			{
-				svm_parameter subparam = (svm_parameter)param.clone();
-				subparam.probability=0;
-				subparam.C=1.0;
-				subparam.nr_weight=2;
-				subparam.weight_label = new int[2];
-				subparam.weight = new double[2];
-				subparam.weight_label[0]=+1;
-				subparam.weight_label[1]=-1;
-				subparam.weight[0]=Cp;
-				subparam.weight[1]=Cn;
-				svm_model submodel = svm_train(subprob,subparam);
-				for(j=begin;j<end;j++)
-				{
-					double[] dec_value=new double[1];
-					svm_predict_values(submodel,prob.x[perm[j]],dec_value);
-					dec_values[perm[j]]=dec_value[0];
-					// ensure +1 -1 order; reason not using CV subroutine
-					dec_values[perm[j]] *= submodel.label[0];
-				}		
-			}
-		}		
-		sigmoid_train(prob.l,dec_values,prob.y,probAB);
-	}
+	
 
 	// Return parameter of a Laplace distribution 
 	private static double svm_svr_probability(svm_problem prob, svm_parameter param)
@@ -1927,232 +1786,182 @@ public class svm {
 	//
 	// Interface functions
 	//
-	public static svm_model svm_train(svm_problem prob, svm_parameter param)
+	public static svm_model svm_train(svm_gp_problem prob, svm_parameter param)
 	{
 		svm_model model = new svm_model();
 		model.param = param;
+		// classification
+		int l = prob.l;
+		int[] tmp_nr_class = new int[1];
+		int[][] tmp_label = new int[1][];
+		int[][] tmp_start = new int[1][];
+		int[][] tmp_count = new int[1][];			
+		int[] perm = new int[l];
 
-		if(param.svm_type == svm_parameter.ONE_CLASS ||
-		   param.svm_type == svm_parameter.EPSILON_SVR ||
-		   param.svm_type == svm_parameter.NU_SVR)
+		// group training data of the same class
+		svm_group_classes(prob,tmp_nr_class,tmp_label,tmp_start,tmp_count,perm);
+		int nr_class = tmp_nr_class[0];			
+		int[] label = tmp_label[0];
+		int[] start = tmp_start[0];
+		int[] count = tmp_count[0];
+		
+		if(nr_class == 1) 
+			svm.info("WARNING: training data in only one class. See README for details.\n");
+		
+		svm_node[][] x = new svm_node[l][];
+		int i;
+		for(i=0;i<l;i++)
+			x[i] = prob.x[perm[i]];
+
+		// calculate weighted C
+
+		double[] weighted_C = new double[nr_class];
+		for(i=0;i<nr_class;i++)
+			weighted_C[i] = param.C;
+		for(i=0;i<param.nr_weight;i++)
 		{
-			// regression or one-class-svm
-			model.nr_class = 2;
-			model.label = null;
-			model.nSV = null;
-			model.probA = null; model.probB = null;
-			model.sv_coef = new double[1][];
+			int j;
+			for(j=0;j<nr_class;j++)
+				if(param.weight_label[i] == label[j])
+					break;
+			if(j == nr_class)
+				System.err.print("WARNING: class label "+param.weight_label[i]+" specified in weight is not found\n");
+			else
+				weighted_C[j] *= param.weight[i];
+		}
 
-			if(param.probability == 1 &&
-			   (param.svm_type == svm_parameter.EPSILON_SVR ||
-			    param.svm_type == svm_parameter.NU_SVR))
+		// train k*(k-1)/2 models
+
+		boolean[] nonzero = new boolean[l];
+		for(i=0;i<l;i++)
+			nonzero[i] = false;
+		decision_function[] f = new decision_function[nr_class*(nr_class-1)/2];
+
+		double[] probA=null,probB=null;
+		if (param.probability == 1)
+		{
+			probA=new double[nr_class*(nr_class-1)/2];
+			probB=new double[nr_class*(nr_class-1)/2];
+		}
+
+		int p = 0;
+		for(i=0;i<nr_class;i++)
+			for(int j=i+1;j<nr_class;j++)
 			{
-				model.probA = new double[1];
-				model.probA[0] = svm_svr_probability(prob,param);
+				svm_gp_problem sub_prob = new svm_gp_problem();
+				sub_prob.ind = prob.ind;
+				int si = start[i], sj = start[j];
+				int ci = count[i], cj = count[j];
+				sub_prob.l = ci+cj;
+				sub_prob.x = new svm_node[sub_prob.l][];
+				sub_prob.y = new double[sub_prob.l];
+				int k;
+				for(k=0;k<ci;k++)
+				{
+					sub_prob.x[k] = x[si+k];
+					sub_prob.y[k] = +1;
+				}
+				for(k=0;k<cj;k++)
+				{
+					sub_prob.x[ci+k] = x[sj+k];
+					sub_prob.y[ci+k] = -1;
+				}
+
+				f[p] = svm_train_one(sub_prob,param,weighted_C[i],weighted_C[j]);
+				for(k=0;k<ci;k++)
+					if(!nonzero[si+k] && Math.abs(f[p].alpha[k]) > 0)
+						nonzero[si+k] = true;
+				for(k=0;k<cj;k++)
+					if(!nonzero[sj+k] && Math.abs(f[p].alpha[ci+k]) > 0)
+						nonzero[sj+k] = true;
+				++p;
 			}
 
-			decision_function f = svm_train_one(prob,param,0,0);
-			model.rho = new double[1];
-			model.rho[0] = f.rho;
+		// build output
 
-			int nSV = 0;
-			int i;
-			for(i=0;i<prob.l;i++)
-				if(Math.abs(f.alpha[i]) > 0) ++nSV;
-			model.l = nSV;
-			model.SV = new svm_node[nSV][];
-			model.sv_coef[0] = new double[nSV];
-			int j = 0;
-			for(i=0;i<prob.l;i++)
-				if(Math.abs(f.alpha[i]) > 0)
-				{
-					model.SV[j] = prob.x[i];
-					model.sv_coef[0][j] = f.alpha[i];
-					++j;
-				}
+		model.nr_class = nr_class;
+
+		model.label = new int[nr_class];
+		for(i=0;i<nr_class;i++)
+			model.label[i] = label[i];
+
+		model.rho = new double[nr_class*(nr_class-1)/2];
+		for(i=0;i<nr_class*(nr_class-1)/2;i++)
+			model.rho[i] = f[i].rho;
+
+		if(param.probability == 1)
+		{
+			model.probA = new double[nr_class*(nr_class-1)/2];
+			model.probB = new double[nr_class*(nr_class-1)/2];
+			for(i=0;i<nr_class*(nr_class-1)/2;i++)
+			{
+				model.probA[i] = probA[i];
+				model.probB[i] = probB[i];
+			}
 		}
 		else
 		{
-			// classification
-			int l = prob.l;
-			int[] tmp_nr_class = new int[1];
-			int[][] tmp_label = new int[1][];
-			int[][] tmp_start = new int[1][];
-			int[][] tmp_count = new int[1][];			
-			int[] perm = new int[l];
-
-			// group training data of the same class
-			svm_group_classes(prob,tmp_nr_class,tmp_label,tmp_start,tmp_count,perm);
-			int nr_class = tmp_nr_class[0];			
-			int[] label = tmp_label[0];
-			int[] start = tmp_start[0];
-			int[] count = tmp_count[0];
- 			
-			if(nr_class == 1) 
-				svm.info("WARNING: training data in only one class. See README for details.\n");
-			
-			svm_node[][] x = new svm_node[l][];
-			int i;
-			for(i=0;i<l;i++)
-				x[i] = prob.x[perm[i]];
-
-			// calculate weighted C
-
-			double[] weighted_C = new double[nr_class];
-			for(i=0;i<nr_class;i++)
-				weighted_C[i] = param.C;
-			for(i=0;i<param.nr_weight;i++)
-			{
-				int j;
-				for(j=0;j<nr_class;j++)
-					if(param.weight_label[i] == label[j])
-						break;
-				if(j == nr_class)
-					System.err.print("WARNING: class label "+param.weight_label[i]+" specified in weight is not found\n");
-				else
-					weighted_C[j] *= param.weight[i];
-			}
-
-			// train k*(k-1)/2 models
-
-			boolean[] nonzero = new boolean[l];
-			for(i=0;i<l;i++)
-				nonzero[i] = false;
-			decision_function[] f = new decision_function[nr_class*(nr_class-1)/2];
-
-			double[] probA=null,probB=null;
-			if (param.probability == 1)
-			{
-				probA=new double[nr_class*(nr_class-1)/2];
-				probB=new double[nr_class*(nr_class-1)/2];
-			}
-
-			int p = 0;
-			for(i=0;i<nr_class;i++)
-				for(int j=i+1;j<nr_class;j++)
-				{
-					svm_problem sub_prob = new svm_problem();
-					int si = start[i], sj = start[j];
-					int ci = count[i], cj = count[j];
-					sub_prob.l = ci+cj;
-					sub_prob.x = new svm_node[sub_prob.l][];
-					sub_prob.y = new double[sub_prob.l];
-					int k;
-					for(k=0;k<ci;k++)
-					{
-						sub_prob.x[k] = x[si+k];
-						sub_prob.y[k] = +1;
-					}
-					for(k=0;k<cj;k++)
-					{
-						sub_prob.x[ci+k] = x[sj+k];
-						sub_prob.y[ci+k] = -1;
-					}
-
-					if(param.probability == 1)
-					{
-						double[] probAB=new double[2];
-						svm_binary_svc_probability(sub_prob,param,weighted_C[i],weighted_C[j],probAB);
-						probA[p]=probAB[0];
-						probB[p]=probAB[1];
-					}
-
-					f[p] = svm_train_one(sub_prob,param,weighted_C[i],weighted_C[j]);
-					for(k=0;k<ci;k++)
-						if(!nonzero[si+k] && Math.abs(f[p].alpha[k]) > 0)
-							nonzero[si+k] = true;
-					for(k=0;k<cj;k++)
-						if(!nonzero[sj+k] && Math.abs(f[p].alpha[ci+k]) > 0)
-							nonzero[sj+k] = true;
-					++p;
-				}
-
-			// build output
-
-			model.nr_class = nr_class;
-
-			model.label = new int[nr_class];
-			for(i=0;i<nr_class;i++)
-				model.label[i] = label[i];
-
-			model.rho = new double[nr_class*(nr_class-1)/2];
-			for(i=0;i<nr_class*(nr_class-1)/2;i++)
-				model.rho[i] = f[i].rho;
-
-			if(param.probability == 1)
-			{
-				model.probA = new double[nr_class*(nr_class-1)/2];
-				model.probB = new double[nr_class*(nr_class-1)/2];
-				for(i=0;i<nr_class*(nr_class-1)/2;i++)
-				{
-					model.probA[i] = probA[i];
-					model.probB[i] = probB[i];
-				}
-			}
-			else
-			{
-				model.probA=null;
-				model.probB=null;
-			}
-
-			int nnz = 0;
-			int[] nz_count = new int[nr_class];
-			model.nSV = new int[nr_class];
-			for(i=0;i<nr_class;i++)
-			{
-				int nSV = 0;
-				for(int j=0;j<count[i];j++)
-					if(nonzero[start[i]+j])
-					{
-						++nSV;
-						++nnz;
-					}
-				model.nSV[i] = nSV;
-				nz_count[i] = nSV;
-			}
-
-			svm.info("Total nSV = "+nnz+"\n");
-
-			model.l = nnz;
-			model.SV = new svm_node[nnz][];
-			p = 0;
-			for(i=0;i<l;i++)
-				if(nonzero[i]) model.SV[p++] = x[i];
-
-			int[] nz_start = new int[nr_class];
-			nz_start[0] = 0;
-			for(i=1;i<nr_class;i++)
-				nz_start[i] = nz_start[i-1]+nz_count[i-1];
-
-			model.sv_coef = new double[nr_class-1][];
-			for(i=0;i<nr_class-1;i++)
-				model.sv_coef[i] = new double[nnz];
-
-			p = 0;
-			for(i=0;i<nr_class;i++)
-				for(int j=i+1;j<nr_class;j++)
-				{
-					// classifier (i,j): coefficients with
-					// i are in sv_coef[j-1][nz_start[i]...],
-					// j are in sv_coef[i][nz_start[j]...]
-
-					int si = start[i];
-					int sj = start[j];
-					int ci = count[i];
-					int cj = count[j];
-
-					int q = nz_start[i];
-					int k;
-					for(k=0;k<ci;k++)
-						if(nonzero[si+k])
-							model.sv_coef[j-1][q++] = f[p].alpha[k];
-					q = nz_start[j];
-					for(k=0;k<cj;k++)
-						if(nonzero[sj+k])
-							model.sv_coef[i][q++] = f[p].alpha[ci+k];
-					++p;
-				}
+			model.probA=null;
+			model.probB=null;
 		}
+
+		int nnz = 0;
+		int[] nz_count = new int[nr_class];
+		model.nSV = new int[nr_class];
+		for(i=0;i<nr_class;i++)
+		{
+			int nSV = 0;
+			for(int j=0;j<count[i];j++)
+				if(nonzero[start[i]+j])
+				{
+					++nSV;
+					++nnz;
+				}
+			model.nSV[i] = nSV;
+			nz_count[i] = nSV;
+		}
+
+		svm.info("Total nSV = "+nnz+"\n");
+
+		model.l = nnz;
+		model.SV = new svm_node[nnz][];
+		p = 0;
+		for(i=0;i<l;i++)
+			if(nonzero[i]) model.SV[p++] = x[i];
+
+		int[] nz_start = new int[nr_class];
+		nz_start[0] = 0;
+		for(i=1;i<nr_class;i++)
+			nz_start[i] = nz_start[i-1]+nz_count[i-1];
+
+		model.sv_coef = new double[nr_class-1][];
+		for(i=0;i<nr_class-1;i++)
+			model.sv_coef[i] = new double[nnz];
+
+		p = 0;
+		for(i=0;i<nr_class;i++)
+			for(int j=i+1;j<nr_class;j++)
+			{
+				// classifier (i,j): coefficients with
+				// i are in sv_coef[j-1][nz_start[i]...],
+				// j are in sv_coef[i][nz_start[j]...]
+
+				int si = start[i];
+				int sj = start[j];
+				int ci = count[i];
+				int cj = count[j];
+
+				int q = nz_start[i];
+				int k;
+				for(k=0;k<ci;k++)
+					if(nonzero[si+k])
+						model.sv_coef[j-1][q++] = f[p].alpha[k];
+				q = nz_start[j];
+				for(k=0;k<cj;k++)
+					if(nonzero[sj+k])
+						model.sv_coef[i][q++] = f[p].alpha[ci+k];
+				++p;
+			}
 		return model;
 	}
 	
@@ -2233,7 +2042,7 @@ public class svm {
 			int begin = fold_start[i];
 			int end = fold_start[i+1];
 			int j,k;
-			svm_problem subprob = new svm_problem();
+			svm_gp_problem subprob = new svm_gp_problem();
 
 			subprob.l = l-(end-begin);
 			subprob.x = new svm_node[subprob.l][];
@@ -2253,17 +2062,8 @@ public class svm {
 				++k;
 			}
 			svm_model submodel = svm_train(subprob,param);
-			if(param.probability==1 &&
-			   (param.svm_type == svm_parameter.C_SVC ||
-			    param.svm_type == svm_parameter.NU_SVC))
-			{
-				double[] prob_estimates= new double[svm_get_nr_class(submodel)];
-				for(j=begin;j<end;j++)
-					target[perm[j]] = svm_predict_probability(submodel,prob.x[perm[j]],prob_estimates);
-			}
-			else
-				for(j=begin;j<end;j++)
-					target[perm[j]] = Svm_predict_gp.svm_predict(submodel,prob.x[perm[j]]);
+			for(j=begin;j<end;j++)
+				target[perm[j]] = Svm_predict_gp.svm_predict(submodel,prob.x[perm[j]], prob);
 		}
 	}
 
@@ -2296,125 +2096,9 @@ public class svm {
 		}
 	}
 
-	public static double svm_predict_values(svm_model model, svm_node[] x, double[] dec_values)
-	{
-		int i;
-		if(model.param.svm_type == svm_parameter.ONE_CLASS ||
-		   model.param.svm_type == svm_parameter.EPSILON_SVR ||
-		   model.param.svm_type == svm_parameter.NU_SVR)
-		{
-			double[] sv_coef = model.sv_coef[0];
-			double sum = 0;
-			for(i=0;i<model.l;i++)
-				sum += sv_coef[i] * Kernel.k_function(x,model.SV[i],model.param);
-			sum -= model.rho[0];
-			dec_values[0] = sum;
 
-			if(model.param.svm_type == svm_parameter.ONE_CLASS)
-				return (sum>0)?1:-1;
-			else
-				return sum;
-		}
-		else
-		{
-			int nr_class = model.nr_class;
-			int l = model.l;
-		
-			double[] kvalue = new double[l];
-			for(i=0;i<l;i++)
-				kvalue[i] = Kernel.k_function(x,model.SV[i],model.param);
 
-			int[] start = new int[nr_class];
-			start[0] = 0;
-			for(i=1;i<nr_class;i++)
-				start[i] = start[i-1]+model.nSV[i-1];
 
-			int[] vote = new int[nr_class];
-			for(i=0;i<nr_class;i++)
-				vote[i] = 0;
-
-			int p=0;
-			for(i=0;i<nr_class;i++)
-				for(int j=i+1;j<nr_class;j++)
-				{
-					double sum = 0;
-					int si = start[i];
-					int sj = start[j];
-					int ci = model.nSV[i];
-					int cj = model.nSV[j];
-				
-					int k;
-					double[] coef1 = model.sv_coef[j-1];
-					double[] coef2 = model.sv_coef[i];
-					for(k=0;k<ci;k++)
-						sum += coef1[si+k] * kvalue[si+k];
-					for(k=0;k<cj;k++)
-						sum += coef2[sj+k] * kvalue[sj+k];
-					sum -= model.rho[p];
-					dec_values[p] = sum;					
-
-					if(dec_values[p] > 0)
-						++vote[i];
-					else
-						++vote[j];
-					p++;
-				}
-
-			int vote_max_idx = 0;
-			for(i=1;i<nr_class;i++)
-				if(vote[i] > vote[vote_max_idx])
-					vote_max_idx = i;
-
-			return model.label[vote_max_idx];
-		}
-	}
-
-	public static double svm_predict(svm_model model, svm_node[] x)
-	{
-		int nr_class = model.nr_class;
-		double[] dec_values;
-		if(model.param.svm_type == svm_parameter.ONE_CLASS ||
-				model.param.svm_type == svm_parameter.EPSILON_SVR ||
-				model.param.svm_type == svm_parameter.NU_SVR)
-			dec_values = new double[1];
-		else
-			dec_values = new double[nr_class*(nr_class-1)/2];
-		double pred_result = svm_predict_values(model, x, dec_values);
-		return pred_result;
-	}
-
-	public static double svm_predict_probability(svm_model model, svm_node[] x, double[] prob_estimates)
-	{
-		if ((model.param.svm_type == svm_parameter.C_SVC || model.param.svm_type == svm_parameter.NU_SVC) &&
-		    model.probA!=null && model.probB!=null)
-		{
-			int i;
-			int nr_class = model.nr_class;
-			double[] dec_values = new double[nr_class*(nr_class-1)/2];
-			svm_predict_values(model, x, dec_values);
-
-			double min_prob=1e-7;
-			double[][] pairwise_prob=new double[nr_class][nr_class];
-			
-			int k=0;
-			for(i=0;i<nr_class;i++)
-				for(int j=i+1;j<nr_class;j++)
-				{
-					pairwise_prob[i][j]=Math.min(Math.max(sigmoid_predict(dec_values[k],model.probA[k],model.probB[k]),min_prob),1-min_prob);
-					pairwise_prob[j][i]=1-pairwise_prob[i][j];
-					k++;
-				}
-			multiclass_probability(nr_class,pairwise_prob,prob_estimates);
-
-			int prob_max_idx = 0;
-			for(i=1;i<nr_class;i++)
-				if(prob_estimates[i] > prob_estimates[prob_max_idx])
-					prob_max_idx = i;
-			return model.label[prob_max_idx];
-		}
-		else 
-			return svm_predict(model, x);
-	}
 
 	static final String svm_type_table[] =
 	{

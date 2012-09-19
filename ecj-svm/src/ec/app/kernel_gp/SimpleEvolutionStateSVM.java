@@ -13,6 +13,7 @@ import java.io.IOException;
 
 import libsvm.SVC_Q_GP;
 import libsvm.svm;
+import libsvm.svm_gp_problem;
 import libsvm.svm_model;
 import libsvm.svm_parameter;
 import libsvm.svm_problem;
@@ -43,7 +44,7 @@ public class SimpleEvolutionStateSVM extends SimpleEvolutionState {
         //Output.message("Finishing");
         /* finish up -- we completed. */
         statistics.finalStatistics(this,result);
-        try {
+		try {
 			testSolution();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -60,7 +61,6 @@ public class SimpleEvolutionStateSVM extends SimpleEvolutionState {
     	
     	KozaStatistics st = (KozaStatistics)statistics;
     	Individual bestSoFar = (st.getBestSoFar())[0];
-    	SVC_Q_GP.ind = bestSoFar;
 
 	    Parameter train_path = new Parameter("train-file");
 	    Parameter validation_path = new Parameter("validation-file");
@@ -68,25 +68,17 @@ public class SimpleEvolutionStateSVM extends SimpleEvolutionState {
 	    String trainFilepath = this.parameters.getString(train_path, null);
 	    String validationFilepath = this.parameters.getString(validation_path, null);
 
-    	String resultFilepath = "";
-    	Kernel_GP_problem.svm_probl_train = Kernel_GP_problem.read_problem(trainFilepath);
+	    svm_gp_problem svm_probl_train = Kernel_GP_problem.read_problem(trainFilepath);
+	    svm_gp_problem svm_probl_validation = Kernel_GP_problem.read_problem(validationFilepath);
+    	((svm_gp_problem)svm_probl_train).ind = (GPIndividual)bestSoFar;
+    	((svm_gp_problem)svm_probl_validation).ind = (GPIndividual)bestSoFar;
+    	
 		Kernel_GP_problem.set_svm_params();
     	
-    	svm_model model = svm.svm_train(Kernel_GP_problem.svm_probl_train, Kernel_GP_problem.svm_params);
+    	svm_model model = svm.svm_train(svm_probl_train, Kernel_GP_problem.svm_params);
     	DataOutputStream output = new DataOutputStream(System.out);
-		try 
-		{
-			BufferedReader input = new BufferedReader(new FileReader(validationFilepath));
-//			DataOutputStream output = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(resultFilepath)));
-			
-	    	accuracy = libsvm.Svm_predict_gp.predict(input,output,model,0);
-			input.close();
-		} 
-		catch(FileNotFoundException e) 
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		accuracy = libsvm.Svm_predict_gp.predict_problem(svm_probl_validation, model);
+
 		output.writeBytes("\nAccuracy = "+accuracy*100+"\n");
 		output.close();
     	return accuracy;

@@ -14,7 +14,7 @@ public class Svm_predict_gp {
 		return Integer.parseInt(s);
 	}
 
-	public static double predict(BufferedReader input, DataOutputStream output, svm_model model, int predict_probability) throws IOException
+	public static double predict(BufferedReader input, DataOutputStream output, svm_model model, int predict_probability, svm_problem problem) throws IOException
 	{
 		int correct = 0;
 		int total = 0;
@@ -38,7 +38,7 @@ public class Svm_predict_gp {
 			}
 
 			double v;
-			v = svm_predict(model,x);
+			v = svm_predict(model,x, problem);
 			//output.writeBytes(v+"; ");
 
 			if(v == target)
@@ -61,7 +61,7 @@ public class Svm_predict_gp {
 		{
 			double target = problem.y[i];
 			double v;
-			v = svm_predict(model, problem.x[i]);
+			v = svm_predict(model, problem.x[i], problem);
 
 			if(v == target)
 				++correct;
@@ -71,16 +71,16 @@ public class Svm_predict_gp {
 		return accuracy;
 	}
 	
-	public static double svm_predict(svm_model model, svm_node[] x)
+	public static double svm_predict(svm_model model, svm_node[] x, svm_problem problem)
 	{
 		int nr_class = model.nr_class;
 		double[] dec_values;
 		dec_values = new double[nr_class*(nr_class-1)/2];
-		double pred_result = svm_predict_values(model, x, dec_values);
+		double pred_result = svm_predict_values(model, x, dec_values, problem);
 		return pred_result;
 	}
 
-	public static double svm_predict_values(svm_model model, svm_node[] x, double[] dec_values)
+	public static double svm_predict_values(svm_model model, svm_node[] x, double[] dec_values, svm_problem problem)
 	{
 		int i;
 
@@ -89,7 +89,7 @@ public class Svm_predict_gp {
 	
 		double[] kvalue = new double[l];
 		for(i=0;i<l;i++)
-			kvalue[i] = SVC_Q_GP.k_function(x,model.SV[i],model.param);
+			kvalue[i] = SVC_Q_GP.k_function(x,model.SV[i],model.param, problem);
 
 		int[] start = new int[nr_class];
 		start[0] = 0;
