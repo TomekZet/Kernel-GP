@@ -69,18 +69,15 @@ public class SimpleEvolutionStateSVM extends SimpleEvolutionState {
 	    String validationFilepath = this.parameters.getString(validation_path, null);
 
     	String resultFilepath = "";
-		Kernel_GP_problem.read_problem(trainFilepath );
+    	Kernel_GP_problem.svm_probl_train = Kernel_GP_problem.read_problem(trainFilepath);
 		Kernel_GP_problem.set_svm_params();
     	
-    	svm_model model = svm.svm_train(Kernel_GP_problem.svm_probl, Kernel_GP_problem.svm_params);
+    	svm_model model = svm.svm_train(Kernel_GP_problem.svm_probl_train, Kernel_GP_problem.svm_params);
     	DataOutputStream output = new DataOutputStream(System.out);
 		try 
 		{
 			BufferedReader input = new BufferedReader(new FileReader(validationFilepath));
 //			DataOutputStream output = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(resultFilepath)));
-			
-			
-	    	SVC_Q_GP.ind = bestSoFar;
 			
 	    	accuracy = libsvm.Svm_predict_gp.predict(input,output,model,0);
 			input.close();

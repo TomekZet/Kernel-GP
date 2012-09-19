@@ -52,6 +52,25 @@ public class Svm_predict_gp {
 		return accuracy;
 	}
 	
+	public static double predict_problem(svm_problem problem, svm_model model)
+	{
+		int correct = 0;
+		int total = 0;
+
+		for(int i=0;i<problem.x.length; i++)
+		{
+			double target = problem.y[i];
+			double v;
+			v = svm_predict(model, problem.x[i]);
+
+			if(v == target)
+				++correct;
+			++total;
+		}
+		double accuracy = (double)correct/total;
+		return accuracy;
+	}
+	
 	public static double svm_predict(svm_model model, svm_node[] x)
 	{
 		int nr_class = model.nr_class;

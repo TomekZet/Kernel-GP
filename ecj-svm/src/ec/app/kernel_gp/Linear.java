@@ -25,7 +25,6 @@ public class Linear extends GPNode {
 	{
 		SVMData data = (SVMData)input;
 		
-		children[0].eval(state,thread,input,stack,individual,problem);
         svm_node[] x = data.X;
 		svm_node[] y = data.Y;		   
 					

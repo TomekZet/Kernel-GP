@@ -55,17 +55,23 @@ public class SVC_Q_GP extends SVC_Q {
 	
 	double kernel_function(int i, int j)
 	{
-		return SVC_Q_GP.k_function(x[i], x[j], null);
+		((SVMData)input).X = x[i];
+		((SVMData)input).Y = x[j];
+		((SVMData)input).X2 = x_square[i];
+		((SVMData)input).Y2 = x_square[j];
+		((GPIndividual)ind).trees[0].child.eval(state,threadnum,input,stack,((GPIndividual)ind),problem);
+		SVMData data = (SVMData)input;
+		
+        return data.val;
 	}
 
 	static double k_function(svm_node[] x, svm_node[] y,
 			svm_parameter param)
 	{				
-		//We have to assign 
-		problem.currentX = x;
-		problem.currentY = y;
-		//((SVMData)input).X = x;
-		//((SVMData)input).Y = y;
+		((SVMData)input).X = x;
+		((SVMData)input).Y = y;
+		((SVMData)input).X2 = -1.0; //If there is RBF function it will compute squaes on its own
+		((SVMData)input).Y2 = -1.0;
 		
 		((GPIndividual)ind).trees[0].child.eval(state,threadnum,input,stack,((GPIndividual)ind),problem);
 		SVMData data = (SVMData)input;

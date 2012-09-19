@@ -30,12 +30,10 @@ import ec.simple.*;
 
 public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 {
-  public svm_node[] currentX;
-  public svm_node[] currentY;
-  
   public GPData input;
   static public svm_parameter svm_params = new svm_parameter();	
-  static public svm_problem svm_probl;		// set by read_problem
+  static public svm_problem svm_probl_train;		// set by read_problem
+  static public svm_problem svm_probl_test;
   private String train_file_name;
   private String test_file_name;
   private int nr_fold;
@@ -54,7 +52,6 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	      // very important, remember this
 	      super.setup(state,base);
 	
-	      
 	      Parameter train_path_param = new Parameter("train-file");
 	      Parameter test_path_param = new Parameter("test-file");
 	      Parameter cv_param = new Parameter("cross-validation");
@@ -66,19 +63,19 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	      nr_fold = state.parameters.getInt(nr_fold_param, null, 4);
 
 	      set_svm_params();
-	      if (svm_probl == null)
+	      if (svm_probl_train == null)
 	      {
-	    	  try {
-	      
-		    	  read_problem(train_file_name);
+	    	  try {	      
+	    		  svm_probl_train = read_problem(train_file_name);
+	    		  svm_probl_test = read_problem(test_file_name);
 		      }
 		      catch (Exception e) {
 		    	  System.err.println(e);
 		      }
 	      }
 	      // set up our input -- don't want to use the default base, it's unsafe here
-	      input = (GPData) state.parameters.getInstanceForParameterEq(
-	          base.push(P_DATA), null, GPData.class);
+	      input = (SVMData) state.parameters.getInstanceForParameterEq(
+	          base.push(P_DATA), null, SVMData.class);
 	      input.setup(state,base.push(P_DATA));
       }
 
@@ -90,11 +87,13 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
       
 	  	  System.out.print("\n");
 	  	  ((GPIndividual)ind).trees[0].printTreeForHumans(state, 0);
+	  	  System.out.flush();
 	  	  KozaFitness f = ((KozaFitness)ind.fitness);
-	  	
-	      if (!ind.evaluated)  // don't bother reevaluating
+	  	  long start = System.nanoTime();
+	      
+	  	  if (!ind.evaluated)  // don't bother reevaluating
           {
-	  		  double[] target = new double[svm_probl.l];
+	  		  double[] target = new double[svm_probl_train.l];
 		      double accuracy =  0.0;
 		      int i;
 		      double correct = 0;
@@ -109,45 +108,33 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	  		  
 	  		 if(cv)
 	  		 {
-  			 	 Svm_GP.svm_cross_validation(svm_probl, svm_params, nr_fold, target);
+  			 	 Svm_GP.svm_cross_validation(svm_probl_train, svm_params, nr_fold, target);
 		
-		         for(i=0;i<svm_probl.l;i++){
-		        	  if(target[i] == svm_probl.y[i])
+		         for(i=0;i<svm_probl_train.l;i++){
+		        	  if(target[i] == svm_probl_train.y[i])
 							++correct;
 		         }
-		         accuracy = (correct/svm_probl.l);
-		       
+		         accuracy = (correct/svm_probl_train.l);
 	  		  }
-	  		  else
-	  		  {
-	  	    	
-	  			svm_model model = Svm_GP.svm_train(svm_probl, svm_params);
 
-	  			try 
-	  			{
-	  				BufferedReader input = new BufferedReader(new FileReader(test_file_name));
-	  				DataOutputStream output = new DataOutputStream(System.out);
-	  				
-	  				accuracy = libsvm.Svm_predict_gp.predict(input,output,model,0);
-	  				input.close();
-	  			}
-	  			catch(FileNotFoundException e) 
-	  			{
-	  				// TODO Auto-generated catch block
-	  				e.printStackTrace();
-	  			} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+	  		 else
+	  		  {
+	  			svm_model model = Svm_GP.svm_train(svm_probl_train, svm_params);
+  				accuracy = libsvm.Svm_predict_gp.predict_problem(svm_probl_test, model);
 	  		  }
-	          
 	          f.setStandardizedFitness(state,(float)((1-accuracy)/(accuracy+0.00000000000000000001)));	          
 	          ind.evaluated = true;
-	          System.out.print("Accuracy = "+100.0*accuracy+"%\n");
+	          if(cv)
+	        	  System.out.print("CV Accuracy = "+100.0*accuracy+"%\n");
+	          else
+	        	  System.out.print("Test Accuracy = "+100.0*accuracy+"%\n");
+	        	  
           }
-	      System.out.print("Standardized Fitness = " + f.standardizedFitness() +"\n");
+	  	  long time = System.nanoTime()-start;
+	  	  double time_seconds = (double)time/1000000000;
+	  	  System.out.printf("Time elapsed: %f\n", time_seconds);
+	  	  System.out.print("Standardized Fitness = " + f.standardizedFitness() +"\n");
 	      System.out.print("Adjusted Fitness = " + f.fitness()+"\n\n");
-
       }
   
   
@@ -189,8 +176,9 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	}
   
   
-	public static void read_problem(String file_name) throws IOException
+	public static svm_problem read_problem(String file_name) throws IOException
 	{
+		System.out.printf("Loaded file \"%s\"\n", file_name);
 		BufferedReader fp = new BufferedReader(new FileReader(file_name));
 		Vector<Double> vy = new Vector<Double>();
 		Vector<svm_node[]> vx = new Vector<svm_node[]>();
@@ -216,7 +204,7 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 			vx.addElement(x);
 		}
 
-		svm_probl = new svm_problem();
+		svm_problem svm_probl = new svm_problem();
 		svm_probl.l = vy.size();
 		svm_probl.x = new svm_node[svm_probl.l][];
 		for(int i=0;i<svm_probl.l;i++)
@@ -228,8 +216,8 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 		if(svm_params.gamma == 0 && max_index > 0)
 			svm_params.gamma = 1.0/max_index;
 
-
 		fp.close();
+		return svm_probl;
 	}
 }
 

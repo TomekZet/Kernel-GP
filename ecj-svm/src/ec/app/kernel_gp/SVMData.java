@@ -13,8 +13,9 @@ public class SVMData extends GPData
 {
 	  public svm_node[] X = new svm_node[0]; //passed from terminals to kernels
 	  public svm_node[] Y = new svm_node[0]; //passed from terminals to kernels
+	  public double X2; //passed from terminals to kernels
+	  public double Y2; //passed from terminals to kernels
 	  public double val = 0;  //pased from kernel or agregates to agregates
-	  
 	
 	/* (non-Javadoc)
 	 * @see ec.gp.GPData#copyTo(ec.gp.GPData)
@@ -22,6 +23,8 @@ public class SVMData extends GPData
 	@Override
 	public void copyTo(GPData gpd) {
 		((SVMData)gpd).val = this.val;
+		((SVMData)gpd).X2 = this.X2;
+		((SVMData)gpd).Y2 = this.Y2;
 		System.arraycopy(X,  0, ((SVMData)gpd).X, 0, X.length);
 		System.arraycopy(Y,  0, ((SVMData)gpd).Y, 0, Y.length);
 	}
@@ -32,6 +35,8 @@ public class SVMData extends GPData
 		other.X = (svm_node[])(X.clone());
 		other.Y = (svm_node[])(Y.clone());
 		other.val = val;
+		other.X2 = X2;
+		other.Y2 = Y2;
 		return other;
 	}
 }

@@ -134,11 +134,9 @@ abstract class QMatrix {
 };
 
 
-
-
 abstract class Kernel extends QMatrix {
 	protected svm_node[][] x;
-	private final double[] x_square;
+	protected final double[] x_square;
 
 	// svm_parameter
 	private final int kernel_type;

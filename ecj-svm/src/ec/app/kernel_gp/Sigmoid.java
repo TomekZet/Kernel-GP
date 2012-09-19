@@ -12,7 +12,7 @@ public class Sigmoid extends GPNode {
 
 	@Override
 	public String toString() {
-		return "Sigmoid";
+		return "Sigm";
 	}
 
 	@Override
@@ -20,14 +20,13 @@ public class Sigmoid extends GPNode {
 			ADFStack stack, GPIndividual individual, Problem problem) {
 		SVMData data = (SVMData)input;
 		
-		children[0].eval(state,thread,input,stack,individual,problem);
         svm_node[] x = data.X;
       	svm_node[] y = data.Y;		   
 		
-		children[1].eval(state,thread,data,stack,individual,problem);
+		children[0].eval(state,thread,data,stack,individual,problem);
 		double gamma = data.val;
 		
-		children[2].eval(state,thread,data,stack,individual,problem);
+		children[1].eval(state,thread,data,stack,individual,problem);
 		double coef0 = data.val;
 		
 		data.val = Math.tanh(gamma*libsvm.SVC_Q_GP.dot(x,y)+coef0);
