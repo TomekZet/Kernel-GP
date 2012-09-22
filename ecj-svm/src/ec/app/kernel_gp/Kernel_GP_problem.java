@@ -100,14 +100,14 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 //		      svm_probl_train.state = state;
 //		      svm_probl_train.threadnum = threadnum;
 //		      svm_probl_train.problem = this;
-//		      svm_probl_train.input = input;
+		      svm_probl_train.input = input;
 //		      svm_probl_train.stack = stack;
 		      
 		      svm_probl_test.ind = ((GPIndividual)ind);
 //		      svm_probl_test.subpopulation = subpopulation;
 //		      svm_probl_test.threadnum = threadnum;
 //		      svm_probl_test.problem = this;
-//		      svm_probl_test.input = input;
+		      svm_probl_test.input = input;
 //		      svm_probl_test.stack = stack;
 	  		  
 	  		 if(cv)

@@ -14,7 +14,7 @@ public class Svm_predict_gp {
 		return Integer.parseInt(s);
 	}
 
-	public static double predict(BufferedReader input, DataOutputStream output, svm_model model, int predict_probability, svm_problem problem) throws IOException
+	public static double predict(BufferedReader input, DataOutputStream output, svm_model model, int predict_probability, svm_gp_problem problem) throws IOException
 	{
 		int correct = 0;
 		int total = 0;
@@ -52,7 +52,7 @@ public class Svm_predict_gp {
 		return accuracy;
 	}
 	
-	public static double predict_problem(svm_problem problem, svm_model model)
+	public static double predict_problem(svm_gp_problem problem, svm_model model)
 	{
 		int correct = 0;
 		int total = 0;
@@ -71,7 +71,7 @@ public class Svm_predict_gp {
 		return accuracy;
 	}
 	
-	public static double svm_predict(svm_model model, svm_node[] x, svm_problem problem)
+	public static double svm_predict(svm_model model, svm_node[] x, svm_gp_problem problem)
 	{
 		int nr_class = model.nr_class;
 		double[] dec_values;
@@ -80,7 +80,7 @@ public class Svm_predict_gp {
 		return pred_result;
 	}
 
-	public static double svm_predict_values(svm_model model, svm_node[] x, double[] dec_values, svm_problem problem)
+	public static double svm_predict_values(svm_model model, svm_node[] x, double[] dec_values, svm_gp_problem problem)
 	{
 		int i;
 

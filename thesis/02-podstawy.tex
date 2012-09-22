@@ -1,54 +1,66 @@
 \chapter{Podstawy teoretyczne}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla purus purus, fermentum in condimentum nec, sodales nec enim. Fusce auctor auctor porta. Proin tempus lacinia tortor, eget aliquam ante condimentum id. Morbi viverra congue posuere. Nunc non odio eros, sollicitudin pulvinar metus. Sed eget ligula ligula, a congue orci. Proin laoreet aliquet vulputate. Vivamus ut enim sed diam pretium fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam convallis mi nec dolor pretium sed aliquam orci sagittis. Maecenas aliquam dictum neque vel mollis. Morbi vel vehicula mauris.
 
-\section{SVM}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla purus purus, fermentum in condimentum nec, sodales nec enim. Fusce auctor auctor porta. Proin tempus lacinia tortor, eget aliquam ante condimentum id. Morbi viverra congue posuere. Nunc non odio eros, sollicitudin pulvinar metus. Sed eget ligula ligula, a congue orci. Proin laoreet aliquet vulputate. Vivamus ut enim sed diam pretium fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam convallis mi nec dolor pretium sed aliquam orci sagittis. Maecenas aliquam dictum neque vel mollis. Morbi vel vehicula mauris.
+\section{Uczenie maszynowe}
+\definicja{Uczenie maszynowe} (\english{Machine Learning}) to dziedzina informatyki zajmująca się konstruowaniem \textit{systemów uczących się} \cite{krawiec2003uczenie}. Zdefiniowanie \definicja{systemu uczącego} nie jest zadaniem trywialnym, jednak wydaje się, że podstawową cechą takich systemów jest to, że potrafią one dostosowywać sposób swojego działania do danych wejściowych, na których operują. Zmiana działania systemu może mieć różną skalę - od zmiany pojedynczych parametrów programu, przez zapamiętywanie informacji po zmianę wykonywanego algorytmu. Niezależnie od skali każda taka zmiana powinna mieć wpływ na jego przyszłe działanie i powinna mieć na celu uzyskanie jak najwyższej \definicja{oceny} pracy systemu. Funkcja oceny uczącego się systemu jest od niego niezależna, ale musi mieć on dostęp do jej wartości. Dostosowanie sposobu działania, nie zaś samego działania, w ten sposób, żeby zostało ono jak najwyżej ocenione wydaje się być cechą charakterystyczną systemów uczących się. Wszak przecież nawet prosty kalkulator dostosowuje swoje działanie (wyświetlany wynik) do danych wejściowych, jednak sposób działania pozostaje niezmienny - po wprowadzeniu tych samych danych wejściowych zawsze otrzymamy ten sam wynik. Gdyby w arytmetyce nastąpił nagle przełom, kalkulator nie potrafiłby dostosować sposobu swojego działania do nowych reguł arytmetyki, przez co zostałby albo zmodyfikowany przez człowieka, albo po prostu wyrzucony. Porównanie systemów uczących się do kalkulatora nie jest bynajmniej tak abstrakcyjne jak mogłoby się wydawać - ostatecznie najbardziej wyrafinowany system uczący też wykonuje pewną deterministyczną funkcję na danych wejściowych, jednak proces obliczania wyniku może być rozłożony w czasie - jako dane wejściowe można traktować zarówno dane użyte do uczenia systemu, jego oceny jak i dane aktualnie do niego wprowadzane.
+
+Systemy uczące się mają wiele zastosowań, między innymi:
+\begin{itemize}
+	\item Rozpoznawanie mowy ludzkiej
+	\item Rozpoznawanie tekstu pisanego (\akronim{OCR}, \english{Optical Character Recognition}
+	\item Diagnostyka medyczna
+	\item Klasyfikacja tekstów, np. na potrzeby filtrowania niechcianych wiadomości
+	\item Automatyczna identyfikacja zagrożeń na podstawie obrazu z kamer przemysłowych
+	\item Kierowanie autonomicznymi pojazdami
+	\item Prognozowanie pogody
+	\item Prognozowanie zmian kursów akcji na giełdzie
+	\item Wykrywanie podejrzanych transakcji finansowych
+	\item Biometria - identyfikacja ludzi na podstawie cech takich jak głos, wygląd twarzy, odciski palców, sposób chodzenia
+	\item Wspomaganie podejmowania decyzji
+\end{itemize}
+
+Jednym z rodzajów systemów uczących są systemy klasyfikujące.
+
+\begin{itemize}
+\item \definicja{zbiór uczący}
+\item \definicja{zbiór testujący}
+\item \definicja{zbiór walidujący}
+\item \definicja{walidacja krzyżowa}
+\item \definicja{trafność}
+\end{itemize}
+
+
+\subsection{SVM}
     
-\definicja{SVM} (\english{Support Vector MAchine}) \cite{} jest ...
+\definicja{Maszyna wektorów wspierających } (\akronim{SVM}, \english{Support Vector Machine})
 
-%\footnote{W nomenklaturze polskiej zarówno}
-%\emph{tree}
-%(zob.~rys.~\ref{rys:tree}). 
-%
-%\begin{figure}[t]
-%    \begin{center}
-%       \includegraphics[scale=0.5]{figures/zorroSTrie.pdf}
-%    \end{center}
-%
-%    \caption{Drzewo \emph{trie} dla zbioru sufiksów wyrazu ,,zorro'' z~dodanym unikalnym
-%    symbolem końcowym $\dollar$. Dla
-%    przejrzystości pominięto łuk od korzenia do liścia o~wartości $\dollar$.}%
-%    \label{rys:tree}
-%\end{figure}
-%
-%
-%\begin{figure}[t]
-%    \begin{center}
-%        \begin{tabular}{ c c l }
-%            \toprule
-%            $j$ & $\textit{SA}[j]=i$ & $x[i..n-1]$ \\
-%            \midrule
-%            0 & 5 &        $\dollar$ \\
-%            1 & 4 &        o$\dollar$ \\
-%            2 & 1 &        orro$\dollar$ \\
-%            3 & 3 &        ro$\dollar$ \\
-%            4 & 2 &        rro$\dollar$ \\
-%            5 & 0 &        zorro$\dollar$ \\
-%            \bottomrule
-%        \end{tabular}
-%    \end{center}
-%\caption{Tablica sufiksów dla sufiksów ciągu ,,zorro\dollar''.}%
-%\label{rys:suffix-array-vis}
-%\end{figure}
+\begin{itemize}
+\item \definicja{funkcja jądrowa}
+\item \definicja{wektor wspierający}
+\item \definicja{hiperpłaszczyzna}
+\item \definicja{}
+\item \definicja{}
+\end{itemize}
 
-\section{Programowanie genetyczne}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla purus purus, fermentum in condimentum nec, sodales nec enim. Fusce auctor auctor porta. Proin tempus lacinia tortor, eget aliquam ante condimentum id. Morbi viverra congue posuere. Nunc non odio eros, sollicitudin pulvinar metus. Sed eget ligula ligula, a congue orci. Proin laoreet aliquet vulputate. Vivamus ut enim sed diam pretium fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam convallis mi nec dolor pretium sed aliquam orci sagittis. Maecenas aliquam dictum neque vel mollis. Morbi vel vehicula mauris.
+\section{Obliczenia ewolucyjne}
 
-\section{Eqolucja kerneli}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla purus purus, fermentum in condimentum nec, sodales nec enim. Fusce auctor auctor porta. Proin tempus lacinia tortor, eget aliquam ante condimentum id. Morbi viverra congue posuere. Nunc non odio eros, sollicitudin pulvinar metus. Sed eget ligula ligula, a congue orci. Proin laoreet aliquet vulputate. Vivamus ut enim sed diam pretium fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam convallis mi nec dolor pretium sed aliquam orci sagittis. Maecenas aliquam dictum neque vel mollis. Morbi vel vehicula mauris.
+\begin{itemize}
+\item \definicja{populacja}
+\item \definicja{osobnik}
+\item \definicja{mutacja}
+\item \definicja{krzyżowanie}
+\item \definicja{selekcja}
+\item \definicja{funkcja przystosowania} (\english{fitness})
+\end{itemize}
 
-\section{Obrazowanie mózgu przy pomocy fMRI}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla purus purus, fermentum in condimentum nec, sodales nec enim. Fusce auctor auctor porta. Proin tempus lacinia tortor, eget aliquam ante condimentum id. Morbi viverra congue posuere. Nunc non odio eros, sollicitudin pulvinar metus. Sed eget ligula ligula, a congue orci. Proin laoreet aliquet vulputate. Vivamus ut enim sed diam pretium fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam convallis mi nec dolor pretium sed aliquam orci sagittis. Maecenas aliquam dictum neque vel mollis. Morbi vel vehicula mauris.
+\subsection{Programowanie genetyczne}
+\definicja{Programowanie genetyczne} (\akronim{GP}, \english{Genetic Programming}) to 
 
-\section{ADHD}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla purus purus, fermentum in condimentum nec, sodales nec enim. Fusce auctor auctor porta. Proin tempus lacinia tortor, eget aliquam ante condimentum id. Morbi viverra congue posuere. Nunc non odio eros, sollicitudin pulvinar metus. Sed eget ligula ligula, a congue orci. Proin laoreet aliquet vulputate. Vivamus ut enim sed diam pretium fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam convallis mi nec dolor pretium sed aliquam orci sagittis. Maecenas aliquam dictum neque vel mollis. Morbi vel vehicula mauris.
+Funkcje, które generuje algorytm programowania genetycznego są w nim reprezentowane w postaci drzew. Węzłami takiego drzewa są elementarne funkcje zadeklarowane w kodzie programu. Każda z takich funkcji ma przypisane pewne ograniczenia co do ilości i typu argumentów, które przyjmuje oraz co do typu wartości, który zwraca. Drzewo jako całość również ma zadeklarowany typ zwracanej wartości.
+
+\section{Ewolucja kerneli}
+
+\section{Obrazowanie mózgu przy pomocy rezonansu magnetycznego}
+\begin{itemize}
+\item \definicja{Obrazowanie metodą rezonansu magnetycznego} (\akronim{MRI}, \english{Magnetic Resonance Imaging})
+\item \definicja{Obrazowanie metodą funkcjonalnego rezonansu magnetycznego} (\akronim{fMRI}, \english{functional Magnetic Resonance Imaging})
+\end{itemize}

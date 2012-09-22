@@ -12,14 +12,15 @@ eval.problem.data = ec.app.kernel_gp.SVMData
 breedthreads = auto
 evalthreads = auto
 
+#gp.tree.print-style = dot
 
 train-file = data/dna.scale.tr
 test-file = data/dna.scale.t
 validation-file = dna/iris.scale.v
 cross-validation = false
 cv-folds = 10
-generations = 5
-pop.subpop.0.size = 100
+generations = 2
+pop.subpop.0.size = 50
 
 
 state = ec.app.kernel_gp.SimpleEvolutionStateSVM
@@ -35,12 +36,12 @@ pop.subpop.0.duplicate-retries = 20
 
 gp.tc.0.init = ec.gp.koza.FullBuilder
 gp.tc.0.init.min-depth = 2
-gp.tc.0.init.max-depth = 4
+gp.tc.0.init.max-depth = 6
 
-gp.koza.xover.maxdepth = 3
-gp.koza.mutate.maxdepth = 3
-gp.koza.grow.min-depth = 3
-gp.koza.grow.max-depth = 4
+gp.koza.xover.maxdepth = 2
+gp.koza.mutate.maxdepth = 4
+gp.koza.grow.min-depth = 2
+gp.koza.grow.max-depth = 6
 
 pop.subpop.0.species.pipe = ec.breed.MultiBreedingPipeline
 pop.subpop.0.species.pipe.num-sources = 2

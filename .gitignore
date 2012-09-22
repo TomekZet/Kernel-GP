@@ -7,9 +7,21 @@
 
 # Ignore metadata eclipse folder
 /.metadata
-/nppBackup
 .metadata/
 
 # Package Files #
 *.war
 *.ear
+
+#Backup files
+/nppBackup
+*.bak
+*.*~
+
+#Latex compilation results except pdf
+*.log
+*.aux
+*.blg
+*.bbl
+*.dvi
+*.toc

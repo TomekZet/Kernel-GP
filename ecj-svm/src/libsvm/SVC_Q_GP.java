@@ -31,7 +31,7 @@ public class SVC_Q_GP extends Kernel {
 		stack = null;
 		threadnum = 0;
 		problem = null;
-		input = new SVMData();
+		input = prob.input;
 		
 		y = (byte[])y_.clone();
 		cache = new Cache(prob.l,(long)(param.cache_size*(1<<20)));
@@ -101,7 +101,7 @@ public class SVC_Q_GP extends Kernel {
 	}
 
 	static double k_function(svm_node[] x, svm_node[] y,
-			svm_parameter param, svm_problem prob)
+			svm_parameter param, svm_gp_problem prob)
 	{					
 //		EvolutionState state = ((svm_gp_problem)prob).state;
 //		int threadnum = ((svm_gp_problem)prob).threadnum;
@@ -113,17 +113,16 @@ public class SVC_Q_GP extends Kernel {
 		Kernel_GP_problem problem = null;
 		ADFStack stack = null;
 		
-		Individual ind = ((svm_gp_problem)prob).ind;
-		SVMData input = new SVMData();
+		Individual ind = prob.ind;
+		SVMData input = (SVMData) prob.input;
 		input.X = x;
 		input.Y = y;
 		input.X2 = -1.0; //If there is RBF function it will compute squaes on its own
 		input.Y2 = -1.0;
 				
 		((GPIndividual)ind).trees[0].child.eval(state,threadnum,input,stack,((GPIndividual)ind),problem);
-		SVMData data = (SVMData)input;
 		
-        return data.val;
+        return input.val;
 	}
 }
 

@@ -72,6 +72,8 @@ public class SimpleEvolutionStateSVM extends SimpleEvolutionState {
 	    svm_gp_problem svm_probl_validation = Kernel_GP_problem.read_problem(validationFilepath);
     	((svm_gp_problem)svm_probl_train).ind = (GPIndividual)bestSoFar;
     	((svm_gp_problem)svm_probl_validation).ind = (GPIndividual)bestSoFar;
+    	((svm_gp_problem)svm_probl_train).input = new SVMData();
+    	((svm_gp_problem)svm_probl_validation).input = new SVMData();
     	
 		Kernel_GP_problem.set_svm_params();
     	

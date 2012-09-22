@@ -1691,36 +1691,6 @@ public class svm {
 
 	
 
-	// Return parameter of a Laplace distribution 
-	private static double svm_svr_probability(svm_problem prob, svm_parameter param)
-	{
-		int i;
-		int nr_fold = 5;
-		double[] ymv = new double[prob.l];
-		double mae = 0;
-
-		svm_parameter newparam = (svm_parameter)param.clone();
-		newparam.probability = 0;
-		svm_cross_validation(prob,newparam,nr_fold,ymv);
-		for(i=0;i<prob.l;i++)
-		{
-			ymv[i]=prob.y[i]-ymv[i];
-			mae += Math.abs(ymv[i]);
-		}		
-		mae /= prob.l;
-		double std=Math.sqrt(2*mae*mae);
-		int count=0;
-		mae=0;
-		for(i=0;i<prob.l;i++)
-			if (Math.abs(ymv[i]) > 5*std) 
-				count=count+1;
-			else 
-				mae+=Math.abs(ymv[i]);
-		mae /= (prob.l-count);
-		svm.info("Prob. model for test data: target value = predicted value + z,\nz: Laplace distribution e^(-|z|/sigma)/(2sigma),sigma="+mae+"\n");
-		return mae;
-	}
-
 	// label: label name, start: begin of each class, count: #data of classes, perm: indices to the original data
 	// perm, length l, must be allocated before calling this subroutine
 	private static void svm_group_classes(svm_problem prob, int[] nr_class_ret, int[][] label_ret, int[][] start_ret, int[][] count_ret, int[] perm)
@@ -1850,6 +1820,7 @@ public class svm {
 			{
 				svm_gp_problem sub_prob = new svm_gp_problem();
 				sub_prob.ind = prob.ind;
+				sub_prob.input = prob.input;
 				int si = start[i], sj = start[j];
 				int ci = count[i], cj = count[j];
 				sub_prob.l = ci+cj;
@@ -1966,7 +1937,7 @@ public class svm {
 	}
 	
 	// Stratified cross validation
-	public static void svm_cross_validation(svm_problem prob, svm_parameter param, int nr_fold, double[] target)
+	public static void svm_cross_validation(svm_gp_problem prob, svm_parameter param, int nr_fold, double[] target)
 	{
 		int i;
 		int[] fold_start = new int[nr_fold+1];
