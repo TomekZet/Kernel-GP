@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.14)  14 SEP 2012 16:56
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.14)  22 SEP 2012 01:46
 entering extended mode
  %&-line parsing enabled.
 **tzietkiewicz-master-thesis.tex
@@ -1203,36 +1203,68 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 9.19998pt on input line 3.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 6.99199pt on input line 3.
-)
-[1
+ [1
 
-] (./01-wstep.tex
+])
+[2] (./01-wstep.tex
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <17.28> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 1.
-) (./02-podstawy.tex [1
+LaTeX Font Info:    Try loading font information for TS1+futs on input line 7.
+ (/usr/share/texmf-texlive/tex/latex/fourier/ts1futs.fd
+File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
+))
+(./02-podstawy.tex [1
 
 
 
 ] [2
 
-]) (./03-algorytm.tex [3]
+]
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 7.
-)
-(./04-wyniki.tex [4
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 32.
 
-] [5]
-<figures/results/random-input-lcp.pdf, id=165, 694.4264pt x 494.34688pt>
-File: figures/results/random-input-lcp.pdf Graphic file (type pdf)
+Overfull \hbox (1.959pt too wide) in paragraph at lines 58--59
+\T1/futs/m/n/10 staci drzew. W¦-zªami ta-kiego drzewa s¡ ele-men-tarne funk-cje
+ za-de-kla-ro-wane w ko-dzie pro-gramu. Ka»da
+ []
 
-<use figures/results/random-input-lcp.pdf>) (./05-adhd.tex [6
+[3]) (./03-algorytm.tex [4]
+<figures/algorithm.pdf, id=223, 512.91624pt x 796.9775pt>
+File: figures/algorithm.pdf Graphic file (type pdf)
 
-] [7 <./figures/results/random-input-lcp.pdf, page is rotated 90 degrees>])
-(./06-podsumowanie.tex [8
+<use figures/algorithm.pdf>
 
-])
-No file tzietkiewicz-master-thesis.bbl.
-(./a2-web-resources.tex [9
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[5
+
+] [6 <./figures/algorithm.pdf>]
+
+pdfTeX warning: pdflatex (file ./figures/tree.pdf): PDF inclusion: found PDF ve
+rsion <1.5>, but at most version <1.4> allowed
+<figures/tree.pdf, id=261, 720.6925pt x 405.515pt>
+File: figures/tree.pdf Graphic file (type pdf)
+ <use figures/tree.pdf>
+Overfull \hbox (6.41884pt too wide) in paragraph at lines 65--66
+ [][] 
+ []
+
+[7 <./figures/tree.pdf>] [8]) (./04-wyniki.tex [9]) (./05-adhd.tex [10
+
+]
+Overfull \hbox (3.52025pt too wide) in paragraph at lines 18--19
+[]\T1/futs/m/n/10 Strukturalnych - dane po-cho-dz¡ce z ob-ra-zo-wa-nia re-zo-na
+nsu ma-gne-tycz-nego (\T1/futs/m/it/10 MRI\T1/futs/m/n/10 , ang. \T1/futs/m/it/
+10 Ma-
+ []
+
+) (./06-podsumowanie.tex [11
+
+] [12]) (./tzietkiewicz-master-thesis.bbl [13
+
+]
+bibitemlist
+) (./a2-web-resources.tex [14
 
 ]
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 9.
@@ -1243,19 +1275,13 @@ LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
 (Font)              scaled to size 8.27998pt on input line 9.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 8.27998pt on input line 9.
-) [10
+)
+[15
 
-]
-<figures/template/logo-pp.pdf, id=214, 469.755pt x 469.755pt>
+] <figures/template/logo-pp.pdf, id=323, 469.755pt x 469.755pt>
 File: figures/template/logo-pp.pdf Graphic file (type pdf)
 
 <use figures/template/logo-pp.pdf>
-LaTeX Font Info:    Try loading font information for TS1+futs on input line 64.
-
-
-(/usr/share/texmf-texlive/tex/latex/fourier/ts1futs.fd
-File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
-)
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
 (Font)              scaled to size 7.35999pt on input line 64.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
@@ -1264,31 +1290,33 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 7.35999pt on input line 64.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 6.25598pt on input line 64.
- [11
+ [16
 
  <./figures/template/logo-pp.pdf>]
 \tf@toc=\write6
 \openout6 = `tzietkiewicz-master-thesis.toc'.
 
- (./tzietkiewicz-master-thesis.aux) ) 
+
+(./tzietkiewicz-master-thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 11798 strings out of 495026
- 158233 string characters out of 1181802
- 291976 words of memory out of 3000000
- 14691 multiletter control sequences out of 15000+50000
- 119414 words of font info for 114 fonts, out of 3000000 for 9000
+ 11844 strings out of 495026
+ 158968 string characters out of 1181802
+ 295526 words of memory out of 3000000
+ 14709 multiletter control sequences out of 15000+50000
+ 121719 words of font info for 124 fonts, out of 3000000 for 9000
  48 hyphenation exceptions out of 8191
- 50i,11n,40p,694b,360s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec
-.enc}{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-te
-xlive/fonts/type1/public/fourier/fourier-ms.pfb></usr/share/texmf/fonts/type1/p
-ublic/lm/lmtt8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt9.pfb></usr/shar
-e/texmf-texlive/fonts/type1/adobe/utopia/putb8a.pfb></usr/share/texmf-texlive/f
-onts/type1/adobe/utopia/putr8a.pfb></usr/share/texmf-texlive/fonts/type1/adobe/
-utopia/putri8a.pfb>
-Output written on tzietkiewicz-master-thesis.pdf (14 pages, 218205 bytes).
+ 50i,11n,40p,2047b,439s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.
+enc}{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-tex
+live/fonts/type1/public/fourier/fourier-mlit.pfb></usr/share/texmf-texlive/font
+s/type1/public/fourier/fourier-ms.pfb></usr/share/texmf/fonts/type1/public/lm/l
+mtt8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt9.pfb></usr/share/texmf-te
+xlive/fonts/type1/adobe/utopia/putb8a.pfb></usr/share/texmf-texlive/fonts/type1
+/adobe/utopia/putr8a.pfb></usr/share/texmf-texlive/fonts/type1/adobe/utopia/put
+ri8a.pfb>
+Output written on tzietkiewicz-master-thesis.pdf (20 pages, 352418 bytes).
 PDF statistics:
- 261 PDF objects out of 1000 (max. 8388607)
- 58 named destinations out of 1000 (max. 500000)
- 211 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 377 PDF objects out of 1000 (max. 8388607)
+ 75 named destinations out of 1000 (max. 500000)
+ 304 words of extra memory for PDF output out of 10000 (max. 10000000)
 
