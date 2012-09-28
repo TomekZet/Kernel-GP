@@ -6,10 +6,12 @@ package ec.app.kernel_gp;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintStream;
 
 import libsvm.SVC_Q_GP;
 import libsvm.svm;
@@ -19,6 +21,7 @@ import libsvm.svm_parameter;
 import libsvm.svm_problem;
 import ec.Individual;
 import ec.gp.GPIndividual;
+import ec.gp.koza.KozaFitness;
 import ec.gp.koza.KozaStatistics;
 import ec.simple.SimpleEvolutionState;
 import ec.util.Parameter;
@@ -60,28 +63,35 @@ public class SimpleEvolutionStateSVM extends SimpleEvolutionState {
     	double accuracy = 0.0;
     	
     	KozaStatistics st = (KozaStatistics)statistics;
-    	Individual bestSoFar = (st.getBestSoFar())[0];
+    	GPIndividual bestSoFar = (GPIndividual) (st.getBestSoFar())[0];
 
 	    Parameter train_path = new Parameter("train-file");
 	    Parameter validation_path = new Parameter("validation-file");
-	      
+	    Parameter output_path_param = new Parameter("output-file");
+
+	    
 	    String trainFilepath = this.parameters.getString(train_path, null);
 	    String validationFilepath = this.parameters.getString(validation_path, null);
+	    String output_file_name = this.parameters.getString(output_path_param, null);
+	    
 
 	    svm_gp_problem svm_probl_train = Kernel_GP_problem.read_problem(trainFilepath);
 	    svm_gp_problem svm_probl_validation = Kernel_GP_problem.read_problem(validationFilepath);
-    	((svm_gp_problem)svm_probl_train).ind = (GPIndividual)bestSoFar;
-    	((svm_gp_problem)svm_probl_validation).ind = (GPIndividual)bestSoFar;
+    	((svm_gp_problem)svm_probl_train).ind = bestSoFar;
+    	((svm_gp_problem)svm_probl_validation).ind = bestSoFar;
     	((svm_gp_problem)svm_probl_train).input = new SVMData();
     	((svm_gp_problem)svm_probl_validation).input = new SVMData();
     	
 		Kernel_GP_problem.set_svm_params();
     	
     	svm_model model = svm.svm_train(svm_probl_train, Kernel_GP_problem.svm_params);
+   	
+//    	DataOutputStream output = new DataOutputStream(new PrintStream(new FileOutputStream(new File(output_file_name))));
     	DataOutputStream output = new DataOutputStream(System.out);
 		accuracy = libsvm.Svm_predict_gp.predict_problem(svm_probl_validation, model);
 
-		output.writeBytes("\nAccuracy = "+accuracy*100+"\n");
+		output.writeBytes(((KozaFitness)(bestSoFar.fitness)).adjustedFitness()+" ");
+		output.writeBytes(accuracy*100+" ");
 		output.close();
     	return accuracy;
     }

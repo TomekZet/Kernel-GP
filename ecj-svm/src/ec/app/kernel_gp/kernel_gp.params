@@ -16,7 +16,10 @@ evalthreads = auto
 
 train-file = data/dna.scale.tr
 test-file = data/dna.scale.t
-validation-file = dna/iris.scale.v
+validation-file = data/dna.scale.v
+
+output-file = out.my.stat
+
 cross-validation = false
 cv-folds = 10
 generations = 2
@@ -27,7 +30,7 @@ state = ec.app.kernel_gp.SimpleEvolutionStateSVM
 
 stat = ec.gp.koza.KozaStatistics
 #stat = ec.simple.SimpleStatistics
-stat.child.0.gather-full = true
+stat.gather-full=true
 stat.file =	out.stat
 
 quit-on-run-complete = true

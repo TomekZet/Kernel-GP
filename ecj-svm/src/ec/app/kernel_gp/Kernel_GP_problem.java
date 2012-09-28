@@ -9,8 +9,10 @@
 package ec.app.kernel_gp;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.util.StringTokenizer;
 import java.util.Vector;
 
@@ -32,13 +34,16 @@ import ec.simple.*;
 public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 {
   public GPData input;
-  static public svm_parameter svm_params = new svm_parameter();	
+  static public svm_parameter svm_params = new svm_parameter();
+  static public int logNumber = 0;
   public svm_gp_problem svm_probl_train;		// set by read_problem
   public svm_gp_problem svm_probl_test;
   private String train_file_name;
   private String test_file_name;
+  private String output_file_name;
   private int nr_fold;
   boolean cv;
+  PrintStream outputStream = System.out;
 
   public Object clone()
       {
@@ -55,6 +60,7 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	
 	      Parameter train_path_param = new Parameter("train-file");
 	      Parameter test_path_param = new Parameter("test-file");
+	      Parameter output_path_param = new Parameter("output-file");
 	      Parameter cv_param = new Parameter("cross-validation");
 	      Parameter nr_fold_param = new Parameter("cv-folds");
 	      
@@ -62,7 +68,23 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	      test_file_name = state.parameters.getString(test_path_param, null);
 	      cv = state.parameters.getBoolean(cv_param, null, false);
 	      nr_fold = state.parameters.getInt(nr_fold_param, null, 4);
-
+	      output_file_name = state.parameters.getString(output_path_param, null);
+	      File output_file = new File(output_file_name);
+	      
+	      try {
+			logNumber = state.output.addLog(output_file, false);
+		} catch (IOException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+	      
+//	      try {
+//			outputStream = new PrintStream(new FileOutputStream(output_file));
+//		} catch (FileNotFoundException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
+	      
 	      set_svm_params();
 	      if (svm_probl_train == null)
 	      {
@@ -131,8 +153,8 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
           }
 	  	  long time = System.nanoTime()-start;
 	  	  double time_seconds = (double)time/1000000000;
-	  	  System.out.print("\n");
-	  	  ((GPIndividual)ind).trees[0].printTreeForHumans(state, 0);
+
+	  	  ((GPIndividual)ind).trees[0].printTreeForHumans(state, logNumber);
           String message = "";
 	  	  if(cv)
         	  message +="CV Accuracy = "+100.0*accuracy+"%\n";
@@ -141,7 +163,7 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	  	  message += "Time elapsed: "+Double.toString(time_seconds)+"\n";
 	  	  message += "Standardized Fitness = " + f.standardizedFitness() +"\n";
 	      message += "Adjusted Fitness = " + f.fitness()+"\n\n";
-	  	  System.out.print(message);
+	      state.output.print(message, logNumber);
       }
   
   
@@ -185,7 +207,6 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
   
 	public static svm_gp_problem read_problem(String file_name) throws IOException
 	{
-		System.out.printf("Loaded file \"%s\"\n", file_name);
 		BufferedReader fp = new BufferedReader(new FileReader(file_name));
 		Vector<Double> vy = new Vector<Double>();
 		Vector<svm_node[]> vx = new Vector<svm_node[]>();

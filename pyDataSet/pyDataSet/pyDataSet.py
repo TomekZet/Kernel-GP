@@ -75,6 +75,27 @@ def load_from_arff(filepath):
         dataset.append(line)
     return dataset
         
+def process(input, output, test, valid, rand=None, seed=False):
+    if input.endswith(".arff"):
+        dataset = load_from_arff(input)        
+    else:
+        with open(input) as f: 
+            dataset = f.readlines()
+        
+    if rand:
+        if seed:
+            random.seed()
+        random.shuffle(dataset)
+    
+    train, test, valid = divide(dataset, p_test=test, p_valid=valid)
+    
+    if train:
+        write_dataset(train, output+".tr")
+    if test:
+        write_dataset(test, output+".t")
+    if valid:
+        write_dataset(valid, output+".val")
+
     
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Preprocessing of ML data sets")
@@ -89,22 +110,4 @@ if __name__ == '__main__':
     if not args.output:
         args.output = args.input
 
-    if args.input.endswith(".arff"):
-        dataset = load_from_arff(args.input)        
-    else:
-        with open(args.input) as f: 
-            dataset = f.readlines()
-        
-    if args.rand:
-        if args.seed:
-            random.seed()
-        random.shuffle(dataset)
-    
-    train, test, valid = divide(dataset, p_test = args.test, p_valid = args.valid)
-    
-    if train:
-        write_dataset(train, args.output+".tr")
-    if test:
-        write_dataset(test, args.output+".t")
-    if valid:
-        write_dataset(valid, args.output+".val")
+    process(args.input, args.output, args.test, args.valid, args.rand, args.seed)
