@@ -1,8 +1,7 @@
 'dataset' 'population size' 'n.o.generations' 'cros validation' 'cv folds' 'fitness' 'accuracy' 'time'
-iris.scale 1 4 False 10 0.9666667 100.0 0.470228
-iris.scale 11 4 False 10 0.9666667 96.66666666666667 11.993568
-iris.scale 21 4 False 10 0.9666667 100.0 38.349033
-iris.scale 31 4 False 10 0.9666667 100.0 38.350403
-dna.scale 1 4 False 10 28.338119
-dna.scale 11 4 False 10 1013.349527
-dna.scale 21 4 False 10 
+iris.scale 1 4 False 10 0.8 76.66666666666667 1.853513
+iris.scale 11 4 False 10 0.9666667 100.0 32.292560
+iris.scale 21 4 False 10 0.9666667 100.0 0.781994
+iris.scale 31 4 False 10 0.9666667 100.0 28.690315
+dna.scale 1 4 False 10 71.927266
+dna.scale 11 4 False 10 

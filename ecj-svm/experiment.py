@@ -19,7 +19,8 @@ if __name__ == "__main__":
     
     datasets = ["iris.scale",
                  "dna.scale",
-                 "vowel.scale"
+                 "vowel.scale",
+                 "clinical+volumes.arff"
                  ]
     
     pop_size_min = 1
@@ -38,13 +39,14 @@ if __name__ == "__main__":
         print "Running experiment for {0} dataset".format(dataset)
         train = "data/"+dataset+".tr"
         test = "data/"+dataset+".t"
-        validation = "data/"+dataset+".v"
+        validation = "data/"+dataset+".val"
         for i in range(pop_size_min, pop_size_max+1, pop_size_step):
             print "Population size:%d"%i
             args_list = [
                  'java',
                  '-classpath',
-                 r'/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/bin:/home/tomek/studia/magisterka/Kernel-GP Git/ecj-svm/lib/ecj',
+                 r'bin:lib/ecj',
+                 '-Xmx1024m',
                  'ec.Evolve',
                  '-file', 'src/ec/app/kernel_gp/kernel_gp.params',
                  '-p', 'train-file=%s'% train,
