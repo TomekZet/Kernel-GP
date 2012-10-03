@@ -39,14 +39,14 @@ if __name__ == "__main__":
         print "Running experiment for {0} dataset".format(dataset)
         train = "data/"+dataset+".tr"
         test = "data/"+dataset+".t"
-        validation = "data/"+dataset+".val"
+        validation = "data/"+dataset+".v"
         for i in range(pop_size_min, pop_size_max+1, pop_size_step):
             print "Population size:%d"%i
             args_list = [
                  'java',
                  '-classpath',
                  r'bin:lib/ecj',
-                 '-Xmx1024m',
+                 '-Xmx4096m',
                  'ec.Evolve',
                  '-file', 'src/ec/app/kernel_gp/kernel_gp.params',
                  '-p', 'train-file=%s'% train,
