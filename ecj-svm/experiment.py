@@ -49,7 +49,7 @@ if __name__ == "__main__":
                  'java',
                  '-classpath',
                  r'bin:lib/ecj',
-                 '-Xmx1024m',
+                 '-Xmx4096m',
                  'ec.Evolve',
                  '-file', 'src/ec/app/kernel_gp/kernel_gp.params',
                  '-p', 'train-file=%s'% train,
