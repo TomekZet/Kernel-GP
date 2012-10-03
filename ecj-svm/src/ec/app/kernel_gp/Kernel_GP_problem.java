@@ -207,6 +207,7 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
   
 	public static svm_gp_problem read_problem(String file_name) throws IOException
 	{
+		System.err.print("Reading "+file_name+"\n");
 		BufferedReader fp = new BufferedReader(new FileReader(file_name));
 		Vector<Double> vy = new Vector<Double>();
 		Vector<svm_node[]> vx = new Vector<svm_node[]>();
