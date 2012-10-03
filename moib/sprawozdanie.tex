@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage{polski} %może wymagac dokonfigurowania latexa, ale jest lepszy niż standardowy babel'owy [polish]
+\usepackage[utf8]{inputenc}
+\usepackage[OT4]{fontenc}
+\usepackage{amsfonts}
+\usepackage{graphicx,color} %include pdf's (and png's for raster graphics... avoid raster graphics!)
+\usepackage{url}
+\usepackage[pdftex,hyperfootnotes=false,pdfborder={0 0 0}]{hyperref} %za wszystkimi pakietami; pdfborder nie wszedzie tak samo zaimplementowane bo specyfikacja nieprecyzyjna; pod miktex'em po prostu nie widac wtedy ramek
+
+
+\input{_ustawienia.tex}
+
+\begin{document}
+
+\input{_tytulowa}
+
+\begin{abstract}
+\emph{SVM} 
+\end{abstract}
+
+
+\section{Wstęp}
+	\subsection{Opis eksperymentu}
+	Celem eksperymentu było użycie programowania genetycznego do wyewoluowania optymalnych funkcji jądrowych dla klasyfikatora \emph{SVM}.
+	Klasyfikator SVM dokonuje klasyfikacji binarnej oddzielając od siebie dwie grupy przykładów hiperpłaszczyzną przebiegającą w przestrzeni atrybutów opisujących przykłady. Najczęściej grupy te nie są liniowo separowalne i trzeba dokonać transformacji cech opisujących przykłady do przestrzeni o większej liczbie wymiarów tak, żeby były w niej liniowo separowalne. Funkcje używane do dokonania tej transformacji to funkcje jądrowe  (inczej kernele  - ang. kernel functions). Wybór odpowiedniej funkcji zależy od rozwiązywanego problemu i zazwyczaj opiera się na doświadczeniu osoby używającej klasyfikator, posiadanej przez nią wiedzy dziedzinowej. W przypadku nie znanych apriori danych wejściowych i braku doświadczenia w wyborze optymalnej funkcji jądrowej można posłużyć się automatycznymi metodami optymalizacji. Wśród nich idalną do tego zadania wydaje się \definicja{programowanie geetyczne} (\akronim{GP} - \english{Genetic Programming}). Jest to szczególny rodzaj \definicja{obliczeń ewolucyjnych} (\akronim{EC} - \english{Evolutionary Computing}), w którym ewoluowane osobniki to funkcje reprezentowane za pomocą struktur drzewiastych.
+	Na potrzeby eksperymentu zaprojektowano proces ewolucyjny, który ewoluował funkcje jądrowe poprzez łączenie ze sobą prostych funkcji jądrowych w funkcje złożone za pomocą funkcji łączących.
+	
+	
+	
+	
+
+%			\begin{figure}[h]
+%				\includegraphics[scale=0.90]{../results/quality}
+%				\caption{Porównanie średniej jakości rozwiązań generowanych przez algorytmy dla różnych instancji \emph{QAP}\label{fig:quality}}
+%			\end{figure}
+
+
+		
+		
+\section{Podsumowanie}
+	\subsection{Wnioski}
+		\begin{itemize}
+			\item 
+		\end{itemize}
+
+
+%%%%%%%%%%%%%%%% literatura %%%%%%%%%%%%%%%%
+
+%\bibliography{sprawozdanie}
+%\bibliographystyle{plain}
+
+\end{document}
+
