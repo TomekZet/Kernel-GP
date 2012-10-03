@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  (+ Linear Linear)
 Test Accuracy = 85.7504215851602%
 Time elapsed: 3.423148503
@@ -61,3 +62,5 @@ Adjusted Fitness = 0.93338954
  (Exp (+ (Poly gamma=0.026929 coef0=0.059031
      degree=3.436526) (a * (* (Sigm gamma=0.002298
      coef0=0.152408) (Exp Linear)) a=0.787541)))
+=======
+>>>>>>> 04f449ea416496f7446081a7b40577378b0971b6

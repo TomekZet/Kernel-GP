@@ -46,7 +46,7 @@ if __name__ == "__main__":
     cv = False
     
     output_filename = "results/results.%s.dat" % (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-
+    statfilename = output_filename+".stat"
     err_output_filename = output_filename+'.err'
     err_output = open(err_output_filename, "w")   
     
@@ -68,6 +68,7 @@ if __name__ == "__main__":
                  '-Xmx%dm'%(java_heap),
                  'ec.Evolve',
                  '-file', 'src/ec/app/kernel_gp/kernel_gp.params',
+                 '-p', 'output-file=%s'% statfilename,
                  '-p', 'train-file=%s'% train,
                  '-p', 'test-file=%s'% test,
                  '-p', 'validation-file=%s'% validation,
