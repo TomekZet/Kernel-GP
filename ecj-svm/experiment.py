@@ -1,6 +1,7 @@
 import subprocess
 import argparse
 import time
+import datetime
 
 '''
 This script computes various benchmarks:
@@ -17,10 +18,10 @@ def sd(data, mean):
 
 if __name__ == "__main__":
     
-    datasets = ["iris.scale",
+    datasets = [#"iris.scale",
                  "dna.scale",
                  "vowel.scale",
-                 "clinical+volumes.arff"
+                 #"clinical+volumes.arff"
                  ]
     
     pop_size_min = 1
@@ -30,8 +31,10 @@ if __name__ == "__main__":
     generations = 4
     cv_folds = 10
     cv = False
-       
-    output = open("results.dat", "w")   
+    
+    output_filename = "results/results.%s.dat" % (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+
+    output = open(output_filename, "w")   
     output.write("""'dataset' 'population size' 'n.o.generations' 'cros validation' 'cv folds' 'fitness' 'accuracy' 'time'\n""")
     output.flush()
        

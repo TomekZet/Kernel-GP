@@ -6,6 +6,7 @@ Generation 0
 
 Subpopulation 0
 ----------------
+<<<<<<< HEAD
 Avg Nodes: 3.6129032258064515
 Nodes/tree: [3.6129032258064515]
 Avg Depth: 2.3225806451612905
@@ -103,3 +104,16 @@ Memory Usage
 Initialization: 478.8047 KB total, 112 nodes, 0.23391584 nodes/KB
 Evaluating: 22191.25 KB total, 307 nodes, 0.013834282 nodes/KB
 Breeding: 2347.1875 KB total, 195 nodes, 0.08307815 nodes/KB
+=======
+Avg Nodes: 5.545454545454546
+Nodes/tree: [5.545454545454546]
+Avg Depth: 2.6363636363636362
+Depth/tree: [2.6363636363636362]
+Mean fitness raw: 0.37245932 adjusted: 0.7695846 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=0.05609973 Adjusted=0.9468802 Hits=0
+Tree 0:
+ (Exp (RBF gamma=0.021941))
+>>>>>>> 3bd67c4f90450efd323a951634ea3878a089269e
