@@ -22,14 +22,14 @@ if __name__ == "__main__":
     parser.add_argument('-x', '--xmx', help='Java heap size', type=int, default=1024)
     parser.add_argument('-g', '--generations', help='Max number of generations', type=int, default=5)
     parser.add_argument('-p', '--popmax', help='Maximum size of population', type=int, default=101)
-    
-#    parser.add_argument('-r', '--rand', help='Randomize set before dividing', action='store_true')
+    parser.add_argument('-d', '--datasets', help='Names of datasets to be used', nargs='+')    
+    parser.add_argument('-e', '--errors', help='Show errors on stdout (do not write them to file', action='store_true')
 #    parser.add_argument('-s', '--seed', help='Generete seed for randomizing', action='store_true')
     
     args = parser.parse_args()
     
     
-    datasets = [#"iris.scale",
+    datasets = ["iris.scale",
                  "dna.scale",
                  "vowel.scale",
                  #"clinical+volumes.arff"
@@ -45,12 +45,16 @@ if __name__ == "__main__":
     cv_folds = 10
     cv = False
     
-    output_filename = "results/results.%s.dat" % (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-    statfilename = output_filename+".stat"
-    err_output_filename = output_filename+'.err'
-    err_output = open(err_output_filename, "w")   
+    output_filename = "results/result.%s" % (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) 
+    mystatfilename = output_filename+".stat"
+    statfilename = "result.%s.stat" % (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))    
+
+    err_output = None
+    if not args.errors:
+        err_output_filename = output_filename+'.err'
+        err_output = open(err_output_filename, "w")
     
-    output = open(output_filename, "w")   
+    output = open(output_filename+'.dat', "w")   
     output.write("""'dataset' 'population size' 'n.o.generations' 'cros validation' 'cv folds' 'fitness' 'accuracy' 'time'\n""")
     output.flush()
        
@@ -68,7 +72,8 @@ if __name__ == "__main__":
                  '-Xmx%dm'%(java_heap),
                  'ec.Evolve',
                  '-file', 'src/ec/app/kernel_gp/kernel_gp.params',
-                 '-p', 'output-file=%s'% statfilename,
+                 '-p', 'output-file=%s'% mystatfilename,
+                 '-p', 'stat.file=%s'% statfilename,
                  '-p', 'train-file=%s'% train,
                  '-p', 'test-file=%s'% test,
                  '-p', 'validation-file=%s'% validation,
@@ -93,5 +98,6 @@ if __name__ == "__main__":
             output.write("%f\n" % interval) # execution time
     
     output.close()
-    err_output.close()
+    if not args.errors:
+        err_output.close()
             
