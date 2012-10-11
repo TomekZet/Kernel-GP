@@ -149,16 +149,16 @@ if __name__ == "__main__":
                     interval += end - start
                     print "Time: %.03f seconds" % interval
                     fitness, accuracy = results.split()
-                    output.write(fitness)
-                    output.write(accuracy)
+                    output.write(fitness+" ")
+                    output.write(accuracy+" ")
                     mean_fit += float(fitness)
                     mean_acc += float(accuracy)
 #                    output.flush()
                 mean_acc /= no_seeds
                 mean_fit /= no_seeds
                 interval /= no_seeds
-                output.write("%f\n" % mean_fit) # mean fitness
-                output.write("%f\n" % mean_acc) # men accuracy
+                output.write("%f " % mean_fit) # mean fitness
+                output.write("%f " % mean_acc) # men accuracy
                 output.write("%f\n" % interval) # execution time
     
     output.close()
