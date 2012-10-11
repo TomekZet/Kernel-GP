@@ -1,0 +1,5 @@
+N dataset population_size generations cross_validation cv_folds fitness0 accuracy0 fitness1 accuracy1 fitness2 accuracy2 mean_fitness mean_accuracy time
+1 iris.scale 1 1 False 10 0.8979592100.00.93877554100.00.8571428786.666666666666670.897959
+95.555556
+0.445828
+2 iris.scale 11 1 False 10 

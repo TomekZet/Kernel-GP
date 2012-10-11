@@ -13,6 +13,14 @@ import arff
         
         
 def divide(dataset, p_test=20, p_valid=20):
+    ''' Devides dataset into train, test and validation datasets with proportional to percentages given as arguments
+        arguments:
+            dataset : list of examples
+            p_test  : size of test set as percent of input dataset
+            p_valid: size of validations set as percent of input dataset
+        
+        returns: tuple with train, test and validations datasets        
+    '''
     if p_test + p_valid > 100:
         raise Exception("Sumaric percent size of test and validation %d set must not be larger then 100%"%(p_test+p_valid))
     n_total = len(dataset)
@@ -26,13 +34,17 @@ def divide(dataset, p_test=20, p_valid=20):
     valid = dataset[n_train+n_test:]
     return train, test, valid
 
+
 def write_dataset(dataset, path):
+    '''Write dataset to file in path'''
     with open(path, "w") as f:
         for line in dataset:
             f.write(line)
             f.write("\n")
             
+
 def substitute_missing(data):
+    '''Replaces missing values in data with means (for numerical values) or mods (for nominal values)'''
     means = []
     modes = []
     types = []
@@ -66,6 +78,7 @@ def substitute_missing(data):
 
 
 def load_from_arff(filepath):
+    ''' Load dataset from arff file '''
     a = arff.ArffFile.load(filepath)
     dataset = []
     substitute_missing(a.data)
@@ -75,7 +88,16 @@ def load_from_arff(filepath):
         dataset.append(line)
     return dataset
         
-def process(input, output, test, valid, rand=None, seed=False):
+def process(input, output, test=33, valid=None, rand=None, seed=False):
+    '''
+    input  : path to input file
+    output : path for output files
+    test   : size of output test set in percents of input set
+    valid  : size of output validation set in percents of input set
+    rand   : if true than input datasrt is randomized
+    seed   : if true than seed for randomization is set to tcurrent time
+    
+    '''
     if input.endswith(".arff"):
         dataset = load_from_arff(input)        
     else:
@@ -94,7 +116,7 @@ def process(input, output, test, valid, rand=None, seed=False):
     if test:
         write_dataset(test, output+".t")
     if valid:
-        write_dataset(valid, output+".val")
+        write_dataset(valid, output+".v")
 
     
 if __name__ == '__main__':

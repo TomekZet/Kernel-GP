@@ -1,0 +1,104 @@
+
+
+
+Generation 0
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 6.6
+Nodes/tree: [6.6]
+Avg Depth: 3.3333333333333335
+Depth/tree: [3.3333333333333335]
+Mean fitness raw: 0.11224509 adjusted: 0.9111112 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=0.03448276 Adjusted=0.9666667 Hits=0
+Tree 0:
+ (a * (* (* Linear Linear) Linear) a=0.836488)
+
+
+
+Generation 1
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 2.533333333333333
+Nodes/tree: [2.533333333333333]
+Avg Depth: 1.8
+Depth/tree: [1.8]
+Mean fitness raw: 0.039408866 adjusted: 0.9622223 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=0.03448276 Adjusted=0.9666667 Hits=0
+Tree 0:
+ (Sigm gamma=0.383094 coef0=0.113171)
+
+
+
+Generation 2
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 1.5333333333333334
+Nodes/tree: [1.5333333333333334]
+Avg Depth: 1.2666666666666666
+Depth/tree: [1.2666666666666666]
+Mean fitness raw: 0.09783251 adjusted: 0.92444456 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=0.03448276 Adjusted=0.9666667 Hits=0
+Tree 0:
+ Linear
+
+
+
+Generation 3
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 1.3333333333333333
+Nodes/tree: [1.3333333333333333]
+Avg Depth: 1.1333333333333333
+Depth/tree: [1.1333333333333333]
+Mean fitness raw: 0.03694581 adjusted: 0.9644446 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=0.03448276 Adjusted=0.9666667 Hits=0
+Tree 0:
+ Linear
+
+
+
+Final Statistics
+================
+Total Individuals Evaluated: 60
+
+Best Individual of Run:
+Evaluated: true
+Fitness: Standardized=0.03448276 Adjusted=0.9666667 Hits=0
+Tree 0:
+ (a * (* (* Linear Linear) Linear) a=0.836488)
+
+
+
+Timings
+=======
+Initialization: 0.03 secs total, 99 nodes, 3300.0 nodes/sec
+Evaluating: 5.326 secs total, 180 nodes, 33.79647 nodes/sec
+Breeding: 0.032 secs total, 81 nodes, 2531.25 nodes/sec
+
+
+
+Memory Usage
+==============
+Initialization: 484.35156 KB total, 99 nodes, 0.204397 nodes/KB
+Evaluating: 5093.992 KB total, 180 nodes, 0.035335742 nodes/KB
+Breeding: 806.59375 KB total, 81 nodes, 0.1004223 nodes/KB

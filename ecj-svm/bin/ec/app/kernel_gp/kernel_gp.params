@@ -25,19 +25,23 @@ cv-folds = 10
 generations = 2
 pop.subpop.0.size = 50
 
+seed.1 = 134280905
+seed.2 = 214128957
+seed.3 = 342141245
+seed.4 = 839284172
 
 state = ec.app.kernel_gp.SimpleEvolutionStateSVM
 
 stat = ec.gp.koza.KozaStatistics
 #stat = ec.simple.SimpleStatistics
 stat.gather-full=true
-stat.file =result.2012-10-04-14-46-52.stat
+stat.file =	out.stat
 
 quit-on-run-complete = true
 init = ec.gp.GPInitializer
 pop.subpop.0.duplicate-retries = 20
 
-gp.tc.0.init = ec.gp.koza.FullBuilder
+gp.tc.0.init = ec.gp.koza.GrowBuilder
 gp.tc.0.init.min-depth = 2
 gp.tc.0.init.max-depth = 6
 
@@ -49,16 +53,18 @@ gp.koza.grow.max-depth = 6
 pop.subpop.0.species.pipe = ec.breed.MultiBreedingPipeline
 pop.subpop.0.species.pipe.num-sources = 2
 	pop.subpop.0.species.pipe.source.0 = ec.gp.breed.MutateERCPipeline
-	pop.subpop.0.species.pipe.source.0.prob = 0.8
+	pop.subpop.0.species.pipe.source.0.prob = 0.9
 	pop.subpop.0.species.pipe.source.0.num-sources = 1
 	pop.subpop.0.species.pipe.source.1 = ec.breed.ReproductionPipeline
-	pop.subpop.0.species.pipe.source.1.prob = 0.2
+	pop.subpop.0.species.pipe.source.1.prob = 0.1
 		pop.subpop.0.species.pipe.source.0.source.0 = ec.breed.MultiBreedingPipeline
-		pop.subpop.0.species.pipe.source.0.source.0.num-sources = 2 
+		pop.subpop.0.species.pipe.source.0.source.0.num-sources = 3
 		pop.subpop.0.species.pipe.source.0.source.0.source.0 = ec.gp.koza.CrossoverPipeline
-		pop.subpop.0.species.pipe.source.0.source.0.source.0.prob = 0.9 
-		pop.subpop.0.species.pipe.source.0.source.0.source.1 = ec.breed.ReproductionPipeline
-		pop.subpop.0.species.pipe.source.0.source.0.source.1.prob = 0.1
+		pop.subpop.0.species.pipe.source.0.source.0.source.0.prob = 0.7 
+		pop.subpop.0.species.pipe.source.0.source.0.source.1 = ec.gp.koza.MutationPipeline
+		pop.subpop.0.species.pipe.source.0.source.0.source.1.prob = 0.2
+		pop.subpop.0.species.pipe.source.0.source.0.source.2 = ec.breed.ReproductionPipeline
+		pop.subpop.0.species.pipe.source.0.source.0.source.2.prob = 0.1
 
 breed.reproduce.source.0 = ec.parsimony.BucketTournamentSelection
 gp.koza.xover.source.0 = ec.parsimony.BucketTournamentSelection

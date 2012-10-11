@@ -1,0 +1,3059 @@
+ (* (a * (Exp (Sigm gamma=0.096455 coef0=0.158692))
+     a=1.003507) (a * (+ (RBF gamma=0.414736)
+     (Poly gamma=0.407278 coef0=0.066179 degree=3.416347))
+     a=0.983850))
+Test Accuracy = 93.33333333333333%
+Time elapsed: 13.742877641
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ (Exp (+ Linear Linear))
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.011999921
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.122657 coef0=0.337209)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.026196628
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (* (* (+ (Exp (Poly gamma=0.201422 coef0=0.097274
+     degree=2.527628)) (RBF gamma=0.392992)) (Exp
+     (* (a * Linear a=0.884044) (Sigm gamma=0.194474
+         coef0=0.041357)))) Linear)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.041768229
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (a * (a * Linear a=0.871909) a=1.110057)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.004853551
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (a * (RBF gamma=0.242037) a=1.097576)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.00386229
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.204489 coef0=0.070695)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.003843925
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Exp (+ (* Linear Linear) (RBF gamma=0.152159)))
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.015155002
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Poly gamma=0.055789 coef0=0.227115 degree=3.922077)
+Test Accuracy = 30.0%
+Time elapsed: 0.021060219
+Standardized Fitness = 2.3333333
+Adjusted Fitness = 0.3
+
+ (Exp (RBF gamma=0.150682))
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.003524539
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (+ Linear (* Linear Linear))
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.002935358
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Exp (a * (* (Poly gamma=0.297193 coef0=0.016598
+     degree=2.749357) (+ Linear Linear)) a=0.971181))
+Test Accuracy = 90.0%
+Time elapsed: 0.015156327
+Standardized Fitness = 0.11111111
+Adjusted Fitness = 0.9
+
+ (RBF gamma=0.396241)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.005835029
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.069594 coef0=0.014479)
+Test Accuracy = 90.0%
+Time elapsed: 0.003206483
+Standardized Fitness = 0.11111111
+Adjusted Fitness = 0.9
+
+ (RBF gamma=0.129988)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.005847882
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Poly gamma=0.212840 coef0=0.073503 degree=3.009606)
+Test Accuracy = 66.66666666666666%
+Time elapsed: 0.007388231
+Standardized Fitness = 0.5
+Adjusted Fitness = 0.6666667
+
+ (RBF gamma=0.235906)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001502636
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.155179 coef0=0.071961)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.006180113
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Exp (Exp (RBF gamma=0.101648)))
+Test Accuracy = 93.33333333333333%
+Time elapsed: 0.002036362
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ (Poly gamma=0.452933 coef0=0.106953 degree=1.887521)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001104749
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Poly gamma=0.350445 coef0=0.103863 degree=2.864324)
+Test Accuracy = 90.0%
+Time elapsed: 0.004784475
+Standardized Fitness = 0.11111111
+Adjusted Fitness = 0.9
+
+ (* (+ (+ (Exp Linear) (+ Linear Linear))
+     (Exp (+ Linear Linear))) (RBF gamma=0.408309))
+Test Accuracy = 93.33333333333333%
+Time elapsed: 0.005623415
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ (Sigm gamma=0.178481 coef0=0.082658)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.015355578
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.168779 coef0=0.214936)
+Test Accuracy = 93.33333333333333%
+Time elapsed: 0.002896319
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ (Poly gamma=0.190706 coef0=0.082978 degree=3.461179)
+Test Accuracy = 63.33333333333333%
+Time elapsed: 0.006173274
+Standardized Fitness = 0.57894737
+Adjusted Fitness = 0.6333334
+
+ (Poly gamma=0.398016 coef0=0.057655 degree=3.494235)
+Test Accuracy = 90.0%
+Time elapsed: 0.001244501
+Standardized Fitness = 0.11111111
+Adjusted Fitness = 0.9
+
+ (Sigm gamma=0.166924 coef0=0.105321)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.002450242
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Poly gamma=0.410907 coef0=0.080299 degree=2.002605)
+Test Accuracy = 90.0%
+Time elapsed: 0.002161728
+Standardized Fitness = 0.11111111
+Adjusted Fitness = 0.9
+
+ (RBF gamma=0.219326)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001489223
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (* (a * (* (RBF gamma=0.326664) (Poly gamma=0.184987
+     coef0=0.031563 degree=2.587273)) a=1.026941)
+     (* (+ (* Linear Linear) (+ (Exp Linear) (Sigm
+         gamma=0.192186 coef0=0.044459))) (Sigm gamma=0.266426
+         coef0=0.189935)))
+Test Accuracy = 73.33333333333333%
+Time elapsed: 0.021857181
+Standardized Fitness = 0.36363637
+Adjusted Fitness = 0.73333335
+
+ (+ (RBF gamma=0.254026) (Sigm gamma=0.228113
+     coef0=0.008646))
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.002248467
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (+ (* Linear Linear) Linear)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001289131
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (* Linear (Sigm gamma=0.211025 coef0=0.237628))
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.002197347
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (a * (a * (RBF gamma=0.314319) a=0.917288)
+     a=0.810153)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.014835478
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.236568 coef0=0.042950)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.003287706
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.298742)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.004784967
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Poly gamma=0.378907 coef0=0.002511 degree=1.588445)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001089945
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.313948 coef0=0.108825)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.004183704
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Exp (RBF gamma=0.355712))
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001705452
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Poly gamma=0.149701 coef0=0.000861 degree=2.715350)
+Test Accuracy = 60.0%
+Time elapsed: 0.013058921
+Standardized Fitness = 0.6666667
+Adjusted Fitness = 0.59999996
+
+ (a * (Exp (Exp (a * Linear a=1.024565)))
+     a=1.026461)
+Test Accuracy = 93.33333333333333%
+Time elapsed: 0.001958071
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ (RBF gamma=0.276603)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001472604
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (a * (a * Linear a=0.948599) a=1.085519)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.00113562
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (a * (RBF gamma=0.201714) a=1.053474)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.010673563
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (* Linear (Poly gamma=0.312774 coef0=0.096531
+     degree=3.450521))
+Test Accuracy = 73.33333333333333%
+Time elapsed: 0.001819716
+Standardized Fitness = 0.36363637
+Adjusted Fitness = 0.73333335
+
+ (a * (Exp (Exp (* Linear Linear))) a=0.942538)
+Test Accuracy = 63.33333333333333%
+Time elapsed: 0.001919655
+Standardized Fitness = 0.57894737
+Adjusted Fitness = 0.6333334
+
+ (* (* Linear Linear) Linear)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001408209
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Poly gamma=0.227160 coef0=0.036831 degree=3.081217)
+Test Accuracy = 63.33333333333333%
+Time elapsed: 0.02481412
+Standardized Fitness = 0.57894737
+Adjusted Fitness = 0.6333334
+
+ (a * (+ Linear Linear) a=0.972939)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001048458
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Poly gamma=0.278555 coef0=0.035653 degree=3.181037)
+Test Accuracy = 66.66666666666666%
+Time elapsed: 0.001419802
+Standardized Fitness = 0.5
+Adjusted Fitness = 0.6666667
+
+ (Exp (* Linear Linear))
+Test Accuracy = 93.33333333333333%
+Time elapsed: 0.001876076
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ (Sigm gamma=0.247985 coef0=0.046440)
+Test Accuracy = 90.0%
+Time elapsed: 14.227931497
+Standardized Fitness = 0.11111111
+Adjusted Fitness = 0.9
+
+ (a * (Exp Linear) a=0.883070)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001251625
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.294912 coef0=0.002165)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001882711
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 8.72667E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (+ (* (a * (Exp Linear) a=1.004578) (Exp
+     Linear)) (Exp (* (Sigm gamma=0.332926 coef0=0.065214)
+     (RBF gamma=0.255026))))
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.003035094
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.431346)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.00440161
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (+ Linear Linear)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.80643E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Poly gamma=0.029652 coef0=0.001290 degree=3.678743)
+Test Accuracy = 30.0%
+Time elapsed: 0.001739469
+Standardized Fitness = 2.3333333
+Adjusted Fitness = 0.3
+
+ (RBF gamma=0.313197)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001448509
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.077073)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001627093
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Exp (Sigm gamma=0.444947 coef0=0.271386))
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.010600509
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Exp (a * (Exp Linear) a=0.962323))
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.002063952
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (* Linear Linear)
+Test Accuracy = 93.33333333333333%
+Time elapsed: 0.001297093
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ (a * (a * Linear a=1.035335) a=1.034978)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.8951E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (a * Linear a=0.998950)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.29656E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.105730)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001585327
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (a * Linear a=1.177477)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 8.61771E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.287474 coef0=0.015228)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.008910838
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Exp (RBF gamma=0.143829))
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001907576
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.497434 coef0=0.040079)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001832846
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Poly gamma=0.296341 coef0=0.022666 degree=3.606841)
+Test Accuracy = 66.66666666666666%
+Time elapsed: 0.001602299
+Standardized Fitness = 0.5
+Adjusted Fitness = 0.6666667
+
+ (Poly gamma=0.234535 coef0=0.019208 degree=2.005906)
+Test Accuracy = 83.33333333333334%
+Time elapsed: 0.001722636
+Standardized Fitness = 0.2
+Adjusted Fitness = 0.8333333
+
+ (a * (* Linear (* (Sigm gamma=0.164394 coef0=0.066494)
+     (RBF gamma=0.274542))) a=0.940752)
+Test Accuracy = 90.0%
+Time elapsed: 0.004090391
+Standardized Fitness = 0.11111111
+Adjusted Fitness = 0.9
+
+ (RBF gamma=0.032623)
+Test Accuracy = 90.0%
+Time elapsed: 0.002101385
+Standardized Fitness = 0.11111111
+Adjusted Fitness = 0.9
+
+ (+ (RBF gamma=0.354398) (RBF gamma=0.087784))
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.006770766
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Poly gamma=0.253958 coef0=0.031667 degree=2.983622)
+Test Accuracy = 90.0%
+Time elapsed: 0.001682058
+Standardized Fitness = 0.11111111
+Adjusted Fitness = 0.9
+
+ (RBF gamma=0.103005)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.004223509
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (* (RBF gamma=0.202463) (a * Linear a=0.897048))
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001589447
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (+ Linear (a * (RBF gamma=0.131617) a=0.951429))
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.004568461
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.195118 coef0=0.157292)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.002263628
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (+ (+ (Sigm gamma=0.108247 coef0=0.117032)
+     (Sigm gamma=0.185289 coef0=0.249673)) (a *
+     (+ Linear (a * Linear a=1.033672)) a=0.881322))
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.009184755
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.384022)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001508433
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.331547)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001427554
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Poly gamma=0.180409 coef0=0.009915 degree=3.391451)
+Test Accuracy = 60.0%
+Time elapsed: 0.001733179
+Standardized Fitness = 0.6666667
+Adjusted Fitness = 0.59999996
+
+ (Poly gamma=0.075925 coef0=0.122444 degree=2.427217)
+Test Accuracy = 63.33333333333333%
+Time elapsed: 0.002235549
+Standardized Fitness = 0.57894737
+Adjusted Fitness = 0.6333334
+
+ (a * Linear a=0.940834)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 8.48711E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (+ (RBF gamma=0.165649) (Poly gamma=0.113404
+     coef0=0.125920 degree=3.316889))
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.00176077
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.162564 coef0=0.267205)
+Test Accuracy = 93.33333333333333%
+Time elapsed: 0.002239251
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ (Exp (Sigm gamma=0.100371 coef0=0.043453))
+Test Accuracy = 90.0%
+Time elapsed: 0.008353995
+Standardized Fitness = 0.11111111
+Adjusted Fitness = 0.9
+
+ (* (* (Poly gamma=0.129387 coef0=0.113534
+     degree=3.350613) (RBF gamma=0.369188)) Linear)
+Test Accuracy = 63.33333333333333%
+Time elapsed: 0.011065792
+Standardized Fitness = 0.57894737
+Adjusted Fitness = 0.6333334
+
+ (Poly gamma=0.255424 coef0=0.051073 degree=3.178669)
+Test Accuracy = 66.66666666666666%
+Time elapsed: 0.001228299
+Standardized Fitness = 0.5
+Adjusted Fitness = 0.6666667
+
+ (Exp (Exp Linear))
+Test Accuracy = 93.33333333333333%
+Time elapsed: 0.001282216
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ (* (* (Poly gamma=0.119540 coef0=0.019698
+     degree=3.968666) (a * (Poly gamma=0.307553
+     coef0=0.072547 degree=2.134489) a=0.865542))
+     Linear)
+Test Accuracy = 30.0%
+Time elapsed: 0.015684116
+Standardized Fitness = 2.3333333
+Adjusted Fitness = 0.3
+
+ (+ (RBF gamma=0.112693) (+ Linear Linear))
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001273975
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.262129 coef0=0.035206)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001838363
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (* (Sigm gamma=0.249333 coef0=0.183063) Linear)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.002000115
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.377728 coef0=0.064721)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001700215
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Poly gamma=0.277698 coef0=0.011162 degree=2.634957)
+Test Accuracy = 86.66666666666667%
+Time elapsed: 0.001211745
+Standardized Fitness = 0.15384616
+Adjusted Fitness = 0.8666667
+
+ (* (Sigm gamma=0.237719 coef0=0.025027) Linear)
+Test Accuracy = 90.0%
+Time elapsed: 0.010758355
+Standardized Fitness = 0.11111111
+Adjusted Fitness = 0.9
+
+ (+ (Sigm gamma=0.348993 coef0=0.099259) (a *
+     (Poly gamma=0.133110 coef0=0.006578 degree=3.392672)
+     a=1.268618))
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.002281574
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.359774)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001311966
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.140767 coef0=0.155295)
+Test Accuracy = 93.33333333333333%
+Time elapsed: 0.002184636
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ (Sigm gamma=0.168779 coef0=0.214936)
+Test Accuracy = 0.0%
+Time elapsed: 2.165E-6
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ (Sigm gamma=0.172361 coef0=0.128042)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.00203692
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.394948)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001143511
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.024537)
+Test Accuracy = 80.0%
+Time elapsed: 0.013996475
+Standardized Fitness = 0.25
+Adjusted Fitness = 0.8
+
+ (Sigm gamma=0.365515 coef0=0.064577)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001681289
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.171459 coef0=0.011350)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.013858328
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.194004)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001198335
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 6.48336E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.049397)
+Test Accuracy = 90.0%
+Time elapsed: 0.027121606
+Standardized Fitness = 0.11111111
+Adjusted Fitness = 0.9
+
+ (RBF gamma=0.312992)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001220826
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.162564 coef0=0.267205)
+Test Accuracy = 0.0%
+Time elapsed: 1.816E-6
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ (RBF gamma=0.300874)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001264336
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.272259)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001158665
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF  (RBF gamma=0.396029)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.021603447
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.235955)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.00120972
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+gamma=0.431540)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001126888
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.138309)
+Test Accuracy = 90.0%
+Time elapsed: 0.003884291
+Standardized Fitness = 0.11111111
+Adjusted Fitness = 0.9
+
+ (Sigm gamma=0.204245 coef0=0.281450)
+Test Accuracy = 93.33333333333333%
+Time elapsed: 0.002191969
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ (RBF gamma=0.482341)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001156153
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.431346)
+Test Accuracy = 0.0%
+Time elapsed: 1.886E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Exp (RBF gamma=0.143829))
+Test Accuracy = 0.0%
+Time elapsed: 1.816E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.245374 coef0=0.051243)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001810635
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.198909)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001232557
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm  (a * (Exp Linear) gamma=0.104228 a=0.940868)
+coef0=0.033603)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001029668
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+Test Accuracy = 86.66666666666667%
+Time elapsed: 0.009724489
+Standardized Fitness = 0.15384616
+Adjusted Fitness = 0.8666667
+
+ (RBF gamma=0.377970)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001933557
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.383938 coef0=0.290868)
+Test Accuracy = 93.33333333333333%
+Time elapsed: 0.003084682
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 6.37093E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.088999)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001361557
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (a * (RBF gamma=0.201714) a=0.955120)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.00128906
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.152571 coef0=0.222133)
+Test Accuracy = 93.33333333333333%
+Time elapsed: 0.002183656
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ (RBF gamma=0.371843)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001213982
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.445113 coef0=0.073113)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001583442
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.282319 coef0=0.055731)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001696306
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.441652)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001139182
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (+ Linear Linear)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 7.73004E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.341602)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001194564
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.346864)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001189814
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 6.52805E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 6.40236E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.331547)
+Test Accuracy = 0.0%
+Time elapsed: 1.816E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.291972)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001183112
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Exp (RBF gamma=0.045872))
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.002013456
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.497434 coef0=0.040079)
+Test Accuracy = 0.0%
+Time elapsed: 1.886E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.317216)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.005484567
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.383588)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001199454
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (a * Linear a=1.159788)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 8.2713E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.276043)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001149169
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (a * Linear a=0.875470)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 7.41365E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.040682)
+Test Accuracy = 90.0%
+Time elapsed: 0.001646719
+Standardized Fitness = 0.11111111
+Adjusted Fitness = 0.9
+
+ (Sigm gamma=0.151658 coef0=0.167416)
+Test Accuracy = 93.33333333333333%
+Time elapsed: 0.00264517
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ (RBF gamma=0.412371)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001206367
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.313948 coef0=0.108825)
+Test Accuracy = 0.0%
+Time elapsed: 1.956E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (a * Linear a=0.924602)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 7.21948E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.222353)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001186674
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.407099)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001195613
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.377728 coef0=0.204887)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001748758
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (a * Linear a=1.088328)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 6.72292E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (a * Linear a=1.111513)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 6.79346E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.247393 coef0=0.270717)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.003078813
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.321982)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.002367408
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.112102)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.044465572
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (+ (RBF gamma=0.165649) (Poly gamma=0.176275
+     coef0=0.125920 degree=3.316889))
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001542794
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.129988)
+Test Accuracy = 0.0%
+Time elapsed: 1.816E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.555902)
+Test Accuracy = 93.33333333333333%
+Time elapsed: 8.76578E-4
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ (Poly gamma=0.434116 coef0=0.045528 degree=3.048492)
+Test Accuracy = 90.0%
+Time elapsed: 7.58129E-4
+Standardized Fitness = 0.11111111
+Adjusted Fitness = 0.9
+
+ (RBF gamma=0.431346)
+Test Accuracy = 0.0%
+Time elapsed: 1.815E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.313948 coef0=0.108825)
+Test Accuracy = 0.0%
+Time elapsed: 1.816E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.155179 coef0=0.071961)
+Test Accuracy = 0.0%
+Time elapsed: 1.885E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.219326)
+Test Accuracy = 0.0%
+Time elapsed: 1.886E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.166924 coef0=0.105321)
+Test Accuracy = 0.0%
+Time elapsed: 1.886E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.94476E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.466632)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.35455E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.326377 coef0=0.061545)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001512552
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.226922)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.71422E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.153322 coef0=0.157292)
+Test Accuracy = 93.33333333333333%
+Time elapsed: 0.001857847
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ (Sigm gamma=0.221487 coef0=0.080987)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.002100895
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (* Linear (Sigm gamma=0.211025 coef0=0.237628))
+Test Accuracy = 0.0%
+Time elapsed: 1.606E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Exp (RBF gamma=0.102223))
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001480636
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.047810)
+Test Accuracy = 90.0%
+Time elapsed: 0.001341651
+Standardized Fitness = 0.11111111
+Adjusted Fitness = 0.9
+
+ (a * Linear a=0.964390)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.36521E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.398446)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.6402E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.443462)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 8.93688E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.136005)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001072202
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.313197)
+Test Accuracy = 0.0%
+Time elapsed: 1.746E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.332537)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.78755E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.319755)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.48655E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.173719 coef0=0.332798)
+Test Accuracy = 93.33333333333333%
+Time elapsed: 0.001856242
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ (RBF gamma=0.068864)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001243386
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (+ Linear Linear)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.91765E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Exp (+ Linear Linear))
+Test Accuracy = 96.66666666666667%
+Time elapsed: 8.1875E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.146186)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001043779
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.194870)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001081422
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.81834E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.195051)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001040215
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.224167)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001021219
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.413203)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.2393E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.262129 coef0=0.035206)
+Test Accuracy = 0.0%
+Time elapsed: 1.816E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.110748)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001076115
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.021776)
+Test Accuracy = 70.0%
+Time elapsed: 0.001832355
+Standardized Fitness = 0.42857143
+Adjusted Fitness = 0.7
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.2793E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.27929E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.475191)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.00102024
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.249518)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001054953
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.480317)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001015562
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.359774)
+Test Accuracy = 0.0%
+Time elapsed: 1.816E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.425591)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.89581E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.342111)
+Test Accuracy = 93.33333333333333%
+Time elapsed: 0.00115776
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.0181E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.317216)
+Test Accuracy = 0.0%
+Time elapsed: 1.746E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.092172)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001212515
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.425037)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001173054
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.266938)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001053974
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.173670)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001096926
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.313197)
+Test Accuracy = 0.0%
+Time elapsed: 1.816E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.379611)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.002184146
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.165347)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001155734
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.229491)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.00108701
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.010363)
+Test Accuracy = 63.33333333333333%
+Time elapsed: 0.002243442
+Standardized Fitness = 0.57894737
+Adjusted Fitness = 0.6333334
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.01949E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.368535)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001059282
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.322991)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001010672
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.100538)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.003800133
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.235826)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001058445
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.103864 coef0=0.347074)
+Test Accuracy = 90.0%
+Time elapsed: 0.003856569
+Standardized Fitness = 0.11111111
+Adjusted Fitness = 0.9
+
+ (RBF gamma=0.146582)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001143652
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (a * Linear a=1.070300)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.79542E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.068864)
+Test Accuracy = 0.0%
+Time elapsed: 1.886E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.33657E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.446580)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001003618
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.383588)
+Test Accuracy = 0.0%
+Time elapsed: 1.956E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.194870)
+Test Accuracy = 0.0%
+Time elapsed: 1.816E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.151616)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.004440719
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.17035E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.37848E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.17524E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.398304)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.9021E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.22622E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (Sigm gamma=0.373862 coef0=0.004898)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001485312
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.256293)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.00140255
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.341887)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001221036
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.327508)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001683595
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.250104)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.00122376
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.500583)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001195404
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.419626)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001023175
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.337890)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001125212
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.281510)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.004373322
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.401106)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.00295128
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.363530)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001177385
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.458806)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.0052557
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.098701)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.00632643
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.413414)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001030229
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 0.0%
+Time elapsed: 1.886E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.412006)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.003562396
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.133567)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001182412
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.255087)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001108659
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.403913)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001081701
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.342547)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001138972
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 63.33333333333333%
+Time elapsed: 12.250453138
+Standardized Fitness = 0.57894737
+Adjusted Fitness = 0.6333334
+
+ (RBF gamma=0.329616)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.5424E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.221106)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.6444E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.377970)
+Test Accuracy = 0.0%
+Time elapsed: 1.816E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.410195)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.67863E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.265882)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001044548
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.321982)
+Test Accuracy = 0.0%
+Time elapsed: 1.815E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.05791E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.168855)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001074786
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.224167)
+Test Accuracy = 0.0%
+Time elapsed: 1.885E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.144298)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001028412
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.494642)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001049785
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.095992)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001166282
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.275054)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.38808E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.217120)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.68421E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.117188)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001153497
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.332081)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.82666E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (a * Linear a=1.087931)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.4546E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.302141)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001023104
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.249607)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.66742E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.316579)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.91116E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.240016)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.79872E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.414403)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.86789E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.407250)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001012142
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.412371)
+Test Accuracy = 0.0%
+Time elapsed: 1.816E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.176254)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.94193E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.326369)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.69955E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.485964)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001018564
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.203553)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.45371E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.498500)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.91116E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.315106)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.80221E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.74431E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.572024)
+Test Accuracy = 93.33333333333333%
+Time elapsed: 8.94945E-4
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.03137E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.349704)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001014936
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.565688)
+Test Accuracy = 93.33333333333333%
+Time elapsed: 9.39926E-4
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ (RBF gamma=0.252178)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001024923
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.212465)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.41389E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.75688E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.319755)
+Test Accuracy = 0.0%
+Time elapsed: 1.816E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.464392)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.7645E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.436055)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.32242E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 63.33333333333333%
+Time elapsed: 10.212996293
+Standardized Fitness = 0.57894737
+Adjusted Fitness = 0.6333334
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.13333E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 0.0%
+Time elapsed: 1.816E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.344272)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001162368
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 7.19155E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.99993E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.74375E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 0.0%
+Time elapsed: 1.746E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.016807)
+Test Accuracy = 63.33333333333333%
+Time elapsed: 0.002626869
+Standardized Fitness = 0.57894737
+Adjusted Fitness = 0.6333334
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.04743E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.100538)
+Test Accuracy = 0.0%
+Time elapsed: 1.816E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.04255E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.97899E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.99505E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.631937)
+Test Accuracy = 93.33333333333333%
+Time elapsed: 9.86509E-4
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ (RBF gamma=0.025233)
+Test Accuracy = 76.66666666666667%
+Time elapsed: 0.001739187
+Standardized Fitness = 0.3043478
+Adjusted Fitness = 0.7666667
+
+ (RBF gamma=0.270262)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001039378
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.090495)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001231162
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.30374E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.99924E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.99086E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.204590)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001018285
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.257931)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001097416
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.502546)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001004178
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.03835E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.98597E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.32749E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.08933E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.02369E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.261884)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001068223
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.21994E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.411949)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.002233246
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.05861E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.02858E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.2395E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.00413E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.99993E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.99225E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.247119)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001031625
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.142984)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.004297681
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.266881)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001054743
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001209302
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.022359)
+Test Accuracy = 70.0%
+Time elapsed: 0.001814967
+Standardized Fitness = 0.42857143
+Adjusted Fitness = 0.7
+
+ (RBF gamma=0.253927)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001085544
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.163661)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001125563
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.3722E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.94476E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.9706E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.93289E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.10121E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.367214)
+Test Accuracy = 76.66666666666667%
+Time elapsed: 18.737310101
+Standardized Fitness = 0.3043478
+Adjusted Fitness = 0.7666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.37359E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.05791E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.164535)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001145747
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.22344E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.176018)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001065358
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 0.0%
+Time elapsed: 1.956E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.241664)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001042241
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.82812E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.346057)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001003409
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.62838E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.412006)
+Test Accuracy = 0.0%
+Time elapsed: 1.816E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 0.0%
+Time elapsed: 1.885E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.62558E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.97269E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.98736E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.302328)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001025968
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 0.0%
+Time elapsed: 1.816E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.62699E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.60743E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.098771)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001111454
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.95105E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.316767)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001004947
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.87841E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.256082)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.73519E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.363834)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001567449
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.112875)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001061168
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.68914E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.305105)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.70793E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.63885E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.95873E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.90565E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.067484)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001221593
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.121732)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001059212
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.99225E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.69403E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.353765)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.74426E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.61232E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.60603E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.198923)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.72889E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.63119E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.227441)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.60808E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.144765)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.00101235
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.294233)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.73588E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.0174E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.159845)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001118717
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.1934E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.91613E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.414262)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.82177E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.93149E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.363041)
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001259448
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.34342E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.93847E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.28907E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.22902E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.84209E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.83651E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 0.0%
+Time elapsed: 1.746E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.001545656
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.95873E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.02649E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.85886E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.82603E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.83162E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.83092E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 8.00661E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.02928E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.84629E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.89588E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.95874E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.84559E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.83791E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 0.0%
+Time elapsed: 1.816E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.26184E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.19829E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.87353E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.87003E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 0.0%
+Time elapsed: 1.467E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.84139E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 5.17034E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.84559E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.83721E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 0.0%
+Time elapsed: 1.746E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.86374E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.82393E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.81346E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.84209E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.83511E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.84209E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.83511E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.99924E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.004091932
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.63397E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 0.0%
+Time elapsed: 1.886E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.57111E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.65911E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.58438E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.61232E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.84489E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 0.002502553
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.9308E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.92451E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 9.015691587
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.7974E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.92381E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.95943E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.75898E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.90985E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.85257E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.70871E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.73315E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.62E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.61931E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.61931E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.81347E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.64865E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.6242E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.67658E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.65284E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.63886E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.64934E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.65074E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.58298E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.63885E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.65631E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.62069E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.62418E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.59694E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.87491E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.80438E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.682840)
+Test Accuracy = 93.33333333333333%
+Time elapsed: 9.90139E-4
+Standardized Fitness = 0.071428575
+Adjusted Fitness = 0.93333334
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.64723E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.62E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.61511E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.6221E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.79182E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.61372E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.62978E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 0.0%
+Time elapsed: 1.886E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.56203E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.61092E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.74083E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.63048E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.9315E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.70451E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.61722E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.65213E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.87004E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.99017E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ (RBF gamma=0.159845)
+Test Accuracy = 0.0%
+Time elapsed: 1.955E-6
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.58858E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
+ Linear
+Test Accuracy = 96.66666666666667%
+Time elapsed: 4.97968E-4
+Standardized Fitness = 0.03448276
+Adjusted Fitness = 0.9666667
+
