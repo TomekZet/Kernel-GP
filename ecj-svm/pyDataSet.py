@@ -89,7 +89,7 @@ def load_from_arff(filepath):
         
 def process(input, output, test=33, valid=0, rand=None, seed=False):
     '''
-    input  : path to input file
+    input  : path to input file(s). If there are multiple files their content is joined into one big dataset
     output : path for output files
     test   : size of output test set in percents of input set
     valid  : size of output validation set in percents of input set
@@ -97,11 +97,14 @@ def process(input, output, test=33, valid=0, rand=None, seed=False):
     seed   : if true than seed for randomization is set to tcurrent time
     
     '''
-    if input.endswith(".arff"):
-        dataset = load_from_arff(input)        
-    else:
-        with open(input) as f: 
-            dataset = f.readlines()
+    
+    dataset = []
+    for file in input:
+        if file.endswith(".arff"):
+            dataset.extend(load_from_arff(input))        
+        else:
+            with open(file) as f: 
+                dataset.extend(f.readlines())
         
     if rand:
         if seed:
@@ -120,7 +123,7 @@ def process(input, output, test=33, valid=0, rand=None, seed=False):
     
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Preprocessing of ML data sets")
-    parser.add_argument('-i', '--input', help='Path to input file')
+    parser.add_argument('-i', '--input', help='Path to input file(s)', nargs='+')
     parser.add_argument('-o', '--output', help='Path to output file', default='')
     parser.add_argument('-v', '--valid', help='Percent of cases assigned to validation dataset', type=int, default=20)
     parser.add_argument('-t', '--test', help='Percent of cases assigned to test dataset', type=int, default=20)
