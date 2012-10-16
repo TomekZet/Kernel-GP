@@ -93,8 +93,8 @@ def process(input, output, test=33, valid=0, rand=None, seed=False):
     output : path for output files
     test   : size of output test set in percents of input set
     valid  : size of output validation set in percents of input set
-    rand   : if true than input datasrt is randomized
-    seed   : if true than seed for randomization is set to tcurrent time
+    rand   : if true then input dataset is randomized
+    seed   : if true then seed for randomization is set to current time (if false seed is not set so each time shuffles will be thesame)
     
     '''
     
