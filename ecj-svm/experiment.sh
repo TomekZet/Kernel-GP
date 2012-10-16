@@ -1,3 +1,3 @@
 #!/bin/sh
 #SBATCH --time=1
-srun -c 4 -o slurm.out python experiment.py -x 4000 -g 6 -p 101
+srun -o slurm-srun.out -t 4:0:0 python experiment.py -x 4000 -g 6 -p 101
