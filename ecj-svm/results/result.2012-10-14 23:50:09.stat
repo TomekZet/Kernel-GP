@@ -1,0 +1,8 @@
+ (* (* (Exp (RBF gamma=0.274227)) (+ (* Linear
+     Linear) (Exp Linear))) (a * (Sigm gamma=0.080089
+     coef0=0.070653) a=1.038822))
+Test Accuracy = 100.0%
+Time elapsed: 0.031460989
+Standardized Fitness = 0.0
+Adjusted Fitness = 1.0
+

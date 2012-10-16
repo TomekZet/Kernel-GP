@@ -1,0 +1,5 @@
+ (* (+ (* (Sigm gamma=0.336097 coef0=0.032259)
+     (a * (+ Linear Linear) a=0.908430)) (+ (+
+     (a * Linear a=1.041416) Linear) (Sigm gamma=0.342781
+     coef0=0.158170))) (a * (Sigm gamma=0.145107
+     coef0=0.001752) a=0.895136))

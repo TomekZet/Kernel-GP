@@ -1,0 +1,6 @@
+ (+ (RBF gamma=0.249828) (Exp (+ Linear Linear)))
+Test Accuracy = 97.2972972972973%
+Time elapsed: 0.021058823
+Standardized Fitness = 0.027777778
+Adjusted Fitness = 0.972973
+

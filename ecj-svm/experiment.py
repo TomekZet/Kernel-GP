@@ -66,11 +66,13 @@ if __name__ == "__main__":
     parser.add_argument('-d', '--datasets', help='Names of datasets to be used', nargs='+')    
     parser.add_argument('-e', '--errors', help='Show errors on stdout (do not write them to file', action='store_true')
     parser.add_argument('-c', '--cont', help='Path to file with stopped computations to continue')
+    parser.add_argument('-a', '--append', help='Path to file with stopped computations to append, without reading args from pickled file')
+    
 
 #    parser.add_argument('-s', '--seed', help='Generete seed for randomizing', action='store_true')
     
-    
-    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    time_format = "%Y-%m-%d %H:%M:%S"
+    now = datetime.datetime.now().strftime(time_format)
     args = parser.parse_args()
     write_mode = "w"
     cont = ""
@@ -82,6 +84,9 @@ if __name__ == "__main__":
             args = pdict.get('args') if pdict.get('args') else args
             write_mode = "a"
             cont = ".cont"
+    elif args.append:
+        now = datetime.datetime.strptime(string.split(args.append, '.')[1], time_format)
+        
     
     else:
         picklefilename = "results/result.%s.args" % now 

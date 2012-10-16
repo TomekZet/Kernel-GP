@@ -1,0 +1,51 @@
+
+
+
+Generation 0
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 16.0
+Nodes/tree: [16.0]
+Avg Depth: 5.0
+Depth/tree: [5.0]
+Mean fitness raw: 0.0 adjusted: 1.0 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Tree 0:
+ (* (* (Exp (RBF gamma=0.274227)) (+ (* Linear
+     Linear) (Exp Linear))) (a * (Sigm gamma=0.080089
+     coef0=0.070653) a=1.038822))
+
+
+
+Final Statistics
+================
+Total Individuals Evaluated: 1
+
+Best Individual of Run:
+Evaluated: true
+Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Tree 0:
+ (* (* (Exp (RBF gamma=0.274227)) (+ (* Linear
+     Linear) (Exp Linear))) (a * (Sigm gamma=0.080089
+     coef0=0.070653) a=1.038822))
+
+
+
+Timings
+=======
+Initialization: 0.042 secs total, 16 nodes, 380.9524 nodes/sec
+Evaluating: 0.037 secs total, 16 nodes, 432.43243 nodes/sec
+Breeding: 0.0 secs total, 0 nodes, NaN nodes/sec
+
+
+
+Memory Usage
+==============
+Initialization: 484.4922 KB total, 16 nodes, 0.03302427 nodes/KB
+Evaluating: 339.1797 KB total, 16 nodes, 0.047172636 nodes/KB
+Breeding: 0.0 KB total, 0 nodes, NaN nodes/KB

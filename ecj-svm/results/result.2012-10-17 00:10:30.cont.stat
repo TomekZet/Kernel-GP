@@ -1,0 +1,18 @@
+ (Exp (* Linear (* Linear Linear)))
+Test Accuracy = 94.5945945945946%
+Time elapsed: 6.705060047
+Standardized Fitness = 0.057142857
+Adjusted Fitness = 0.945946
+
+ (Sigm gamma=0.383692 coef0=0.223696)
+Test Accuracy = 94.5945945945946%
+Time elapsed: 19.593890606
+Standardized Fitness = 0.057142857
+Adjusted Fitness = 0.945946
+
+ (Poly gamma=0.252169 coef0=0.048463 degree=2.750889)
+Test Accuracy = 78.37837837837837%
+Time elapsed: 0.009572516
+Standardized Fitness = 0.27586207
+Adjusted Fitness = 0.7837838
+

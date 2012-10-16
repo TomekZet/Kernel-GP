@@ -1,0 +1,25 @@
+ (Sigm gamma=0.342361 coef0=0.077443)
+Test Accuracy = 97.2972972972973%
+Time elapsed: 0.037144117
+Standardized Fitness = 0.027777778
+Adjusted Fitness = 0.972973
+
+ (Sigm gamma=0.125521 coef0=0.008080)
+Test Accuracy = 97.2972972972973%
+Time elapsed: 0.024288633
+Standardized Fitness = 0.027777778
+Adjusted Fitness = 0.972973
+
+ Linear
+Test Accuracy = 97.2972972972973%
+Time elapsed: 0.003020425
+Standardized Fitness = 0.027777778
+Adjusted Fitness = 0.972973
+
+ (Sigm gamma=0.296613 coef0=0.061358)
+Test Accuracy = 97.2972972972973%
+Time elapsed: 0.029422248
+Standardized Fitness = 0.027777778
+Adjusted Fitness = 0.972973
+
+ (Exp Linear)

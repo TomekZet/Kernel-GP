@@ -1,0 +1,57 @@
+
+
+
+Generation 0
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 4.645161290322581
+Nodes/tree: [4.645161290322581]
+Avg Depth: 2.6451612903225805
+Depth/tree: [2.6451612903225805]
+Mean fitness raw: 0.43224636 adjusted: 0.7398709 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=0.046025105 Adjusted=0.956 Hits=0
+Tree 0:
+ (Poly gamma=0.114486 coef0=0.002548 degree=2.623585)
+
+
+
+Generation 1
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 3.3870967741935485
+Nodes/tree: [3.3870967741935485]
+Avg Depth: 2.2903225806451615
+Depth/tree: [2.2903225806451615]
+Mean fitness raw: 0.41829044 adjusted: 0.8234193 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=0.046025105 Adjusted=0.956 Hits=0
+Tree 0:
+ (RBF gamma=0.024841)
+
+
+
+Generation 2
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 3.2580645161290325
+Nodes/tree: [3.2580645161290325]
+Avg Depth: 2.032258064516129
+Depth/tree: [2.032258064516129]
+Mean fitness raw: 0.12299761 adjusted: 0.908968 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=0.043841336 Adjusted=0.958 Hits=0
+Tree 0:
+ (Poly gamma=0.263611 coef0=0.133680 degree=2.077226)

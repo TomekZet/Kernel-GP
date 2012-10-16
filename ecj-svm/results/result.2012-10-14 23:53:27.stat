@@ -1,0 +1,25 @@
+ Linear
+Test Accuracy = 29.72972972972973%
+Time elapsed: 0.074086517
+Standardized Fitness = 2.3636363
+Adjusted Fitness = 0.2972973
+
+ (RBF gamma=0.118540)
+Test Accuracy = 94.5945945945946%
+Time elapsed: 0.011566345
+Standardized Fitness = 0.057142857
+Adjusted Fitness = 0.945946
+
+ (Exp (Exp Linear))
+Test Accuracy = 97.2972972972973%
+Time elapsed: 0.00431996
+Standardized Fitness = 0.027777778
+Adjusted Fitness = 0.972973
+
+ (RBF gamma=0.277690)
+Test Accuracy = 100.0%
+Time elapsed: 0.052152651
+Standardized Fitness = 0.0
+Adjusted Fitness = 1.0
+
+ (+ Linear Linear)
