@@ -163,17 +163,26 @@ set key right bottom
 files = "iris.dat"
 generations = "1 3 5"
 set output "accuracy-iris.pdf"
- plot for [g in generations] 'iris.dat.generations-'.g.'.dat' using 1:7:xticlabels(3) with linespoints title ''.g.' generations'
+ plot for [g in generations] 'iris.dat.generations-'.g.'.dat' using 1:28:xticlabels(3) with linespoints title ''.g.' generations'
  unset output
 
 set output "accuracy-dna.pdf"
- plot for [g in generations] 'dna.dat.generations-'.g.'.dat' using 1:7:xticlabels(3) with linespoints title ''.g.' generations'
- unset output
+ plot for [g in generations] 'dna.dat.generations-'.g.'.dat' using 1:28:xticlabels(3) with linespoints title ''.g.' generations'
+unset output
+
+set output "accuracy-dna-libsvm.pdf"
+ plot 'dna.dat.generations-5.dat' using 1:28:xticlabels(3) with linespoints title '5 generations', 93.086003372681 title "svm linear", 50.843170320404 title "svm polynomial", 94.5193929173693 title "svm RBF",  93.76053962900505 title "svm sigmoid"
+unset output
 
 set output "accuracy-vowel.pdf"
- plot for [g in generations] 'vowel.dat.generations-'.g.'.dat' using 1:7:xticlabels(3) with linespoints title ''.g.' generations'
+ plot for [g in generations] 'vowel.dat.generations-'.g.'.dat' using 1:28:xticlabels(3) with linespoints title ''.g.' generations'
  unset output
 
-set output "accuracy-iris-detailed.pdf"
- plot for [g=1:4] 'detailed.dat.dataset-iris.scale-new.dat.generations-'.g.'.dat' using 1:7:xticlabels(3) with linespoints title ''.g.' generations'
+set output "accuracy-vowel-libsvm.pdf"
+ plot for [g in generations] 'vowel.dat.generations-'.g.'.dat' using 1:28:xticlabels(3) with linespoints title ''.g.' generations', 49.78354978354979 title "svm linear", 12.554112554112553 title "svm polynomial", 51.298701298701296 title "svm RBF",  43.290043290043286 title "svm sigmoid"
  unset output
+
+
+#set output "accuracy-iris-detailed.pdf"
+# plot for [g=1:4] 'detailed.dat.dataset-iris.scale-new.dat.generations-'.g.'.dat' using 1:7:xticlabels(3) with linespoints title ''.g.' generations'
+# unset output

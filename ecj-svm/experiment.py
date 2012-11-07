@@ -11,6 +11,7 @@ import time
 import datetime
 import os
 import pickle
+import string
 
 import pyDataSet
 
@@ -56,7 +57,7 @@ def getContinueFrom(filepath):
 
 if __name__ == "__main__":
     
-    parser = argparse.ArgumentParser(description="Experiment runner")
+    parser = argparse.ArgumentParser(description    ="Experiment runner")
     parser.add_argument('-x', '--xmx', help='Java heap size', type=int, default=1024)
     parser.add_argument('-s', '--splits', help='Number of splits of train, test and validation set', type=int, default=10)        
     parser.add_argument('-g', '--generations', help='Max number of generations', type=int, default=5)
@@ -85,17 +86,17 @@ if __name__ == "__main__":
             write_mode = "a"
             cont = ".cont"
     elif args.append:
-        now = datetime.datetime.strptime(string.split(args.append, '.')[1], time_format)
-        
+        now = string.split(args.append, '.')[1]
+        cont = ".cont"
+        write_mode = "a"
     
-    else:
-        picklefilename = "results/result.%s.args" % now 
-        with open(picklefilename, "w") as pfile:
-            pdict = dict(
-                     now = now,
-                     args = args
-                     )
-            pickle.dump(pdict, pfile)
+    picklefilename = "results/result.%s.args" % now 
+    with open(picklefilename, "w") as pfile:
+        pdict = dict(
+                    now = now,
+                    args = args
+                    )
+        pickle.dump(pdict, pfile)
 
     output_filename = "results/result.%s" % now 
     mystatfilename = output_filename+cont+".stat"
@@ -130,7 +131,6 @@ if __name__ == "__main__":
         
     cv_folds = 10
     cv = False
-    #TODO: dodać nagłówki accuracy dla kolejnych seedow i dla średniej accuracy? (Jak dostać się do wartości, żeby obliczyć średnią?)
     iterative_hadings = " ".join(['fitness{0} accuracy{0}'.format(i) for i in range(maxsplits)])
     if not cont:
         output.write("N dataset population_size generations cross_validation cv_folds %s mean_fitness mean_accuracy time\n"% iterative_hadings)
@@ -170,7 +170,7 @@ if __name__ == "__main__":
                         if k >= splits:
                             output.write("NaN ")
                             output.write("NaN ")
-                            break
+                            continue
                         print "\t\tProcessing %s"%(shuffled_dataset)
                         shuffled_dataset = os.path.join(os.getcwd(), shuffled_dataset)
                         train = shuffled_dataset+".tr"                    

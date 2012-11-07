@@ -1,7 +1,7 @@
-dataset population_size generations cros_validation cv_folds fitness accuracy time
-0 dna.scale 1 5 False 10 0.8853289 92.33333333333333 13.422359
-1 dna.scale 21 5 False 10 0.9435076 96.5 1724.333576
-2 dna.scale 41 5 False 10 0.94603705 96.33333333333334 1666.393285
-3 dna.scale 61 5 False 10 0.94772345 96.0 2464.720796
-4 dna.scale 81 5 False 10 1.0 57.833333333333336 401.734380
-5 dna.scale 101 5 False 10 0.94772345 96.33333333333334 4068.801783
+N dataset population_size generations cross_validation cv_folds fitness0 accuracy0 fitness1 accuracy1 fitness2 accuracy2 fitness3 accuracy3 fitness4 accuracy4 fitness5 accuracy5 fitness6 accuracy6 fitness7 accuracy7 fitness8 accuracy8 fitness9 accuracy9 mean_fitness mean_accuracy time
+0 dna.scale 1 5 False 10 0.912 91.0 0.94600004 96.39999999999999 0.95 95.0 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 0.936000 94.133333 9.574285
+1 dna.scale 11 5 False 10 0.93200004 91.0 0.94200003 97.2 0.954 94.0 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 0.942667 94.066667 874.972299
+2 dna.scale 21 5 False 10 0.94200003 92.60000000000001 0.94799995 96.6 0.954 95.39999999999999 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 0.948000 94.866667 1022.776891
+4 dna.scale 31 5 False 10 0.9639999 93.60000000000001 0.954 95.0 0.95 94.39999999999999 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 0.956000 94.333333 1593.059994
+5 dna.scale 41 5 False 10 0.96199995 93.60000000000001 0.956 94.8 0.952 94.39999999999999 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 0.956667 94.266667 1426.802449
+6 dna.scale 51 5 False 10 0.9639999 94.0 0.956 94.6 0.952 94.39999999999999 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 0.957333 94.333333 1598.878645

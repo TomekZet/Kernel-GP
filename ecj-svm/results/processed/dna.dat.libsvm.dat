@@ -1,0 +1,39 @@
+dna
+0
+Accuracy = 93.08600337268128% (1104/1186) (classification)
+Time: 3
+1
+Accuracy = 50.84317032040472% (603/1186) (classification)
+Time: 9
+2
+Accuracy = 94.5193929173693% (1121/1186) (classification)
+Time: 6
+3
+Accuracy = 93.76053962900505% (1112/1186) (classification)
+Time: 6
+vowel
+0
+Accuracy = 49.78354978354979% (230/462) (classification)
+Time: 2
+1
+Accuracy = 12.554112554112553% (58/462) (classification)
+Time: 1
+2
+Accuracy = 51.298701298701296% (237/462) (classification)
+Time: 1
+3
+Accuracy = 43.290043290043286% (200/462) (classification)
+Time: 2
+letter
+0
+Accuracy = 84.3% (4215/5000) (classification)
+Time: 29
+1
+Accuracy = 37.580000000000005% (1879/5000) (classification)
+Time: 86
+2
+Accuracy = 82.24000000000001% (4112/5000) (classification)
+Time: 49
+3
+Accuracy = 77.22% (3861/5000) (classification)
+Time: 74
