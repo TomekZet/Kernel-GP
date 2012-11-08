@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-for dataset in "dna" "vowel" "letter" 
+for dataset in "protein" 
 do
     echo "$dataset"
     for i in {0..3}
