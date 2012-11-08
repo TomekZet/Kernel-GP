@@ -114,6 +114,7 @@ if __name__ == "__main__":
     datasets = {'iris':["iris.scale"],
                  'dna':["dna.scale"],
                  'vowel':["vowel.scale"],
+                 'protein':['protein']
                  #"clinical+volumes.arff"
                  }
     
@@ -159,7 +160,7 @@ if __name__ == "__main__":
                     output.write("%d " % generations) #number of generations
                     output.write("%s " % cv) # was cross validation  used
                     output.write("%d " % cv_folds) # number of cross validation folds
-                    output.flush()
+                    output.flush()  
                     interval = 0.0;
     
                     mean_acc = 0.0
