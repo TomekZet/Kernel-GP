@@ -12,8 +12,8 @@ import re
 import arff
         
         
-def divide(dataset, p_test=20, p_valid=20):
-    ''' Devides dataset into train, test and validation datasets with proportional to percentages given as arguments
+def split(dataset, p_test=20, p_valid=20):
+    ''' Splits dataset into train, test and validation datasets with proportional to percentages given as arguments
         arguments:
             dataset : list of examples
             p_test  : size of test set as percent of input dataset
@@ -32,7 +32,8 @@ def divide(dataset, p_test=20, p_valid=20):
     train = dataset[:n_train]
     test = dataset[n_train:n_train+n_test]
     valid = dataset[n_train+n_test:]
-    return train, test, valid
+    train_test = dataset[:n_train+n_test] 
+    return train, test, valid, train_test
 
 
 def write_dataset(dataset, path):
@@ -111,7 +112,7 @@ def process(input, output, test=33, valid=0, rand=None, seed=False):
             random.seed()
         random.shuffle(dataset)
     
-    train, test, valid = divide(dataset, p_test=test, p_valid=valid)
+    train, test, valid, train_test = split(dataset, p_test=test, p_valid=valid)
     
     if train:
         write_dataset(train, output+".tr")
@@ -119,6 +120,8 @@ def process(input, output, test=33, valid=0, rand=None, seed=False):
         write_dataset(test, output+".t")
     if valid:
         write_dataset(valid, output+".val")
+    if train_test:
+        write_dataset(train_test, output+".trtst")
 
     
 if __name__ == '__main__':
