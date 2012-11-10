@@ -59,11 +59,11 @@ if __name__ == "__main__":
     
     parser = argparse.ArgumentParser(description    ="Experiment runner")
     parser.add_argument('-x', '--xmx', help='Java heap size', type=int, default=1024)
-    parser.add_argument('-s', '--splits', help='Number of splits of train, test and validation set', type=int, default=10)        
+    parser.add_argument('-s', '--splits', help='Number of splits of train, test and validation set', type=int, default=5)        
     parser.add_argument('-g', '--generations', help='Max number of generations', type=int, default=5)
     parser.add_argument('-p', '--popmax', help='Maximum size of population', type=int, default=101)
-    parser.add_argument('--popstep', help='Step of generations size incrementation', type=int, default=2)    
-    parser.add_argument('--genstep', help='Step of population size incrementation', type=int, default=20)
+    parser.add_argument('--popstep', help='Step of population size incrementation', type=int, default=10)    
+    parser.add_argument('--genstep', help='Step of generations size incrementation', type=int, default=2)
     parser.add_argument('-d', '--datasets', help='Names of datasets to be used', nargs='+')    
     parser.add_argument('-e', '--errors', help='Show errors on stdout (do not write them to file', action='store_true')
     parser.add_argument('-c', '--cont', help='Path to file with stopped computations to continue')
@@ -132,9 +132,9 @@ if __name__ == "__main__":
         
     cv_folds = 10
     cv = False
-    iterative_hadings = " ".join(['fitness{0} accuracy{0}'.format(i) for i in range(maxsplits)])
+    iterative_headings = " ".join(['fitness{0} accuracy{0}'.format(i) for i in range(maxsplits)])
     if not cont:
-        output.write("N dataset population_size generations cross_validation cv_folds %s mean_fitness mean_accuracy time\n"% iterative_hadings)
+        output.write("N dataset population_size generations cross_validation cv_folds %s mean_fitness mean_accuracy time\n"% iterative_headings)
     else:
         output.write("\n")
            
@@ -205,6 +205,7 @@ if __name__ == "__main__":
                         print "\t\tTime: %.03f s\taccuracy:%.03f" % (interval, float(accuracy))
                         output.write(fitness+" ")
                         output.write(accuracy+" ")
+                        output.flush()
                         mean_fit += float(fitness)
                         mean_acc += float(accuracy)
                         mean_time += interval
