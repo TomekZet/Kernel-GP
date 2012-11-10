@@ -62,6 +62,8 @@ if __name__ == "__main__":
     parser.add_argument('-s', '--splits', help='Number of splits of train, test and validation set', type=int, default=5)        
     parser.add_argument('-g', '--generations', help='Max number of generations', type=int, default=5)
     parser.add_argument('-p', '--popmax', help='Maximum size of population', type=int, default=101)
+    parser.add_argument('--popmin', help='Minimum size of population', type=int, default=1)
+    parser.add_argument('--genmin', help='Minimum size of generations', type=int, default=1)
     parser.add_argument('--popstep', help='Step of population size incrementation', type=int, default=10)    
     parser.add_argument('--genstep', help='Step of generations size incrementation', type=int, default=2)
     parser.add_argument('-d', '--datasets', help='Names of datasets to be used', nargs='+')    
@@ -122,11 +124,11 @@ if __name__ == "__main__":
 
     maxsplits = args.splits
     
-    pop_size_min = 1
+    pop_size_min = args.popmin
     pop_size_max = args.popmax
     pop_size_step = args.popstep
 
-    generations_min = 1
+    generations_min = args.genmin
     generations_max = args.generations
     generations_step = args.genstep
         
