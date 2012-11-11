@@ -178,6 +178,10 @@ set output "accuracy-vowel.pdf"
  plot for [g in generations] 'vowel.dat.generations-'.g.'.dat' using 1:28:xticlabels(3) with linespoints title ''.g.' generations'
  unset output
 
+set output "accuracy-vowel-detailed.pdf"
+ plot for [g = 1:7] 'vowel.detailed.dat.generations-'.g.'.dat' using 1:28:xticlabels(3) with linespoints title ''.g.' generations'
+ unset output
+
 set output "accuracy-vowel-libsvm.pdf"
  plot for [g in generations] 'vowel.dat.generations-'.g.'.dat' using 1:28:xticlabels(3) with linespoints title ''.g.' generations', 49.78354978354979 title "svm linear", 12.554112554112553 title "svm polynomial", 51.298701298701296 title "svm RBF",  43.290043290043286 title "svm sigmoid"
  unset output
