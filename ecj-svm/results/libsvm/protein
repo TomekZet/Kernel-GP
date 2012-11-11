@@ -1,0 +1,13 @@
+protein
+  linear
+Accuracy = 70.11494252873564% (2013/2871) (classification)
+   Time: 495
+  polynomial
+Accuracy = 51.86346220828979% (1489/2871) (classification)
+   Time: 424
+  rbf
+Accuracy = 66.7014977359805% (1915/2871) (classification)
+   Time: 416
+  sigmoid
+Accuracy = 61.12852664576802% (1755/2871) (classification)
+   Time: 448

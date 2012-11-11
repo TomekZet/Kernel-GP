@@ -1,0 +1,45 @@
+mushrooms
+  linear
+Accuracy = 100.0% (2031/2031) (classification)
+   Time: 1
+Accuracy = 100.0% (2031/2031) (classification)
+   Time: 0
+Accuracy = 100.0% (2031/2031) (classification)
+   Time: 1
+Accuracy = 100.0% (2031/2031) (classification)
+   Time: 1
+Accuracy = 100.0% (2031/2031) (classification)
+   Time: 1
+  polynomial
+Accuracy = 91.87592319054653% (1866/2031) (classification)
+   Time: 7
+Accuracy = 92.31905465288035% (1875/2031) (classification)
+   Time: 6
+Accuracy = 92.95913343180699% (1888/2031) (classification)
+   Time: 7
+Accuracy = 90.69423929098967% (1842/2031) (classification)
+   Time: 7
+Accuracy = 91.67897587395372% (1862/2031) (classification)
+   Time: 6
+  rbf
+Accuracy = 99.9507631708518% (2030/2031) (classification)
+   Time: 2
+Accuracy = 99.85228951255539% (2028/2031) (classification)
+   Time: 2
+Accuracy = 99.75381585425899% (2026/2031) (classification)
+   Time: 2
+Accuracy = 100.0% (2031/2031) (classification)
+   Time: 1
+Accuracy = 99.75381585425899% (2026/2031) (classification)
+   Time: 2
+  sigmoid
+Accuracy = 98.81831610044313% (2007/2031) (classification)
+   Time: 3
+Accuracy = 98.4736582964057% (2000/2031) (classification)
+   Time: 2
+Accuracy = 98.22747415066469% (1995/2031) (classification)
+   Time: 3
+Accuracy = 98.67060561299851% (2004/2031) (classification)
+   Time: 2
+Accuracy = 98.71984244214673% (2005/2031) (classification)
+   Time: 3

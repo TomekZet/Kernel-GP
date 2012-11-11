@@ -1,0 +1,5 @@
+slurmd[lab-ci-1]: *** JOB 85283 CANCELLED AT 2012-11-07T20:24:59 DUE TO TIME LIMIT ***
+srun: Job step aborted: Waiting up to 2 seconds for job step to finish.
+srun: error: lab-ci-1: task 0: Terminated
+srun: got SIGCONT
+srun: forcing job termination

@@ -1,0 +1,19 @@
+
+
+
+Generation 0
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 5.215686274509804
+Nodes/tree: [5.215686274509804]
+Avg Depth: 2.7254901960784315
+Depth/tree: [2.7254901960784315]
+Mean fitness raw: 1.9368467 adjusted: 0.54040414 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=0.12820514 Adjusted=0.88636357 Hits=0
+Tree 0:
+ (+ (* Linear Linear) (* Linear Linear))

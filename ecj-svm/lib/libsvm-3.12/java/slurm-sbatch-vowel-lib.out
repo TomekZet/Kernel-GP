@@ -1,0 +1,45 @@
+vowel.scale
+  linear
+Accuracy = 74.24242424242425% (98/132) (classification)
+   Time: 1
+Accuracy = 71.96969696969697% (95/132) (classification)
+   Time: 1
+Accuracy = 70.45454545454545% (93/132) (classification)
+   Time: 0
+Accuracy = 77.27272727272727% (102/132) (classification)
+   Time: 1
+Accuracy = 65.9090909090909% (87/132) (classification)
+   Time: 0
+  polynomial
+Accuracy = 6.0606060606060606% (8/132) (classification)
+   Time: 1
+Accuracy = 5.303030303030303% (7/132) (classification)
+   Time: 0
+Accuracy = 5.303030303030303% (7/132) (classification)
+   Time: 1
+Accuracy = 13.636363636363635% (18/132) (classification)
+   Time: 0
+Accuracy = 7.575757575757576% (10/132) (classification)
+   Time: 1
+  rbf
+Accuracy = 66.66666666666666% (88/132) (classification)
+   Time: 0
+Accuracy = 64.39393939393939% (85/132) (classification)
+   Time: 1
+Accuracy = 66.66666666666666% (88/132) (classification)
+   Time: 1
+Accuracy = 62.121212121212125% (82/132) (classification)
+   Time: 0
+Accuracy = 65.9090909090909% (87/132) (classification)
+   Time: 1
+  sigmoid
+Accuracy = 49.24242424242424% (65/132) (classification)
+   Time: 0
+Accuracy = 47.72727272727273% (63/132) (classification)
+   Time: 1
+Accuracy = 45.45454545454545% (60/132) (classification)
+   Time: 0
+Accuracy = 31.818181818181817% (42/132) (classification)
+   Time: 1
+Accuracy = 39.39393939393939% (52/132) (classification)
+   Time: 1

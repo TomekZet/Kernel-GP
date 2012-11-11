@@ -29,7 +29,7 @@ def sd(data, mean):
     return math.sqrt(sum([math.pow(x - mean, 2) for x in data])/(len(data) ))
 
 
-def shuffle_datasets(dataset_path_list, splits=10, test=33, valid=33):
+def shuffle_datasets(dataset_path_list, splits=10, test=22, valid=33, new=True):
     '''
     Shuffles datasets from 'dataset_path_list' into 'splits' tuples of train and test datasets
     Result datasets are written into files
@@ -39,7 +39,8 @@ def shuffle_datasets(dataset_path_list, splits=10, test=33, valid=33):
     for seed in range(splits):
         dataset_out = '%s.seed%d' % (dataset_path_list[0], seed)
         out_filenames.append(dataset_out)
-        pyDataSet.process(dataset_path_list, dataset_out, test=test, valid=valid, rand=True, seed=False)
+        if new:
+            pyDataSet.process(dataset_path_list, dataset_out, test=test, valid=valid, rand=True, seed=False)
     return out_filenames
 
 def getContinueFrom(filepath):
@@ -60,7 +61,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description    ="Experiment runner")
     parser.add_argument('-x', '--xmx', help='Java heap size', type=int, default=1024)
     parser.add_argument('-s', '--splits', help='Number of splits of train, test and validation set', type=int, default=5)        
-    parser.add_argument('-g', '--generations', help='Max number of generations', type=int, default=5)
+    parser.add_argument('-g', '--genmax', help='Max number of generations', type=int, default=5)
     parser.add_argument('-p', '--popmax', help='Maximum size of population', type=int, default=101)
     parser.add_argument('--popmin', help='Minimum size of population', type=int, default=1)
     parser.add_argument('--genmin', help='Minimum size of generations', type=int, default=1)
@@ -68,6 +69,7 @@ if __name__ == "__main__":
     parser.add_argument('--genstep', help='Step of generations size incrementation', type=int, default=2)
     parser.add_argument('-d', '--datasets', help='Names of datasets to be used', nargs='+')    
     parser.add_argument('-e', '--errors', help='Show errors on stdout (do not write them to file', action='store_true')
+    parser.add_argument('-n', '--newdata', help='Generate new data splits', action='store_true')
     parser.add_argument('-c', '--cont', help='Path to file with stopped computations to continue')
     parser.add_argument('-a', '--append', help='Path to file with stopped computations to append, without reading args from pickled file')
     
@@ -116,7 +118,8 @@ if __name__ == "__main__":
     datasets = {'iris':["iris.scale"],
                  'dna':["dna.scale"],
                  'vowel':["vowel.scale"],
-                 'protein':['protein']
+                 'protein':['protein'],
+                 'mushrooms':['mushrooms']
                  #"clinical+volumes.arff"
                  }
     
@@ -129,7 +132,7 @@ if __name__ == "__main__":
     pop_size_step = args.popstep
 
     generations_min = args.genmin
-    generations_max = args.generations
+    generations_max = args.genmax
     generations_step = args.genstep
         
     cv_folds = 10
@@ -147,7 +150,7 @@ if __name__ == "__main__":
         dataset_path_list = ["data/"+d for d in dataset_list]
         if not dataset:
             continue
-        shuffled_datasets  = shuffle_datasets(dataset_path_list, maxsplits, valid=25, test=25)        
+        shuffled_datasets = shuffle_datasets(dataset_path_list, maxsplits, valid=25, test=25, new=args.newdata)        
         j=0
         print "Running experiment for {0} dataset".format(dataset)
         for r in range(pop_size_min, pop_size_max+1, pop_size_step):
@@ -168,7 +171,8 @@ if __name__ == "__main__":
                     mean_acc = 0.0
                     mean_fit = 0.0
                     mean_time = 0.0
-                    splits = max(1, int((2.0/(generations+1))*len(shuffled_datasets)))
+                    #splits = max(1, int((2.0/(generations+1))*len(shuffled_datasets)))
+                    splits = len(shuffled_datasets)
                     for k, shuffled_dataset in enumerate(shuffled_datasets):
                         if k >= splits:
                             output.write("NaN ")
