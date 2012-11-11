@@ -25,3 +25,6 @@
 *.bbl
 *.dvi
 *.toc
+
+experiment.sh
+script.sh
