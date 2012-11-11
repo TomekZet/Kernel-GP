@@ -1,0 +1,3138 @@
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -322185323 134280905 214128957 342141245 839284172 -322185318 -322185317 -322185316 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.8382353 Adjusted=0.54399997 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.8382353 Adjusted=0.54399997 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -322182734 134280905 214128957 342141245 839284172 -322182729 -322182728 -322182727 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.68350166 Adjusted=0.594 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.68350166 Adjusted=0.594 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -322179022 134280905 214128957 342141245 839284172 -322179017 -322179016 -322179015 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.13636364 Adjusted=0.88 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.13636364 Adjusted=0.88 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -322177735 134280905 214128957 342141245 839284172 -322177730 -322177729 -322177728 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.06609808 Adjusted=0.93799996 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.06609808 Adjusted=0.93799996 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -322175864 134280905 214128957 342141245 839284172 -322175859 -322175858 -322175857 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.15473442 Adjusted=0.86600006 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.15473442 Adjusted=0.86600006 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -322173584 134280905 214128957 342141245 839284172 -322173579 -322173578 -322173577 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.7064846 Adjusted=0.586 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.057082452 Adjusted=0.94600004 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.07526882 Adjusted=0.92999995 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.057082452 Adjusted=0.94600004 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -322057187 134280905 214128957 342141245 839284172 -322057182 -322057181 -322057180 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.40056023 Adjusted=0.714 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.13122173 Adjusted=0.88399994 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.118568234 Adjusted=0.89400005 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.118568234 Adjusted=0.89400005 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -322053380 134280905 214128957 342141245 839284172 -322053375 -322053374 -322053373 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.10375276 Adjusted=0.906 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.19617225 Adjusted=0.836 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.19617225 Adjusted=0.836 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.10375276 Adjusted=0.906 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -322051282 134280905 214128957 342141245 839284172 -322051277 -322051276 -322051275 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.06609808 Adjusted=0.93799996 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.06609808 Adjusted=0.93799996 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.07991361 Adjusted=0.926 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.06609808 Adjusted=0.93799996 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -322047403 134280905 214128957 342141245 839284172 -322047398 -322047397 -322047396 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.68350166 Adjusted=0.594 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.68350166 Adjusted=0.594 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.68350166 Adjusted=0.594 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.68350166 Adjusted=0.594 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -322043045 134280905 214128957 342141245 839284172 -322043040 -322043039 -322043038 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.07526882 Adjusted=0.92999995 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.07526882 Adjusted=0.92999995 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.07526882 Adjusted=0.92999995 Hits=0
+Generation 3
+Subpop 0 best fitness of generation: Fitness: Standardized=0.5974441 Adjusted=0.626 Hits=0
+Generation 4
+Subpop 0 best fitness of generation: Fitness: Standardized=0.5923567 Adjusted=0.628 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.07526882 Adjusted=0.92999995 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -322037044 134280905 214128957 342141245 839284172 -322037039 -322037038 -322037037 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.09170306 Adjusted=0.916 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.69491524 Adjusted=0.59 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.12866817 Adjusted=0.886 Hits=0
+Generation 3
+Subpop 0 best fitness of generation: Fitness: Standardized=0.12866817 Adjusted=0.886 Hits=0
+Generation 4
+Subpop 0 best fitness of generation: Fitness: Standardized=0.77304965 Adjusted=0.564 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.09170306 Adjusted=0.916 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -322030310 134280905 214128957 342141245 839284172 -322030305 -322030304 -322030303 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.10619469 Adjusted=0.904 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.97628456 Adjusted=0.50600004 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.90839696 Adjusted=0.524 Hits=0
+Generation 3
+Subpop 0 best fitness of generation: Fitness: Standardized=1.0 Adjusted=0.5 Hits=0
+Generation 4
+Subpop 0 best fitness of generation: Fitness: Standardized=0.984127 Adjusted=0.504 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.10619469 Adjusted=0.904 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -322023695 134280905 214128957 342141245 839284172 -322023690 -322023689 -322023688 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.46627566 Adjusted=0.682 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.6233766 Adjusted=0.616 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.55279505 Adjusted=0.644 Hits=0
+Generation 3
+Subpop 0 best fitness of generation: Fitness: Standardized=0.6233766 Adjusted=0.616 Hits=0
+Generation 4
+Subpop 0 best fitness of generation: Fitness: Standardized=0.6233766 Adjusted=0.616 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.46627566 Adjusted=0.682 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -322019712 134280905 214128957 342141245 839284172 -322019707 -322019706 -322019705 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.6891892 Adjusted=0.592 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.68350166 Adjusted=0.594 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.68350166 Adjusted=0.594 Hits=0
+Generation 3
+Subpop 0 best fitness of generation: Fitness: Standardized=0.68350166 Adjusted=0.594 Hits=0
+Generation 4
+Subpop 0 best fitness of generation: Fitness: Standardized=0.68350166 Adjusted=0.594 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.68350166 Adjusted=0.594 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -322007974 134280905 214128957 342141245 839284172 -322007969 -322007968 -322007967 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.057082452 Adjusted=0.94600004 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.057082452 Adjusted=0.94600004 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -321735652 134280905 214128957 342141245 839284172 -321735647 -321735646 -321735645 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Exception in thread "Thread-3" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Exception in thread "Thread-4" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Exception in thread "Thread-1" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Exception in thread "Thread-2" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Subpop 0 best fitness of generation: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Found Ideal Individual
+Subpop 0 best fitness of run: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -321600410 134280905 214128957 342141245 839284172 -321600405 -321600404 -321600403 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.13378684 Adjusted=0.882 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.13378684 Adjusted=0.882 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -321410288 134280905 214128957 342141245 839284172 -321410283 -321410282 -321410281 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Exception in thread "Thread-7" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Subpop 0 best fitness of generation: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Found Ideal Individual
+Subpop 0 best fitness of run: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -321215652 134280905 214128957 342141245 839284172 -321215647 -321215646 -321215645 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.046025105 Adjusted=0.956 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.046025105 Adjusted=0.956 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -321023684 134280905 214128957 342141245 839284172 -321023679 -321023678 -321023677 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.05485232 Adjusted=0.94799995 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.05485232 Adjusted=0.94799995 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.059322033 Adjusted=0.944 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.05485232 Adjusted=0.94799995 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -320754072 134280905 214128957 342141245 839284172 -320754067 -320754066 -320754065 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.09170306 Adjusted=0.916 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.101321585 Adjusted=0.908 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.09409191 Adjusted=0.91400003 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.09170306 Adjusted=0.916 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -320264018 134280905 214128957 342141245 839284172 -320264013 -320264012 -320264011 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.16550116 Adjusted=0.85800004 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.07526882 Adjusted=0.92999995 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.07526882 Adjusted=0.92999995 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.07526882 Adjusted=0.92999995 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -319852000 134280905 214128957 342141245 839284172 -319851995 -319851994 -319851993 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Exception in thread "Thread-0" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Exception in thread "Thread-7" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Subpop 0 best fitness of generation: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Found Ideal Individual
+Subpop 0 best fitness of run: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -319692150 134280905 214128957 342141245 839284172 -319692145 -319692144 -319692143 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.05042017 Adjusted=0.952 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.29533678 Adjusted=0.772 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.06382979 Adjusted=0.94 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.05042017 Adjusted=0.952 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -319072809 134280905 214128957 342141245 839284172 -319072804 -319072803 -319072802 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Exception in thread "Thread-1" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Subpop 0 best fitness of generation: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Found Ideal Individual
+Subpop 0 best fitness of run: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -318790058 134280905 214128957 342141245 839284172 -318790053 -318790052 -318790051 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.0845987 Adjusted=0.92200005 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.0845987 Adjusted=0.92200005 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.0845987 Adjusted=0.92200005 Hits=0
+Generation 3
+Subpop 0 best fitness of generation: Fitness: Standardized=0.0845987 Adjusted=0.92200005 Hits=0
+Generation 4
+Subpop 0 best fitness of generation: Fitness: Standardized=0.07066381 Adjusted=0.934 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.07066381 Adjusted=0.934 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -318198234 134280905 214128957 342141245 839284172 -318198229 -318198228 -318198227 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.123595506 Adjusted=0.89000005 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.44927537 Adjusted=0.69 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.0989011 Adjusted=0.90999997 Hits=0
+Generation 3
+Subpop 0 best fitness of generation: Fitness: Standardized=0.0845987 Adjusted=0.92200005 Hits=0
+Generation 4
+Subpop 0 best fitness of generation: Fitness: Standardized=0.096491225 Adjusted=0.912 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.0845987 Adjusted=0.92200005 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -317835351 134280905 214128957 342141245 839284172 -317835346 -317835345 -317835344 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.07991361 Adjusted=0.926 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.07991361 Adjusted=0.926 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.0845987 Adjusted=0.92200005 Hits=0
+Generation 3
+Subpop 0 best fitness of generation: Fitness: Standardized=0.07991361 Adjusted=0.926 Hits=0
+Generation 4
+Subpop 0 best fitness of generation: Fitness: Standardized=0.07991361 Adjusted=0.926 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.07991361 Adjusted=0.926 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -317267091 134280905 214128957 342141245 839284172 -317267086 -317267085 -317267084 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.05263158 Adjusted=0.95 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.04821803 Adjusted=0.954 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.05042017 Adjusted=0.952 Hits=0
+Generation 3
+Subpop 0 best fitness of generation: Fitness: Standardized=0.05042017 Adjusted=0.952 Hits=0
+Generation 4
+Subpop 0 best fitness of generation: Fitness: Standardized=0.05263158 Adjusted=0.95 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.04821803 Adjusted=0.954 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -316837493 134280905 214128957 342141245 839284172 -316837488 -316837487 -316837486 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.057082452 Adjusted=0.94600004 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.057082452 Adjusted=0.94600004 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -316697970 134280905 214128957 342141245 839284172 -316697965 -316697964 -316697963 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.06837607 Adjusted=0.936 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.06837607 Adjusted=0.936 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -316536606 134280905 214128957 342141245 839284172 -316536601 -316536600 -316536599 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.06609808 Adjusted=0.93799996 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.06609808 Adjusted=0.93799996 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -316406333 134280905 214128957 342141245 839284172 -316406328 -316406327 -316406326 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.061571125 Adjusted=0.94200003 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.061571125 Adjusted=0.94200003 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -316246331 134280905 214128957 342141245 839284172 -316246326 -316246325 -316246324 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.05263158 Adjusted=0.95 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.05263158 Adjusted=0.95 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -316120000 134280905 214128957 342141245 839284172 -316119995 -316119994 -316119993 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Exception in thread "Thread-4" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Exception in thread "Thread-1" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Exception in thread "Thread-2" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Subpop 0 best fitness of generation: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Found Ideal Individual
+Subpop 0 best fitness of run: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -315992815 134280905 214128957 342141245 839284172 -315992810 -315992809 -315992808 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.06609808 Adjusted=0.93799996 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.06609808 Adjusted=0.93799996 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.06837607 Adjusted=0.936 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.06609808 Adjusted=0.93799996 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -315456596 134280905 214128957 342141245 839284172 -315456591 -315456590 -315456589 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Exception in thread "Thread-7" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Exception in thread "Thread-6" java.lang.ArrayIndexOutOfBoundsException
+Subpop 0 best fitness of generation: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Found Ideal Individual
+Subpop 0 best fitness of run: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -315248058 134280905 214128957 342141245 839284172 -315248053 -315248052 -315248051 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.06609808 Adjusted=0.93799996 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.046025105 Adjusted=0.956 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.06609808 Adjusted=0.93799996 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.046025105 Adjusted=0.956 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -314708306 134280905 214128957 342141245 839284172 -314708301 -314708300 -314708299 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.04821803 Adjusted=0.954 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.05042017 Adjusted=0.952 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.04821803 Adjusted=0.954 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.04821803 Adjusted=0.954 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -314137771 134280905 214128957 342141245 839284172 -314137766 -314137765 -314137764 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.043841336 Adjusted=0.958 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.043841336 Adjusted=0.958 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.046025105 Adjusted=0.956 Hits=0
+Generation 3
+Subpop 0 best fitness of generation: Fitness: Standardized=0.046025105 Adjusted=0.956 Hits=0
+Generation 4
+Subpop 0 best fitness of generation: Fitness: Standardized=0.04821803 Adjusted=0.954 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.043841336 Adjusted=0.958 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -313233064 134280905 214128957 342141245 839284172 -313233059 -313233058 -313233057 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.06837607 Adjusted=0.936 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.06837607 Adjusted=0.936 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.072961375 Adjusted=0.93200004 Hits=0
+Generation 3
+Subpop 0 best fitness of generation: Fitness: Standardized=0.072961375 Adjusted=0.93200004 Hits=0
+Generation 4
+Subpop 0 best fitness of generation: Fitness: Standardized=0.07066381 Adjusted=0.934 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.06837607 Adjusted=0.936 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -312343579 134280905 214128957 342141245 839284172 -312343574 -312343573 -312343572 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.06382979 Adjusted=0.94 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.089324616 Adjusted=0.91800004 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.077586204 Adjusted=0.92800003 Hits=0
+Generation 3
+Subpop 0 best fitness of generation: Fitness: Standardized=0.06837607 Adjusted=0.936 Hits=0
+Generation 4
+Subpop 0 best fitness of generation: Fitness: Standardized=0.072961375 Adjusted=0.93200004 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.06382979 Adjusted=0.94 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -311560459 134280905 214128957 342141245 839284172 -311560454 -311560453 -311560452 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Exception in thread "Thread-2" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Exception in thread "Thread-4" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Exception in thread "Thread-7" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Exception in thread "Thread-1" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Exception in thread "Thread-5" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Exception in thread "Thread-6" java.lang.ArrayIndexOutOfBoundsException
+Exception in thread "Thread-3" java.lang.ArrayIndexOutOfBoundsException
+Exception in thread "Thread-0" java.lang.ArrayIndexOutOfBoundsException
+Subpop 0 best fitness of generation: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Found Ideal Individual
+Subpop 0 best fitness of run: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -311559157 134280905 214128957 342141245 839284172 -311559152 -311559151 -311559150 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Exception in thread "Thread-4" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Subpop 0 best fitness of generation: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Found Ideal Individual
+Subpop 0 best fitness of run: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -311379709 134280905 214128957 342141245 839284172 -311379704 -311379703 -311379702 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.04821803 Adjusted=0.954 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.04821803 Adjusted=0.954 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -311067868 134280905 214128957 342141245 839284172 -311067863 -311067862 -311067861 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.06609808 Adjusted=0.93799996 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.06609808 Adjusted=0.93799996 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -310862774 134280905 214128957 342141245 839284172 -310862769 -310862768 -310862767 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Exception in thread "Thread-4" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Subpop 0 best fitness of generation: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Found Ideal Individual
+Subpop 0 best fitness of run: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -310645697 134280905 214128957 342141245 839284172 -310645692 -310645691 -310645690 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Exception in thread "Thread-4" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Exception in thread "Thread-0" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Subpop 0 best fitness of generation: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Found Ideal Individual
+Subpop 0 best fitness of run: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -310484988 134280905 214128957 342141245 839284172 -310484983 -310484982 -310484981 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.04821803 Adjusted=0.954 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.04821803 Adjusted=0.954 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -310301878 134280905 214128957 342141245 839284172 -310301873 -310301872 -310301871 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.05485232 Adjusted=0.94799995 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.057082452 Adjusted=0.94600004 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.059322033 Adjusted=0.944 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.05485232 Adjusted=0.94799995 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -309837638 134280905 214128957 342141245 839284172 -309837633 -309837632 -309837631 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Exception in thread "Thread-1" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Subpop 0 best fitness of generation: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Found Ideal Individual
+Subpop 0 best fitness of run: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed1.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -309667071 134280905 214128957 342141245 839284172 -309667066 -309667065 -309667064 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Exception in thread "Thread-1" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Exception in thread "Thread-2" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Exception in thread "Thread-6" java.lang.ArrayIndexOutOfBoundsException
+Exception in thread "Thread-7" java.lang.ArrayIndexOutOfBoundsException
+Subpop 0 best fitness of generation: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Found Ideal Individual
+Subpop 0 best fitness of run: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed2.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -309556780 134280905 214128957 342141245 839284172 -309556775 -309556774 -309556773 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.059322033 Adjusted=0.944 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.05485232 Adjusted=0.94799995 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.07066381 Adjusted=0.934 Hits=0
+Subpop 0 best fitness of run: Fitness: Standardized=0.05485232 Adjusted=0.94799995 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed3.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -309063188 134280905 214128957 342141245 839284172 -309063183 -309063182 -309063181 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Exception in thread "Thread-7" java.lang.ArrayIndexOutOfBoundsException: -1
+	at libsvm.Cache.get_data(svm.java:63)
+	at libsvm.SVC_Q_GP.get_Q(SVC_Q_GP.java:47)
+	at libsvm.Solver.Solve(svm.java:447)
+	at libsvm.svm.solve_c_svc(svm.java:1284)
+	at libsvm.svm.svm_train_one(svm.java:1461)
+	at libsvm.svm.svm_train(svm.java:1841)
+	at ec.app.kernel_gp.Kernel_GP_problem.evaluate(Kernel_GP_problem.java:147)
+	at ec.simple.SimpleEvaluator.evalPopChunk(SimpleEvaluator.java:127)
+	at ec.simple.SimpleEvaluatorThread.run(SimpleEvaluator.java:158)
+	at java.lang.Thread.run(Thread.java:722)
+Subpop 0 best fitness of generation: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Found Ideal Individual
+Subpop 0 best fitness of run: Fitness: Standardized=0.0 Adjusted=1.0 Hits=0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed4.val
+
+| ECJ
+| An evolutionary computation system (version 20)
+| By Sean Luke
+| Contributors: L. Panait, G. Balan, S. Paus, Z. Skolicki, R. Kicinger, E. Popovici,
+|               K. Sullivan, J. Harrison, J. Bassett, R. Hubley, A. Desai, A. Chircop,
+|               J. Compton, W. Haddon, S. Donnelly, B. Jamil, J. Zelibor, E. Kangas,
+|               F. Abidi, H. Mooers, and J. O'Beirne
+| URL: http://cs.gmu.edu/~eclab/projects/ecj/
+| Mail: ecj-help@cs.gmu.edu
+|       (better: join ECJ-INTEREST at URL above)
+| Date: December 15, 2010
+| Current Java: 1.7.0_04 / Java HotSpot(TM) 64-Bit Server VM-23.0-b21
+| Required Minimum Java: 1.4
+
+
+ONCE-ONLY WARNING:
+Using automatic determination number of threads, but not all seeds are defined.
+The rest will be defined using the wall clock time.
+Threads:  breed/8 eval/8
+Seed: -308708148 134280905 214128957 342141245 839284172 -308708143 -308708142 -308708141 
+Job: 0
+Setting up
+Processing GP Types
+Processing GP Node Constraints
+Processing GP Function Sets
+Processing GP Tree Constraints
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_a which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_degree which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_coef which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+WARNING:
+In function set f0 for the GPTreeConstraints tc0, no *nonterminals* are given with the return type c_gamma which is required by other functions in the function set or by the tree's return type.  This may or may not be a problem for you.
+PARAMETER: gp.tc.0
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.tr
+Reading /home/adhd/kernelgp/Kernel-GP/ecj-svm/data/dna.scale.seed0.t
+ONCE-ONLY WARNING:
+KozaStatistics is deprecated and will soon be deleted.  Use SimpleStatistics instead.
+Initializing Generation 0
+Subpop 0 best fitness of generation: Fitness: Standardized=0.04821803 Adjusted=0.954 Hits=0
+Generation 1
+Subpop 0 best fitness of generation: Fitness: Standardized=0.043841336 Adjusted=0.958 Hits=0
+Generation 2
+Subpop 0 best fitness of generation: Fitness: Standardized=0.043841336 Adjusted=0.958 Hits=0
+Generation 3
+Subpop 0 best fitness of generation: Fitness: Standardized=0.046025105 Adjusted=0.956 Hits=0
+Generation 4

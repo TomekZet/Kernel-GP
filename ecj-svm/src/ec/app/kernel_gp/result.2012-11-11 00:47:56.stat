@@ -1,0 +1,114 @@
+
+
+
+Generation 0
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 4.095238095238095
+Nodes/tree: [4.095238095238095]
+Avg Depth: 2.5714285714285716
+Depth/tree: [2.5714285714285716]
+Mean fitness raw: 1.9752077 adjusted: 0.5779221 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=0.06451613 Adjusted=0.939394 Hits=0
+Tree 0:
+ (Sigm gamma=0.171521 coef0=0.101285)
+
+
+
+Generation 1
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 2.761904761904762
+Nodes/tree: [2.761904761904762]
+Avg Depth: 2.0952380952380953
+Depth/tree: [2.0952380952380953]
+Mean fitness raw: 0.72823477 adjusted: 0.6432179 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=0.2 Adjusted=0.8333333 Hits=0
+Tree 0:
+ (RBF gamma=0.485235)
+
+
+
+Generation 2
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 2.619047619047619
+Nodes/tree: [2.619047619047619]
+Avg Depth: 2.0
+Depth/tree: [2.0]
+Mean fitness raw: 1.2825472 adjusted: 0.64430016 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=0.17857143 Adjusted=0.8484848 Hits=0
+Tree 0:
+ (RBF gamma=0.570802)
+
+
+
+Generation 3
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 2.3333333333333335
+Nodes/tree: [2.3333333333333335]
+Avg Depth: 1.9523809523809523
+Depth/tree: [1.9523809523809523]
+Mean fitness raw: 0.43597844 adjusted: 0.7391775 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=0.12820514 Adjusted=0.88636357 Hits=0
+Tree 0:
+ (RBF gamma=0.766959)
+
+
+
+Generation 4
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 2.380952380952381
+Nodes/tree: [2.380952380952381]
+Avg Depth: 2.0
+Depth/tree: [2.0]
+Mean fitness raw: 1.0246469 adjusted: 0.7691198 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=0.118644066 Adjusted=0.8939394 Hits=0
+Tree 0:
+ (RBF gamma=0.768187)
+
+
+
+Generation 5
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 2.142857142857143
+Nodes/tree: [2.142857142857143]
+Avg Depth: 2.0476190476190474
+Depth/tree: [2.0476190476190474]
+Mean fitness raw: 0.22887528 adjusted: 0.8358586 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Standardized=0.118644066 Adjusted=0.8939394 Hits=0
+Tree 0:
+ (RBF gamma=1.023253)

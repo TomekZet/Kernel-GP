@@ -22,7 +22,6 @@ if __name__ == '__main__':
     with open(args.input, 'r') as f:
         headers = string.split(f.readline())
         headersDict = dict([(h,i) for i, h in enumerate(headers)])
-        import pdb; pdb.set_trace()
         if args.name:
             c = headersDict.get(args.name, c)
         columns = len(headers)

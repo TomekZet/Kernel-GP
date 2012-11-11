@@ -1,0 +1,75 @@
+ (Poly gamma=0.011700 coef0=0.071455 degree=3.464989)
+Test Accuracy = 46.52105381670795%
+Time elapsed: 2147.566050528
+Standardized Fitness = 1.1495644
+Adjusted Fitness = 0.46521056
+
+ (Poly gamma=0.108935 coef0=0.107173 degree=3.655030)
+Test Accuracy = 62.21571718081513%
+Time elapsed: 2292.114442143
+Standardized Fitness = 0.6073109
+Adjusted Fitness = 0.62215716
+
+ (Sigm gamma=0.196671 coef0=0.144670)
+Test Accuracy = 62.46340914208511%
+Time elapsed: 2304.900390187
+Standardized Fitness = 0.60093725
+Adjusted Fitness = 0.6246341
+
+ (* (+ Linear Linear) (a * Linear a=1.279050))
+Test Accuracy = 62.5534789461833%
+Time elapsed: 2435.770554382
+Standardized Fitness = 0.5986321
+Adjusted Fitness = 0.6255348
+
+ (Exp (Sigm gamma=0.074131 coef0=0.107094))
+Test Accuracy = 62.5534789461833%
+Time elapsed: 2470.167901441
+Standardized Fitness = 0.5986321
+Adjusted Fitness = 0.6255348
+
+ (+ (Poly gamma=0.027112 coef0=0.100290 degree=1.944380)
+     (Sigm gamma=0.016620 coef0=0.094217))
+Test Accuracy = 62.598513848232386%
+Time elapsed: 2498.31724511
+Standardized Fitness = 0.597482
+Adjusted Fitness = 0.62598515
+
+ (Sigm gamma=0.097600 coef0=0.121598)
+Test Accuracy = 62.93627561360054%
+Time elapsed: 2770.226467018
+Standardized Fitness = 0.5889088
+Adjusted Fitness = 0.62936276
+
+ (+ Linear (a * (Poly gamma=0.121466 coef0=0.007601
+     degree=2.399608) a=1.077079))
+Test Accuracy = 61.382571492907005%
+Time elapsed: 3541.742460402
+Standardized Fitness = 0.6291269
+Adjusted Fitness = 0.61382574
+
+ (Sigm gamma=0.098995 coef0=0.036000)
+Test Accuracy = 66.40396307138032%
+Time elapsed: 1557.94847031
+Standardized Fitness = 0.50593424
+Adjusted Fitness = 0.6640396
+
+ (Poly gamma=0.135168 coef0=0.117032 degree=3.493590)
+Test Accuracy = 69.73654582301283%
+Time elapsed: 297.080065974
+Standardized Fitness = 0.43396837
+Adjusted Fitness = 0.69736546
+
+ (* Linear Linear)
+Test Accuracy = 67.59738797568116%
+Time elapsed: 507.418239252
+Standardized Fitness = 0.4793471
+Adjusted Fitness = 0.6759739
+
+ (Sigm gamma=0.059403 coef0=0.095600)
+Test Accuracy = 64.28732267507317%
+Time elapsed: 493.371044916
+Standardized Fitness = 0.55551666
+Adjusted Fitness = 0.64287317
+
+ (Poly gamma=0.239173 coef0=0.207225 degree=1.825118)

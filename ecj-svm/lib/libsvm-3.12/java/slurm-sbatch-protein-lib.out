@@ -1,0 +1,45 @@
+protein
+  linear
+Accuracy = 68.25039405539293% (3031/4441) (classification)
+   Time: 354
+Accuracy = 67.80004503490204% (3011/4441) (classification)
+   Time: 352
+Accuracy = 67.70997523080388% (3007/4441) (classification)
+   Time: 352
+Accuracy = 67.01193424904301% (2976/4441) (classification)
+   Time: 350
+Accuracy = 67.39473091646026% (2993/4441) (classification)
+   Time: 354
+  polynomial
+Accuracy = 46.38594911056069% (2060/4441) (classification)
+   Time: 351
+Accuracy = 46.43098401260977% (2062/4441) (classification)
+   Time: 358
+Accuracy = 46.45350146363432% (2063/4441) (classification)
+   Time: 353
+Accuracy = 44.87727989191623% (1993/4441) (classification)
+   Time: 350
+Accuracy = 46.25084440441342% (2054/4441) (classification)
+   Time: 354
+  rbf
+Accuracy = 63.746903850484124% (2831/4441) (classification)
+   Time: 351
+Accuracy = 65.0078811078586% (2887/4441) (classification)
+   Time: 368
+Accuracy = 64.21977032199955% (2852/4441) (classification)
+   Time: 351
+Accuracy = 62.125647376716955% (2759/4441) (classification)
+   Time: 351
+Accuracy = 64.53501463634316% (2866/4441) (classification)
+   Time: 358
+  sigmoid
+Accuracy = 55.100202657059214% (2447/4441) (classification)
+   Time: 377
+Accuracy = 55.12272010808377% (2448/4441) (classification)
+   Time: 398
+Accuracy = 55.61810403062374% (2470/4441) (classification)
+   Time: 375
+Accuracy = 53.388876379193874% (2371/4441) (classification)
+   Time: 379
+Accuracy = 55.16775501013286% (2450/4441) (classification)
+   Time: 379
