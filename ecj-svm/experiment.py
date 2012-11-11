@@ -150,7 +150,8 @@ if __name__ == "__main__":
         dataset_path_list = ["data/"+d for d in dataset_list]
         if not dataset:
             continue
-        shuffled_datasets = shuffle_datasets(dataset_path_list, maxsplits, valid=25, test=25, new=args.newdata)        
+        shuffled_datasets = shuffle_datasets(dataset_path_list, maxsplits, valid=25, test=25, 
+                                             new=(args.newdata and not args.cont))        
         j=0
         print "Running experiment for {0} dataset".format(dataset)
         for r in range(pop_size_min, pop_size_max+1, pop_size_step):
