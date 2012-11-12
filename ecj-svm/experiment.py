@@ -119,7 +119,8 @@ if __name__ == "__main__":
                  'dna':["dna.scale"],
                  'vowel':["vowel.scale"],
                  'protein':['protein'],
-                 'mushrooms':['mushrooms']
+                 'mushrooms':['mushrooms'],
+                 'letter':['letter.scale']
                  #"clinical+volumes.arff"
                  }
     

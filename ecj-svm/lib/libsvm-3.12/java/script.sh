@@ -1,7 +1,7 @@
 #!/bin/bash
 
 kernels=(linear polynomial rbf sigmoid)
-for dataset in "dna.scale" 
+for dataset in "$@" 
 do
     echo "$dataset"
     for i in {0..3}
