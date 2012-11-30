@@ -1,18 +1,20 @@
 \documentclass{article}
 \usepackage{polski} %może wymagac dokonfigurowania latexa, ale jest lepszy niż standardowy babel'owy [polish]
+\usepackage[polish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[OT4]{fontenc}
 \usepackage{amsfonts}
 \usepackage{graphicx,color} %include pdf's (and png's for raster graphics... avoid raster graphics!)
 \usepackage{url}
 \usepackage[pdftex,hyperfootnotes=false,pdfborder={0 0 0}]{hyperref} %za wszystkimi pakietami; pdfborder nie wszedzie tak samo zaimplementowane bo specyfikacja nieprecyzyjna; pod miktex'em po prostu nie widac wtedy ramek
-
+\usepackage[section]{placeins}
 
 \input{_ustawienia.tex}
 
 \begin{document}
 
 \input{_tytulowa}
+
 
 \begin{abstract}
 \emph{SVM} 
@@ -36,7 +38,7 @@
 \item Wróć do punktu \ref{ewaluacja}
 \end{enumerate}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[scale=0.5]{figures/algorithm}
 \caption{Diagram przepływu algorytmu Kernel GP.\label{fig:algorithm}}
@@ -81,9 +83,9 @@ Przykładowe drzewo wygenerowane przez algorytm pokazana na ryc.\ref{fig:tree}.
 
 Wektory cech będące najważniejszymi argumentami funkcji jądrowych nie są wyodrębnione jako osobne węzły budujące drzewo, ponieważ są one danymi wejściowymi ewoluowanych funkcji i dla każdej ewoluowanej funkcji są takie same.		
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
-\includegraphics[scale=0.6]{figures/tree}
+\includegraphics[scale=0.5]{figures/tree}
 \caption{Przykładowe drzewo generowane przez algorytm.\label{fig:tree}}
 \end{figure}
 
@@ -102,40 +104,119 @@ Wielkość generowanych drzew jest regulowana przez dwa mechanizmy. Pierwszy to 
 Krzyżowanie polega na odcięciu dwóch losowych poddrzew z dwóch różnych osobników i zamianie ich miejscami. Wygenerowane w ten sposób drzewo musi spełniać narzucone na drzewo ograniczenia dotyczące typów i wielkości.
 Mutacja drzew polega na zamianie losowo wybranego poddrzewa przez losowo wygenerowane drzewo.
 Dodatkowo mutowane są również węzły ERC. Ich mutacja polega na dodaniu losowej wartości o rozkładzie normalnym do wartości przechowywanej w węźle. Wartość ta może być ujemna lub dodatnia.
-Mutacji podlega $ 90% $ drzew, pozostałe $ 10% $ jest pozostawiane bez zmian. Wszystkie drzewa podlegające mutacji mają mutowane węzły ERC. Ponadto $ 70% $ z nich podlega krzyżowaniu, $ 20% $ mutacji polegającej na generowaniu losowych poddrzew a $ 10% $ ma mutowane jedynie węzły ERC.
+Mutacji podlega $ 90\% $ drzew, pozostałe $ 10\% $ jest pozostawiane bez zmian. Wszystkie drzewa podlegające mutacji mają mutowane węzły ERC. Ponadto $ 70\% $ z nich podlega krzyżowaniu, $ 20\% $ mutacji polegającej na generowaniu losowych poddrzew a $ 10\% $ ma mutowane jedynie węzły ERC.
 
 \subsection{Walidacja rozwiązania}
 Walidacja polega na użyciu najlepszego znalezionego Kernela do klasyfikacji przykładów ze zbioru walidującego, który nie był używany podczas uczenia klasyfikatora SVM ani podczas ewaluacji kerneli. Otrzymana w wyniku tej klasyfikacji trafność jest miarą oceny całego algorytmu Kernel GP.
 
 \section{Implementacja}
 Algorytm został napisany w języku Java z użyciem bibliotek \textit{ECJ (Evolutionary Computing in Java)} \cite{sean_ecj_2010} oraz LibSVM \cite{chang_libsvm:_2011}. Pierwsza z nich dostarcza mechanizmy \textit{obliczeń ewolucyjnych} w tym \textit{programowania genetycznego}.
-LibSVM to klasyfikator SVM napisany oryginalnie w języku C z dostępną implementacją w Javie.
-Mechanizmy ECJ stanowią trzon algorytmu zapewniając tworzenie populacji funkcji, ich selekcję, mutację oraz krzyżowanie. LibSVM został użyty na etapie ewaluacji wygenerowanych przez ECJ funkcji.
+\emph{LibSVM} to klasyfikator SVM napisany oryginalnie w języku C z dostępną implementacją w Javie.
+Mechanizmy \emph{ECJ} stanowią trzon algorytmu zapewniając tworzenie populacji funkcji, ich selekcję, mutację oraz krzyżowanie. \emph{LibSVM} został użyty na etapie ewaluacji wygenerowanych przez \emph{ECJ} funkcji.
 	
 	
 	
 	
 
-%			\begin{figure}[h]
+%			\begin{figure}[ht]
 %				\includegraphics[scale=0.90]{../results/quality}
 %				\caption{Porównanie średniej jakości rozwiązań generowanych przez algorytmy dla różnych instancji \emph{QAP}\label{fig:quality}}
 %			\end{figure}
 
 \section{Wyniki}
-	\begin{figure}[h]
-		\includegraphics[scale=0.90]{../ecj-svm/results/processed/accuracy-iris}
+	\subsection{Zbiory danych}
+	Do oceny pracy algorytmu użyto standardowych zbiorów danych służących do testowania systemów maszynowego uczenia się, dostępnych na stronie biblioteki \emph{LIBSVM}. Zbiory zostały opisane w tabelce \ref{tab:datasets}.
+
+
+
+\begin{table}[ht]
+\begin{tabular}{||p{2cm}|c|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}||}
+	\hline 
+	Nazwa zbioru & Liczba klas & \hspace{0pt} Liczba atrybutów & \hspace{0pt} Wielkość zbioru uczącego & \hspace{0pt}Wielkość zbioru testującego & \hspace{0pt} Wielkość zbioru walidującego \\
+	\hline 
+	Iris & 3 & 4 & 68 & 33 & 49  \\ 
+	\hline 
+	Letter & 26 & 16 & 9000 & 4400 & 6600\\ 
+	\hline 
+	DNA & 3 & 180 & 1435 & 700 & 1051 \\ 
+	\hline 
+	Vowel & 11 & 10 & 447 & 217 & 326 \\ 
+	\hline
+	\end{tabular} 	
+	\caption{Zbiory danych użyte do testowania systemu.\label{tab:datasets}} 	
+\end{table}
+	
+	\subsection{Metodologia pomiarów}
+	Żeby oszacować trafność klasyfikacji osiąganą przez skonstruowany system konieczne było podzielenie zbioru danych na zbiór uczący i walidujący, a w przypadku algorytmu Kernel-GP również wydzielenie ze zbioru uczącego podzbioru testującego, używanego do obliczania miary przystosowania (fitness) podczas przebiegu algorytmu genetycznego. Ponieważ sposób podziału zbioru danych ma wpływ na osiąganą trafność klasyfikacji, dokonywano, w zależności od zbioru, 5 lub 10 takich podziałów a następnie wyciągano średnią oraz odchylenie standardowe z wyników otrzymanych dla tych podziałów. Ta procedura dotyczyła zarówno testowania algorytmu \emph{Kernel-GP} jak i porównawczych testów klasyfikatora SVM z biblioteki \emph{LibSVM}. Dla obu algorytmów stosowano te same podziały danych, przy czym w przypadku klasyfikatora \emph{LibSVM} nie dzielono zbioru uczącego na trenujący i testujący.
+	
+
+	\subsection{Trafność klasyfikacji}
+	Jak widać na rysunkach \ref{fig:acc-iris} - \ref{fig:acc-letter-detailed} sprawność algorytmu zależy mocno od konkretnego zbioru danych.
+	\begin{figure}[ht]
+		\includegraphics[scale=0.90]{../ecj-svm/results/processed/pdf/accuracy-iris}
 		\caption{Dokładność klasyfikacji dla zbioru \emph{iris} w funkcji rozmiaru populacji dla róznych ilości generacji.\label{fig:acc-iris}}
 	\end{figure}
 	
-		\begin{figure}[h]
-		\includegraphics[scale=0.90]{../ecj-svm/results/processed/accuracy-dna}
+	\begin{figure}[ht]
+		\includegraphics[scale=0.90]{../ecj-svm/results/processed/pdf/accuracy-iris-detailed}
+		\caption{Dokładność klasyfikacji dla zbioru \emph{iris} w funkcji rozmiaru populacji dla róznych ilości generacji, dla małych populacji.	\label{fig:acc-iris-detailed}}
+	\end{figure}	
+	
+	
+		\begin{figure}[ht]
+		\includegraphics[scale=0.90]{../ecj-svm/results/processed/pdf/accuracy-dna}
 		\caption{Dokładność klasyfikacji dla zbioru \emph{DNA} w funkcji rozmiaru populacji dla róznych ilości generacji.\label{fig:acc-dna}}
 	\end{figure}
 	
-		\begin{figure}[h]
-		\includegraphics[scale=0.90]{../ecj-svm/results/processed/accuracy-vowel}
+		\begin{figure}[ht]
+		\includegraphics[scale=0.90]{../ecj-svm/results/processed/pdf/accuracy-dna-detailed-sd}
+		\caption{Dokładność klasyfikacji dla zbioru \emph{DNA} w funkcji rozmiaru populacji dla róznych ilości generacji, dla małych populacji.\label{fig:acc-dna-detailed}}
+	\end{figure}	
+	
+
+		\begin{figure}[ht]
+		\includegraphics[scale=0.90]{../ecj-svm/results/processed/pdf/accuracy-vowel}
 		\caption{Dokładność klasyfikacji dla zbioru \emph{vowel} w funkcji rozmiaru populacji dla róznych ilości generacji.\label{fig:acc-vowel}}
 	\end{figure}
+		
+				\begin{figure}[ht]
+		\includegraphics[scale=0.90]{../ecj-svm/results/processed/pdf/accuracy-vowel-detailed}
+		\caption{Dokładność klasyfikacji dla zbioru \emph{vowel} w funkcji rozmiaru populacji dla róznych ilości generacji, dla małych populacji.\label{fig:acc-vowel-detailed}}
+	\end{figure}
+	
+	
+		\begin{figure}[ht]
+		\includegraphics[scale=0.90]{../ecj-svm/results/processed/pdf/accuracy-letter}
+		\caption{Dokładność klasyfikacji dla zbioru \emph{letter} w funkcji rozmiaru populacji dla róznych ilości generacji.\label{fig:acc-letter}}
+	\end{figure}
+		
+				\begin{figure}[ht]
+		\includegraphics[scale=0.90]{../ecj-svm/results/processed/pdf/accuracy-letter-detailed}
+		\caption{Dokładność klasyfikacji dla zbioru \emph{letter} w funkcji rozmiaru populacji dla róznych ilości generacji, dla małych populacji.\label{fig:acc-letter-detailed}}
+	\end{figure}
+		
+
+
+	\subsection{Porównanie z tradycyjnym algorytmem SVM}
+	\begin{figure}[ht]
+		\includegraphics[scale=0.90]{../ecj-svm/results/processed/pdf/accuracy-iris-svm}
+		\caption{Porównanie dokładności klasyfikacji dla zbioru \emph{iris} przez algorytm SVM z różnymi funkcjami jądrowymi i algorytm Kernel-GP\label{fig:acc-iris-svm}}
+	\end{figure}
+	
+		\begin{figure}[ht]
+		\includegraphics[scale=0.90]{../ecj-svm/results/processed/pdf/accuracy-dna-svm}
+		\caption{Porównanie dokładności klasyfikacji dla zbioru \emph{dna} przez algorytm SVM z różnymi funkcjami jądrowymi i algorytm Kernel-GP.\label{fig:acc-dna-svm}}
+	\end{figure}	
+	
+		\begin{figure}[ht]
+		\includegraphics[scale=0.90]{../ecj-svm/results/processed/pdf/accuracy-vowel-svm}
+		\caption{Porównanie dokładności klasyfikacji dla zbioru \emph{vowel} przez algorytm SVM z różnymi funkcjami jądrowymi i algorytm Kernel-GP\label{fig:acc-vowel-svm}}
+	\end{figure}
+	
+		\begin{figure}[ht]
+		\includegraphics[scale=0.90]{../ecj-svm/results/processed/pdf/accuracy-letter-svm}
+		\caption{Porównanie dokładności klasyfikacji dla zbioru \emph{letter} przez algorytm SVM z różnymi funkcjami jądrowymi i algorytm Kernel-GP\label{fig:acc-letter-svm}}
+	\end{figure}		
 		
 		
 \section{Podsumowanie}
@@ -147,8 +228,8 @@ Mechanizmy ECJ stanowią trzon algorytmu zapewniając tworzenie populacji funkcj
 
 %%%%%%%%%%%%%%%% literatura %%%%%%%%%%%%%%%%
 
-%\bibliography{sprawozdanie}
-%\bibliographystyle{plain}
+\bibliography{bibliografia}
+\bibliographystyle{plain}
 
 \end{document}
 

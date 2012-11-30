@@ -6,6 +6,7 @@ Created on Sep 15, 2012
 '''
 import argparse
 import string
+import os
 
 if __name__ == '__main__':
     
@@ -31,8 +32,10 @@ if __name__ == '__main__':
            line[-3:-3] = ['NaN' for i in range(columns-len(line))]
            groups.setdefault(line[c], []).append(line)
                
+    #input_file_name = os.path.split(args.input)[1]
+    input_file_name = args.input
     for val, group in groups.items():
-        with open(args.input+'.'+headers[c]+'-'+val+'.dat', 'w') as out:
+        with open("grouped/"+input_file_name+'.'+headers[c]+'-'+val+'.dat', 'w') as out:
             out.write(' '.join(headers)+'\n')
             for i, line in enumerate(group):
                 out.write(str(i)+' '+' '.join(line[1:])+'\n')

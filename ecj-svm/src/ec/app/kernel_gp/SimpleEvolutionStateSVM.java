@@ -24,6 +24,7 @@ import ec.gp.GPIndividual;
 import ec.gp.koza.KozaFitness;
 import ec.gp.koza.KozaStatistics;
 import ec.simple.SimpleEvolutionState;
+import ec.util.Output;
 import ec.util.Parameter;
 
 /**
@@ -66,16 +67,20 @@ public class SimpleEvolutionStateSVM extends SimpleEvolutionState {
     	GPIndividual bestSoFar = (GPIndividual) (st.getBestSoFar())[0];
 
 	    Parameter train_path = new Parameter("train-file");
+	    Parameter train_test_path = new Parameter("traintest-file");
 	    Parameter validation_path = new Parameter("validation-file");
 	    Parameter output_path_param = new Parameter("output-file");
 
 	    
 	    String trainFilepath = this.parameters.getString(train_path, null);
+	    String trainTestFilepath = this.parameters.getString(train_test_path, null);	    
 	    String validationFilepath = this.parameters.getString(validation_path, null);
 	    String output_file_name = this.parameters.getString(output_path_param, null);
 	    
+	    
 
 	    svm_gp_problem svm_probl_train = Kernel_GP_problem.read_problem(trainFilepath);
+	    svm_gp_problem svm_probl_train_test = Kernel_GP_problem.read_problem(trainTestFilepath);
 	    svm_gp_problem svm_probl_validation = Kernel_GP_problem.read_problem(validationFilepath);
     	((svm_gp_problem)svm_probl_train).ind = bestSoFar;
     	((svm_gp_problem)svm_probl_validation).ind = bestSoFar;
@@ -83,12 +88,15 @@ public class SimpleEvolutionStateSVM extends SimpleEvolutionState {
     	((svm_gp_problem)svm_probl_validation).input = new SVMData();
     	
 		Kernel_GP_problem.set_svm_params();
-    	
-    	svm_model model = svm.svm_train(svm_probl_train, Kernel_GP_problem.svm_params);
+
+		//TODO: train libsvm once again using the best individual and bot train+test datasets as training dataset    	
+    	svm_model model = svm.svm_train(svm_probl_train_test, Kernel_GP_problem.svm_params);
    	
 //    	DataOutputStream output = new DataOutputStream(new PrintStream(new FileOutputStream(new File(output_file_name))));
+    	//TODO: set super.output to get statistics from EvolutionState
     	DataOutputStream output = new DataOutputStream(System.out);
-		accuracy = libsvm.Svm_predict_gp.predict_problem(svm_probl_validation, model);
+    	   	
+    	accuracy = libsvm.Svm_predict_gp.predict_problem(svm_probl_validation, model);
 
 		output.writeBytes(((KozaFitness)(bestSoFar.fitness)).adjustedFitness()+" ");
 		output.writeBytes(accuracy*100+" ");

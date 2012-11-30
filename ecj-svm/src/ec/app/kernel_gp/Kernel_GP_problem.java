@@ -33,7 +33,11 @@ import ec.simple.*;
 
 public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 {
-  public GPData input;
+  /**
+	 * 
+	 */
+	private static final long serialVersionUID = 3006367628631372678L;
+public GPData input;
   static public svm_parameter svm_params = new svm_parameter();
   static public int logNumber = 0;
   public svm_gp_problem svm_probl_train;		// set by read_problem
@@ -165,6 +169,16 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 	      message += "Adjusted Fitness = " + f.fitness()+"\n\n";
 	      state.output.print(message, logNumber);
       }
+  
+  public void describe(final EvolutionState state, final Individual ind, 
+	        final int subpopulation, final int threadnum, final int log_number){
+	  state.output.println("Describeing the best individual of run:", log_number);
+	  state.output.println("Fitness: "+ind.fitness, log_number);
+	  ind.printIndividual(state, log_number);
+	  ind.printIndividualForHumans(state, log_number);	 
+  }
+	    
+  
   
   
   public static void set_svm_params()
