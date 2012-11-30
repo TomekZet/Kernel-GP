@@ -66,25 +66,25 @@ public class SimpleEvolutionStateSVM extends SimpleEvolutionState {
     	KozaStatistics st = (KozaStatistics)statistics;
     	GPIndividual bestSoFar = (GPIndividual) (st.getBestSoFar())[0];
 
-	    Parameter train_path = new Parameter("train-file");
+	    //Parameter train_path = new Parameter("train-file");
 	    Parameter train_test_path = new Parameter("traintest-file");
 	    Parameter validation_path = new Parameter("validation-file");
 	    Parameter output_path_param = new Parameter("output-file");
 
 	    
-	    String trainFilepath = this.parameters.getString(train_path, null);
+	    //String trainFilepath = this.parameters.getString(train_path, null);
 	    String trainTestFilepath = this.parameters.getString(train_test_path, null);	    
 	    String validationFilepath = this.parameters.getString(validation_path, null);
 	    String output_file_name = this.parameters.getString(output_path_param, null);
 	    
 	    
 
-	    svm_gp_problem svm_probl_train = Kernel_GP_problem.read_problem(trainFilepath);
+	    //svm_gp_problem svm_probl_train = Kernel_GP_problem.read_problem(trainFilepath);
 	    svm_gp_problem svm_probl_train_test = Kernel_GP_problem.read_problem(trainTestFilepath);
 	    svm_gp_problem svm_probl_validation = Kernel_GP_problem.read_problem(validationFilepath);
-    	((svm_gp_problem)svm_probl_train).ind = bestSoFar;
+    	((svm_gp_problem)svm_probl_train_test).ind = bestSoFar;
     	((svm_gp_problem)svm_probl_validation).ind = bestSoFar;
-    	((svm_gp_problem)svm_probl_train).input = new SVMData();
+    	((svm_gp_problem)svm_probl_train_test).input = new SVMData();
     	((svm_gp_problem)svm_probl_validation).input = new SVMData();
     	
 		Kernel_GP_problem.set_svm_params();
