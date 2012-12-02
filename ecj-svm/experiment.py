@@ -85,10 +85,11 @@ if __name__ == "__main__":
     if args.cont:
         with open (args.cont,'r') as f:
             pdict = pickle.load(f)
-            now = pdict.get('now', now),
+            now = pdict.get('now', now)
             args = pdict.get('args') if pdict.get('args') else args
             write_mode = "a"
             cont = ".cont"
+    
     elif args.append:
         now = string.split(args.append, '.')[1]
         cont = ".cont"
@@ -152,22 +153,26 @@ if __name__ == "__main__":
         if not dataset:
             continue
         shuffled_datasets = shuffle_datasets(dataset_path_list, maxsplits, valid=25, test=25, 
-                                             new=(args.newdata and not args.cont))        
+                                             new=(args.newdata and not cont))        
         j=0
         print "Running experiment for {0} dataset".format(dataset)
-        for r in range(pop_size_min, pop_size_max+1, pop_size_step):
+        for pop in range(pop_size_min, pop_size_max+1, pop_size_step):
             for generations in range(generations_min, generations_max+1, generations_step):                
                 i+=1
                 if not cont or i >= continue_from:                    
                     j+=1
-                    print "\tPopulation size:%d, generations size:%d"%(r,generations)
+                    print "\tPopulation size:%d, generations size:%d"%(pop,generations)
                     output.write("%d "% i) #row number in output file
                     output.write("%s " % dataset) #Dataset name
-                    output.write("%d " % r) #population size
+                    output.write("%d " % pop) #population size
                     output.write("%d " % generations) #number of generations
                     output.write("%s " % cv) # was cross validation  used
                     output.write("%d " % cv_folds) # number of cross validation folds
                     output.flush()  
+                    
+                    mystatfilename = '%s.%s.p-%d.g-%d.stat'% (output_filename,dataset,generations,pop)
+                    statfilename = "result.%s.%s.p-%d.g-%d.stat" % (now,dataset,generations,pop)
+                                        
                     interval = 0.0;
     
                     mean_acc = 0.0
@@ -183,6 +188,7 @@ if __name__ == "__main__":
                         print "\t\tProcessing %s"%(shuffled_dataset)
                         shuffled_dataset = os.path.join(os.getcwd(), shuffled_dataset)
                         train = shuffled_dataset+".tr"                    
+                        train_test = shuffled_dataset+".trtst"                                
                         test = shuffled_dataset+".t"
                         validation = shuffled_dataset+".val"
                         
@@ -194,12 +200,13 @@ if __name__ == "__main__":
                              'ec.Evolve',
                              '-file', 'src/ec/app/kernel_gp/kernel_gp.params',
                              '-p', 'output-file=%s'% mystatfilename,
-                             '-p', 'stat.file=%s'% statfilename,
+                             '-p', 'stat.file=$%s'% statfilename,
                              '-p', 'train-file=%s'% train,
                              '-p', 'test-file=%s'% test,
+                             '-p', 'traintest-file=%s'% train_test,
                              '-p', 'validation-file=%s'% validation,
                              '-p', 'generations=%d'% generations,
-                             '-p', 'pop.subpop.0.size=%s'%r,
+                             '-p', 'pop.subpop.0.size=%s'%pop,
                              '-p', 'cross-validation=%s'%cv,
                              '-p', 'cv-folds=%d' % cv_folds
                              ]
