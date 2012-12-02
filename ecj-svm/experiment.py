@@ -1,3 +1,4 @@
+#!/usr/bin/python
 #-*- coding: utf-8 -*-
 '''
 Created on Sep 15, 2012
@@ -104,8 +105,8 @@ if __name__ == "__main__":
         pickle.dump(pdict, pfile)
 
     output_filename = "results/result.%s" % now 
-    mystatfilename = output_filename+cont+".stat"
-    statfilename = "result.%s%s.ecjstat" % (now, cont)
+    #mystatfilename = output_filename+cont+".stat"
+    #statfilename = "result.%s%s.stat" % (now, cont)
     
     continue_from = getContinueFrom(output_filename+'.dat')
     
@@ -171,7 +172,7 @@ if __name__ == "__main__":
                     output.flush()  
                     
                     mystatfilename = '%s.%s.p-%d.g-%d.stat'% (output_filename,dataset,generations,pop)
-                    statfilename = "result.%s.%s.p-%d.g-%d.stat" % (now,dataset,generations,pop)
+                    statfilename = "%s.%s.p-%d.g-%d.ecjstat" % (output_filename,dataset,generations,pop)
                                         
                     interval = 0.0;
     
