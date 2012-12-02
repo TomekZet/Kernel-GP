@@ -104,7 +104,7 @@ if __name__ == "__main__":
 
     output_filename = "results/result.%s" % now 
     mystatfilename = output_filename+cont+".stat"
-    statfilename = "result.%s%s.stat" % (now, cont)
+    statfilename = "result.%s%s.ecjstat" % (now, cont)
     
     continue_from = getContinueFrom(output_filename+'.dat')
     
