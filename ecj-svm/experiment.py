@@ -170,10 +170,7 @@ if __name__ == "__main__":
                     output.write("%s " % cv) # was cross validation  used
                     output.write("%d " % cv_folds) # number of cross validation folds
                     output.flush()  
-                    
-                    mystatfilename = '%s.%s.p-%d.g-%d.stat'% (output_filename,dataset,pop,generations)
-                    statfilename = "%s.%s.p-%d.g-%d.ecjstat" % (output_filename,dataset,pop,generations)
-                                        
+                                                           
                     interval = 0.0;
     
                     mean_acc = 0.0
@@ -192,6 +189,10 @@ if __name__ == "__main__":
                         train_test = shuffled_dataset+".trtst"                                
                         test = shuffled_dataset+".t"
                         validation = shuffled_dataset+".val"
+                        
+                        mystatfilename = '%s.%s.p-%d.g-%d.%d.stat'% (output_filename,dataset,pop,generations,k)
+                        statfilename = "%s.%s.p-%d.g-%d.%d.ecjstat" % (output_filename,dataset,pop,generations,k)
+                        
                         
                         args_list = [
                              'java',
