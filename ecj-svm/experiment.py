@@ -171,8 +171,8 @@ if __name__ == "__main__":
                     output.write("%d " % cv_folds) # number of cross validation folds
                     output.flush()  
                     
-                    mystatfilename = '%s.%s.p-%d.g-%d.stat'% (output_filename,dataset,generations,pop)
-                    statfilename = "%s.%s.p-%d.g-%d.ecjstat" % (output_filename,dataset,generations,pop)
+                    mystatfilename = '%s.%s.p-%d.g-%d.stat'% (output_filename,dataset,pop,generations)
+                    statfilename = "%s.%s.p-%d.g-%d.ecjstat" % (output_filename,dataset,pop,generations)
                                         
                     interval = 0.0;
     
