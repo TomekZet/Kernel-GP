@@ -1,4 +1,4 @@
-#!/gnuplot
+#!/usr/bin/gnuplot
 #
 #    
 #       G N U P L O T
@@ -146,7 +146,7 @@ set loadpath
 set fontpath 
 set fit noerrorvariables
 GNUTERM = "wxt"
-i = 5
+#i = 5
 f = ""
 
 set terminal pdf
@@ -167,58 +167,130 @@ svm_vowel(n) = word(svm_vowels,n)
 
 
 
+#files = "iris.dat"
+#generations = "1 3 5 7"
+#set output "pdf/accuracy-iris.pdf"
+# plot for [g in generations] 'grouped/iris.dat.generations-'.g.'.dat' using 1:28:xticlabels(3) with linespoints title ''.g.' generations'
+# unset output
+#
+#set output "pdf/accuracy-iris-detailed.pdf"
+# plot for [g = 1:5] 'grouped/iris.detailed.dat.generations-'.g.'.dat' using 1:28:xticlabels(3) with linespoints title ''.g.' generations'
+# unset output
+#
+#set output "pdf/accuracy-iris-svm.pdf"
+#plot for [g in generations] 'grouped/iris.dat.generations-'.g.'.dat' using 1:28:xticlabels(3) with linespoints title ''.g.' generations', for [i=2:5] 'libsvm/iris.avg.dat' using 1:i with lines title columnheader
+# unset output
+#
+#set output "pdf/accuracy-dna.pdf"
+# plot for [g in generations] 'grouped/sd/dna.new.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
+#unset output
+#
+#set output "pdf/accuracy-dna.detailed.pdf"
+# plot for [g in generations] 'grouped/sd/dna.detailed.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
+#unset output
+#
+#set output "pdf/accuracy-dna-svm.pdf"
+# plot for [g in generations] 'grouped/sd/dna.new.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations', 93.086003372681 title "svm linear", 50.843170320404 title "svm polynomial", 94.5193929173693 title "svm RBF",  93.76053962900505 title "svm sigmoid"
+#unset output
+#
+#set output "pdf/accuracy-vowel.pdf"
+# plot for [g in generations] 'grouped/vowel.dat.generations-'.g.'.dat' using 1:28:xticlabels(3) with linespoints title ''.g.' generations'
+# unset output
+#
+#set output "pdf/accuracy-vowel-detailed.pdf"
+# plot for [g = 1:7] 'grouped/vowel.detailed.dat.generations-'.g.'.dat' using 1:18:xticlabels(3) with linespoints title ''.g.' generations'
+# unset output
+#
+#set output "pdf/accuracy-vowel-detailed-sd.pdf"
+# plot for [g = 1:7] 'grouped/sd/vowel.detailed.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
+# unset output
+#
+#set output "pdf/accuracy-vowel-svm.pdf"
+## plot for [g in generations] 'grouped/vowel.dat.generations-'.g.'.dat' using 1:28:xticlabels(3) with linespoints title ''.g.' generations', 49.78354978354979 title "svm linear", 12.554112554112553 title "svm polynomial", 51.298701298701296 title "svm RBF",  43.290043290043286 title "svm sigmoid"
+#plot for [g in generations] 'grouped/vowel.dat.generations-'.g.'.dat' using 1:28:xticlabels(3) with linespoints title ''.g.' generations', for [i=2:5] 'libsvm/vowel.avg.dat' using 1:i with lines title columnheader
+# unset output
+#
+#
+#set output "pdf/accuracy-letter.pdf"
+# plot for [g in generations] 'grouped/sd/letter.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
+# unset output
+#
+#set output "pdf/accuracy-letter-detailed.pdf"
+# plot for [g = 1:5] 'grouped/sd/letter.detailed.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
+# unset output
+#
+#set output "pdf/accuracy-letter-svm.pdf"
+#plot for [g in generations] 'grouped/sd/letter.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations', for [i=2:5] 'libsvm/letter.avg.dat' using 1:i with lines title columnheader
+# unset output
+#
+
+
+
 files = "iris.dat"
-generations = "1 3 5"
+generations = "1 3 5 7"
 set output "pdf/accuracy-iris.pdf"
- plot for [g in generations] 'grouped/iris.dat.generations-'.g.'.dat' using 1:28:xticlabels(3) with linespoints title ''.g.' generations'
+ plot for [g in generations] 'grouped/iris.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
  unset output
 
 set output "pdf/accuracy-iris-detailed.pdf"
- plot for [g = 1:5] 'grouped/iris.detailed.dat.generations-'.g.'.dat' using 1:28:xticlabels(3) with linespoints title ''.g.' generations'
+ plot for [g in generations] 'grouped/iris.detailed.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
  unset output
+
+#set yrange[0.95:1.05]
+set ylabel "Fitness"
+set output "pdf/fitness-iris-detailed.pdf"
+ plot for [g in generations] 'grouped/iris.detailed.dat.generations-'.g.'.dat' using 1:17:20:xticlabels(3) with yerrorlines title ''.g.' generations'
+ unset output
+set ylabel "Accuracy"
+#set yrange [ * : * ] noreverse nowriteback  # (currently [10.0000:100.000] )
 
 set output "pdf/accuracy-iris-svm.pdf"
-plot for [g in generations] 'grouped/iris.dat.generations-'.g.'.dat' using 1:28:xticlabels(3) with linespoints title ''.g.' generations', for [i=2:5] 'libsvm/iris.avg.dat' using 1:i with lines title columnheader
+plot for [g in generations] 'grouped/iris.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations', for [i=2:5] 'libsvm/iris.avg.dat' using 1:i with lines title columnheader
  unset output
 
+
 set output "pdf/accuracy-dna.pdf"
- plot for [g in generations] 'grouped/sd/dna.new.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
+ plot for [g in generations] 'grouped/dna.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
 unset output
 
-set output "pdf/accuracy-dna.detailed.pdf"
- plot for [g in generations] 'grouped/sd/dna.detailed.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
+set output "pdf/accuracy-dna-detailed.pdf"
+ plot for [g in generations] 'grouped/dna.detailed.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
 unset output
 
 set output "pdf/accuracy-dna-svm.pdf"
- plot for [g in generations] 'grouped/sd/dna.new.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations', 93.086003372681 title "svm linear", 50.843170320404 title "svm polynomial", 94.5193929173693 title "svm RBF",  93.76053962900505 title "svm sigmoid"
+ plot for [g in generations] 'grouped/dna.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations', 93.086003372681 title "svm linear", 50.843170320404 title "svm polynomial", 94.5193929173693 title "svm RBF",  93.76053962900505 title "svm sigmoid"
 unset output
 
+
+
 set output "pdf/accuracy-vowel.pdf"
- plot for [g in generations] 'grouped/vowel.dat.generations-'.g.'.dat' using 1:28:xticlabels(3) with linespoints title ''.g.' generations'
+ plot for [g in generations] 'grouped/vowel.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
  unset output
 
 set output "pdf/accuracy-vowel-detailed.pdf"
- plot for [g = 1:7] 'grouped/vowel.detailed.dat.generations-'.g.'.dat' using 1:18:xticlabels(3) with linespoints title ''.g.' generations'
+ plot for [g in generations] 'grouped/vowel.detailed.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
  unset output
 
-set output "pdf/accuracy-vowel-detailed-sd.pdf"
- plot for [g = 1:7] 'grouped/sd/vowel.detailed.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
+set ylabel "Fitness"
+set output "pdf/fitness-vowel-detailed.pdf"
+ plot for [g in generations] 'grouped/vowel.detailed.dat.generations-'.g.'.dat' using 1:17:20:xticlabels(3) with yerrorlines title ''.g.' generations'
  unset output
+set ylabel "Accuracy"
 
 set output "pdf/accuracy-vowel-svm.pdf"
-# plot for [g in generations] 'grouped/vowel.dat.generations-'.g.'.dat' using 1:28:xticlabels(3) with linespoints title ''.g.' generations', 49.78354978354979 title "svm linear", 12.554112554112553 title "svm polynomial", 51.298701298701296 title "svm RBF",  43.290043290043286 title "svm sigmoid"
-plot for [g in generations] 'grouped/vowel.dat.generations-'.g.'.dat' using 1:28:xticlabels(3) with linespoints title ''.g.' generations', for [i=2:5] 'libsvm/vowel.avg.dat' using 1:i with lines title columnheader
+# plot for [g in generations] 'grouped/vowel.dat.generations-'.g.'.dat' using 1:18:xticlabels(3) with linespoints title ''.g.' generations', 49.78354978354979 title "svm linear", 12.554112554112553 title "svm polynomial", 51.298701298701296 title "svm RBF",  43.290043290043286 title "svm sigmoid"
+plot for [g in generations] 'grouped/vowel.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations', for [i=2:5] 'libsvm/vowel.avg.dat' using 1:i with lines title columnheader
  unset output
 
-
+generations = "1 3 5"
 set output "pdf/accuracy-letter.pdf"
- plot for [g in generations] 'grouped/sd/letter.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
+ plot for [g in generations] 'grouped/letter.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
  unset output
 
 set output "pdf/accuracy-letter-detailed.pdf"
- plot for [g = 1:5] 'grouped/sd/letter.detailed.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
+ plot for [g in generations] 'grouped/letter.detailed.dat.generations-'.g.'.dat' using 1:18:xticlabels(3) with linespoints title ''.g.' generations'
  unset output
 
 set output "pdf/accuracy-letter-svm.pdf"
-plot for [g in generations] 'grouped/sd/letter.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations', for [i=2:5] 'libsvm/letter.avg.dat' using 1:i with lines title columnheader
+plot for [g in generations] 'grouped/letter.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations', for [i=2:5] 'libsvm/letter.avg.dat' using 1:i with lines title columnheader
  unset output

@@ -1,7 +1,0 @@
- (* (Sigm gamma=0.313599 coef0=0.190507) (Poly
-     gamma=0.207461 coef0=0.064653 degree=2.873540))
-Test Accuracy = 48.64864864864865%
-Time elapsed: 0.032180497
-Standardized Fitness = 1.0555556
-Adjusted Fitness = 0.4864865
-

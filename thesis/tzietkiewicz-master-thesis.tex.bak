@@ -4,7 +4,7 @@
 %%\usepackage{polski}
 %%\usepackage[polish]{babel}
 \usepackage[OT4]{fontenc} 
-
+\usepackage[section]{placeins}
 
 \usepackage[widespace]{fourier}   % Use Utopia font set
 \usepackage[scaled=0.875]{helvet} % Use Helvetica for sans-serif

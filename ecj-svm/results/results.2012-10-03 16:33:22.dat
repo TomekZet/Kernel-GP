@@ -1,2 +1,0 @@
-'dataset' 'population size' 'n.o.generations' 'cros validation' 'cv folds' 'fitness' 'accuracy' 'time'
-dna.scale 1 5 False 10 

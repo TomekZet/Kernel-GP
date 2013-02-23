@@ -1,5 +1,0 @@
-Running experiment for protein dataset
-	Population size:11, generations size:5
-		Processing data/protein.seed0
-		Time: 10481.904 s	accuracy:68.656
-	Avg. time: 10481.904 s	Avg. accuracy: 68.656

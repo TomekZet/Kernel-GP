@@ -1,2 +1,0 @@
-N dataset population_size generations cross_validation cv_folds fitness0 accuracy0 fitness1 accuracy1 fitness2 accuracy2 fitness3 accuracy3 fitness4 accuracy4 mean_fitness mean_accuracy time
-1 protein 11 5 False 10 0.66854316 68.65570817383471 NaN NaN NaN NaN NaN NaN NaN NaN 0.668543 68.655708 10481.903700

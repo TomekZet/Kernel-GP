@@ -9,8 +9,8 @@ pop.subpop.0.species.fitness = ec.gp.koza.KozaFitness
 eval.problem = ec.app.kernel_gp.Kernel_GP_problem
 eval.problem.data = ec.app.kernel_gp.SVMData
 
-breedthreads = auto
-evalthreads = auto
+breedthreads = 1
+evalthreads = 1
 
 #gp.tree.print-style = dot
 
@@ -25,10 +25,24 @@ cv-folds = 10
 generations = 2
 pop.subpop.0.size = 50
 
+     
+seed.0 = 864141354      
 seed.1 = 134280905
 seed.2 = 214128957
 seed.3 = 342141245
 seed.4 = 839284172
+seed.5 = 1320270034
+seed.6 = 1321926074
+seed.7 = 1321926079
+seed.8 = 1321926080
+seed.9 = 1321926081
+seed.10 = 1320270039
+seed.11 = 1320270040
+seed.12 = 1320270041 
+seed.13 = 1321469220
+seed.14 = 1242582342
+seed.15 = 6897897853
+seed.16 = 5606443450
 
 state = ec.app.kernel_gp.SimpleEvolutionStateSVM
 
@@ -43,12 +57,12 @@ pop.subpop.0.duplicate-retries = 20
 
 gp.tc.0.init = ec.gp.koza.GrowBuilder
 gp.tc.0.init.min-depth = 2
-gp.tc.0.init.max-depth = 6
+gp.tc.0.init.max-depth = 8
 
-gp.koza.xover.maxdepth = 2
+gp.koza.xover.maxdepth = 3
 gp.koza.mutate.maxdepth = 4
 gp.koza.grow.min-depth = 2
-gp.koza.grow.max-depth = 6
+gp.koza.grow.max-depth = 8
 
 pop.subpop.0.species.pipe = ec.breed.MultiBreedingPipeline
 pop.subpop.0.species.pipe.num-sources = 2
@@ -60,11 +74,13 @@ pop.subpop.0.species.pipe.num-sources = 2
 		pop.subpop.0.species.pipe.source.0.source.0 = ec.breed.MultiBreedingPipeline
 		pop.subpop.0.species.pipe.source.0.source.0.num-sources = 3
 		pop.subpop.0.species.pipe.source.0.source.0.source.0 = ec.gp.koza.CrossoverPipeline
-		pop.subpop.0.species.pipe.source.0.source.0.source.0.prob = 0.7 
+		pop.subpop.0.species.pipe.source.0.source.0.source.0.prob = 0.69 
 		pop.subpop.0.species.pipe.source.0.source.0.source.1 = ec.gp.koza.MutationPipeline
-		pop.subpop.0.species.pipe.source.0.source.0.source.1.prob = 0.2
+		pop.subpop.0.species.pipe.source.0.source.0.source.1.prob = 0.3
 		pop.subpop.0.species.pipe.source.0.source.0.source.2 = ec.breed.ReproductionPipeline
-		pop.subpop.0.species.pipe.source.0.source.0.source.2.prob = 0.1
+		pop.subpop.0.species.pipe.source.0.source.0.source.2.prob = 0.01
+
+breed.elite.0 = 1
 
 breed.reproduce.source.0 = ec.parsimony.BucketTournamentSelection
 gp.koza.xover.source.0 = ec.parsimony.BucketTournamentSelection
@@ -73,9 +89,9 @@ gp.breed.mutate-erc.source.0 = ec.parsimony.BucketTournamentSelection
 
 
 
-breed.reproduce.source.0.num-buckets = 5
-gp.koza.xover.source.0.num-buckets = 5
-gp.koza.mutate.source.0.num-buckets = 5
+breed.reproduce.source.0.num-buckets = 10
+gp.koza.xover.source.0.num-buckets = 10
+gp.koza.mutate.source.0.num-buckets = 10
 
 select.bucket-tournament.size = 5
 

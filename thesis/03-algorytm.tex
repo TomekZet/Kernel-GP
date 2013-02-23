@@ -83,7 +83,8 @@ Mutacja drzew polega na zamianie losowo wybranego poddrzewa przez losowo wygener
 Dodatkowo mutowane są również węzły ERC. Ich mutacja polega na dodaniu losowej wartości o rozkładzie normalnym do wartości przechowywanej w węźle. Wartość ta może być ujemna lub dodatnia.
 
 \subsection{Walidacja rozwiązania}
-Walidacja polega na użyciu najlepszego znalezionego Kernela do klasyfikacji przykładów ze zbioru walidującego, który nie był używany podczas uczenia klasyfikatora SVM ani podczas ewaluacji kerneli. Otrzymana w wyniku tej klasyfikacji trafność jest miarą oceny całego algorytmu Kernel GP.
+Walidacja polega na użyciu najlepszego znalezionego kernela do klasyfikacji przykładów ze zbioru walidującego, który nie był używany podczas uczenia klasyfikatora SVM ani podczas ewaluacji kerneli.
+Najpierw algorytm SVM jest uczony na połączonych zbiorach trenującym i walidującym, przy pomocy tej funkcji jądrowej. Następnie dokonywana jest klasyfikacja zbioru walidującego. Otrzymana w wyniku tej klasyfikacji trafność jest miarą oceny całego algorytmu Kernel GP.
 
 \section{Implementacja}
 Algorytm został napisany w języku Java z użyciem bibliotek \textit{ECJ (Evolutionary Computing in Java)} \cite{sean_ecj_2010} oraz LibSVM \cite{chang_libsvm:_2011}. Pierwsza z nich dostarcza mechanizmy \textit{obliczeń ewolucyjnych} w tym \textit{programowania genetycznego}.
@@ -92,3 +93,4 @@ Mechanizmy ECJ stanowią trzon algorytmu zapewniając tworzenie populacji funkcj
 
 
 \section{Złożoność obliczeniowa}
+ \clearpage

@@ -1,6 +1,0 @@
- (Exp (Sigm gamma=0.202397 coef0=0.030110))
-Test Accuracy = 94.5945945945946%
-Time elapsed: 0.027157362
-Standardized Fitness = 0.057142857
-Adjusted Fitness = 0.945946
-

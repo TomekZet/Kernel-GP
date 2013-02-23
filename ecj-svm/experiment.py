@@ -30,7 +30,7 @@ def sd(data, mean):
     return math.sqrt(sum([math.pow(x - mean, 2) for x in data])/(len(data) ))
 
 
-def shuffle_datasets(dataset_path_list, splits=10, test=22, valid=33, new=True):
+def shuffle_datasets(dataset_path_list, splits=10, test=25, valid=25, new=True):
     '''
     Shuffles datasets from 'dataset_path_list' into 'splits' tuples of train and test datasets
     Result datasets are written into files
@@ -53,30 +53,30 @@ def getContinueFrom(filepath):
             result = int(result)
     except ValueError:
         result = 0
-        print "ValueError" 
+        print "ValueError"
     finally:
-        return result  
+        return result
 
 if __name__ == "__main__":
-    
+
     parser = argparse.ArgumentParser(description    ="Experiment runner")
     parser.add_argument('-x', '--xmx', help='Java heap size', type=int, default=1024)
-    parser.add_argument('-s', '--splits', help='Number of splits of train, test and validation set', type=int, default=5)        
+    parser.add_argument('-s', '--splits', help='Number of splits of train, test and validation set', type=int, default=5)
     parser.add_argument('-g', '--genmax', help='Max number of generations', type=int, default=5)
     parser.add_argument('-p', '--popmax', help='Maximum size of population', type=int, default=101)
     parser.add_argument('--popmin', help='Minimum size of population', type=int, default=1)
     parser.add_argument('--genmin', help='Minimum size of generations', type=int, default=1)
-    parser.add_argument('--popstep', help='Step of population size incrementation', type=int, default=10)    
+    parser.add_argument('--popstep', help='Step of population size incrementation', type=int, default=10)
     parser.add_argument('--genstep', help='Step of generations size incrementation', type=int, default=2)
-    parser.add_argument('-d', '--datasets', help='Names of datasets to be used', nargs='+')    
+    parser.add_argument('-d', '--datasets', help='Names of datasets to be used', nargs='+')
     parser.add_argument('-e', '--errors', help='Show errors on stdout (do not write them to file', action='store_true')
     parser.add_argument('-n', '--newdata', help='Generate new data splits', action='store_true')
     parser.add_argument('-c', '--cont', help='Path to file with stopped computations to continue')
     parser.add_argument('-a', '--append', help='Path to file with stopped computations to append, without reading args from pickled file')
-    
+
 
 #    parser.add_argument('-s', '--seed', help='Generete seed for randomizing', action='store_true')
-    
+
     time_format = "%Y-%m-%d %H:%M:%S"
     now = datetime.datetime.now().strftime(time_format)
     args = parser.parse_args()
@@ -90,13 +90,13 @@ if __name__ == "__main__":
             args = pdict.get('args') if pdict.get('args') else args
             write_mode = "a"
             cont = ".cont"
-    
+
     elif args.append:
         now = string.split(args.append, '.')[1]
         cont = ".cont"
         write_mode = "a"
-    
-    picklefilename = "results/result.%s.args" % now 
+
+    picklefilename = "results/result.%s.args" % now
     with open(picklefilename, "w") as pfile:
         pdict = dict(
                     now = now,
@@ -104,12 +104,12 @@ if __name__ == "__main__":
                     )
         pickle.dump(pdict, pfile)
 
-    output_filename = "results/result.%s" % now 
+    output_filename = "results/result.%s" % now
     #mystatfilename = output_filename+cont+".stat"
     #statfilename = "result.%s%s.stat" % (now, cont)
-    
+
     continue_from = getContinueFrom(output_filename+'.dat')
-    
+
     output = open(output_filename+'.dat', write_mode)
 
     err_output = None
@@ -125,11 +125,11 @@ if __name__ == "__main__":
                  'letter':['letter.scale']
                  #"clinical+volumes.arff"
                  }
-    
+
     java_heap = args.xmx
 
     maxsplits = args.splits
-    
+
     pop_size_min = args.popmin
     pop_size_max = args.popmax
     pop_size_step = args.popstep
@@ -137,7 +137,7 @@ if __name__ == "__main__":
     generations_min = args.genmin
     generations_max = args.genmax
     generations_step = args.genstep
-        
+
     cv_folds = 10
     cv = False
     iterative_headings = " ".join(['fitness{0} accuracy{0}'.format(i) for i in range(maxsplits)])
@@ -145,22 +145,22 @@ if __name__ == "__main__":
         output.write("N dataset population_size generations cross_validation cv_folds %s mean_fitness mean_accuracy time\n"% iterative_headings)
     else:
         output.write("\n")
-           
-    i = 0       
+
+    i = 0
     for dataset_name in args.datasets or datasets.keys():
         dataset_list = datasets.get(dataset_name)
         dataset = dataset_list[0]
         dataset_path_list = ["data/"+d for d in dataset_list]
         if not dataset:
             continue
-        shuffled_datasets = shuffle_datasets(dataset_path_list, maxsplits, valid=25, test=25, 
-                                             new=(args.newdata and not cont))        
+        shuffled_datasets = shuffle_datasets(dataset_path_list, maxsplits, valid=25, test=25,
+                                             new=(args.newdata and not cont))
         j=0
         print "Running experiment for {0} dataset".format(dataset)
         for pop in range(pop_size_min, pop_size_max+1, pop_size_step):
-            for generations in range(generations_min, generations_max+1, generations_step):                
+            for generations in range(generations_min, generations_max+1, generations_step):
                 i+=1
-                if not cont or i >= continue_from:                    
+                if not cont or i >= continue_from:
                     j+=1
                     print "\tPopulation size:%d, generations size:%d"%(pop,generations)
                     output.write("%d "% i) #row number in output file
@@ -169,10 +169,10 @@ if __name__ == "__main__":
                     output.write("%d " % generations) #number of generations
                     output.write("%s " % cv) # was cross validation  used
                     output.write("%d " % cv_folds) # number of cross validation folds
-                    output.flush()  
-                                                           
+                    output.flush()
+
                     interval = 0.0;
-    
+
                     mean_acc = 0.0
                     mean_fit = 0.0
                     mean_time = 0.0
@@ -185,15 +185,15 @@ if __name__ == "__main__":
                             continue
                         print "\t\tProcessing %s"%(shuffled_dataset)
                         shuffled_dataset = os.path.join(os.getcwd(), shuffled_dataset)
-                        train = shuffled_dataset+".tr"                    
-                        train_test = shuffled_dataset+".trtst"                                
+                        train = shuffled_dataset+".tr"
+                        train_test = shuffled_dataset+".trtst"
                         test = shuffled_dataset+".t"
                         validation = shuffled_dataset+".val"
-                        
+
                         mystatfilename = '%s.%s.p-%d.g-%d.%d.stat'% (output_filename,dataset,pop,generations,k)
                         statfilename = "%s.%s.p-%d.g-%d.%d.ecjstat" % (output_filename,dataset,pop,generations,k)
-                        
-                        
+
+
                         args_list = [
                              'java',
                              '-classpath',
@@ -212,7 +212,7 @@ if __name__ == "__main__":
                              '-p', 'cross-validation=%s'%cv,
                              '-p', 'cv-folds=%d' % cv_folds
                              ]
-                        
+
                         start = time.time()
     #                    subprocess.call(args_list, stdout=output, stderr=err_output)
                         results = subprocess.check_output(args_list, stderr=err_output)
@@ -234,8 +234,7 @@ if __name__ == "__main__":
                     output.write("%f " % mean_fit) # mean fitness
                     output.write("%f " % mean_acc) # men accuracy
                     output.write("%f\n" % mean_time) # execution time
-    
+
     output.close()
     if not args.errors:
         err_output.close()
-            

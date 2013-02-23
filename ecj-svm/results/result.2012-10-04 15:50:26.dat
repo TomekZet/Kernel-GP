@@ -1,4 +1,0 @@
-'dataset' 'population size' 'n.o.generations' 'cros validation' 'cv folds' 'fitness' 'accuracy' 'time'
-iris.scale 1 6 False 10 0.9666667 100.0 1.272127
-iris.scale 21 6 False 10 0.9666667 96.66666666666667 41.857618
-iris.scale 41 6 False 10 

@@ -1,8 +1,0 @@
- (+ (Exp (* (RBF gamma=0.161997) (Sigm gamma=0.208446
-     coef0=0.016322))) (Exp (Sigm gamma=0.461921
-     coef0=0.002296)))
-Test Accuracy = 100.0%
-Time elapsed: 0.069426918
-Standardized Fitness = 0.0
-Adjusted Fitness = 1.0
-
