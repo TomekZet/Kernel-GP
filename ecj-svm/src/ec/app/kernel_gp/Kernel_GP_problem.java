@@ -89,7 +89,17 @@ public GPData input;
 //			e1.printStackTrace();
 //		}
 	      
-	      set_svm_params();
+	      Parameter cache_size_param = new Parameter("cache_size");
+	      Parameter shrinking_param = new Parameter("shrinking");
+	      Parameter epsilon_param = new Parameter("epsilon");
+	      
+	      int cache_size = state.parameters.getIntWithDefault(cache_size_param, null, 500);
+	      int shrinking = state.parameters.getIntWithDefault(shrinking_param, null, 1);
+	      double epsilon = state.parameters.getDoubleWithDefault(epsilon_param, null, 0.001);
+	      
+	      
+	      set_svm_params(cache_size, shrinking, epsilon);
+	      
 	      if (svm_probl_train == null)
 	      {
 	    	  try {	      
@@ -181,7 +191,7 @@ public GPData input;
   
   
   
-  public static void set_svm_params()
+  public static void set_svm_params(int cache_size, int shrinking, double eps)
   {
 //		svm_params = new svm_parameter();
 		// default values
@@ -191,11 +201,11 @@ public GPData input;
 		svm_params.gamma = 0;	// 1/num_features - set by read_problem
 		svm_params.coef0 = 0;
 //		svm_params.nu = 0.5;
-		svm_params.cache_size = 100;
+		svm_params.cache_size = cache_size;
 		svm_params.C = 1;
-		svm_params.eps = 1e-3;
+		svm_params.eps = eps;//1e-3;
 		svm_params.p = 0.1;
-		svm_params.shrinking = 1;
+		svm_params.shrinking = shrinking;
 //		svm_params.probability = 0;
 //		svm_params.nr_weight = 0;
 //		svm_params.weight_label = new int[0];
