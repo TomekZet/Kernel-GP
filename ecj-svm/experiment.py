@@ -65,7 +65,7 @@ if __name__ == "__main__":
     parser.add_argument('-g', '--genmax', help='Max number of generations', type=int, default=5)
     parser.add_argument('-p', '--popmax', help='Maximum size of population', type=int, default=101)
     parser.add_argument('--popmin', help='Minimum size of population', type=int, default=1)
-    parser.add_argument('--genmin', help='Minimum size of generations', type=int, default=1)
+    parser.add_argument('--genmin', help='Minimum size of generations', type=int, default=None)
     parser.add_argument('--popstep', help='Step of population size incrementation', type=int, default=10)
     parser.add_argument('--genstep', help='Step of generations size incrementation', type=int, default=2)
     parser.add_argument('--costmin', help='Step of generations size incrementation', type=float, default=0.25)
@@ -142,7 +142,7 @@ if __name__ == "__main__":
     pop_size_max = args.popmax
     pop_size_step = args.popstep
 
-    generations_min = args.genmin
+    generations_min = args.genmin or args.genmax
     generations_max = args.genmax
     generations_step = args.genstep
     
@@ -161,7 +161,7 @@ if __name__ == "__main__":
 #    epsilon_max = 0.501
 #    epsilon_step = 0.01
     #epsilons = (0.001, 0.005, 0.01, 0.1, 0.2, 0.5)
-    epsilons = (0.5,)    
+    epsilons = (0.4,)    
     #epsilons = (epsilon,) 
 
     shrinkings = (0,)
@@ -174,12 +174,19 @@ if __name__ == "__main__":
             result += step
 
     costs = [c for c in frange(args.costmin, args.costmax, args.coststep)]
-    costs = (0.4,)
+    costs = (0.3,)
     
 
     cv_folds = 10
     cv = False
-    iterative_headings = " ".join(['fitness{0} accuracy{0}'.format(i) for i in range(maxsplits)])
+    
+    ih = []
+    for s in range(maxsplits):
+        for g in range(generations_max):
+            ih.append("fitness_{0}_{1} accuracy_{0}_{1}".format(s, g))
+   
+    iterative_headings = " ".join(ih)         
+    
     if not cont:
         output.write("N dataset population_size generations cross_validation cv_folds epsilon cache shrinking cost %s mean_fitness mean_accuracy time\n"% iterative_headings)
     else:
@@ -271,15 +278,23 @@ if __name__ == "__main__":
                                         results = subprocess.check_output(args_list, stderr=err_output)
                                         end = time.time()
                                         interval = end - start
-                                        try:
-                                            fitness, accuracy = results.split()
-                                        except:
-                                            fitness = 'nan'
-                                            accuracy = 'nan'
-                                        print "\t\tTime: %.03f s\taccuracy:%.03f" % (interval, float(accuracy))
-                                        output.write(fitness+" ")
-                                        output.write(accuracy+" ")
+                                        results = results.split()
+                                        for g in range(generations_max):
+                                            if g < generations:
+                                                try:
+                                                    fitness = results.pop(0)
+                                                    accuracy = results.pop(0)
+                                                except:
+                                                    fitness = 'nan'
+                                                    accuracy = 'nan'
+                                                output.write(fitness+" ")
+                                                output.write(accuracy+" ")
+                                            else:
+                                                output.write("  ")
+                                        
                                         output.flush()
+                                        
+                                        print "\t\tTime: %.03f s\taccuracy:%.03f" % (interval, float(accuracy))
                                         mean_fit += float(fitness)
                                         mean_acc += float(accuracy)
                                         mean_time += interval
