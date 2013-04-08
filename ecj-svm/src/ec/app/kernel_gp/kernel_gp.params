@@ -46,7 +46,7 @@ seed.16 = 5606443450
 
 state = ec.app.kernel_gp.SimpleEvolutionStateSVM
 
-stat = ec.gp.koza.KozaStatistics
+stat = ec.app.kernel_gp.KozaStatisticsGP
 #stat = ec.simple.SimpleStatistics
 stat.gather-full=true
 stat.file =	out.stat

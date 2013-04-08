@@ -5,7 +5,7 @@ import ec.EvolutionState;
 public class ERCgamma extends ERCParam {
 
 	public ERCgamma(){
-		min = 0.0;
+		min = 0.1;
 		max = 2.0;
 		step = 0.1;
 		name = "gamma";

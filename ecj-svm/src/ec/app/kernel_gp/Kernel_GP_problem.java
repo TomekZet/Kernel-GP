@@ -92,13 +92,15 @@ public GPData input;
 	      Parameter cache_size_param = new Parameter("cache_size");
 	      Parameter shrinking_param = new Parameter("shrinking");
 	      Parameter epsilon_param = new Parameter("epsilon");
+	      Parameter cost_param = new Parameter("cost");
 	      
 	      int cache_size = state.parameters.getIntWithDefault(cache_size_param, null, 500);
 	      int shrinking = state.parameters.getIntWithDefault(shrinking_param, null, 1);
 	      double epsilon = state.parameters.getDoubleWithDefault(epsilon_param, null, 0.001);
+	      double cost = state.parameters.getDoubleWithDefault(cost_param, null, 1);
 	      
 	      
-	      set_svm_params(cache_size, shrinking, epsilon);
+	      set_svm_params(cache_size, shrinking, epsilon, cost);
 	      
 	      if (svm_probl_train == null)
 	      {
@@ -191,18 +193,18 @@ public GPData input;
   
   
   
-  public static void set_svm_params(int cache_size, int shrinking, double eps)
+  public static void set_svm_params(int cache_size, int shrinking, double eps, double cost)
   {
 //		svm_params = new svm_parameter();
 		// default values
 		svm_params.svm_type = svm_params.C_SVC;
 		svm_params.kernel_type = svm_params.RBF;
 		svm_params.degree = 3;
-		svm_params.gamma = 0;	// 1/num_features - set by read_problem
+		svm_params.gamma = 0.1;	// 1/num_features - set by read_problem
 		svm_params.coef0 = 0;
 //		svm_params.nu = 0.5;
 		svm_params.cache_size = cache_size;
-		svm_params.C = 1;
+		svm_params.C = cost;
 		svm_params.eps = eps;//1e-3;
 		svm_params.p = 0.1;
 		svm_params.shrinking = shrinking;

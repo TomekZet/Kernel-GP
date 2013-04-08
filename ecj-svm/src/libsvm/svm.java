@@ -437,6 +437,7 @@ class Solver {
 			}
 			
 			int i = working_set[0];
+			//Sometimes j == -1 and then Exception occurs
 			int j = working_set[1];
 
 			++iter;
@@ -444,6 +445,7 @@ class Solver {
 			// update alpha[i] and alpha[j], handle bounds carefully
 
 			float[] Q_i = Q.get_Q(i,active_size);
+			//Sometimes j == -1 and then Exception occurs
 			float[] Q_j = Q.get_Q(j,active_size);
 
 			double C_i = get_C(i);
@@ -664,6 +666,7 @@ class Solver {
 		{
 			if(y[j]==+1)
 			{
+				//for j==0==is_lower_bound Gmin_idx will stay -1?
 				if (!is_lower_bound(j))
 				{
 					double grad_diff=Gmax+G[j];
@@ -716,6 +719,7 @@ class Solver {
 			return 1;
 
 		working_set[0] = Gmax_idx;
+		//If working_set[1] is set to -1 then exception occurs
 		working_set[1] = Gmin_idx;
 		return 0;
 	}

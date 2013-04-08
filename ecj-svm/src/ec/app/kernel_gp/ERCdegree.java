@@ -5,7 +5,7 @@ public class ERCdegree extends ERCParam {
 
 	public ERCdegree(){
 		min = 1.0;
-		max = 5.0;
+		max = 10.0;
 		step = 0.5;
 		name = "degree";
 	}

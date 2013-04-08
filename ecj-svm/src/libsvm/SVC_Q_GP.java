@@ -44,6 +44,7 @@ public class SVC_Q_GP extends Kernel {
 	{
 		float[][] data = new float[1][];
 		int start, j;
+		//Exception when i == -1
 		if((start = cache.get_data(i,data,len)) < len)
 		{
 			for(j=start;j<len;j++)
