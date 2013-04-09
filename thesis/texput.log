@@ -1,20 +1,21 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.14)  20 SEP 2012 21:05
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.10.23)  17 MAR 2013 15:53
 entering extended mode
+ restricted \write18 enabled.
  %&-line parsing enabled.
-**bibliography.tex
+**ppfcmthesis.tex
 
 ! Emergency stop.
-<*> bibliography.tex
-                    
+<*> ppfcmthesis.tex
+                   
 *** (job aborted, file error in nonstop mode)
 
  
 Here is how much of TeX's memory you used:
- 2 strings out of 495026
- 101 string characters out of 1181802
- 45141 words of memory out of 3000000
- 3285 multiletter control sequences out of 15000+50000
+ 3 strings out of 495024
+ 112 string characters out of 3181153
+ 45097 words of memory out of 3000000
+ 3291 multiletter control sequences out of 15000+200000
  3640 words of font info for 14 fonts, out of 3000000 for 9000
- 48 hyphenation exceptions out of 8191
+ 34 hyphenation exceptions out of 8191
  0i,0n,0p,1b,6s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!

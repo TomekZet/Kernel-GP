@@ -85,10 +85,9 @@
     menucolor=black,
     pagecolor=black,
     urlcolor=black,
-    pdftitle={Przegląd i porównanie metod tworzenia tablic sufiksów oraz ich
-efektywna implementacja w języku Java},
-    pdfauthor={Michał Nowak},
-    pdfkeywords={}
+    pdftitle={Optymalizacja klasyfikatora SVM za pomoc{\k{a}} programowania genetycznego},
+    pdfauthor={Tomasz Ziętkiewicz},
+    pdfkeywords={SVM, GP, Genetic Programing, ADHD}
 }
 \RequirePackage{memhfixc}
 
