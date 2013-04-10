@@ -26,7 +26,7 @@
 *.dvi
 *.toc
 
-experiment.sh
-script.sh
-results/
-data/
+ecj-svm/experiment.sh
+ecj-svm/results/
+ecj-svm/data/
+Magisterka/
