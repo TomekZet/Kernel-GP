@@ -1,4 +1,6 @@
-package ec.app.kernel_gp;
+package ec.app.kernel_gp.parameters;
+
+import ec.app.kernel_gp.Kernel_GP_problem;
 
 
 public class ERCdegree extends ERCParam {

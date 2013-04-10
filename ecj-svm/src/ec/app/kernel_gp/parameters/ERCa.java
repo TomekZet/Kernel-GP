@@ -1,4 +1,4 @@
-package ec.app.kernel_gp;
+package ec.app.kernel_gp.parameters;
 
 
 public class ERCa extends ERCParam {

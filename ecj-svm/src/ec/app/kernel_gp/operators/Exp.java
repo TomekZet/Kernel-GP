@@ -1,7 +1,8 @@
-package ec.app.kernel_gp;
+package ec.app.kernel_gp.operators;
 
 import ec.EvolutionState;
 import ec.Problem;
+import ec.app.kernel_gp.SVMData;
 import ec.gp.ADFStack;
 import ec.gp.GPData;
 import ec.gp.GPIndividual;

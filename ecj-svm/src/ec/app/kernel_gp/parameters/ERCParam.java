@@ -1,10 +1,11 @@
 /**
  * 
  */
-package ec.app.kernel_gp;
+package ec.app.kernel_gp.parameters;
 
 import ec.EvolutionState;
 import ec.Problem;
+import ec.app.kernel_gp.SVMData;
 import ec.gp.ADFStack;
 import ec.gp.ERC;
 import ec.gp.GPData;

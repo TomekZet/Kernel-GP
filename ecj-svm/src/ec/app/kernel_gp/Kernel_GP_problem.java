@@ -78,16 +78,8 @@ public GPData input;
 	      try {
 			logNumber = state.output.addLog(output_file, false);
 		} catch (IOException e2) {
-			// TODO Auto-generated catch block
 			e2.printStackTrace();
 		}
-	      
-//	      try {
-//			outputStream = new PrintStream(new FileOutputStream(output_file));
-//		} catch (FileNotFoundException e1) {
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
-//		}
 	      
 	      Parameter cache_size_param = new Parameter("cache_size");
 	      Parameter shrinking_param = new Parameter("shrinking");

@@ -3,15 +3,17 @@
   Licensed under the Academic Free License version 3.0
   See the file "LICENSE" for more information
 */
-package ec.app.kernel_gp;
 
+
+package ec.app.kernel_gp.operators;
 import ec.*;
+import ec.app.kernel_gp.SVMData;
 import ec.gp.*;
-import ec.util.Parameter;
+import ec.util.*;
 
-public class Add extends GPNode
+public class aMul extends GPNode
     {
-    public String toString() { return "+"; }
+    public String toString() { return "a *"; }
 
     public void checkConstraints(final EvolutionState state,
         final int tree,
@@ -24,7 +26,6 @@ public class Add extends GPNode
                 toStringForError() + " at " +
                 individualBase);
         }
-
     public void eval(final EvolutionState state,
         final int thread,
         final GPData input,
@@ -32,14 +33,14 @@ public class Add extends GPNode
         final GPIndividual individual,
         final Problem problem)
         {
-	        double result;
-	        SVMData rd = ((SVMData)(input));
+	        SVMData data = (SVMData)input;
 	
 	        children[0].eval(state,thread,input,stack,individual,problem);
-	        result = rd.val;
-	
-	        children[1].eval(state,thread,input,stack,individual,problem);
-	        rd.val = result + rd.val;
+	        double val = data.val;
+	        
+	        children[1].eval(state,thread,data,stack,individual,problem);
+	        
+	        data.val = val * data.val;
         }
     }
 

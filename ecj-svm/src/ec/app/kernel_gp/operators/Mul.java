@@ -5,14 +5,15 @@
 */
 
 
-package ec.app.kernel_gp;
+package ec.app.kernel_gp.operators;
 import ec.*;
+import ec.app.kernel_gp.SVMData;
 import ec.gp.*;
 import ec.util.*;
 
-public class aMul extends GPNode
+public class Mul extends GPNode
     {
-    public String toString() { return "a *"; }
+    public String toString() { return "*"; }
 
     public void checkConstraints(final EvolutionState state,
         final int tree,
@@ -32,14 +33,14 @@ public class aMul extends GPNode
         final GPIndividual individual,
         final Problem problem)
         {
+	        double result;
 	        SVMData data = (SVMData)input;
 	
 	        children[0].eval(state,thread,input,stack,individual,problem);
-	        double val = data.val;
-	        
-	        children[1].eval(state,thread,data,stack,individual,problem);
-	        
-	        data.val = val * data.val;
+	        result = data.val;
+	
+	        children[1].eval(state,thread,input,stack,individual,problem);
+	        data.val = result * data.val;
         }
     }
 

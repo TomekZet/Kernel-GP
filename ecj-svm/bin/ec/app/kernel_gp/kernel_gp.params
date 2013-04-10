@@ -236,59 +236,62 @@ gp.fs.size = 1
 
 gp.fs.0 = ec.gp.GPFunctionSet
 gp.fs.0.name = f0
-gp.fs.0.size = 12
+gp.fs.0.size = 13
 
 
 ###Terminals
 
 # ERC - Ephemeral Random Constant
-gp.fs.0.func.0 = ec.app.kernel_gp.ERCgamma
+gp.fs.0.func.0 = ec.app.kernel_gp.parameters.ERCgamma
 gp.fs.0.func.0.nc = nc_ercgamma
 
 # ERC - Ephemeral Random Constant
-gp.fs.0.func.1 = ec.app.kernel_gp.ERCcoef
+gp.fs.0.func.1 = ec.app.kernel_gp.parameters.ERCcoef
 gp.fs.0.func.1.nc = nc_erccoef
 
 # ERC - Ephemeral Random Constant
-gp.fs.0.func.2 = ec.app.kernel_gp.ERCdegree
+gp.fs.0.func.2 = ec.app.kernel_gp.parameters.ERCdegree
 gp.fs.0.func.2.nc = nc_ercdegree
 
 # ERC - Ephemeral Random Constant
-gp.fs.0.func.3 = ec.app.kernel_gp.ERCa
+gp.fs.0.func.3 = ec.app.kernel_gp.parameters.ERCa
 gp.fs.0.func.3.nc = nc_erca
 
 ###Functions producing kernel from other kernel(s)
 #Addition function used to combine two kernels into one (k+k)
-gp.fs.0.func.4 = ec.app.kernel_gp.Add
+gp.fs.0.func.4 = ec.app.kernel_gp.operators.Add
 gp.fs.0.func.4.nc = nc_k-combination2
 
 #Multiplication function used to combine two kernels into one (k*k)
-gp.fs.0.func.5 = ec.app.kernel_gp.Mul
+gp.fs.0.func.5 = ec.app.kernel_gp.operators.Mul
 gp.fs.0.func.5.nc = nc_k-combination2
 
 #Expotential (e^k)
-gp.fs.0.func.6 = ec.app.kernel_gp.Exp
+gp.fs.0.func.6 = ec.app.kernel_gp.operators.Exp
 gp.fs.0.func.6.nc = nc_k-combination1
 
 #Multiplication of kernel by double (a*k)
-gp.fs.0.func.7 = ec.app.kernel_gp.aMul
+gp.fs.0.func.7 = ec.app.kernel_gp.operators.aMul
 gp.fs.0.func.7.nc = nc_k-combination-c
 
 ###Standard Kernels
 #Polynomial - standard kernel function  
-gp.fs.0.func.8 = ec.app.kernel_gp.Poly
+gp.fs.0.func.8 = ec.app.kernel_gp.kernels.Poly
 gp.fs.0.func.8.nc = nc_kernel_3
 
 #RBF - standard kernel function 
-gp.fs.0.func.9 = ec.app.kernel_gp.RBF
+gp.fs.0.func.9 = ec.app.kernel_gp.kernels.RBF
 gp.fs.0.func.9.nc = nc_kernel_1
 
 #Sigmoid - standard kernel function
-gp.fs.0.func.10 = ec.app.kernel_gp.Sigmoid
+gp.fs.0.func.10 = ec.app.kernel_gp.kernels.Sigmoid
 gp.fs.0.func.10.nc = nc_kernel_2
 
 #Linear - standard kernel function
-gp.fs.0.func.11 = ec.app.kernel_gp.Linear
+gp.fs.0.func.11 = ec.app.kernel_gp.kernels.Linear
 gp.fs.0.func.11.nc = nc_kernel_0
 
+#Logarithmic - standard kernel function
+gp.fs.0.func.12 = ec.app.kernel_gp.kernels.Log
+gp.fs.0.func.12.nc = nc_kernel_1
 

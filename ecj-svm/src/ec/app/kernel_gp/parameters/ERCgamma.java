@@ -1,6 +1,7 @@
-package ec.app.kernel_gp;
+package ec.app.kernel_gp.parameters;
 
 import ec.EvolutionState;
+import ec.app.kernel_gp.Kernel_GP_problem;
 
 public class ERCgamma extends ERCParam {
 
