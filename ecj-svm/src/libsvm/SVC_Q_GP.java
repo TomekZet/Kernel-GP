@@ -1,6 +1,8 @@
 package libsvm;
 
 
+import java.util.ArrayList;
+
 import ec.EvolutionState;
 import ec.Individual;
 import ec.app.kernel_gp.Kernel_GP_problem;
@@ -76,17 +78,76 @@ public class SVC_Q_GP extends Kernel {
 		int j = 0;
 		while(i < xlen && j < ylen)
 		{
-			if(x[i].index == y[j].index)
-				sum += x[i++].value * y[j++].value;
-			else
-			{
-				if(x[i].index > y[j].index)
-					++j;
+			try{
+				if(x[i].index == y[j].index)
+					sum += x[i++].value * y[j++].value;
 				else
-					++i;
+				{
+					if(x[i].index > y[j].index)
+						++j;
+					else
+						++i;
+				}
+			}
+			catch (Exception e){
+				e.printStackTrace();
 			}
 		}
 		return sum;
+	}
+	
+	/**
+	 * Returns magnitude of given vector - ||X||
+	 * @param x - vector of doubles
+	 * @return Magnitude of the vector - ||X||
+	 */
+	public static double magnitude(svm_node[] x){		
+		return Math.sqrt(dot(x, x));
+	}
+	
+	
+	public static svm_node[] vector_difference(svm_node[] x, svm_node[]y){
+		int xlen = x.length;
+		int ylen = y.length;
+		int xi = 0;
+		int yi = 0;
+		int ri = 0;
+		ArrayList<svm_node> result = new ArrayList<svm_node>();
+		while(xi < xlen || yi < ylen)
+		{
+			if(xi < xlen && yi < ylen && x[xi].index == y[yi].index){
+				result.add(ri, new svm_node());
+				result.get(ri).index = x[xi].index;
+				result.get(ri).value = x[xi++].value-y[yi++].value;
+			}
+			else
+			{
+				if (xi >= xlen){
+					result.add(ri, new svm_node());
+					result.get(ri).index = y[yi].index;
+					result.get(ri).value = -y[yi++].value;
+				}
+				
+				else if (yi >= ylen){
+					result.add(ri, new svm_node());
+					result.get(ri).index = x[xi].index;
+					result.get(ri).value = x[xi++].value;
+				}
+				
+				else if(x[xi].index > y[yi].index){
+					result.add(ri, new svm_node());
+					result.get(ri).index = y[yi].index;
+					result.get(ri).value = -y[yi++].value;
+				}
+				else{
+					result.add(ri, new svm_node());
+					result.get(ri).index = x[xi].index;
+					result.get(ri).value = x[xi++].value;
+				}
+			}
+			ri++;
+		}
+		return result.toArray(new svm_node[result.size()]);
 	}
 	
 	double kernel_function(int i, int j)
