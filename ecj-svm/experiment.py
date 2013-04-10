@@ -63,8 +63,8 @@ if __name__ == "__main__":
     parser.add_argument('-x', '--xmx', help='Java heap size', type=int, default=1024)
     parser.add_argument('-s', '--splits', help='Number of splits of train, test and validation set', type=int, default=5)
     parser.add_argument('-g', '--genmax', help='Max number of generations', type=int, default=5)
-    parser.add_argument('-p', '--popmax', help='Maximum size of population', type=int, default=101)
-    parser.add_argument('--popmin', help='Minimum size of population', type=int, default=1)
+    parser.add_argument('-p', '--popmax', help='Maximum size of population', type=int, default=100)
+    parser.add_argument('--popmin', help='Minimum size of population', type=int, default=None)
     parser.add_argument('--genmin', help='Minimum size of generations', type=int, default=None)
     parser.add_argument('--popstep', help='Step of population size incrementation', type=int, default=10)
     parser.add_argument('--genstep', help='Step of generations size incrementation', type=int, default=2)
@@ -138,7 +138,7 @@ if __name__ == "__main__":
 
     maxsplits = args.splits
 
-    pop_size_min = args.popmin
+    pop_size_min = args.popmin or args.popmax
     pop_size_max = args.popmax
     pop_size_step = args.popstep
 
