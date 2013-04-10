@@ -1,0 +1,15 @@
+\chapter*{Zasoby internetowe}\label{sect:web-resources}%
+\phantomsection\addcontentsline{toc}{chapter}{Zasoby internetowe}
+
+\newcommand{\tturl}{\begingroup \urlstyle{tt}\Url}
+
+{\small
+\begin{enumerate}[{[}A{]}]
+	\item \label{url:ecj} ECJ \\
+		\tturl{http://cs.gmu.edu/~eclab/projects/ecj/}
+	\item \label{url:adhd200} ADHD 200 \\
+		\tturl{	http://fcon_1000.projects.nitrc.org/indi/adhd200/}
+
+		
+\end{enumerate}
+}

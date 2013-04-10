@@ -1,0 +1,107 @@
+@book{Shawe-Taylor:2004:KMP:975545,
+ author = {Shawe-Taylor, John and Cristianini, Nello},
+ title = {Kernel Methods for Pattern Analysis},
+ year = {2004},
+ isbn = {0521813972},
+ publisher = {Cambridge University Press},
+ address = {New York, NY, USA}
+} 
+
+@book{scholkopf_advances_1999,
+	title = {Advances in Kernel Methods: Support Vector Learning},
+	isbn = {9780262194167},
+	lccn = {98040403},
+	url = {http://books.google.pl/books?id=_NYamXKkNM8C},
+	abstract = {The Support Vector Machine is a powerful new learning algorithm for solving a variety of learning and function estimation problems, such as pattern recognition, regression estimation, and operator inversion. The impetus for this collection was a workshop on Support Vector Machines held at the 1997 {NIPS} conference. The contributors, both university researchers and engineers developing applications for the corporate world, form a Who's Who of this exciting new {area.Contributors:} Peter Bartlett, Kristin P. Bennett, Christopher J. C. Burges, Nello Cristianini, Alex Gammerman, Federico Girosi, Simon Haykin, Thorsten Joachims, Linda Kaufman, Jens Kohlmorgen, Ulrich Kressel, Davide Mattera, {Klaus-Robert} Muller, Manfred Opper, Edgar E. Osuna, John C. Platt, Gunnar Ratsch, Bernhard Scholkopf, John {Shawe-Taylor}, Alexander J. Smola, Mark O. Stitson, Vladimir Vapnik, Volodya Vovk, Grace Wahba, Chris Watkins, Jason Weston, Robert C. Williamson.},
+	publisher = {Mit Press},
+	author = {Schölkopf, B. and Burges, {C.J.C.} and Smola, {A.J.}},
+	year = {1999}
+},
+
+@inproceedings{sullivan_evolving_2007,
+	address = {New York, {NY}, {USA}},
+	series = {{GECCO} '07},
+	title = {Evolving kernels for support vector machine classification},
+	isbn = {978-1-59593-697-4},
+	location = {London, England},
+	url = {http://cs.gmu.edu/~sean/papers/gecco07kernel.pdf},
+	doi = {10.1145/1276958.1277292},
+	booktitle = {Proceedings of the 9th annual conference on Genetic and evolutionary computation},
+	publisher = {{ACM}},
+	author = {Sullivan, Keith M. and Luke, Sean},
+	year = {2007},
+	keywords = {genetic programming, support vector machines},
+	pages = {1702–1707}
+},
+
+@inproceedings{gagne_genetic_2006,
+	address = {Berlin, Heidelberg},
+	series = {{PPSN'06}},
+	title = {Genetic programming for kernel-based learning with co-evolving subsets selection},
+	isbn = {3-540-38990-3, 978-3-540-38990-3},
+	location = {Reykjavik, Iceland},
+	url = {http://eprints.pascal-network.org/archive/00002730/01/evokern-paper.pdf},
+	doi = {10.1007/11844297_102},
+	booktitle = {Proceedings of the 9th international conference on Parallel Problem Solving from Nature},
+	publisher = {{Springer-Verlag}},
+	author = {Gagné, Christian and Schoenauer, Marc and Sebag, Michèle and Tomassini, Marco},
+	year = {2006},
+	pages = {1008–1017}
+},
+
+@inproceedings{nguyen_kernel_2007,
+	title = {Kernel matrix evaluation},
+	volume = {20},
+	booktitle = {International Joint Conference on Artificial Intelligence},
+	author = {Nguyen, C. H and Ho, T. B},
+	year = {2007},
+	pages = {987–992}
+},
+
+@book{scholkopf_learning_2002,
+	series = {Adaptive computation and machine learning},
+	title = {Learning with kernels: support vector machines, regularization, optimization, and beyond},
+	isbn = {9780262194754},
+	lccn = {2001095750},
+	url = {http://www.google.pl/books?id=y8ORL3DWt4sC},
+	publisher = {{MIT} Press},
+	author = {Schölkopf, B. and Smola, {A.J.}},
+	year = {2002}
+},
+
+@article{chang_libsvm:_2011,
+	title = {{LIBSVM:} A library for support vector machines},
+	volume = {2},
+	issn = {2157-6904},
+	url = {http://www.csie.ntu.edu.tw/~cjlin/papers/libsvm.pdf},
+	doi = {10.1145/1961189.1961199},
+	number = {3},
+	journal = {{ACM} Trans. Intell. Syst. Technol.},
+	author = {Chang, {Chih-Chung} and Lin, {Chih-Jen}},
+	month = may,
+	year = {2011},
+	keywords = {Classification, {LIBSVM}, machines, optimization, regression, support, {SVM}, vector},
+	pages = {27:1–27:27}
+},
+
+@book{sean_ecj_2010,
+	title = {The {ECJ} Owner’s Manual},
+	shorttitle = {{ECJ} Manual},
+	url = {http://cs.gmu.edu/~eclab/projects/ecj/docs/manual/manual.pdf},
+	publisher = {Yale Univ Pr},
+	author = {Sean, Luke},
+	month = oct,
+	year = {2010},
+	keywords = {Evolutionary computation, genetic programming}
+}
+
+@book{krawiec2003uczenie,
+  title={Uczenie maszynowe i sieci neuronowe},
+  author={Krawiec, K. and Stefanowski, J.},
+  isbn={9788371434556},
+  url={http://books.google.pl/books?id=Dd-FAAAACAAJ},
+  year={2003},
+  publisher={Wydaw. Politechniki Pozna{\'n}skiej}
+}
+
+

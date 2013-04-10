@@ -1,0 +1,30 @@
+digraph g {
+node [shape=rectangle];
+n[label = "+"];
+n0[label = "*"];
+n00[label = "Sigm"];
+n000[label = "&gamma;=0,187623"];
+n001[label = "coef0;=0,179846"];
+n01[label = "Sigm"];
+n010[label = "&gamma;=0,169988"];
+n011[label = "coef0;=0,040835"];
+n012[label = "degree;=2,039565"];
+n1[label = "a *"];
+n10[label = "RBF"];
+n100[label = "&gamma;=0,075155"];
+n11[label = "a=0,829472"];
+n -> n0;
+n0 -> n00;
+n00 -> n000;
+n00 -> n001
+n0 -> n01;
+n01 -> n010;
+n01 -> n011;
+n01 -> n012;
+
+n -> n1;
+n1 -> n10;
+n10 -> n100
+n1 -> n11;
+
+}

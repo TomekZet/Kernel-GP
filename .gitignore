@@ -30,3 +30,7 @@ ecj-svm/experiment.sh
 ecj-svm/results/
 ecj-svm/data/
 Magisterka/
+
+ecj-svm/lib/libsvm-3.16.zip
+ecj-svm/lib/libsvm-3.16/
+ecj-svm/lib/libsvm-3.12/
