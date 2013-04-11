@@ -76,9 +76,12 @@ if __name__ == "__main__":
     parser.add_argument('-n', '--newdata', help='Generate new data splits', action='store_true')
     parser.add_argument('-c', '--cont', help='Path to file with stopped computations to continue')
     parser.add_argument('-a', '--append', help='Path to file with stopped computations to append, without reading args from pickled file')
-    parser.add_argument('--cache', help='SVM Cache size (MB)', type=int, default=500)
+    parser.add_argument('--cache', help='SVM Cache size (MB)', type=int, default=100)
     parser.add_argument('--shrinking', help='Wheter to use shrinking in SVM or not', type=bool, default=False)
-    parser.add_argument('--epsilon', help='Value of epsilon parameter pased to SVM', type=float, default=0.001)
+    parser.add_argument('--epsilon', help='Value of epsilon parameter pased to SVM', type=float, default=0.1)
+    parser.add_argument('--evalthreads', help='Number of threads used to evaluate population', type=str, default="2")
+    parser.add_argument('--breedthreads', help='Number of threads used to breed population', type=str, default="2")
+
 
 
 #    parser.add_argument('-s', '--seed', help='Generete seed for randomizing', action='store_true')
@@ -147,24 +150,27 @@ if __name__ == "__main__":
     generations_step = args.genstep
     
     
+    evalthreads = args.evalthreads or "1"
+    breedthreads = args.breedthreads or "1"
+    
     cache_size = args.cache
     epsilon = args.epsilon
     shrinking = args.shrinking
     
-    cache_min = 50
-    cache_max = 300
-    cache_step = 50
-    cashe_sizes = range(cache_min, cache_max, cache_step)    
-    cashe_sizes = (50,)
+    #cache_min = 50
+    #cache_max = 300
+    #cache_step = 50
+    #cashe_sizes = range(cache_min, cache_max, cache_step)    
+    cashe_sizes = (cache_size,)
     
 #    epsilon_min = 0.001
 #    epsilon_max = 0.501
 #    epsilon_step = 0.01
     #epsilons = (0.001, 0.005, 0.01, 0.1, 0.2, 0.5)
-    epsilons = (0.4,)    
-    #epsilons = (epsilon,) 
+    #epsilons = (0.4,)    
+    epsilons = (epsilon,) 
 
-    shrinkings = (0,)
+    shrinkings = (1 if args.shrinking else 0,)
 
 
     def frange(start, stop, step):
@@ -269,7 +275,9 @@ if __name__ == "__main__":
                                              '-p', 'cache_size=%d' % cache_size,
                                              '-p', 'shrinking=%d' % shrinking,
                                              '-p', 'epsilon=%f' % epsilon,
-                                             '-p', 'cost=%f' % cost
+                                             '-p', 'cost=%f' % cost,
+                                             '-p', 'breedthreads=%s' % breedthreads,
+                                             '-p', 'evalthreads=%s' % evalthreads
                                              ]
                                             
     #                                    print "\n"+(" ".join(args_list))+"\n"
