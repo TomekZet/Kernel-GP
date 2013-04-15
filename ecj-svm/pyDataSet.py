@@ -12,7 +12,7 @@ import re
 import arff
 
 
-def split(dataset, p_test=20, p_valid=20):
+def split(dataset, p_test=20, p_valid=20, p_train=20):
     ''' Splits dataset into train, test and validation datasets with proportional to percentages given as arguments
         arguments:
             dataset : list of examples
@@ -21,18 +21,19 @@ def split(dataset, p_test=20, p_valid=20):
 
         returns: tuple with train, test and validations datasets
     '''
-    if p_test + p_valid > 100:
-        raise Exception("Sumaric percent size of test and validation %d set must not be larger then 100%"%(p_test+p_valid))
+    if p_test + p_valid + p_train> 100:
+        raise Exception("Sumaric percent size of train, test and validation (%d) set must not be larger then 100%%" % (p_test+p_valid+p_train))
     n_total = len(dataset)
     n_test = int(p_test/100.0 * n_total)
     n_valid = int(p_valid/100.0 * n_total)
-    n_train = n_total - n_test - n_valid
-    if n_train < 0:
-        raise Exception("Test and validation sets are too big!")
-    train = dataset[:n_train]
-    test = dataset[n_train:n_train+n_test]
-    valid = dataset[n_train+n_test:]
-    train_test = dataset[:n_train+n_test]
+    n_train = int(p_train/100.0 * n_total)
+    n_rest = n_total - n_test - n_valid - n_train
+    if n_rest < 0:
+        raise Exception("Train, test and validation sets are too big! Make at least one of them smaller")
+    valid = dataset[:n_valid]
+    train = dataset[n_valid:n_valid+n_train]
+    test = dataset[n_valid+n_train:n_valid+n_train+n_test]
+    train_test = dataset[n_valid:]
     return train, test, valid, train_test
 
 
@@ -88,13 +89,13 @@ def load_from_arff(filepath):
         dataset.append(line)
     return dataset
 
-def process(input, output, test=33, valid=0, rand=None, seed=False):
+def process(input, output, test=33, valid=33, train=34, rand=None, seed=False):
     '''
     input  : path to input file(s). If there are multiple files their content is joined into one big dataset
     output : path for output files
     test   : size of output test set in percents of input set
     valid  : size of output validation set in percents of input set
-    rand   : if true then input dataset is randomized
+    rand   : if true then input dataset is randomized (Shuffled)
     seed   : if true then seed for randomization is set to current time (if false seed is not set so each time shuffles will be thesame)
 
     '''
@@ -112,7 +113,7 @@ def process(input, output, test=33, valid=0, rand=None, seed=False):
             random.seed()
         random.shuffle(dataset)
 
-    train, test, valid, train_test = split(dataset, p_test=test, p_valid=valid)
+    train, test, valid, train_test = split(dataset, p_test=test, p_valid=valid, p_train=train)
 
     if train:
         write_dataset(train, output+".tr")
@@ -147,7 +148,7 @@ if __name__ == '__main__':
     parser.add_argument('-o', '--output', help='Path to output file', default='')
     parser.add_argument('-v', '--valid', help='Percent of cases assigned to validation dataset', type=int, default=20)
     parser.add_argument('-t', '--test', help='Percent of cases assigned to test dataset', type=int, default=20)
-    parser.add_argument('-r', '--rand', help='Randomize set before dividing', action='store_true')
+    parser.add_argument('-r', '--rand', help='Shuffle set before dividing', action='store_true')
     parser.add_argument('-s', '--seed', help='Generete seed for randomizing', action='store_true')
     parser.add_argument('-m', '--multiple', help='Make multple splits, each with other seed', type=int, default=0)
 
