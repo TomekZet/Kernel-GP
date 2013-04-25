@@ -34,7 +34,7 @@ public class SimpleEvolutionStateSVM extends SimpleEvolutionState {
 	 public void setup(final EvolutionState state, final Parameter base)
      {		 
 		super.setup(state, base); 
-		results = new double[this.numGenerations][2];
+		results = new double[this.numGenerations][4];
      }
 	
     /**
@@ -61,14 +61,21 @@ public class SimpleEvolutionStateSVM extends SimpleEvolutionState {
     {
     	double fittnes = 0.0;
     	double accuracy = 0.0;
+    	double f1 = 0.0;
+    	double mcc = 0.0;
+    	
     	
     	DataOutputStream output = new DataOutputStream(System.out);
 		
     	for(double[] result: results){
     		fittnes = result[0];
     		accuracy = result[1];
+    		f1 = result[2];
+    		mcc = result[3];
     		output.writeBytes(fittnes+" ");
     		output.writeBytes(accuracy*100+" ");
+    		output.writeBytes(f1+" ");
+    		output.writeBytes(mcc+" ");
     	}
 		
 		output.close();
@@ -112,7 +119,7 @@ public class SimpleEvolutionStateSVM extends SimpleEvolutionState {
 //    	DataOutputStream output = new DataOutputStream(new PrintStream(new FileOutputStream(new File(output_file_name))));
     	//TODO: set super.output to get statistics from EvolutionState
     	   	
-    	accuracy = libsvm.Svm_predict_gp.predict_problem(svm_probl_validation, model);
+    	accuracy = libsvm.Svm_predict_gp.predict_problem(svm_probl_validation, model).accuracy;
     	fittnes = ((KozaFitness)(bestSoFar.fitness)).adjustedFitness();
     	
     	DataOutputStream output = new DataOutputStream(System.out);

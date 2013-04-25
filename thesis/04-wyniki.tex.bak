@@ -13,24 +13,46 @@
 	Analizując tak zebrane dane można przeanalizować na ile poszukiwanie funkcji jądrowej przez algorytm genetyczny było podobne do losowego przeszukiwania a na ile było ono zbieżne. W pierwszym przypadku na wyniki osiągane przez algorytm powinna mieć wpływ przede wszystkim wielkość populacji, w drugim również liczba generacji przez które poszukiwano rozwiązania. W szczególności ciekawym przypadkiem jest ten, gdy liczba generacji wynosi 1, czyli cały algorytm ogranicza się do wygenerowania populacji losowych osobników i wybrania jednego z nich - w tym przypadku algorytm genetyczny sprowadza się do losowego poszukiwania rozwiązania. Porównując różnicę w trafności osiąganej w trakcie jednej generacji i coraz większej ich liczby można ocenić czy proces ewolucyjny przebiega poprawnie. 
 	
 \section{Opis zbiorów danych}
-	Do oceny pracy algorytmu użyto standardowych zbiorów danych służących do testowania systemów maszynowego uczenia się, dostępnych na stronie biblioteki \emph{LIBSVM} \cite{chang_libsvm:_2011}. Zbiory zostały opisane w tabelce \ref{tab:datasets}.
+	Do oceny pracy algorytmu użyto standardowych zbiorów danych służących do testowania systemów maszynowego uczenia się, dostępnych na stronie biblioteki \emph{LIBSVM} \cite{chang_libsvm:_2011}  oraz w repozytorium UCI  [\ref{url:uci}]. Zbiory zostały opisane w tabelce \ref{tab:datasets}. Użyte nazwy zbiorów są zgodne z tymi ze strony libsvm [\ref{url:libsvm}].
 
 \begin{table}[ht]
-\begin{tabular}{|p{2cm}|c|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
-	\hline 
-	Nazwa zbioru & Liczba klas & \hspace{0pt} Liczba atrybutów & \hspace{0pt} Wielkość zbioru uczącego & \hspace{0pt}Wielkość zbioru testującego & \hspace{0pt} Wielkość zbioru walidującego \\
-	\hline 
-	Iris & 3 & 4 & 68 & 33 & 49  \\ 
-	\hline 
-	Letter & 26 & 16 & 9000 & 4400 & 6600\\ 
-	\hline 
-	DNA & 3 & 180 & 1435 & 700 & 1051 \\ 
-	\hline 
-	Vowel & 11 & 10 & 447 & 217 & 326 \\ 
-	\hline
-	\end{tabular} 	
 	\caption{Zbiory danych użyte do testowania systemu.\label{tab:datasets}} 	
+	\begin{tabular}{|p{2cm}|c|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+		\hline 
+		Nazwa zbioru & Liczba klas & \hspace{0pt} Liczba atrybutów & \hspace{0pt} Wielkość zbioru & \hspace{0pt} Wielkość zbioru uczącego & \hspace{0pt}Wielkość zbioru testującego & \hspace{0pt} Wielkość zbioru walidującego \\
+		\hline 
+		Iris & 3 & 4 & 150 & 68 & 33 & 49  \\ 
+		\hline 
+		Letter & 26 & 16 & 15000 & 9000 & 4400 & 6600\\ 
+		\hline 
+		DNA & 3 & 180 & 2000 & 1435 & 700 & 1051 \\ 
+		\hline 
+		Vowel & 11 & 10 & 528 & 447 & 217 & 326 \\ 
+		\hline
+		Breast cancer & 2 & 10 & 683 & 343 & 170 & 170 \\ 
+		\hline
+		heart & 2 & 13 & 270 & 136 & 67 & 67 \\ 
+		\hline
+	\end{tabular} 	
 \end{table}
+
+\begin{table}[ht]
+\caption{Zbiory danych użyte do testowania systemu.\label{tab:datasets2}} 	
+	\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{1.5cm}|p{3cm}|}
+	\hline 
+	Nazwa zbioru & Liczba atrybutów ciągłych & Liczba atrybutów nominalnych & Liczba klas & Proporcje klas \\ 
+	\hline 
+	Breast Cancer & 10 & 0 & 2 & 239/444 \\ 
+	\hline 
+	Heart  & 7 & 6 & 2 & 150/120  \\ 
+	\hline 
+	DNA & 0 & 180 & 3 & 464/485/1051  \\ 
+	\hline 
+	Vowel & 10 & 0 & 11 & Każda klasa 48 razy \\ 
+	\hline 
+	\end{tabular} 
+\end{table}
+
 	
 \FloatBarrier
 \section{Trafność klasyfikacji}

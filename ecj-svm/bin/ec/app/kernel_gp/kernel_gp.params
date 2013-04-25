@@ -20,6 +20,7 @@ validation-file = data/dna.scale.v
 
 output-file = out.my.stat
 
+fitness_measure = mcc
 cross-validation = false
 cv-folds = 10
 generations = 2
@@ -74,13 +75,13 @@ pop.subpop.0.species.pipe.num-sources = 2
 		pop.subpop.0.species.pipe.source.0.source.0 = ec.breed.MultiBreedingPipeline
 		pop.subpop.0.species.pipe.source.0.source.0.num-sources = 3
 		pop.subpop.0.species.pipe.source.0.source.0.source.0 = ec.gp.koza.CrossoverPipeline
-		pop.subpop.0.species.pipe.source.0.source.0.source.0.prob = 0.69 
+		pop.subpop.0.species.pipe.source.0.source.0.source.0.prob = 0.4
 		pop.subpop.0.species.pipe.source.0.source.0.source.1 = ec.gp.koza.MutationPipeline
-		pop.subpop.0.species.pipe.source.0.source.0.source.1.prob = 0.3
+		pop.subpop.0.species.pipe.source.0.source.0.source.1.prob = 0.55
 		pop.subpop.0.species.pipe.source.0.source.0.source.2 = ec.breed.ReproductionPipeline
-		pop.subpop.0.species.pipe.source.0.source.0.source.2.prob = 0.01
+		pop.subpop.0.species.pipe.source.0.source.0.source.2.prob = 0.05
 
-breed.elite.0 = 1
+breed.elite.0 = 3
 
 breed.reproduce.source.0 = ec.parsimony.BucketTournamentSelection
 gp.koza.xover.source.0 = ec.parsimony.BucketTournamentSelection
@@ -93,7 +94,7 @@ breed.reproduce.source.0.num-buckets = 10
 gp.koza.xover.source.0.num-buckets = 10
 gp.koza.mutate.source.0.num-buckets = 10
 
-select.bucket-tournament.size = 5
+select.bucket-tournament.size = 7
 
 gp.breed.mutate-erc.tries = 1
 gp.breed.mutate-erc.ns.0 = ec.gp.koza.KozaNodeSelector

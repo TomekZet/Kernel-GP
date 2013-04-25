@@ -55,6 +55,8 @@ public class KozaStatisticsGP extends KozaStatistics {
     {
     	double accuracy = 0.0;
     	double fitness = 0.0;
+    	double f1 = 0.0;
+    	double mcc = 0.0;
     	
     	GPIndividual bestSoFar = (GPIndividual) best_of_run[0];
 
@@ -85,14 +87,22 @@ public class KozaStatisticsGP extends KozaStatistics {
 //    	DataOutputStream output = new DataOutputStream(new PrintStream(new FileOutputStream(new File(output_file_name))));
     	//TODO: set super.output to get statistics from EvolutionState
     	   	
-    	accuracy = libsvm.Svm_predict_gp.predict_problem(svm_probl_validation, model);
+    	accuracy = libsvm.Svm_predict_gp.predict_problem(svm_probl_validation, model).accuracy;
+    	f1 = libsvm.Svm_predict_gp.predict_problem(svm_probl_validation, model).meanf1;
+    	mcc = libsvm.Svm_predict_gp.predict_problem(svm_probl_validation, model).meanMCC;
+
     	fitness = ((KozaFitness)(bestSoFar.fitness)).adjustedFitness();
     	
-    	state.results[state.generation] = new double[2];
+    	
+    	state.results[state.generation] = new double[4];
     	state.results[state.generation][0] = fitness;
     	state.results[state.generation][1] = accuracy;
+    	state.results[state.generation][2] = f1;
+    	state.results[state.generation][3] = mcc;
     	
-    	state.output.println("\nBest Individual's Accuracy: "+accuracy,statisticslog);    	
+    	state.output.println("\nBest Individual's Accuracy: "+accuracy,statisticslog);
+    	state.output.println("\nBest Individual's F1: "+f1,statisticslog);   
+    	state.output.println("\nBest Individual's MCC: "+mcc,statisticslog);   
     	
     	return accuracy;
     }
@@ -100,7 +110,11 @@ public class KozaStatisticsGP extends KozaStatistics {
     public void finalStatistics(final EvolutionState state, final int result){
     	super.finalStatistics(state, result);
     	double accuracy = ((SimpleEvolutionStateSVM)state).results[state.generation][1];
+    	double f1 = ((SimpleEvolutionStateSVM)state).results[state.generation][2];
+    	double mcc = ((SimpleEvolutionStateSVM)state).results[state.generation][3];
     	state.output.println("\nBest Individual's Accuracy: "+accuracy,statisticslog);    	    	
+    	state.output.println("\nBest Individual's F1: "+f1,statisticslog);    	    	
+    	state.output.println("\nBest Individual's MCC: "+mcc,statisticslog);    	    	
     	
     }
 

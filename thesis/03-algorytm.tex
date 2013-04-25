@@ -46,14 +46,15 @@ Funkcje elementarne wraz z ograniczeniami zdefiniowane w algorytmie:
 	\item Wielomianowa: $ k(x, z) = \langle x,z \rangle ^d $
 	\item Gausowska: $ e^{-\gamma*||x-z||^2} $	
 	\item Sigmoidalna: $ k(x, z) = \tanh(\gamma \langle x,z \rangle + \tau) $
+	\item Logarytmiczna: $ k(x, z) = - log (\lVert x-y \rVert ^d + 1) $
 	\end{itemize}
 	Gdzie $ \gamma $, $ \tau $ oraz $ d $ to wartości stałe generowane jako stałe ERC. a $ \langle x,y \rangle $ to iloczyn skalarny wektorów $x$ i $y$.
 \item Stałe \textit{ERC (ang. Ephemeral Random Constant)} liczby rzeczywiste lub całkowite, które służą jako parametry innych funkcji. Są one liściami w drzewie, nie przyjmują żadnych argumentów. Mogą losowo zmieniać swoją wartość podczas mutacji.
 	\begin{itemize}
-	\item $ \gamma $: liczba rzeczywista z zakresu
-	\item $ \tau $: liczba rzeczywista z zakresu
-	\item $ d $: liczba całkowita z zakresu
-	\item $ a $: liczba rzeczywista z zakresu
+	\item $ \gamma $: liczba rzeczywista z zakresu $ \langle 0.1, 2.0 \rangle $
+	\item $ \tau $: liczba rzeczywista z zakresu $ \langle 0.1, 1.0 \rangle $
+	\item $ d $: liczba całkowita z zakresu $ \langle 1.0, 10.0 \rangle $
+	\item $ a $: liczba rzeczywista z zakresu $ \langle -10.0, 10.0 \rangle $
 	\end{itemize}
 \end{itemize}
 Przykłądowe drzewo wygenerowane przez algorytm pokazana na ryc.\ref{fig:tree}.

@@ -6,6 +6,7 @@
 \usepackage[OT4]{fontenc} 
 \usepackage[section]{placeins}
 
+
 \usepackage[widespace]{fourier}   % Use Utopia font set
 \usepackage[scaled=0.875]{helvet} % Use Helvetica for sans-serif
 \renewcommand{\ttdefault}{lmtt}   % Use Lucida Mono for monotype
@@ -31,13 +32,13 @@
 
 \begin{document}
 % Front matter starts here
-\frontmatter\pagestyle{empty}%
+\frontmatter\pagestyle{empty}%	
 \maketitle\cleardoublepage%
 
-% Blank info page for "karta dyplomowa"
-\thispagestyle{empty}\vspace*{\fill}%
-\begin{center}Tutaj przychodzi karta pracy dyplomowej;\\oryginał wstawiamy do wersji dla archiwum PP, w pozostałych kopiach wstawiamy ksero.\end{center}%
-\vfill\cleardoublepage%
+%% Blank info page for "karta dyplomowa"
+%\thispagestyle{empty}\vspace*{\fill}%
+%\begin{center}Tutaj przychodzi karta pracy dyplomowej;\\oryginał wstawiamy do wersji dla archiwum PP, w pozostałych kopiach wstawiamy ksero.\end{center}%
+%\vfill\cleardoublepage%
 
 % Table of contents.
 \pagenumbering{Roman}\pagestyle{ppfcmthesis}%

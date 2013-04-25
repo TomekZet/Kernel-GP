@@ -24,6 +24,7 @@ import libsvm.svm_model;
 import libsvm.svm_node;
 import libsvm.svm_parameter;
 import libsvm.svm_problem;
+import libsvm.Results;
 import ec.util.*;
 import java.io.*;
 import ec.*;
@@ -45,6 +46,7 @@ public GPData input;
   private String train_file_name;
   private String test_file_name;
   private String output_file_name;
+  private String fitness_measure;
   private int nr_fold;
   boolean cv;
   PrintStream outputStream = System.out;
@@ -67,12 +69,18 @@ public GPData input;
 	      Parameter output_path_param = new Parameter("output-file");
 	      Parameter cv_param = new Parameter("cross-validation");
 	      Parameter nr_fold_param = new Parameter("cv-folds");
+	      Parameter fitness_measure_param = new Parameter("fitness_measure");
+	      Parameter cache_size_param = new Parameter("cache_size");
+	      Parameter shrinking_param = new Parameter("shrinking");
+	      Parameter epsilon_param = new Parameter("epsilon");
+	      Parameter cost_param = new Parameter("cost");
 	      
 	      train_file_name = state.parameters.getString(train_path_param, null);
 	      test_file_name = state.parameters.getString(test_path_param, null);
 	      cv = state.parameters.getBoolean(cv_param, null, false);
 	      nr_fold = state.parameters.getInt(nr_fold_param, null, 4);
 	      output_file_name = state.parameters.getString(output_path_param, null);
+	      fitness_measure = state.parameters.getString(fitness_measure_param, null);
 	      File output_file = new File(output_file_name);
 	      
 	      try {
@@ -81,10 +89,6 @@ public GPData input;
 			e2.printStackTrace();
 		}
 	      
-	      Parameter cache_size_param = new Parameter("cache_size");
-	      Parameter shrinking_param = new Parameter("shrinking");
-	      Parameter epsilon_param = new Parameter("epsilon");
-	      Parameter cost_param = new Parameter("cost");
 	      
 	      int cache_size = state.parameters.getIntWithDefault(cache_size_param, null, 500);
 	      int shrinking = state.parameters.getIntWithDefault(shrinking_param, null, 1);
@@ -117,7 +121,7 @@ public GPData input;
       {
        	  KozaFitness f = ((KozaFitness)ind.fitness);
 	  	  long start = System.nanoTime();
-	  	  double accuracy =  0.0;
+	  	  Results results = new Results();
 	      
 	  	  if (!ind.evaluated)  // don't bother reevaluating
           {
@@ -126,37 +130,36 @@ public GPData input;
 		      double correct = 0;
 	  		  
 		      svm_probl_train.ind = ((GPIndividual)ind);
-//		      svm_probl_train.subpopulation = subpopulation;
-//		      svm_probl_train.state = state;
-//		      svm_probl_train.threadnum = threadnum;
-//		      svm_probl_train.problem = this;
 		      svm_probl_train.input = input;
-//		      svm_probl_train.stack = stack;
 		      
 		      svm_probl_test.ind = ((GPIndividual)ind);
-//		      svm_probl_test.subpopulation = subpopulation;
-//		      svm_probl_test.threadnum = threadnum;
-//		      svm_probl_test.problem = this;
 		      svm_probl_test.input = input;
-//		      svm_probl_test.stack = stack;
 	  		  
-	  		 if(cv)
+		     if(cv)
 	  		 {
 	  			svm.svm_cross_validation(svm_probl_train, svm_params, nr_fold, target);
 		
-		         for(i=0;i<svm_probl_train.l;i++){
-		        	  if(target[i] == svm_probl_train.y[i])
-							++correct;
-		         }
-		         accuracy = (correct/svm_probl_train.l);
+		        for(i=0;i<svm_probl_train.l;i++){
+		        	if(target[i] == svm_probl_train.y[i])
+		        		++correct;
+		        }
+		        results.accuracy = (float) (correct/svm_probl_train.l);
+		        f.setStandardizedFitness(state,(float)((1-results.accuracy)/(results.accuracy+0.00000000000000000001)));	          
 	  		  }
 	  		 else
 	  		  {
 	  			svm_model model = svm.svm_train(svm_probl_train, svm_params);
-  				accuracy = libsvm.Svm_predict_gp.predict_problem(svm_probl_test, model);
+  				results = libsvm.Svm_predict_gp.predict_problem(svm_probl_test, model);
+  				if (fitness_measure.equalsIgnoreCase("accuracy"))
+  					f.setStandardizedFitness(state,(float)((1-results.accuracy)/(results.accuracy+0.00000000000000000001f)));
+  				else if(fitness_measure.equalsIgnoreCase("f1"))
+  					f.setStandardizedFitness(state, 1.0f/results.meanf1+0.00000000000000000001f-1.0f);
+				else if(fitness_measure.equalsIgnoreCase("mcc")){
+  					float _fitness = 1.0f/((results.meanMCC+1)/2.0f+0.0000000000001f)-1.0f;
+					f.setStandardizedFitness(state, _fitness);
+				
+				}
 	  		  }
-	          
-	  		  f.setStandardizedFitness(state,(float)((1-accuracy)/(accuracy+0.00000000000000000001)));	          
 	          ind.evaluated = true;
           }
 	  	  long time = System.nanoTime()-start;
@@ -165,9 +168,12 @@ public GPData input;
 	  	  ((GPIndividual)ind).trees[0].printTreeForHumans(state, logNumber);
           String message = "";
 	  	  if(cv)
-        	  message +="CV Accuracy = "+100.0*accuracy+"%\n";
-          else
-        	  message +="Test Accuracy = "+100.0*accuracy+"%\n";
+        	  message +="CV Accuracy = "+100.0*results.accuracy+"%\n";
+          else{
+        	  message +="Test Accuracy = "+100.0*results.accuracy+"%\n";
+        	  message +="F1 Measure = "+results.meanf1+"\n";
+        	  message += "MCC = "+results.meanMCC+"\n";
+          }
 	  	  message += "Time elapsed: "+Double.toString(time_seconds)+"\n";
 	  	  message += "Standardized Fitness = " + f.standardizedFitness() +"\n";
 	      message += "Adjusted Fitness = " + f.fitness()+"\n\n";

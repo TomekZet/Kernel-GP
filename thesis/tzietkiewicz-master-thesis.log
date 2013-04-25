@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.10.23)  23 MAR 2013 13:15
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.10.23)  17 APR 2013 23:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1192,64 +1192,64 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \algocf@algoframe=\box35
 \algocf@algobox=\box36
 )
-LaTeX Font Info:    Redeclaring math alphabet \mathcal on input line 21.
+LaTeX Font Info:    Redeclaring math alphabet \mathcal on input line 22.
 LaTeX Font Info:    Overwriting math alphabet `\mathcal' in version `normal'
-(Font)                  FMS/futm/m/n --> OMS/cmsy/m/n on input line 21.
+(Font)                  FMS/futm/m/n --> OMS/cmsy/m/n on input line 22.
 LaTeX Font Info:    Overwriting math alphabet `\mathcal' in version `bold'
-(Font)                  FMS/futm/m/n --> OMS/cmsy/m/n on input line 21.
+(Font)                  FMS/futm/m/n --> OMS/cmsy/m/n on input line 22.
  (./tzietkiewicz-master-thesis.aux)
 \openout1 = `tzietkiewicz-master-thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 32.
-LaTeX Font Info:    Try loading font information for FML+futm on input line 32.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 33.
+LaTeX Font Info:    Try loading font information for FML+futm on input line 33.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 32.
-LaTeX Font Info:    Try loading font information for FMS+futm on input line 32.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 33.
+LaTeX Font Info:    Try loading font information for FMS+futm on input line 33.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 32.
-LaTeX Font Info:    Try loading font information for FMX+futm on input line 32.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 33.
+LaTeX Font Info:    Try loading font information for FMX+futm on input line 33.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 32.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Try loading font information for T1+futs on input line 32.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Try loading font information for T1+futs on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/t1futs.fd
 File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
@@ -1281,7 +1281,7 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \Ref on input line 32.
+LaTeX Info: Redefining \Ref on input line 33.
 \AtBeginShipoutBox=\box38
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
@@ -1292,44 +1292,42 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-Package hyperref Info: Link coloring ON on input line 32.
-LaTeX Info: Redefining \ref on input line 32.
-LaTeX Info: Redefining \pageref on input line 32.
-LaTeX Info: Redefining \nameref on input line 32.
+Package hyperref Info: Link coloring ON on input line 33.
+LaTeX Info: Redefining \ref on input line 33.
+LaTeX Info: Redefining \pageref on input line 33.
+LaTeX Info: Redefining \nameref on input line 33.
 
 (./tzietkiewicz-master-thesis.out) (./tzietkiewicz-master-thesis.out)
 \@outlinefile=\write5
 \openout5 = `tzietkiewicz-master-thesis.out'.
 
-LaTeX Info: Redefining \Ref on input line 32.
+LaTeX Info: Redefining \Ref on input line 33.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 35.
-LaTeX Font Info:    Try loading font information for FML+futmi on input line 35
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 36.
+LaTeX Font Info:    Try loading font information for FML+futmi on input line 36
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmlfutmi.fd
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 35.
+(Font)              scaled to size 10.07397pt on input line 36.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 35.
+(Font)              scaled to size 7.63599pt on input line 36.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 35.
+(Font)              scaled to size 5.51999pt on input line 36.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 35.
+(Font)              scaled to size 10.07397pt on input line 36.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 35.
+(Font)              scaled to size 7.63599pt on input line 36.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 35.
+(Font)              scaled to size 5.51999pt on input line 36.
  [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
-
-]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 44.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 45.
  (./tzietkiewicz-master-thesis.toc
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 3.
@@ -1368,7 +1366,7 @@ Overfull \hbox (0.29231pt too wide) in paragraph at lines 59--60
  []
 
 [3]) (./03-algorytm.tex
-<figures/algorithm.pdf, id=236, 512.91624pt x 796.9775pt>
+<figures/algorithm.pdf, id=231, 512.91624pt x 796.9775pt>
 File: figures/algorithm.pdf Graphic file (type pdf)
 
 <use figures/algorithm.pdf>
@@ -1382,13 +1380,13 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 ] [5 <./figures/algorithm.pdf>]
-<figures/tree.pdf, id=274, 720.6925pt x 405.515pt>
+<figures/tree.pdf, id=270, 720.6925pt x 405.515pt>
 File: figures/tree.pdf Graphic file (type pdf)
  <use figures/tree.pdf>
-Package pdftex.def Info: figures/tree.pdf used on input line 65.
+Package pdftex.def Info: figures/tree.pdf used on input line 66.
 (pdftex.def)             Requested size: 432.41884pt x 243.31087pt.
 
-Overfull \hbox (6.41884pt too wide) in paragraph at lines 65--66
+Overfull \hbox (6.41884pt too wide) in paragraph at lines 66--67
  [][] 
  []
 
@@ -1402,251 +1400,277 @@ Overfull \hbox (35.75024pt too wide) in paragraph at lines 7--8
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 21--21
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
 []|\T1/futs/m/n/10 Nazwa
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--21
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
 []|  \T1/futs/m/n/10 Liczba
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--21
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
 \T1/futs/m/n/10 atry-bu-
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 21--21
+Underfull \hbox (badness 1264) in paragraph at lines 22--22
 []|  \T1/futs/m/n/10 Wiel-ko±¢
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--21
+Underfull \hbox (badness 1264) in paragraph at lines 22--22
+[]|  \T1/futs/m/n/10 Wiel-ko±¢
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
 \T1/futs/m/n/10 zbioru
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--21
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
 []| \T1/futs/m/n/10 Wiel-ko±¢
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 21--22
+Underfull \hbox (badness 1264) in paragraph at lines 22--23
 []|  \T1/futs/m/n/10 Wiel-ko±¢
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--22
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
 \T1/futs/m/n/10 zbioru
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--22
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
 \T1/futs/m/n/10 wa-li-du-j¡-
  []
 
 
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 40.
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
+[]|\T1/futs/m/n/10 Liczba atry-bu-
+ []
 
-<figures/functions/func1.pdf, id=318, 917.4275pt x 333.245pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
+[]|\T1/futs/m/n/10 Liczba atry-bu-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
+\T1/futs/m/n/10 tów no-mi-nal-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
+[]|\T1/futs/m/n/10 Liczba
+ []
+
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 62.
+
+[10] <figures/functions/func1.pdf, id=329, 917.4275pt x 333.245pt>
 File: figures/functions/func1.pdf Graphic file (type pdf)
 
 <use figures/functions/func1.pdf>
-Package pdftex.def Info: figures/functions/func1.pdf used on input line 47.
+Package pdftex.def Info: figures/functions/func1.pdf used on input line 69.
 (pdftex.def)             Requested size: 458.71263pt x 166.62209pt.
 
-Overfull \hbox (32.71263pt too wide) in paragraph at lines 47--48
+Overfull \hbox (32.71263pt too wide) in paragraph at lines 69--70
 [][] 
  []
 
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 48.
+(Font)              scaled to size 7.35999pt on input line 70.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.25598pt on input line 48.
+(Font)              scaled to size 6.25598pt on input line 70.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 48.
+(Font)              scaled to size 7.35999pt on input line 70.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.25598pt on input line 48.
-<figures/functions/func2.pdf, id=321, 669.50125pt x 333.245pt>
+(Font)              scaled to size 6.25598pt on input line 70.
+<figures/functions/func2.pdf, id=332, 669.50125pt x 333.245pt>
 File: figures/functions/func2.pdf Graphic file (type pdf)
 
 <use figures/functions/func2.pdf>
-Package pdftex.def Info: figures/functions/func2.pdf used on input line 52.
+Package pdftex.def Info: figures/functions/func2.pdf used on input line 74.
 (pdftex.def)             Requested size: 401.70384pt x 199.94853pt.
 
-<figures/functions/func5.pdf, id=326, 669.50125pt x 333.245pt>
+<figures/functions/func5.pdf, id=337, 669.50125pt x 333.245pt>
 File: figures/functions/func5.pdf Graphic file (type pdf)
 
 <use figures/functions/func5.pdf>
-Package pdftex.def Info: figures/functions/func5.pdf used on input line 57.
+Package pdftex.def Info: figures/functions/func5.pdf used on input line 79.
 (pdftex.def)             Requested size: 401.70384pt x 199.94853pt.
 
-<figures/functions/func3.pdf, id=329, 140.525pt x 116.435pt>
+<figures/functions/func3.pdf, id=340, 140.525pt x 116.435pt>
 File: figures/functions/func3.pdf Graphic file (type pdf)
 
 <use figures/functions/func3.pdf>
-Package pdftex.def Info: figures/functions/func3.pdf used on input line 63.
+Package pdftex.def Info: figures/functions/func3.pdf used on input line 85.
 (pdftex.def)             Requested size: 84.31564pt x 69.86153pt.
 
-<figures/functions/func4.pdf, id=332, 140.525pt x 188.705pt>
+<figures/functions/func4.pdf, id=343, 140.525pt x 188.705pt>
 File: figures/functions/func4.pdf Graphic file (type pdf)
 
 <use figures/functions/func4.pdf>
-Package pdftex.def Info: figures/functions/func4.pdf used on input line 68.
+Package pdftex.def Info: figures/functions/func4.pdf used on input line 90.
 (pdftex.def)             Requested size: 84.31564pt x 113.22386pt.
- [10] [11 <./figures/functions/func1.pdf> <./figures/functions/func2.pdf
+ [11 <./figures/functions/func1.pdf> <./figures/functions/func2.pdf
 
 pdfTeX warning: pdflatex (file ./figures/functions/func2.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
-> <./figures/functions/func5.pdf
+>] [12 <./figures/functions/func5.pdf> <./figures/functions/func3.pdf
 
-pdfTeX warning: pdflatex (file ./figures/functions/func5.pdf): PDF inclusion: m
+pdfTeX warning: pdflatex (file ./figures/functions/func3.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
->] <figures/accuracy/accuracy-iris.pdf, id=401, 361.35pt x 216.81pt>
+> <./figures/functions/func4.pdf
+
+pdfTeX warning: pdflatex (file ./figures/functions/func4.pdf): PDF inclusion: m
+ultiple pdfs with page group included in a single page
+>] <figures/accuracy/accuracy-iris.pdf, id=422, 361.35pt x 216.81pt>
 File: figures/accuracy/accuracy-iris.pdf Graphic file (type pdf)
 
 <use figures/accuracy/accuracy-iris.pdf>
 Package pdftex.def Info: figures/accuracy/accuracy-iris.pdf used on input line 
-75.
+97.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/accuracy/accuracy-iris-detailed.pdf, id=402, 361.35pt x 216.81pt>
+<figures/accuracy/accuracy-iris-detailed.pdf, id=423, 361.35pt x 216.81pt>
 File: figures/accuracy/accuracy-iris-detailed.pdf Graphic file (type pdf)
 
 <use figures/accuracy/accuracy-iris-detailed.pdf>
 Package pdftex.def Info: figures/accuracy/accuracy-iris-detailed.pdf used on in
-put line 80.
+put line 102.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/accuracy/fitness-iris-detailed.pdf, id=403, 361.35pt x 216.81pt>
+<figures/accuracy/fitness-iris-detailed.pdf, id=424, 361.35pt x 216.81pt>
 File: figures/accuracy/fitness-iris-detailed.pdf Graphic file (type pdf)
 
 <use figures/accuracy/fitness-iris-detailed.pdf>
 Package pdftex.def Info: figures/accuracy/fitness-iris-detailed.pdf used on inp
-ut line 86.
+ut line 108.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/accuracy/accuracy-dna.pdf, id=404, 361.35pt x 216.81pt>
+<figures/accuracy/accuracy-dna.pdf, id=425, 361.35pt x 216.81pt>
 File: figures/accuracy/accuracy-dna.pdf Graphic file (type pdf)
 
 <use figures/accuracy/accuracy-dna.pdf>
-Package pdftex.def Info: figures/accuracy/accuracy-dna.pdf used on input line 9
-1.
+Package pdftex.def Info: figures/accuracy/accuracy-dna.pdf used on input line 1
+13.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/accuracy/accuracy-dna-detailed.pdf, id=405, 361.35pt x 216.81pt>
+<figures/accuracy/accuracy-dna-detailed.pdf, id=426, 361.35pt x 216.81pt>
 File: figures/accuracy/accuracy-dna-detailed.pdf Graphic file (type pdf)
 
 <use figures/accuracy/accuracy-dna-detailed.pdf>
 Package pdftex.def Info: figures/accuracy/accuracy-dna-detailed.pdf used on inp
-ut line 96.
+ut line 118.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/accuracy/accuracy-vowel.pdf, id=406, 361.35pt x 216.81pt>
+<figures/accuracy/accuracy-vowel.pdf, id=427, 361.35pt x 216.81pt>
 File: figures/accuracy/accuracy-vowel.pdf Graphic file (type pdf)
 
 <use figures/accuracy/accuracy-vowel.pdf>
 Package pdftex.def Info: figures/accuracy/accuracy-vowel.pdf used on input line
- 102.
+ 124.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/accuracy/accuracy-vowel-detailed.pdf, id=407, 361.35pt x 216.81pt>
+<figures/accuracy/accuracy-vowel-detailed.pdf, id=428, 361.35pt x 216.81pt>
 File: figures/accuracy/accuracy-vowel-detailed.pdf Graphic file (type pdf)
 
 <use figures/accuracy/accuracy-vowel-detailed.pdf>
 Package pdftex.def Info: figures/accuracy/accuracy-vowel-detailed.pdf used on i
-nput line 107.
+nput line 129.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/accuracy/fitness-vowel-detailed.pdf, id=408, 361.35pt x 216.81pt>
+<figures/accuracy/fitness-vowel-detailed.pdf, id=429, 361.35pt x 216.81pt>
 File: figures/accuracy/fitness-vowel-detailed.pdf Graphic file (type pdf)
 
 <use figures/accuracy/fitness-vowel-detailed.pdf>
 Package pdftex.def Info: figures/accuracy/fitness-vowel-detailed.pdf used on in
-put line 112.
+put line 134.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/accuracy/accuracy-letter.pdf, id=409, 361.35pt x 216.81pt>
+<figures/accuracy/accuracy-letter.pdf, id=430, 361.35pt x 216.81pt>
 File: figures/accuracy/accuracy-letter.pdf Graphic file (type pdf)
 
 <use figures/accuracy/accuracy-letter.pdf>
 Package pdftex.def Info: figures/accuracy/accuracy-letter.pdf used on input lin
-e 118.
+e 140.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/accuracy/accuracy-letter-detailed.pdf, id=410, 361.35pt x 216.81pt>
+<figures/accuracy/accuracy-letter-detailed.pdf, id=431, 361.35pt x 216.81pt>
 File: figures/accuracy/accuracy-letter-detailed.pdf Graphic file (type pdf)
 
 <use figures/accuracy/accuracy-letter-detailed.pdf>
 Package pdftex.def Info: figures/accuracy/accuracy-letter-detailed.pdf used on 
-input line 124.
+input line 146.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
- [12 <./figures/functions/func3.pdf> <./figures/functions/func4.pdf
-
-pdfTeX warning: pdflatex (file ./figures/functions/func4.pdf): PDF inclusion: m
-ultiple pdfs with page group included in a single page
-> <./figures/accuracy/accuracy-iris.pdf
-
-pdfTeX warning: pdflatex (file ./figures/accuracy/accuracy-iris.pdf): PDF inclu
-sion: multiple pdfs with page group included in a single page
->] [13 <./figures/accuracy/accuracy-iris-detailed.pdf> <./figures/accuracy/fitn
-ess-iris-detailed.pdf
-
-pdfTeX warning: pdflatex (file ./figures/accuracy/fitness-iris-detailed.pdf): P
-DF inclusion: multiple pdfs with page group included in a single page
->] [14 <./figures/accuracy/accuracy-dna.pdf> <./figures/accuracy/accuracy-dna-d
+ [13 <./figures/accuracy/accuracy-iris.pdf> <./figures/accuracy/accuracy-iris-d
 etailed.pdf
 
-pdfTeX warning: pdflatex (file ./figures/accuracy/accuracy-dna-detailed.pdf): P
-DF inclusion: multiple pdfs with page group included in a single page
->] [15 <./figures/accuracy/accuracy-vowel.pdf> <./figures/accuracy/accuracy-vow
-el-detailed.pdf
+pdfTeX warning: pdflatex (file ./figures/accuracy/accuracy-iris-detailed.pdf): 
+PDF inclusion: multiple pdfs with page group included in a single page
+>] [14 <./figures/accuracy/fitness-iris-detailed.pdf> <./figures/accuracy/accur
+acy-dna.pdf
 
-pdfTeX warning: pdflatex (file ./figures/accuracy/accuracy-vowel-detailed.pdf):
- PDF inclusion: multiple pdfs with page group included in a single page
->] [16 <./figures/accuracy/fitness-vowel-detailed.pdf> <./figures/accuracy/accu
-racy-letter.pdf
+pdfTeX warning: pdflatex (file ./figures/accuracy/accuracy-dna.pdf): PDF inclus
+ion: multiple pdfs with page group included in a single page
+>] [15 <./figures/accuracy/accuracy-dna-detailed.pdf> <./figures/accuracy/accur
+acy-vowel.pdf
 
-pdfTeX warning: pdflatex (file ./figures/accuracy/accuracy-letter.pdf): PDF inc
-lusion: multiple pdfs with page group included in a single page
->] [17 <./figures/accuracy/accuracy-letter-detailed.pdf>]
-Overfull \hbox (0.30408pt too wide) in paragraph at lines 132--134
+pdfTeX warning: pdflatex (file ./figures/accuracy/accuracy-vowel.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+>] [16 <./figures/accuracy/accuracy-vowel-detailed.pdf> <./figures/accuracy/fit
+ness-vowel-detailed.pdf
+
+pdfTeX warning: pdflatex (file ./figures/accuracy/fitness-vowel-detailed.pdf): 
+PDF inclusion: multiple pdfs with page group included in a single page
+>] [17 <./figures/accuracy/accuracy-letter.pdf> <./figures/accuracy/accuracy-le
+tter-detailed.pdf
+
+pdfTeX warning: pdflatex (file ./figures/accuracy/accuracy-letter-detailed.pdf)
+: PDF inclusion: multiple pdfs with page group included in a single page
+>]
+Overfull \hbox (0.30408pt too wide) in paragraph at lines 154--156
 []\T1/futs/m/n/10 Na wy-kre-sach [][]4.16[][]-[][]4.19[][] przed-sta-wiono po-r
 ów-na-nie traf-no-±ci kla-sy-fi-ka-cji zbioru wa-li-du-j¡-cego przez
  []
 
-<figures/accuracy/accuracy-iris-svm.pdf, id=534, 361.35pt x 216.81pt>
+<figures/accuracy/accuracy-iris-svm.pdf, id=535, 361.35pt x 216.81pt>
 File: figures/accuracy/accuracy-iris-svm.pdf Graphic file (type pdf)
 
 <use figures/accuracy/accuracy-iris-svm.pdf>
 Package pdftex.def Info: figures/accuracy/accuracy-iris-svm.pdf used on input l
-ine 138.
+ine 160.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/accuracy/accuracy-dna-svm.pdf, id=535, 361.35pt x 216.81pt>
+<figures/accuracy/accuracy-dna-svm.pdf, id=536, 361.35pt x 216.81pt>
 File: figures/accuracy/accuracy-dna-svm.pdf Graphic file (type pdf)
 
 <use figures/accuracy/accuracy-dna-svm.pdf>
 Package pdftex.def Info: figures/accuracy/accuracy-dna-svm.pdf used on input li
-ne 143.
+ne 165.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/accuracy/accuracy-vowel-svm.pdf, id=536, 361.35pt x 216.81pt>
+<figures/accuracy/accuracy-vowel-svm.pdf, id=537, 361.35pt x 216.81pt>
 File: figures/accuracy/accuracy-vowel-svm.pdf Graphic file (type pdf)
 
 <use figures/accuracy/accuracy-vowel-svm.pdf>
 Package pdftex.def Info: figures/accuracy/accuracy-vowel-svm.pdf used on input 
-line 148.
+line 170.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/accuracy/accuracy-letter-svm.pdf, id=537, 361.35pt x 216.81pt>
+<figures/accuracy/accuracy-letter-svm.pdf, id=538, 361.35pt x 216.81pt>
 File: figures/accuracy/accuracy-letter-svm.pdf Graphic file (type pdf)
 
 <use figures/accuracy/accuracy-letter-svm.pdf>
 Package pdftex.def Info: figures/accuracy/accuracy-letter-svm.pdf used on input
- line 153.
+ line 175.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
  [18
 
@@ -1685,11 +1709,11 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 )
 [26
 
-] <figures/template/logo-pp.pdf, id=619, 469.755pt x 469.755pt>
+] <figures/template/logo-pp.pdf, id=624, 469.755pt x 469.755pt>
 File: figures/template/logo-pp.pdf Graphic file (type pdf)
 
 <use figures/template/logo-pp.pdf>
-Package pdftex.def Info: figures/template/logo-pp.pdf used on input line 63.
+Package pdftex.def Info: figures/template/logo-pp.pdf used on input line 64.
 (pdftex.def)             Requested size: 42.67752pt x 42.67912pt.
  [27
 
@@ -1697,25 +1721,25 @@ Package pdftex.def Info: figures/template/logo-pp.pdf used on input line 63.
 \tf@toc=\write6
 \openout6 = `tzietkiewicz-master-thesis.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 66.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 66.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 67.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 67.
 
 (./tzietkiewicz-master-thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 66.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 66.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 67.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 67.
 Package rerunfilecheck Info: File `tzietkiewicz-master-thesis.out' has not chan
 ged.
 (rerunfilecheck)             Checksum: 50743453FD8BA3FB81045F6927DF7D30;7027.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 66.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 67.
  ) 
 Here is how much of TeX's memory you used:
- 13379 strings out of 495024
- 186573 string characters out of 3181153
- 325238 words of memory out of 3000000
- 16179 multiletter control sequences out of 15000+200000
+ 13384 strings out of 495024
+ 186624 string characters out of 3181153
+ 329387 words of memory out of 3000000
+ 16182 multiletter control sequences out of 15000+200000
  126795 words of font info for 129 fonts, out of 3000000 for 9000
  34 hyphenation exceptions out of 8191
- 53i,12n,31p,1241b,465s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 53i,12n,31p,1241b,467s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texlive/texmf-dist
 /fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/
 fourier/fourier-mlit.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/four
@@ -1724,10 +1748,10 @@ e/texmf/fonts/type1/public/lm/lmtt9.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/adobe/utopia/putb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/ut
 opia/putr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a
 .pfb>
-Output written on tzietkiewicz-master-thesis.pdf (31 pages, 508726 bytes).
+Output written on tzietkiewicz-master-thesis.pdf (30 pages, 510243 bytes).
 PDF statistics:
- 683 PDF objects out of 1000 (max. 8388607)
- 562 compressed objects within 6 object streams
- 109 named destinations out of 1000 (max. 500000)
+ 687 PDF objects out of 1000 (max. 8388607)
+ 567 compressed objects within 6 object streams
+ 111 named destinations out of 1000 (max. 500000)
  423 words of extra memory for PDF output out of 10000 (max. 10000000)
 

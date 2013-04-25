@@ -1,7 +1,9 @@
 package libsvm;
 //import libsvm.*;
+import libsvm.Results;
 import java.io.*;
 import java.util.*;
+import java.lang.ArithmeticException;
 
 public class Svm_predict_gp {
 	private static double atof(String s)
@@ -52,7 +54,9 @@ public class Svm_predict_gp {
 		return accuracy;
 	}
 	
-	public static double predict_problem(svm_gp_problem problem, svm_model model)
+	
+	
+	public static double predict_problem_accuracy(svm_gp_problem problem, svm_model model)
 	{
 		int correct = 0;
 		int total = 0;
@@ -70,6 +74,174 @@ public class Svm_predict_gp {
 		double accuracy = (double)correct/total;
 		return accuracy;
 	}
+	
+	
+	public static Results predict_problem(
+			svm_gp_problem problem,
+			svm_model model)
+	{
+		int correct = 0;
+		float predicted;
+		float actual;
+		Float actualD;
+		Float predictedD;
+
+		Results results = new Results(model.nr_class);
+
+		for(int i=0;i<problem.y.length; i++)
+		{
+			actual = (float) problem.y[i];			
+			initMapIfNeeded(results.counts, new Float(actual));
+		}
+		
+		for(int i=0;i<problem.x.length; i++)
+		{
+			predicted = (float) svm_predict(model, problem.x[i], problem);
+			actual = (float) problem.y[i];
+			actualD = new Float(actual);
+			predictedD = new Float(predicted);
+						
+			String result;
+			
+			if (actualD.equals(predictedD))
+				correct++;
+			
+			for (Float klass : results.counts.keySet()){
+				if (klass.equals(actualD) && klass.equals(predictedD))
+					result = "TP";
+				else if (klass.equals(actualD))
+					result = "FN";				
+				else if (klass.equals(predictedD))
+					result = "FP";
+				else
+					result = "TN";
+				float _count = results.counts.get(klass).get(result).floatValue() + 1.0f;
+				Float count =  new Float(_count);
+				results.counts.get(klass).put(result, count);				
+			}
+		}
+
+		results.accuracy = (float)correct / problem.x.length;				
+		results.meanf1 = 0.0f;
+		results.meanMCC = 0.0f;
+		float f1;
+		float MCC;
+		
+		for (Float klass : results.counts.keySet()){				
+			f1 = F1(results.counts.get(klass));
+			MCC = MCC(results.counts.get(klass));
+			results.counts.get(klass).put("F1", f1);
+			results.counts.get(klass).put("MCC", MCC);			
+			results.meanf1+=f1;
+			results.meanMCC+=MCC;
+		}
+		results.meanMCC /= results.counts.size();
+		results.meanf1 /= results.counts.size();		
+		
+		return results;
+	}
+	
+	/***
+	 * If Map "counts" doesn't conatain entry with key "key"
+	 *  this key is initialized with 0's and added to the map
+	 * @param counts
+	 * @param key
+	 */
+	private static void initMapIfNeeded(HashMap<Float, HashMap<String, Float>> counts, Float key){
+		if (!counts.containsKey(key)){
+			HashMap rates = new HashMap<String, Float>(4);
+			rates.put("TP", 0.0f);
+			rates.put("TN", 0.0f);
+			rates.put("FP", 0.0f);
+			rates.put("FN", 0.0f);				
+			counts.put(key, rates);
+		}
+	}
+	
+	/***
+	 * Returns F1 given Map with TP, FP and FN values
+	 * @param rates
+	 * @return
+	 */
+	private static float F1(Map<String, Float> rates){
+		return F1(rates.get("TP").intValue(), rates.get("FP").intValue(), rates.get("FN").intValue());
+	}
+	
+	/***
+	 * Returns F1 measure computed from true-positive(TP),
+	 *  false-positive(FP) and false-negative(FN) rates
+	 * @param TP true-positive rate
+	 * @param FP false-positive rate
+	 * @param FN false-positive rate
+	 * @return F1 measure
+	 */
+	private static float F1(int TP, int FP, int FN){		
+		return 2.0f*TP/(2*TP+FN+FP);
+	}
+	
+	/***
+	 * Computes F1-measure computed from precision and recall
+	 * @param precision
+	 * @param recall
+	 * @return F1 measure
+	 */
+	private static float F1(float precision, float recall){
+		return 2.0f*precision*recall/(precision+recall);
+	}
+	
+	/**
+	 * Returns classification precision given true positive (TP) and false positive (FP) rates  
+	 * @param TP - number of true positive (TP) classified examples
+	 * @param FP - number of false positive (FP) classified examples
+	 * @return precision of classification
+	 */
+	private static float precision(int TP, int FP){
+		return (float)TP/(TP+FP);
+	}
+	
+	/***
+	 * Returns classification precision given true positive (TP) and false negative (FN) rates  
+	 * @param TP - number of true positive (TP) classified examples
+	 * @param FP - number of false positive (FN) classified examples
+	 * @return precision of classification
+	 */
+	private static float recall(int TP, int FN){
+		return (float)TP/(TP+FN);
+	}
+	
+	/***
+	 * Returns Matthews correlation coefficient given a map with TP, TN, FP and FN rates
+	 * @param rates
+	 * @return
+	 */
+	private static float MCC(Map<String,  Float> rates){
+		return MCC(rates.get("TP").intValue(), rates.get("TN").intValue(), 
+				rates.get("FP").intValue(), rates.get("FN").intValue());
+	}
+	
+	/***
+	 * Returns Matthews correlation coefficient given TP, TN, FP and FN 
+	 * @param TP - number of examples classified true positively
+	 * @param TN - number of examples classified true negatively
+	 * @param FP - number of examples classified false positively
+	 * @param FN - number of examples classified false negatively
+	 * @return Matthews correlation coefficient
+	 */
+	private static float MCC(int TP, int TN, int FP, int FN){
+		float result = 0.0f;
+		try{
+			double denominator = Math.sqrt((TP+FP)*(TP+FN)*(TN+FP)*(TN+FN));
+			if (denominator == 0)
+				return 0.0f;
+			result = (float) (((TP*TN)-(FP*FN))/denominator);
+		}
+		catch(ArithmeticException e){
+			result = 0.0f;
+		}
+		return result;
+	}
+	
+	
 	
 	public static double svm_predict(svm_model model, svm_node[] x, svm_gp_problem problem)
 	{
@@ -134,5 +306,4 @@ public class Svm_predict_gp {
 
 		return model.label[vote_max_idx];
 	}
-
 }
