@@ -1,11 +1,23 @@
-
-
-
-
 package libsvm;
+
 import java.io.*;
 import java.util.*;
 
+import libsvm.Cache;
+import libsvm.Kernel;
+import libsvm.ONE_CLASS_Q;
+import libsvm.QMatrix;
+import libsvm.SVC_Q;
+import libsvm.SVR_Q;
+import libsvm.Solver;
+import libsvm.Solver_NU;
+import libsvm.svm;
+import libsvm.svm_model;
+import libsvm.svm_node;
+import libsvm.svm_parameter;
+import libsvm.svm_print_interface;
+import libsvm.svm_problem;
+import libsvm.Svm_predict_gp.*;
 
 //
 // Kernel Cache
@@ -1510,194 +1522,11 @@ public class svm {
 		return f;
 	}
 
-	// Platt's binary SVM Probablistic Output: an improvement from Lin et al.
-	private static void sigmoid_train(int l, double[] dec_values, double[] labels, 
-				  double[] probAB)
-	{
-		double A, B;
-		double prior1=0, prior0 = 0;
-		int i;
-
-		for (i=0;i<l;i++)
-			if (labels[i] > 0) prior1+=1;
-			else prior0+=1;
-	
-		int max_iter=100;	// Maximal number of iterations
-		double min_step=1e-10;	// Minimal step taken in line search
-		double sigma=1e-12;	// For numerically strict PD of Hessian
-		double eps=1e-5;
-		double hiTarget=(prior1+1.0)/(prior1+2.0);
-		double loTarget=1/(prior0+2.0);
-		double[] t= new double[l];
-		double fApB,p,q,h11,h22,h21,g1,g2,det,dA,dB,gd,stepsize;
-		double newA,newB,newf,d1,d2;
-		int iter; 
-	
-		// Initial Point and Initial Fun Value
-		A=0.0; B=Math.log((prior0+1.0)/(prior1+1.0));
-		double fval = 0.0;
-
-		for (i=0;i<l;i++)
-		{
-			if (labels[i]>0) t[i]=hiTarget;
-			else t[i]=loTarget;
-			fApB = dec_values[i]*A+B;
-			if (fApB>=0)
-				fval += t[i]*fApB + Math.log(1+Math.exp(-fApB));
-			else
-				fval += (t[i] - 1)*fApB +Math.log(1+Math.exp(fApB));
-		}
-		for (iter=0;iter<max_iter;iter++)
-		{
-			// Update Gradient and Hessian (use H' = H + sigma I)
-			h11=sigma; // numerically ensures strict PD
-			h22=sigma;
-			h21=0.0;g1=0.0;g2=0.0;
-			for (i=0;i<l;i++)
-			{
-				fApB = dec_values[i]*A+B;
-				if (fApB >= 0)
-				{
-					p=Math.exp(-fApB)/(1.0+Math.exp(-fApB));
-					q=1.0/(1.0+Math.exp(-fApB));
-				}
-				else
-				{
-					p=1.0/(1.0+Math.exp(fApB));
-					q=Math.exp(fApB)/(1.0+Math.exp(fApB));
-				}
-				d2=p*q;
-				h11+=dec_values[i]*dec_values[i]*d2;
-				h22+=d2;
-				h21+=dec_values[i]*d2;
-				d1=t[i]-p;
-				g1+=dec_values[i]*d1;
-				g2+=d1;
-			}
-
-			// Stopping Criteria
-			if (Math.abs(g1)<eps && Math.abs(g2)<eps)
-				break;
-			
-			// Finding Newton direction: -inv(H') * g
-			det=h11*h22-h21*h21;
-			dA=-(h22*g1 - h21 * g2) / det;
-			dB=-(-h21*g1+ h11 * g2) / det;
-			gd=g1*dA+g2*dB;
-
-
-			stepsize = 1;		// Line Search
-			while (stepsize >= min_step)
-			{
-				newA = A + stepsize * dA;
-				newB = B + stepsize * dB;
-
-				// New function value
-				newf = 0.0;
-				for (i=0;i<l;i++)
-				{
-					fApB = dec_values[i]*newA+newB;
-					if (fApB >= 0)
-						newf += t[i]*fApB + Math.log(1+Math.exp(-fApB));
-					else
-						newf += (t[i] - 1)*fApB +Math.log(1+Math.exp(fApB));
-				}
-				// Check sufficient decrease
-				if (newf<fval+0.0001*stepsize*gd)
-				{
-					A=newA;B=newB;fval=newf;
-					break;
-				}
-				else
-					stepsize = stepsize / 2.0;
-			}
-			
-			if (stepsize < min_step)
-			{
-				svm.info("Line search fails in two-class probability estimates\n");
-				break;
-			}
-		}
-		
-		if (iter>=max_iter)
-			svm.info("Reaching maximal iterations in two-class probability estimates\n");
-		probAB[0]=A;probAB[1]=B;
-	}
-
-	private static double sigmoid_predict(double decision_value, double A, double B)
-	{
-		double fApB = decision_value*A+B;
-		if (fApB >= 0)
-			return Math.exp(-fApB)/(1.0+Math.exp(-fApB));
-		else
-			return 1.0/(1+Math.exp(fApB)) ;
-	}
-
-	// Method 2 from the multiclass_prob paper by Wu, Lin, and Weng
-	private static void multiclass_probability(int k, double[][] r, double[] p)
-	{
-		int t,j;
-		int iter = 0, max_iter=Math.max(100,k);
-		double[][] Q=new double[k][k];
-		double[] Qp=new double[k];
-		double pQp, eps=0.005/k;
-	
-		for (t=0;t<k;t++)
-		{
-			p[t]=1.0/k;  // Valid if k = 1
-			Q[t][t]=0;
-			for (j=0;j<t;j++)
-			{
-				Q[t][t]+=r[j][t]*r[j][t];
-				Q[t][j]=Q[j][t];
-			}
-			for (j=t+1;j<k;j++)
-			{
-				Q[t][t]+=r[j][t]*r[j][t];
-				Q[t][j]=-r[j][t]*r[t][j];
-			}
-		}
-		for (iter=0;iter<max_iter;iter++)
-		{
-			// stopping condition, recalculate QP,pQP for numerical accuracy
-			pQp=0;
-			for (t=0;t<k;t++)
-			{
-				Qp[t]=0;
-				for (j=0;j<k;j++)
-					Qp[t]+=Q[t][j]*p[j];
-				pQp+=p[t]*Qp[t];
-			}
-			double max_error=0;
-			for (t=0;t<k;t++)
-			{
-				double error=Math.abs(Qp[t]-pQp);
-				if (error>max_error)
-					max_error=error;
-			}
-			if (max_error<eps) break;
-		
-			for (t=0;t<k;t++)
-			{
-				double diff=(-Qp[t]+pQp)/Q[t][t];
-				p[t]+=diff;
-				pQp=(pQp+diff*(diff*Q[t][t]+2*Qp[t]))/(1+diff)/(1+diff);
-				for (j=0;j<k;j++)
-				{
-					Qp[j]=(Qp[j]+diff*Q[t][j])/(1+diff);
-					p[j]/=(1+diff);
-				}
-			}
-		}
-		if (iter>=max_iter)
-			svm.info("Exceeds max_iter in multiclass_prob\n");
-	}
-
-	
 
 	// label: label name, start: begin of each class, count: #data of classes, perm: indices to the original data
 	// perm, length l, must be allocated before calling this subroutine
-	private static void svm_group_classes(svm_problem prob, int[] nr_class_ret, int[][] label_ret, int[][] start_ret, int[][] count_ret, int[] perm)
+	private static void svm_group_classes(svm_problem prob, int[] nr_class_ret, int[][] label_ret, 
+			int[][] start_ret, int[][] count_ret, int[] perm)
 	{
 		int l = prob.l;
 		int max_nr_class = 16;
@@ -1842,6 +1671,15 @@ public class svm {
 					sub_prob.y[ci+k] = -1;
 				}
 
+				if(param.probability == 1)
+				{
+					double[] probAB=new double[2];
+					svm_binary_svc_probability(sub_prob,param,weighted_C[i],weighted_C[j],probAB);
+					probA[p]=probAB[0];
+					probB[p]=probAB[1];
+				}
+				
+				
 				f[p] = svm_train_one(sub_prob,param,weighted_C[i],weighted_C[j]);
 				for(k=0;k<ci;k++)
 					if(!nonzero[si+k] && Math.abs(f[p].alpha[k]) > 0)
@@ -1939,6 +1777,92 @@ public class svm {
 			}
 		return model;
 	}
+	
+	
+	// Cross-validation decision values for probability estimates
+	private static void svm_binary_svc_probability(svm_gp_problem prob, svm_parameter param, double Cp, double Cn, double[] probAB)
+	{
+		int i;
+		int nr_fold = 5;
+		int[] perm = new int[prob.l];
+		double[] dec_values = new double[prob.l];
+
+		// random shuffle
+		for(i=0;i<prob.l;i++) perm[i]=i;
+		for(i=0;i<prob.l;i++)
+		{
+			int j = i+rand.nextInt(prob.l-i);
+			do {int _=perm[i]; perm[i]=perm[j]; perm[j]=_;} while(false);
+		}
+		for(i=0;i<nr_fold;i++)
+		{
+			int begin = i*prob.l/nr_fold;
+			int end = (i+1)*prob.l/nr_fold;
+			int j,k;
+			svm_gp_problem subprob = new svm_gp_problem();
+
+			subprob.ind = prob.ind;
+			subprob.input = prob.input;
+			
+			subprob.l = prob.l-(end-begin);
+			subprob.x = new svm_node[subprob.l][];
+			subprob.y = new double[subprob.l];
+			
+			k=0;
+			for(j=0;j<begin;j++)
+			{
+				subprob.x[k] = prob.x[perm[j]];
+				subprob.y[k] = prob.y[perm[j]];
+				++k;
+			}
+			for(j=end;j<prob.l;j++)
+			{
+				subprob.x[k] = prob.x[perm[j]];
+				subprob.y[k] = prob.y[perm[j]];
+				++k;
+			}
+			int p_count=0,n_count=0;
+			for(j=0;j<k;j++)
+				if(subprob.y[j]>0)
+					p_count++;
+				else
+					n_count++;
+			
+			if(p_count==0 && n_count==0)
+				for(j=begin;j<end;j++)
+					dec_values[perm[j]] = 0;
+			else if(p_count > 0 && n_count == 0)
+				for(j=begin;j<end;j++)
+					dec_values[perm[j]] = 1;
+			else if(p_count == 0 && n_count > 0)
+				for(j=begin;j<end;j++)
+					dec_values[perm[j]] = -1;
+			else
+			{
+				svm_parameter subparam = (svm_parameter)param.clone();
+				subparam.probability=0;
+				subparam.C=1.0;
+				subparam.nr_weight=2;
+				subparam.weight_label = new int[2];
+				subparam.weight = new double[2];
+				subparam.weight_label[0]=+1;
+				subparam.weight_label[1]=-1;
+				subparam.weight[0]=Cp;
+				subparam.weight[1]=Cn;
+				svm_model submodel = svm_train(subprob,subparam);
+				for(j=begin;j<end;j++)
+				{
+					double[] dec_value=new double[1];
+					libsvm.Svm_predict_gp.svm_predict_values(submodel,prob.x[perm[j]],dec_value, subprob);
+					dec_values[perm[j]]=dec_value[0];
+					// ensure +1 -1 order; reason not using CV subroutine
+					dec_values[perm[j]] *= submodel.label[0];
+				}		
+			}
+		}		
+		libsvm.Svm_predict_gp.sigmoid_train(prob.l,dec_values,prob.y,probAB);
+	}
+	
 	
 	// Stratified cross validation
 	public static void svm_cross_validation(svm_gp_problem prob, svm_parameter param, int nr_fold, double[] target)

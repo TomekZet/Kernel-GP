@@ -3,6 +3,9 @@
 //
 package libsvm;
 
+import libsvm.svm_node;
+import libsvm.svm_parameter;
+
 
 public class svm_model implements java.io.Serializable
 {

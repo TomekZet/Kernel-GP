@@ -309,9 +309,9 @@ set output "pdf/accuracy-breast.pdf"
  plot for [p in population_size] 'grouped/breast.scale.dat.fitness_measure-accuracy.dat.population_size-'.p.'.dat' using "N":"mean_accuracy":xticlabels(5) title 'Population size '.p
  unset output
 
-set output "pdf/accuracy-dna.pdf"
- plot for [p in population_size] 'grouped/dna.scale.dat.fitness_measure-accuracy.dat.population_size-'.p.'.dat' using "N":"mean_accuracy":xticlabels(5) title 'Population size '.p
- unset output
+#set output "pdf/accuracy-dna.pdf"
+# plot for [p in population_size] 'grouped/dna.scale.dat.fitness_measure-accuracy.dat.population_size-'.p.'.dat' using "N":"mean_accuracy":xticlabels(5) title 'Population size '.p
+# unset output
 
 
 set ylabel "F1"
@@ -323,9 +323,9 @@ set output "pdf/f1-breast.pdf"
  plot for [p in population_size] 'grouped/breast.scale.dat.fitness_measure-f1.dat.population_size-'.p.'.dat' using "N":"mean_f1":xticlabels(5) title 'Population size '.p
  unset output
 
-set output "pdf/f1-dna.pdf"
- plot for [p in population_size] 'grouped/dna.scale.dat.fitness_measure-f1.dat.population_size-'.p.'.dat' using "N":"mean_f1":xticlabels(5) title 'Population size '.p
- unset output
+#set output "pdf/f1-dna.pdf"
+# plot for [p in population_size] 'grouped/dna.scale.dat.fitness_measure-f1.dat.population_size-'.p.'.dat' using "N":"mean_f1":xticlabels(5) title 'Population size '.p
+# unset output
 
 
 set ylabel "Mathews Corelation Coef."
@@ -341,17 +341,25 @@ set output "pdf/mcc-breast.pdf"
 # plot for [p in population_size] 'grouped/dna.scale.dat.fitness_measure-mcc.dat.population_size-'.p.'.dat' using "N":"mean_mcc":xticlabels(5) title 'Population size '.p
 # unset output
 
+#fitnesses = "accuracy f1"
+#set output "pdf/fitness-dna.pdf"
+# plot for [f in fitnesses] 'grouped/dna.scale.dat.fitness_measure-'.f.'.dat.population_size-101.dat' using "N":"mean_fitness":xticlabels(5) title 'Fitness measure: '.f
+#unset output
+
+
+fitnesses = "accuracy f1 mcc probability"
 
 set ylabel "Fitness"
 set output "pdf/fitness-heart.pdf"
- plot for [f in fitnesses] 'grouped/heart.scale.dat.fitness_measure-'.f.'.dat.population_size-101.dat' using "N":"mean_fitness":xticlabels(5) title 'Fitness measure: '.f
+ plot for [f in fitnesses] 'grouped/heart.scale.dat.fitness_measure-'.f.'.dat' using "N":"mean_fitness":xticlabels(5) title 'Fitness measure: '.f
  unset output
 
 set output "pdf/fitness-breast.pdf"
- plot for [f in fitnesses] 'grouped/breast.scale.dat.fitness_measure-'.f.'.dat.population_size-101.dat' using "N":"mean_fitness":xticlabels(5) title 'Fitness measure: '.f
+ plot for [f in fitnesses] 'grouped/breast.scale.dat.fitness_measure-'.f.'.dat' using "N":"mean_fitness":xticlabels(5) title 'Fitness measure: '.f
  unset output
 
-fitnesses = "accuracy f1"
-set output "pdf/fitness-dna.pdf"
- plot for [f in fitnesses] 'grouped/dna.scale.dat.fitness_measure-'.f.'.dat.population_size-101.dat' using "N":"mean_fitness":xticlabels(5) title 'Fitness measure: '.f
- unset output
+
+#fitnesses = "probability"
+#set output "pdf/fitness-heart-probability.pdf"
+# plot 'grouped/breast.scale.dat.fitness_measure-probability.dat' using "N":"mean_fitness":xticlabels(5) title 'Fitness measure: '.f
+# unset output

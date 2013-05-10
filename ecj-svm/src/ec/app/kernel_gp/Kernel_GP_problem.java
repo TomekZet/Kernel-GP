@@ -9,28 +9,26 @@
 package ec.app.kernel_gp;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.StringTokenizer;
 import java.util.Vector;
 
-import libsvm.SVC_Q_GP;
-import libsvm.Svm_GP;
+
+import libsvm.Results;
 import libsvm.svm;
 import libsvm.svm_gp_problem;
 import libsvm.svm_model;
 import libsvm.svm_node;
 import libsvm.svm_parameter;
-import libsvm.svm_problem;
-import libsvm.Results;
 import ec.util.*;
 import java.io.*;
 import ec.*;
 import ec.gp.*;
 import ec.gp.koza.*;
 import ec.simple.*;
+
 
 public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm
 {
@@ -47,6 +45,7 @@ public GPData input;
   private String test_file_name;
   private String output_file_name;
   private String fitness_measure;
+  private int probability_outputs;  
   private int nr_fold;
   boolean cv;
   PrintStream outputStream = System.out;
@@ -74,6 +73,7 @@ public GPData input;
 	      Parameter shrinking_param = new Parameter("shrinking");
 	      Parameter epsilon_param = new Parameter("epsilon");
 	      Parameter cost_param = new Parameter("cost");
+	      Parameter probability_param = new Parameter("probability");
 	      
 	      train_file_name = state.parameters.getString(train_path_param, null);
 	      test_file_name = state.parameters.getString(test_path_param, null);
@@ -82,6 +82,7 @@ public GPData input;
 	      output_file_name = state.parameters.getString(output_path_param, null);
 	      fitness_measure = state.parameters.getString(fitness_measure_param, null);
 	      File output_file = new File(output_file_name);
+	      probability_outputs = state.parameters.getIntWithDefault(probability_param, null, 0);
 	      
 	      try {
 			logNumber = state.output.addLog(output_file, false);
@@ -92,11 +93,12 @@ public GPData input;
 	      
 	      int cache_size = state.parameters.getIntWithDefault(cache_size_param, null, 500);
 	      int shrinking = state.parameters.getIntWithDefault(shrinking_param, null, 1);
+	      
 	      double epsilon = state.parameters.getDoubleWithDefault(epsilon_param, null, 0.001);
 	      double cost = state.parameters.getDoubleWithDefault(cost_param, null, 1);
 	      
 	      
-	      set_svm_params(cache_size, shrinking, epsilon, cost);
+	      set_svm_params(cache_size, shrinking, epsilon, cost, probability_outputs);
 	      
 	      if (svm_probl_train == null)
 	      {
@@ -148,6 +150,11 @@ public GPData input;
 	  		  }
 	  		 else
 	  		  {
+	  			/*TODO:
+	  			 * use double svm_predict_probability(const struct svm_model *model, 
+	    const struct svm_node *x, double* prob_estimates)
+	  			 */
+	  			 
 	  			svm_model model = svm.svm_train(svm_probl_train, svm_params);
   				results = libsvm.Svm_predict_gp.predict_problem(svm_probl_test, model);
   				if (fitness_measure.equalsIgnoreCase("accuracy"))
@@ -157,7 +164,9 @@ public GPData input;
 				else if(fitness_measure.equalsIgnoreCase("mcc")){
   					float _fitness = 1.0f/((results.meanMCC+1)/2.0f+0.0000000000001f)-1.0f;
 					f.setStandardizedFitness(state, _fitness);
-				
+				}
+				else if(fitness_measure.equalsIgnoreCase("probability")){
+  					f.setStandardizedFitness(state,(float)((1-results.meanProbability)/(results.meanProbability+0.00000000000000000001)));
 				}
 	  		  }
 	          ind.evaluated = true;
@@ -173,6 +182,7 @@ public GPData input;
         	  message +="Test Accuracy = "+100.0*results.accuracy+"%\n";
         	  message +="F1 Measure = "+results.meanf1+"\n";
         	  message += "MCC = "+results.meanMCC+"\n";
+        	  message += "Probability = "+results.meanProbability+"\n";
           }
 	  	  message += "Time elapsed: "+Double.toString(time_seconds)+"\n";
 	  	  message += "Standardized Fitness = " + f.standardizedFitness() +"\n";
@@ -191,7 +201,7 @@ public GPData input;
   
   
   
-  public static void set_svm_params(int cache_size, int shrinking, double eps, double cost)
+  public static void set_svm_params(int cache_size, int shrinking, double eps, double cost, int probability)
   {
 //		svm_params = new svm_parameter();
 		// default values
@@ -206,7 +216,7 @@ public GPData input;
 		svm_params.eps = eps;//1e-3;
 		svm_params.p = 0.1;
 		svm_params.shrinking = shrinking;
-//		svm_params.probability = 0;
+		svm_params.probability = probability;
 //		svm_params.nr_weight = 0;
 //		svm_params.weight_label = new int[0];
 //		svm_params.weight = new double[0];

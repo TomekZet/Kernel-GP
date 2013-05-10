@@ -3,6 +3,9 @@
  */
 package libsvm;
 
+import libsvm.Solver;
+import libsvm.svm;
+import libsvm.svm_parameter;
 import ec.EvolutionState;
 import ec.Individual;
 import ec.app.kernel_gp.Kernel_GP_problem;

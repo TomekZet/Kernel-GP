@@ -13,13 +13,15 @@ public class Results {
 	public Float accuracy;
 	public Float meanf1;
 	public Float meanMCC;
-	public HashMap<Float, HashMap<String, Float>> counts;
+	public Double meanProbability;
+	public HashMap<Integer, HashMap<String, Float>> counts;
     
     public Results(int nr_classes){
     	accuracy = new Float(0.0f);
     	meanf1 = new Float(0.0f);
     	meanMCC = new Float(0.0f);
-    	counts = new HashMap<Float, HashMap<String, Float>>(nr_classes);
+    	meanProbability = new Double(0.0);
+    	counts = new HashMap<Integer, HashMap<String, Float>>(nr_classes);
     }
     
     public Results(){
@@ -38,6 +40,20 @@ public class Results {
 	 */
 	public void setAccuracy(Float accuracy) {
 		this.accuracy = accuracy;
+	}
+
+	/**
+	 * @return the meanProbability
+	 */
+	public Double getMeanProbability() {
+		return meanProbability;
+	}
+
+	/**
+	 * @param meanProbability the meanProbability to set
+	 */
+	public void setMeanProbability(Double meanProbability) {
+		this.meanProbability = meanProbability;
 	}
 
 	/**
@@ -71,14 +87,14 @@ public class Results {
 	/**
 	 * @return the counts
 	 */
-	public HashMap<Float, HashMap<String, Float>> getCounts() {
+	public HashMap<Integer, HashMap<String, Float>> getCounts() {
 		return counts;
 	}
 
 	/**
 	 * @param counts the counts to set
 	 */
-	public void setCounts(HashMap<Float, HashMap<String, Float>> counts) {
+	public void setCounts(HashMap<Integer, HashMap<String, Float>> counts) {
 		this.counts = counts;
 	}
 }

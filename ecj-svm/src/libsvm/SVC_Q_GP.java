@@ -3,6 +3,11 @@ package libsvm;
 
 import java.util.ArrayList;
 
+import libsvm.Cache;
+import libsvm.Kernel;
+import libsvm.svm_node;
+import libsvm.svm_parameter;
+
 import ec.EvolutionState;
 import ec.Individual;
 import ec.app.kernel_gp.Kernel_GP_problem;

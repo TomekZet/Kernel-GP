@@ -1,4 +1,7 @@
 package libsvm;
+
+import libsvm.svm_node;
+
 public class svm_node implements java.io.Serializable, java.lang.Comparable<svm_node>
 {
 	public int index;

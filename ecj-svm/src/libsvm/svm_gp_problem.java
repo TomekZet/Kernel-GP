@@ -1,5 +1,6 @@
 package libsvm;
 
+import libsvm.svm_problem;
 import ec.EvolutionState;
 import ec.Individual;
 import ec.app.kernel_gp.Kernel_GP_problem;

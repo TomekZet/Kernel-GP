@@ -3,8 +3,8 @@
  */
 package ec.tests;
 
-import libsvm.svm_node;
 import libsvm.SVC_Q_GP;
+import libsvm.svm_node;
 
 import static org.junit.Assert.*;
 

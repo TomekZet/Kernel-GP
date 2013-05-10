@@ -82,8 +82,9 @@ if __name__ == "__main__":
     parser.add_argument('-v', '--percentvalid', help='Percent of validation examples', type=int, default=20)
     parser.add_argument('-t', '--percenttest', help='Percent of test examples', type=int, default=50)
     parser.add_argument('-r', '--percenttrain', help='Percent of train examples', type=int, default=30)
-    parser.add_argument('-f', '--fitness', help='Measure used as fitness: f1, mcc or accuracy', nargs='+', choices=['accuracy', 'f1', 'mcc'], default=['accuracy', 'f1', 'mcc'])
-    
+    parser.add_argument('-f', '--fitness', help='Measure used as fitness: f1, mcc or accuracy', nargs='+', choices=['accuracy', 'f1', 'mcc', 'probability'], default=['probability', 'accuracy', 'f1', 'mcc'])
+    parser.add_argument('--probability', help='Wheter to use probability outputs to calculate fitness or not', action='store_true')
+
 
 
 
@@ -144,16 +145,15 @@ if __name__ == "__main__":
 
     maxsplits = args.splits
 
-    pop_size_min = args.popmin or args.popmax
-    pop_size_max = args.popmax
-    pop_size_step = args.popstep
-    
+
     generations = args.genmax
     
     evalthreads = args.evalthreads or "1"
     breedthreads = args.breedthreads or "1"
     
     fitness_measures = args.fitness or ["accuracy"]
+
+    algorithms = ["kernelgp"]#, "svm_linear", "svm_poly", "svm?_sigmoid", "svm_rbf"]
     
     cache_size = args.cache
     epsilon = args.epsilon
@@ -174,6 +174,7 @@ if __name__ == "__main__":
 
     shrinkings = (1 if args.shrinking else 0,)
 
+    probability = (1 if args.probability or "probability" in fitness_measures else 0,)
 
     def frange(start, stop, step):
         result = start
@@ -190,12 +191,12 @@ if __name__ == "__main__":
     
     ih = []
     for s in range(maxsplits):
-        ih.append("fitness_{0} accuracy_{0} f1_{0} mcc_{0}".format(s))
+        ih.append("fitness_{0} accuracy_{0} f1_{0} mcc_{0} prob_{0}".format(s))
    
     iterative_headings = " ".join(ih)         
     
     if not cont:
-        output.write("N dataset fitness_measure population_size generations cross_validation cv_folds epsilon cache shrinking cost %s mean_fitness mean_accuracy mean_f1 mean_mcc time\n"% iterative_headings)
+        output.write("N dataset algorithm fitness_measure population_size generations cross_validation cv_folds epsilon cache shrinking cost %s mean_fitness mean_accuracy mean_f1 mean_mcc mean_prob time\n"% iterative_headings)
     else:
         output.write("\n")
 
@@ -213,147 +214,171 @@ if __name__ == "__main__":
                                              new=(args.newdata and not cont))
  
         print "Running experiment for {0} dataset".format(dataset)
-        for fitness_measure in fitness_measures:
-            for pop in range(pop_size_min, pop_size_max+1, pop_size_step):
-                for cache_size in cashe_sizes:
-                    for epsilon in epsilons:
-                        for shrinking in shrinkings:
-                            for cost in costs:
-                                if cont and i < continue_from:
-                                    i+=generations
-                                if not cont or i >= continue_from:          
-                                    interval = 0.0;
+        for algorithm in algorithms:
+            if algorithm.startswith("svm_"):
+                pop_size_min = 1
+                pop_size_max = 1
+                pop_size_step = 1
+                fitness_measures_temp = "accuracy"
                 
-                                    mean_fit = 0.0
-                                    mean_acc = 0.0
-                                    mean_f1 = 0.0
-                                    mean_mcc = 0.0
-                                    mean_time = 0.0
-                                                
-                                    print "Pop. size:%d; cache:%d, eps:%f, shrink:%s, cost:%f"%(pop,cache_size,epsilon,shrinking,cost)
-                                                
-                                    results_all_seeds = []
-                                    #splits = max(1, int((2.0/(generations+1))*len(shuffled_datasets)))
-                                    splits = len(shuffled_datasets)
-                                    for k, shuffled_dataset in enumerate(shuffled_datasets):
-                                        results_all_seeds.append([])
-                                        if k >= splits:
-                                            output.write("NaN ")
-                                            output.write("NaN ")
-                                            output.write("NaN ")                                        
-                                            output.write("NaN ")
-                                            continue
-                                        print "\t\tProcessing %s"%(shuffled_dataset)
-                                        shuffled_dataset = os.path.join(os.getcwd(), shuffled_dataset)
-                                        train = shuffled_dataset+".tr"
-                                        train_test = shuffled_dataset+".trtst"
-                                        test = shuffled_dataset+".t"
-                                        validation = shuffled_dataset+".val"
-                
-                                        mystatfilename = '%s.%s.p-%d.g-%d.%d.stat'    % (output_filename,dataset,pop,generations,k)
-                                        statfilename =   '%s.%s.p-%d.g-%d.%d.ecjstat' % (output_filename,dataset,pop,generations,k)
-                
-                
-                                        args_list = [
-                                                'java',
-                                                '-classpath',
-                                                r'bin:lib/ecj',
-                                                '-Xmx%dm'%(java_heap),
-                                                'ec.Evolve',
-                                                '-file', 'src/ec/app/kernel_gp/kernel_gp.params',
-                                                '-p', 'output-file=%s'% mystatfilename,
-                                                '-p', 'stat.file=$%s'% statfilename,
-                                                '-p', 'train-file=%s'% train,
-                                                '-p', 'test-file=%s'% test,
-                                                '-p', 'traintest-file=%s'% train_test,
-                                                '-p', 'validation-file=%s'% validation,
-                                                '-p', 'generations=%d'% generations,
-                                                '-p', 'pop.subpop.0.size=%s'%pop,
-                                                '-p', 'cross-validation=%s'%cv,
-                                                '-p', 'cv-folds=%d' % cv_folds,
-                                                '-p', 'cache_size=%d' % cache_size,
-                                                '-p', 'shrinking=%d' % shrinking,
-                                                '-p', 'epsilon=%f' % epsilon,
-                                                '-p', 'cost=%f' % cost,
-                                                '-p', 'breedthreads=%s' % breedthreads,
-                                                '-p', 'evalthreads=%s' % evalthreads,
-                                                '-p', 'fitness_measure=%s' % fitness_measure
-                                                ]
-                                            
-    #                                    print "\n"+(" ".join(args_list))+"\n"
-                                        start = time.time()
-                    #                    subprocess.call(args_list, stdout=output, stderr=err_output)
-                                        results = subprocess.check_output(args_list, stderr=err_output)
-                                        end = time.time()
-                                        interval = end - start
-                                        results  = results.split()
-                                        for g in range(generations):
-                                            try:
-                                                fitness = results.pop(0)
-                                                accuracy = results.pop(0)
-                                                f1 = results.pop(0)
-                                                mcc = results.pop(0)                                            
-                                            except:
-                                                fitness = 'nan'
-                                                accuracy = 'nan'
-                                                f1 = 'nan'
-                                                mcc = 'nan'
-                                                
-                                            results_all_seeds[k].append({"accuracy":float(accuracy), 
-                                                                         "fitness":float(fitness),
-                                                                         "f1": float(f1),
-                                                                         "mcc": float(mcc)})                                   
-                                                                                      
-                                        print "\t\tTime: %.03f s\t%s:%.03f" % (
-                                               interval, fitness_measure, float(vars()[fitness_measure]))
-                                        mean_time += interval
+            elif algorithm == "kernelgp":
+                fitness_measures_temp = fitness_measures        
+                pop_size_min = args.popmin or args.popmax
+                pop_size_max = args.popmax
+                pop_size_step = args.popstep
     
-                                    mean_time /= splits
-                                        
-                                    for g in range(generations):
-                                        output.write("%d "% i) #row number in output file
-                                        output.write("%s " % dataset) #Dataset name
-                                        output.write("%s " % fitness_measure) #fitness_measure
-                                        output.write("%d " % pop) #population size
-                                        output.write("%d " % (g+1)) #number of generations
-                                        output.write("%s " % cv) # was cross validation  used
-                                        output.write("%d " % cv_folds) # number of cross validation folds
-                                        output.write("%f " % epsilon) # 
-                                        output.write("%d " % cache_size) # n
-                                        output.write("%d " % shrinking) #
-                                        output.write("%f " % cost) # 
-                                        
+            for fitness_measure in fitness_measures_temp:
+                for pop in range(pop_size_min, pop_size_max+1, pop_size_step):
+                    for cache_size in cashe_sizes:
+                        for epsilon in epsilons:
+                            for shrinking in shrinkings:
+                                for cost in costs:
+                                    if cont and i < continue_from:
+                                        i+=generations
+                                    if not cont or i >= continue_from:          
+                                        interval = 0.0;
+                    
                                         mean_fit = 0.0
                                         mean_acc = 0.0
                                         mean_f1 = 0.0
-                                        mean_mcc = 0.0                                    
-                                        
-                                        for no_seed in range(splits):
-                                            output.write("%f " % results_all_seeds[no_seed][g]["fitness"])
-                                            output.write("%f " % results_all_seeds[no_seed][g]["accuracy"])
-                                            output.write("%f " % results_all_seeds[no_seed][g]["f1"])                                                                                                                                                                                                                                                                   
-                                            output.write("%f " % results_all_seeds[no_seed][g]["mcc"])                                                                                                                                                                                                                                                                   
-                                                                                                                                                                                                                                                                                                               
-                                            mean_fit+= results_all_seeds[no_seed][g]["fitness"]
-                                            mean_acc+= results_all_seeds[no_seed][g]["accuracy"]
-                                            mean_f1+= results_all_seeds[no_seed][g]["f1"]
-                                            mean_mcc+= results_all_seeds[no_seed][g]["mcc"]
+                                        mean_mcc = 0.0
+                                        mean_time = 0.0
+                                                    
+                                        print "Pop. size:%d; cache:%d, eps:%f, shrink:%s, cost:%f"%(pop,cache_size,epsilon,shrinking,cost)
+                                                    
+                                        results_all_seeds = []
+                                        #splits = max(1, int((2.0/(generations+1))*len(shuffled_datasets)))
+                                        splits = len(shuffled_datasets)
+                                        for k, shuffled_dataset in enumerate(shuffled_datasets):
+                                            results_all_seeds.append([])
+                                            if k >= splits:
+                                                output.write("NaN ")
+                                                output.write("NaN ")
+                                                output.write("NaN ")                                        
+                                                output.write("NaN ")
+                                                continue
+                                            print "\t\tProcessing %s"%(shuffled_dataset)
+                                            shuffled_dataset = os.path.join(os.getcwd(), shuffled_dataset)
+                                            train = shuffled_dataset+".tr"
+                                            train_test = shuffled_dataset+".trtst"
+                                            test = shuffled_dataset+".t"
+                                            validation = shuffled_dataset+".val"
+                    
+                                            mystatfilename = '%s.%s.p-%d.g-%d.%d.stat'    % (output_filename,dataset,pop,generations,k)
+                                            statfilename =   '%s.%s.p-%d.g-%d.%d.ecjstat' % (output_filename,dataset,pop,generations,k)
+                    
+                    
+                                            args_list = [
+                                                    'java',
+                                                    '-classpath',
+                                                    r'bin:lib/ecj',
+                                                    '-Xmx%dm'%(java_heap),
+                                                    'ec.Evolve',
+                                                    '-file', 'src/ec/app/kernel_gp/kernel_gp.params',
+                                                    '-p', 'output-file=%s'% mystatfilename,
+                                                    '-p', 'stat.file=$%s'% statfilename,
+                                                    '-p', 'train-file=%s'% train,
+                                                    '-p', 'test-file=%s'% test,
+                                                    '-p', 'traintest-file=%s'% train_test,
+                                                    '-p', 'validation-file=%s'% validation,
+                                                    '-p', 'generations=%d'% generations,
+                                                    '-p', 'pop.subpop.0.size=%s'%pop,
+                                                    '-p', 'cross-validation=%s'%cv,
+                                                    '-p', 'cv-folds=%d' % cv_folds,
+                                                    '-p', 'cache_size=%d' % cache_size,
+                                                    '-p', 'shrinking=%d' % shrinking,
+                                                    '-p', 'epsilon=%f' % epsilon,
+                                                    '-p', 'cost=%f' % cost,
+                                                    '-p', 'breedthreads=%s' % breedthreads,
+                                                    '-p', 'evalthreads=%s' % evalthreads,
+                                                    '-p', 'fitness_measure=%s' % fitness_measure,
+                                                    '-p', 'probability=%s' % probability,
+                                                    '-p', 'algorithm=%s' % algorithm                                                    
+                                                    ]
+                                                
+        #                                    print "\n"+(" ".join(args_list))+"\n"
+                                            start = time.time()
+                        #                    subprocess.call(args_list, stdout=output, stderr=err_output)
+                                            results = subprocess.check_output(args_list, stderr=err_output)
+                                            end = time.time()
+                                            interval = end - start
+                                            results  = results.split()
+                                            for g in range(generations):
+                                                try:
+                                                    fitness = results.pop(0)
+                                                    accuracy = results.pop(0)
+                                                    f1 = results.pop(0)
+                                                    mcc = results.pop(0)
+                                                    probability = results.pop(0)                                            
+                                                except:
+                                                    fitness = 'nan'
+                                                    accuracy = 'nan'
+                                                    f1 = 'nan'
+                                                    mcc = 'nan'
+                                                    probability = 'nan'
+                                                    
+                                                results_all_seeds[k].append({"accuracy":float(accuracy), 
+                                                                             "fitness":float(fitness),
+                                                                             "f1": float(f1),
+                                                                             "mcc": float(mcc),
+                                                                             "probability": float(probability)})                                   
+                                                                                          
+                                            print "\t\tTime: %.03f s\t%s:%.03f" % (
+                                                   interval, fitness_measure, float(vars()[fitness_measure]))
+                                            mean_time += interval
+        
+                                        mean_time /= splits
                                             
-                                        mean_fit /= splits
-                                        mean_acc /= splits
-                                        mean_f1 /= splits
-                                        mean_mcc /= splits
+                                        for g in range(generations):
+                                            output.write("%d "% i) #row number in output file
+                                            output.write("%s " % dataset) #Dataset name
+                                            output.write("%s " % algorithm) #algorithm
+                                            output.write("%s " % fitness_measure) #fitness_measure
+                                            output.write("%d " % pop) #population size
+                                            output.write("%d " % (g+1)) #number of generations
+                                            output.write("%s " % cv) # was cross validation  used
+                                            output.write("%d " % cv_folds) # number of cross validation folds
+                                            output.write("%f " % epsilon) # 
+                                            output.write("%d " % cache_size) # n
+                                            output.write("%d " % shrinking) #
+                                            output.write("%f " % cost) # 
+                                            
+                                            mean_fit = 0.0
+                                            mean_acc = 0.0
+                                            mean_f1 = 0.0
+                                            mean_mcc = 0.0       
+                                            mean_probability = 0.0                             
+                                            
+                                            for no_seed in range(splits):
+                                                output.write("%f " % results_all_seeds[no_seed][g]["fitness"])
+                                                output.write("%f " % results_all_seeds[no_seed][g]["accuracy"])
+                                                output.write("%f " % results_all_seeds[no_seed][g]["f1"])                                                                                                                                                                                                                                                                   
+                                                output.write("%f " % results_all_seeds[no_seed][g]["mcc"])
+                                                output.write("%f " % results_all_seeds[no_seed][g]["probability"])                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                   
+                                                mean_fit+= results_all_seeds[no_seed][g]["fitness"]
+                                                mean_acc+= results_all_seeds[no_seed][g]["accuracy"]
+                                                mean_f1+= results_all_seeds[no_seed][g]["f1"]
+                                                mean_mcc+= results_all_seeds[no_seed][g]["mcc"]
+                                                mean_probability+= results_all_seeds[no_seed][g]["probability"]
+                                                
+                                            mean_fit /= splits
+                                            mean_acc /= splits
+                                            mean_f1 /= splits
+                                            mean_mcc /= splits
+                                            mean_probability /= splits
+                                            
+                                            output.write("%f " % (mean_fit)) # mean fitness
+                                            output.write("%f " % (mean_acc)) # mean accuracy
+                                            output.write("%f " % (mean_f1)) # mean f1
+                                            output.write("%f " % (mean_mcc)) # mean mcc
+                                            output.write("%f " % (mean_probability)) # mean mcc
+                                            output.write("%f\n" % mean_time) # execution time
+                                            output.flush()
+                                            i+=1
                                         
-                                        output.write("%f " % (mean_fit)) # mean fitness
-                                        output.write("%f " % (mean_acc)) # mean accuracy
-                                        output.write("%f " % (mean_f1)) # mean f1
-                                        output.write("%f " % (mean_mcc)) # mean mcc
-                                        output.write("%f\n" % mean_time) # execution time
-                                        output.flush()
-                                        i+=1
-                                    
-                                    print "\tAvg.time: %.03f s\tAvg.accuracy: %.03f\tAvg.f1: %.03f\tAvg.mcc: %.03f" % (
-                                            mean_time, mean_acc, mean_f1, mean_mcc)
+                                        print "\tAvg.time: %.03f s\tAvg.accuracy: %.03f\tAvg.f1: %.03f\tAvg.mcc: %.03f\tAvg.prob.: %.03f" % (
+                                                mean_time, mean_acc, mean_f1, mean_mcc, mean_probability)
 
     output.close()
     if not args.errors:

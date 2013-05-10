@@ -1,5 +1,7 @@
 package libsvm;
 
+import libsvm.svm_node;
+
 
 public class svm_problem implements java.io.Serializable
 {
