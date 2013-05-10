@@ -9,19 +9,18 @@ import ec.gp.ADFStack;
 import ec.gp.GPData;
 import ec.gp.GPIndividual;
 import ec.gp.GPNode;
-
-
 /**
- * The Log kernel seems to be particularly interesting for images,
- *  but is only conditionally positive definite.
+ * The Generalized T-Student Kernel has been proven to be a Mercel Kernel, 
+ * thus having a positive semi-definite Kernel matrix (Boughorbel, 2004).
+ *  It is given by: 1 / ( 1 + ||x - y||^d
  * @author tomek
  *
  */
-public class Log extends GPNode {
+public class TStudent extends GPNode {
 
 	@Override
 	public String toString() {
-		return "Log";
+		return "TStudent";
 	}
 
 	@Override
@@ -35,7 +34,7 @@ public class Log extends GPNode {
 		children[0].eval(state,thread,data,stack,individual,problem);
 		double d = data.val;		
 		
-		data.val = - Math.log(Math.pow(SVC_Q_GP.magnitude(SVC_Q_GP.vector_difference(x, y)), d) +1);
+		data.val = 1 / (1 + Math.pow(SVC_Q_GP.magnitude(SVC_Q_GP.vector_difference(x, y)), d));
 
 	}
 

@@ -237,7 +237,7 @@ gp.fs.size = 1
 
 gp.fs.0 = ec.gp.GPFunctionSet
 gp.fs.0.name = f0
-gp.fs.0.size = 13
+gp.fs.0.size = 17
 
 
 ###Terminals
@@ -275,6 +275,7 @@ gp.fs.0.func.6.nc = nc_k-combination1
 gp.fs.0.func.7 = ec.app.kernel_gp.operators.aMul
 gp.fs.0.func.7.nc = nc_k-combination-c
 
+
 ###Standard Kernels
 #Polynomial - standard kernel function  
 gp.fs.0.func.8 = ec.app.kernel_gp.kernels.Poly
@@ -295,4 +296,20 @@ gp.fs.0.func.11.nc = nc_kernel_0
 #Logarithmic - standard kernel function
 gp.fs.0.func.12 = ec.app.kernel_gp.kernels.Log
 gp.fs.0.func.12.nc = nc_kernel_1
+
+#Cauchy - standard kernel function 
+gp.fs.0.func.13 = ec.app.kernel_gp.kernels.Cauchy
+gp.fs.0.func.13.nc = nc_kernel_1
+
+#Expotential - standard kernel function 
+gp.fs.0.func.14 = ec.app.kernel_gp.kernels.Expotential
+gp.fs.0.func.14.nc = nc_kernel_1
+
+#Power - standard kernel function  
+gp.fs.0.func.15 = ec.app.kernel_gp.kernels.Power
+gp.fs.0.func.15.nc = nc_kernel_1
+
+#TStudent - standard kernel function  
+gp.fs.0.func.16 = ec.app.kernel_gp.kernels.TStudent
+gp.fs.0.func.16.nc = nc_kernel_1
 

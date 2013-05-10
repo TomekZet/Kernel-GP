@@ -9,19 +9,19 @@ import ec.gp.ADFStack;
 import ec.gp.GPData;
 import ec.gp.GPIndividual;
 import ec.gp.GPNode;
-
-
 /**
- * The Log kernel seems to be particularly interesting for images,
- *  but is only conditionally positive definite.
+ * Power kernel is also known as the (unrectified) triangular kernel.
+ * It is an example of scale-invariant kernel (Sahbi and Fleuret, 2004) 
+ * and is also only conditionally positive definite.
+ * http://hal.archives-ouvertes.fr/docs/00/07/19/84/PDF/RR-4601.pdf
  * @author tomek
  *
  */
-public class Log extends GPNode {
+public class Power extends GPNode {
 
 	@Override
 	public String toString() {
-		return "Log";
+		return "Power";
 	}
 
 	@Override
@@ -35,7 +35,7 @@ public class Log extends GPNode {
 		children[0].eval(state,thread,data,stack,individual,problem);
 		double d = data.val;		
 		
-		data.val = - Math.log(Math.pow(SVC_Q_GP.magnitude(SVC_Q_GP.vector_difference(x, y)), d) +1);
+		data.val = - Math.pow(SVC_Q_GP.magnitude(SVC_Q_GP.vector_difference(x, y)), d);
 
 	}
 

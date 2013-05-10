@@ -11,21 +11,17 @@ import ec.gp.GPNode;
 
 
 /**
- * Gaussian Kernel
- * The adjustable parameter sigma plays a major role in the performance of the kernel,
- *  and should be carefully tuned to the problem at hand. If overestimated, 
- *  the exponential will behave almost linearly and the higher-dimensional 
- *  projection will start to lose its non-linear power. In the other hand, 
- *  if underestimated, the function will lack regularization and the decision 
- *  boundary will be highly sensitive to noise in training data.
+ * The Cauchy kernel comes from the Cauchy distribution (Basak, 2008). 
+ * It is a long-tailed kernel and can be used to give long-range influence 
+ * and sensitivity over the high dimension space.
  * @author tomek
  *
  */
-public class RBF extends GPNode {
+public class Cauchy extends GPNode {
 
 	@Override
 	public String toString() {
-		return "RBF";
+		return "Cauchy";
 	}
 
 	@Override
@@ -85,7 +81,8 @@ public class RBF extends GPNode {
 
 		children[0].eval(state,thread,data,stack,individual,problem);
 		double gamma = data.val;
+		//double sigma = 1 / Math.sqrt(1/(2*gamma));
 
-		data.val =	Math.exp(-gamma*sum);
+		data.val =	1.0 / (1.0 + sum * Math.sqrt(2*gamma));
 	}
 }

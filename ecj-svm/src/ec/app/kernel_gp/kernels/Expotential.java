@@ -12,31 +12,34 @@ import ec.gp.GPNode;
 
 
 /**
- * The Log kernel seems to be particularly interesting for images,
- *  but is only conditionally positive definite.
+ * The exponential kernel is closely related to the Gaussian kernel,
+ *  with only the square of the norm left out. 
+ * It is also a radial basis function kernel.
+ *  It is important to note that the observations made about the sigma 
+ *  parameter for the Gaussian kernel also apply to the Expotential kernel.
  * @author tomek
  *
  */
-public class Log extends GPNode {
+public class Expotential extends GPNode {
 
 	@Override
 	public String toString() {
-		return "Log";
+		return "Expotential";
 	}
 
 	@Override
 	public void eval(EvolutionState state, int thread, GPData input,
 			ADFStack stack, GPIndividual individual, Problem problem) {
+
 		SVMData data = (SVMData)input;
 		
         svm_node[] x = data.X;
       	svm_node[] y = data.Y;		   
 		
-		children[0].eval(state,thread,data,stack,individual,problem);
-		double d = data.val;		
+      	children[0].eval(state,thread,data,stack,individual,problem);
+		double gamma = data.val;	
 		
-		data.val = - Math.log(Math.pow(SVC_Q_GP.magnitude(SVC_Q_GP.vector_difference(x, y)), d) +1);
+		data.val = Math.exp(-gamma * SVC_Q_GP.magnitude(SVC_Q_GP.vector_difference(x, y)));
 
 	}
-
 }
