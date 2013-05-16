@@ -77,7 +77,8 @@ public class KozaStatisticsGP extends KozaStatistics {
     	((svm_gp_problem)svm_probl_train_test).input = new SVMData();
     	((svm_gp_problem)svm_probl_validation).input = new SVMData();
     	
-		Kernel_GP_problem.set_svm_params(250, 1, 0.001, 1, 1);
+//		//TODO: use thesame parameters as in training 
+//    	Kernel_GP_problem.set_svm_params(250, 1, 0.001, 1, 1);
 
 		//train libsvm once again using the best individual and both train+test datasets as training dataset    	
     	svm_model model = svm.svm_train(svm_probl_train_test, Kernel_GP_problem.svm_params);

@@ -185,16 +185,16 @@ abstract class Kernel extends QMatrix {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		switch(kernel_type)
+		switch(getKernel_type())
 		{
 			case svm_parameter.LINEAR:
 				return dot(x[i],x[j]);
 			case svm_parameter.POLY:
-				return powi(gamma*dot(x[i],x[j])+coef0,degree);
+				return powi(getGamma()*dot(x[i],x[j])+getCoef0(),getDegree());
 			case svm_parameter.RBF:
-				return Math.exp(-gamma*(x_square[i]+x_square[j]-2*dot(x[i],x[j])));
+				return Math.exp(-getGamma()*(x_square[i]+x_square[j]-2*dot(x[i],x[j])));
 			case svm_parameter.SIGMOID:
-				return Math.tanh(gamma*dot(x[i],x[j])+coef0);
+				return Math.tanh(getGamma()*dot(x[i],x[j])+getCoef0());
 			case svm_parameter.PRECOMPUTED:
 				return x[i][(int)(x[j][0].value)].value;
 			default:
@@ -211,7 +211,11 @@ abstract class Kernel extends QMatrix {
 
 		x = (svm_node[][])x_.clone();
 
-		if(kernel_type == svm_parameter.RBF)
+		Integer[] square_kernels = {svm_parameter.RBF, svm_parameter.GPKERNEL};
+		List<Integer> square_kernels_l = Arrays.asList(square_kernels);
+		
+		if(getKernel_type() == svm_parameter.RBF ||
+			getKernel_type() == svm_parameter.GPKERNEL)
 		{
 			x_square = new double[l];
 			for(int i=0;i<l;i++)
@@ -240,6 +244,18 @@ abstract class Kernel extends QMatrix {
 			}
 		}
 		return sum;
+	}
+	public int getKernel_type() {
+		return kernel_type;
+	}
+	public double getGamma() {
+		return gamma;
+	}
+	public int getDegree() {
+		return degree;
+	}
+	public double getCoef0() {
+		return coef0;
 	}
 
 	

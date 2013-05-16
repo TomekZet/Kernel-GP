@@ -167,7 +167,7 @@ public class SVC_Q_GP extends Kernel {
 		return result.toArray(new svm_node[result.size()]);
 	}
 	
-	double kernel_function(int i, int j)
+	double kernel_function_gp(int i, int j)
 	{
 		((SVMData)input).X = x[i];
 		((SVMData)input).Y = x[j];
@@ -176,17 +176,39 @@ public class SVC_Q_GP extends Kernel {
 		((GPIndividual)ind).trees[0].child.eval(state,threadnum,input,stack,((GPIndividual)ind),problem);
 		SVMData data = (SVMData)input;
 		
-        return data.val;
+        return data.val;		
 	}
+	
 
+	double kernel_function(int i, int j)
+	{
+		switch(getKernel_type())
+		{
+			case svm_parameter.LINEAR:
+				return dot(x[i],x[j]);
+			case svm_parameter.POLY:
+				return powi(getGamma()*dot(x[i],x[j])+getCoef0(),getDegree());
+			case svm_parameter.RBF:
+				return Math.exp(-getGamma()*(x_square[i]+x_square[j]-2*dot(x[i],x[j])));
+			case svm_parameter.SIGMOID:
+				return Math.tanh(getGamma()*dot(x[i],x[j])+getCoef0());
+			case svm_parameter.PRECOMPUTED:
+				return x[i][(int)(x[j][0].value)].value;
+			case svm_parameter.GPKERNEL:
+				return kernel_function_gp(i, j);
+			default:
+				return 0;	// java
+		}
+	}
+	
+	
 	static double k_function(svm_node[] x, svm_node[] y,
 			svm_parameter param, svm_gp_problem prob)
 	{					
-//		EvolutionState state = ((svm_gp_problem)prob).state;
-//		int threadnum = ((svm_gp_problem)prob).threadnum;
-//		Kernel_GP_problem problem = ((svm_gp_problem)prob).problem;
-//		SVMData input = (SVMData) ((svm_gp_problem)prob).input;
-//		ADFStack stack = ((svm_gp_problem)prob).stack;
+		
+		if (param.kernel_type != svm_parameter.GPKERNEL)
+			return k_function(x, y, param);
+		
 		EvolutionState state = null;
 		int threadnum = 0;
 		Kernel_GP_problem problem = null;
@@ -196,13 +218,73 @@ public class SVC_Q_GP extends Kernel {
 		SVMData input = (SVMData) prob.input;
 		input.X = x;
 		input.Y = y;
-		input.X2 = -1.0; //If there is RBF function it will compute squaes on its own
+		input.X2 = -1.0; //If there is RBF function it will compute squares on its own
 		input.Y2 = -1.0;
-				
+		
 		((GPIndividual)ind).trees[0].child.eval(state,threadnum,input,stack,((GPIndividual)ind),problem);
 		
-        return input.val;
+		return input.val;
 	}
+	
+	
+	static double k_function(svm_node[] x, svm_node[] y,
+			svm_parameter param)
+	{
+	switch(param.kernel_type)
+		{
+			case svm_parameter.LINEAR:
+				return dot(x,y);
+			case svm_parameter.POLY:
+				return powi(param.gamma*dot(x,y)+param.coef0,param.degree);
+			case svm_parameter.RBF:
+			{
+				double sum = 0;
+				int xlen = x.length;
+				int ylen = y.length;
+				int i = 0;
+				int j = 0;
+				while(i < xlen && j < ylen)
+				{
+					if(x[i].index == y[j].index)
+					{
+						double d = x[i++].value - y[j++].value;
+						sum += d*d;
+					}
+					else if(x[i].index > y[j].index)
+					{
+						sum += y[j].value * y[j].value;
+						++j;
+					}
+					else
+					{
+						sum += x[i].value * x[i].value;
+						++i;
+					}
+				}
+		
+				while(i < xlen)
+				{
+					sum += x[i].value * x[i].value;
+					++i;
+				}
+		
+				while(j < ylen)
+				{
+					sum += y[j].value * y[j].value;
+					++j;
+				}
+		
+				return Math.exp(-param.gamma*sum);
+			}
+			case svm_parameter.SIGMOID:
+				return Math.tanh(param.gamma*dot(x,y)+param.coef0);
+			case svm_parameter.PRECOMPUTED:
+				return	x[(int)(y[0].value)].value;
+			default:
+				return 0;	// java
+		}
+	}
+	
 }
 
 
