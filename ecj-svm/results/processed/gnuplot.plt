@@ -224,142 +224,204 @@ svm_vowel(n) = word(svm_vowels,n)
 # unset output
 #
 
-fitnesses = "accuracy f1 mcc"
+#fitnesses = "accuracy f1 mcc"
 
-files = "iris.dat"
-generations = "1 3 5 7"
-set output "pdf/accuracy-iris.pdf"
- plot for [g in generations] 'grouped/iris.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
- unset output
+#files = "iris.dat"
+#generations = "1 3 5 7"
+#set output "pdf/accuracy-iris.pdf"
+ #plot for [g in generations] 'grouped/iris.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
+ #unset output
 
-set output "pdf/accuracy-iris-detailed.pdf"
- plot for [g in generations] 'grouped/iris.detailed.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
- unset output
+#set output "pdf/accuracy-iris-detailed.pdf"
+ #plot for [g in generations] 'grouped/iris.detailed.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
+ #unset output
 
-#set yrange[0.95:1.05]
-set ylabel "Fitness"
-set output "pdf/fitness-iris-detailed.pdf"
- plot for [g in generations] 'grouped/iris.detailed.dat.generations-'.g.'.dat' using 1:17:20:xticlabels(3) with yerrorlines title ''.g.' generations'
- unset output
-set ylabel "Accuracy"
-#set yrange [ * : * ] noreverse nowriteback  # (currently [10.0000:100.000] )
+##set yrange[0.95:1.05]
+#set ylabel "Fitness"
+#set output "pdf/fitness-iris-detailed.pdf"
+ #plot for [g in generations] 'grouped/iris.detailed.dat.generations-'.g.'.dat' using 1:17:20:xticlabels(3) with yerrorlines title ''.g.' generations'
+ #unset output
+#set ylabel "Accuracy"
+##set yrange [ * : * ] noreverse nowriteback  # (currently [10.0000:100.000] )
 
-set output "pdf/accuracy-iris-svm.pdf"
-plot for [g in generations] 'grouped/iris.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations', for [i=2:5] 'libsvm/iris.avg.dat' using 1:i with lines title columnheader
- unset output
-
-
-set output "pdf/accuracy-dna.pdf"
- plot for [g in generations] 'grouped/dna.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
-unset output
-
-set output "pdf/accuracy-dna-detailed.pdf"
- plot for [g in generations] 'grouped/dna.detailed.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
-unset output
-
-set output "pdf/accuracy-dna-svm.pdf"
- plot for [g in generations] 'grouped/dna.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations', 93.086003372681 title "svm linear", 50.843170320404 title "svm polynomial", 94.5193929173693 title "svm RBF",  93.76053962900505 title "svm sigmoid"
-unset output
+#set output "pdf/accuracy-iris-svm.pdf"
+#plot for [g in generations] 'grouped/iris.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations', for [i=2:5] 'libsvm/iris.avg.dat' using 1:i with lines title columnheader
+ #unset output
 
 
+#set output "pdf/accuracy-dna.pdf"
+ #plot for [g in generations] 'grouped/dna.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
+#unset output
 
-set output "pdf/accuracy-vowel.pdf"
- plot for [g in generations] 'grouped/vowel.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
- unset output
+#set output "pdf/accuracy-dna-detailed.pdf"
+ #plot for [g in generations] 'grouped/dna.detailed.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
+#unset output
 
-set output "pdf/accuracy-vowel-detailed.pdf"
- plot for [g in generations] 'grouped/vowel.detailed.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
- unset output
-
-set ylabel "Fitness"
-set output "pdf/fitness-vowel-detailed.pdf"
- plot for [g in generations] 'grouped/vowel.detailed.dat.generations-'.g.'.dat' using 1:17:20:xticlabels(3) with yerrorlines title ''.g.' generations'
- unset output
-set ylabel "Accuracy"
-
-set output "pdf/accuracy-vowel-svm.pdf"
-# plot for [g in generations] 'grouped/vowel.dat.generations-'.g.'.dat' using 1:18:xticlabels(3) with linespoints title ''.g.' generations', 49.78354978354979 title "svm linear", 12.554112554112553 title "svm polynomial", 51.298701298701296 title "svm RBF",  43.290043290043286 title "svm sigmoid"
-plot for [g in generations] 'grouped/vowel.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations', for [i=2:5] 'libsvm/vowel.avg.dat' using 1:i with lines title columnheader
- unset output
-
-generations = "1 3 5"
-set output "pdf/accuracy-letter.pdf"
- plot for [g in generations] 'grouped/letter.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
- unset output
-
-set output "pdf/accuracy-letter-detailed.pdf"
- plot for [g in generations] 'grouped/letter.detailed.dat.generations-'.g.'.dat' using 1:18:xticlabels(3) with linespoints title ''.g.' generations'
- unset output
-
-set output "pdf/accuracy-letter-svm.pdf"
-plot for [g in generations] 'grouped/letter.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations', for [i=2:5] 'libsvm/letter.avg.dat' using 1:i with lines title columnheader
- unset output
+#set output "pdf/accuracy-dna-svm.pdf"
+ #plot for [g in generations] 'grouped/dna.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations', 93.086003372681 title "svm linear", 50.843170320404 title "svm polynomial", 94.5193929173693 title "svm RBF",  93.76053962900505 title "svm sigmoid"
+#unset output
 
 
-set xlabel "Generations number"
+
+#set output "pdf/accuracy-vowel.pdf"
+ #plot for [g in generations] 'grouped/vowel.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
+ #unset output
+
+#set output "pdf/accuracy-vowel-detailed.pdf"
+ #plot for [g in generations] 'grouped/vowel.detailed.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
+ #unset output
+
+#set ylabel "Fitness"
+#set output "pdf/fitness-vowel-detailed.pdf"
+ #plot for [g in generations] 'grouped/vowel.detailed.dat.generations-'.g.'.dat' using 1:17:20:xticlabels(3) with yerrorlines title ''.g.' generations'
+ #unset output
+#set ylabel "Accuracy"
+
+#set output "pdf/accuracy-vowel-svm.pdf"
+## plot for [g in generations] 'grouped/vowel.dat.generations-'.g.'.dat' using 1:18:xticlabels(3) with linespoints title ''.g.' generations', 49.78354978354979 title "svm linear", 12.554112554112553 title "svm polynomial", 51.298701298701296 title "svm RBF",  43.290043290043286 title "svm sigmoid"
+#plot for [g in generations] 'grouped/vowel.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations', for [i=2:5] 'libsvm/vowel.avg.dat' using 1:i with lines title columnheader
+ #unset output
+
+#generations = "1 3 5"
+#set output "pdf/accuracy-letter.pdf"
+ #plot for [g in generations] 'grouped/letter.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations'
+ #unset output
+
+#set output "pdf/accuracy-letter-detailed.pdf"
+ #plot for [g in generations] 'grouped/letter.detailed.dat.generations-'.g.'.dat' using 1:18:xticlabels(3) with linespoints title ''.g.' generations'
+ #unset output
+
+#set output "pdf/accuracy-letter-svm.pdf"
+#plot for [g in generations] 'grouped/letter.dat.generations-'.g.'.dat' using 1:18:19:xticlabels(3) with yerrorlines title ''.g.' generations', for [i=2:5] 'libsvm/letter.avg.dat' using 1:i with lines title columnheader
+ #unset output
+
+
+set xlabel "Number of generations"
 
 population_size = "1 51 101"
 
+
+
+###################################
+########### Accuracy ##############
+###################################
+
 set ylabel "Accuracy"
 set output "pdf/accuracy-heart.pdf"
- plot for [p in population_size] 'grouped/heart.scale.dat.fitness_measure-accuracy.dat.population_size-'.p.'.dat' using "N":"mean_accuracy":xticlabels(5) title 'Population size '.p
+ plot 'grouped/result.dataset-heart.scale.fitness_measure-accuracy.dat' using "N":"mean_accuracy":xticlabels(6) title "GP Kernel",\
+ 'libsvm/result.dataset-heart.scale.kernel-sigmoid.dat' using (0):"mean_accuracy":(50):(0) with vector nohead title "Sigmoid",\
+ 'libsvm/result.dataset-heart.scale.kernel-rbf.dat' using (0):"mean_accuracy":(50):(0) with vector nohead title "RBF",\
+ 'libsvm/result.dataset-heart.scale.kernel-poly.dat' using (0):"mean_accuracy":(50):(0) with vector nohead title "Poly" 
+ #'grouped/new_proportions.dat.result.dataset-heart.scale.fitness_measure-accuracy.dat' using "N":"mean_accuracy":xticlabels(6) title "GP Kernel 50/50",\
  unset output
 
 set output "pdf/accuracy-breast.pdf"
- plot for [p in population_size] 'grouped/breast.scale.dat.fitness_measure-accuracy.dat.population_size-'.p.'.dat' using "N":"mean_accuracy":xticlabels(5) title 'Population size '.p
+ plot 'grouped/result.dataset-breast.scale.fitness_measure-accuracy.dat' using "N":"mean_accuracy":xticlabels(6) ,\
+ 'libsvm/result.dataset-breast.scale.kernel-sigmoid.dat' using (0):"mean_accuracy":(50):(0) with vector nohead title "Sigmoid",\
+ 'libsvm/result.dataset-breast.scale.kernel-rbf.dat' using (0):"mean_accuracy":(50):(0) with vector nohead title "RBF",\
+ 'libsvm/result.dataset-breast.scale.kernel-poly.dat' using (0):"mean_accuracy":(50):(0) with vector nohead title "Poly"
  unset output
 
 #set output "pdf/accuracy-dna.pdf"
-# plot for [p in population_size] 'grouped/dna.scale.dat.fitness_measure-accuracy.dat.population_size-'.p.'.dat' using "N":"mean_accuracy":xticlabels(5) title 'Population size '.p
+# plot for [p in population_size] 'grouped/dna.scale.dat.fitness_measure-accuracy.dat.population_size-'.p.'.dat' using "N":"mean_accuracy":xticlabels(5) 
 # unset output
 
 
+
+###################################
+########## F1 meassure ############
+###################################
 set ylabel "F1"
 set output "pdf/f1-heart.pdf"
- plot for [p in population_size] 'grouped/heart.scale.dat.fitness_measure-f1.dat.population_size-'.p.'.dat' using "N":"mean_f1":xticlabels(5) title 'Population size '.p
+ plot 'grouped/result.dataset-heart.scale.fitness_measure-f1.dat' using "N":"mean_f1":xticlabels(6) title "GP Kernel",\
+ 'libsvm/result.dataset-heart.scale.kernel-sigmoid.dat' using (0):"mean_f1":(50):(0) with vector nohead title "Sigmoid",\
+ 'libsvm/result.dataset-heart.scale.kernel-rbf.dat' using (0):"mean_f1":(50):(0) with vector nohead title "RBF",\
+ 'libsvm/result.dataset-heart.scale.kernel-poly.dat' using (0):"mean_f1":(50):(0) with vector nohead title "Poly" 
+ #'grouped/new_proportions.dat.result.dataset-heart.scale.fitness_measure-f1.dat' using "N":"mean_f1":xticlabels(6) title "GP Kernel 50/50",\
  unset output
 
+
 set output "pdf/f1-breast.pdf"
- plot for [p in population_size] 'grouped/breast.scale.dat.fitness_measure-f1.dat.population_size-'.p.'.dat' using "N":"mean_f1":xticlabels(5) title 'Population size '.p
+ plot 'grouped/result.dataset-breast.scale.fitness_measure-f1.dat' using "N":"mean_f1":xticlabels(6) ,\
+ 'libsvm/result.dataset-breast.scale.kernel-sigmoid.dat' using (0):"mean_f1":(50):(0) with vector nohead title "Sigmoid",\
+ 'libsvm/result.dataset-breast.scale.kernel-rbf.dat' using (0):"mean_f1":(50):(0) with vector nohead title "RBF",\
+ 'libsvm/result.dataset-breast.scale.kernel-poly.dat' using (0):"mean_f1":(50):(0) with vector nohead title "Poly"
  unset output
 
 #set output "pdf/f1-dna.pdf"
-# plot for [p in population_size] 'grouped/dna.scale.dat.fitness_measure-f1.dat.population_size-'.p.'.dat' using "N":"mean_f1":xticlabels(5) title 'Population size '.p
+# plot for [p in population_size] 'grouped/dna.scale.dat.fitness_measure-f1.dat.population_size-'.p.'.dat' using "N":"mean_f1":xticlabels(5) 
 # unset output
 
+
+
+###################################
+#### Mathews Corelation Coef ######
+###################################
 
 set ylabel "Mathews Corelation Coef."
 set output "pdf/mcc-heart.pdf"
- plot for [p in population_size] 'grouped/heart.scale.dat.fitness_measure-mcc.dat.population_size-'.p.'.dat' using "N":"mean_mcc":xticlabels(5) title 'Population size '.p
+ plot 'grouped/result.dataset-heart.scale.fitness_measure-mcc.dat' using "N":"mean_mcc":xticlabels(6) ,\
+ 'libsvm/result.dataset-heart.scale.kernel-sigmoid.dat' using (0):"mean_mcc":(50):(0) with vector nohead title "Sigmoid",\
+ 'libsvm/result.dataset-heart.scale.kernel-rbf.dat' using (0):"mean_mcc":(50):(0) with vector nohead title "RBF",\
+ 'libsvm/result.dataset-heart.scale.kernel-poly.dat' using (0):"mean_mcc":(50):(0) with vector nohead title "Poly" 
  unset output
+
 
 set output "pdf/mcc-breast.pdf"
- plot for [p in population_size] 'grouped/breast.scale.dat.fitness_measure-mcc.dat.population_size-'.p.'.dat' using "N":"mean_mcc":xticlabels(5) title 'Population size '.p
- unset output
+ plot 'grouped/result.dataset-breast.scale.fitness_measure-mcc.dat' using "N":"mean_mcc":xticlabels(6),\
+ 'libsvm/result.dataset-breast.scale.kernel-sigmoid.dat' using (0):"mean_mcc":(50):(0) with vector nohead title "Sigmoid",\
+ 'libsvm/result.dataset-breast.scale.kernel-rbf.dat' using (0):"mean_mcc":(50):(0) with vector nohead title "RBF",\
+ 'libsvm/result.dataset-breast.scale.kernel-poly.dat' using (0):"mean_mcc":(50):(0) with vector nohead title "Poly" 
+unset output
 
 #set output "pdf/mcc-dna.pdf"
-# plot for [p in population_size] 'grouped/dna.scale.dat.fitness_measure-mcc.dat.population_size-'.p.'.dat' using "N":"mean_mcc":xticlabels(5) title 'Population size '.p
+# plot for [p in population_size] 'grouped/dna.scale.dat.fitness_measure-mcc.dat.population_size-'.p.'.dat' using "N":"mean_mcc":xticlabels(5) 
 # unset output
 
-#fitnesses = "accuracy f1"
-#set output "pdf/fitness-dna.pdf"
-# plot for [f in fitnesses] 'grouped/dna.scale.dat.fitness_measure-'.f.'.dat.population_size-101.dat' using "N":"mean_fitness":xticlabels(5) title 'Fitness measure: '.f
-#unset output
 
+
+###################################
+########## Probability ############
+###################################
+
+set ylabel "Mean Probability"
+set output "pdf/probability-heart.pdf"
+ plot 'grouped/result.dataset-heart.scale.fitness_measure-probability.dat' using "N":"mean_prob":xticlabels(6) title "GP Kernel",\
+ 'libsvm/result.dataset-heart.scale.kernel-sigmoid.dat' using (0):"mean_prob":(50):(0) with vector nohead title "Sigmoid",\
+ 'libsvm/result.dataset-heart.scale.kernel-rbf.dat' using (0):"mean_prob":(50):(0) with vector nohead title "RBF",\
+ 'libsvm/result.dataset-heart.scale.kernel-poly.dat' using (0):"mean_prob":(50):(0) with vector nohead title "Poly" 
+  #'grouped/new_proportions.dat.result.dataset-heart.scale.fitness_measure-probability.dat' using "N":"mean_prob":xticlabels(6) title "GP Kernel 50/50",\
+ unset output
+
+set output "pdf/probability-breast.pdf"
+ plot 'grouped/result.dataset-breast.scale.fitness_measure-probability.dat' using "N":"mean_prob":xticlabels(6) ,\
+ 'libsvm/result.dataset-breast.scale.kernel-sigmoid.dat' using (0):"mean_prob":(50):(0) with vector nohead title "Sigmoid",\
+ 'libsvm/result.dataset-breast.scale.kernel-rbf.dat' using (0):"mean_prob":(50):(0) with vector nohead title "RBF",\
+ 'libsvm/result.dataset-breast.scale.kernel-poly.dat' using (0):"mean_prob":(50):(0) with vector nohead title "Poly" 
+unset output
+
+#set output "pdf/probability-dna.pdf"
+# plot for [p in population_size] 'grouped/dna.scale.dat.fitness_measure-probability.dat.population_size-'.p.'.dat' using "N":"mean_probability":xticlabels(5) 
+# unset output
+
+
+
+################################
+######### Fitness ##############
+################################
 
 fitnesses = "accuracy f1 mcc probability"
 
 set ylabel "Fitness"
 set output "pdf/fitness-heart.pdf"
- plot for [f in fitnesses] 'grouped/heart.scale.dat.fitness_measure-'.f.'.dat' using "N":"mean_fitness":xticlabels(5) title 'Fitness measure: '.f
- unset output
+ plot for [f in fitnesses] 'grouped/result.dataset-heart.scale.fitness_measure-'.f.'.dat' using "N":"mean_fitness":xticlabels(6) title 'Fitness measure: '.f
+unset output
 
 set output "pdf/fitness-breast.pdf"
- plot for [f in fitnesses] 'grouped/breast.scale.dat.fitness_measure-'.f.'.dat' using "N":"mean_fitness":xticlabels(5) title 'Fitness measure: '.f
+ plot for [f in fitnesses] 'grouped/result.dataset-heart.scale.fitness_measure-'.f.'.dat' using "N":"mean_fitness":xticlabels(6 ) title 'Fitness measure: '.f
  unset output
 
-
-#fitnesses = "probability"
-#set output "pdf/fitness-heart-probability.pdf"
-# plot 'grouped/breast.scale.dat.fitness_measure-probability.dat' using "N":"mean_fitness":xticlabels(5) title 'Fitness measure: '.f
-# unset output
+#fitnesses = "accuracy f1"
+#set output "pdf/fitness-dna.pdf"
+# plot for [f in fitnesses] 'grouped/dna.scale.dat.fitness_measure-'.f.'.dat.population_size-101.dat' using "N":"mean_fitness":xticlabels(5) title 'Fitness measure: '.f
+#unset output
