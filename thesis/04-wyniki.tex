@@ -4,11 +4,19 @@
 \section{Metodologia pomiarów}
 	Żeby oszacować trafność klasyfikacji osiąganą przez skonstruowany system konieczne było podzielenie zbioru danych na zbiór uczący i \emph{walidujący}, a w przypadku algorytmu Kernel-GP również wydzielenie ze zbioru uczącego podzbioru \emph{testującego}, używanego do obliczania miary przystosowania (fitness) podczas przebiegu algorytmu genetycznego. Ponieważ sposób podziału zbioru danych ma wpływ na osiąganą trafność klasyfikacji, dokonywano 5 takich podziałów a następnie wyciągano średnią oraz odchylenie standardowe z wyników otrzymanych dla tych podziałów. Ta procedura dotyczyła zarówno testowania algorytmu \emph{Kernel-GP} jak i porównawczych testów klasyfikatora SVM z biblioteki \emph{LibSVM}. Dla obu algorytmów stosowano te same podziały danych, przy czym w przypadku klasyfikatora \emph{LibSVM} ze zbioru uczącego nie wydzielano zbioru testującego.
 	
-	Jeśli nie zaznaczono inaczej, w poniższym omówieniu wyników słowa "dokładność" lub "trafność" klasyfikacji odnoszą się do trafności klasyfikacji danych ze zbioru \emph{walidującego}.
-	
 	Algorytm genetyczny jest w swej naturze stochastyczny, korzysta więc z funkcji generujących liczby pseudolosowe. Aby zapewnić powtarzalność wyników i umożliwić ich porównanie ziarno generatora liczb pseudolosowych ustawiono na stałą wartość.
 
-	Aby ocenić skuteczność algorytmu genetycznego w poszukiwaniu optymalnych funkcji jądrowych oraz oszacować optymalną wielkość populacji oraz czas trwania (liczbę ewaluowanych generacji) algorytmu przeprowadzono szereg eksperymentów obliczeniowych, w których uruchamiano algorytm dla coraz to większych wartości tych parametrów. Dla każdego przebiegu algorytmu zapisywano trafność klasyfikacji zbioru \emph{walidującego}.
+	Aby ocenić skuteczność algorytmu genetycznego w poszukiwaniu optymalnych funkcji jądrowych oraz oszacować optymalną wielkość populacji oraz czas trwania (liczbę ewaluowanych generacji) algorytmu przeprowadzono szereg eksperymentów obliczeniowych, w których uruchamiano algorytm dla coraz to większych wartości tych parametrów. Dla każdego przebiegu algorytmu obliczano i zapisywano kilka miar trafność klasyfikacji zbioru \emph{walidującego}:
+	\begin{enumerate}
+		\item \definicja{Trafność klasyfikacji} (\english{Accuracy}) - stosunek liczby przypadków ze zbioru walidującego, które zostały zaklasyfikowane poprawnie do liczby wszystkich przepadków w zbiorze walidującym.
+
+		\item \definicja{Miara $ F_{1} $ } (\english{ $ F_{1} $ measure }) - 	miara uwzględniająca zarówno precyzję (\english{precision}) jak i \definicja{kompletność} (\english{recall}) klasyfikacji. Jej wartość jest dana wzorem:
+		$$ F_{1} = 2 * \frac{precision * recall}{precision + recall} $$
+		Natomiast 
+		
+		\item \definicja{ \akronim{MCC} \english{Matthews correlation coefficient}} - miara, która bierze pod uwagę wszystkie cztery miary: \english{True Positive} (\akronim{TP}), \english{True Negative}(\akronim{TN}), \english{False Positive} (\akronim{FP}) i \english{False Negative}(\akronim{FN}). Dana wzorem: 
+		$$ \text{MCC} = \frac{ TP \times TN - FP \times FN } {\sqrt{ (TP + FP) ( TP + FN ) ( TN + FP ) ( TN + FN ) } } $$
+	\end{enumerate}
 
 	Analizując tak zebrane dane można przeanalizować na ile poszukiwanie funkcji jądrowej przez algorytm genetyczny było podobne do losowego przeszukiwania a na ile było ono zbieżne. W pierwszym przypadku na wyniki osiągane przez algorytm powinna mieć wpływ przede wszystkim wielkość populacji, w drugim również liczba generacji przez które poszukiwano rozwiązania. W szczególności ciekawym przypadkiem jest ten, gdy liczba generacji wynosi 1, czyli cały algorytm ogranicza się do wygenerowania populacji losowych osobników i wybrania jednego z nich - w tym przypadku algorytm genetyczny sprowadza się do losowego poszukiwania rozwiązania. Porównując różnicę w trafności osiąganej w trakcie jednej generacji i coraz większej ich liczby można ocenić czy proces ewolucyjny przebiega poprawnie. 
 	

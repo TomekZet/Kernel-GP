@@ -1,8 +1,13 @@
 \chapter{Podstawy teoretyczne}
 
 \section{Uczenie maszynowe}
-\definicja{Uczenie maszynowe} (\english{Machine Learning}) to dziedzina informatyki zajmująca się konstruowaniem \textit{systemów uczących się} \cite{krawiec2003uczenie}. Zdefiniowanie \definicja{systemu uczącego} nie jest zadaniem trywialnym, jednak wydaje się, że podstawową cechą takich systemów jest to, że potrafią one dostosowywać sposób swojego działania do danych wejściowych, na których operują. Zmiana działania systemu może mieć różną skalę - od zmiany pojedynczych parametrów programu, przez zapamiętywanie informacji po zmianę wykonywanego algorytmu. Niezależnie od skali każda taka zmiana powinna mieć wpływ na jego przyszłe działanie i powinna mieć na celu uzyskanie jak najwyższej \definicja{oceny} pracy systemu. Funkcja oceny uczącego się systemu jest od niego niezależna, ale musi mieć on dostęp do jej wartości. Dostosowanie sposobu działania, nie zaś samego działania, w ten sposób, żeby zostało ono jak najwyżej ocenione wydaje się być cechą charakterystyczną systemów uczących się. 
-Wszak przecież nawet prosty kalkulator dostosowuje swoje działanie (wyświetlany wynik) do danych wejściowych, jednak sposób działania pozostaje niezmienny - po wprowadzeniu tych samych danych wejściowych zawsze otrzymamy ten sam wynik. Gdyby w arytmetyce nastąpił nagle przełom, kalkulator nie potrafiłby dostosować sposobu swojego działania do nowych reguł arytmetyki, przez co zostałby albo zmodyfikowany przez człowieka, albo po prostu wyrzucony. Porównanie systemów uczących się do kalkulatora nie jest bynajmniej tak abstrakcyjne jak mogłoby się wydawać - ostatecznie najbardziej wyrafinowany system uczący też wykonuje pewną deterministyczną funkcję na danych wejściowych, jednak proces obliczania wyniku może być rozłożony w czasie - jako dane wejściowe można traktować zarówno dane użyte do uczenia systemu, jego oceny jak i dane aktualnie do niego wprowadzane.
+\definicja{Uczenie maszynowe} (\english{Machine Learning}) to dziedzina informatyki zajmująca się konstruowaniem \textit{systemów uczących się} \cite{krawiec2003uczenie}. Podstawową cechą takich systemów jest to, że potrafią one zmieniać sposób swojego działania w miarę jak napływają do nich kolejne dane. Zmiana działania systemu może mieć różną skalę - od zmiany pojedynczych parametrów programu, przez zapamiętywanie danych wejściowych po całkowitą zmianę wykonywanego algorytmu. Niezależnie od skali każda taka zmiana powinna mieć wpływ na jego przyszłe działanie i powinna mieć na celu uzyskanie jak najwyższej \definicja{oceny} pracy systemu. Jak ujmuje to Tom Mitchell \cite{Mitchell:1997:ML:541177}:
+\begin{quote}
+System uczy się z doświadczenia \textit{E} ze względu na pewną klasę zadań \textit{T} i ocenę wykonania \textit{P} jeśli ocena wykonania zadań należących do klasy \textit{T} rośnie wraz z doświadczeniem \textit{E}.
+\end{quote}
+
+
+Należy jednak pamiętać, że nawet najbardziej wyrafinowany system uczący ostatecznie wykonuje tylko pewną deterministyczną funkcję na danych wejściowych.  jednak proces obliczania wyniku może być rozłożony w czasie - jako dane wejściowe można traktować zarówno dane użyte do uczenia systemu, jego oceny jak i dane aktualnie do niego wprowadzane.
 
 Systemy uczące się mają wiele zastosowań, między innymi:
 \begin{itemize}
@@ -26,9 +31,40 @@ Jednym z rodzajów systemów uczących są systemy klasyfikujące....
 \item \definicja{zbiór testujący}
 \item \definicja{zbiór walidujący}
 \item \definicja{walidacja krzyżowa}
-\item \definicja{trafność}
+
 \end{itemize}
 
+\subsection{Miary jakości klasyfikacji}
+	Do oceny jakości klasyfikacji można używać różnych miar. W przypadku klasyfikacji binarnej większość z nich można wyrazić za pomocą stosunku kilku z czterech wartości wyrażających liczbę przypadków klasyfikowanych w określony sposób. Wartości te są odnoszą się zawsze do jednej z klas, która jest w pewien sposób wyróżniona. Na przykład w przypadku diagnozy medycznej zazwyczaj taką klasą jest grupa osób chorych na jakąś chorobę. Przypadki zaklasyfikowane jako należące do tej klasy określane są jako zaklasyfikowane \textit{pozytywnie} (\english{positive}) natomiast przypadki zaklasyfikowane jako do niej nienależące jako zaklasyfikowane negatywnie (\english{negative}). Słowa \english{"True"} oraz \english{"False"} odnoszą się odpowiednio do przypadków zaklasyfikowanych prawidłowo i nieprawidłowo:
+	\begin{itemize}
+		\item \definicja{\textbf{True Positive (\akronim{TP})}} - liczba przypadków \textbf{poprawnie} zaklasyfikowanych jako \textbf{należące} do wyróżnionej klasy,
+		\item  \definicja{\textbf{True Negative (\akronim{TN})}} - liczba przypadków \textbf{poprawnie} zaklasyfikowanych jako \textbf{nienależące} do wyróżnionej klasy,
+		\item \definicja{\textbf{False Positive (\akronim{FP})}} - liczba przypadków \textbf{niepoprawnie} zaklasyfikowanych jako \textbf{należące} do wyróżnionej klasy (inaczej błąd pierwszego rodzaju)
+		\item \definicja{\textbf{False Negative (\akronim{FN})}} - liczba przypadków \textbf{niepoprawnie} zaklasyfikowanych jako \textbf{nienależące} do wyróżnionej klasy (inaczej błąd drugiego rodzaju)
+	\end{itemize}		
+	
+	 Poniżej zostały opisane miary, o których będzie mowa w dalszej części pracy. Wszystkie one zawierają się w przedziale $ \langle 0,1 \rangle $.
+
+	\begin{itemize}
+		\item \definicja{Precyzja (\english{precision})} - określa jaka część przypadków zaklasyfikowanych jako należące do wyróżnionej klasy rzeczywiście do niej należy. Dana jest wzorem:
+		 $$ precision = \frac{TP}{TP+FP} $$
+		
+		\item \definicja{Kompletność (\english{recall})} - określa jaka część przypadków należących do wyróżnionej klasy została prawidłowo zaklasyfikowana jako należące do niej. Dana jest wzorem:
+		$$ recall = \frac{TP}{TP+FN} $$
+
+		\item \definicja{Trafność klasyfikacji} (\english{Accuracy}) - stosunek liczby przypadków ze zbioru walidującego, które zostały zaklasyfikowane poprawnie do liczby wszystkich przepadków w zbiorze walidującym. Może być wyrażona jako:
+		$$ accuracy = \frac{TP+TN}{TP+TN+FP+FN} $$
+
+		\item \definicja{Miara $ F_{1} $ } (\english{ $ F_{1} $ measure }) - 	miara uwzględniająca zarówno precyzję (\english{precision}) jak i \definicja{kompletność} (\english{recall}). Miara ta nie uwzględnia wartości \emph{TN}. Jej wartość jest dana wzorem:
+		$$ F_{1} = 2 \times \frac{precision \times recall}{precision + recall} $$
+		Natomiast 
+		
+		\item \definicja{ \akronim{MCC} \english{Matthews correlation coefficient}} - miara, która w przeciwieństwie do miary $ F_{1} $ bierze pod uwagę wszystkie cztery wartości (\emph{TP}, \emph{TN}, \emph{FP} i \emph{FN}). Dana wzorem: 
+		$$ MCC = \frac{ TP \times TN - FP \times FN } {\sqrt{ (TP + FP) ( TP + FN ) ( TN + FP ) ( TN + FN ) } } $$
+		
+		\item \definicja{ Średnie prawdopodobieństwo wyboru właściwej klasy } - niektóre klasyfikatory zamiast przypisywać każdemu z przykładów jedną z klas potrafią zwrócić dla każdego przykładu rozkład przynależności do wszystkich rozważanych klas. Jakość klasyfikacji można wtedy obliczyć jako uśrednioną po wszystkich przykładach wartość prawdopodobieństwa przypisanego klasie, do której przykład należy. Wartość taka może wahać się od wartości 0 (kiedy dla każdego przykładu do jego właściwej klasy zostało przypisane prawdopodobieństwo 0) do wartości 1 (kiedy dla każdego przykładu do jego właściwej klasy zostało przypisane prawdopodobieństwo 1).
+		
+	\end{itemize}
 
 \subsection{SVM}
     
@@ -37,7 +73,7 @@ Jednym z rodzajów systemów uczących są systemy klasyfikujące....
 \begin{itemize}
 \item \definicja{funkcja jądrowa}
 \item \definicja{wektor wspierający}
-\item \definicja{hiperpłaszczyzna}
+\item \definicja{hiperpłaszczyzna separująca}
 \item \definicja{}
 \item \definicja{}
 \end{itemize}
