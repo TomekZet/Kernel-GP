@@ -9,7 +9,7 @@ Przebieg algorytmu jest typowy dla algorytmów genetycznych:
 \begin{enumerate}
 \item Utwórz początkową populację kerneli
 \item \label{ewaluacja} Oblicz wartość \textit{funkcji dopasowania} każdego z kerneli: dokładność klasyfikacji SVM z użyciem tego kernela
-\item Jeśli znaleziono idealny kernel (dokładność klasyfikacji 100 ) lub skończył się czas, użyj tego kernela do klasyfikacji zbioru walidującego, zwróć wyniki klasyfikacji i zakończ algorytm.
+\item Jeśli znaleziono idealny kernel (wartość funkcji fitness wyniosła 1 ) lub skończył się czas, użyj tego kernela do klasyfikacji zbioru walidującego, zwróć wyniki klasyfikacji i zakończ algorytm.
 \item Dokonaj selekcji najlepszych funkcji z populacji
 \item Utwórz nową populację poprzez mutację i krzyżowanie wybranych w poprzednim kroku funkcji
 \item Wróć do punktu \ref{ewaluacja}
@@ -68,10 +68,13 @@ Wektory cech będące najważniejszymi argumentami funkcji jądrowych nie są wy
 \end{figure}
 
 
-\subsection{Ewaluacja kerneli}
-Ewaluacja funkcji jądrowej może odbywać się na jeden z dwóch sposobów. Jeśli w zbiorze danych oprócz zbioru uczącego wydzielono zbiory testowy i walidujący, to sprawdzany kernel jest używany do klasyfikacji danych ze zbioru testującego. Trafność klasyfikacji zostaje przeliczona na wartość \textit{ funkcji przystosowania} ewaluowanej funkcji jądrowej.
+\subsection{Ewaluacja kerneli}\label{sec:ewaluacja}
+Każda wygenerowana przez algorytm GP funkcja zostaje poddana ocenie, w wyniku której zostaje jej przypisana wartość funkcji przystosowania (\english{fitness}). W tym celu funkcja ta jest wykorzystywana przez algorytm SVM jako funkcja jądrowa a jakość wyników klasyfikacji stanowi ocenę funkcji jądrowej.
+Ewaluacja funkcji jądrowej może odbywać się na jeden z dwóch sposobów. Jeśli w zbiorze danych oprócz zbioru uczącego wydzielono zbiory testowy i walidujący, to sprawdzany kernel jest używany do klasyfikacji danych ze zbioru testującego. Ocena jakości klasyfikacji zostaje przeliczona na wartość \textit{ funkcji przystosowania} ewaluowanej funkcji jądrowej.
 Jeśli w zbiorze danych wydzielono tylko dwa podzbiory: uczący i walidujący, to zdolność klasyfikacji przez kernel jest oceniana za pomocą \textit{walidacji krzyżowej (ang. cross-validation}.
 Walidacja krzyżowa pozwala użyć więcej danych podczas fazy uczenia, jednak wiąże się ze znacznym wzrostem złożoności obliczeniowej - zamiast jednej klasyfikacji musimy przeprowadzić k procesów uczenia i k klasyfikacji.
+
+Do oceny jakości wyników klasyfikacji używana jest jedna z miar opisanych w części \ref{sec:measures}. Ponieważ wszystkie te miary należą do zakresu $ \langle 0,1 \rangle $, to mogą być bezpośrednio użyte jako wartość fitness ewaluowanego kernela.
 
 \subsection{Selekcja}
 Jednym z problemów programowania genetycznego jest to, że drzewa powstałe w wyniku procesu ewolucyjnego mogą być bardzo duże, co nie jest pożądaną cechą - większe drzewo dłużej oblicza zwracaną wartość, zajmuje więcej miejsc w pamięci. Dlatego wielkość drzew należy ograniczać, jeśli wzrost drzewa nie prowadzi do zwiększenia wartości funkcji dopasowania.
@@ -84,13 +87,13 @@ Mutacja drzew polega na zamianie losowo wybranego poddrzewa przez losowo wygener
 Dodatkowo mutowane są również węzły ERC. Ich mutacja polega na dodaniu losowej wartości o rozkładzie normalnym do wartości przechowywanej w węźle. Wartość ta może być ujemna lub dodatnia.
 
 \subsection{Walidacja rozwiązania}
-Walidacja polega na użyciu najlepszego znalezionego kernela do klasyfikacji przykładów ze zbioru walidującego, który nie był używany podczas uczenia klasyfikatora SVM ani podczas ewaluacji kerneli.
-Najpierw algorytm SVM jest uczony na połączonych zbiorach trenującym i walidującym, przy pomocy tej funkcji jądrowej. Następnie dokonywana jest klasyfikacja zbioru walidującego. Otrzymana w wyniku tej klasyfikacji trafność jest miarą oceny całego algorytmu Kernel GP.
+Walidacja polega na użyciu najlepszego znalezionego kernela do klasyfikacji przykładów ze zbioru walidującego, które nie były używane podczas uczenia klasyfikatora SVM ani podczas ewaluacji kerneli.
+Najpierw algorytm SVM jest uczony na połączonych zbiorach trenującym i testującym, przy pomocy tej funkcji jądrowej. Następnie dokonywana jest klasyfikacja zbioru walidującego. Otrzymane w wyniku tej klasyfikacji miary jakości klasyfikacji (opisane w część \ref{sec:measures} są miarą oceny całego algorytmu.
 
 \section{Implementacja}
 Algorytm został napisany w języku Java z użyciem bibliotek \textit{ECJ (Evolutionary Computing in Java)} \cite{sean_ecj_2010} oraz LibSVM \cite{chang_libsvm:_2011}. Pierwsza z nich dostarcza mechanizmy \textit{obliczeń ewolucyjnych} w tym \textit{programowania genetycznego}.
 LibSVM to klasyfikator SVM napisany oryginalnie w języku C z dostępną implementacją w Javie.
-Mechanizmy ECJ stanowią trzon algorytmu zapewniając tworzenie populacji funkcji, ich selekcję, mutację oraz krzyżowanie. LibSVM został użyty na etapie ewaluacji wygenerowanych przez ECJ funkcji.
+Mechanizmy ECJ stanowią trzon algorytmu zapewniając tworzenie populacji funkcji, ich selekcję, mutację oraz krzyżowanie. LibSVM został użyty na etapie ewaluacji wygenerowanych przez ECJ funkcji. 
 
 
 \section{Złożoność obliczeniowa}

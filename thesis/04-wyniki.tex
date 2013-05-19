@@ -6,17 +6,7 @@
 	
 	Algorytm genetyczny jest w swej naturze stochastyczny, korzysta więc z funkcji generujących liczby pseudolosowe. Aby zapewnić powtarzalność wyników i umożliwić ich porównanie ziarno generatora liczb pseudolosowych ustawiono na stałą wartość.
 
-	Aby ocenić skuteczność algorytmu genetycznego w poszukiwaniu optymalnych funkcji jądrowych oraz oszacować optymalną wielkość populacji oraz czas trwania (liczbę ewaluowanych generacji) algorytmu przeprowadzono szereg eksperymentów obliczeniowych, w których uruchamiano algorytm dla coraz to większych wartości tych parametrów. Dla każdego przebiegu algorytmu obliczano i zapisywano kilka miar trafność klasyfikacji zbioru \emph{walidującego}:
-	\begin{enumerate}
-		\item \definicja{Trafność klasyfikacji} (\english{Accuracy}) - stosunek liczby przypadków ze zbioru walidującego, które zostały zaklasyfikowane poprawnie do liczby wszystkich przepadków w zbiorze walidującym.
-
-		\item \definicja{Miara $ F_{1} $ } (\english{ $ F_{1} $ measure }) - 	miara uwzględniająca zarówno precyzję (\english{precision}) jak i \definicja{kompletność} (\english{recall}) klasyfikacji. Jej wartość jest dana wzorem:
-		$$ F_{1} = 2 * \frac{precision * recall}{precision + recall} $$
-		Natomiast 
-		
-		\item \definicja{ \akronim{MCC} \english{Matthews correlation coefficient}} - miara, która bierze pod uwagę wszystkie cztery miary: \english{True Positive} (\akronim{TP}), \english{True Negative}(\akronim{TN}), \english{False Positive} (\akronim{FP}) i \english{False Negative}(\akronim{FN}). Dana wzorem: 
-		$$ \text{MCC} = \frac{ TP \times TN - FP \times FN } {\sqrt{ (TP + FP) ( TP + FN ) ( TN + FP ) ( TN + FN ) } } $$
-	\end{enumerate}
+	Aby ocenić skuteczność algorytmu genetycznego w poszukiwaniu optymalnych funkcji jądrowych oraz oszacować optymalną wielkość populacji, czas trwania algorytmu (liczbę ewaluowanych generacji) oraz najlepszą funkcję przystosowania przeprowadzono szereg eksperymentów obliczeniowych, w których uruchamiano algorytm dla coraz to większych wartości tych parametrów. Dla każdego przebiegu algorytmu obliczano i zapisywano kilka miar trafność klasyfikacji zbioru \emph{walidującego} (miary te zostały opisane w części \ref{sec:measures}).
 
 	Analizując tak zebrane dane można przeanalizować na ile poszukiwanie funkcji jądrowej przez algorytm genetyczny było podobne do losowego przeszukiwania a na ile było ono zbieżne. W pierwszym przypadku na wyniki osiągane przez algorytm powinna mieć wpływ przede wszystkim wielkość populacji, w drugim również liczba generacji przez które poszukiwano rozwiązania. W szczególności ciekawym przypadkiem jest ten, gdy liczba generacji wynosi 1, czyli cały algorytm ogranicza się do wygenerowania populacji losowych osobników i wybrania jednego z nich - w tym przypadku algorytm genetyczny sprowadza się do losowego poszukiwania rozwiązania. Porównując różnicę w trafności osiąganej w trakcie jednej generacji i coraz większej ich liczby można ocenić czy proces ewolucyjny przebiega poprawnie. 
 	
@@ -39,7 +29,7 @@
 		\hline
 		Breast cancer & 2 & 10 & 683 & 343 & 170 & 170 \\ 
 		\hline
-		heart & 2 & 13 & 270 & 136 & 67 & 67 \\ 
+		Heart & 2 & 13 & 270 & 136 & 67 & 67 \\ 
 		\hline
 	\end{tabular} 	
 \end{table}
@@ -61,19 +51,162 @@
 	\end{tabular} 
 \end{table}
 
+
+\FloatBarrier
+\section{Fitness}
+Aby ocenić dobór parametrów procesu ewolucyjnego zapisywano wartości fitness osiągane przez najlepszego osobnika w każdej generacji. Wartości te zostały przedstawione na wykresach przedstawiających wartość fitness najlepszego osobnika w funkcji czasu trwania algorytmu (ilości dotychczas wygenerowanych populacji), czyli tak zwanych \english{Fitness Graphs}. Na wykresash \ref{fig:fit-breast} - \ref{fit:heart} widać jak zmienia się wartość funkcji fitness wraz z kolejnymi generacjami dla różnych miar jakości klasyfikacji użytych jako funkcja fitness (miary te zostały opisane w części \ref{sec:measures} a ich użycie w części \ref{sec:ewaluacja}.
+
+	\begin{figure}
+		\includegraphics[scale=0.90]{figures/results/fitness/fitness-heart}
+		\caption{Najlepsza wartość funkcji przystosowania dla kolejnych generacji dla zbioru \emph{heart}.\label{fig:fit-heart}}
+	\end{figure}
+	
+	\begin{figure}
+		\includegraphics[scale=0.90]{figures/results/fitness/fitness-breast}
+		\caption{Najlepsza wartość funkcji przystosowania dla kolejnych generacji dla zbioru \emph{breast}.\label{fig:fit-breast}}
+	\end{figure}	
+
 	
 \FloatBarrier
-\section{Trafność klasyfikacji}
-	Jak widać na rysunkach \ref{fig:acc-iris}-\ref{fig:acc-letter-detailed} sprawność algorytmu zależy mocno od konkretnego zbioru danych. Na przykład zbiór IRIS jest na tyle łatwy w klasyfikacji, że ciężko jest poprzez dobranie optymalnej funkcji jądrowej polepszyć znacznie wyniki klasyfikacji.
-	Na osiąganą trafność klasyfikacji wpływ ma też podział zbioru danych na testujący, uczący i walidujący - widać to po odchyleniu standardowym widocznym na wykresach.
+\section{Wyniki klasyfikacji zbioru walidującego}
+	Wyniki klasyfikacji zostały ocenione za pomocą miar opisanych w części \ref{sec:measures}. Dla każdej z tych miar przedstawiono jej wartości dla przebiegów algorytmu, w których jako funkcja fitness była wybrana właśnie ta miara. Dodatkowo na wykresach ukazano wartości danych miar uzyskane w wyniku klasyfikacji za pomocą trzech standardowych funkcji jądrowych (\emph{Wielomianowej}, \emph{Sigmoidalnej} i \emph{RBF}).
 	
-	\subsubsection{Monotoniczność funkcji trafności}
+	Jak widać na rysunkach \ref{fig:acc-breast}-\ref{fig:probability-heart} sprawność algorytmu zależy zarówno od zbioru danych jak i od wybranej miary jakości.
 	
+	\begin{figure}
+		\includegraphics[scale=0.90]{figures/results/accuracy/accuracy-breast}
+		\caption{Tragność (\english{accuracy}) klasyfikacji dla zbioru \emph{breast} w funkcji czasu wykonania (ilości generacji).\label{fig:acc-breast}}
+	\end{figure}
+	
+	\begin{figure}
+		\includegraphics[scale=0.90]{figures/results/accuracy/accuracy-heart}
+		\caption{Tragność (\english{accuracy}) klasyfikacji dla zbioru \emph{heart} w funkcji czasu wykonania (ilości generacji).\label{fig:acc-heart}}
+	\end{figure}
+	
+	\begin{figure}
+		\includegraphics[scale=0.90]{figures/results/f1/f1-breast}
+		\caption{Wartość miary F1 dla wyników klasyfikacji zbioru \emph{breast} w funkcji czasu wykonania (ilości generacji).\label{fig:f1-breast}}
+	\end{figure}
+	
+	\begin{figure}
+		\includegraphics[scale=0.90]{figures/results/f1/f1-heart}
+		\caption{Wartość miary F1 dla wyników klasyfikacji zbioru \emph{heart} w funkcji czasu wykonania (ilości generacji).\label{fig:f1-heart}}
+	\end{figure}
+	
+	\begin{figure}
+		\includegraphics[scale=0.90]{figures/results/mcc/mcc-breast}
+		\caption{Wartość miary \emph{Mathews Correlation Coefficent} (\akronim{mcc}) dla wyników klasyfikacji zbioru \emph{breast} w funkcji czasu wykonania (ilości generacji).\label{fig:mcc-breast}}
+	\end{figure}
+	
+	\begin{figure}
+		\includegraphics[scale=0.90]{figures/results/mcc/mcc-heart}
+		\caption{Wartość miary \emph{Mathews Correlation Coefficent} dla wyników klasyfikacji zbioru \emph{heart} w funkcji czasu wykonania (ilości generacji).\label{fig:mcc-heart}}
+	\end{figure}
+	
+	\begin{figure}
+		\includegraphics[scale=0.90]{figures/results/probability/probability-breast}
+		\caption{Średnia wartość prawdopodobieństwa przypisywanego przez SVM właściwej dla klasyfikowanego przykłau klasie w funkcji czasu wykonania (ilości generacji). Zbiór \emph{breast}\label{fig:probability-breast}}
+	\end{figure}
+	
+	\begin{figure}
+		\includegraphics[scale=0.90]{figures/results/probability/probability-heart}
+		\caption{Średnia wartość prawdopodobieństwa przypisywanego przez SVM właściwej dla klasyfikowanego przykłau klasie w funkcji czasu wykonania (ilości generacji). Zbiór \emph{heart}.\label{fig:probability-heart}}
+	\end{figure}
+
+%	\subsection{Porównanie z tradycyjnym algorytmem SVM}
+%	Na wykresach \ref{fig:acc-iris-svm}-\ref{fig:acc-letter-svm} przedstawiono porównanie trafności klasyfikacji zbioru walidującego przez algorytm SVM z użyciem czterech podstawowych funkcji jądrowych (liniowej, wielomianowej, RBF i sigmoidalnej) i przez stworzony algorytm Kernel-GP.
+%	W przypadku dwóch zbiorów: \emph{vowel} i \emph{letter} udało się uzyskać polepszenie trafności klasyfikacji względem standardowych funkcji jądrowych. Są to zbiory, dla których standardoy SVM osiąga słabe wyniki - ok. $ 70\% - 80\% $. 
+%
+%	W przypadku dwóch pozostałych zbiorów niezależnie od użytej funkcji jądrowej osiągana trafność klasyfikacji jest bardzo wysoka - ok. $ 95\% $ - sugeruje to, że zbiory te są dość łatwo separowalne z wyjątkiem $ 5\% $ przypadków.
+	
+%	\begin{figure}
+%		\includegraphics[scale=0.90]{figures/results/accuracy/accuracy-iris-svm}
+%		\caption{Porównanie dokładności klasyfikacji dla zbioru \emph{iris} przez algorytm SVM z różnymi funkcjami jądrowymi i algorytm Kernel-GP\label{fig:acc-iris-svm}}
+%	\end{figure}
+%	
+%	\begin{figure}
+%		\includegraphics[scale=0.90]{figures/results/accuracy/accuracy-dna-svm}
+%		\caption{Porównanie dokładności klasyfikacji dla zbioru \emph{dna} przez algorytm SVM z różnymi funkcjami jądrowymi i algorytm Kernel-GP.\label{fig:acc-dna-svm}}
+%	\end{figure}	
+%	
+%	\begin{figure}
+%		\includegraphics[scale=0.90]{figures/results/accuracy/accuracy-vowel-svm}
+%		\caption{Porównanie dokładności klasyfikacji dla zbioru \emph{vowel} przez algorytm SVM z różnymi funkcjami jądrowymi i algorytm Kernel-GP\label{fig:acc-vowel-svm}}
+%	\end{figure}
+%	
+%	\begin{figure}
+%		\includegraphics[scale=0.90]{figures/results/accuracy/accuracy-letter-svm}
+%		\caption{Porównanie dokładności klasyfikacji dla zbioru \emph{letter} przez algorytm SVM z różnymi funkcjami jądrowymi i algorytm Kernel-GP\label{fig:acc-letter-svm}}
+%	\end{figure}		
+
+\FloatBarrier
+	\subsubsection{Monotoniczność funkcji trafności}	
 	Miejscami funkcja trafności nie jest monotoniczna, a ściślej niemalejąca, względem liczby generacji oraz wielkości populacji (co widać np. na wykresach \ref{fig:acc-iris-detailed} i \ref{fig:acc-vowel-detailed}). Wydawałoby się, że tak być nie powinno (algorytm genetyczny zwraca najlepszego osobnika z całego swojego przebiegu, więc wszystkie osobniki, które pojawiły się podczas przebiegu z 5 generacjami pojawią się podczas przebiegu z 7 generacjami, więc trafność dla przebiegu z 7 generacjami powinna być co najmniej tak dobra jak dla przebiegu z 5 generacjami). Jednak może się tak zdarzyć ze względu na to, że trafność pokazana na wykresach to trafność klasyfikacji zbioru walidującego, natomiast trafność użyta przez algorytm genetyczny jako miara dostosowania (\english{fitness}) to trafność klasyfikacji zbioru testującego. Widać to na wykresie \ref{fig:fit-iris-detailed}, który przedstawia wartość przystosowania dla tych samych danych, dla których na wykresie \ref{fig:acc-iris-detailed} jest pokazana trafność klasyfikacji na zbiorze walidującym - tutaj funkcja wykazuje mniej braku monotoniczności. 
+
+%	\begin{figure}
+%		\includegraphics[scale=0.90]{figures/results/accuracy/accuracy-iris}
+%		\caption{Dokładność klasyfikacji dla zbioru \emph{iris} w funkcji rozmiaru populacji dla róznych ilości generacji.\label{fig:acc-iris}}
+%	\end{figure}
+%	
+	\begin{figure}
+		\includegraphics[scale=0.90]{figures/results/accuracy/accuracy-iris-detailed}
+		\caption{Dokładność klasyfikacji dla zbioru \emph{iris} w funkcji rozmiaru populacji dla róznych ilości generacji, dla małych populacji.	\label{fig:acc-iris-detailed}}
+	\end{figure}	
 	
+	
+	\begin{figure}
+		\includegraphics[scale=0.90]{figures/results/fitness/fitness-iris-detailed}
+		\caption{Najlepsza wartość funkcji przystosowania (\english{fitness})  \emph{iris} w funkcji rozmiaru populacji dla róznych ilości generacji, dla małych populacji.	\label{fig:fit-iris-detailed}}
+	\end{figure}	
+	
+%	
+%	\begin{figure}
+%		\includegraphics[scale=0.90]{figures/results/accuracy/accuracy-dna}
+%		\caption{Dokładność klasyfikacji dla zbioru \emph{DNA} w funkcji rozmiaru populacji dla róznych ilości generacji.\label{fig:acc-dna}}
+%	\end{figure}
+%	
+%	\begin{figure}
+%		\includegraphics[scale=0.90]{figures/results/accuracy/accuracy-dna-detailed}
+%		\caption{Dokładność klasyfikacji dla zbioru \emph{DNA} w funkcji rozmiaru populacji dla róznych ilości generacji, dla małych populacji.\label{fig:acc-dna-detailed}}
+%	\end{figure}	
+%	
+%
+%	\begin{figure}
+%		\includegraphics[scale=0.90]{figures/results/accuracy/accuracy-vowel}
+%		\caption{Dokładność klasyfikacji dla zbioru \emph{vowel} w funkcji rozmiaru populacji dla róznych ilości generacji.\label{fig:acc-vowel}}
+%	\end{figure}
+		%	
+%	
+%		\begin{figure}
+%		\includegraphics[scale=0.90]{figures/results/accuracy/accuracy-letter}
+%		\caption{Dokładność klasyfikacji dla zbioru \emph{letter} w funkcji rozmiaru populacji dla róznych ilości generacji.\label{fig:acc-letter}}
+%	\end{figure}
+%	
+%		
+%	\begin{figure}
+%		\includegraphics[scale=0.90]{figures/results/accuracy/accuracy-letter-detailed}
+%		\caption{Dokładność klasyfikacji dla zbioru \emph{letter} w funkcji rozmiaru populacji dla róznych ilości generacji, dla małych populacji.\label{fig:acc-letter-detailed}}
+%	\end{figure}
+%	
+
+	\FloatBarrier
 	Zatem przynajmniej część braku monotoniczności funkcji trafności na zbiorze walidującym wynika z przeuczenia algorytmu - znaleziona przez algorytm genetyczny funkcja jądrowa lepiej sprawdza się przy klasyfikacji zbioru testującego niż walidującego. Nie jest to jednak jedyna przyczyna braku monotoniczności - widać to na wykresie \ref{fig:fit-vowel-detailed} przedstawiającym wartość funkcji przystosowania dla zbioru \emph{vowel} - jej przebieg jest bardzo podobny do przebiegu ukazanej na rys. \ref{fig:acc-vowel-detailed} funkcji trafności klasyfikacji zbioru walidującego na tym samym zbiorze. Co więc jest przyczyną braku monotoniczności? Warto zauważyć, że funkcja jest niemalejąca ze względu na ilość generacji oraz że dla jednej generacji funkcja jest monotoniczna. Sugeruje to, że "winnym" może być selekcja - w praktyce nie zachodzi ono w przypadku gdy algorytm genetyczny działa przez jedną generację.
-    
-    \begin{figure}
+
+	\begin{figure}
+		\includegraphics[scale=0.90]{figures/results/accuracy/accuracy-vowel-detailed}
+		\caption{Dokładność klasyfikacji dla zbioru \emph{vowel} w funkcji rozmiaru populacji dla róznych ilości generacji, dla małych populacji.\label{fig:acc-vowel-detailed}}
+	\end{figure}
+		
+	\begin{figure}
+		\includegraphics[scale=0.90]{figures/results/fitness/fitness-vowel-detailed}
+		\caption{Dokładność klasyfikacji dla zbioru \emph{vowel} w funkcji rozmiaru populacji dla róznych ilości generacji, dla małych populacji.\label{fig:fit-vowel-detailed}}
+	\end{figure}
+
+    	
+	\FloatBarrier
+	 Gdy przyjrzeć się dokładnie przebiegowi ewolucji widać, że rzeczywiści tak jest. Dodatkowy osobnik (rys. \ref{fig:func1}), który odróżnia w generacji pierwszej populacje o wielkości 3 i 4 jest przodkiem innego osobnika (rys. \ref{fig:func2}), który w trzeciej generacji osiąga fitness większy niż osobnik (rys. \ref{fig:func3}), który w przypadku populacji wielkości 3 był przodkiem osobnika (rys. \ref{fig:func4}), który to okazał się najlepszym podczas przebiegu całego algorytmu. W rezultacie tego "geny" potencjalnego zwycięzcy nie przetrwały w przebiegu algorytmu z populacją liczącą 4 osobników. Jak widać osobnik najlepszy we wszystkich generacjach nie musi być wcale potomkiem osobników najlepszych w poszczególnych generacjach - czasem połączenie dwóch osobników przeciętnych może dać osobnika bardzo dobrego. 	
+	 
+	     \begin{figure}
 		\includegraphics[scale=0.50]{figures/functions/func1}
 		\caption{Funkcja z pierwszej generacji, która w przebiego z wielkością populacji 4 osiągnęła fitness $0.4242424$. Przodek funkcji z rys.\ref{fig:func2} \label{fig:func1}}
 	\end{figure}
@@ -97,93 +230,11 @@
     	\begin{figure}
 		\includegraphics[scale=0.60]{figures/functions/func4}
 		\caption{Zwycięska funkcja w przebiegu z populacją wielkości 3, potomek funkcji z rys.\ref{fig:func3}. Osiągnęła fitness $0.9015151$. \label{fig:func4}}
-	\end{figure} 	
-	
-	 Gdy przyjrzeć się dokładnie przebiegowi ewolucji widać, że rzeczywiści tak jest. Dodatkowy osobnik (rys. \ref{fig:func1}), który odróżnia w generacji pierwszej populacje o wielkości 3 i 4 jest przodkiem innego osobnika (rys. \ref{fig:func2}), który w trzeciej generacji osiąga fitness większy niż osobnik (rys. \ref{fig:func3}), który w przypadku populacji wielkości 3 był przodkiem osobnika (rys. \ref{fig:func4}), który to okazał się najlepszym podczas przebiegu całego algorytmu. W rezultacie tego "geny" potencjalnego zwycięzcy nie przetrwały w przebiegu algorytmu z populacją liczącą 4 osobników. Jak widać osobnik najlepszy we wszystkich generacjach nie musi być wcale potomkiem osobników najlepszych w poszczególnych generacjach - czasem połączenie dwóch osobników przeciętnych może dać osobnika bardzo dobrego. 	
+	\end{figure} 
 
-	\begin{figure}
-		\includegraphics[scale=0.90]{figures/accuracy/accuracy-iris}
-		\caption{Dokładność klasyfikacji dla zbioru \emph{iris} w funkcji rozmiaru populacji dla róznych ilości generacji.\label{fig:acc-iris}}
-	\end{figure}
-	
-	\begin{figure}
-		\includegraphics[scale=0.90]{figures/accuracy/accuracy-iris-detailed}
-		\caption{Dokładność klasyfikacji dla zbioru \emph{iris} w funkcji rozmiaru populacji dla róznych ilości generacji, dla małych populacji.	\label{fig:acc-iris-detailed}}
-	\end{figure}	
-	
-	
-	\begin{figure}
-		\includegraphics[scale=0.90]{figures/accuracy/fitness-iris-detailed}
-		\caption{Najlepsza wartość funkcji przystosowania (\english{fitness})  \emph{iris} w funkcji rozmiaru populacji dla róznych ilości generacji, dla małych populacji.	\label{fig:fit-iris-detailed}}
-	\end{figure}	
-	
-	\begin{figure}
-		\includegraphics[scale=0.90]{figures/accuracy/accuracy-dna}
-		\caption{Dokładność klasyfikacji dla zbioru \emph{DNA} w funkcji rozmiaru populacji dla róznych ilości generacji.\label{fig:acc-dna}}
-	\end{figure}
-	
-	\begin{figure}
-		\includegraphics[scale=0.90]{figures/accuracy/accuracy-dna-detailed}
-		\caption{Dokładność klasyfikacji dla zbioru \emph{DNA} w funkcji rozmiaru populacji dla róznych ilości generacji, dla małych populacji.\label{fig:acc-dna-detailed}}
-	\end{figure}	
-	
 
-	\begin{figure}
-		\includegraphics[scale=0.90]{figures/accuracy/accuracy-vowel}
-		\caption{Dokładność klasyfikacji dla zbioru \emph{vowel} w funkcji rozmiaru populacji dla róznych ilości generacji.\label{fig:acc-vowel}}
-	\end{figure}
 		
-	\begin{figure}
-		\includegraphics[scale=0.90]{figures/accuracy/accuracy-vowel-detailed}
-		\caption{Dokładność klasyfikacji dla zbioru \emph{vowel} w funkcji rozmiaru populacji dla róznych ilości generacji, dla małych populacji.\label{fig:acc-vowel-detailed}}
-	\end{figure}
-		
-	\begin{figure}
-		\includegraphics[scale=0.90]{figures/accuracy/fitness-vowel-detailed}
-		\caption{Dokładność klasyfikacji dla zbioru \emph{vowel} w funkcji rozmiaru populacji dla róznych ilości generacji, dla małych populacji.\label{fig:fit-vowel-detailed}}
-	\end{figure}
-	
-	
-		\begin{figure}
-		\includegraphics[scale=0.90]{figures/accuracy/accuracy-letter}
-		\caption{Dokładność klasyfikacji dla zbioru \emph{letter} w funkcji rozmiaru populacji dla róznych ilości generacji.\label{fig:acc-letter}}
-	\end{figure}
-	
-		
-	\begin{figure}
-		\includegraphics[scale=0.90]{figures/accuracy/accuracy-letter-detailed}
-		\caption{Dokładność klasyfikacji dla zbioru \emph{letter} w funkcji rozmiaru populacji dla róznych ilości generacji, dla małych populacji.\label{fig:acc-letter-detailed}}
-	\end{figure}
-	
-	
-	\FloatBarrier
-		
-	\subsection{Porównanie z tradycyjnym algorytmem SVM}
-	Na wykresach \ref{fig:acc-iris-svm}-\ref{fig:acc-letter-svm} przedstawiono porównanie trafności klasyfikacji zbioru walidującego przez algorytm SVM z użyciem czterech podstawowych funkcji jądrowych (liniowej, wielomianowej, RBF i sigmoidalnej) i przez stworzony algorytm Kernel-GP.
-	W przypadku dwóch zbiorów: \emph{vowel} i \emph{letter} udało się uzyskać polepszenie trafności klasyfikacji względem standardowych funkcji jądrowych. Są to zbiory, dla których standardoy SVM osiąga słabe wyniki - ok. $ 70\% - 80\% $. 
 
-	W przypadku dwóch pozostałych zbiorów niezależnie od użytej funkcji jądrowej osiągana trafność klasyfikacji jest bardzo wysoka - ok. $ 95\% $ - sugeruje to, że zbiory te są dość łatwo separowalne z wyjątkiem $ 5\% $ przypadków.
-	
-	\begin{figure}
-		\includegraphics[scale=0.90]{figures/accuracy/accuracy-iris-svm}
-		\caption{Porównanie dokładności klasyfikacji dla zbioru \emph{iris} przez algorytm SVM z różnymi funkcjami jądrowymi i algorytm Kernel-GP\label{fig:acc-iris-svm}}
-	\end{figure}
-	
-	\begin{figure}
-		\includegraphics[scale=0.90]{figures/accuracy/accuracy-dna-svm}
-		\caption{Porównanie dokładności klasyfikacji dla zbioru \emph{dna} przez algorytm SVM z różnymi funkcjami jądrowymi i algorytm Kernel-GP.\label{fig:acc-dna-svm}}
-	\end{figure}	
-	
-	\begin{figure}
-		\includegraphics[scale=0.90]{figures/accuracy/accuracy-vowel-svm}
-		\caption{Porównanie dokładności klasyfikacji dla zbioru \emph{vowel} przez algorytm SVM z różnymi funkcjami jądrowymi i algorytm Kernel-GP\label{fig:acc-vowel-svm}}
-	\end{figure}
-	
-	\begin{figure}
-		\includegraphics[scale=0.90]{figures/accuracy/accuracy-letter-svm}
-		\caption{Porównanie dokładności klasyfikacji dla zbioru \emph{letter} przez algorytm SVM z różnymi funkcjami jądrowymi i algorytm Kernel-GP\label{fig:acc-letter-svm}}
-	\end{figure}		
-		
 
 \section{Czas wykonania}
 

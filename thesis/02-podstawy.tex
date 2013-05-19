@@ -7,7 +7,7 @@ System uczy się z doświadczenia \textit{E} ze względu na pewną klasę zadań
 \end{quote}
 
 
-Należy jednak pamiętać, że nawet najbardziej wyrafinowany system uczący ostatecznie wykonuje tylko pewną deterministyczną funkcję na danych wejściowych.  jednak proces obliczania wyniku może być rozłożony w czasie - jako dane wejściowe można traktować zarówno dane użyte do uczenia systemu, jego oceny jak i dane aktualnie do niego wprowadzane.
+%Należy jednak pamiętać, że nawet najbardziej wyrafinowany system uczący ostatecznie wykonuje tylko pewną deterministyczną funkcję na danych wejściowych.  jednak proces obliczania wyniku może być rozłożony w czasie - jako dane wejściowe można traktować zarówno dane użyte do uczenia systemu, jego oceny jak i dane aktualnie do niego wprowadzane.
 
 Systemy uczące się mają wiele zastosowań, między innymi:
 \begin{itemize}
@@ -34,7 +34,7 @@ Jednym z rodzajów systemów uczących są systemy klasyfikujące....
 
 \end{itemize}
 
-\subsection{Miary jakości klasyfikacji}
+\subsection{Miary jakości klasyfikacji}\label{sec:measures}
 	Do oceny jakości klasyfikacji można używać różnych miar. W przypadku klasyfikacji binarnej większość z nich można wyrazić za pomocą stosunku kilku z czterech wartości wyrażających liczbę przypadków klasyfikowanych w określony sposób. Wartości te są odnoszą się zawsze do jednej z klas, która jest w pewien sposób wyróżniona. Na przykład w przypadku diagnozy medycznej zazwyczaj taką klasą jest grupa osób chorych na jakąś chorobę. Przypadki zaklasyfikowane jako należące do tej klasy określane są jako zaklasyfikowane \textit{pozytywnie} (\english{positive}) natomiast przypadki zaklasyfikowane jako do niej nienależące jako zaklasyfikowane negatywnie (\english{negative}). Słowa \english{"True"} oraz \english{"False"} odnoszą się odpowiednio do przypadków zaklasyfikowanych prawidłowo i nieprawidłowo:
 	\begin{itemize}
 		\item \definicja{\textbf{True Positive (\akronim{TP})}} - liczba przypadków \textbf{poprawnie} zaklasyfikowanych jako \textbf{należące} do wyróżnionej klasy,
