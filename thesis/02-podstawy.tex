@@ -33,18 +33,12 @@ Uczenie systemu klasyfikującego polega na dostarczeniu do systemu zbioru przyk�
 
 \subsubsection{Metody oceny skuteczności klasyfikacji}
 
-
-
-\begin{itemize}
-\item \definicja{zbiór uczący}
-\item \definicja{zbiór testujący}
-\item \definicja{zbiór walidujący}
-\item \definicja{walidacja krzyżowa}
-
-\end{itemize}
+W celu oceny skuteczności systemu należy za jego pomocą dokonać klasyfikacji przypadków, które nie były użyte podczas jego uczenia i których etykiety są znane (choć nie dostępne klasyfikatorowi). Wyniki klasyfikacji porównuje się z właściwymi etykietami i w ten sposób szacuje skuteczność klasyfikacji.
+W tym celu można wydzielić ze zbioru przykładów specjalny podzbiór, zwany \emph{zbiorem testującym}, który jest używany do testowania a w fazie uczenia klasyfikator nie ma do niego dostępu. Czasami wydziela się też \emph{zbiór walidujący}, który jest używany w trakcie uczenia w celu optymalizacji parametrów algorytmu.
+Stałego podziału zbioru przykładów na zbiór trenujący, testujący i walidujący można dokonać tylko wtedy, gdy zbiory te są wystarczająco liczne. W przeciwnym przypadku może okazać się, że nie są one wystarczająco reprezentatywne i na przykład rozkład przykładów z poszczególnych klasy jest mocno skrzywiony w którymś ze zbiorów. Aby tego uniknąć można posłużyć się metodą \emph{k-krotnej walidacji krzyżowej}. Polega ona na podzieleniu zbioru na \emph{k} podzbiorów i następnie powtarzanych \emph{k}-razy fazach uczenia i testowania klasyfikatora, przy czym za każdym razem k-ty podzbiór służy jako zbiór testujący/walidujący a pozostałem podzbiory jak zbiór uczący. Skuteczności klasyfikacji oblicza się wtedy jako średnią sprawność osiąganą we wszystkich k testach.
 
 \subsection{Miary skuteczności klasyfikacji}\label{sec:measures}
-	Do oceny jakości klasyfikacji można używać różnych miar. W przypadku klasyfikacji binarnej większość z nich można wyrazić za pomocą stosunku kilku z czterech wartości wyrażających liczbę przypadków klasyfikowanych w określony sposób. Wartości te są odnoszą się zawsze do jednej z klas, która jest w pewien sposób wyróżniona. Na przykład w przypadku diagnozy medycznej zazwyczaj taką klasą jest grupa osób chorych na jakąś chorobę. Przypadki zaklasyfikowane jako należące do tej klasy określane są jako zaklasyfikowane \textit{pozytywnie} (\english{positive}) natomiast przypadki zaklasyfikowane jako do niej nienależące jako zaklasyfikowane negatywnie (\english{negative}). Słowa \english{"True"} oraz \english{"False"} odnoszą się odpowiednio do przypadków zaklasyfikowanych prawidłowo i nieprawidłowo:
+	Do oceny jakości klasyfikacji można używać różnych miar. W przypadku klasyfikacji binarnej (czyli kiedy rozróżniamy tylko dwie klasy przykładów) większość z nich można wyrazić za pomocą stosunku kilku z czterech wartości wyrażających liczbę przypadków klasyfikowanych w określony sposób. Wartości te są odnoszą się zawsze do jednej z klas, która jest w pewien sposób wyróżniona. Na przykład w przypadku diagnozy medycznej zazwyczaj taką klasą jest grupa osób chorych na jakąś chorobę. Przypadki zaklasyfikowane jako należące do tej klasy określane są jako zaklasyfikowane \textit{pozytywnie} (\english{positive}) natomiast przypadki zaklasyfikowane jako do niej nienależące jako zaklasyfikowane negatywnie (\english{negative}). Słowa \english{"True"} oraz \english{"False"} odnoszą się odpowiednio do przypadków zaklasyfikowanych prawidłowo i nieprawidłowo:
 	\begin{itemize}
 		\item \definicja{\textbf{True Positive (\akronim{TP})}} - liczba przypadków \textbf{poprawnie} zaklasyfikowanych jako \textbf{należące} do wyróżnionej klasy,
 		\item  \definicja{\textbf{True Negative (\akronim{TN})}} - liczba przypadków \textbf{poprawnie} zaklasyfikowanych jako \textbf{nienależące} do wyróżnionej klasy,
@@ -72,12 +66,15 @@ Uczenie systemu klasyfikującego polega na dostarczeniu do systemu zbioru przyk�
 		$$ MCC = \frac{ TP \times TN - FP \times FN } {\sqrt{ (TP + FP) ( TP + FN ) ( TN + FP ) ( TN + FN ) } } $$
 		
 		\item \definicja{ Średnie prawdopodobieństwo wyboru właściwej klasy } - niektóre klasyfikatory zamiast przypisywać każdemu z przykładów jedną z klas potrafią zwrócić dla każdego przykładu rozkład przynależności do wszystkich rozważanych klas. Jakość klasyfikacji można wtedy obliczyć jako uśrednioną po wszystkich przykładach wartość prawdopodobieństwa przypisanego klasie, do której przykład należy. Wartość taka może wahać się od wartości 0 (kiedy dla każdego przykładu do jego właściwej klasy zostało przypisane prawdopodobieństwo 0) do wartości 1 (kiedy dla każdego przykładu do jego właściwej klasy zostało przypisane prawdopodobieństwo 1).
-		
-	\end{itemize}
+
+	\end{itemize}		
+
+	W przypadku problemów, w których wyróżnia się $ k>2 $ klas miara korzystająca z wartości  \emph{TP},\emph{TN},\emph{FP} i \emph{FN} jest obliczana jako średnia wartość tej miary dla $ k $ problemów binarnych polegających na zaklasyfikowaniu przykładów jako należących lub nienależących do wybranej klasy.
+
 
 \subsection{SVM}
     
-\definicja{Maszyna wektorów wspierających } (\akronim{SVM}, \english{Support Vector Machine})
+\definicja{Maszyna wektorów wspierających } (\akronim{SVM}, \english{Support Vector Machine}) to rodzaj klasyfikatora binarnego.
 
 \begin{itemize}
 \item \definicja{funkcja jądrowa}
