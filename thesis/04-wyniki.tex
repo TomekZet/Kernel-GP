@@ -54,7 +54,7 @@
 
 \FloatBarrier
 \section{Fitness}
-Aby ocenić dobór parametrów procesu ewolucyjnego zapisywano wartości fitness osiągane przez najlepszego osobnika w każdej generacji. Wartości te zostały przedstawione na wykresach przedstawiających wartość fitness najlepszego osobnika w funkcji czasu trwania algorytmu (ilości dotychczas wygenerowanych populacji), czyli tak zwanych \english{Fitness Graphs}. Na wykresash \ref{fig:fit-breast} - \ref{fit:heart} widać jak zmienia się wartość funkcji fitness wraz z kolejnymi generacjami dla różnych miar jakości klasyfikacji użytych jako funkcja fitness (miary te zostały opisane w części \ref{sec:measures} a ich użycie w części \ref{sec:ewaluacja}.
+Aby ocenić dobór parametrów procesu ewolucyjnego zapisywano wartości fitness osiągane przez najlepszego osobnika w każdej generacji. Wartości te zostały przedstawione na wykresach przedstawiających wartość fitness najlepszego osobnika w funkcji czasu trwania algorytmu (ilości dotychczas wygenerowanych populacji), czyli tak zwanych \english{Fitness Graphs}. Na wykresash \ref{fig:fit-heart} - \ref{fig:fit-breast} widać jak zmienia się wartość funkcji fitness wraz z kolejnymi generacjami dla różnych miar jakości klasyfikacji użytych jako funkcja fitness (miary te zostały opisane w części \ref{sec:measures} a ich użycie w części \ref{sec:ewaluacja}).
 
 	\begin{figure}
 		\includegraphics[scale=0.90]{figures/results/fitness/fitness-heart}
@@ -140,7 +140,7 @@ Aby ocenić dobór parametrów procesu ewolucyjnego zapisywano wartości fitness
 %	\end{figure}		
 
 \FloatBarrier
-	\subsubsection{Monotoniczność funkcji trafności}	
+	\subsection{Monotoniczność funkcji trafności}	
 	Miejscami funkcja trafności nie jest monotoniczna, a ściślej niemalejąca, względem liczby generacji oraz wielkości populacji (co widać np. na wykresach \ref{fig:acc-iris-detailed} i \ref{fig:acc-vowel-detailed}). Wydawałoby się, że tak być nie powinno (algorytm genetyczny zwraca najlepszego osobnika z całego swojego przebiegu, więc wszystkie osobniki, które pojawiły się podczas przebiegu z 5 generacjami pojawią się podczas przebiegu z 7 generacjami, więc trafność dla przebiegu z 7 generacjami powinna być co najmniej tak dobra jak dla przebiegu z 5 generacjami). Jednak może się tak zdarzyć ze względu na to, że trafność pokazana na wykresach to trafność klasyfikacji zbioru walidującego, natomiast trafność użyta przez algorytm genetyczny jako miara dostosowania (\english{fitness}) to trafność klasyfikacji zbioru testującego. Widać to na wykresie \ref{fig:fit-iris-detailed}, który przedstawia wartość przystosowania dla tych samych danych, dla których na wykresie \ref{fig:acc-iris-detailed} jest pokazana trafność klasyfikacji na zbiorze walidującym - tutaj funkcja wykazuje mniej braku monotoniczności. 
 
 %	\begin{figure}

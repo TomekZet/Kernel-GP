@@ -24,7 +24,16 @@ Systemy uczące się mają wiele zastosowań, między innymi:
 	\item Wspomaganie podejmowania decyzji
 \end{itemize}
 
-Jednym z rodzajów systemów uczących są systemy klasyfikujące....
+\subsection{Systemy klasyfikujące}
+Jednym z typów systemów uczących się są \emph{systemy klasyfikujące} (inaczej \emph{klasyfikatory}). Operują one na zbiorach \emph{przykładów} opisanych za pomocą pewnego zbioru \emph{atrybutów}.
+Przykłady reprezentują pewne obiekty, które różnią się od siebie wartościami atrybutów. Każdy przykład jest całkowicie scharakteryzowany przez swoje wartości atrybutów, co oznacza, że dwa przykłady o identycznych wartościach atrybutów są z punktu widzenia systemu klasyfikującego nieodróżnialne. Przykładem zbioru przykładów może być np. zbiór pacjentów, zaś zbiorem atrybutów zbiór cech takich jak wiek, płeć, wzrost, wyniki testów laboratoryjnych.
+Wśród zbioru atrybutów wyróżnia się jeden specjalny atrybut zwany atrybutem decyzyjnym (w odróżnieniu od pozostałych - atrybutów warunkowych) zwany też klasą lub etykietą obiektu.
+Zazwyczaj wartość tego atrybutu nie jest znana bezpośrednio, jej zdobycie stanowi pewną wartość. W przytoczonym przypadku pacjentów takim atrybutem może być na przykład diagnoza choroby.
+Uczenie systemu klasyfikującego polega na dostarczeniu do systemu zbioru przykładów z przypisanymi etykietami. Zbiór taki nazywamy \emph{zbiorem trenującym / uczącym}. Na podstawie przykładów ze zbioru uczącego system wytwarza wewnętrzną reprezentację, która następnie umożliwia przypisanie nieznanych klasyfikatorowi etykiet/klas nowym przykładom, które nie występowały w zbiorze uczącym.
+
+\subsubsection{Metody oceny skuteczności klasyfikacji}
+
+
 
 \begin{itemize}
 \item \definicja{zbiór uczący}
@@ -34,7 +43,7 @@ Jednym z rodzajów systemów uczących są systemy klasyfikujące....
 
 \end{itemize}
 
-\subsection{Miary jakości klasyfikacji}\label{sec:measures}
+\subsection{Miary skuteczności klasyfikacji}\label{sec:measures}
 	Do oceny jakości klasyfikacji można używać różnych miar. W przypadku klasyfikacji binarnej większość z nich można wyrazić za pomocą stosunku kilku z czterech wartości wyrażających liczbę przypadków klasyfikowanych w określony sposób. Wartości te są odnoszą się zawsze do jednej z klas, która jest w pewien sposób wyróżniona. Na przykład w przypadku diagnozy medycznej zazwyczaj taką klasą jest grupa osób chorych na jakąś chorobę. Przypadki zaklasyfikowane jako należące do tej klasy określane są jako zaklasyfikowane \textit{pozytywnie} (\english{positive}) natomiast przypadki zaklasyfikowane jako do niej nienależące jako zaklasyfikowane negatywnie (\english{negative}). Słowa \english{"True"} oraz \english{"False"} odnoszą się odpowiednio do przypadków zaklasyfikowanych prawidłowo i nieprawidłowo:
 	\begin{itemize}
 		\item \definicja{\textbf{True Positive (\akronim{TP})}} - liczba przypadków \textbf{poprawnie} zaklasyfikowanych jako \textbf{należące} do wyróżnionej klasy,
@@ -52,12 +61,12 @@ Jednym z rodzajów systemów uczących są systemy klasyfikujące....
 		\item \definicja{Kompletność (\english{recall})} - określa jaka część przypadków należących do wyróżnionej klasy została prawidłowo zaklasyfikowana jako należące do niej. Dana jest wzorem:
 		$$ recall = \frac{TP}{TP+FN} $$
 
-		\item \definicja{Trafność klasyfikacji} (\english{Accuracy}) - stosunek liczby przypadków ze zbioru walidującego, które zostały zaklasyfikowane poprawnie do liczby wszystkich przepadków w zbiorze walidującym. Może być wyrażona jako:
+		\item \definicja{Trafność (lub dokładność)} (\english{Accuracy}) - stosunek liczby przypadków ze zbioru walidującego, które zostały zaklasyfikowane poprawnie do liczby wszystkich przepadków w zbiorze testującym. Może być wyrażona jako:
 		$$ accuracy = \frac{TP+TN}{TP+TN+FP+FN} $$
 
 		\item \definicja{Miara $ F_{1} $ } (\english{ $ F_{1} $ measure }) - 	miara uwzględniająca zarówno precyzję (\english{precision}) jak i \definicja{kompletność} (\english{recall}). Miara ta nie uwzględnia wartości \emph{TN}. Jej wartość jest dana wzorem:
 		$$ F_{1} = 2 \times \frac{precision \times recall}{precision + recall} $$
-		Natomiast 
+		 
 		
 		\item \definicja{ \akronim{MCC} \english{Matthews correlation coefficient}} - miara, która w przeciwieństwie do miary $ F_{1} $ bierze pod uwagę wszystkie cztery wartości (\emph{TP}, \emph{TN}, \emph{FP} i \emph{FN}). Dana wzorem: 
 		$$ MCC = \frac{ TP \times TN - FP \times FN } {\sqrt{ (TP + FP) ( TP + FN ) ( TN + FP ) ( TN + FN ) } } $$
