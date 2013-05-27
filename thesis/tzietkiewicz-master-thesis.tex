@@ -1,9 +1,8 @@
 \documentclass[10pt,polish,a4paper,oneside]{ppfcmthesis}
 
 \usepackage[utf8]{inputenc}
-\usepackage{polski}
-%%\usepackage[polish]{babel}
 \usepackage[OT4]{fontenc}
+\usepackage{amsfonts}
 \usepackage[section]{placeins}
 
 
@@ -14,6 +13,8 @@
 \usepackage{multirow}
 \usepackage{algorithm2e}
 \usepackage{placeins}
+\usepackage{mathtools}
+
 \renewcommand{\listalgorithmcfname}{Lista algorytmów}
 \renewcommand{\algorithmcfname}{Algorytm}
 
@@ -22,6 +23,9 @@
 \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
 \newcommand{\bigO}[0]{\mathcal{O}}
 \newcommand{\dollar}[0]{\$}
+
+
+\newtheorem{definicjaa}{Definicja}[section]
 
 \makeatletter
 \g@addto@macro\@floatboxreset\centering

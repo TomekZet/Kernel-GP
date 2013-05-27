@@ -12,21 +12,7 @@ eval.problem.data = ec.app.kernel_gp.SVMData
 breedthreads = 1
 evalthreads = 1
 
-#gp.tree.print-style = dot
-
-train-file = data/dna.scale.tr
-test-file = data/dna.scale.t
-validation-file = data/dna.scale.v
-
-output-file = out.my.stat
-
-fitness_measure = mcc
-cross-validation = false
-cv-folds = 10
-generations = 2
-pop.subpop.0.size = 50
-
-     
+    
 seed.0 = 864141354      
 seed.1 = 134280905
 seed.2 = 214128957
@@ -48,9 +34,7 @@ seed.16 = 5606443450
 state = ec.app.kernel_gp.SimpleEvolutionStateSVM
 
 stat = ec.app.kernel_gp.KozaStatisticsGP
-#stat = ec.simple.SimpleStatistics
 stat.gather-full=true
-stat.file =	out.stat
 
 quit-on-run-complete = true
 init = ec.gp.GPInitializer
@@ -58,12 +42,12 @@ pop.subpop.0.duplicate-retries = 20
 
 gp.tc.0.init = ec.gp.koza.GrowBuilder
 gp.tc.0.init.min-depth = 2
-gp.tc.0.init.max-depth = 8
+gp.tc.0.init.max-depth = 9
 
-gp.koza.xover.maxdepth = 3
-gp.koza.mutate.maxdepth = 4
+gp.koza.xover.maxdepth = 4
+gp.koza.mutate.maxdepth = 5
 gp.koza.grow.min-depth = 2
-gp.koza.grow.max-depth = 8
+gp.koza.grow.max-depth = 9
 
 pop.subpop.0.species.pipe = ec.breed.MultiBreedingPipeline
 pop.subpop.0.species.pipe.num-sources = 2
@@ -81,7 +65,7 @@ pop.subpop.0.species.pipe.num-sources = 2
 		pop.subpop.0.species.pipe.source.0.source.0.source.2 = ec.breed.ReproductionPipeline
 		pop.subpop.0.species.pipe.source.0.source.0.source.2.prob = 0.05
 
-breed.elite.0 = 3
+breed.elite.0 = 1
 
 breed.reproduce.source.0 = ec.parsimony.BucketTournamentSelection
 gp.koza.xover.source.0 = ec.parsimony.BucketTournamentSelection

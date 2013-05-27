@@ -6,39 +6,41 @@
 \contentsline {chapter}{\chapternumberline {2}Podstawy teoretyczne}{2}{chapter.2}
 \contentsline {section}{\numberline {2.1}Uczenie maszynowe}{2}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Systemy klasyfikuj\IeC {\k a}ce}{3}{subsection.2.1.1}
-\contentsline {subsubsection}{Metody oceny skuteczno\IeC {\'s}ci klasyfikacji}{3}{section*.1}
-\contentsline {subsection}{\numberline {2.1.2}Miary skuteczno\IeC {\'s}ci klasyfikacji}{3}{subsection.2.1.2}
+\contentsline {subsubsection}{Formalizacja problemu klasyfikacji}{3}{section*.1}
+\contentsline {subsubsection}{Metody oceny skuteczno\IeC {\'s}ci klasyfikacji}{3}{section*.2}
+\contentsline {subsection}{\numberline {2.1.2}Miary skuteczno\IeC {\'s}ci klasyfikacji}{4}{subsection.2.1.2}
 \contentsline {subsection}{\numberline {2.1.3}SVM}{5}{subsection.2.1.3}
-\contentsline {section}{\numberline {2.2}Obliczenia ewolucyjne}{5}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Programowanie genetyczne}{5}{subsection.2.2.1}
-\contentsline {section}{\numberline {2.3}Ewolucja kerneli}{5}{section.2.3}
-\contentsline {chapter}{\chapternumberline {3}Algorytm Kernel GP}{6}{chapter.3}
-\contentsline {section}{\numberline {3.1}Opis algorytmu}{6}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Inicjalizacja populacji}{6}{subsection.3.1.1}
-\contentsline {subsubsection}{Generowanie funkcji}{7}{section*.2}
-\contentsline {subsection}{\numberline {3.1.2}Ewaluacja kerneli}{8}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Selekcja}{9}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Krzy\IeC {\.z}owanie i mutacja}{9}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}Walidacja rozwi\IeC {\k a}zania}{9}{subsection.3.1.5}
-\contentsline {section}{\numberline {3.2}Implementacja}{10}{section.3.2}
-\contentsline {section}{\numberline {3.3}Z\IeC {\l }o\IeC {\.z}ono\IeC {\'s}\IeC {\'c} obliczeniowa}{10}{section.3.3}
-\contentsline {chapter}{\chapternumberline {4}Wyniki dzia\IeC {\l }ania algorytmu na popularnych zbiorach danych}{11}{chapter.4}
-\contentsline {section}{\numberline {4.1}Metodologia pomiar\IeC {\'o}w}{11}{section.4.1}
-\contentsline {section}{\numberline {4.2}Opis zbior\IeC {\'o}w danych}{12}{section.4.2}
-\contentsline {section}{\numberline {4.3}Fitness}{12}{section.4.3}
-\contentsline {section}{\numberline {4.4}Wyniki klasyfikacji zbioru waliduj\IeC {\k a}cego}{13}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Monotoniczno\IeC {\'s}\IeC {\'c} funkcji trafno\IeC {\'s}ci}{18}{subsection.4.4.1}
-\contentsline {section}{\numberline {4.5}Czas wykonania}{22}{section.4.5}
-\contentsline {section}{\numberline {4.6}U\IeC {\.z}ycie pami\IeC {\k e}ci}{22}{section.4.6}
-\contentsline {section}{\numberline {4.7}Posdumowanie wynik\IeC {\'o}w}{22}{section.4.7}
-\contentsline {chapter}{\chapternumberline {5}Case study - klasyfikacja danych ADHD 200}{23}{chapter.5}
-\contentsline {section}{\numberline {5.1}Opis zbioru danych}{23}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Surowe dane}{23}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Preprocessing}{24}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2}Konstrukcja i selekcja cech}{24}{section.5.2}
-\contentsline {section}{\numberline {5.3}Wyniki klasyfikacji}{24}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Kernel GP}{24}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Por\IeC {\'o}wnanie z innymi algorytmami}{24}{subsection.5.3.2}
-\contentsline {chapter}{\chapternumberline {6}Podsumowanie}{25}{chapter.6}
-\contentsline {chapter}{Literatura}{26}{section*.6}
-\contentsline {chapter}{Zasoby internetowe}{27}{section*.8}
+\contentsline {subsubsection}{Klasyfikator liniowy}{5}{section*.3}
+\contentsline {subsubsection}{Maszyny wektor\IeC {\'o}w wspieraj\IeC {\k a}cych}{7}{section*.4}
+\contentsline {section}{\numberline {2.2}Obliczenia ewolucyjne}{8}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Programowanie genetyczne}{8}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.3}Ewolucja kerneli}{8}{section.2.3}
+\contentsline {chapter}{\chapternumberline {3}Algorytm Kernel GP}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}Opis algorytmu}{9}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Inicjalizacja populacji}{9}{subsection.3.1.1}
+\contentsline {subsubsection}{Generowanie funkcji}{10}{section*.5}
+\contentsline {subsection}{\numberline {3.1.2}Ewaluacja kerneli}{11}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Selekcja}{12}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Krzy\IeC {\.z}owanie i mutacja}{12}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}Walidacja rozwi\IeC {\k a}zania}{12}{subsection.3.1.5}
+\contentsline {section}{\numberline {3.2}Implementacja}{13}{section.3.2}
+\contentsline {section}{\numberline {3.3}Z\IeC {\l }o\IeC {\.z}ono\IeC {\'s}\IeC {\'c} obliczeniowa}{13}{section.3.3}
+\contentsline {chapter}{\chapternumberline {4}Wyniki dzia\IeC {\l }ania algorytmu na popularnych zbiorach danych}{14}{chapter.4}
+\contentsline {section}{\numberline {4.1}Metodologia pomiar\IeC {\'o}w}{14}{section.4.1}
+\contentsline {section}{\numberline {4.2}Opis zbior\IeC {\'o}w danych}{15}{section.4.2}
+\contentsline {section}{\numberline {4.3}Fitness}{15}{section.4.3}
+\contentsline {section}{\numberline {4.4}Wyniki klasyfikacji zbioru waliduj\IeC {\k a}cego}{16}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Monotoniczno\IeC {\'s}\IeC {\'c} funkcji trafno\IeC {\'s}ci}{21}{subsection.4.4.1}
+\contentsline {section}{\numberline {4.5}Czas wykonania}{25}{section.4.5}
+\contentsline {section}{\numberline {4.6}U\IeC {\.z}ycie pami\IeC {\k e}ci}{25}{section.4.6}
+\contentsline {section}{\numberline {4.7}Posdumowanie wynik\IeC {\'o}w}{25}{section.4.7}
+\contentsline {chapter}{\chapternumberline {5}Case study - klasyfikacja danych ADHD 200}{26}{chapter.5}
+\contentsline {section}{\numberline {5.1}Opis zbioru danych}{26}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Surowe dane}{26}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Preprocessing}{27}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Konstrukcja i selekcja cech}{27}{section.5.2}
+\contentsline {section}{\numberline {5.3}Wyniki klasyfikacji}{27}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Kernel GP}{27}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Por\IeC {\'o}wnanie z innymi algorytmami}{27}{subsection.5.3.2}
+\contentsline {chapter}{\chapternumberline {6}Podsumowanie}{28}{chapter.6}
+\contentsline {chapter}{Zasoby internetowe}{29}{section*.9}

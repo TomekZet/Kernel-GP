@@ -267,6 +267,7 @@ Typeset using \LaTeX\ in Computer Modern.
 \newcommand{\definicja}[1]{\termdef{#1}}
 \newcommand{\akronim}[1]{\acronym{#1}}
 \newcommand{\english}[1]{ang.~\emph{#1}}
+\newcommand{\dotp}[2]{\langle #1, #2 \rangle}
 
 % Table head
 \newcolumntype{L}{c}\newcommand{\tabhead}[1]{\multicolumn{1}{L}{#1}}

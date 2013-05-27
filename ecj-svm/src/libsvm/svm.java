@@ -72,6 +72,7 @@ class Cache {
 	// java: simulate pointer using single-element array
 	int get_data(int index, float[][] data, int len)
 	{
+		//Exception with index == -1
 		head_t h = head[index];
 		if(h.len > 0) lru_delete(h);
 		int more = len - h.len;

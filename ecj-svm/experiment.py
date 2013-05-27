@@ -68,9 +68,9 @@ if __name__ == "__main__":
     parser.add_argument('-p', '--popmax', help='Maximum size of population', type=int, default=101)
     parser.add_argument('--popmin', help='Minimum size of population', type=int, default=None)
     parser.add_argument('--popstep', help='Step of population size incrementation', type=int, default=10)
-    parser.add_argument('--costmin', help='Step of generations size incrementation', type=float, default=0.25)
-    parser.add_argument('--costmax', help='Step of generations size incrementation', type=float, default=1.5)
-    parser.add_argument('--coststep', help='Step of generations size incrementation', type=float, default=0.25)    
+    parser.add_argument('--costmin', help='Minimum cost', type=float, default=0.01)
+    parser.add_argument('--costmax', help='Maximum cost', type=float, default=0.3)
+    parser.add_argument('--coststep', help='Cost step', type=float, default=0.25)    
     parser.add_argument('-d', '--datasets', help='Names of datasets to be used', nargs='+')
     parser.add_argument('-e', '--errors', help='Show errors on stdout (do not write them to file', action='store_true')
     parser.add_argument('-n', '--newdata', help='Generate new data splits', action='store_true')
@@ -191,9 +191,16 @@ if __name__ == "__main__":
         while result <= stop:
             yield result
             result += step
+            
+    def mrange(start, stop, multiplier):
+        result = start
+        while result <= stop:
+            yield result
+            result *= multiplier
 
-    costs = [c for c in frange(args.costmin, args.costmax, args.coststep)]
-    costs = (0.3,)
+    #costs = [c for c in frange(args.costmin, args.costmax, args.coststep)]
+    #costs = [c for c in mrange(args.costmin, args.costmax, 2)]
+    costs = (args.costmax,)
     
 
     cv_folds = 10
