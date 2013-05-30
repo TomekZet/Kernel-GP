@@ -1,0 +1,54 @@
+#!/usr/bin/gnuplot
+
+set xrange[-20:20]
+set yrange[-20:20]
+set zrange[0:1000]
+set isosamples 20, 20
+set style line 1 lc rgb 'green' pt 3 ps 0.5  # star
+set style line 2 lc rgb 'blue' pt 6 ps 0.5  # circle
+set style line 3 lc rgb 'black' pt 13 ps 0.5  # square
+
+set key inside center right
+
+set tmargin 1
+set bmargin 1
+set rmargin 1
+set lmargin 1
+
+set offsets 0, 0, 0, 0
+
+
+lift = 200
+
+set terminal pdf transparent fontscale 0.2 size 6.00in, 4.50in
+
+set output '2-transform-side.pdf'
+
+set xyplane at 100
+set view 90.00, 270.00
+
+splot 3*(x)**2 + 3*(y)**2 + lift title "Kernel", 'plus.dat' using 1:2:($3+lift) with points ls 1 title "+1",\
+'minus.dat' using 1:2:($3+lift) with points ls 2 title "-1", 490 title "Hiperpłaszczyzna"
+unset output
+
+
+set output '2-transform.pdf'
+
+set xyplane at 0
+set view 77, 127
+
+splot 3*(x)**2 + 3*(y)**2 + lift title "Kernel", 'plus.dat' using 1:2:($3+lift) with points ls 1 title "+1",\
+'minus.dat' using 1:2:($3+lift) with points ls 2 title "-1", 490 title "Hiperpłaszczyzna",\
+'plus.dat' using 1:2:(0) with points ls 1 notitle, 'minus.dat' using 1:2:(0) with points ls 2 notitle
+unset output
+
+
+set terminal pdf transparent fontscale 0.5 size 3.00in, 3.00in
+
+set view 0, 0
+set key box outside bottom right
+set output '2-nonlinear.pdf'
+
+plot 'plus.dat' using 1:2 with points ls 1 ps 1 title "+1", 'minus.dat' using 1:2 with points ls 2 ps 1 title "-1"
+unset output
+

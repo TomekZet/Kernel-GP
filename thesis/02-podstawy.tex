@@ -173,7 +173,10 @@ Dla formy dualnej problemu optymalizacji funkcja decyzyjna przyjmuje postać:
 f(x) = sgn \left( \sum_{i=1}^{m} y_i a_i \dotp{x}{x_i} + b \right)
 \end{equation}
 
-W przypadku, w którym dane nie są separowalne liniowo, tzn. nie istnieje taka hiperpłaszczyzna, która dla danego zbioru przykładów spełnia ograniczenia ze wzoru \ref{eq:primal}, do problemu optymalizacyjnego wprowadza się tak zwane \definicja{zmienne osłabiające} (\english{slack variables}) $ \zeta_i, i=1..m $.
+We wzorze \ref{eq:primal} dla większości przykładów wartość współczynników $ \alpha_i $ wyniesie 0. Przykłady te nie mają wpływu na wynik optymalizacji i otrzymaną hiperpłaszczyznę. Pozostałe przykłady, dla których $ \alpha_i > 0 $ noszą nazwę \definicja{wektorów wspierających}. Leżą one dokładnie na marginesie (na hiperpłaszczyźnie wyznaczonej przez margines, czyli w przypadku kanonicznej postaci hiperpłaszczyzny separującej w odległości $ 1/||w|| $ od niej). Wektory wspierające są jedynymi przykładami ze zbioru trenującego, które należy zapamiętać w celu wyznaczenia hiperpłaszczyzny separującej. Ilość wektorów wspierających wyznacza złożoność hipotezy, którą stanowi otrzymana funkcja decyzyjna i pozwala oszacować górną granicę oczekiwanego prawdopodobieństwa błędu klasyfikacji. Górna granica prawdopodobieństwa błędu klasyfikacji klasyfikatora uczonego na zbiorze o wielkości $ m-1 $ równa się liczbie wektorów otrzymanych przy uczeniu na zbiorze o wielkości $ m $ podzielonej przez $ m $.
+
+
+W przypadku, w którym dane nie są separowalne liniowo ze względu na szum, tzn. nie istnieje taka hiperpłaszczyzna, która dla danego zbioru przykładów spełnia ograniczenia ze wzoru \ref{eq:primal}, do problemu optymalizacyjnego wprowadza się tak zwane \definicja{zmienne osłabiające} (\english{slack variables}) $ \zeta_i, i=1..m $, oraz stałą $ C > 0 $, która jest parametrem algorytmu.
 Wzór \ref{eq:primal} przyjmuje wówczas postać: 
 
 \begin{equation}
@@ -195,9 +198,33 @@ Natomiast wzór \ref{eq:dual}:
 \label{eq:dual-c}
 \end{equation}
 
-\definicja{Wektory wspierające}
-
 \subsubsection{Maszyny wektorów wspierających}
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1]{figures/functions/2-nonlinear}
+\label{fig:nonlinear}
+\caption{Zbiór danych opisanych w przestrzeni 2D. Klas nie da się odseparować za pomocą hiperpłaszczyzny}
+\end{figure}
+
+Opisane powyżej klasyfikatory liniowe są w stanie klasyfikować tylko dane, które są separowalne liniowo. Jeśli dane cechuje pewna nieliniowa zależność między wartościami atrybutów decyzyjnych i warunkowych, na przykład taka jak przedstawiona na rysunku \ref{fig:nonlinear}, to klasyfikator liniowy nie poradzi sobie z ich klasyfikacją.
+Aby rozwiązać ten problem można dokonać transformacji danych do przestrzeni o większej liczbie wymiarów, gdzie dane mogą stać się liniowo separowalne. Wartości przykładów w nowych wymiarach stanowią wtedy pewną kombinację wartości z oryginalnych wymiarów. Na rysunku \ref{fig:transform} pokazano dane z rysunku \ref{fig:nonlinear} po transformacji do przestrzeni trój-wymiarowej za pomocą funkcji wielomianowej. Jak widać w nowej przestrzeni dane są separowalne przez hiperpłaszczyznę, co widać dokładnie na rysunku \ref{fig:transform-side}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{figures/functions/2-transform}
+\label{fig:transform}
+\caption{Zbiór z rysunku \ref{fig:nonlinear} po dokonaniu transformacji do przestrzeni 3-wymiarowej. Na wysokości 0 pokazano dane przed transformacją. W nowej przestrzeni klasy mogą być rozdzielone hiperpłaszczyzną.}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{figures/functions/2-transform-side}
+\label{fig:transform-side}
+\caption{Zbiór z rysunku \ref{fig:nonlinear} po dokonaniu transformacji do przestrzeni 3-wymiarowej, rzut wzdłuż osi X}
+\end{figure}
+
 
 \begin{itemize}
 \item \definicja{Transformacja}
