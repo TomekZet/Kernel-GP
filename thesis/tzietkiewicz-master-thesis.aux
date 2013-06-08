@@ -33,6 +33,7 @@
 \@writefile{loa}{\addvspace {10\p@ }}
 \citation{krawiec2003uczenie}
 \citation{Mitchell:1997:ML:541177}
+\citation{krawiec2003uczenie}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
 \@writefile{toc}{\contentsline {chapter}{\chapternumberline {2}Podstawy teoretyczne}{2}{chapter.2}}
@@ -44,130 +45,182 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Miary skuteczno\IeC {\'s}ci klasyfikacji}{4}{subsection.2.1.2}}
 \newlabel{sec:measures}{{2.1.2}{4}{Miary skuteczności klasyfikacji\relax }{subsection.2.1.2}{}}
 \citation{scholkopf_learning_2002}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}SVM}{5}{subsection.2.1.3}}
-\@writefile{toc}{\contentsline {subsubsection}{Klasyfikator liniowy}{5}{section*.3}}
-\newlabel{eq:hiperplane}{{2.1}{5}{Klasyfikator liniowy\relax }{equation.2.1.1}{}}
-\newlabel{eq:canonical}{{2.2}{5}{Klasyfikator liniowy\relax }{equation.2.1.2}{}}
-\newlabel{eq:decfunc}{{2.3}{5}{Klasyfikator liniowy\relax }{equation.2.1.3}{}}
-\newlabel{fig:hyperplanes}{{2.1.3}{6}{Klasyfikator liniowy\relax }{equation.2.1.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Hiperp\IeC {\l }aszczyzny separuj\IeC {\k a}ce dwa zbiory punkt\IeC {\'o}w w przestrzeni dw\IeC {\'o}wymiarowej. Ka\IeC {\.z}da z z nich poprawnie separuje punkty ze zbioru ucz\IeC {\k a}cego - zielone ko\IeC {\l }a i niebieskie kwadraty. Przyk\IeC {\l }ady ze zbioru testowego (puste kwadraty i k\IeC {\'o}\IeC {\l }ka) s\IeC {\k a} poprawnie separowane jedynie przez dwie proste (prosta narysowana lini\IeC {\k a} ci\IeC {\k a}g\IeC {\l }\IeC {\k a} i prosta narysowana kropkami i keskami).}}{6}{figure.2.1}}
-\newlabel{eq:margin}{{2.4}{6}{Klasyfikator liniowy\relax }{equation.2.1.4}{}}
-\newlabel{eq:primal}{{2.5}{6}{Klasyfikator liniowy\relax }{equation.2.1.5}{}}
-\newlabel{fig:margin}{{2.1.3}{7}{Klasyfikator liniowy\relax }{equation.2.1.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}SVM - Maszyny wektor\IeC {\'o}w wspieraj\IeC {\k a}cych}{5}{section.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Klasyfikatory liniowe}{5}{subsection.2.2.1}}
+\newlabel{eq:hyperplane}{{2.1}{5}{Klasyfikatory liniowe\relax }{equation.2.2.1}{}}
+\newlabel{eq:canonical}{{2.2}{5}{Klasyfikatory liniowe\relax }{equation.2.2.2}{}}
+\newlabel{eq:decfunc}{{2.3}{5}{Klasyfikatory liniowe\relax }{equation.2.2.3}{}}
+\newlabel{fig:hyperplanes}{{2.2.1}{6}{Klasyfikatory liniowe\relax }{equation.2.2.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Hiperp\IeC {\l }aszczyzny separuj\IeC {\k a}ce dwa zbiory punkt\IeC {\'o}w w przestrzeni dw\IeC {\'o}-wymiarowej. Ka\IeC {\.z}da z z nich poprawnie separuje punkty ze zbioru ucz\IeC {\k a}cego - zielone ko\IeC {\l }a i niebieskie kwadraty. Przyk\IeC {\l }ady ze zbioru testowego (puste kwadraty i k\IeC {\'o}\IeC {\l }ka) s\IeC {\k a} poprawnie separowane jedynie przez dwie proste (prosta narysowana lini\IeC {\k a} ci\IeC {\k a}g\IeC {\l }\IeC {\k a} i prosta narysowana kropkami i kreskami).}}{6}{figure.2.1}}
+\newlabel{eq:margin}{{2.4}{6}{Klasyfikatory liniowe\relax }{equation.2.2.4}{}}
+\newlabel{eq:primal}{{2.5}{6}{Klasyfikatory liniowe\relax }{equation.2.2.5}{}}
+\newlabel{fig:margin}{{2.2.1}{7}{Klasyfikatory liniowe\relax }{equation.2.2.5}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Hiperp\IeC {\l }aszczyzna separuj\IeC {\k a}ca dwa zbiory punkt\IeC {\'o}w w przestrzeni dwuwymiarowej wraz z marginesami. Przyk\IeC {\l }ady w k\IeC {\'o}\IeC {\l }ku to wektory podpieraj\IeC {\k a}ce.}}{7}{figure.2.2}}
-\newlabel{eq:dual}{{2.6}{7}{Klasyfikator liniowy\relax }{equation.2.1.6}{}}
-\newlabel{eq:primal-c}{{2.8}{7}{Klasyfikator liniowy\relax }{equation.2.1.8}{}}
-\newlabel{eq:dual-c}{{2.9}{8}{Klasyfikator liniowy\relax }{equation.2.1.9}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Maszyny wektor\IeC {\'o}w wspieraj\IeC {\k a}cych}{8}{section*.4}}
-\newlabel{fig:nonlinear}{{2.1.3}{8}{Maszyny wektorów wspierających\relax }{section*.4}{}}
+\newlabel{eq:dual}{{2.6}{7}{Klasyfikatory liniowe\relax }{equation.2.2.6}{}}
+\newlabel{eq:decfn}{{2.7}{7}{Klasyfikatory liniowe\relax }{equation.2.2.7}{}}
+\newlabel{eq:primal-c}{{2.8}{7}{Klasyfikatory liniowe\relax }{equation.2.2.8}{}}
+\newlabel{eq:dual-c}{{2.9}{8}{Klasyfikatory liniowe\relax }{equation.2.2.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Maszyny wektor\IeC {\'o}w wspieraj\IeC {\k a}cych}{8}{subsection.2.2.2}}
+\newlabel{fig:nonlinear}{{2.2.2}{8}{Maszyny wektorów wspierających\relax }{subsection.2.2.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Zbi\IeC {\'o}r danych opisanych w przestrzeni 2D. Klas nie da si\IeC {\k e} odseparowa\IeC {\'c} za pomoc\IeC {\k a} hiperp\IeC {\l }aszczyzny}}{8}{figure.2.3}}
-\newlabel{fig:transform}{{2.1.3}{9}{Maszyny wektorów wspierających\relax }{figure.2.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Zbi\IeC {\'o}r z rysunku \ref  {fig:nonlinear} po dokonaniu transformacji do przestrzeni 3-wymiarowej. Na wysoko\IeC {\'s}ci 0 pokazano dane przed transformacj\IeC {\k a}. W nowej przestrzeni klasy mog\IeC {\k a} by\IeC {\'c} rozdzielone hiperp\IeC {\l }aszczyzn\IeC {\k a}.}}{9}{figure.2.4}}
-\newlabel{fig:transform-side}{{2.1.3}{9}{Maszyny wektorów wspierających\relax }{figure.2.4}{}}
+\newlabel{fig:transform}{{2.2.2}{8}{Maszyny wektorów wspierających\relax }{figure.2.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Zbi\IeC {\'o}r z rysunku \ref  {fig:nonlinear} po dokonaniu transformacji do przestrzeni 3-wymiarowej. Na wysoko\IeC {\'s}ci 0 pokazano dane przed transformacj\IeC {\k a}. W nowej przestrzeni klasy mog\IeC {\k a} by\IeC {\'c} rozdzielone hiperp\IeC {\l }aszczyzn\IeC {\k a}.}}{8}{figure.2.4}}
+\citation{Boser:1992:TAO:130385.130401}
+\newlabel{fig:transform-side}{{2.2.2}{9}{Maszyny wektorów wspierających\relax }{figure.2.4}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Zbi\IeC {\'o}r z rysunku \ref  {fig:nonlinear} po dokonaniu transformacji do przestrzeni 3-wymiarowej, rzut wzd\IeC {\l }u\IeC {\.z} osi X}}{9}{figure.2.5}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Obliczenia ewolucyjne}{10}{section.2.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Programowanie genetyczne}{10}{subsection.2.2.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Ewolucja kerneli}{10}{section.2.3}}
+\newlabel{eq:dual-k-target}{{2.10}{9}{Maszyny wektorów wspierających\relax }{equation.2.2.10}{}}
+\newlabel{eq:dual-k}{{2.12}{10}{Maszyny wektorów wspierających\relax }{equation.2.2.12}{}}
+\newlabel{eq:decfn-k}{{2.13}{10}{Maszyny wektorów wspierających\relax }{equation.2.2.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Dob\IeC {\'o}r funkcji j\IeC {\k a}dra}{10}{section*.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Klasyfikacja wi\IeC {\k e}cej ni\IeC {\.z} dw\IeC {\'o}ch klas}{10}{subsection.2.2.3}}
+\@writefile{toc}{\contentsline {subsubsection}{Jeden przeciw wszystkim}{10}{section*.4}}
+\@writefile{toc}{\contentsline {subsubsection}{Klasyfikacja parami}{10}{section*.5}}
+\citation{Luke2009Metaheuristics}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Obliczenia ewolucyjne}{11}{section.2.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Diagram przep\IeC {\l }ywu algorytmu ewolucyjnego GP.}}{12}{figure.2.6}}
+\newlabel{fig:ea}{{2.6}{12}{Diagram przepływu algorytmu ewolucyjnego GP}{figure.2.6}{}}
+\newlabel{ewaluacja}{{2}{12}{Obliczenia ewolucyjne\relax }{Item.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Selekcja}{12}{section*.6}}
+\citation{Luke2009Metaheuristics}
+\citation{Luke2009Metaheuristics}
+\@writefile{toc}{\contentsline {subsubsection}{Krzy\IeC {\.z}owanie}{13}{section*.7}}
+\@writefile{toc}{\contentsline {subsubsection}{Mutacja}{13}{section*.8}}
+\citation{Luke2009Metaheuristics}
+\citation{Poli:2008:FGG:1796422}
+\@writefile{toc}{\contentsline {subsubsection}{Genotyp}{14}{section*.9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Programowanie genetyczne}{14}{subsection.2.3.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Przyk\IeC {\l }adowe drzewo, kt\IeC {\'o}re mo\IeC {\.z}e by\IeC {\'c} wynikiem dzia\IeC {\l }ania algorytmu GP. Drzewo przestawia wyra\IeC {\.z}enie $ e^{-\gamma *||x-y||^2} $ }}{14}{figure.2.7}}
+\newlabel{fig:2-tree}{{2.7}{14}{Przykładowe drzewo, które może być wynikiem działania algorytmu GP. Drzewo przestawia wyrażenie $ e^{-\gamma *||x-y||^2} $\relax }{figure.2.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Inicjalizacja populacji}{15}{section*.10}}
+\@writefile{toc}{\contentsline {subsubsection}{Krzy\IeC {\.z}owanie}{15}{section*.11}}
+\@writefile{toc}{\contentsline {subsubsection}{Mutacja}{15}{section*.12}}
+\@writefile{toc}{\contentsline {subsubsection}{Selekcja}{15}{section*.13}}
+\newlabel{fig:2-cross}{{2.3.1}{16}{Krzyżowanie\relax }{section*.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Krzy\IeC {\.z}owanie drzew. U g\IeC {\'o}ry pokazano drzewa rodzic\IeC {\'o}w, punkty ci\IeC {\k e}cia zaznaczono czerwonymi kreskami. Na dole wida\IeC {\'c} dw\IeC {\'o}ch potomk\IeC {\'o}w b\IeC {\k e}d\IeC {\k a}cych wynikiem krzy\IeC {\.z}owania.}}{16}{figure.2.8}}
+\citation{practical_2003}
+\citation{gagne_genetic_2006}
+\citation{howley_genetic_2005}
+\citation{sean_ecj_2010}
+\citation{sullivan_evolving_2007}
+\newlabel{fig:2-mutation}{{2.3.1}{17}{Mutacja\relax }{section*.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Przyk\IeC {\l }adowa mutacja drzewa. U g\IeC {\'o}ry po lewej pokazano drzewo poddawane mutacji, u g\IeC {\'o}ry po prawej losowo wygenerowane poddrzewo, na dole wyniki mutacji. Odcinana cz\IeC {\k e}\IeC {\'s}\IeC {\'c} mutowanego drzewa (na rysunku przekre\IeC {\'s}lona) zostaje odrzucona (nie jest ju\IeC {\.z} nigdzie wykorzystywana).}}{17}{figure.2.9}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Ewolucja kerneli - przegl\IeC {\k a}d literatury}{17}{section.2.4}}
 \@writefile{loa}{\addvspace {10\p@ }}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\@writefile{toc}{\contentsline {chapter}{\chapternumberline {3}Algorytm Kernel GP}{11}{chapter.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Opis algorytmu}{11}{section.3.1}}
-\newlabel{ewaluacja}{{2}{11}{Opis algorytmu\relax }{Item.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Inicjalizacja populacji}{11}{subsection.3.1.1}}
+\@writefile{toc}{\contentsline {chapter}{\chapternumberline {3}Algorytm Kernel GP}{18}{chapter.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Opis algorytmu}{18}{section.3.1}}
+\newlabel{ewaluacja}{{2}{18}{Opis algorytmu\relax }{Item.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Inicjalizacja populacji}{18}{subsection.3.1.1}}
 \citation{Shawe-Taylor:2004:KMP:975545}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagram przep\IeC {\l }ywu algorytmu Kernel GP.}}{12}{figure.3.1}}
-\newlabel{fig:algorithm}{{3.1}{12}{Diagram przepływu algorytmu Kernel GP}{figure.3.1}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Generowanie funkcji}{12}{section*.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Ewaluacja kerneli}{13}{subsection.3.1.2}}
-\newlabel{sec:ewaluacja}{{3.1.2}{13}{Ewaluacja kerneli\relax }{subsection.3.1.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Przyk\IeC {\l }adowe drzewo generowane przez algorytm.}}{14}{figure.3.2}}
-\newlabel{fig:tree}{{3.2}{14}{Przykładowe drzewo generowane przez algorytm}{figure.3.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}Selekcja}{14}{subsection.3.1.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.4}Krzy\IeC {\.z}owanie i mutacja}{14}{subsection.3.1.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.5}Walidacja rozwi\IeC {\k a}zania}{14}{subsection.3.1.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagram przep\IeC {\l }ywu algorytmu Kernel GP.}}{19}{figure.3.1}}
+\newlabel{fig:algorithm}{{3.1}{19}{Diagram przepływu algorytmu Kernel GP}{figure.3.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Generowanie funkcji}{19}{section*.14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Ewaluacja kerneli}{20}{subsection.3.1.2}}
+\newlabel{sec:ewaluacja}{{3.1.2}{20}{Ewaluacja kerneli\relax }{subsection.3.1.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Przyk\IeC {\l }adowe drzewo generowane przez algorytm.}}{21}{figure.3.2}}
+\newlabel{fig:3-tree}{{3.2}{21}{Przykładowe drzewo generowane przez algorytm}{figure.3.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}Selekcja}{21}{subsection.3.1.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.4}Krzy\IeC {\.z}owanie i mutacja}{21}{subsection.3.1.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.5}Walidacja rozwi\IeC {\k a}zania}{21}{subsection.3.1.5}}
 \citation{sean_ecj_2010}
 \citation{chang_libsvm:_2011}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Implementacja}{15}{section.3.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Z\IeC {\l }o\IeC {\.z}ono\IeC {\'s}\IeC {\'c} obliczeniowa}{15}{section.3.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Implementacja}{22}{section.3.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Z\IeC {\l }o\IeC {\.z}ono\IeC {\'s}\IeC {\'c} obliczeniowa}{22}{section.3.3}}
 \citation{chang_libsvm:_2011}
 \@writefile{loa}{\addvspace {10\p@ }}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\@writefile{toc}{\contentsline {chapter}{\chapternumberline {4}Wyniki dzia\IeC {\l }ania algorytmu na popularnych zbiorach danych}{16}{chapter.4}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Metodologia pomiar\IeC {\'o}w}{16}{section.4.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Opis zbior\IeC {\'o}w danych}{17}{section.4.2}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Zbiory danych u\IeC {\.z}yte do testowania systemu.}}{17}{table.4.1}}
-\newlabel{tab:datasets}{{4.1}{17}{Zbiory danych użyte do testowania systemu}{table.4.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Zbiory danych u\IeC {\.z}yte do testowania systemu.}}{17}{table.4.2}}
-\newlabel{tab:datasets2}{{4.2}{17}{Zbiory danych użyte do testowania systemu}{table.4.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Fitness}{17}{section.4.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Najlepsza warto\IeC {\'s}\IeC {\'c} funkcji przystosowania dla kolejnych pokole\IeC {\'n} dla zbioru \emph  {heart}.}}{18}{figure.4.1}}
-\newlabel{fig:fit-heart}{{4.1}{18}{Najlepsza wartość funkcji przystosowania dla kolejnych pokoleń dla zbioru \emph {heart}}{figure.4.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Najlepsza warto\IeC {\'s}\IeC {\'c} funkcji przystosowania dla kolejnych pokole\IeC {\'n} dla zbioru \emph  {breast}.}}{18}{figure.4.2}}
-\newlabel{fig:fit-breast}{{4.2}{18}{Najlepsza wartość funkcji przystosowania dla kolejnych pokoleń dla zbioru \emph {breast}}{figure.4.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Wyniki klasyfikacji zbioru waliduj\IeC {\k a}cego}{18}{section.4.4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Tragno\IeC {\'s}\IeC {\'c} (ang.~\emph  {accuracy}) klasyfikacji dla zbioru \emph  {breast} w funkcji czasu wykonania (ilo\IeC {\'s}ci pokole\IeC {\'n}).}}{19}{figure.4.3}}
-\newlabel{fig:acc-breast}{{4.3}{19}{Tragność (\english {accuracy}) klasyfikacji dla zbioru \emph {breast} w funkcji czasu wykonania (ilości pokoleń)}{figure.4.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Tragno\IeC {\'s}\IeC {\'c} (ang.~\emph  {accuracy}) klasyfikacji dla zbioru \emph  {heart} w funkcji czasu wykonania (ilo\IeC {\'s}ci pokole\IeC {\'n}).}}{19}{figure.4.4}}
-\newlabel{fig:acc-heart}{{4.4}{19}{Tragność (\english {accuracy}) klasyfikacji dla zbioru \emph {heart} w funkcji czasu wykonania (ilości pokoleń)}{figure.4.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Warto\IeC {\'s}\IeC {\'c} miary F1 dla wynik\IeC {\'o}w klasyfikacji zbioru \emph  {breast} w funkcji czasu wykonania (ilo\IeC {\'s}ci pokole\IeC {\'n}).}}{20}{figure.4.5}}
-\newlabel{fig:f1-breast}{{4.5}{20}{Wartość miary F1 dla wyników klasyfikacji zbioru \emph {breast} w funkcji czasu wykonania (ilości pokoleń)}{figure.4.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Warto\IeC {\'s}\IeC {\'c} miary F1 dla wynik\IeC {\'o}w klasyfikacji zbioru \emph  {heart} w funkcji czasu wykonania (ilo\IeC {\'s}ci pokole\IeC {\'n}).}}{20}{figure.4.6}}
-\newlabel{fig:f1-heart}{{4.6}{20}{Wartość miary F1 dla wyników klasyfikacji zbioru \emph {heart} w funkcji czasu wykonania (ilości pokoleń)}{figure.4.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Warto\IeC {\'s}\IeC {\'c} miary \emph  {Mathews Correlation Coefficent} (\emph  {\MakeUppercase  {mcc}}) dla wynik\IeC {\'o}w klasyfikacji zbioru \emph  {breast} w funkcji czasu wykonania (ilo\IeC {\'s}ci pokole\IeC {\'n}).}}{21}{figure.4.7}}
-\newlabel{fig:mcc-breast}{{4.7}{21}{Wartość miary \emph {Mathews Correlation Coefficent} (\akronim {mcc}) dla wyników klasyfikacji zbioru \emph {breast} w funkcji czasu wykonania (ilości pokoleń)}{figure.4.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Warto\IeC {\'s}\IeC {\'c} miary \emph  {Mathews Correlation Coefficent} dla wynik\IeC {\'o}w klasyfikacji zbioru \emph  {heart} w funkcji czasu wykonania (ilo\IeC {\'s}ci pokole\IeC {\'n}).}}{21}{figure.4.8}}
-\newlabel{fig:mcc-heart}{{4.8}{21}{Wartość miary \emph {Mathews Correlation Coefficent} dla wyników klasyfikacji zbioru \emph {heart} w funkcji czasu wykonania (ilości pokoleń)}{figure.4.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces \IeC {\'S}rednia warto\IeC {\'s}\IeC {\'c} prawdopodobie\IeC {\'n}stwa przypisywanego przez SVM w\IeC {\l }a\IeC {\'s}ciwej dla klasyfikowanego przyk\IeC {\l }au klasie w funkcji czasu wykonania (ilo\IeC {\'s}ci pokole\IeC {\'n}). Zbi\IeC {\'o}r \emph  {breast}}}{22}{figure.4.9}}
-\newlabel{fig:probability-breast}{{4.9}{22}{Średnia wartość prawdopodobieństwa przypisywanego przez SVM właściwej dla klasyfikowanego przykłau klasie w funkcji czasu wykonania (ilości pokoleń). Zbiór \emph {breast}\relax }{figure.4.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces \IeC {\'S}rednia warto\IeC {\'s}\IeC {\'c} prawdopodobie\IeC {\'n}stwa przypisywanego przez SVM w\IeC {\l }a\IeC {\'s}ciwej dla klasyfikowanego przyk\IeC {\l }au klasie w funkcji czasu wykonania (ilo\IeC {\'s}ci pokole\IeC {\'n}). Zbi\IeC {\'o}r \emph  {heart}.}}{22}{figure.4.10}}
-\newlabel{fig:probability-heart}{{4.10}{22}{Średnia wartość prawdopodobieństwa przypisywanego przez SVM właściwej dla klasyfikowanego przykłau klasie w funkcji czasu wykonania (ilości pokoleń). Zbiór \emph {heart}}{figure.4.10}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Monotoniczno\IeC {\'s}\IeC {\'c} funkcji trafno\IeC {\'s}ci}{23}{subsection.4.4.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces Trafno\IeC {\'s}\IeC {\'c} klasyfikacji dla zbioru \emph  {iris} w funkcji rozmiaru populacji dla r\IeC {\'o}znych ilo\IeC {\'s}ci pokole\IeC {\'n}, dla ma\IeC {\l }ych populacji. }}{23}{figure.4.11}}
-\newlabel{fig:acc-iris-detailed}{{4.11}{23}{Trafność klasyfikacji dla zbioru \emph {iris} w funkcji rozmiaru populacji dla róznych ilości pokoleń, dla małych populacji}{figure.4.11}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.12}{\ignorespaces Najlepsza warto\IeC {\'s}\IeC {\'c} funkcji przystosowania (ang.~\emph  {fitness}) \emph  {iris} w funkcji rozmiaru populacji dla r\IeC {\'o}znych ilo\IeC {\'s}ci pokole\IeC {\'n}, dla ma\IeC {\l }ych populacji. }}{24}{figure.4.12}}
-\newlabel{fig:fit-iris-detailed}{{4.12}{24}{Najlepsza wartość funkcji przystosowania (\english {fitness}) \emph {iris} w funkcji rozmiaru populacji dla róznych ilości pokoleń, dla małych populacji}{figure.4.12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.13}{\ignorespaces Trafno\IeC {\'s}\IeC {\'c} klasyfikacji dla zbioru \emph  {vowel} w funkcji rozmiaru populacji dla r\IeC {\'o}znych ilo\IeC {\'s}ci pokole\IeC {\'n}, dla ma\IeC {\l }ych populacji.}}{24}{figure.4.13}}
-\newlabel{fig:acc-vowel-detailed}{{4.13}{24}{Trafność klasyfikacji dla zbioru \emph {vowel} w funkcji rozmiaru populacji dla róznych ilości pokoleń, dla małych populacji}{figure.4.13}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.14}{\ignorespaces Trafno\IeC {\'s}\IeC {\'c} klasyfikacji dla zbioru \emph  {vowel} w funkcji rozmiaru populacji dla r\IeC {\'o}znych ilo\IeC {\'s}ci pokole\IeC {\'n}, dla ma\IeC {\l }ych populacji.}}{25}{figure.4.14}}
-\newlabel{fig:fit-vowel-detailed}{{4.14}{25}{Trafność klasyfikacji dla zbioru \emph {vowel} w funkcji rozmiaru populacji dla róznych ilości pokoleń, dla małych populacji}{figure.4.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.15}{\ignorespaces Funkcja z pierwszego pokolenia, kt\IeC {\'o}ra w przebiego z wielko\IeC {\'s}ci\IeC {\k a} populacji 4 osi\IeC {\k a}gn\IeC {\k e}\IeC {\l }a fitness $0.4242424$. Przodek funkcji z rys.\ref  {fig:func2} }}{25}{figure.4.15}}
-\newlabel{fig:func1}{{4.15}{25}{Funkcja z pierwszego pokolenia, która w przebiego z wielkością populacji 4 osiągnęła fitness $0.4242424$. Przodek funkcji z rys.\ref {fig:func2}\relax }{figure.4.15}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.16}{\ignorespaces Funkcja z trzeciego pokolenia, kt\IeC {\'o}ra w przebiego z wielko\IeC {\'s}ci\IeC {\k a} populacji 4 osi\IeC {\k a}gn\IeC {\k e}\IeC {\l }a fitness $0.78030306$. Potomek funkcji z rys.\ref  {fig:func1}, przodek zwyci\IeC {\k e}skiej funkcji (rys.\ref  {fig:func5}) z przebiegu z populacj\IeC {\k a} o wielko\IeC {\'s}ci 4.}}{26}{figure.4.16}}
-\newlabel{fig:func2}{{4.16}{26}{Funkcja z trzeciego pokolenia, która w przebiego z wielkością populacji 4 osiągnęła fitness $0.78030306$. Potomek funkcji z rys.\ref {fig:func1}, przodek zwycięskiej funkcji (rys.\ref {fig:func5}) z przebiegu z populacją o wielkości 4}{figure.4.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.17}{\ignorespaces Funkcja z ostatniego pokolenia w przebiegu z wielko\IeC {\'s}ci\IeC {\k a} populacji 4 osi\IeC {\k a}gn\IeC {\k e}\IeC {\l }a fitness $0.8333333$. Przodek zwyci\IeC {\k e}skiej funkcji z rys.\ref  {fig:func4} }}{26}{figure.4.17}}
-\newlabel{fig:func5}{{4.17}{26}{Funkcja z ostatniego pokolenia w przebiegu z wielkością populacji 4 osiągnęła fitness $0.8333333$. Przodek zwycięskiej funkcji z rys.\ref {fig:func4}\relax }{figure.4.17}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.18}{\ignorespaces Funkcja z trzeciego pokolenia, kt\IeC {\'o}ra w przebiegu z wielko\IeC {\'s}ci\IeC {\k a} populacji 3 i 4 osi\IeC {\k a}gn\IeC {\k e}\IeC {\l }a fitness $0.6515151$. Przodek zwyci\IeC {\k e}skiej funkcji z rys.\ref  {fig:func4}}}{26}{figure.4.18}}
-\newlabel{fig:func3}{{4.18}{26}{Funkcja z trzeciego pokolenia, która w przebiegu z wielkością populacji 3 i 4 osiągnęła fitness $0.6515151$. Przodek zwycięskiej funkcji z rys.\ref {fig:func4}\relax }{figure.4.18}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.19}{\ignorespaces Zwyci\IeC {\k e}ska funkcja w przebiegu z populacj\IeC {\k a} wielko\IeC {\'s}ci 3, potomek funkcji z rys.\ref  {fig:func3}. Osi\IeC {\k a}gn\IeC {\k e}\IeC {\l }a fitness $0.9015151$. }}{27}{figure.4.19}}
-\newlabel{fig:func4}{{4.19}{27}{Zwycięska funkcja w przebiegu z populacją wielkości 3, potomek funkcji z rys.\ref {fig:func3}. Osiągnęła fitness $0.9015151$}{figure.4.19}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Czas wykonania}{27}{section.4.5}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.6}U\IeC {\.z}ycie pami\IeC {\k e}ci}{27}{section.4.6}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.7}Posdumowanie wynik\IeC {\'o}w}{27}{section.4.7}}
+\@writefile{toc}{\contentsline {chapter}{\chapternumberline {4}Wyniki dzia\IeC {\l }ania algorytmu na popularnych zbiorach danych}{23}{chapter.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Metodologia pomiar\IeC {\'o}w}{23}{section.4.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Opis zbior\IeC {\'o}w danych}{24}{section.4.2}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Zbiory danych u\IeC {\.z}yte do testowania systemu.}}{24}{table.4.1}}
+\newlabel{tab:datasets}{{4.1}{24}{Zbiory danych użyte do testowania systemu}{table.4.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Zbiory danych u\IeC {\.z}yte do testowania systemu.}}{24}{table.4.2}}
+\newlabel{tab:datasets2}{{4.2}{24}{Zbiory danych użyte do testowania systemu}{table.4.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Fitness}{24}{section.4.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Najlepsza warto\IeC {\'s}\IeC {\'c} funkcji przystosowania dla kolejnych pokole\IeC {\'n} dla zbioru \emph  {heart}.}}{25}{figure.4.1}}
+\newlabel{fig:fit-heart}{{4.1}{25}{Najlepsza wartość funkcji przystosowania dla kolejnych pokoleń dla zbioru \emph {heart}}{figure.4.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Najlepsza warto\IeC {\'s}\IeC {\'c} funkcji przystosowania dla kolejnych pokole\IeC {\'n} dla zbioru \emph  {breast}.}}{25}{figure.4.2}}
+\newlabel{fig:fit-breast}{{4.2}{25}{Najlepsza wartość funkcji przystosowania dla kolejnych pokoleń dla zbioru \emph {breast}}{figure.4.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Wyniki klasyfikacji zbioru waliduj\IeC {\k a}cego}{25}{section.4.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Tragno\IeC {\'s}\IeC {\'c} (ang.~\emph  {accuracy}) klasyfikacji dla zbioru \emph  {breast} w funkcji czasu wykonania (ilo\IeC {\'s}ci pokole\IeC {\'n}).}}{26}{figure.4.3}}
+\newlabel{fig:acc-breast}{{4.3}{26}{Tragność (\english {accuracy}) klasyfikacji dla zbioru \emph {breast} w funkcji czasu wykonania (ilości pokoleń)}{figure.4.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Tragno\IeC {\'s}\IeC {\'c} (ang.~\emph  {accuracy}) klasyfikacji dla zbioru \emph  {heart} w funkcji czasu wykonania (ilo\IeC {\'s}ci pokole\IeC {\'n}).}}{26}{figure.4.4}}
+\newlabel{fig:acc-heart}{{4.4}{26}{Tragność (\english {accuracy}) klasyfikacji dla zbioru \emph {heart} w funkcji czasu wykonania (ilości pokoleń)}{figure.4.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Warto\IeC {\'s}\IeC {\'c} miary F1 dla wynik\IeC {\'o}w klasyfikacji zbioru \emph  {breast} w funkcji czasu wykonania (ilo\IeC {\'s}ci pokole\IeC {\'n}).}}{27}{figure.4.5}}
+\newlabel{fig:f1-breast}{{4.5}{27}{Wartość miary F1 dla wyników klasyfikacji zbioru \emph {breast} w funkcji czasu wykonania (ilości pokoleń)}{figure.4.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Warto\IeC {\'s}\IeC {\'c} miary F1 dla wynik\IeC {\'o}w klasyfikacji zbioru \emph  {heart} w funkcji czasu wykonania (ilo\IeC {\'s}ci pokole\IeC {\'n}).}}{27}{figure.4.6}}
+\newlabel{fig:f1-heart}{{4.6}{27}{Wartość miary F1 dla wyników klasyfikacji zbioru \emph {heart} w funkcji czasu wykonania (ilości pokoleń)}{figure.4.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Warto\IeC {\'s}\IeC {\'c} miary \emph  {Mathews Correlation Coefficent} (\emph  {\MakeUppercase  {mcc}}) dla wynik\IeC {\'o}w klasyfikacji zbioru \emph  {breast} w funkcji czasu wykonania (ilo\IeC {\'s}ci pokole\IeC {\'n}).}}{28}{figure.4.7}}
+\newlabel{fig:mcc-breast}{{4.7}{28}{Wartość miary \emph {Mathews Correlation Coefficent} (\akronim {mcc}) dla wyników klasyfikacji zbioru \emph {breast} w funkcji czasu wykonania (ilości pokoleń)}{figure.4.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Warto\IeC {\'s}\IeC {\'c} miary \emph  {Mathews Correlation Coefficent} dla wynik\IeC {\'o}w klasyfikacji zbioru \emph  {heart} w funkcji czasu wykonania (ilo\IeC {\'s}ci pokole\IeC {\'n}).}}{28}{figure.4.8}}
+\newlabel{fig:mcc-heart}{{4.8}{28}{Wartość miary \emph {Mathews Correlation Coefficent} dla wyników klasyfikacji zbioru \emph {heart} w funkcji czasu wykonania (ilości pokoleń)}{figure.4.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces \IeC {\'S}rednia warto\IeC {\'s}\IeC {\'c} prawdopodobie\IeC {\'n}stwa przypisywanego przez SVM w\IeC {\l }a\IeC {\'s}ciwej dla klasyfikowanego przyk\IeC {\l }au klasie w funkcji czasu wykonania (ilo\IeC {\'s}ci pokole\IeC {\'n}). Zbi\IeC {\'o}r \emph  {breast}}}{29}{figure.4.9}}
+\newlabel{fig:probability-breast}{{4.9}{29}{Średnia wartość prawdopodobieństwa przypisywanego przez SVM właściwej dla klasyfikowanego przykłau klasie w funkcji czasu wykonania (ilości pokoleń). Zbiór \emph {breast}\relax }{figure.4.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces \IeC {\'S}rednia warto\IeC {\'s}\IeC {\'c} prawdopodobie\IeC {\'n}stwa przypisywanego przez SVM w\IeC {\l }a\IeC {\'s}ciwej dla klasyfikowanego przyk\IeC {\l }au klasie w funkcji czasu wykonania (ilo\IeC {\'s}ci pokole\IeC {\'n}). Zbi\IeC {\'o}r \emph  {heart}.}}{29}{figure.4.10}}
+\newlabel{fig:probability-heart}{{4.10}{29}{Średnia wartość prawdopodobieństwa przypisywanego przez SVM właściwej dla klasyfikowanego przykłau klasie w funkcji czasu wykonania (ilości pokoleń). Zbiór \emph {heart}}{figure.4.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Monotoniczno\IeC {\'s}\IeC {\'c} funkcji trafno\IeC {\'s}ci}{30}{subsection.4.4.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces Trafno\IeC {\'s}\IeC {\'c} klasyfikacji dla zbioru \emph  {iris} w funkcji rozmiaru populacji dla r\IeC {\'o}znych ilo\IeC {\'s}ci pokole\IeC {\'n}, dla ma\IeC {\l }ych populacji. }}{30}{figure.4.11}}
+\newlabel{fig:acc-iris-detailed}{{4.11}{30}{Trafność klasyfikacji dla zbioru \emph {iris} w funkcji rozmiaru populacji dla róznych ilości pokoleń, dla małych populacji}{figure.4.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.12}{\ignorespaces Najlepsza warto\IeC {\'s}\IeC {\'c} funkcji przystosowania (ang.~\emph  {fitness}) \emph  {iris} w funkcji rozmiaru populacji dla r\IeC {\'o}znych ilo\IeC {\'s}ci pokole\IeC {\'n}, dla ma\IeC {\l }ych populacji. }}{31}{figure.4.12}}
+\newlabel{fig:fit-iris-detailed}{{4.12}{31}{Najlepsza wartość funkcji przystosowania (\english {fitness}) \emph {iris} w funkcji rozmiaru populacji dla róznych ilości pokoleń, dla małych populacji}{figure.4.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.13}{\ignorespaces Trafno\IeC {\'s}\IeC {\'c} klasyfikacji dla zbioru \emph  {vowel} w funkcji rozmiaru populacji dla r\IeC {\'o}znych ilo\IeC {\'s}ci pokole\IeC {\'n}, dla ma\IeC {\l }ych populacji.}}{31}{figure.4.13}}
+\newlabel{fig:acc-vowel-detailed}{{4.13}{31}{Trafność klasyfikacji dla zbioru \emph {vowel} w funkcji rozmiaru populacji dla róznych ilości pokoleń, dla małych populacji}{figure.4.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.14}{\ignorespaces Trafno\IeC {\'s}\IeC {\'c} klasyfikacji dla zbioru \emph  {vowel} w funkcji rozmiaru populacji dla r\IeC {\'o}znych ilo\IeC {\'s}ci pokole\IeC {\'n}, dla ma\IeC {\l }ych populacji.}}{32}{figure.4.14}}
+\newlabel{fig:fit-vowel-detailed}{{4.14}{32}{Trafność klasyfikacji dla zbioru \emph {vowel} w funkcji rozmiaru populacji dla róznych ilości pokoleń, dla małych populacji}{figure.4.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.15}{\ignorespaces Funkcja z pierwszego pokolenia, kt\IeC {\'o}ra w przebiego z wielko\IeC {\'s}ci\IeC {\k a} populacji 4 osi\IeC {\k a}gn\IeC {\k e}\IeC {\l }a fitness $0.4242424$. Przodek funkcji z rys.\ref  {fig:func2} }}{32}{figure.4.15}}
+\newlabel{fig:func1}{{4.15}{32}{Funkcja z pierwszego pokolenia, która w przebiego z wielkością populacji 4 osiągnęła fitness $0.4242424$. Przodek funkcji z rys.\ref {fig:func2}\relax }{figure.4.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.16}{\ignorespaces Funkcja z trzeciego pokolenia, kt\IeC {\'o}ra w przebiego z wielko\IeC {\'s}ci\IeC {\k a} populacji 4 osi\IeC {\k a}gn\IeC {\k e}\IeC {\l }a fitness $0.78030306$. Potomek funkcji z rys.\ref  {fig:func1}, przodek zwyci\IeC {\k e}skiej funkcji (rys.\ref  {fig:func5}) z przebiegu z populacj\IeC {\k a} o wielko\IeC {\'s}ci 4.}}{32}{figure.4.16}}
+\newlabel{fig:func2}{{4.16}{32}{Funkcja z trzeciego pokolenia, która w przebiego z wielkością populacji 4 osiągnęła fitness $0.78030306$. Potomek funkcji z rys.\ref {fig:func1}, przodek zwycięskiej funkcji (rys.\ref {fig:func5}) z przebiegu z populacją o wielkości 4}{figure.4.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.17}{\ignorespaces Funkcja z ostatniego pokolenia w przebiegu z wielko\IeC {\'s}ci\IeC {\k a} populacji 4 osi\IeC {\k a}gn\IeC {\k e}\IeC {\l }a fitness $0.8333333$. Przodek zwyci\IeC {\k e}skiej funkcji z rys.\ref  {fig:func4} }}{33}{figure.4.17}}
+\newlabel{fig:func5}{{4.17}{33}{Funkcja z ostatniego pokolenia w przebiegu z wielkością populacji 4 osiągnęła fitness $0.8333333$. Przodek zwycięskiej funkcji z rys.\ref {fig:func4}\relax }{figure.4.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.18}{\ignorespaces Funkcja z trzeciego pokolenia, kt\IeC {\'o}ra w przebiegu z wielko\IeC {\'s}ci\IeC {\k a} populacji 3 i 4 osi\IeC {\k a}gn\IeC {\k e}\IeC {\l }a fitness $0.6515151$. Przodek zwyci\IeC {\k e}skiej funkcji z rys.\ref  {fig:func4}}}{33}{figure.4.18}}
+\newlabel{fig:func3}{{4.18}{33}{Funkcja z trzeciego pokolenia, która w przebiegu z wielkością populacji 3 i 4 osiągnęła fitness $0.6515151$. Przodek zwycięskiej funkcji z rys.\ref {fig:func4}\relax }{figure.4.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.19}{\ignorespaces Zwyci\IeC {\k e}ska funkcja w przebiegu z populacj\IeC {\k a} wielko\IeC {\'s}ci 3, potomek funkcji z rys.\ref  {fig:func3}. Osi\IeC {\k a}gn\IeC {\k e}\IeC {\l }a fitness $0.9015151$. }}{33}{figure.4.19}}
+\newlabel{fig:func4}{{4.19}{33}{Zwycięska funkcja w przebiegu z populacją wielkości 3, potomek funkcji z rys.\ref {fig:func3}. Osiągnęła fitness $0.9015151$}{figure.4.19}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Czas wykonania}{33}{section.4.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.6}U\IeC {\.z}ycie pami\IeC {\k e}ci}{33}{section.4.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.7}Posdumowanie wynik\IeC {\'o}w}{33}{section.4.7}}
 \@writefile{loa}{\addvspace {10\p@ }}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\@writefile{toc}{\contentsline {chapter}{\chapternumberline {5}Case study - klasyfikacja danych ADHD 200}{28}{chapter.5}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Opis zbioru danych}{28}{section.5.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Surowe dane}{28}{subsection.5.1.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Preprocessing}{29}{subsection.5.1.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Konstrukcja i selekcja cech}{29}{section.5.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Wyniki klasyfikacji}{29}{section.5.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Kernel GP}{29}{subsection.5.3.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Por\IeC {\'o}wnanie z innymi algorytmami}{29}{subsection.5.3.2}}
+\@writefile{toc}{\contentsline {chapter}{\chapternumberline {5}Case study - klasyfikacja danych ADHD 200}{34}{chapter.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Opis zbioru danych}{34}{section.5.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Surowe dane}{34}{subsection.5.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Preprocessing}{35}{subsection.5.1.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Konstrukcja i selekcja cech}{35}{section.5.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Wyniki klasyfikacji}{35}{section.5.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Kernel GP}{35}{subsection.5.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Por\IeC {\'o}wnanie z innymi algorytmami}{35}{subsection.5.3.2}}
 \@writefile{loa}{\addvspace {10\p@ }}
 \bibstyle{plalpha}
 \bibdata{bibliography}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\@writefile{toc}{\contentsline {chapter}{\chapternumberline {6}Podsumowanie}{30}{chapter.6}}
+\@writefile{toc}{\contentsline {chapter}{\chapternumberline {6}Podsumowanie}{36}{chapter.6}}
 \@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{sect:web-resources}{{6}{31}{Zasoby internetowe\relax }{chapter*.8}{}}
-\@writefile{toc}{\contentsline {chapter}{Zasoby internetowe}{31}{section*.9}}
-\newlabel{url:ecj}{{A}{31}{Zasoby internetowe\relax }{Item.7}{}}
-\newlabel{url:adhd200}{{B}{31}{Zasoby internetowe\relax }{Item.8}{}}
-\newlabel{url:libsvm}{{C}{31}{Zasoby internetowe\relax }{Item.9}{}}
-\newlabel{url:uci}{{D}{31}{Zasoby internetowe\relax }{Item.10}{}}
-\memsetcounter{lastsheet}{35}
-\memsetcounter{lastpage}{32}
+\bibcite{Boser:1992:TAO:130385.130401}{BGV92}
+\bibcite{chang_libsvm:_2011}{CL11}
+\bibcite{gagne_genetic_2006}{GSST06}
+\bibcite{practical_2003}{HCL03}
+\bibcite{howley_genetic_2005}{HM05}
+\bibcite{krawiec2003uczenie}{KS03}
+\bibcite{Luke2009Metaheuristics}{Luk09}
+\bibcite{Mitchell:1997:ML:541177}{Mit97}
+\bibcite{Poli:2008:FGG:1796422}{PLM08}
+\bibcite{sean_ecj_2010}{Sea10}
+\bibcite{sullivan_evolving_2007}{SL07}
+\bibcite{scholkopf_learning_2002}{SS02}
+\bibcite{Shawe-Taylor:2004:KMP:975545}{STC04}
+\@writefile{toc}{\contentsline {chapter}{Literatura}{37}{section*.18}}
+\@writefile{loa}{\addvspace {10\p@ }}
+\newlabel{sect:web-resources}{{6}{38}{Zasoby internetowe\relax }{chapter*.19}{}}
+\@writefile{toc}{\contentsline {chapter}{Zasoby internetowe}{38}{section*.20}}
+\newlabel{url:ecj}{{A}{38}{Zasoby internetowe\relax }{Item.13}{}}
+\newlabel{url:adhd200}{{B}{38}{Zasoby internetowe\relax }{Item.14}{}}
+\newlabel{url:libsvm}{{C}{38}{Zasoby internetowe\relax }{Item.15}{}}
+\newlabel{url:uci}{{D}{38}{Zasoby internetowe\relax }{Item.16}{}}
+\newlabel{url:hyperopt}{{E}{38}{Zasoby internetowe\relax }{Item.17}{}}
+\memsetcounter{lastsheet}{42}
+\memsetcounter{lastpage}{39}

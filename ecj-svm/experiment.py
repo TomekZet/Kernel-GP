@@ -24,8 +24,6 @@ This script computes various benchmarks:
 - time(population size)
 - accuracy(data set)
 '''
-def mean(data):
-    return sum(data) / len(data)
 
 
 def sd(data, mean):
@@ -92,7 +90,8 @@ if __name__ == "__main__":
                         default=['gpkernel'])    
     parser.add_argument('--probability', help='Wheter to use probability outputs to calculate fitness or not', type=bool, default=True)
     parser.add_argument('-l', '--disable_logging', help='Wheter to disable logging of every kernel in ECJ', action='store_true')
-    
+    parser.add_argument('--elite', help='Size of elite', type=int, default=1)
+
     
 
 
@@ -152,7 +151,6 @@ if __name__ == "__main__":
     java_heap = args.xmx
 
     disable_logging = args.disable_logging
-
     maxsplits = args.splits
 
 
@@ -238,7 +236,7 @@ if __name__ == "__main__":
                 pop_size_max = args.popmax
                 pop_size_step = args.popstep
                 generations = args.genmax
-                breed_elite = 2
+                breed_elite = args.elite
             
             else:
                 pop_size_min = 1
@@ -316,7 +314,7 @@ if __name__ == "__main__":
                                                     '-p', 'probability=%s' % use_probability,
                                                     '-p', 'kernel=%s' % kernel,
                                                     '-p', 'breed.elite.0=%d' % breed_elite,
-                                                    '-p', 'disable_logging=%s' % disable_logging                                                    
+                                                    '-p', 'disable_logging=%s' % disable_logging
                                                     ]
                                                 
         #                                    print "\n"+(" ".join(args_list))+"\n"

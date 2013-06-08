@@ -9,7 +9,7 @@ System uczy się z doświadczenia \textit{E} ze względu na pewną klasę zadań
 
 %Należy jednak pamiętać, że nawet najbardziej wyrafinowany system uczący ostatecznie wykonuje tylko pewną deterministyczną funkcję na danych wejściowych.  jednak proces obliczania wyniku może być rozłożony w czasie - jako dane wejściowe można traktować zarówno dane użyte do uczenia systemu, jego oceny jak i dane aktualnie do niego wprowadzane.
 
-Systemy uczące się mają wiele zastosowań, między innymi:
+Systemy uczące się mają wiele zastosowań, między innymi \cite{krawiec2003uczenie}
 \begin{itemize}
 	\item Rozpoznawanie mowy ludzkiej
 	\item Rozpoznawanie tekstu pisanego (\akronim{OCR}, \english{Optical Character Recognition}
@@ -81,24 +81,24 @@ Stałego podziału zbioru przykładów na zbiór trenujący, testujący i walidu
 	W przypadku problemów, w których wyróżnia się $ k>2 $ klas miara korzystająca z wartości  \emph{TP},\emph{TN},\emph{FP} i \emph{FN} jest obliczana jako średnia wartość tej miary dla $ k $ problemów binarnych polegających na zaklasyfikowaniu przykładów jako należących lub nienależących do wybranej klasy.
 
 
-\subsection{SVM}
+\section{SVM - Maszyny wektorów wspierających}
     
 \definicja{Maszyna wektorów wspierających } (\akronim{SVM}, \english{Support Vector Machine}) to rodzaj klasyfikatora binarnego. Stanowi on rozszerzenie \emph{klasyfikatora liniowego}, lecz w przeciwieństwie do niego jest w stanie poprawnie klasyfikować dane \emph{nieseparowalne liniowo}. Jest to możliwe dzięki dokonywanej przez SVM transformacji danych do wyższych wymiarów za pomocą \emph{funkcji jądrowych}.
 
-\subsubsection{Klasyfikator liniowy}
+\subsection{Klasyfikatory liniowe}
 Jednym z najprostszych klasyfikatorów jest \definicja{klasyfikator liniowy}. Rozwiązuje on problem klasyfikacji binarnej poprzez znalezienie w przestrzeni atrybutów $ \Omega $ hiperpłaszczyzny, która dzieli ją na dwie części odpowiadające dwóm klasom decyzyjnym: $ \{-1, 1 \} $.
 \begin{definicjaa}
 Hiperpłaszczyzna w przestrzeni $ \Omega $ to zbiór:
 \begin{equation}
 \left\{ x \in \Omega | \langle w, x\rangle + b = 0 \right\}, w \in \Omega, b \in R
-\label{eq:hiperplane}
+\label{eq:hyperplane}
 \end{equation}
 $ \langle x, y \rangle $ oznacza iloczyn skalarny wektorów $ x $ i $ y $:
 $$ \langle x, y \rangle = \sum_{i=1}^{N} [x]_i [y]_i $$
 gdzie $ [x]_i $ to i-ta wartość wektora $ x $.
 \end{definicjaa}
 
-Wektor $ w $ we wzorze \ref{eq:hiperplane} to wektor wag, normalny do hiperpłaszczyzny, $ ||w|| $ to norma euklidesowa tego wektora, czyli jego długość, a $ b/||w|| $ to odległość płaszczyzny od początku układu współrzędnych.
+Wektor $ w $ we wzorze \ref{eq:hyperplane} to wektor wag, normalny do hiperpłaszczyzny, $ ||w|| $ to norma euklidesowa tego wektora, czyli jego długość, a $ b/||w|| $ to odległość płaszczyzny od początku układu współrzędnych.
 Oba te parametry można razem dowolnie przeskalowywać, to jest pomnożyć $ w $ i $ b $ przez tę samą stałą zachowując tę samą hiperpłaszczyznę. Dlatego wprowadza się ograniczenie, po którego zastosowaniu otrzymujemy tak zwaną postać kanoniczną hiperpłaszczyzny:
 \begin{definicjaa}
 Dla danego zbioru obserwacji $ x_1, x_2, ..., x_m \in \Omega $ wektor $ w $ i parametr $ b $ wyznaczają \textbf{kanoniczną postać hiperpłaszczyzny} jeśli:
@@ -109,7 +109,7 @@ Dla danego zbioru obserwacji $ x_1, x_2, ..., x_m \in \Omega $ wektor $ w $ i pa
 \end{definicjaa}
 
 
-Hiperpłaszczyzna dana wzorem \ref{eq:hiperplane} definiuje funkcję decyzyjną, która każdemu przypadkowi z $ \Omega $ przypisuje klasę decyzyjną:
+Hiperpłaszczyzna dana wzorem \ref{eq:hyperplane} definiuje funkcję decyzyjną, która każdemu przypadkowi z $ \Omega $ przypisuje klasę decyzyjną:
 \begin{equation}
 \begin{array}{lcl}
 f_{w,b}: \Omega \rightarrow \{\pm 1\} \\ x \mapsto f_{w,b}(x) = sgn (\langle w, x \rangle + b)
@@ -121,11 +121,13 @@ f_{w,b}: \Omega \rightarrow \{\pm 1\} \\ x \mapsto f_{w,b}(x) = sgn (\langle w, 
 \centering
 \includegraphics[scale=0.5]{figures/functions/2-different-hyperplanes}
 \label{fig:hyperplanes}
-\caption{Hiperpłaszczyzny separujące dwa zbiory punktów w przestrzeni dwówymiarowej. Każda z z nich poprawnie separuje punkty ze zbioru uczącego - zielone koła i niebieskie kwadraty. Przykłady ze zbioru testowego (puste kwadraty i kółka) są poprawnie separowane jedynie przez dwie proste (prosta narysowana linią ciągłą i prosta narysowana kropkami i keskami).}
+\caption{Hiperpłaszczyzny separujące dwa zbiory punktów w przestrzeni dwó-wymiarowej. Każda z z nich poprawnie separuje punkty ze zbioru uczącego - zielone koła i niebieskie kwadraty. Przykłady ze zbioru testowego (puste kwadraty i kółka) są poprawnie separowane jedynie przez dwie proste (prosta narysowana linią ciągłą i prosta narysowana kropkami i kreskami).}
 \end{figure}
 
 Wynikiem uczenia klasyfikatora liniowego jest znalezienie hiperpłaszczyzny i odpowiadającej jej funkcji decyzyjnej, która przykładom ze zbioru uczącego $ (x_i, y_i) \in \Omega $ przypisuje prawidłowe etykiety, czyli dla każdego (jeśli zbiór jest liniowo separowalny), lub dla jak największej liczby przypadków $ x_i $ zachodzi  $ f_w,b(x_i) = y_i $. Zazwyczaj kilka hiperpłaszczyzn równie dobrze rozdziela przypadki ze zbioru uczącego, mogą się jednak one różnić zdolnością do klasyfikacji zbioru testowego, co pokazano na rysunku \ref{fig:hyperplanes}. Optymalna hiperpłaszczyzna separująca to taka, która charakteryzuje się największym marginesem, czyli odległością hiperpłaszczyzny do najbliżej położonych obserwacji \cite{scholkopf_learning_2002}.
-\begin{definicjaa} Dla hiperpłaszczyzny danej wzorem $ { x \in \Omega | \langle w, x \rangle + b = 0} $ oraz zbioru obserwacji $ {(x_1, y_1), (x_2, y_2), ..., (x_m, y_m)} $ marginesem tego zbioru od hiperpłaszczyzny nazywamy minimalną odległość hiperpłaszczyzny od punktów z tego zbioru:
+\begin{definicjaa}
+Dla hiperpłaszczyzny danej wzorem $ { x \in \Omega | \langle w, x \rangle + b = 0} $ oraz zbioru obserwacji\\
+ $ {(x_1, y_1), (x_2, y_2), ..., (x_m, y_m)} $ marginesem tego zbioru od hiperpłaszczyzny nazywamy minimalną odległość hiperpłaszczyzny od punktów z tego zbioru:
 	\begin{equation}
 	\rho_{w,b} := \min_{i=1..m} y \times (\langle w, x \rangle + b) / ||w||
 	\label{eq:margin}
@@ -171,6 +173,7 @@ Powyższy problem programowania matematycznego jest podany w tak zwanej \definic
 Dla formy dualnej problemu optymalizacji funkcja decyzyjna przyjmuje postać:
 \begin{equation}
 f(x) = sgn \left( \sum_{i=1}^{m} y_i a_i \dotp{x}{x_i} + b \right)
+\label{eq:decfn}
 \end{equation}
 
 We wzorze \ref{eq:primal} dla większości przykładów wartość współczynników $ \alpha_i $ wyniesie 0. Przykłady te nie mają wpływu na wynik optymalizacji i otrzymaną hiperpłaszczyznę. Pozostałe przykłady, dla których $ \alpha_i > 0 $ noszą nazwę \definicja{wektorów wspierających}. Leżą one dokładnie na marginesie (na hiperpłaszczyźnie wyznaczonej przez margines, czyli w przypadku kanonicznej postaci hiperpłaszczyzny separującej w odległości $ 1/||w|| $ od niej). Wektory wspierające są jedynymi przykładami ze zbioru trenującego, które należy zapamiętać w celu wyznaczenia hiperpłaszczyzny separującej. Ilość wektorów wspierających wyznacza złożoność hipotezy, którą stanowi otrzymana funkcja decyzyjna i pozwala oszacować górną granicę oczekiwanego prawdopodobieństwa błędu klasyfikacji. Górna granica prawdopodobieństwa błędu klasyfikacji klasyfikatora uczonego na zbiorze o wielkości $ m-1 $ równa się liczbie wektorów otrzymanych przy uczeniu na zbiorze o wielkości $ m $ podzielonej przez $ m $.
@@ -198,7 +201,7 @@ Natomiast wzór \ref{eq:dual}:
 \label{eq:dual-c}
 \end{equation}
 
-\subsubsection{Maszyny wektorów wspierających}
+\subsection{Maszyny wektorów wspierających}
 
 
 \begin{figure}[h]
@@ -207,9 +210,6 @@ Natomiast wzór \ref{eq:dual}:
 \label{fig:nonlinear}
 \caption{Zbiór danych opisanych w przestrzeni 2D. Klas nie da się odseparować za pomocą hiperpłaszczyzny}
 \end{figure}
-
-Opisane powyżej klasyfikatory liniowe są w stanie klasyfikować tylko dane, które są separowalne liniowo. Jeśli dane cechuje pewna nieliniowa zależność między wartościami atrybutów decyzyjnych i warunkowych, na przykład taka jak przedstawiona na rysunku \ref{fig:nonlinear}, to klasyfikator liniowy nie poradzi sobie z ich klasyfikacją.
-Aby rozwiązać ten problem można dokonać transformacji danych do przestrzeni o większej liczbie wymiarów, gdzie dane mogą stać się liniowo separowalne. Wartości przykładów w nowych wymiarach stanowią wtedy pewną kombinację wartości z oryginalnych wymiarów. Na rysunku \ref{fig:transform} pokazano dane z rysunku \ref{fig:nonlinear} po transformacji do przestrzeni trój-wymiarowej za pomocą funkcji wielomianowej. Jak widać w nowej przestrzeni dane są separowalne przez hiperpłaszczyznę, co widać dokładnie na rysunku \ref{fig:transform-side}.
 
 \begin{figure}[h]
 \centering
@@ -226,31 +226,188 @@ Aby rozwiązać ten problem można dokonać transformacji danych do przestrzeni 
 \end{figure}
 
 
+Opisane powyżej klasyfikatory są w stanie klasyfikować tylko dane, które są separowalne liniowo. Jeśli dane cechuje pewna inna niż liniowa zależność między wartościami atrybutów decyzyjnych i warunkowych (na przykład taka jak przedstawiona na rysunku \ref{fig:nonlinear}), to klasyfikator liniowy nie poradzi sobie z ich klasyfikacją.
+Aby rozwiązać ten problem można dokonać mapowania danych wejściowych do przestrzeni o większej liczbie wymiarów, w której te dane mogą stać się liniowo separowalne. Na rysunku \ref{fig:transform} pokazano dane z rysunku \ref{fig:nonlinear} po transformacji do przestrzeni trój-wymiarowej za pomocą funkcji wielomianowej. Jak widać w nowej przestrzeni dane są separowalne przez hiperpłaszczyznę, co widać dokładnie na rysunku \ref{fig:transform-side}.
+
+Mapowanie z oryginalnej przestrzeni atrybutów do nowej przestrzeni jest dokonywane przez funkcję $ \Phi: \Omega^m \mapsto \Omega^{m+k} $, która dane n-wymiarowe zamienia w dane n+k-wymiarowe. Na przykład mapowanie wektora $x = \left[ x_1, x_2 \right] $ z przestrzeni 2-wymiarowej do przestrzeni 3-wymiarowej może wyglądać następująco:
+% $ \Phi(x) = \Phi(\left[x_1]_1, [x_1]_2 \right]) = \left[ {[x_1]_1}^2, {[x_1]_2}^2, [x_1]_1 [x_1]_2 \right] $
+ $ \Phi(x) = \Phi(\left[x_1, x_2 \right]) = \left[ x_1^2, x_2^2, x_1 x_2 \right] $. Aby zastosować mapowanie w klasyfikatorze wystarczy zamienić wszystkie wystąpienia wektorów wynikiem ich mapowań, czyli na przykład cel optymalizacji ze wzoru \ref{eq:dual} przyjąłby postać:
+
+\begin{equation}
+\max\limits_{\alpha \in R^m}  W(\alpha) = \sum_{i=1}^{m} \alpha_i - \sum_{i,j=1}^{m} \alpha_i \alpha_j y_i y_j \dotp{\Phi(x_i)}{\Phi(x_j)}
+\label{eq:dual-k-target}
+\end{equation}
+
+natomiast funkcja decyzyjna ze wzoru \ref{eq:decfn}:
+\begin{equation}
+f(x) = sgn \left( \sum_{i=1}^{m} y_i a_i \dotp{\Phi(x)}{\Phi(x_i)} + b \right)
+\end{equation}
+
+\FloatBarrier
+
+Powyższe podejście charakteryzuje się dużą złożonością obliczeniową. Zarówno obliczanie mapowania dla każdego przykładów jak i obliczenie iloczynu skalarnego przykładów w nowej przestrzeni, która może mieć bardzo dużo wymiarów, stanowi spory narzut obliczeniowy. Dokonywanie wszystkich mapowań a następnie obliczanie ich iloczynu nie jest jednak konieczne, można obie te operacje wykonać w jednym kroku, stosując tak zwany \english{Kernel Trick} \cite{Boser:1992:TAO:130385.130401}. Polega on na zastosowaniu podstawienia $ \dotp{\Phi(x)}{\Phi(x')} \mapsto k(x, x') $ gdzie $ k(x,x') $ to \definicja{funkcja jądrowa} (\english{kernel}), która musi być symetryczna i dodatnio określona. Po zastosowaniu \emph{kernel trick} otrzymujemy następujący problem optymalizacyjny:
+
+\begin{equation}
+\begin{array}{ll}
+\max\limits_{\alpha \in R^m} & W(\alpha) = \sum_{i=1}^{m} \alpha_i - \sum_{i,j=1}^{m} \alpha_i \alpha_j y_i y_j k(x_i, x_j) \\
+\text{p.o.} &  \alpha_i \geq 0 , \text{ dla } i=1..m \\
+& \sum_{i=1}^{m} \alpha_i y_i = 0
+\end{array}
+\label{eq:dual-k}
+\end{equation},
+
+oraz następującą funkcję decyzyjną: 
+
+\begin{equation}
+f(x) = sgn \left( \sum_{i=1}^{m} y_i a_i k(x, x_i) + b \right)
+\label{eq:decfn-k}
+\end{equation}
+
+\subsubsection{Dobór funkcji jądra}
+
+Najczęściej używane funkcje jądra to:	
 \begin{itemize}
-\item \definicja{Transformacja}
-\item \definicja{Kernel Trick}
+	\item Wielomianowa: $ k(x, y) = \langle x,y \rangle ^d $
+	\item Gausowska (RBG): $k(x, y) =  e^{-\gamma*||x-y||^2} $	
+	\item Sigmoidalna: $ k(x, y) = \tanh(\gamma \langle x,y \rangle + \tau) $
 \end{itemize}
+jednak każda funkcja, która jest symetryczna i dodatnio określona, może być użyta jako jądro.
+
+
+
+\subsection{Klasyfikacja więcej niż dwóch klas}
+Klasyfikator SVM jest ze swej natury klasyfikatorem binarnym, to znaczy potrafi separować jedynie dwie klasy przykładów. W praktyce jednak wiele problemów klasyfikacji dotyczy zbiorów, w których wyróżniono więcej niż dwie klasy. Aby zastosować SVM do rozwiązania takich problemów stosuje się zazwyczaj jedną z dwóch technik: \definicja{jeden przeciw wszystkim (\english{One versus the Rest})} oraz \definicja{klasyfikacja parami (\english{pairwise classification})}. 
+
+\subsubsection{Jeden przeciw wszystkim}
+Metoda \definicja{jeden przeciw wszystkim} polega na nauczeniu $ M $ klasyfikatorów binarnych, gdzie $ M $ oznacz liczbę klas. Każdy z nich separuje jedną klasę od pozostałych $ M-1 $ klas, traktując te ostatnie jak jedną klasę. Klasyfikacja polega na zastosowaniu wszystkich $ M $ klasyfikatorów na testowanym przykładzie i wybraniu tego, który maksymalizuje wartość ze wzoru \ref{eq:decfn-k}, przed zastosowaniem funkcji $ sgn $, czyli:
+$$ argmax_{j=1..M} g^j(x), \text{gdzie} g^j(x) = \sum_{1=1}^m y_ia_i^j k(x, x_i) + b^j $$.
+Jako wady tej metody wymienia się to, że pod-problemy przez nią rozwiązywane są niesymetryczne (jeśli w wyjściowym problemie dystrybucja przykładów do klas jest równomierna, to w każdym podproblemie klasa agregująca "pozostałe" klasy jest $ M-1 $ razy większa ). Z problemem asymetryczności lepiej radzi sobie druga z wymienionych metod.
+
+\subsubsection{Klasyfikacja parami}
+Metoda \definicja{klasyfikacji parami} polega na stworzeniu wszystkich możliwych kombinacji klasyfikatorów binarnych: dla każdej z $ M $ klas tworzy się $ M-1 $ klasyfikatorów oddzielających ją od poszczególnych klas, co daje łącznie $ (M-1)*M/2 $ klasyfikatorów. Każdy z nich uczony jest tylko na przykładach należących do 2 wybranych klas. Klasyfikacja przykładu odbywa się poprzez głosowanie: każdy z $ (M-1)*M/2 $ klasyfikatorów oddaje głos na klasę, do której przypisał dany przykład. Przykładowi przypisuje się klasę, która zdobyła największą liczbę głosów.
+Choć w tej metodzie liczba klasyfikatorów, które trzeba nauczyć a potem użyć do klasyfikacji jest znacznie większa niż w metodzie \definicja{jeden przeciw wszystkim}, to jednak uczenie odbywa się na mniejszej liczbie przykładów a klasyfikacja z użyciem mniejszej liczby wektorów wspierających, co może przyspieszyć sprawia, że etapy te przebiegają szybciej niż w metodzie \definicja{jeden przeciw wszystkim}. Ponieważ jednak liczba klasyfikatorów rośnie potęgowo względem liczby klas $ M $, to dla dużych $ M $ \definicja{klasyfikacja parami} może okazać się wolniejsza niż \definicja{jeden przeciw wszystkim}.
+
 
 \section{Obliczenia ewolucyjne}
 
-Obliczenia ewolucyjne to ...
+\definicja{Obliczenia ewolucyjne} (\english{Evolutionary computation \akronim(EC)}) to grupa inspirowanych biologicznie technik obliczeniowych. Algorytmy należące do tej grupy to \definicja{Algorytmy Ewolucyjne (\english{Evolutionary Algorithms (\akronim{EA}}))}. Algorytmy te stanowią rodzaj metaheurystyk, czyli uniwersalnych algorytmów służących rozwiązywaniu różnych problemów optymalizacji, często wykorzystujących w trakcie działania bardziej specyficzne algorytmy. Algorytmy ewolucyjne wyróżnia wśród innych metaheurystyk między innymi przynależność do grupy algorytmów populacyjnych, które charakteryzują się równoległym przeszukiwaniem wielu rozwiązań, między którymi zachodzą interakcje wpływające na ocenę poszczególnych rozwiązań jak i kierunek ich zmian. Idea obliczeń ewolucyjnych czerpie swoje inspiracje z biologicznych teoriach ewolucji, z nich również zapożycza terminologię. Poniżej przedstawiono znaczenie terminów używanych w kontekście obliczeń ewolucyjnych \cite{Luke2009Metaheuristics}:
 
 \begin{itemize}
-\item \definicja{osobnik}
-\item \definicja{populacja}
-\item \definicja{pokolenie}
-\item \definicja{mutacja}
-\item \definicja{krzyżowanie}
-\item \definicja{selekcja}
-\item \definicja{funkcja przystosowania} (\english{fitness})
+	\item \definicja{osobnik (\english{individual}} - jedno z potencjalnych rozwiązań problemu
+	\item \definicja{genotyp (\english{genotype})} - dane opisujące osobnika, podlegające procesom mutacji i krzyżowania
+	\item \definicja{relacja rodzic-dziecko \english{parent-parent}} - dziecko to osobnik powstały poprzez mutację rodzica lub w wyniku krzyżowania dwóch rodziców
+	\item \definicja{mutacja \english{mutation})} - zmiana genotypu pojedynczego osobnika w wyniku której powstaje osobnik o nowym genotypie
+	\item \definicja{krzyżowanie (\english{crossover})} - stworzenie jednego lub więcej nowych osobników, których genom jest kombinacją genomów rodziców
+	\item \definicja{populacja} - zbiór osobników
+	item \definicja{pokolenie} - kompletny cykl operacji wykonanych na pokoleniu, również pokolenie będące jego wynikiem
+	\item \definicja{przystosowanie / wartość funkcji przystosowania (\english{fitness})} - wartość określająca jakość osobnika ze względu na cel optymalizacji przyjęty w rozwiązywanym problemie
+	\item \definicja{selekcja (\english{selection})} - wybór podzbioru osobników z populacji na podstawie ich przystosowania
+	\item \definicja{powielanie} - utworzenie nowego osobnika poprzez skopiowanie istniejącego osobnika bez zmian
+	\item \definicja{reprodukcja (\english{breeding})} - proces tworzenia nowego pokolenia (nowej generacji) osobników z osobników już istniejących poprzez procesy mutacji, krzyżowania i selekcji.
 \end{itemize}
 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{figures/graphs/ea}
+\caption{Diagram przepływu algorytmu ewolucyjnego GP.\label{fig:ea}}
+\end{figure}
+
+Przebieg typowego algorytmu ewolucyjnego przedstawiono na rysunku \ref{fig:ea}, poniżej przedstawiono jego opis:
+\begin{quote}
+	\begin{enumerate}
+	\item Utwórz początkową populację osobników korzystając z losowego mechanizmu lub użyj istniejącej populacji
+	\item \label{ewaluacja} Oblicz wartość \textit{funkcji dopasowania} każdego osobnika z populacji (dokonaj ewaluacji populacji).
+	\item Jeśli znaleziono idealnego osobnika (wartość fitness wyniosła 1 ) lub skończył się czas, zwróć najlepszego znalezionego dotąd osobnika
+	\item Dokonaj selekcji osobników
+	\item Utwórz nową populację poprzez mutację, krzyżowanie lub powielanie wybranych w poprzednim kroku osobników
+	\item Wróć do punktu \ref{ewaluacja}
+	\end{enumerate}
+\end{quote}
+
+
+
+\subsubsection{Selekcja}
+Selekcja polega na wybraniu podzbioru $ P $ osobników z populacji. Jej celem jest promowanie dobrych rozwiązań, które powstały w wyniku generowania nowych osobników, mutacji oraz krzyżowania. Dzięki dokonywaniu selekcji geny osobników lepiej przystosowanych do rozwiązania postawionego przed algorytmem problemu są "przekazywane dalej", biorąc udział w tworzeniu nowych osobników. "Dobroć" rozwiązań jest oceniana poprzez funkcję przystosowania, która przyjmuje wartości z przedziału $ \langle 0, 1 \rangle $, gdzie 0 oznacza najgorsze rozwiązanie a 1 rozwiązanie idealne.
+Najprostszym, "naiwnym", sposobem przeprowadzenia selekcji jest wybór z niej określonej liczby osobników o najwyższej wartości fitness. Rozwiązanie to jednak nie jest optymalne - czasami pożądane fragmenty genotypu są "ukryte" w osobnikach, które nie osiągają najwyższych wartości fitness, dlatego warto dopuścić również niektóre ze "słabszych" osobników do etapu krzyżowania.
+Głównym parametrem wpływającym na proces selekcji jest \definicja{napór selekcyjny}. Im większy napór selekcyjny tym trudniej osobnikom przejść selekcję co prowadzi do ujednolicania się osobników w populacji, ponieważ do następnego pokolenia przechodzi tylko wąska grupa najlepszych osobników, zmniejszając tym samym pulę genów pokolenia. Zmniejszanie się różnorodności jest niepożądanym procesem, ponieważ prowadzi do stagnacji procesu ewolucyjnego - kiedy wszystkie osobniki mają ten sam genotyp jedyne zmiany w populacji możliwe są poprzez mutację. Stagnacja procesu ewolucyjnego oznacza, że populacja z pokolenia na pokolenie się nie zmienia, ponieważ przez etap selekcji przechodzą zawsze te same, podobne do siebie osobniki. Jest to równoważne z utknięciem w optimum lokalnym (które może, choć nie musi być optimum globalnym rozwiązywanego problemu). Dlatego, żeby nie dopuścić do zbyt szybkiego ujednolicenia populacji stosuje się różne, bardziej wyrafinowanej niż opisany powyżej "naiwny", algorytmy selekcji:
+
+%Tutaj opisy selekcji ze strony 57 ECJ, 41 Essentials 
+
+\begin{itemize}
+
+\item \definicja{ruletka} - metoda ruletki, zwana też wyborem losowym powtórzeniami \english{Fitness-Proportionate Selection} polega na losowaniu osobników z prawdopodobieństwem wylosowania proporcjonalnym do ich wartości fitness. Metaforycznie można ją przedstawić w ten sposób, że każdemu osobnikowi przypisuje się pole na kole od ruletki o wielkości proporcjonalnej do jego wartości fitness i kręcąc ruletką losuje ustaloną liczbę osobników. 
+Ta metoda selekcji dopuszcza wybranie jednego osobnika kilka razy a także umożliwia przypuszczenie osobników o małych wartościach fitness, co jest korzystne dla różnorodności populacji. Wadą tej metody jest ukryte w niej założenie o ilorazowym charakterze skali wartości fitness - osobnik A o k-krotnie większym fitness od osobnika B będzie średnio wybierany k razy częściej niż osobnik B, choć w ogólności nie musi być tak, że k-krotnie większy fitness oznacza k-krotnie lepszego lub pożądanego z punktu widzenia puli genów populacji osobnika. Z tym problemem radzi sobie następna opisana metoda.
+
+\item \definicja{turniej} - metoda turniejowa (\english{tournament selection}) - jest najbardziej popularną i jednocześnie najprostszą z metod selekcji \cite{Luke2009Metaheuristics}. Polega na losowaniu ze zwracaniem $ t $ osobników i wybraniu tego, który ma największą wartość fitness. Parametr $ t $ to tak zwany \definicja{rozmiar turnieju}, zwiększając go zwiększamy presję selekcyjną. Dla $ t = 1 $ selekcja sprowadza się do losowego wyboru osobników, dla $ t = P $ otrzymamy populację składającą się z $ P $ kopii osobnika o najwyższym fitness.	
+
+\end{itemize}
+
+
+\subsubsection{Krzyżowanie}
+Osobniki wybrane w procesie selekcji z ustalonym jako parametr procesu ewolucyjnego prawdopodobieństwem ulegają krzyżowaniu, czyli wymieszaniu ich genotypów, w czego wyniku powstaje nowy osobnik o przypuszczalnie nieobecnym wcześniej genotypie.
+
+\subsubsection{Mutacja}
+Mutacja polega na losowej, zazwyczaj nieznacznej, zmianie genotypu osobnika. Wpływa korzystnie na różnorodność populacji wprowadzając fragmenty genomu, które mogły wcześniej nie być obecne w puli genów populacji. Mutacja podobnie jak krzyżowanie jest stosowana z pewnym prawdopodobieństwem. Im to prawdopodobieństwo większe a zmiany dokonywane przez mutację bardziej rozległe, tym bardziej "eksploratywny" staje się algorytm ewolucyjny - trudniej mu "utknąć" w lokalnym optimum.
+
+\subsubsection{Genotyp}
+Poszczególne algorytmy ewolucyjne różnią się od siebie przede wszystkim ze względu na sposób reprezentacji osobników i powiązane z nim metody mutacji i krzyżowania. Selekcja osobników także może przebiegać na różne sposoby. Opisanie wszystkich możliwych parametrów i metod używanych w algorytmach ewolucyjnych nie jest celem tej pracy, ich opis można znaleźć na przykład w \cite{Luke2009Metaheuristics}. Poniżej opisano jeden z rodzajów algorytmów ewolucyjnych jaką jest programowanie genetyczne, ze względu na jej wykorzystanie w niniejszej pracy.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Programowanie genetyczne}
-\definicja{Programowanie genetyczne} (\akronim{GP}, \english{Genetic Programming}) to 
 
-Funkcje, które generuje algorytm programowania genetycznego są w nim reprezentowane w postaci drzew. Węzłami takiego drzewa są elementarne funkcje zadeklarowane w kodzie programu. Każda z takich funkcji ma przypisane pewne ograniczenia co do ilości i typu argumentów, które przyjmuje oraz co do typu wartości, który zwraca. Drzewo jako całość również ma zadeklarowany typ zwracanej wartości.
+\definicja{Programowanie genetyczne} (\akronim{GP}, \english{Genetic Programming}) to rodzaj algorytmów ewolucyjnych, które wyróżniają się specyficzną reprezentacją - ewolucji podlegają wyrażenia reprezentowane za pomocą drzew, na przykład wyrażenia matematyczne, logiczne lub kod programu komputerowego. Najczęściej w definicji programowania genetycznego podaje się właśnie ten ostatni rodzaj osobników \cite{Luke2009Metaheuristics} \cite{Poli:2008:FGG:1796422}, lecz ewolucja innych wyrażeń reprezentowanym za pomocą drzew przebiega w algorytmie programowania genetycznego w identyczny sposób.
 
-\section{Ewolucja kerneli}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{figures/graphs/2-tree}
+\caption{Przykładowe drzewo, które może być wynikiem działania algorytmu GP. Drzewo przestawia wyrażenie $ e^{-\gamma*||x-y||^2} $ \label{fig:2-tree}}
+\end{figure}
+
+Drzewo generowane przez algorytm GP (np. takie jak pokazane na rysunku \ref{fig:2-tree})  składa się z \emph{terminali} (liście) oraz \emph{funkcji} (węzły wewnętrzne oraz korzeń). Terminale to wartości wejściowe generowanego wyrażenia - stałe i zmienne - na rysunku są to zmienne $ x $ i $ y $ oraz stała $ \lambda $. Funkcje to operacje wykonywane wartościach pochodzących z terminali lub innych funkcji, w przypadku drzewa z rysunku \ref{fig:2-tree} są to: funkcja wykładnicza $ exp() $, norma euklidesowa $ || || $ oraz funkcja potęgowa (korzeń). Każdy węzeł wewnętrzny posiada łuk(i) wejściowe, którymi funkcja "pobiera" wartości swoich argumentów oraz łuk wyjściowy, którym przekazuje wartość do kolejnych funkcji (lub w przypadku korzenia zwraca wartość obliczoną przez całe wyrażenie).
+
+\subsubsection{Inicjalizacja populacji}
+Wybranie sposobu inicjalizacji populacji sprowadza się do określenia metody losowego generowania osobników. Drzewa są budowane przez łączenie ze sobą funkcji wybieranych ze \definicja{zbioru funkcji} oraz terminali. Każda funkcja ma określoną liczbę argumentów oraz opcjonalnie typ danych wejściowych i wyjściowych. W najprostszym przypadku wszystkie węzły drzewa operują na tych samych typach danych, wtedy nie narzuca się ograniczeń na to które węzły mogą się ze sobą łączyć. Jeśli jednak zbiór funkcji i terminali jest heterogeniczny ze względu na wartości typów danych, konieczne jest wprowadzenie ograniczeń. Odmiana \definicja{GP}, w której każda funkcja ma zdefiniowane typy danych, na których operuje nazywany jest \definicja{Strongly Typed GP \akronim{STGP}}.
+Kolejnym ograniczeniem najczęściej narzucanym na generowane drzewa jest ich głębokość, czyli odległość od najdalszego liścia do korzenia. Ze względu na to ograniczenie wyróżnia się 3 podstawowe metody generowania osobników:
+\begin{itemize}
+	\item \definicja{full} - generuje drzewa o maksymalnej dozwolonej głębokości, w których każdy liść jest oddalony od drzewa o maksymalną odległość. Genrowanie polega na budowaniu drzewa zaczynając od korzenia poprzez losowanie kolejnych funkcji ze zbioru funkcji i dołączenie ich do funkcji już istniejących w drzewie, tak długo aż wszystkie gałęzie osiągną oczekiwaną głębokość. Na końcu dla każdej gałęzi losuje się kończący ją terminal.
+	\item \definicja{grow} - w tej metodzie węzły budujące drzewo są losowane z obu zbiorów: funkcji i terminali. Dzięki temu, w przypadku wylosowania terminala dana gałąż kończy swój wzrost i otrzymujemy z gałęziami o potencjalnie zróżnicowanej długości.
+	\item \definicja{ramped half-and-half} - w metodzie tej połowę populacji inicjalizacje się za pomocą metody \definicja{grow} a druga połowę za pomocą algorytmu \definicja{full}, dodatkowo zmieniając maksymalną możliwą głębokość. Metoda ta pozwala otrzymać populację najbardziej urozmaiconą pod względem kształtu i wielkości drzew.
+\end{itemize}
+
+
+\subsubsection{Krzyżowanie}
+Najpowszechniejsza metoda krzyżowania w programowaniu genetycznym to \definicja{krzyżowanie poddrzew \english{subtree crossover}}. Polega ona na zamianie poddrzew dwóch rodziców w czego wyniku powstaje dwóch potomków. Poddrzewa otrzymuje się poprzez wybór punktu cięcia, w którym poddrzewo jest odcinane od rodzica. Przykładowy proces krzyżowania zilustrowano na rysunku \ref{fig:2-cross}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{figures/graphs/2-cross-both}
+\label{fig:2-cross}
+\caption{Krzyżowanie drzew. U góry pokazano drzewa rodziców, punkty cięcia zaznaczono czerwonymi kreskami. Na dole widać dwóch potomków będących wynikiem krzyżowania.}
+\end{figure}
+
+\subsubsection{Mutacja}
+Mutacja drzewa polega na zamianie jego losowo wybranego fragmentu (poddrzewa) przez losowo wygenerowane drzewo odpowiedniej długości. Pod tym względem mutacja przypomina krzyżowanie, z tą różnicą, że odcięty fragment mutowanego drzewa jest zastępowany przez losowo wygenerowane drzewo a nie poddrzewo pochodzące od drugiego rodzica. Przykładową mutację drzewa pokazano na rysunku \ref{fig:2-mutation}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{figures/graphs/2-mutation}
+\label{fig:2-mutation}
+\caption{Przykładowa mutacja drzewa. U góry po lewej pokazano drzewo poddawane mutacji, u góry po prawej losowo wygenerowane poddrzewo, na dole wyniki mutacji. Odcinana część mutowanego drzewa (na rysunku przekreślona) zostaje odrzucona (nie jest już nigdzie wykorzystywana).} 
+\end{figure}
+
+\subsubsection{Selekcja}
+Selekcja w GP może być dokonywana jedną z metod używanych w innych algorytmach ewolucyjnych, jednak istnieją też metody specyficzne dla algorytmów GP. Jednym z problemów programowania genetycznego jest to, że drzewa powstałe w wyniku procesu ewolucyjnego mogą być bardzo duże, co nie jest pożądaną cechą - większe drzewo dłużej oblicza zwracaną wartość, zajmuje więcej miejsc w pamięci. Dlatego wielkość drzew należy ograniczać, jeśli wzrost drzewa nie prowadzi do zwiększenia wartości funkcji dopasowania.
+Wielkość generowanych drzew jest regulowana przez dwa mechanizmy. Pierwszy to proste ograniczenie na maksymalną głębokość drzewa. Drugi mechanizm, o angielskiej nazwie \textit{parsimony pressure},  promuje mniejsze drzewa podczas selekcji. W tym celu stosowany jest algorytm \definicja{selekcji turniejowej leksykograficznej z koszykami (\english{Bucket Lexicographic Tournament Selection})}. Algorytm ten sortuje populację według przystosowania osobników, następnie grupuje je w N "koszyki". Następnie selekcja przebiega według zasad selekcji turniejowej, z tym, że porównuje się nie przystosowanie osobników, ale koszyk, do którego są przypisane. W przypadku gdy w turnieju porównywane są dwa osobniki z tego samego koszyka wygrywa ten, który jest mniejszy.
+
+
+\section{Ewolucja kerneli - przegląd literatury}
+Problem wyboru funkcji jądrowej stosowanej przez klasyfikator SVM można rozwiązać na kilka sposobów. Najczęściej stosuje się po prostu jedną z popularnych funkcji - RBF, sigmoidalną lub wielomianową, kierując się doświadczeniem, "dobrymi praktykami" lub ręcznie sprawdzając wyniki osiągane z użyciem tych funkcji i różnych wartości ich parametrów.
+
+Zaproponowano jednak również kilka metod bardziej zautomatyzowanego doboru funkcji jądrowych i ich parametrów. 
+Najprostsza z nich nosi nazwę \definicja{optymalizacji hiperparametrów (\english{Hyperparameter optimalization})}. Jest to określenie zbioru metod służących optymalizacji parametrów jakiegoś algorytmu. Do dokonania hiperoptymalizacji można posłużyć się jedną z metaheurystyk takich jak \definicja{Random Search} [\ref{url:hyperopt}], lub \definicja{Grid Search} \cite{practical_2003}.
+
+Optymalizacja parametrów nie wpływa jednak na samą funkcję jądrową, lub pozwala jedynie na jej wybór z zawężonego grona popularnych funkcji. Dlatego próbuje się wykorzystywać różnego rodzaju algorytmy ewolucyjne w celu znalezienia funkcji, która daje najlepsze rezultaty \cite{gagne_genetic_2006} \cite{howley_genetic_2005} \cite{sean_ecj_2010} \cite{sullivan_evolving_2007}.
 
 %\section{Obrazowanie mózgu przy pomocy rezonansu magnetycznego}
 %\begin{itemize}

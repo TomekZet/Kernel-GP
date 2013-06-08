@@ -155,7 +155,7 @@ set terminal pdf
 set xtics rotate by 45 
 set xtics out
 set xtics offset -0.75,-1
-set key box outside below
+set key box outside below right
 
 set ylabel "Accuracy"
 set xlabel "Population size"
@@ -494,3 +494,19 @@ unset output
 set output "pdf/epsilon-time-breast.pdf"
  plot for [k in kernels] 'grouped/epsilon.dat.result.dataset-breast.scale.kernel-'.k.'.dat' using "N":"time":xticlabels(9) title 'Kernel: '.k
  unset output
+
+
+################################
+########## Elite #############
+################################
+
+elites = "0 5
+
+set ylabel "Fitness"
+set xlabel "Czas (pokolenia)
+set key title 'Wielkość elit
+
+set output "pdf/elites-heart.pdf"
+ plot for [i in elites] 'grouped/heart.scale.dat.elites-'.i.'.dat' using "generations":"mean_fitness" title i
+unset output
+

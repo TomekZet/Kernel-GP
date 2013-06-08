@@ -6,6 +6,7 @@ Celem algorytmu Kernel GP jest odnalezienie optymalnej dla danego problemu funkc
 
 
 Przebieg algorytmu jest typowy dla algorytmów genetycznych:
+\begin{quote}
 \begin{enumerate}
 \item Utwórz początkową populację kerneli
 \item \label{ewaluacja} Oblicz wartość \textit{funkcji dopasowania} każdego z kerneli: trafność klasyfikacji SVM z użyciem tego kernela
@@ -14,10 +15,11 @@ Przebieg algorytmu jest typowy dla algorytmów genetycznych:
 \item Utwórz nową populację poprzez mutację i krzyżowanie wybranych w poprzednim kroku funkcji
 \item Wróć do punktu \ref{ewaluacja}
 \end{enumerate}
+\end{quote}
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.5]{figures/algorithm}
+\includegraphics[scale=0.5]{figures/graphs/algorithm}
 \caption{Diagram przepływu algorytmu Kernel GP.\label{fig:algorithm}}
 \end{figure}
 
@@ -34,20 +36,20 @@ Funkcje elementarne wraz z ograniczeniami zdefiniowane w algorytmie:
 \begin{itemize}
 \item Funkcje łączące - jako argument przyjmują wynik dwóch lub jednej funkcji jądrowej i ewentualnie stałą ERC. Zwracają wartość rzeczywistą. Dzięki właściwości domknięcia zbioru kerneli ze względu na operacje wykonywane przez te funkcje funkcja powstała przez połączenie dwóch kerneli funkcją łączącą jest również poprawnym kernelem \cite{Shawe-Taylor:2004:KMP:975545}.
 	\begin{itemize}
-	\item Dodawanie: $ k(x, z) = k_1(x,z) + k_2(x,z) $
-	\item Mnożenie: $ k(x, z) = k_1(x,z) * k_2(x,z) $	
-	\item Mnożenie przez stałą: $ k(x, z) = a * k_1(x,z) $
-	\item Funkcja wykładnicza: $ k(x, z) = e ^{k_1(x,z)} $
+	\item Dodawanie: $ k(x, y) = k_1(x,y) + k_2(x,y) $
+	\item Mnożenie: $ k(x, y) = k_1(x,y) * k_2(x,y) $	
+	\item Mnożenie przez stałą: $ k(x, y) = a * k_1(x,y) $
+	\item Funkcja wykładnicza: $ k(x, y) = e ^{k_1(x,y)} $
 	\end{itemize}
 	Gdzie $ a $ to stała rzeczywista generowana jako stała ERC.
 \item Podstawowe funkcje jądrowe - jako argument przyjmują odpowiednią do funkcji liczbę stałych ERC. Zwracają wartość rzeczywistą.
 	\begin{itemize}
-	\item Liniowa: $ k(x, z) = \langle x,z \rangle $	
-	\item Wielomianowa: $ k(x, z) = \langle x,z \rangle ^d $
-	\item Gausowska: $ e^{-\gamma*||x-z||^2} $	
-	\item Sigmoidalna: $ k(x, z) = \tanh(\gamma \langle x,z \rangle + \tau) $
-	\item Logarytmiczna: $ k(x, z) = - log (\lVert x-y \rVert ^d + 1) $
-	\item Potęgowa: $ k(x, z) = (\alpha x^T z + c)^d $
+	\item Liniowa: $ k(x, y) = \langle x,y \rangle $	
+	\item Wielomianowa: $ k(x, y) = \langle x,y \rangle ^d $
+	\item Gausowska: $ e^{-\gamma*||x-y||^2} $	
+	\item Sigmoidalna: $ k(x, y) = \tanh(\gamma \langle x,y \rangle + \tau) $
+	\item Logarytmiczna: $ k(x, y) = - log (\lVert x-y \rVert ^d + 1) $
+	\item Potęgowa: $ k(x, y) = (\alpha x^T z + c)^d $
 	\item Cauchego: $ k(x, y) = \frac{1}{1 + \frac{\lVert x-y \rVert^2}{\sigma} } $ 
 	\item Wykładnicza: $ k(x, y) = \exp\left(-\frac{ \lVert x-y \rVert }{2\sigma^2}\right) $
 	\end{itemize}
@@ -66,8 +68,8 @@ Wektory cech będące najważniejszymi argumentami funkcji jądrowych nie są wy
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.6]{figures/tree}
-\caption{Przykładowe drzewo generowane przez algorytm.\label{fig:tree}}
+\includegraphics[scale=0.6]{figures/graphs/3-tree}
+\caption{Przykładowe drzewo generowane przez algorytm.\label{fig:3-tree}}
 \end{figure}
 
 
