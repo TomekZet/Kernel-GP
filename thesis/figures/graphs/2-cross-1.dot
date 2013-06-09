@@ -1,0 +1,21 @@
+digraph g {
+node [shape=rectangle];
+n[label = "*"];
+    n0[label = "sin()"];
+        n00[label = "+"];
+            n000[label = "x"];
+            n001[label = "y"];
+    n1[label = "cos()"]
+        n10[label = "-"];
+            n101[label = "x"];
+            n100[label = "y"];
+n -> n0;
+n0 -> n00;
+n00 -> n000;
+n00 -> n001;
+
+n -> n1;
+n1 -> n10;
+n10 -> n100;
+n10 -> n101;
+}
