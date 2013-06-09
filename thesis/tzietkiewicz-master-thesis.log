@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.1)  7 JUN 2013 18:10
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.1)  9 JUN 2013 18:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1453,7 +1453,7 @@ LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
 LaTeX Font Info:    Font shape `T1/futs/bx/it' in size <10> not available
 (Font)              Font shape `T1/futs/b/it' tried instead on input line 52.
  [4]
-<figures/functions/2-different-hyperplanes.pdf, id=335, 549.13733pt x 496.36874
+<figures/functions/2-different-hyperplanes.pdf, id=350, 549.13733pt x 496.36874
 pt>
 File: figures/functions/2-different-hyperplanes.pdf Graphic file (type pdf)
  <use figures/functions/2-different-hyperplanes.pdf>
@@ -1482,7 +1482,7 @@ Overfull \hbox (0.87988pt too wide) in paragraph at lines 144--146
 t/10 x[]\T1/futs/m/n/10 )$ b¦-dzie równa
  []
 
-<figures/functions/2-margin.pdf, id=349, 549.13733pt x 496.36874pt>
+<figures/functions/2-margin.pdf, id=364, 549.13733pt x 496.36874pt>
 File: figures/functions/2-margin.pdf Graphic file (type pdf)
 
 <use figures/functions/2-margin.pdf>
@@ -1494,7 +1494,7 @@ Package pdftex.def Info: figures/functions/2-margin.pdf used on input line 149.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [6 <./figures/functions/2-different-hyperplanes.pdf>] [7 <./figures/functions/2
--margin.pdf>] <figures/functions/2-nonlinear.pdf, id=401, 216.81pt x 216.81pt>
+-margin.pdf>] <figures/functions/2-nonlinear.pdf, id=416, 216.81pt x 216.81pt>
 File: figures/functions/2-nonlinear.pdf Graphic file (type pdf)
 
 <use figures/functions/2-nonlinear.pdf>
@@ -1502,7 +1502,7 @@ Package pdftex.def Info: figures/functions/2-nonlinear.pdf used on input line 2
 09.
 (pdftex.def)             Requested size: 216.80946pt x 216.80946pt.
 
-<figures/functions/2-transform.pdf, id=402, 433.62pt x 325.215pt>
+<figures/functions/2-transform.pdf, id=417, 433.62pt x 325.215pt>
 File: figures/functions/2-transform.pdf Graphic file (type pdf)
 
 <use figures/functions/2-transform.pdf>
@@ -1515,7 +1515,7 @@ Underfull \hbox (badness 2111) in paragraph at lines 218--218
 po do-ko-na-niu trans-for-ma-cji do prze-strzeni 3-
  []
 
-<figures/functions/2-transform-side.pdf, id=405, 433.62pt x 325.215pt>
+<figures/functions/2-transform-side.pdf, id=420, 433.62pt x 325.215pt>
 File: figures/functions/2-transform-side.pdf Graphic file (type pdf)
 
 <use figures/functions/2-transform-side.pdf>
@@ -1548,7 +1548,7 @@ Overfull \hbox (0.66034pt too wide) in paragraph at lines 305--306
 po-przez sko-pio-wa-nie ist-nie-j¡-cego osob-nika bez zmian 
  []
 
-<figures/graphs/ea.pdf, id=477, 475.7775pt x 675.52374pt>
+<figures/graphs/ea.pdf, id=492, 475.7775pt x 675.52374pt>
 File: figures/graphs/ea.pdf Graphic file (type pdf)
 
 <use figures/graphs/ea.pdf>
@@ -1575,7 +1575,7 @@ Overfull \hbox (5.08238pt too wide) in paragraph at lines 350--351
 ge-nomu, które mo-gªy wcze-±niej nie by¢ obecne
  []
 
-[13] <figures/graphs/2-tree.pdf, id=522, 242.9075pt x 477.785pt>
+[13] <figures/graphs/2-tree.pdf, id=537, 242.9075pt x 477.785pt>
 File: figures/graphs/2-tree.pdf Graphic file (type pdf)
 
 <use figures/graphs/2-tree.pdf>
@@ -1601,7 +1601,7 @@ Overfull \hbox (3.36813pt too wide) in paragraph at lines 380--381
  ge-ne-tycz-nym to \T1/futs/m/it/10 krzy-»o-wa-nie pod-drzew
  []
 
-<figures/graphs/2-cross-both.pdf, id=547, 465.46275pt x 521.95pt>
+<figures/graphs/2-cross-both.pdf, id=562, 465.46275pt x 521.95pt>
 File: figures/graphs/2-cross-both.pdf Graphic file (type pdf)
 
 <use figures/graphs/2-cross-both.pdf>
@@ -1612,7 +1612,7 @@ Package pdftex.def Info: figures/graphs/2-cross-both.pdf used on input line 384
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/graphs/2-mutation.pdf, id=549, 425.16808pt x 468.87868pt>
+<figures/graphs/2-mutation.pdf, id=564, 425.16808pt x 468.87868pt>
 File: figures/graphs/2-mutation.pdf Graphic file (type pdf)
 
 <use figures/graphs/2-mutation.pdf>
@@ -1623,8 +1623,8 @@ Package pdftex.def Info: figures/graphs/2-mutation.pdf used on input line 394.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [15] [16 <./figures/graphs/2-cross-both.pdf>] [17 <./figures/graphs/2-mutation.
-pdf>]) (./03-algorytm.tex
-<figures/graphs/algorithm.pdf, id=621, 512.91624pt x 796.9775pt>
+pdf>] [18] [19]) (./03-algorytm.tex
+<figures/graphs/algorithm.pdf, id=659, 512.91624pt x 796.9775pt>
 File: figures/graphs/algorithm.pdf Graphic file (type pdf)
 
 <use figures/graphs/algorithm.pdf>
@@ -1634,14 +1634,14 @@ Package pdftex.def Info: figures/graphs/algorithm.pdf used on input line 22.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[18
+[20
 
 
-] [19 <./figures/graphs/algorithm.pdf>]
+] [21 <./figures/graphs/algorithm.pdf>]
 
-LaTeX Warning: Reference `fig:tree' on page 20 undefined on input line 65.
+LaTeX Warning: Reference `fig:tree' on page 22 undefined on input line 65.
 
-<figures/graphs/3-tree.pdf, id=656, 578.16pt x 405.515pt>
+<figures/graphs/3-tree.pdf, id=695, 578.16pt x 405.515pt>
 File: figures/graphs/3-tree.pdf Graphic file (type pdf)
 
 <use figures/graphs/3-tree.pdf>
@@ -1651,7 +1651,7 @@ Package pdftex.def Info: figures/graphs/3-tree.pdf used on input line 71.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[20] [21 <./figures/graphs/3-tree.pdf>] [22]) (./04-wyniki.tex [23
+[22] [23 <./figures/graphs/3-tree.pdf>] [24]) (./04-wyniki.tex [25
 
 
 ]
@@ -1724,7 +1724,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--41
 []|\T1/futs/m/n/10 Liczba
  []
 
-<figures/results/fitness/fitness-heart.pdf, id=705, 361.35pt x 216.81pt>
+<figures/results/fitness/fitness-heart.pdf, id=743, 361.35pt x 216.81pt>
 File: figures/results/fitness/fitness-heart.pdf Graphic file (type pdf)
 
 <use figures/results/fitness/fitness-heart.pdf>
@@ -1732,15 +1732,15 @@ Package pdftex.def Info: figures/results/fitness/fitness-heart.pdf used on inpu
 t line 60.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/results/fitness/fitness-breast.pdf, id=706, 361.35pt x 216.81pt>
+<figures/results/fitness/fitness-breast.pdf, id=744, 361.35pt x 216.81pt>
 File: figures/results/fitness/fitness-breast.pdf Graphic file (type pdf)
 
 <use figures/results/fitness/fitness-breast.pdf>
 Package pdftex.def Info: figures/results/fitness/fitness-breast.pdf used on inp
 ut line 65.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
- [24]
-<figures/results/accuracy/accuracy-breast.pdf, id=720, 361.35pt x 216.81pt>
+ [26]
+<figures/results/accuracy/accuracy-breast.pdf, id=758, 361.35pt x 216.81pt>
 File: figures/results/accuracy/accuracy-breast.pdf Graphic file (type pdf)
 
 <use figures/results/accuracy/accuracy-breast.pdf>
@@ -1748,7 +1748,7 @@ Package pdftex.def Info: figures/results/accuracy/accuracy-breast.pdf used on i
 nput line 77.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/results/accuracy/accuracy-heart.pdf, id=721, 361.35pt x 216.81pt>
+<figures/results/accuracy/accuracy-heart.pdf, id=759, 361.35pt x 216.81pt>
 File: figures/results/accuracy/accuracy-heart.pdf Graphic file (type pdf)
 
 <use figures/results/accuracy/accuracy-heart.pdf>
@@ -1756,7 +1756,7 @@ Package pdftex.def Info: figures/results/accuracy/accuracy-heart.pdf used on in
 put line 82.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/results/f1/f1-breast.pdf, id=722, 361.35pt x 216.81pt>
+<figures/results/f1/f1-breast.pdf, id=760, 361.35pt x 216.81pt>
 File: figures/results/f1/f1-breast.pdf Graphic file (type pdf)
 
 <use figures/results/f1/f1-breast.pdf>
@@ -1764,7 +1764,7 @@ Package pdftex.def Info: figures/results/f1/f1-breast.pdf used on input line 87
 .
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/results/f1/f1-heart.pdf, id=723, 361.35pt x 216.81pt>
+<figures/results/f1/f1-heart.pdf, id=761, 361.35pt x 216.81pt>
 File: figures/results/f1/f1-heart.pdf Graphic file (type pdf)
 
 <use figures/results/f1/f1-heart.pdf>
@@ -1772,7 +1772,7 @@ Package pdftex.def Info: figures/results/f1/f1-heart.pdf used on input line 92.
 
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/results/mcc/mcc-breast.pdf, id=724, 361.35pt x 216.81pt>
+<figures/results/mcc/mcc-breast.pdf, id=762, 361.35pt x 216.81pt>
 File: figures/results/mcc/mcc-breast.pdf Graphic file (type pdf)
 
 <use figures/results/mcc/mcc-breast.pdf>
@@ -1780,7 +1780,7 @@ Package pdftex.def Info: figures/results/mcc/mcc-breast.pdf used on input line
 97.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/results/mcc/mcc-heart.pdf, id=725, 361.35pt x 216.81pt>
+<figures/results/mcc/mcc-heart.pdf, id=763, 361.35pt x 216.81pt>
 File: figures/results/mcc/mcc-heart.pdf Graphic file (type pdf)
 
 <use figures/results/mcc/mcc-heart.pdf>
@@ -1788,7 +1788,7 @@ Package pdftex.def Info: figures/results/mcc/mcc-heart.pdf used on input line 1
 02.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/results/probability/probability-breast.pdf, id=726, 361.35pt x 216.81p
+<figures/results/probability/probability-breast.pdf, id=764, 361.35pt x 216.81p
 t>
 File: figures/results/probability/probability-breast.pdf Graphic file (type pdf
 )
@@ -1797,7 +1797,7 @@ Package pdftex.def Info: figures/results/probability/probability-breast.pdf use
 d on input line 107.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/results/probability/probability-heart.pdf, id=727, 361.35pt x 216.81pt
+<figures/results/probability/probability-heart.pdf, id=765, 361.35pt x 216.81pt
 >
 File: figures/results/probability/probability-heart.pdf Graphic file (type pdf)
 
@@ -1805,32 +1805,32 @@ File: figures/results/probability/probability-heart.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/results/probability/probability-heart.pdf used
  on input line 112.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
- [25 <./figures/results/fitness/fitness-heart.pdf> <./figures/results/fitness/f
+ [27 <./figures/results/fitness/fitness-heart.pdf> <./figures/results/fitness/f
 itness-breast.pdf
 
 pdfTeX warning: pdflatex (file ./figures/results/fitness/fitness-breast.pdf): P
 DF inclusion: multiple pdfs with page group included in a single page
->] [26 <./figures/results/accuracy/accuracy-breast.pdf> <./figures/results/accu
+>] [28 <./figures/results/accuracy/accuracy-breast.pdf> <./figures/results/accu
 racy/accuracy-heart.pdf
 
 pdfTeX warning: pdflatex (file ./figures/results/accuracy/accuracy-heart.pdf): 
 PDF inclusion: multiple pdfs with page group included in a single page
->] [27 <./figures/results/f1/f1-breast.pdf> <./figures/results/f1/f1-heart.pdf
+>] [29 <./figures/results/f1/f1-breast.pdf> <./figures/results/f1/f1-heart.pdf
 
 pdfTeX warning: pdflatex (file ./figures/results/f1/f1-heart.pdf): PDF inclusio
 n: multiple pdfs with page group included in a single page
->] [28 <./figures/results/mcc/mcc-breast.pdf> <./figures/results/mcc/mcc-heart.
+>] [30 <./figures/results/mcc/mcc-breast.pdf> <./figures/results/mcc/mcc-heart.
 pdf
 
 pdfTeX warning: pdflatex (file ./figures/results/mcc/mcc-heart.pdf): PDF inclus
 ion: multiple pdfs with page group included in a single page
->] [29 <./figures/results/probability/probability-breast.pdf> <./figures/result
+>] [31 <./figures/results/probability/probability-breast.pdf> <./figures/result
 s/probability/probability-heart.pdf
 
 pdfTeX warning: pdflatex (file ./figures/results/probability/probability-heart.
 pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-<figures/results/accuracy/accuracy-iris-detailed.pdf, id=879, 361.35pt x 216.81
+<figures/results/accuracy/accuracy-iris-detailed.pdf, id=917, 361.35pt x 216.81
 pt>
 File: figures/results/accuracy/accuracy-iris-detailed.pdf Graphic file (type pd
 f)
@@ -1839,7 +1839,7 @@ Package pdftex.def Info: figures/results/accuracy/accuracy-iris-detailed.pdf us
 ed on input line 152.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/results/fitness/fitness-iris-detailed.pdf, id=880, 361.35pt x 216.81pt
+<figures/results/fitness/fitness-iris-detailed.pdf, id=918, 361.35pt x 216.81pt
 >
 File: figures/results/fitness/fitness-iris-detailed.pdf Graphic file (type pdf)
 
@@ -1847,10 +1847,10 @@ File: figures/results/fitness/fitness-iris-detailed.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/results/fitness/fitness-iris-detailed.pdf used
  on input line 158.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
- [30
+ [32
 
  <./figures/results/accuracy/accuracy-iris-detailed.pdf>]
-<figures/results/accuracy/accuracy-vowel-detailed.pdf, id=898, 361.35pt x 216.8
+<figures/results/accuracy/accuracy-vowel-detailed.pdf, id=936, 361.35pt x 216.8
 1pt>
 File: figures/results/accuracy/accuracy-vowel-detailed.pdf Graphic file (type p
 df)
@@ -1859,7 +1859,7 @@ Package pdftex.def Info: figures/results/accuracy/accuracy-vowel-detailed.pdf u
 sed on input line 196.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/results/fitness/fitness-vowel-detailed.pdf, id=899, 361.35pt x 216.81p
+<figures/results/fitness/fitness-vowel-detailed.pdf, id=937, 361.35pt x 216.81p
 t>
 File: figures/results/fitness/fitness-vowel-detailed.pdf Graphic file (type pdf
 )
@@ -1867,49 +1867,49 @@ File: figures/results/fitness/fitness-vowel-detailed.pdf Graphic file (type pdf
 Package pdftex.def Info: figures/results/fitness/fitness-vowel-detailed.pdf use
 d on input line 201.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
- [31 <./figures/results/fitness/fitness-iris-detailed.pdf> <./figures/results/a
+ [33 <./figures/results/fitness/fitness-iris-detailed.pdf> <./figures/results/a
 ccuracy/accuracy-vowel-detailed.pdf
 
 pdfTeX warning: pdflatex (file ./figures/results/accuracy/accuracy-vowel-detail
 ed.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 
->] <figures/functions/func1.pdf, id=924, 8.03pt x 8.03pt>
+>] <figures/functions/func1.pdf, id=963, 8.03pt x 8.03pt>
 File: figures/functions/func1.pdf Graphic file (type pdf)
 
 <use figures/functions/func1.pdf>
 Package pdftex.def Info: figures/functions/func1.pdf used on input line 210.
 (pdftex.def)             Requested size: 4.01498pt x 4.01498pt.
 
-<figures/functions/func2.pdf, id=927, 8.03pt x 7.02625pt>
+<figures/functions/func2.pdf, id=966, 8.03pt x 7.02625pt>
 File: figures/functions/func2.pdf Graphic file (type pdf)
 
 <use figures/functions/func2.pdf>
 Package pdftex.def Info: figures/functions/func2.pdf used on input line 215.
 (pdftex.def)             Requested size: 4.81802pt x 4.21576pt.
 
-<figures/functions/func5.pdf, id=932, 8.03pt x 7.02625pt>
+<figures/functions/func5.pdf, id=971, 8.03pt x 7.02625pt>
 File: figures/functions/func5.pdf Graphic file (type pdf)
 
 <use figures/functions/func5.pdf>
 Package pdftex.def Info: figures/functions/func5.pdf used on input line 220.
 (pdftex.def)             Requested size: 4.81802pt x 4.21576pt.
 
-<figures/functions/func3.pdf, id=935, 8.03pt x 7.02625pt>
+<figures/functions/func3.pdf, id=974, 8.03pt x 7.02625pt>
 File: figures/functions/func3.pdf Graphic file (type pdf)
 
 <use figures/functions/func3.pdf>
 Package pdftex.def Info: figures/functions/func3.pdf used on input line 226.
 (pdftex.def)             Requested size: 4.81802pt x 4.21576pt.
 
-<figures/functions/func4.pdf, id=938, 8.03pt x 7.02625pt>
+<figures/functions/func4.pdf, id=977, 8.03pt x 7.02625pt>
 File: figures/functions/func4.pdf Graphic file (type pdf)
 
 <use figures/functions/func4.pdf>
 Package pdftex.def Info: figures/functions/func4.pdf used on input line 231.
 (pdftex.def)             Requested size: 4.81802pt x 4.21576pt.
- [32 <./figures/results/fitness/fitness-vowel-detailed.pdf> <./figures/function
+ [34 <./figures/results/fitness/fitness-vowel-detailed.pdf> <./figures/function
 s/func1.pdf> <./figures/functions/func2.pdf>]
-[33 <./figures/functions/func5.pdf> <./figures/functions/func3.pdf> <./figures/
+[35 <./figures/functions/func5.pdf> <./figures/functions/func3.pdf> <./figures/
 functions/func4.pdf>]) (./05-adhd.tex
 Overfull \hbox (3.52025pt too wide) in paragraph at lines 18--19
 []\T1/futs/m/n/10 Strukturalnych - dane po-cho-dz¡ce z ob-ra-zo-wa-nia re-zo-na
@@ -1917,33 +1917,33 @@ nsu ma-gne-tycz-nego (\T1/futs/m/it/10 MRI\T1/futs/m/n/10 , ang. \T1/futs/m/it/
 10 Ma-
  []
 
-) (./06-podsumowanie.tex [34
+) (./06-podsumowanie.tex [36
 
 
-] [35]) (./tzietkiewicz-master-thesis.bbl [36
+] [37]) (./tzietkiewicz-master-thesis.bbl [38
 
 ]
 bibitemlist
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 43.
+(Font)              scaled to size 8.27998pt on input line 51.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 43.
-) (./a2-web-resources.tex [37
+(Font)              scaled to size 8.27998pt on input line 51.
+) (./a2-web-resources.tex [39
 
 ]
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 9.
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ))
-[38
+[40
 
-] <figures/template/logo-pp.pdf, id=1007, 469.755pt x 469.755pt>
+] <figures/template/logo-pp.pdf, id=1047, 469.755pt x 469.755pt>
 File: figures/template/logo-pp.pdf Graphic file (type pdf)
 
 <use figures/template/logo-pp.pdf>
 Package pdftex.def Info: figures/template/logo-pp.pdf used on input line 73.
 (pdftex.def)             Requested size: 42.67752pt x 42.67912pt.
- [39
+ [41
 
  <./figures/template/logo-pp.pdf>]
 \tf@toc=\write6
@@ -1957,7 +1957,7 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 76.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 76.
 Package rerunfilecheck Info: File `tzietkiewicz-master-thesis.out' has not chan
 ged.
-(rerunfilecheck)             Checksum: 2E158D66F4FA6B2982F394F4513016C5;10348.
+(rerunfilecheck)             Checksum: 20728D8116C1CA3E121EF87A0C0CFE34;11067.
 
 
 LaTeX Warning: There were undefined references.
@@ -1968,10 +1968,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 76.
  ) 
 Here is how much of TeX's memory you used:
- 15991 strings out of 495024
- 224535 string characters out of 3181155
- 368049 words of memory out of 3000000
- 18650 multiletter control sequences out of 15000+200000
+ 16005 strings out of 495024
+ 224832 string characters out of 3181155
+ 368209 words of memory out of 3000000
+ 18656 multiletter control sequences out of 15000+200000
  145614 words of font info for 160 fonts, out of 3000000 for 9000
  34 hyphenation exceptions out of 8191
  53i,13n,32p,1192b,492s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1985,10 +1985,10 @@ ts/type1/public/lm/lmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/u
 topia/putb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putbi8
 a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on tzietkiewicz-master-thesis.pdf (42 pages, 889591 bytes).
+Output written on tzietkiewicz-master-thesis.pdf (44 pages, 899293 bytes).
 PDF statistics:
- 1096 PDF objects out of 1200 (max. 8388607)
- 914 compressed objects within 10 object streams
- 183 named destinations out of 1000 (max. 500000)
- 612 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1136 PDF objects out of 1200 (max. 8388607)
+ 952 compressed objects within 10 object streams
+ 191 named destinations out of 1000 (max. 500000)
+ 636 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -46,14 +46,14 @@ Funkcje elementarne wraz z ograniczeniami zdefiniowane w algorytmie:
 	\begin{itemize}
 	\item Liniowa: $ k(x, y) = \langle x,y \rangle $	
 	\item Wielomianowa: $ k(x, y) = \langle x,y \rangle ^d $
-	\item Gausowska: $ e^{-\gamma*||x-y||^2} $	
+	\item Gausowska *RBF): $ e^{-\sigma*||x-y||^2} $	
 	\item Sigmoidalna: $ k(x, y) = \tanh(\gamma \langle x,y \rangle + \tau) $
 	\item Logarytmiczna: $ k(x, y) = - log (\lVert x-y \rVert ^d + 1) $
 	\item Potęgowa: $ k(x, y) = (\alpha x^T z + c)^d $
 	\item Cauchego: $ k(x, y) = \frac{1}{1 + \frac{\lVert x-y \rVert^2}{\sigma} } $ 
 	\item Wykładnicza: $ k(x, y) = \exp\left(-\frac{ \lVert x-y \rVert }{2\sigma^2}\right) $
 	\end{itemize}
-	Gdzie $ \gamma $, $ \tau $ oraz $ d $ to wartości stałe generowane jako stałe ERC. a $ \langle x,y \rangle $ to iloczyn skalarny wektorów $x$ i $y$.
+	Gdzie $ \sigma $, $ \gamma $, $ \tau $ oraz $ d $ to wartości stałe generowane jako stałe ERC. a $ \langle x,y \rangle $ to iloczyn skalarny wektorów $x$ i $y$.
 \item Stałe \textit{ERC (ang. Ephemeral Random Constant)} liczby rzeczywiste lub całkowite, które służą jako parametry innych funkcji. Są one liściami w drzewie, nie przyjmują żadnych argumentów. Mogą losowo zmieniać swoją wartość podczas mutacji.
 	\begin{itemize}
 	\item $ \gamma $: liczba rzeczywista z zakresu $ \langle 0.1, 2.0 \rangle $

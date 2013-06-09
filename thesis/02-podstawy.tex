@@ -268,7 +268,7 @@ f(x) = sgn \left( \sum_{i=1}^{m} y_i a_i k(x, x_i) + b \right)
 Najczęściej używane funkcje jądra to:	
 \begin{itemize}
 	\item Wielomianowa: $ k(x, y) = \langle x,y \rangle ^d $
-	\item Gausowska (RBG): $k(x, y) =  e^{-\gamma*||x-y||^2} $	
+	\item Gausowska (RBF): $k(x, y) =  e^{-\sigma*||x-y||^2} $	
 	\item Sigmoidalna: $ k(x, y) = \tanh(\gamma \langle x,y \rangle + \tau) $
 \end{itemize}
 jednak każda funkcja, która jest symetryczna i dodatnio określona, może być użyta jako jądro.
@@ -401,13 +401,55 @@ Selekcja w GP może być dokonywana jedną z metod używanych w innych algorytma
 Wielkość generowanych drzew jest regulowana przez dwa mechanizmy. Pierwszy to proste ograniczenie na maksymalną głębokość drzewa. Drugi mechanizm, o angielskiej nazwie \textit{parsimony pressure},  promuje mniejsze drzewa podczas selekcji. W tym celu stosowany jest algorytm \definicja{selekcji turniejowej leksykograficznej z koszykami (\english{Bucket Lexicographic Tournament Selection})}. Algorytm ten sortuje populację według przystosowania osobników, następnie grupuje je w N "koszyki". Następnie selekcja przebiega według zasad selekcji turniejowej, z tym, że porównuje się nie przystosowanie osobników, ale koszyk, do którego są przypisane. W przypadku gdy w turnieju porównywane są dwa osobniki z tego samego koszyka wygrywa ten, który jest mniejszy.
 
 
-\section{Ewolucja kerneli - przegląd literatury}
-Problem wyboru funkcji jądrowej stosowanej przez klasyfikator SVM można rozwiązać na kilka sposobów. Najczęściej stosuje się po prostu jedną z popularnych funkcji - RBF, sigmoidalną lub wielomianową, kierując się doświadczeniem, "dobrymi praktykami" lub ręcznie sprawdzając wyniki osiągane z użyciem tych funkcji i różnych wartości ich parametrów.
+\section{Optymalizacja parametrów SVM - przegląd literatury}
+Na wyniki osiągane przez algorytm SVM duży wpływ ma dobór stosowanej funkcji jądrowej wraz z jej parametrami ($ \sigma $ dla jądra RBF, $ d $ dla jądra wielomianowego, oraz $ \gamma $ i $ \tau $ dla jądra sigmoidalnego ) oraz parametrów samego algorytmu (na przykład parametru $ C $ ze wzoru \ref{eq:dual-c}) \cite{practical_2003}. 
 
-Zaproponowano jednak również kilka metod bardziej zautomatyzowanego doboru funkcji jądrowych i ich parametrów. 
-Najprostsza z nich nosi nazwę \definicja{optymalizacji hiperparametrów (\english{Hyperparameter optimalization})}. Jest to określenie zbioru metod służących optymalizacji parametrów jakiegoś algorytmu. Do dokonania hiperoptymalizacji można posłużyć się jedną z metaheurystyk takich jak \definicja{Random Search} [\ref{url:hyperopt}], lub \definicja{Grid Search} \cite{practical_2003}.
+Problem wyboru funkcji jądrowej i parametrów stosowanych przez klasyfikator SVM można rozwiązać na kilka sposobów. Najczęściej stosuje się po prostu jedną z popularnych funkcji - RBF, sigmoidalną lub wielomianową, kierując się doświadczeniem, "dobrymi praktykami" lub ręcznie sprawdzając wyniki osiągane z użyciem tych funkcji i różnych wartości ich parametrów. Najczęściej stosowaną funkcją jądrową wydaje się być RBF \cite{practical_2003} \cite{howley_genetic_2005}.
 
-Optymalizacja parametrów nie wpływa jednak na samą funkcję jądrową, lub pozwala jedynie na jej wybór z zawężonego grona popularnych funkcji. Dlatego próbuje się wykorzystywać różnego rodzaju algorytmy ewolucyjne w celu znalezienia funkcji, która daje najlepsze rezultaty \cite{gagne_genetic_2006} \cite{howley_genetic_2005} \cite{sean_ecj_2010} \cite{sullivan_evolving_2007}.
+Możliwa jest również automatyzacja poszukiwania optymalnych parametrów. Proces ten nosi nazwę \definicja{optymalizacji hiperparametrów (\english{Hyperparameter optimalization})}. Jest to określenie zbioru metod służących optymalizacji parametrów jakiegoś algorytmu.
+
+\subsection{Miary przystosowania (fitness)}
+W przypadku wszystkich metod optymalizacji parametrów SVM konieczne jest wybranie jakiejś funkcji celu, która będzie optymalizowana. Funkcja ta informuje o tym, czy zmiany parametrów idą w dobrą stronę i pozwala oceniać i porównywać różne ich kombinacje. Oprócz miar uniwersalnych dla wszystkich problemów klasyfikacji (patrz rozdział \ref{sec:measures}), możliwe jest stosowanie miar specyficznych dla algorytmu SVM, takich jak: \cite{howley_genetic_2005} \cite{runarsson_asynchronous_2004}
+\begin{itemize}
+	\item liczba wektorów wspierających (minimalizacja)
+	\item promień najmniejszej sfery $ R $, o środku w początku układu współrzędnych, obejmującej wszystkie przykłady uczące (minimalizacja):
+		$ R = max_{1 \leq i \leq m} (K(x_i, x_i))  $
+	\item suma współczynników $ \alpha $: 
+	$ \sum_{i=1}^N \alpha_i $
+	Dąży się do minimalizacji tej miary, co prowadzi do maksymalizacji marginesu hiperpłaszczyzny \cite{howley_genetic_2005}.
+	\item suma \definicja{zmiennych osłabiających} (\english{slack variables}) $ \zeta $:
+	 $ \sum_{i=1}^N \zeta_i $
+	 , której minimalizacja prowadzi do mniejszej liczby niepoprawnie zaklasyfikowanych przykładów ze zbioru uczącego
+\end{itemize}
+	oraz miar będących kombinacjami powyższych, takich jak: \cite{runarsson_asynchronous_2004}
+\begin{itemize}
+	\item $ R^2 \sum_{i=1}^m \alpha_i + \sum_{i=1}^m \zeta_i $
+	\item $ (R^2 + 1/C) (||\omega||^22 + 2C \sum_{i=1}^m \zeta_i) $
+	\item $ (R^2 + 1/C) \sum_{i=1}^m \alpha_i $
+\end{itemize}
+Miary te pomagają zapobiec w przeuczeniu algorytmu, to znaczy zapewnić, że skuteczność klasyfikacji zbioru testującego będzie podobna do tej osiąganej na zbiorze uczącym, ponieważ nie mierzą skuteczności wprost. 
+
+\subsection{Optymalizacja parametrów}
+W najprostszym przypadku do dokonania hiperoptymalizacji można posłużyć się jedną z prostych metaheurystyk takich jak \definicja{Random Search} [\ref{url:hyperopt}] lub \definicja{Grid Search} \cite{practical_2003}. Grid Search polega na zachłannym przeszukiwaniu przestrzeni parametrów ograniczonej przez podane zakresy dozwolonych wartości każdego parametru. Przeszukiwanie takie odbywa się z określoną rozdzielczością, czyli dla każdego parametru jest określona wielkość kroku $ \delta $, o którą zmieniany jest parametr. Ponieważ przeszukiwanie takie jest nieefektywne, zaproponowano również użycie jego ulepszonej wersji \cite{staelin_parameter_2003}, polegające na stopniowym zwiększaniu rozdzielczości przeszukiwania i jednoczesnym zawężaniu przeszukiwanej przestrzeni do tego podobszaru, w którym dla aktualnej rozdzielczości otrzymano najlepsze rezultaty.
+
+
+Do optymalizacji parametrów SVM, używa się również algorytmów ewolucyjnych. Na przykład używano \definicja{Strategii ewolucyjnych (\english{Evolutionary Strategy})} w celu doboru optymalnych wartości $ C $ i $ \sigma $ dla jądra RBF \cite{runarsson_asynchronous_2004}.
+
+\subsection{Ewolucja kerneli} 
+Niemniej ważny od doboru parametrów jest dobór funkcji jądrowej użytej przez SVM do dokonania mapowania danych do wysoko wymiarowej przestrzeni. Dlatego próbuje się wykorzystywać różnego rodzaju algorytmy ewolucyjne w celu znalezienia funkcji, która daje najlepsze wyniki klasyfikacji.
+
+W roku 2005 Howley i Madden zaproponowali użycie programowania genetycznego do projektowania funkcji jądrowych na potrzeby SVM \cite{howley_genetic_2005}. Swoją metodę nazwali \english{Genetic Kernel Support Vector Machine (\akronim{GK SVM})}. Algorytm GP w ich podejściu buduje funkcje ze zbioru operacji dodawania, odejmowania i mnożenia, w dwóch wersjach: skalarnej i wektorowej. Terminale to wektory opisujące przykłady uczące. Tak stworzone funkcje są służą potem do stworzenia funkcji jądrowej według wzoru:
+$ K(x, z) = \dotp{treeEval(x, z)}{treeEval(x, z)} $, gdzie $ treeEval $ to wyrażenie zwrócone przez algorytm GP. Takie podejście zapewnia symetryczność funkcji jądrowej, choć nie zapewnia, że będzie ona dodatnio określona (nie musi zatem być poprawną funkcją jądrową w świetle teorii Mercera), a zatem nie zapewnia, że zostanie znalezione globalne optimum problemu optymalizacji rozwiązywanego wewnątrz SVM. Mimo to, takie funkcje mogą dawać dobre wyniki klasyfikacji SVM \cite{Bahlmann:2002:OHR:851040.856840}. 
+Jako miarę przystosowania (fitness) Howley i Madden użyli błędu klasyfikacji i dodatkowo funkcji $ fitness = \sum_{i=1}^m \alpha_i * R^2 $ jako tak zwanego \english{tiebreaker}, czyli funkcji służącej do uporządkowania osobników osiągających taki sam fitness.
+Autorzy przeprowadzili eksperymenty na sześciu zbiorach danych i porównali trafność klasyfikacji z użyciem funkcji wielomianowej, sigmoidalnej, RBF oraz stworzonych przez algorytm GP. Dla większości zbiorów wyewoluowane funkcje dawały wyniki lepsze lub porównywalne z najlepszymi wynikami otrzymanymi z pomocą jednej ze standardowych funkcji jądrowych z różnymi wartościami parametrów.
+
+
+
+\cite{gagne_genetic_2006}
+
+\cite{sullivan_evolving_2007}
+
+\cite{sean_ecj_2010}.
 
 %\section{Obrazowanie mózgu przy pomocy rezonansu magnetycznego}
 %\begin{itemize}
