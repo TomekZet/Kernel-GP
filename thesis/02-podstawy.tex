@@ -245,7 +245,7 @@ f(x) = sgn \left( \sum_{i=1}^{m} y_i a_i \dotp{\Phi(x)}{\Phi(x_i)} + b \right)
 
 \FloatBarrier
 
-Powyższe podejście charakteryzuje się dużą złożonością obliczeniową. Zarówno obliczanie mapowania dla każdego przykładów jak i obliczenie iloczynu skalarnego przykładów w nowej przestrzeni, która może mieć bardzo dużo wymiarów, stanowi spory narzut obliczeniowy. Dokonywanie wszystkich mapowań a następnie obliczanie ich iloczynu nie jest jednak konieczne, można obie te operacje wykonać w jednym kroku, stosując tak zwany \english{Kernel Trick} \cite{Boser:1992:TAO:130385.130401}. Polega on na zastosowaniu podstawienia $ \dotp{\Phi(x)}{\Phi(x')} \mapsto k(x, x') $ gdzie $ k(x,x') $ to \definicja{funkcja jądrowa} (\english{kernel}), która musi być symetryczna i dodatnio określona. Po zastosowaniu \emph{kernel trick} otrzymujemy następujący problem optymalizacyjny:
+Powyższe podejście charakteryzuje się dużą złożonością obliczeniową. Zarówno obliczanie mapowania dla każdego przykładów jak i obliczenie iloczynu skalarnego przykładów w nowej przestrzeni, która może mieć bardzo dużo wymiarów, stanowi spory narzut obliczeniowy. Dokonywanie wszystkich mapowań a następnie obliczanie ich iloczynu nie jest jednak konieczne, można obie te operacje wykonać w jednym kroku, stosując tak zwany \english{Kernel Trick} \cite{Boser:1992:TAO:130385.130401}. Polega on na zastosowaniu podstawienia $ \dotp{\Phi(x)}{\Phi(x')} \mapsto k(x, x') $ gdzie $ k(x,x') $ to \definicja{funkcja jądrowa} (\english{kernel}). Po zastosowaniu \emph{kernel trick} otrzymujemy następujący problem optymalizacyjny:
 
 \begin{equation}
 \begin{array}{ll}
@@ -263,17 +263,58 @@ f(x) = sgn \left( \sum_{i=1}^{m} y_i a_i k(x, x_i) + b \right)
 \label{eq:decfn-k}
 \end{equation}
 
-\subsubsection{Dobór funkcji jądra}
+\subsection{Funkcje jądrowe}
 
-Najczęściej używane funkcje jądra to:	
+Funkcję jądrowe pozwalają obliczyć iloczyn skalarny wyników mapowania ($ \Phi() $) dwóch wektorów ($ x, x' $) do wysoko wymiarowej przestrzeni atrybutów ($ \Omega^{m+k} $), bez bezpośredniego dokonywania mapowania:
+$$ \Phi: \Omega^m \mapsto \Omega^{m+k} $$
+$$ \dotp{\Phi(x)}{\Phi(x')} \mapsto k(x, x')  $$
+
+Najczęściej używane funkcje jądrowe to:	
 \begin{itemize}
 	\item Wielomianowa: $ k(x, y) = \langle x,y \rangle ^d $
 	\item Gausowska (RBF): $k(x, y) =  e^{-\sigma*||x-y||^2} $	
 	\item Sigmoidalna: $ k(x, y) = \tanh(\gamma \langle x,y \rangle + \tau) $
 \end{itemize}
-jednak każda funkcja, która jest symetryczna i dodatnio określona, może być użyta jako jądro.
+
+Jako funkcję jądrowe w SVM można użyć jednak dowolnej symetrycznej funkcji, która jest dodatnio określona (\english{positive definite}), czyli dla której macierz:
+$$ K_{ij} := k(x_i, x_j) $$
+spełnia warunek:
+\begin{equation}
+\label{eq:pd}
+\sum_{i,j}c_i c_j K_{ij} \geq 0
+\end{equation} 
+dla wszystkich $ c_i \in  $
+co jest równoważne temu, że jej wszystkie wartości własne są dodatnie \cite{scholkopf_learning_2002}.
 
 
+Funkcje jądrowe, które nie są dodatnio określone, a jedynie warunkowo dodatnio określone (\english{conditionally positive definite}) również mogą być użyte w metodach jądrowych, nie gwarantują jednak, że znalezione rozwiązanie będzie unikalne. Wyniki eksperymentalne pokazują jednak, że w praktyce funkcje, które są jedynie warunkowo dodatni określone, mogą dawać równie dobre wyniki co funkcje dodatnio określone \cite{conditionally2005Boughorbel}. Funkcja jest warunkowo dodatnio określona, jeśli spełnia warunek ze wzoru \ref{eq:pd} przy czym $ \sum_{i,j} c_i = 0 $.
+
+
+Funkcje jądrowe cechuje własność domknięcia ze względu na pewne operacje. Oznacza to, że funkcje powstałe poprzez połączenie poprawnych funkcji jądrowych za pomocą tych operatorów również są poprawnymi funkcjami jądrowymi \cite{Shawe-Taylor:2004:KMP:975545}. Jeżeli $ k_1(x, z) $ i $ k_2 (x,z) $ są kernelami, to również poniższe funkcje są kernelami:
+
+\begin{equation}
+\begin{array}{ll}
+	k(x, z) = k_1(x,z) + k_2(x,z) \\
+	k(x, z) = k_1(x,z) \times k_2(x,z) \\
+	k(x, z) = a \times k_1(x,z)) \\
+	k(x, z) = e^{k_2(x,z)} \\
+%	k(x, z) = e^{- \frac{|| x - z ||^2}{2\sigma^2	} }
+	k(x, z) = p(k_1(x,z)) 	
+\end{array}
+\label{eq:kernelclosure}
+\end{equation}
+
+gdzie $ a \in \mathbb{R}^{+} $, a $ p() $ to wielomian o dodatnich współczynnikach.
+
+
+\subsubsection{Algorytmy wykorzystujące funkcje jądrowe}
+\emph{SVM} nie jest jedynym algorytmem wykorzystującym funkcję jądrowe do dokonania mapowania danych do wysoko wymiarowych przestrzeni. Ich użycie jest zasadne wszędzie tam, gdzie zamiast działać wprost na wejściowych wektorach danych można operować na ich iloczynach skalarnych \cite{scholkopf_learning_2002}. W związku z tym funkcje jądrowe znalazły zastosowania w wielu algorytmach, zwanych zbiorczo jak metody jądrowe (\english{kernel methods}):
+\begin{itemize}
+	\item \emph{Kernel-NN} \cite{Yu:2002:KNA:607789.607852} - modyfikacja \definicja{k-NN} korzystająca z funkcji jądrowych do obliczania odległości między przykładami
+	\item \definicja{k-PCA} \cite{scholkopf_learning_2002} - modyfikacji algorytmu analizy głównych składowych \definicja{Principal Component Analysis (\akronim{PCA})}, który może służyć m.in. do konstrukcji cech opisujących przykłady, klasyfikowane potem za pomocą jakiegoś algorytmu klasyfikacji.
+	\item \definicja{SVR - Support Vector Regression} - regresja za pomocą SVM
+	\item \definicja{Kernel Fisher Discriminant (\akronim{KFD}} \cite{scholkopf_learning_2002} - zastosowanie funkcji jądrowych w liniowym dyskryminatorze Fishera, który może służyć do redukcji wymiarów opisujących przykłady i/lub do klasyfikacji.
+\end{itemize}
 
 \subsection{Klasyfikacja więcej niż dwóch klas}
 Klasyfikator SVM jest ze swej natury klasyfikatorem binarnym, to znaczy potrafi separować jedynie dwie klasy przykładów. W praktyce jednak wiele problemów klasyfikacji dotyczy zbiorów, w których wyróżniono więcej niż dwie klasy. Aby zastosować SVM do rozwiązania takich problemów stosuje się zazwyczaj jedną z dwóch technik: \definicja{jeden przeciw wszystkim (\english{One versus the Rest})} oraz \definicja{klasyfikacja parami (\english{pairwise classification})}. 
@@ -367,6 +408,7 @@ Poszczególne algorytmy ewolucyjne różnią się od siebie przede wszystkim ze 
 Drzewo generowane przez algorytm GP (np. takie jak pokazane na rysunku \ref{fig:2-tree})  składa się z \emph{terminali} (liście) oraz \emph{funkcji} (węzły wewnętrzne oraz korzeń). Terminale to wartości wejściowe generowanego wyrażenia - stałe i zmienne - na rysunku są to zmienne $ x $ i $ y $ oraz stała $ \lambda $. Funkcje to operacje wykonywane wartościach pochodzących z terminali lub innych funkcji, w przypadku drzewa z rysunku \ref{fig:2-tree} są to: funkcja wykładnicza $ exp() $, norma euklidesowa $ || || $ oraz funkcja potęgowa (korzeń). Każdy węzeł wewnętrzny posiada łuk(i) wejściowe, którymi funkcja "pobiera" wartości swoich argumentów oraz łuk wyjściowy, którym przekazuje wartość do kolejnych funkcji (lub w przypadku korzenia zwraca wartość obliczoną przez całe wyrażenie).
 
 \subsubsection{Inicjalizacja populacji}
+\label{ssec:inicjalizacja}
 Wybranie sposobu inicjalizacji populacji sprowadza się do określenia metody losowego generowania osobników. Drzewa są budowane przez łączenie ze sobą funkcji wybieranych ze \definicja{zbioru funkcji} oraz terminali. Każda funkcja ma określoną liczbę argumentów oraz opcjonalnie typ danych wejściowych i wyjściowych. W najprostszym przypadku wszystkie węzły drzewa operują na tych samych typach danych, wtedy nie narzuca się ograniczeń na to które węzły mogą się ze sobą łączyć. Jeśli jednak zbiór funkcji i terminali jest heterogeniczny ze względu na wartości typów danych, konieczne jest wprowadzenie ograniczeń. Odmiana \definicja{GP}, w której każda funkcja ma zdefiniowane typy danych, na których operuje nazywany jest \definicja{Strongly Typed GP \akronim{STGP}}.
 Kolejnym ograniczeniem najczęściej narzucanym na generowane drzewa jest ich głębokość, czyli odległość od najdalszego liścia do korzenia. Ze względu na to ograniczenie wyróżnia się 3 podstawowe metody generowania osobników:
 \begin{itemize}
@@ -430,7 +472,8 @@ W przypadku wszystkich metod optymalizacji parametrów SVM konieczne jest wybran
 Miary te pomagają zapobiec w przeuczeniu algorytmu, to znaczy zapewnić, że skuteczność klasyfikacji zbioru testującego będzie podobna do tej osiąganej na zbiorze uczącym, ponieważ nie mierzą skuteczności wprost. 
 
 \subsection{Optymalizacja parametrów}
-W najprostszym przypadku do dokonania hiperoptymalizacji można posłużyć się jedną z prostych metaheurystyk takich jak \definicja{Random Search} [\ref{url:hyperopt}] lub \definicja{Grid Search} \cite{practical_2003}. Grid Search polega na zachłannym przeszukiwaniu przestrzeni parametrów ograniczonej przez podane zakresy dozwolonych wartości każdego parametru. Przeszukiwanie takie odbywa się z określoną rozdzielczością, czyli dla każdego parametru jest określona wielkość kroku $ \delta $, o którą zmieniany jest parametr. Ponieważ przeszukiwanie takie jest nieefektywne, zaproponowano również użycie jego ulepszonej wersji \cite{staelin_parameter_2003}, polegające na stopniowym zwiększaniu rozdzielczości przeszukiwania i jednoczesnym zawężaniu przeszukiwanej przestrzeni do tego podobszaru, w którym dla aktualnej rozdzielczości otrzymano najlepsze rezultaty.
+\label{ssec:hyperopt}
+W najprostszym przypadku do dokonania hiperoptymalizacji można posłużyć się jedną z prostych metaheurystyk takich jak \definicja{Random Search} [\ref{url:hyperopt}] lub \definicja{Grid Search} \cite{practical_2003}. \definicja{Grid Search} polega na zachłannym przeszukiwaniu przestrzeni parametrów ograniczonej przez podane zakresy dozwolonych wartości każdego parametru. Przeszukiwanie takie odbywa się z określoną rozdzielczością, czyli dla każdego parametru jest określona wielkość kroku $ \delta $, o którą zmieniany jest parametr. Ponieważ przeszukiwanie takie jest nieefektywne, zaproponowano również użycie jego ulepszonej wersji \cite{staelin_parameter_2003}, polegające na stopniowym zwiększaniu rozdzielczości przeszukiwania i jednoczesnym zawężaniu przeszukiwanej przestrzeni do tego podobszaru, w którym dla aktualnej rozdzielczości otrzymano najlepsze rezultaty.
 
 
 Do optymalizacji parametrów SVM, używa się również algorytmów ewolucyjnych. Na przykład używano \definicja{Strategii ewolucyjnych (\english{Evolutionary Strategy})} w celu doboru optymalnych wartości $ C $ i $ \sigma $ dla jądra RBF \cite{runarsson_asynchronous_2004}.
@@ -438,18 +481,40 @@ Do optymalizacji parametrów SVM, używa się również algorytmów ewolucyjnych
 \subsection{Ewolucja kerneli} 
 Niemniej ważny od doboru parametrów jest dobór funkcji jądrowej użytej przez SVM do dokonania mapowania danych do wysoko wymiarowej przestrzeni. Dlatego próbuje się wykorzystywać różnego rodzaju algorytmy ewolucyjne w celu znalezienia funkcji, która daje najlepsze wyniki klasyfikacji.
 
+\subsubsection{Genetic Kernel SVM}
 W roku 2005 Howley i Madden zaproponowali użycie programowania genetycznego do projektowania funkcji jądrowych na potrzeby SVM \cite{howley_genetic_2005}. Swoją metodę nazwali \english{Genetic Kernel Support Vector Machine (\akronim{GK SVM})}. Algorytm GP w ich podejściu buduje funkcje ze zbioru operacji dodawania, odejmowania i mnożenia, w dwóch wersjach: skalarnej i wektorowej. Terminale to wektory opisujące przykłady uczące. Tak stworzone funkcje są służą potem do stworzenia funkcji jądrowej według wzoru:
 $ K(x, z) = \dotp{treeEval(x, z)}{treeEval(x, z)} $, gdzie $ treeEval $ to wyrażenie zwrócone przez algorytm GP. Takie podejście zapewnia symetryczność funkcji jądrowej, choć nie zapewnia, że będzie ona dodatnio określona (nie musi zatem być poprawną funkcją jądrową w świetle teorii Mercera), a zatem nie zapewnia, że zostanie znalezione globalne optimum problemu optymalizacji rozwiązywanego wewnątrz SVM. Mimo to, takie funkcje mogą dawać dobre wyniki klasyfikacji SVM \cite{Bahlmann:2002:OHR:851040.856840}. 
 Jako miarę przystosowania (fitness) Howley i Madden użyli błędu klasyfikacji i dodatkowo funkcji $ fitness = \sum_{i=1}^m \alpha_i * R^2 $ jako tak zwanego \english{tiebreaker}, czyli funkcji służącej do uporządkowania osobników osiągających taki sam fitness.
 Autorzy przeprowadzili eksperymenty na sześciu zbiorach danych i porównali trafność klasyfikacji z użyciem funkcji wielomianowej, sigmoidalnej, RBF oraz stworzonych przez algorytm GP. Dla większości zbiorów wyewoluowane funkcje dawały wyniki lepsze lub porównywalne z najlepszymi wynikami otrzymanymi z pomocą jednej ze standardowych funkcji jądrowych z różnymi wartościami parametrów.
 
+\subsubsection{KTree}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1.2]{figures/graphs/2-howley}
+\label{fig:2-howley}
+\caption{Przykładowe drzewo wygenerowane przez algorytm KTree (rysunek pochodzi z pracy \cite{Howley:2002:evolutionary}). Po  lewej stronie widać część wektorową, po prawej część skalarną. Funkcja reprezentowana przez to drzewo to $   e^{\dotp{(x+x)-z}{(z+z)-x}*58.35 / (22.15*27.01)} $}
+\end{figure}
+Rok później ci sami autorzy zaprezentowali ulepszoną wersję swojego podejścia, tym razem zwaną \emph{KTree} \cite{Howley:2002:evolutionary}. W podejściu tym drzewo reprezentujące generowany kernel składa się z dwóch części: wektorowej i skalarnej. Część wektorowa znajduje się na dole drzewa, zawiera jego liście, będące wektorami cech oraz funkcje operujące na wektorach, takie jak dodawanie i odejmowanie wektorów. Podobnie jak w poprzedniej wersji algorytmu buduje się drzewo symetryczne do wygenerowanego i oblicza ich iloczyn skalarny. Jego wynik, wraz z terminalami zawierającymi losowe stałe, stanowią liście drugiej części drzewa, która zawiera operacje wektorowe. Dzięki zastosowaniu takiej reprezentacji możliwe jest modelowanie za jej pomocą standardowych funkcji jądrowych, takich jak RBF. Przykład takiego drzewa pokazano na rysunku \ref{fig:2-howley}.
+W pracy przebadano 3 różne funkcje fitness: dwie oparte na błędzie klasyfikacji zbioru uczącego, jako tiebreak używające kolejno wielkości drzewa oraz sumy współczynników $ \alpha $: $ \sum_{i=1..m}\alpha_i $ oraz trzecią: opartą na 3-krotnej cross walidacji na zbiorze uczącym z wielkością drzewa jako tiebreaker-em. Dodatkowo autorzy testowali użycie "filtra Mercera" (\english{Mercer filter}). Jeśli dla podzbioru danych uczących macierz $ K = (k(x,z)_{i,j=1}^N) $ ma ujemne wartości własne, to filtr przypisuje funkcji jądrowej $ k $ najgorszą możliwość fitness tym samym eliminując funkcje nie spełniające warunków narzuconych przez teorię Mercera.
+W przeprowadzonych przez autorów eksperymentach metoda KTree osiągała na większości z 9 przetestowanych zbiorów danych wyniki lepsze lub porównywalne do SVM ze standardowymi kernelami. Najlepszą funkcją fitness okazała się potrójna walidacja krzyżowa. Użycie filtra Mercera okazało się nie wpływać korzystnie na fitness ani osiąganą trafność klasyfikacji, jednak autorzy ostrzegają przed użyciem algorytmu bez filtra Mercera ze względu na groźbę przeuczenia.
 
+\subsubsection{Evolutionary Kernel Machine}
+Oryginalne podejście do problemu przedstawia metoda \definicja{Evolutionary Kernel Machine (\akronim{EKM})}, przedstawiona w 2006 roku w \cite{gagne_genetic_2006}. Funkcje jądrowe generowane są za pomocą GP, przy czym zbiór terminali stanowią funkcje operujące na wektorach a zwracające wartości skalarne (np. iloczyn skalarny, norma euklidesowa maksimum/minimum z wartości), natomiast wewnętrzne węzły pochodzą ze zbioru funkcji operujących na wartościach skalarnych i zwracających wartości skalarne. Co nietypowe w tym podejściu, to funkcja fitness, która pochodzi z miary oceny marginesu zaproponowanej w \cite{Gilad-Bachrach:2004:MBF:1015330.1015352} a używanej oryginalnie do oceny marginesu w algorytmie 1-NN:
+$$ F(K) = \frac{1}{m} \sum_{i=1}^m \delta_K(x_1^{'}, y_i^{'}) - l $$,
+gdzie $l$ to wielkość \emph{zbioru prototypów}, a $m$ to wielkość \emph{zbioru walidującego}.
 
-\cite{gagne_genetic_2006}
+Wyrażenie $ \delta_K(x,y) $ występujące w powyższym wzorze można przedstawić jako $ \delta_K(x,y) = n(x,y) - p(x,y) $. Aby obliczyć $n(x,y)$ oraz $p(x,y)$ należy posortować przykłady ze zbioru prototypów $\{(x_1,y_1),...(x_m, y_m)\}$ względem podobieństwa do przykładu $(x, y)$. $p(x,y)$ oznacza najniższą na posortowanej liście przykładów pozycję przykładu należącego do klasy $y$, czyli tej samej klasy co przykład $(x,y)$, $n(x,y)$ oznacza zaś najniższą pozycję przykłady należącego do klasy innej niż $y$.
+Miara podobieństwa, według której sortowane są przykłady pochodzi używa wygenerowanej funkcji jądrowej i wzorowana jest na algorytmie \emph{Kernel-NN} \cite{Yu:2002:KNA:607789.607852}:
+$$ d_K(x, x')^2 = K(x, x) + K(x', x') - 2K(x, x') $$
+Podsumowując: autorzy aby ocenić funkcje jądrowe na użytek algorytmu SVM, używają ich do skonstruowania klasyfikatora \emph{Kernel-NN} i oceniają margines w tym algorytmie przy pomocy zbioru walidującego.
+Dodatkowo, oprócz ewolucji kerneli, autorzy stosują kooperatywną koewolucję zbioru prototypów ze zbiorem kerneli oraz koewolucję typu żywiciel-pasożyt zbioru walidującego ze zbiorem kerneli.
+Wyniki eksperymentów zaprezentowane w artykule pokazują porównanie błędów klasyfikacji otrzymanych za pomocą algorytmów $ k-NN $, tradycyjnego \emph{SVM} z jądrem RBF i metody \emph{EKM}. W przypadku 2 z 6 przebadanych zbiorów danych algorytm \emph{EKM} okazał się istotnie statystycznie lepszy od pozostałych dwóch algorytmów.
 
-\cite{sullivan_evolving_2007}
+\subsubsection{Kernel GP}
+W 2007 roku ukazał się artykuł autorstwa Seana Luke-a (autora m.in. wykorzystanej w tej pracy biblioteki ECJ \cite{sean_ecj_2010}) i Keith Sullivan opisujący algorytm \definicja{Kernel GP (\akronim{KGP})} \cite{sullivan_evolving_2007}. Algorytm ten, podobnie jak opisane powyżej algorytmy, wykorzystuje programowanie genetyczne do wygenerowania funkcji jądrowych, jednak jako jedyny gwarantuje, że powstałe w ten sposób kernele będą spełniać warunki poprawności definiowane przez teorię Merera. Jest to możliwe dzięki własności zamknięcia zbioru kerneli ze względu na określone operacje. Własność ta umożliwia konstruowanie poprawnych funkcji jądrowych poprzez łączenie funkcji już istniejących (o których wiadomo, że są poprawne) za pomocą określonych operacji. W algorytmie \emph{Kernel GP} zbiór terminali to zbiór trzech standardowych funkcji jądrowych: wielomianowej, sigmoidalnej i gaussowskiej. Zbiór wewnętrznych węzłów drzewa stanowią operacje dodawania, mnożenia przez stałą, mnożenia oraz funkcja wykładnicza. Ponieważ funkcje jądrowe jako argumenty przyjmują wektory a zwracają wartości skalarne, operacje łączące kernele zaś przyjmują i zwracają wartości skalarne, autorzy użyli (opisanego w części \ref{ssec:inicjalizacja}) silnie typowanego programowania genetycznego, żeby zapewnić zgodność typów danych przekazywanych w drzewie.
+Jako funkcji fitness autorzy używają wyników 10-krotnej walidacji krzyżowej na zbiorze trenującym.
+W eksperymentach autorzy porównali trafność klasyfikacji wydzielonego zbioru testującego przez algorytm \emph{Kernel GP} oraz \emph{Grid Search} (opis w części \ref{ssec:hyperopt}) użyty do SVM z jądrem gaussowskim. Dla połowy z przebadanych wzorów lepsze wyniki osiągnął \emph{Kernel GP}, dla drugiej \emph{Grid Search}.
 
-\cite{sean_ecj_2010}.
 
 %\section{Obrazowanie mózgu przy pomocy rezonansu magnetycznego}
 %\begin{itemize}
