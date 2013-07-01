@@ -98,7 +98,15 @@ Najpierw algorytm SVM jest uczony na połączonych zbiorach trenującym i testuj
 
 
 \section{Implementacja}
-Algorytm został napisany w języku Java z użyciem bibliotek \emph{ECJ (Evolutionary Computing in Java)} \cite{sean_ecj_2010} oraz \emph{LibSVM} \cite{chang_libsvm:_2011}. Pierwsza z nich dostarcza mechanizmy \textit{obliczeń ewolucyjnych} w tym \textit{programowania genetycznego}. LibSVM to klasyfikator SVM napisany oryginalnie w języku C z dostępną implementacją w Javie.
+Algorytm został napisany w języku Java z użyciem bibliotek \emph{ECJ (Evolutionary Computing in Java)} \cite{sean_ecj_2010} oraz \emph{LibSVM} \cite{chang_libsvm:_2011}. Pierwsza z nich dostarcza mechanizmów \textit{obliczeń ewolucyjnych} w tym \textit{programowania genetycznego}. LibSVM to klasyfikator SVM napisany oryginalnie w języku C, przepisany w języku Java.
+
+W stworzonym programie można wydzielić następujące części:
+\begin{itemize}
+\item pakiet $ \text{libsvm} $, zawierający przerobiony kod biblioteki LibSVM wraz z kilkoma dodanymi klasami potomnymi. Ze względu na to, że implementacja LibSVM w języku Java jest po prostu przepisanym kodem oryginalnej wersji napisanej w C i większość użytych w niej metod jest statyczna i prywatna, trudno jest wprowadzać modyfikacje w bibliotece poprzez pisanie klas potomnych dziedziczących po już istniejących w bibliotece. Dlatego zdecydowano się na bezpośrednią modyfikację istniejącego kodu źródłowego biblioteki.
+\item pakiet $ text{c.app.kernel_gp} $, zawierający implementacje problemu, funkcji węzłów i terminali oraz klas klas zbierających statystyki przebiegu algorytmu, dziedziczące z klas należących do biblioteki ECJ
+\item bibliotekę ECJ
+\item skrypty napisane w języku Python służące do przeprowadzania eksperymentów
+\end{itemize}
 
 Uruchomienie algorytmu następuje poprzez uruchomienie klasy ec.Evolve należącej do biblioteki \emph{ECJ}, wraz z podaniem jako jeden z parametrów ścieżki do pliku konfiguracyjnego.
 Plik konfiguracyjny oraz parametry wywołania programu zawierają informacje takie jak:
@@ -128,8 +136,12 @@ Diagram sekwencji UML przedstawiający przepływ kontroli pomiędzy wymienionymi
 \end{figure}
 
 
-
-W celu przeprowadzenia eksperymentów obliczeniowych z użyciem różnych kombinacji parametrów został napisany skrypt w języku Python. Jego zadaniem było iteracyjne ustawianie kolejnych wartości parametrów, wywołanie właściwego algorytmu z użyciem tych parametrów oraz zapis zwróconych przez algorytm wyników do pliku.
+W celu przeprowadzenia eksperymentów obliczeniowych z użyciem różnych kombinacji parametrów został napisany skrypt w języku Python. Jego zadaniem jest iteracyjne ustawianie kolejnych wartości parametrów, wywołanie właściwego algorytmu z użyciem tych parametrów oraz zapis zwróconych przez algorytm wyników do pliku. Wymienione funkcje zostały zaimplementowane w plikach:
+\begin{itemize}
+\item experiment.py --- główny skrypt służący do przeprowadzania eksperymentu
+\item pyDataSet.pt --- skrypt służący do przetwarzania danych wejściowych w celu wydzielenia podzbiorów testowego, uczącego i walidującego, dzielenia zbioru na potrzeby walidacji krzyżowej, konwersji danych z plików *.arff pakietu \emph{WEKA} na pliki kompatybilne z LibSVM.
+\item group.py -- skrypt dzielący pliki z wynikami klasyfikacji i statystykami zwracane przez experiment.py według wartości w zadanych kolumnach, w celu ułatwienia ich obsługi przez skrypty gnuplot, służące do rysowania wykresów 
+\end{itemize}
 
 
 
