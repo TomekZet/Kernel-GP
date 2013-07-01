@@ -5,14 +5,12 @@ n0[label = "*"];
 n00[label = "- &gamma;"];
 n0 -> n00;
 n01[label = "()^2"];
-n010[label = "|| ||"];
-n0100[label = "-"];
-n01000[label = "x"];
-n01001[label = "y"];
+n010[label = "-"];
+n0100[label = "x"];
+n0101[label = "y"];
 n01 -> n010;
 n010 -> n0100;
-n0100 -> n01000
-n0100 -> n01001
+n010 -> n0101
 n0 -> n01;
 n -> n0;
 }

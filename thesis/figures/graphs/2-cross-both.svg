@@ -125,8 +125,8 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1052"
+     inkscape:window-width="1214"
+     inkscape:window-height="779"
      id="namedview3506"
      showgrid="false"
      fit-margin-top="0.3"
@@ -136,8 +136,8 @@
      inkscape:zoom="1.0269366"
      inkscape:cx="127.7749"
      inkscape:cy="236.66738"
-     inkscape:window-x="1280"
-     inkscape:window-y="0"
+     inkscape:window-x="-4"
+     inkscape:window-y="-6"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg3380" />
   <g
@@ -876,7 +876,7 @@
        y="509.93481"
        x="80.987999"
        id="tspan5496"
-       sodipodi:role="line">Dziecko 1</tspan></text>
+       sodipodi:role="line">Potomek 1</tspan></text>
   <text
      sodipodi:linespacing="125%"
      id="text5498"
@@ -887,7 +887,7 @@
        y="482.76382"
        x="333.91476"
        id="tspan5500"
-       sodipodi:role="line">Dziecko 2</tspan></text>
+       sodipodi:role="line">Potomek 2</tspan></text>
   <path
      style="fill:#ff0000;stroke:#ff0000;stroke-width:1.60000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
      d="M 93.847328,123.35013 138.09191,104.59577"

@@ -4,7 +4,7 @@
 \usepackage[OT4]{fontenc}
 \usepackage{amsfonts}
 \usepackage[section]{placeins}
-
+\usepackage{pbox}
 
 \usepackage[widespace]{fourier}   % Use Utopia font set
 \usepackage[scaled=0.875]{helvet} % Use Helvetica for sans-serif
@@ -15,6 +15,8 @@
 \usepackage{placeins}
 \usepackage{mathtools}
 \usepackage{listings}
+\usepackage{tabulary}
+\usepackage{numprint} 
 
 \renewcommand{\listalgorithmcfname}{Lista algorytmów}
 \renewcommand{\algorithmcfname}{Algorytm}
@@ -24,6 +26,8 @@
 \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
 \newcommand{\bigO}[0]{\mathcal{O}}
 \newcommand{\dollar}[0]{\$}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
 
 
 \newtheorem{definicjaa}{Definicja}[section]
