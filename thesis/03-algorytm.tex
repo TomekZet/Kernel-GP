@@ -1,10 +1,11 @@
-\chapter{Algorytm Kernel GP}
+\chapter{Algorytm Kernel GP+}
 \label{ch:alg}
 \section{Opis algorytmu}
 Jedną z trudności, która wiąże się z używaniem klasyfikatora SVM jest dobór odpowiedniej do zbioru danych \textit{funkcji jądrowej}. Wymaga to doświadczenia lub przebiega na zasadzie prób i błędów. Ponadto zbiór powszechnie używanych funkcji jest ubogi - zazwyczaj ogranicza się do trzech podstawowych funkcji. Oprócz wyboru funkcji konieczne jest również ustawienie odpowiednich wartości ich parametrów.
 
-Celem algorytmu Kernel GP jest odnalezienie optymalnej dla danego problemu funkcji jądrowej wraz z jej parametrami. Dzięki opisanej w poprzednim rozdziale własności domknięcia zbioru kerneli ze względu na pewne operacje arytmetyczne możliwe jest tworzenie nieograniczonej ilości dowolnie złożonych funkcji na podstawie kilku podstawowych kerneli. Opisywany algorytm przeszukuje przestrzeń takich funkcji za pomocą \textit{programowania genetycznego}. Szukana jest taka funkcja, przy której użyciu klasyfikator SVM osiągnie największą \textit{trafność} (\textit{accuracy}) klasyfikacji.
+Celem algorytmu \emph{Kernel GP+} jest odnalezienie optymalnej dla danego problemu funkcji jądrowej wraz z jej parametrami. Dzięki opisanej w poprzednim rozdziale własności domknięcia zbioru kerneli ze względu na pewne operacje arytmetyczne możliwe jest tworzenie nieograniczonej ilości dowolnie złożonych funkcji na podstawie kilku podstawowych kerneli. Opisywany algorytm przeszukuje przestrzeń takich funkcji za pomocą \textit{programowania genetycznego}. Szukana jest taka funkcja, przy której użyciu klasyfikator SVM osiągnie największą wartość wybranej miary jakości klasyfikacji (miary zostały opisane w części \ref{sec:measures}).
 
+Algorytm \emph{Kernel GP+} jest wzorowany na algorytmie \emph{Kernel GP} \cite{sullivan_evolving_2007}. Główna różnica, to poszerzony zbiór funkcji jądrowych, z których algorytm "buduje" bardziej złożone funkcje, użycie stałych \emph{ERC} (opis: \ref{def:erc}) oraz użycie innych miar przystosowania niż trafność klasyfikacji.
 
 Przebieg algorytmu jest typowy dla algorytmów genetycznych:
 \begin{quote}
@@ -21,7 +22,7 @@ Przebieg algorytmu jest typowy dla algorytmów genetycznych:
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.5]{figures/graphs/algorithm}
-\caption{Diagram przepływu algorytmu Kernel GP.\label{fig:algorithm}}
+\caption{Diagram przepływu algorytmu \emph{Kernel GP+}.\label{fig:algorithm}}
 \end{figure}
 
 Algorytm pokazano również na diagramie przepływu na rycinie \ref{fig:algorithm}. 
@@ -55,7 +56,7 @@ Funkcje elementarne wraz z ograniczeniami zdefiniowane w algorytmie:
 	\item Wykładnicza: $ k(x, y) = \exp\left(-\frac{ \lVert x-y \rVert }{2\sigma^2}\right) $
 	\end{itemize}
 	Gdzie $ \sigma $, $ \gamma $, $ \tau $ oraz $ d $ to wartości stałe generowane jako stałe ERC. a $ \langle x,y \rangle $ to iloczyn skalarny wektorów $x$ i $y$.
-\item Stałe \textit{ERC (ang. Ephemeral Random Constant)} liczby rzeczywiste lub całkowite, które służą jako parametry innych funkcji. Są one liściami w drzewie, nie przyjmują żadnych argumentów. Mogą losowo zmieniać swoją wartość podczas mutacji.
+\item \label{def:erc}Stałe \akronim{ERC} (\english{Ephemeral Random Constant}): liczby rzeczywiste lub całkowite, które służą jako parametry innych funkcji. Są one liśćmi w drzewie, nie przyjmują żadnych argumentów. Mogą losowo zmieniać swoją wartość podczas mutacji, w ramach określonego przedziału.
 	\begin{itemize}
 	\item $ \gamma $: liczba rzeczywista z zakresu $ \langle 0.1, 2.0 \rangle $
 	\item $ \tau $: liczba rzeczywista z zakresu $ \langle 0.1, 1.0 \rangle $
@@ -84,13 +85,12 @@ Do oceny jakości wyników klasyfikacji używana jest jedna z miar opisanych w c
 
 \subsection{Selekcja i zapobieganie przerostowi}
 Jednym z problemów programowania genetycznego jest to, że drzewa powstałe w wyniku procesu ewolucyjnego mogą być bardzo duże, co nie jest pożądaną cechą - większe drzewo dłużej oblicza zwracaną wartość, zajmuje więcej miejsc w pamięci. Dlatego wielkość drzew należy ograniczać, jeśli wzrost drzewa nie prowadzi do zwiększenia wartości funkcji dopasowania.
-Wielkość generowanych drzew jest regulowana przez dwa mechanizmy. Pierwszy to proste ograniczenie na maksymalną głębokość drzewa. Wartość tę ustawiono na 6 - drzewa o większej głebokości nie zostaną w ogóle wygenerowane podczas inicajlizacji populacji czy podczas krzyżowania i mutacji. Drugi mechanizm, o angielskiej nazwie \textit{parsimony pressure},  promuje mniejsze drzewa podczas selekcji. W tym celu stosowany jest algorytm selekcji turniejowej leksykograficznej z koszykami (ang. Bucket Lexicographic
- Tournament Selection). Algorytm ten sortuje populację według przystosowania osobników, następnie grupuje je w N "koszyki". Następnie selekcja przebiega według zasad selekcji turniejowej, z tym, że porównuje się nie przystosowanie osobników, ale koszyk, do którego są przypisane. W przypadku gdy w turnieju porównywane są dwa osobniki z tego samego koszyka wygrywa ten, który jest mniejszy.
+Wielkość generowanych drzew jest regulowana przez dwa mechanizmy. Pierwszy to proste ograniczenie na maksymalną głębokość drzewa. Wartość tę ustawiono na 6 - drzewa o większej głębokości nie zostaną w ogóle wygenerowane podczas inicjalizacji populacji czy podczas krzyżowania i mutacji. Drugi mechanizm, o angielskiej nazwie \english{parsimony pressure},  promuje mniejsze drzewa podczas selekcji. W tym celu stosowany jest algorytm selekcji turniejowej leksykograficznej z koszykami (\english{Bucket Lexicographic Tournament Selection}), opisany w części \ref{ssec:selekcja-gp}.
 
 \subsection{Krzyżowanie i mutacja}
 Krzyżowanie polega na odcięciu dwóch losowych poddrzew z dwóch różnych osobników i zamianie ich miejscami. Wygenerowane w ten sposób drzewo musi spełniać narzucone na drzewo ograniczenia dotyczące typów i wielkości.
 Mutacja drzew polega na zamianie losowo wybranego poddrzewa przez losowo wygenerowane drzewo.
-Dodatkowo mutowane są również węzły ERC. Ich mutacja polega na dodaniu losowej wartości o rozkładzie normalnym do wartości przechowywanej w węźle. Wartość ta może być ujemna lub dodatnia.
+Dodatkowo mutowane są również węzły \emph{ERC}. Ich mutacja polega na dodaniu losowej wartości o rozkładzie normalnym do wartości przechowywanej w węźle. Wartość ta może być ujemna lub dodatnia.
 
 \subsection{Walidacja rozwiązania}
 Walidacja polega na użyciu najlepszego znalezionego kernela do klasyfikacji przykładów ze zbioru walidującego, które nie były używane podczas uczenia klasyfikatora SVM ani podczas ewaluacji kerneli.
@@ -98,13 +98,13 @@ Najpierw algorytm SVM jest uczony na połączonych zbiorach trenującym i testuj
 
 
 \section{Implementacja}
-Algorytm został napisany w języku Java z użyciem bibliotek \emph{ECJ (Evolutionary Computing in Java)} \cite{sean_ecj_2010} oraz \emph{LibSVM} \cite{chang_libsvm:_2011}. Pierwsza z nich dostarcza mechanizmów \textit{obliczeń ewolucyjnych} w tym \textit{programowania genetycznego}. LibSVM to klasyfikator SVM napisany oryginalnie w języku C, przepisany w języku Java.
+Algorytm został napisany w języku Java z użyciem bibliotek \akronim{ECJ} (Evolutionary Computing in Java) \cite{sean_ecj_2010} oraz \emph{LibSVM} \cite{chang_libsvm:_2011}. Pierwsza z nich dostarcza mechanizmów \textit{obliczeń ewolucyjnych} w tym \textit{programowania genetycznego}. \emph{LibSVM} to klasyfikator SVM napisany oryginalnie w języku C, przepisany w języku Java.
 
 W stworzonym programie można wydzielić następujące części:
 \begin{itemize}
-\item pakiet $ \text{libsvm} $, zawierający przerobiony kod biblioteki LibSVM wraz z kilkoma dodanymi klasami potomnymi. Ze względu na to, że implementacja LibSVM w języku Java jest po prostu przepisanym kodem oryginalnej wersji napisanej w C i większość użytych w niej metod jest statyczna i prywatna, trudno jest wprowadzać modyfikacje w bibliotece poprzez pisanie klas potomnych dziedziczących po już istniejących w bibliotece. Dlatego zdecydowano się na bezpośrednią modyfikację istniejącego kodu źródłowego biblioteki.
-\item pakiet $ text{c.app.kernel_gp} $, zawierający implementacje problemu, funkcji węzłów i terminali oraz klas klas zbierających statystyki przebiegu algorytmu, dziedziczące z klas należących do biblioteki ECJ
-\item bibliotekę ECJ
+\item pakiet $ \text{libsvm} $, zawierający przerobiony kod biblioteki LibSVM wraz z kilkoma dodanymi klasami potomnymi. Ze względu na to, że implementacja \emph{LibSVM} w języku Java jest po prostu przepisanym kodem oryginalnej wersji napisanej w C i większość użytych w niej metod jest statyczna i prywatna, trudno jest wprowadzać modyfikacje w bibliotece poprzez pisanie klas potomnych dziedziczących po już istniejących w bibliotece. Dlatego zdecydowano się na bezpośrednią modyfikację istniejącego kodu źródłowego biblioteki.
+\item pakiet $ text{c.app.kernel_gp} $, zawierający implementacje problemu, funkcji węzłów i terminali oraz klas klas zbierających statystyki przebiegu algorytmu, dziedziczące z klas należących do biblioteki \emph{ECJ}
+\item bibliotekę \emph{ECJ}
 \item skrypty napisane w języku Python służące do przeprowadzania eksperymentów
 \end{itemize}
 
@@ -124,7 +124,7 @@ Plik konfiguracyjny oraz parametry wywołania programu zawierają informacje tak
 
 Klasa wymieniona w ostatnim z powyższych punktów jest rozszerzeniem klasy GPProblem z biblioteki \emph{ECJ}. 
 Zawiera ona między innymi definicję funkcji \emph{evaluate}, która  jest wykonywana dla każdego wygenerowanego przez GP rozwiązania i ma za zadanie przypisać mu wartość fitness. W funkcji tej zostaje wywołana funkcja będąca rozszerzeniem funkcji $ svm_train() $ z biblioteki \emph{LibSVM}. 
-Jako jeden z parametrów jej wywołania przekazywany jest obiekt reprezentujący wygenerowane przez ECJ drzewo. 
+Jako jeden z parametrów jej wywołania przekazywany jest obiekt reprezentujący wygenerowane przez \emph{ECJ} drzewo. 
 Podczas wywołania funkcji $ svm_train() $, w metodzie $ kernel_function() $ obliczana jest wartość funkcji jądrowej. Standardowo, w bibliotece \emph{LibSVM} jest to jedna z trzech standardowych funkcji w zależności od parametru wywołania. 
 Wprowadzona modyfikacja polega na wywołaniu w ciele funkcji $ kernel_function() $ metody $ eval() $ przekazanego wcześniej do $ svm_train() $ obiektu drzewa, która to metoda zwraca wartość obliczoną przez drzewo dla podanych wartości wejściowych.
 Diagram sekwencji UML przedstawiający przepływ kontroli pomiędzy wymienionymi powyżej funkcjami ukazano na rysunku \ref{fig:sequence}.
@@ -143,7 +143,14 @@ W celu przeprowadzenia eksperymentów obliczeniowych z użyciem różnych kombin
 \item group.py -- skrypt dzielący pliki z wynikami klasyfikacji i statystykami zwracane przez experiment.py według wartości w zadanych kolumnach, w celu ułatwienia ich obsługi przez skrypty gnuplot, służące do rysowania wykresów 
 \end{itemize}
 
+Wszystkie pliki programów, dane wejściowe a także pliki z wynikami i statystykami są zawarte na dołączonej do niniejszej pracy płycie CD.
+Aby uruchomić eksperyment obliczeniowy należy w konsoli wydać polecenie \emph{python experiment.py} z odpowiednimi argumentami. Opis wszystkich parametrów skryptu można otrzymać poprzez uruchomienie skryptu z przełącznikiem \emph{-h}. Wynikiem działania skryptu są 3 rodzaje plików:
+\begin{itemize}
+\item pliki o rozszerzeniu *.dat --- zawierają wyniki działania algorytmu: wartości wszystkich miar klasyfikacji (trafność, f1, MCC, prawdopodobieństwo), czasy wykonania, oraz wartości uśrednione dla wszystkich podziałów zbioru danych. Wyniki najlepszego do danego momentu osobnika są zapisywane co pokolenie. W każdym wierszu podano również parametry, z którymi był wywołany proces ewolucyjny. Dane w pliku mają formę tabelaryczną, kolumny są oddzielone spacjami. Jest to format kompatybilny z programem gnuplot.
+\item pliki o rozszerzeniu *.stat --- zawierają zapis wszystkich ewaluowanych przez ECJ w przebiegu algorytmu funkcji jądrowych wraz z osiągniętą przez nie wartością funkcji przystosowania i czasem ich obliczenia.
+\item pliki o rozszerzeniu *.ecjstat --- zawierają statystyki generowane przez program ECJ, zapisywane co pokolenie, zwierające takie dane jak średnia wielkość generowanych drzew, średnia wartość funkcji przystosowania, najlepszy osobnik znaleziony w danym pokoleniu a także, dodane w toku implementacji algorytmu \emph{Kernel GP+}, wyniki klasyfikacji zbioru testującego z użyciem najlepszego osobnika znalezionego w danym pokoleniu, z użyciem różnych miar jakości.
+\end{itemize}
 
 
-\section{Złożoność obliczeniowa}
+%\section{Złożoność obliczeniowa}
  \clearpage

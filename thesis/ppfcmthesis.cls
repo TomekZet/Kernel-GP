@@ -166,6 +166,7 @@ Poznan University of Technology\\Faculty of Computing Science and Management\\In
 \medskip\noindent%
 \if@pppolish%
 Sk{\l}ad przy u{\.z}yciu systemu \LaTeX{}.
+\\Wykresy wygenerowane za pomoc{\k{a}} programu \emph{gnuplot}
 \else%
 Typeset using \LaTeX\ in Computer Modern.
 \fi

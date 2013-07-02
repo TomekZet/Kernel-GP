@@ -47,7 +47,7 @@ W tym celu można wydzielić ze zbioru przykładów specjalny podzbiór, zwany \
 Stałego podziału zbioru przykładów na zbiór trenujący, testujący i walidujący można dokonać tylko wtedy, gdy zbiory te są wystarczająco liczne. W przeciwnym przypadku może okazać się, że nie są one wystarczająco reprezentatywne i na przykład rozkład przykładów z poszczególnych klasy jest mocno skrzywiony w którymś ze zbiorów. Aby tego uniknąć można posłużyć się metodą \emph{k-krotnej walidacji krzyżowej}. Polega ona na podzieleniu zbioru na \emph{k} podzbiorów i następnie powtarzanych \emph{k}-razy fazach uczenia i testowania klasyfikatora, przy czym za każdym razem k-ty podzbiór służy jako zbiór testujący/walidujący a pozostałem podzbiory jak zbiór uczący. Skuteczności klasyfikacji oblicza się wtedy jako średnią sprawność osiąganą we wszystkich k testach.
 
 \subsection{Miary skuteczności klasyfikacji}\label{sec:measures}
-	Do oceny jakości klasyfikacji można używać różnych miar. W przypadku klasyfikacji binarnej (czyli kiedy rozróżniamy tylko dwie klasy przykładów) większość z nich można wyrazić za pomocą stosunku kilku z czterech wartości wyrażających liczbę przypadków klasyfikowanych w określony sposób. Wartości te są odnoszą się zawsze do jednej z klas, która jest w pewien sposób wyróżniona. Na przykład w przypadku diagnozy medycznej zazwyczaj taką klasą jest grupa osób chorych na jakąś chorobę. Przypadki zaklasyfikowane jako należące do tej klasy określane są jako zaklasyfikowane \textit{pozytywnie} (\english{positive}) ($ + $) natomiast przypadki zaklasyfikowane jako do niej nienależące jako zaklasyfikowane negatywnie (\english{negative}) ($ - $). Słowa \english{"True"} oraz \english{"False"} odnoszą się odpowiednio do przypadków zaklasyfikowanych prawidłowo i nieprawidłowo:
+	Do oceny jakości klasyfikacji można używać różnych miar. W przypadku klasyfikacji binarnej (czyli kiedy rozróżniamy tylko dwie klasy przykładów) większość z nich można wyrazić za pomocą stosunku kilku z czterech wartości wyrażających liczbę przypadków klasyfikowanych w określony sposób. Wartości te są odnoszą się zawsze do jednej z klas, która jest w pewien sposób wyróżniona. Na przykład w przypadku diagnozy medycznej zazwyczaj taką klasą jest grupa osób chorych na jakąś chorobę. Przypadki zaklasyfikowane jako należące do tej klasy określane są jako zaklasyfikowane \textit{pozytywnie} (\english{positive}) ($ + $) natomiast przypadki zaklasyfikowane jako do niej nienależące jako zaklasyfikowane negatywnie (\english{negative}) ($ - $). Słowa \english{'True'} oraz \english{'False'} odnoszą się odpowiednio do przypadków zaklasyfikowanych prawidłowo i nieprawidłowo:
 	\begin{itemize}
 		\item \definicja{\textbf{True Positive}} (\akronim{TP}) --- liczba przypadków \textbf{poprawnie} zaklasyfikowanych jako \textbf{należące} do wyróżnionej klasy,
 		\item  \definicja{\textbf{True Negative}} (\akronim{TN}) --- liczba przypadków \textbf{poprawnie} zaklasyfikowanych jako \textbf{nienależące} do wyróżnionej klasy,
@@ -424,7 +424,10 @@ Ta metoda selekcji dopuszcza wybranie jednego osobnika kilka razy a także umoż
 Osobniki wybrane w procesie selekcji z ustalonym jako parametr procesu ewolucyjnego prawdopodobieństwem ulegają krzyżowaniu, czyli wymieszaniu ich genotypów, w czego wyniku powstaje nowy osobnik o przypuszczalnie nieobecnym wcześniej genotypie.
 
 \subsubsection{Mutacja}
+\label{sec:mutation}
 Mutacja polega na losowej, zazwyczaj nieznacznej, zmianie genotypu osobnika. Wpływa korzystnie na różnorodność populacji wprowadzając fragmenty genomu, które mogły wcześniej nie być obecne w puli genów populacji. Mutacja podobnie jak krzyżowanie jest stosowana z pewnym prawdopodobieństwem. Im to prawdopodobieństwo większe a zmiany dokonywane przez mutację bardziej rozległe, tym bardziej "eksploratywny" staje się algorytm ewolucyjny --- trudniej mu "utknąć" w lokalnym optimum.
+
+Oprócz krzyżowania i mutacji możliwe jest również kopiowanie osobników do nowej populacji w niezmienionej formie. Mechaznim elit czyni tak z określoną liczbą osobników o najwyższym fitness.
 
 \subsubsection{Genotyp}
 Poszczególne algorytmy ewolucyjne różnią się od siebie przede wszystkim ze względu na sposób reprezentacji osobników i powiązane z nim metody mutacji i krzyżowania. Selekcja osobników także może przebiegać na różne sposoby. Opisanie wszystkich możliwych parametrów i metod używanych w algorytmach ewolucyjnych nie jest celem tej pracy, ich opis można znaleźć na przykład w \cite{Luke2009Metaheuristics}. Poniżej opisano jeden z rodzajów algorytmów ewolucyjnych jaką jest programowanie genetyczne, ze względu na jej wykorzystanie w niniejszej pracy.
@@ -475,6 +478,7 @@ Mutacja drzewa polega na zamianie jego losowo wybranego fragmentu (poddrzewa) pr
 \end{figure}
 
 \subsubsection{Selekcja}
+\label{ssec:selekcja-gp}
 Selekcja w GP może być dokonywana jedną z metod używanych w innych algorytmach ewolucyjnych, jednak istnieją też metody specyficzne dla algorytmów GP. Jednym z problemów programowania genetycznego jest zjawisko \definicja{przerostu} (\english{bloat}). Polega ono na tym, że drzewa powstałe w wyniku procesu ewolucyjnego mogą być bardzo duże, co nie jest pożądaną cechą --- większe drzewo dłużej oblicza zwracaną wartość, zajmuje więcej miejsc w pamięci. Dlatego wielkość drzew należy ograniczać, jeśli wzrost drzewa nie prowadzi do zwiększenia wartości funkcji dopasowania.
 Wielkość generowanych drzew może być regulowana przez kilka mechanizmów. Najprostszy z nich to proste ograniczenie na maksymalną głębokość drzewa --- podczas inicjalizacji lub mutacji wzrost drzewa(poddrzewa) jest zatrzymywany kiedy osiągnie ono maksymalną głębokość. Algorytm może również odrzucać zbyt duże drzewa powstałe podczas krzyżowania.
 Grupa bardziej wyrafinowanych mechanizmów o angielskiej nazwie \textit{parsimony pressure}, promuje mniejsze drzewa podczas selekcji. Do grupy tej należą algorytmy \cite{sean_ecj_2010}:
@@ -493,7 +497,7 @@ Problem wyboru funkcji jądrowej i parametrów stosowanych przez klasyfikator SV
 
 Możliwa jest również automatyzacja poszukiwania optymalnych parametrów. Proces ten nosi nazwę \definicja{optymalizacji hiperparametrów} (\english{Hyperparameter optimalization}). Jest to określenie zbioru metod służących optymalizacji parametrów jakiegoś algorytmu.
 
-\subsection{Miary przystosowania (fitness)}
+\subsection{Miary przystosowania (fitness)} \label{ssec:alt-meassures}
 W przypadku wszystkich metod optymalizacji parametrów SVM konieczne jest wybranie jakiejś funkcji celu, która będzie optymalizowana. Funkcja ta informuje o tym, czy zmiany parametrów idą w dobrą stronę i pozwala oceniać i porównywać różne ich kombinacje. Oprócz miar uniwersalnych dla wszystkich problemów klasyfikacji (patrz rozdział \ref{sec:measures}), możliwe jest stosowanie miar specyficznych dla algorytmu SVM, takich jak: \cite{howley_genetic_2005} \cite{runarsson_asynchronous_2004}
 \begin{itemize}
 	\item liczba wektorów wspierających (minimalizacja)

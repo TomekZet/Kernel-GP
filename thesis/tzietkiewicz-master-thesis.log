@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.1)  1 JUL 2013 05:05
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.1)  2 JUL 2013 13:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1475,30 +1475,30 @@ LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <17.28> not available
 
 
 
-]
-LaTeX Font Info:    Try loading font information for TS1+futs on input line 27.
+] [2]) (./02-podstawy.tex [3]
+LaTeX Font Info:    Try loading font information for TS1+futs on input line 14.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/ts1futs.fd
 File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
-))
-(./02-podstawy.tex [2]
+)
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 27.
- [3
+ [4
 
-] [4]
+] [5]
 LaTeX Font Info:    Font shape `T1/futs/bx/it' in size <10> not available
 (Font)              Font shape `T1/futs/b/it' tried instead on input line 52.
- [5] [6]
-<figures/functions/2-different-hyperplanes.pdf, id=349, 549.13733pt x 496.36874
+ [6]
+[7]
+<figures/functions/2-different-hyperplanes.pdf, id=363, 549.13733pt x 496.36874
 pt>
 File: figures/functions/2-different-hyperplanes.pdf Graphic file (type pdf)
  <use figures/functions/2-different-hyperplanes.pdf>
 Package pdftex.def Info: figures/functions/2-different-hyperplanes.pdf used on 
 input line 148.
 (pdftex.def)             Requested size: 274.568pt x 248.18376pt.
- [7 <./figures/functions/2-different-hyperplanes.pdf>]
+ [8 <./figures/functions/2-different-hyperplanes.pdf>]
 Overfull \hbox (11.40651pt too wide) in paragraph at lines 163--164
 \T1/futs/m/n/10 zna-le-zie-nia opty-mal-nej hi-per-pªasz-czy-zny se-pa-ru-j¡-ce
 j zbiór przy-kªa-dów $[]$ mo»na
@@ -1511,15 +1511,15 @@ Overfull \hbox (0.87988pt too wide) in paragraph at lines 170--172
 t/10 x[]\T1/futs/m/n/10 )$ b¦-dzie równa
  []
 
-<figures/functions/2-margin.pdf, id=369, 549.13733pt x 496.36874pt>
+<figures/functions/2-margin.pdf, id=383, 549.13733pt x 496.36874pt>
 File: figures/functions/2-margin.pdf Graphic file (type pdf)
 
 <use figures/functions/2-margin.pdf>
 Package pdftex.def Info: figures/functions/2-margin.pdf used on input line 175.
 
 (pdftex.def)             Requested size: 274.568pt x 248.18376pt.
- [8 <./figures/functions/2-margin.pdf>]
-<figures/functions/2-nonlinear.pdf, id=406, 216.81pt x 216.81pt>
+ [9 <./figures/functions/2-margin.pdf>]
+<figures/functions/2-nonlinear.pdf, id=420, 216.81pt x 216.81pt>
 File: figures/functions/2-nonlinear.pdf Graphic file (type pdf)
 
 <use figures/functions/2-nonlinear.pdf>
@@ -1535,7 +1535,7 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 6.25598pt on input line 237.
 
-<figures/functions/2-transform.pdf, id=407, 433.62pt x 325.215pt>
+<figures/functions/2-transform.pdf, id=421, 433.62pt x 325.215pt>
 File: figures/functions/2-transform.pdf Graphic file (type pdf)
 
 <use figures/functions/2-transform.pdf>
@@ -1551,7 +1551,7 @@ po do-ko-na-niu trans-for-ma-cji do prze-strzeni 3-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/functions/2-transform-side.pdf, id=410, 433.62pt x 325.215pt>
+<figures/functions/2-transform-side.pdf, id=424, 433.62pt x 325.215pt>
 File: figures/functions/2-transform-side.pdf Graphic file (type pdf)
 
 <use figures/functions/2-transform-side.pdf>
@@ -1567,10 +1567,10 @@ po do-ko-na-niu trans-for-ma-cji do prze-strzeni 3-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[9 <./figures/functions/2-nonlinear.pdf>] [10 <./figures/functions/2-transform.
-pdf>] [11 <./figures/functions/2-transform-side.pdf>]
+[10 <./figures/functions/2-nonlinear.pdf>] [11 <./figures/functions/2-transform
+.pdf>] [12 <./figures/functions/2-transform-side.pdf>]
 
-LaTeX Warning: Citation `2005Boughorbel' on page 12 undefined on input line 316
+LaTeX Warning: Citation `2005Boughorbel' on page 13 undefined on input line 316
 .
 
 
@@ -1579,20 +1579,20 @@ Overfull \hbox (4.65234pt too wide) in paragraph at lines 337--339
 ro-wa¢ na ich ilo-czy-nach ska-lar-nych [[]].
  []
 
-[12]
+[13]
 Overfull \hbox (0.1824pt too wide) in paragraph at lines 349--350
 []\T1/futs/m/n/10 Metoda \T1/futs/m/it/10 je-den prze-ciw wszyst-kim \T1/futs/m
 /n/10 po-lega na na-ucze-niu $\FML/futmi/m/it/10 M$ \T1/futs/m/n/10 kla-sy-fi-k
 a-to-rów bi-nar-nych, gdzie $\FML/futmi/m/it/10 M$ \T1/futs/m/n/10 oznacz
  []
 
-[13]
+[14]
 Overfull \hbox (6.25034pt too wide) in paragraph at lines 382--383
 []\T1/futs/m/it/10 powielanie \T1/futs/m/n/10 --- utwo-rze-nie no-wego osob-nik
 a po-przez sko-pio-wa-nie ist-nie-j¡-cego osob-nika bez zmian 
  []
 
-<figures/graphs/ea.pdf, id=481, 475.7775pt x 675.52374pt>
+<figures/graphs/ea.pdf, id=495, 475.7775pt x 675.52374pt>
 File: figures/graphs/ea.pdf Graphic file (type pdf)
 
 <use figures/graphs/ea.pdf>
@@ -1606,77 +1606,76 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 406.
 
-[14]
+[15]
 Overfull \hbox (5.80026pt too wide) in paragraph at lines 415--417
 []\T1/futs/m/it/10 ruletka \T1/futs/m/n/10 --- me-toda ru-letki, zwana te» wy-b
 o-rem lo-so-wym po-wtó-rze-niami ang. \T1/futs/m/it/10 Fitness-Proportionate
  []
 
-[15 <./figures/graphs/ea.pdf>]
-Overfull \hbox (5.08238pt too wide) in paragraph at lines 427--428
+[16 <./figures/graphs/ea.pdf>]
+Overfull \hbox (5.08238pt too wide) in paragraph at lines 428--429
 \T1/futs/m/n/10 nie na ró»-no-rod-no±¢ po-pu-la-cji wpro-wa-dza-j¡c frag-menty 
 ge-nomu, które mo-gªy wcze-±niej nie by¢ obecne
  []
 
-<figures/graphs/2-tree.pdf, id=521, 242.9075pt x 405.515pt>
+<figures/graphs/2-tree.pdf, id=536, 242.9075pt x 405.515pt>
 File: figures/graphs/2-tree.pdf Graphic file (type pdf)
 
 <use figures/graphs/2-tree.pdf>
-Package pdftex.def Info: figures/graphs/2-tree.pdf used on input line 440.
+Package pdftex.def Info: figures/graphs/2-tree.pdf used on input line 443.
 (pdftex.def)             Requested size: 145.7456pt x 243.31087pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[16]
-Overfull \hbox (12.32362pt too wide) in paragraph at lines 453--454
+[17]
+Overfull \hbox (12.32362pt too wide) in paragraph at lines 456--457
 \T1/futs/m/n/10 gª¦-bo-ko±¢. Me-toda ta po-zwala otrzy-ma¢ po-pu-la-cj¦ naj-bar
 -dziej uroz-ma-icon¡ pod wzgl¦-dem ksztaªtu
  []
 
-[17 <./figures/graphs/2-tree.pdf>]
-Overfull \hbox (3.36813pt too wide) in paragraph at lines 458--459
+[18 <./figures/graphs/2-tree.pdf>]
+Overfull \hbox (3.36813pt too wide) in paragraph at lines 461--462
 []\T1/futs/m/n/10 Najpowszechniejsza me-toda krzy-»o-wa-nia w pro-gra-mo-wa-niu
  ge-ne-tycz-nym to \T1/futs/m/it/10 krzy-»o-wa-nie pod-drzew
  []
 
-<figures/graphs/2-cross-both.pdf, id=551, 465.46275pt x 521.95pt>
+<figures/graphs/2-cross-both.pdf, id=565, 465.46275pt x 521.95pt>
 File: figures/graphs/2-cross-both.pdf Graphic file (type pdf)
 
 <use figures/graphs/2-cross-both.pdf>
-Package pdftex.def Info: figures/graphs/2-cross-both.pdf used on input line 462
+Package pdftex.def Info: figures/graphs/2-cross-both.pdf used on input line 465
 .
 (pdftex.def)             Requested size: 372.3707pt x 417.56056pt.
-
-<figures/graphs/2-mutation.pdf, id=553, 425.16808pt x 468.87868pt>
+ [19 <./figures/graphs/2-cross-both.pdf>]
+<figures/graphs/2-mutation.pdf, id=594, 425.16808pt x 468.87868pt>
 File: figures/graphs/2-mutation.pdf Graphic file (type pdf)
 
 <use figures/graphs/2-mutation.pdf>
-Package pdftex.def Info: figures/graphs/2-mutation.pdf used on input line 472.
+Package pdftex.def Info: figures/graphs/2-mutation.pdf used on input line 475.
 (pdftex.def)             Requested size: 340.1349pt x 375.10344pt.
- [18 <./figures/graphs/2-cross-both.pdf>]
-[19 <./figures/graphs/2-mutation.pdf>]
-Overfull \hbox (0.8525pt too wide) in paragraph at lines 485--486
+ [20 <./figures/graphs/2-mutation.pdf>]
+Overfull \hbox (0.8525pt too wide) in paragraph at lines 489--490
 []\T1/futs/m/it/10 Podwójna se-lek-cja tur-nie-jowa \T1/futs/m/n/10 (ang. \T1/f
 uts/m/it/10 do-uble to-ur-na-ment se-lec-tion\T1/futs/m/n/10 ) --- se-lek-cja o
 d-bywa si¦ w dwóch
  []
 
-[20] [21] <figures/graphs/2-howley.pdf, id=638, 249.64404pt x 165.42151pt>
+[21] [22] <figures/graphs/2-howley.pdf, id=653, 249.64404pt x 165.42151pt>
 File: figures/graphs/2-howley.pdf Graphic file (type pdf)
 
 <use figures/graphs/2-howley.pdf>
-Package pdftex.def Info: figures/graphs/2-howley.pdf used on input line 537.
+Package pdftex.def Info: figures/graphs/2-howley.pdf used on input line 541.
 (pdftex.def)             Requested size: 299.57135pt x 198.5048pt.
 
-Overfull \hbox (10.96405pt too wide) in paragraph at lines 546--547
+Overfull \hbox (10.96405pt too wide) in paragraph at lines 550--551
 []\T1/futs/m/n/10 Oryginalne po-dej-±cie do pro-blemu przed-sta-wia me-toda de-
 fi-ni-cja-Evo-lu-tio-nary Ker-nel Ma-chine (\T1/futs/m/it/10 EKM\T1/futs/m/n/10
  ),
  []
 
-[22 <./figures/graphs/2-howley.pdf>]
-Overfull \hbox (33.60234pt too wide) in paragraph at lines 550--552
+[23 <./figures/graphs/2-howley.pdf>]
+Overfull \hbox (33.60234pt too wide) in paragraph at lines 554--556
 \FML/futmi/m/it/10 p\T1/futs/m/n/10 (\FML/futmi/m/it/10 x; y\T1/futs/m/n/10 )$.
  Aby ob-li-czy¢ $\FML/futmi/m/it/10 n\T1/futs/m/n/10 (\FML/futmi/m/it/10 x; y\T
 1/futs/m/n/10 )$ oraz $\FML/futmi/m/it/10 p\T1/futs/m/n/10 (\FML/futmi/m/it/10 
@@ -1686,36 +1685,36 @@ x; y\T1/futs/m/n/10 )$ na-le»y po-sor-to-wa¢ przy-kªady ze zbioru pro-to-ty-pów
 m/n/10 )\FMS/futm/m/n/10 g$
  []
 
-[23] [24]) (./03-algorytm.tex
-<figures/graphs/algorithm.pdf, id=678, 512.91624pt x 796.9775pt>
+[24] [25]) (./03-algorytm.tex
+<figures/graphs/algorithm.pdf, id=695, 512.91624pt x 796.9775pt>
 File: figures/graphs/algorithm.pdf Graphic file (type pdf)
 
 <use figures/graphs/algorithm.pdf>
-Package pdftex.def Info: figures/graphs/algorithm.pdf used on input line 23.
+Package pdftex.def Info: figures/graphs/algorithm.pdf used on input line 24.
 (pdftex.def)             Requested size: 256.45749pt x 398.48776pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[25
+[26
 
 
-] [26 <./figures/graphs/algorithm.pdf>]
+] [27 <./figures/graphs/algorithm.pdf>]
 
-LaTeX Warning: Reference `fig:tree' on page 27 undefined on input line 66.
+LaTeX Warning: Reference `fig:tree' on page 28 undefined on input line 67.
 
-<figures/graphs/3-tree.pdf, id=713, 578.16pt x 405.515pt>
+<figures/graphs/3-tree.pdf, id=730, 578.16pt x 405.515pt>
 File: figures/graphs/3-tree.pdf Graphic file (type pdf)
 
 <use figures/graphs/3-tree.pdf>
-Package pdftex.def Info: figures/graphs/3-tree.pdf used on input line 72.
+Package pdftex.def Info: figures/graphs/3-tree.pdf used on input line 73.
 (pdftex.def)             Requested size: 346.89867pt x 243.31087pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[27] [28 <./figures/graphs/3-tree.pdf>] [29]
-<figures/graphs/kernelgp.pdf, id=749, 666.64365pt x 454.76859pt>
+[28] [29 <./figures/graphs/3-tree.pdf>] [30]
+<figures/graphs/kernelgp.pdf, id=767, 666.64365pt x 454.76859pt>
 File: figures/graphs/kernelgp.pdf Graphic file (type pdf)
 
 <use figures/graphs/kernelgp.pdf>
@@ -1726,283 +1725,284 @@ Overfull \hbox (73.9815pt too wide) in paragraph at lines 134--135
  [][] 
  []
 
-[30 <./figures/graphs/kernelgp.pdf>] [31]) (./04-wyniki.tex [32
+[31 <./figures/graphs/kernelgp.pdf>] [32]) (./04-wyniki.tex [33
 
 
 ]
 
-Package tabulary Warning: No suitable columns! on input line 68.
+Package tabulary Warning: No suitable columns! on input line 70.
 
 
-Overfull \hbox (15.89395pt too wide) in paragraph at lines 68--69
+Overfull \hbox (15.89395pt too wide) in paragraph at lines 70--71
  [][] 
  []
 
 
-Package tabulary Warning: No suitable columns! on input line 87.
+Package tabulary Warning: No suitable columns! on input line 89.
 
-[33] <figures/results/fitness/fitness-heart.pdf, id=800, 361.35pt x 216.81pt>
+[34] <figures/results/fitness/fitness-heart.pdf, id=823, 361.35pt x 216.81pt>
 File: figures/results/fitness/fitness-heart.pdf Graphic file (type pdf)
 
 <use figures/results/fitness/fitness-heart.pdf>
 Package pdftex.def Info: figures/results/fitness/fitness-heart.pdf used on inpu
-t line 96.
+t line 104.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/results/fitness/fitness-breast.pdf, id=801, 361.35pt x 216.81pt>
+<figures/results/fitness/fitness-breast.pdf, id=824, 361.35pt x 216.81pt>
 File: figures/results/fitness/fitness-breast.pdf Graphic file (type pdf)
 
 <use figures/results/fitness/fitness-breast.pdf>
 Package pdftex.def Info: figures/results/fitness/fitness-breast.pdf used on inp
-ut line 101.
+ut line 109.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/results/fitness/fitness-ionosphere.pdf, id=802, 361.35pt x 216.81pt>
+<figures/results/fitness/fitness-ionosphere.pdf, id=825, 361.35pt x 216.81pt>
 File: figures/results/fitness/fitness-ionosphere.pdf Graphic file (type pdf)
 
 <use figures/results/fitness/fitness-ionosphere.pdf>
 Package pdftex.def Info: figures/results/fitness/fitness-ionosphere.pdf used on
- input line 106.
+ input line 114.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/results/fitness/fitness-liver-disorders.pdf, id=803, 361.35pt x 216.81
+<figures/results/fitness/fitness-liver-disorders.pdf, id=826, 361.35pt x 216.81
 pt>
 File: figures/results/fitness/fitness-liver-disorders.pdf Graphic file (type pd
 f)
  <use figures/results/fitness/fitness-liver-disorders.pdf>
 Package pdftex.def Info: figures/results/fitness/fitness-liver-disorders.pdf us
-ed on input line 111.
+ed on input line 119.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/results/fitness/fitness-pima-diabetes.pdf, id=804, 361.35pt x 216.81pt
+<figures/results/fitness/fitness-pima-diabetes.pdf, id=827, 361.35pt x 216.81pt
 >
 File: figures/results/fitness/fitness-pima-diabetes.pdf Graphic file (type pdf)
 
  <use figures/results/fitness/fitness-pima-diabetes.pdf>
 Package pdftex.def Info: figures/results/fitness/fitness-pima-diabetes.pdf used
- on input line 116.
+ on input line 124.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
- [34 <./figures/results/fitness/fitness-heart.pdf> <./figures/results/fitness/f
-itness-breast.pdf
+
+<figures/results/fitness/fitness-heart-CV.pdf, id=830, 361.35pt x 216.81pt>
+File: figures/results/fitness/fitness-heart-CV.pdf Graphic file (type pdf)
+
+<use figures/results/fitness/fitness-heart-CV.pdf>
+Package pdftex.def Info: figures/results/fitness/fitness-heart-CV.pdf used on i
+nput line 131.
+(pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
+
+<figures/results/fitness/fitness-breast-CV.pdf, id=831, 361.35pt x 216.81pt>
+File: figures/results/fitness/fitness-breast-CV.pdf Graphic file (type pdf)
+
+<use figures/results/fitness/fitness-breast-CV.pdf>
+Package pdftex.def Info: figures/results/fitness/fitness-breast-CV.pdf used on 
+input line 136.
+(pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
+
+<figures/results/fitness/fitness-liver-disorders-CV.pdf, id=832, 361.35pt x 216
+.81pt>
+File: figures/results/fitness/fitness-liver-disorders-CV.pdf Graphic file (type
+ pdf)
+ <use figures/results/fitness/fitness-liver-disorders-CV.pdf>
+Package pdftex.def Info: figures/results/fitness/fitness-liver-disorders-CV.pdf
+ used on input line 141.
+(pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
+ [35]
+[36 <./figures/results/fitness/fitness-heart.pdf> <./figures/results/fitness/fi
+tness-breast.pdf
 
 pdfTeX warning: pdflatex (file ./figures/results/fitness/fitness-breast.pdf): P
 DF inclusion: multiple pdfs with page group included in a single page
->] [35 <./figures/results/fitness/fitness-ionosphere.pdf> <./figures/results/fi
+>] [37 <./figures/results/fitness/fitness-ionosphere.pdf> <./figures/results/fi
 tness/fitness-liver-disorders.pdf
 
 pdfTeX warning: pdflatex (file ./figures/results/fitness/fitness-liver-disorder
 s.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [36 <./figures/results/fitness/fitness-pima-diabetes.pdf>]
-Package numprint Info: No number in tabular cell on input line 152.
-Package numprint Info: No number in tabular cell on input line 152.
-Package numprint Info: No number in tabular cell on input line 152.
-Package numprint Info: No number in tabular cell on input line 152.
-Package numprint Info: No number in tabular cell on input line 167.
-Package numprint Info: No number in tabular cell on input line 167.
-Package numprint Info: No number in tabular cell on input line 167.
-Package numprint Info: No number in tabular cell on input line 167.
-Package numprint Info: No number in tabular cell on input line 168.
-Package numprint Info: No number in tabular cell on input line 169.
-Package numprint Info: No number in tabular cell on input line 170.
-Package numprint Info: No number in tabular cell on input line 172.
-Package numprint Info: No number in tabular cell on input line 173.
+>] [38 <./figures/results/fitness/fitness-pima-diabetes.pdf> <./figures/results
+/fitness/fitness-heart-CV.pdf
 
-<figures/results/accuracy/accuracy-breast.pdf, id=891, 361.35pt x 216.81pt>
+pdfTeX warning: pdflatex (file ./figures/results/fitness/fitness-heart-CV.pdf):
+ PDF inclusion: multiple pdfs with page group included in a single page
+>] [39 <./figures/results/fitness/fitness-breast-CV.pdf> <./figures/results/fit
+ness/fitness-liver-disorders-CV.pdf
+
+pdfTeX warning: pdflatex (file ./figures/results/fitness/fitness-liver-disorder
+s-CV.pdf): PDF inclusion: multiple pdfs with page group included in a single pa
+ge
+>]
+Package numprint Info: No number in tabular cell on input line 159.
+Package numprint Info: No number in tabular cell on input line 159.
+Package numprint Info: No number in tabular cell on input line 159.
+Package numprint Info: No number in tabular cell on input line 159.
+Package numprint Info: No number in tabular cell on input line 174.
+Package numprint Info: No number in tabular cell on input line 174.
+Package numprint Info: No number in tabular cell on input line 174.
+Package numprint Info: No number in tabular cell on input line 174.
+Package numprint Info: No number in tabular cell on input line 174.
+Package numprint Info: No number in tabular cell on input line 175.
+Package numprint Info: No number in tabular cell on input line 176.
+Package numprint Info: No number in tabular cell on input line 177.
+Package numprint Info: No number in tabular cell on input line 178.
+Package numprint Info: No number in tabular cell on input line 179.
+Package numprint Info: No number in tabular cell on input line 180.
+Package numprint Info: No number in tabular cell on input line 180.
+
+Overfull \hbox (30.70486pt too wide) in paragraph at lines 170--182
+ [][] 
+ []
+
+<figures/results/accuracy/accuracy-breast.pdf, id=987, 361.35pt x 216.81pt>
 File: figures/results/accuracy/accuracy-breast.pdf Graphic file (type pdf)
 
 <use figures/results/accuracy/accuracy-breast.pdf>
 Package pdftex.def Info: figures/results/accuracy/accuracy-breast.pdf used on i
-nput line 202.
+nput line 190.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/results/accuracy/accuracy-heart.pdf, id=892, 361.35pt x 216.81pt>
+<figures/results/accuracy/accuracy-heart.pdf, id=988, 361.35pt x 216.81pt>
 File: figures/results/accuracy/accuracy-heart.pdf Graphic file (type pdf)
 
 <use figures/results/accuracy/accuracy-heart.pdf>
 Package pdftex.def Info: figures/results/accuracy/accuracy-heart.pdf used on in
-put line 207.
+put line 195.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/results/accuracy/accuracy-ionosphere.pdf, id=893, 361.35pt x 216.81pt>
+<figures/results/accuracy/accuracy-ionosphere.pdf, id=989, 361.35pt x 216.81pt>
 File: figures/results/accuracy/accuracy-ionosphere.pdf Graphic file (type pdf)
 <use figures/results/accuracy/accuracy-ionosphere.pdf>
 Package pdftex.def Info: figures/results/accuracy/accuracy-ionosphere.pdf used 
-on input line 212.
+on input line 200.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/results/accuracy/accuracy-liver-disorders.pdf, id=894, 361.35pt x 216.
+<figures/results/accuracy/accuracy-liver-disorders.pdf, id=990, 361.35pt x 216.
 81pt>
 File: figures/results/accuracy/accuracy-liver-disorders.pdf Graphic file (type 
 pdf)
  <use figures/results/accuracy/accuracy-liver-disorders.pdf>
 Package pdftex.def Info: figures/results/accuracy/accuracy-liver-disorders.pdf 
-used on input line 217.
+used on input line 205.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-<figures/results/accuracy/accuracy-pima-diabetes.pdf, id=895, 361.35pt x 216.81
+<figures/results/accuracy/accuracy-pima-diabetes.pdf, id=991, 361.35pt x 216.81
 pt>
 File: figures/results/accuracy/accuracy-pima-diabetes.pdf Graphic file (type pd
 f)
  <use figures/results/accuracy/accuracy-pima-diabetes.pdf>
 Package pdftex.def Info: figures/results/accuracy/accuracy-pima-diabetes.pdf us
-ed on input line 222.
+ed on input line 210.
 (pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
+ [40
 
-<figures/results/f1/f1-breast.pdf, id=896, 361.35pt x 216.81pt>
-File: figures/results/f1/f1-breast.pdf Graphic file (type pdf)
-
-<use figures/results/f1/f1-breast.pdf>
-Package pdftex.def Info: figures/results/f1/f1-breast.pdf used on input line 22
-7.
-(pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
-
-<figures/results/f1/f1-heart.pdf, id=897, 361.35pt x 216.81pt>
-File: figures/results/f1/f1-heart.pdf Graphic file (type pdf)
-
-<use figures/results/f1/f1-heart.pdf>
-Package pdftex.def Info: figures/results/f1/f1-heart.pdf used on input line 232
-.
-(pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
-
-<figures/results/mcc/mcc-breast.pdf, id=898, 361.35pt x 216.81pt>
-File: figures/results/mcc/mcc-breast.pdf Graphic file (type pdf)
-
-<use figures/results/mcc/mcc-breast.pdf>
-Package pdftex.def Info: figures/results/mcc/mcc-breast.pdf used on input line 
-237.
-(pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
-
-<figures/results/mcc/mcc-heart.pdf, id=899, 361.35pt x 216.81pt>
-File: figures/results/mcc/mcc-heart.pdf Graphic file (type pdf)
-
-<use figures/results/mcc/mcc-heart.pdf>
-Package pdftex.def Info: figures/results/mcc/mcc-heart.pdf used on input line 2
-42.
-(pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
-
-<figures/results/probability/probability-breast.pdf, id=900, 361.35pt x 216.81p
-t>
-File: figures/results/probability/probability-breast.pdf Graphic file (type pdf
-)
- <use figures/results/probability/probability-breast.pdf>
-Package pdftex.def Info: figures/results/probability/probability-breast.pdf use
-d on input line 247.
-(pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
-
-<figures/results/probability/probability-heart.pdf, id=901, 361.35pt x 216.81pt
->
-File: figures/results/probability/probability-heart.pdf Graphic file (type pdf)
-
- <use figures/results/probability/probability-heart.pdf>
-Package pdftex.def Info: figures/results/probability/probability-heart.pdf used
- on input line 252.
-(pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
-
-<figures/results/probability/probability-ionosphere.pdf, id=902, 361.35pt x 216
-.81pt>
-File: figures/results/probability/probability-ionosphere.pdf Graphic file (type
- pdf)
- <use figures/results/probability/probability-ionosphere.pdf>
-Package pdftex.def Info: figures/results/probability/probability-ionosphere.pdf
- used on input line 257.
-(pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
-
-<figures/results/probability/probability-liver-disorders.pdf, id=903, 361.35pt 
-x 216.81pt>
-File: figures/results/probability/probability-liver-disorders.pdf Graphic file 
-(type pdf)
- <use figures/results/probability/probability-liver-disorders.pdf>
-Package pdftex.def Info: figures/results/probability/probability-liver-disorder
-s.pdf used on input line 263.
-(pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
-
-<figures/results/probability/probability-pima-diabetes.pdf, id=904, 361.35pt x 
-216.81pt>
-File: figures/results/probability/probability-pima-diabetes.pdf Graphic file (t
-ype pdf)
- <use figures/results/probability/probability-pima-diabetes.pdf>
-Package pdftex.def Info: figures/results/probability/probability-pima-diabetes.
-pdf used on input line 269.
-(pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
-
-[37
-
-] [38 <./figures/results/accuracy/accuracy-breast.pdf> <./figures/results/accur
+] [41 <./figures/results/accuracy/accuracy-breast.pdf> <./figures/results/accur
 acy/accuracy-heart.pdf
 
 pdfTeX warning: pdflatex (file ./figures/results/accuracy/accuracy-heart.pdf): 
 PDF inclusion: multiple pdfs with page group included in a single page
->] [39 <./figures/results/accuracy/accuracy-ionosphere.pdf> <./figures/results/
+>] [42 <./figures/results/accuracy/accuracy-ionosphere.pdf> <./figures/results/
 accuracy/accuracy-liver-disorders.pdf
 
 pdfTeX warning: pdflatex (file ./figures/results/accuracy/accuracy-liver-disord
 ers.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
 e
->] [40 <./figures/results/accuracy/accuracy-pima-diabetes.pdf> <./figures/resul
-ts/f1/f1-breast.pdf
+>] [43 <./figures/results/accuracy/accuracy-pima-diabetes.pdf>]
+<figures/results/probability/probability-breast.pdf, id=1093, 361.35pt x 216.81
+pt>
+File: figures/results/probability/probability-breast.pdf Graphic file (type pdf
+)
+ <use figures/results/probability/probability-breast.pdf>
+Package pdftex.def Info: figures/results/probability/probability-breast.pdf use
+d on input line 249.
+(pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-pdfTeX warning: pdflatex (file ./figures/results/f1/f1-breast.pdf): PDF inclusi
-on: multiple pdfs with page group included in a single page
->] [41 <./figures/results/f1/f1-heart.pdf> <./figures/results/mcc/mcc-breast.pd
-f
+<figures/results/probability/probability-heart.pdf, id=1094, 361.35pt x 216.81p
+t>
+File: figures/results/probability/probability-heart.pdf Graphic file (type pdf)
 
-pdfTeX warning: pdflatex (file ./figures/results/mcc/mcc-breast.pdf): PDF inclu
-sion: multiple pdfs with page group included in a single page
->] [42 <./figures/results/mcc/mcc-heart.pdf> <./figures/results/probability/pro
-bability-breast.pdf
+ <use figures/results/probability/probability-heart.pdf>
+Package pdftex.def Info: figures/results/probability/probability-heart.pdf used
+ on input line 254.
+(pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
 
-pdfTeX warning: pdflatex (file ./figures/results/probability/probability-breast
-.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [43 <./figures/results/probability/probability-heart.pdf> <./figures/results
-/probability/probability-ionosphere.pdf
+<figures/results/probability/probability-ionosphere.pdf, id=1095, 361.35pt x 21
+6.81pt>
+File: figures/results/probability/probability-ionosphere.pdf Graphic file (type
+ pdf)
+ <use figures/results/probability/probability-ionosphere.pdf>
+Package pdftex.def Info: figures/results/probability/probability-ionosphere.pdf
+ used on input line 259.
+(pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
+
+<figures/results/probability/probability-liver-disorders.pdf, id=1096, 361.35pt
+ x 216.81pt>
+File: figures/results/probability/probability-liver-disorders.pdf Graphic file 
+(type pdf)
+ <use figures/results/probability/probability-liver-disorders.pdf>
+Package pdftex.def Info: figures/results/probability/probability-liver-disorder
+s.pdf used on input line 265.
+(pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
+
+<figures/results/probability/probability-pima-diabetes.pdf, id=1097, 361.35pt x
+ 216.81pt>
+File: figures/results/probability/probability-pima-diabetes.pdf Graphic file (t
+ype pdf)
+ <use figures/results/probability/probability-pima-diabetes.pdf>
+Package pdftex.def Info: figures/results/probability/probability-pima-diabetes.
+pdf used on input line 271.
+(pdftex.def)             Requested size: 325.21199pt x 195.12718pt.
+
+[44
+
+ <./figures/results/probability/probability-breast.pdf>] [45 <./figures/results
+/probability/probability-heart.pdf> <./figures/results/probability/probability-
+ionosphere.pdf
 
 pdfTeX warning: pdflatex (file ./figures/results/probability/probability-ionosp
 here.pdf): PDF inclusion: multiple pdfs with page group included in a single pa
 ge
->] [44 <./figures/results/probability/probability-liver-disorders.pdf> <./figur
+>] [46 <./figures/results/probability/probability-liver-disorders.pdf> <./figur
 es/results/probability/probability-pima-diabetes.pdf
 
 pdfTeX warning: pdflatex (file ./figures/results/probability/probability-pima-d
 iabetes.pdf): PDF inclusion: multiple pdfs with page group included in a single
  page
 >]
-Overfull \hbox (25.0607pt too wide) in paragraph at lines 424--435
+Overfull \hbox (25.0607pt too wide) in paragraph at lines 428--439
  [][] 
  []
 
-<figures/results/time/time-breast.pdf, id=1151, 361.35pt x 216.81pt>
+<figures/results/time/time-breast.pdf, id=1197, 361.35pt x 216.81pt>
 File: figures/results/time/time-breast.pdf Graphic file (type pdf)
 
 <use figures/results/time/time-breast.pdf>
 Package pdftex.def Info: figures/results/time/time-breast.pdf used on input lin
-e 438.
+e 442.
 (pdftex.def)             Requested size: 216.81168pt x 130.08699pt.
 
-<figures/results/time/time_almost_all_breast.pdf, id=1152, 361.35pt x 216.81pt>
+<figures/results/time/time_almost_all_breast.pdf, id=1198, 361.35pt x 216.81pt>
 File: figures/results/time/time_almost_all_breast.pdf Graphic file (type pdf)
 <use figures/results/time/time_almost_all_breast.pdf>
 Package pdftex.def Info: figures/results/time/time_almost_all_breast.pdf used o
-n input line 443.
+n input line 447.
 (pdftex.def)             Requested size: 216.81168pt x 130.08699pt.
- [45
+ [47
 
-] [46 <./figures/results/time/time-breast.pdf> <./figures/results/time/time_alm
+] [48 <./figures/results/time/time-breast.pdf> <./figures/results/time/time_alm
 ost_all_breast.pdf
 
 pdfTeX warning: pdflatex (file ./figures/results/time/time_almost_all_breast.pd
 f): PDF inclusion: multiple pdfs with page group included in a single page
->] [47]) (./06-podsumowanie.tex) (./tzietkiewicz-master-thesis.bbl [48
+>] [49]) (./06-podsumowanie.tex [50
 
 
-]
+]) (./tzietkiewicz-master-thesis.bbl
+[51]
 bibitemlist
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
 (Font)              scaled to size 8.27998pt on input line 74.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 8.27998pt on input line 74.
-[49
+[52
 
-]) (./a2-web-resources.tex [50]
+]) (./a2-web-resources.tex [53]
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 9.
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -2013,15 +2013,15 @@ $\T1/lmtt/m/n/9 http : / / crsouza . blogspot . com / 2010 / 03 / kernel-[]func
 tions-[]for-[]machine-[]learning .
  []
 
-) [51
+) [54
 
-] <figures/template/logo-pp.pdf, id=1215, 469.755pt x 469.755pt>
+] <figures/template/logo-pp.pdf, id=1267, 469.755pt x 469.755pt>
 File: figures/template/logo-pp.pdf Graphic file (type pdf)
 
 <use figures/template/logo-pp.pdf>
 Package pdftex.def Info: figures/template/logo-pp.pdf used on input line 77.
 (pdftex.def)             Requested size: 42.67752pt x 42.67912pt.
- [52
+ [55
 
  <./figures/template/logo-pp.pdf>]
 \tf@toc=\write6
@@ -2035,7 +2035,7 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 80.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 80.
 Package rerunfilecheck Info: File `tzietkiewicz-master-thesis.out' has not chan
 ged.
-(rerunfilecheck)             Checksum: 701DFA7BE14F9A67FCEAEED79EF63765;10393.
+(rerunfilecheck)             Checksum: 968C5971F93AC372C5E811F6A56B0A88;10734.
 
 
 LaTeX Warning: There were undefined references.
@@ -2046,13 +2046,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 80.
  ) 
 Here is how much of TeX's memory you used:
- 16519 strings out of 495024
- 233346 string characters out of 3181155
- 391679 words of memory out of 3000000
- 19130 multiletter control sequences out of 15000+200000
+ 16518 strings out of 495024
+ 233462 string characters out of 3181155
+ 389509 words of memory out of 3000000
+ 19128 multiletter control sequences out of 15000+200000
  146031 words of font info for 162 fonts, out of 3000000 for 9000
  34 hyphenation exceptions out of 8191
- 53i,13n,53p,1879b,550s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 53i,13n,53p,1943b,550s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texlive/texmf-dist
 /fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/
 fourier/fourier-bb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fourie
@@ -2064,10 +2064,10 @@ e1/public/lm/lmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/
 putb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putbi8a.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on tzietkiewicz-master-thesis.pdf (55 pages, 1042236 bytes).
+Output written on tzietkiewicz-master-thesis.pdf (58 pages, 1052654 bytes).
 PDF statistics:
- 1312 PDF objects out of 1440 (max. 8388607)
- 1085 compressed objects within 11 object streams
- 215 named destinations out of 1000 (max. 500000)
- 632 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1368 PDF objects out of 1440 (max. 8388607)
+ 1134 compressed objects within 12 object streams
+ 219 named destinations out of 1000 (max. 500000)
+ 643 words of extra memory for PDF output out of 10000 (max. 10000000)
 

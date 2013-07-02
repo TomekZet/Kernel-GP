@@ -2,21 +2,23 @@
 \chapter{Wyniki działania algorytmu na popularnych zbiorach danych}
 
 \section{Metodologia pomiarów}
-	Żeby oszacować trafność klasyfikacji osiąganą przez skonstruowany system konieczne było podzielenie zbioru danych na zbiór uczący i \emph{testujący}, a w przypadku algorytmu Kernel-GP również wydzielenie ze zbioru uczącego podzbioru \emph{walidującego}, używanego do obliczania miary przystosowania (fitness) podczas przebiegu algorytmu genetycznego. Ponieważ sposób podziału zbioru danych ma wpływ na osiąganą trafność klasyfikacji, dokonywano 5 takich podziałów a następnie wyciągano średnią oraz odchylenie standardowe z wyników otrzymanych dla tych podziałów. Ta procedura dotyczyła zarówno testowania algorytmu \emph{Kernel-GP} jak i porównawczych testów klasyfikatora SVM z biblioteki \emph{LibSVM}. Dla obu algorytmów stosowano te same podziały danych, przy czym w przypadku klasyfikatora \emph{LibSVM} ze zbioru uczącego nie wydzielano zbioru testującego.
+	Oszacowanie trafności klasyfikacji osiąganej przez skonstruowany system było dokonywane na dwa sposoby. Pierwszy z nich (\english{random subsampling}) polegał na podziale zbioru danych na zbiór uczący i \emph{testujący}, a w przypadku algorytmu \emph{Kernel-GP+} również wydzieleniu ze zbioru uczącego podzbioru \emph{walidującego}, używanego do obliczania miary przystosowania (fitness) podczas przebiegu algorytmu genetycznego. Ponieważ sposób podziału zbioru danych ma wpływ na osiąganą trafność klasyfikacji, dokonywano 5 takich podziałów a następnie wyciągano średnią oraz odchylenie standardowe z wyników otrzymanych dla tych podziałów. Ta procedura dotyczyła zarówno testowania algorytmu \emph{Kernel-GP} jak i porównawczych testów klasyfikatora SVM z biblioteki \emph{LibSVM}. Dla obu algorytmów stosowano te same podziały danych, przy czym w przypadku klasyfikatora \emph{LibSVM} ze zbioru uczącego nie wydzielano zbioru testującego.
+
+	Drugi sposób polegał na zastosowaniu k-krotnej walidacji krzyżowej. Walidacja krzyżowa może być stosowana zarówno na etapie oceny osobników przez algorytm programowania genetycznego (wtedy niepotrzebny staje się wydzielony zbiór walidujący), jak i na etapie testowania ostatecznego rozwiązania znalezionego przez ten algorytm. Metoda k-krotnej walidacji krzyżowej dawała lepsze wyniki, lecz poprzez konieczność wykonania walidacji rozwiązania k razy wydłużała czas wykonania algorytmu. Jeśli nie zaznaczono inaczej, przedstawione poniżej wyniki działania Kernel GP+ dotyczą pierwszej metody testowania i walidacji rozwiązań.
 	
 	Algorytm genetyczny jest w swej naturze stochastyczny, korzysta więc z funkcji generujących liczby pseudolosowe. Aby zapewnić powtarzalność wyników i umożliwić ich porównanie ziarno generatora liczb pseudolosowych ustawiono na stałą wartość.
 
 	Aby ocenić skuteczność algorytmu genetycznego w poszukiwaniu optymalnych funkcji jądrowych oraz oszacować optymalną wielkość populacji, liczbę ewaluowanych pokoleń oraz najlepszą funkcję przystosowania przeprowadzono szereg eksperymentów obliczeniowych, w których uruchamiano algorytm dla coraz to większych wartości tych parametrów. Dla każdego przebiegu algorytmu obliczano i zapisywano kilka miar trafność klasyfikacji zbioru \emph{walidującego} (miary te zostały opisane w części \ref{sec:measures}).
 
-	Analizując tak zebrane dane można przeanalizować na ile poszukiwanie funkcji jądrowej przez algorytm genetyczny było podobne do losowego przeszukiwania a na ile było ono zbieżne. W pierwszym przypadku na wyniki osiągane przez algorytm powinna mieć wpływ przede wszystkim wielkość populacji, w drugim również liczba populacji przez które poszukiwano rozwiązania. W szczególności ciekawym przypadkiem jest ten, gdy liczba populacji wynosi 1, czyli cały algorytm ogranicza się do wygenerowania populacji losowych osobników i wybrania jednego z nich - w tym przypadku algorytm genetyczny sprowadza się do losowego poszukiwania rozwiązania. Porównując różnicę w trafności osiąganej w trakcie jednego pokolenia i coraz większej ich liczby można ocenić czy proces ewolucyjny przebiega poprawnie.
+	Analizując tak zebrane dane można przeanalizować na ile poszukiwanie funkcji jądrowej przez algorytm genetyczny było podobne do losowego przeszukiwania a na ile było ono zbieżne. W pierwszym przypadku na wyniki osiągane przez algorytm powinna mieć wpływ przede wszystkim wielkość populacji, w drugim również liczba pokoleń, przez które poszukiwano rozwiązania. W szczególności ciekawym przypadkiem jest ten, gdy liczba populacji wynosi 1, czyli cały algorytm ogranicza się do wygenerowania populacji losowych osobników i wybrania jednego z nich - w tym przypadku algorytm genetyczny sprowadza się do losowego poszukiwania rozwiązania. Porównując różnicę w trafności osiąganej w trakcie jednego pokolenia i coraz większej ich liczby można ocenić czy proces ewolucyjny przebiega poprawnie.
 	
-\section{Parametry algorytmu}
+\subsection{Parametry procesu ewolucyjnego}
 Tabela \ref{tab:params-gp} przedstawia użyte w eksperymentach wartości parametrów procesu ewolucyjnego.
 \begin{table}
 	\caption{Parametry procesu ewolucyjnego \label{tab:params-gp}}
 	\begin{tabular}{|r||c|c|}
 	\hline
-	• & mimimum & maksimum \\ 
+	 & mimimum & maksimum \\ 
 	\hline \hline 
 	Wielkość populacji & 1 & 100 \\ 
 	\hline
@@ -45,7 +47,7 @@ Tabela \ref{tab:params-gp} przedstawia użyte w eksperymentach wartości paramet
 \newcolumntype{Z}{>{\centering\arraybackslash}m{17mm}}
 
 \begin{table}[ht]
-	\caption{Zbiory danych użyte do testowania systemu.\label{tab:datasets}} 	
+	\caption{Zbiory danych użyte do testowania systemu. W przypadku eksperymentów przeprowadzanych z zastosowaniem walidacji krzyżowej zbiór walidujący nie był wyodrębniany.\label{tab:datasets}} 	
 %	\begin{tabular}{|p{2cm}||r|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
 	\begin{tabulary}{1.0\textwidth}{|r||r|r|r|r|r|r|}
 		\hline 
@@ -71,9 +73,9 @@ Tabela \ref{tab:params-gp} przedstawia użyte w eksperymentach wartości paramet
 \begin{table}[ht]
 \caption{Zbiory danych użyte do testowania systemu.\label{tab:datasets2}} 	
 %	\begin{tabular}{|p{2.5cm}||p{2.5cm}|p{2.5cm}|p{1.5cm}|p{3cm}|}
-	\begin{tabulary}{0.9\textwidth}{|r||r|r|r|r|}
+	\begin{tabulary}{1.0\textwidth}{|r||r|r|r|r|}
 	\hline 
-	Nazwa zbioru  & \multicolumn{1}{|Z|}{Liczba atrybutów ciągłych}  & \multicolumn{1}{|Z|}{Liczba atrybutów nominalnych}  & \multicolumn{1}{|Z|}{Liczba klas}  & \multicolumn{1}{|Z|}{Proporcje klas} \\ 
+	Nazwa zbioru  & \multicolumn{1}{Z|}{Liczba atrybutów ciągłych}  & \multicolumn{1}{Z|}{Liczba atrybutów nominalnych}  & \multicolumn{1}{Z|}{Liczba klas}  & \multicolumn{1}{Z|}{Proporcje klas} \\ 
 	\hline \hline
 	DNA & 0 & 180 & 3 & 464/485/1051  \\ 
 	\hline 
@@ -90,7 +92,13 @@ Tabela \ref{tab:params-gp} przedstawia użyte w eksperymentach wartości paramet
 
 \FloatBarrier
 \section{Fitness}
-Aby ocenić dobór parametrów procesu ewolucyjnego zapisywano wartości fitness osiągane przez najlepszego osobnika w każdym pokoleniu. Wartości te zostały przedstawione na wykresach przedstawiających wartość fitness najlepszego osobnika w funkcji czasu trwania algorytmu (ilości dotychczas wygenerowanych populacji), czyli tak zwanych \english{Fitness Graphs}. Na wykresash \ref{fig:fit-heart} - \ref{fig:fit-breast} widać jak zmienia się wartość funkcji fitness wraz z kolejnymi pokoleniami dla różnych miar jakości klasyfikacji użytych jako funkcja fitness (miary te zostały opisane w części \ref{sec:measures} a ich użycie w części \ref{sec:ewaluacja}).
+Aby ocenić dobór parametrów procesu ewolucyjnego zapisywano wartości fitness osiągane przez najlepszego osobnika w każdym pokoleniu. Wartości te zostały przedstawione na wykresach przedstawiających wartość fitness najlepszego osobnika w funkcji czasu trwania algorytmu (ilości dotychczas wygenerowanych populacji), czyli tak zwanych \english{fitness graphs}. Na wykresach \ref{fig:fit-heart} -- \ref{fig:fit-pima-diabetes} widać jak zmienia się wartość funkcji fitness wraz z kolejnymi pokoleniami dla różnych miar jakości klasyfikacji użytych jako funkcja fitness (miary te zostały opisane w części \ref{sec:measures} a ich użycie w części \ref{sec:ewaluacja}).
+
+Dla wszystkich przetestowanych zbiorów widać, że fitness najlepszego osobnika w kolejnych pokoleniach rośnie, a przynajmniej nie maleje. To, że przystosowanie nigdy nie maleje jest wynikiem zastosowania mechanizmu \emph{elit} (opisanego w części \ref{sec:mutation}). Niestety, w przypadku zbiorów \emph{breast} (rys. \ref{fig:fit-breast} i \emph{liver disorders} (rys. \ref{fig:fit-liver-disorders} fitness dość szybko (ok. 15-tego pokolenia) przestaje rosnąć. Jest to moment, w którym można by zakończyć algorytm ewolucyjny, choć a-priori ciężko określić kiedy należy to zrobić - na przykład w przypadku zbioru \emph{ionosphere} (rys. \ref{fig:fit-ionosphere} po chwilowym wypłaszczeniu funkcji przystosowania (pokolenia 10-20) zaczyna ona znowu rosnąć.
+
+Wybór miary, która służy za funkcję przystosowania zależy przede wszystkim od dziedziny klasyfikacji, kosztów pomyłek. W przypadku większości zbiorów fitness rośnie podobnie niezależnie od wyboru miary użytej do jego obliczenia. Wyjątkiem jest zbiór \emph{liver disorders}, w przypadku którego średnie prawdopodobieństwo przypisane właściwej klasie rośnie cały czas, w przeciwieństwie do trafności klasyfikacji, która w okolicach 15 pokolenia ulega stagnacji.
+ 
+
 
 	\begin{figure}
 		\includegraphics[scale=0.90]{figures/results/fitness/fitness-heart}
@@ -109,7 +117,7 @@ Aby ocenić dobór parametrów procesu ewolucyjnego zapisywano wartości fitness
                
         \begin{figure}
                 \includegraphics[scale=0.90]{figures/results/fitness/fitness-liver-disorders}
-                \caption{Najlepsza wartość funkcji przystosowania dla kolejnych pokoleń dla zbioru \emph{breast}.\label{fig:fit-liver-disorders}}
+                \caption{Najlepsza wartość funkcji przystosowania dla kolejnych pokoleń dla zbioru \emph{liver disorders}.\label{fig:fit-liver-disorders}}
         \end{figure}    
 
         \begin{figure}
@@ -117,6 +125,22 @@ Aby ocenić dobór parametrów procesu ewolucyjnego zapisywano wartości fitness
                 \caption{Najlepsza wartość funkcji przystosowania dla kolejnych pokoleń dla zbioru \emph{pima-diabetes}.\label{fig:fit-pima-diabetes}}
         \end{figure}    
 
+Wykresy \ref{fig:fit-heart-cv} -- \ref{fig:fit-liver-disorders-cv} podobnie jak poprzednie pokazują wzrost przystosowania w funkcji liczby pokoleń, jednak w ich przypadku są to wyniki pochodzące z 10-krotnej walidacji krzyżowej. W celu analizy zjawiska przeuczenia pokazano na nich zarówno trafność klasyfikacji zbioru trenującego (walidacja) jak i testowego (testowanie). W przypadku zbioru heart przeuczenie nie występuje - mimo spadku w okolicach 10--15 pokolenia trafność na zbiorze testującym rośnie wraz z liczbą pokoleń. W przypadku dwóch pozostałych zbiorów widać, że algorytm genetyczny dostosowuje funkcję jądrową do zbioru trenującego, co nie ma wpływu na trafność osiąganą na zbiorze testowym - ta zachowuje się w sposób losowy.
+
+	\begin{figure}
+		\includegraphics[scale=0.90]{figures/results/fitness/fitness-heart-CV}
+		\caption{Najlepsza wartość funkcji przystosowania dla kolejnych pokoleń dla zbioru \emph{heart}, obliczana za pomocą 10-krotnej walidacji krzyżowej, oraz trafność osiągana przez najlepsze znalezione rozwiązanie, równiez obliczana za pomocą 10-krotnej walidacji krzyżowej. \label{fig:fit-heart-cv}}
+	\end{figure}
+	
+	\begin{figure}
+		\includegraphics[scale=0.90]{figures/results/fitness/fitness-breast-CV}
+		\caption{Najlepsza wartość funkcji przystosowania dla kolejnych pokoleń dla zbioru \emph{breast}, obliczana za pomocą 10-krotnej walidacji krzyżowej, oraz trafność osiągana przez najlepsze znalezione rozwiązanie, równiez obliczana za pomocą 10-krotnej walidacji krzyżowej. \label{fig:fit-breast-cv}}
+	\end{figure}	 
+               
+   \begin{figure}
+        \includegraphics[scale=0.90]{figures/results/fitness/fitness-liver-disorders-CV}
+         \caption{Najlepsza wartość funkcji przystosowania dla kolejnych pokoleń dla zbioru \emph{liver disorders}, obliczana za pomocą 10-krotnej walidacji krzyżowej, oraz trafność osiągana przez najlepsze znalezione rozwiązanie, równiez obliczana za pomocą 10-krotnej walidacji krzyżowej.				\label{fig:fit-liver-disorders-cv}}
+   \end{figure}    
 	
 \FloatBarrier
 \section{Wyniki klasyfikacji zbioru testującego}
@@ -125,23 +149,6 @@ Aby ocenić dobór parametrów procesu ewolucyjnego zapisywano wartości fitness
 	Trafność klasyfikacji osiąganą przez algorytmy pokazano w tabelach \ref{tab:results} i \ref{tab:results2}. Przedstawiono w niej dodatkowo wyniki algorytmów opisanych w części \ref{sec:evokernel}, pochodzące z prac, w których te algorytmy zostały zaprezentowane.
 \nprounddigits{3}	
 	
-%\begin{table}
-%	\caption{	\label{tab:results} Zestawienie wyników klasyfikacji. Tabela przedstawia trafność klasyfikacji osiąganą przez poszczególne algorytmy dla przetestowanych zbiorów danych. Wyniki algorytmów K-Tree, Kernel-GP i EKM pochodzą z prac omówionych w rozdziale \ref{sec:evokernel}.}
-%%	\begin{tabular}{||r||r|r|r||r|r|r||r||}
-%	\begin{tabular}{||l||n{1}{4}|n{1}{4}|n{1}{4}||n{1}{4}|n{1}{4}|n{1}{4}||n{1}{4}||}
-%	\hline 
-%	& \multicolumn{7}{c||}{Algorytm} \\ 
-%	\hline 
-%	Zbiór danych & {SMV Poly} & {SVM RBF} & {SVM Sigmoid} & {K-Tree} & {Kernel-GP} & {EKM} & {\textbf{New Kernel-GP}} \\ 
-%	\hline \hline
-%	{Breast} & 0.97007298 & 0.96569344 & 0.96131387 & • & 0.9546 & 0.97 & 0.95693432 \\ \hline
-%	{Heart} & 0.82666667 & 0.82222223 & 0.82888888 & 0.8222 & 0.7759 & • & 0.82888889 \\ \hline
-%	{Ionosphere} & 0.87521368 & 0.93504274 & 0.87008548 & 0.943 & 0.9404 & 0.905 & 0.84615386 \\ \hline
-%	{Liver} & 0.61217391 & 0.59652172 & 0.60347826 & 0.7227 & • & 0.691 & 0.68173914 \\ \hline
-%	{Pima} & 0.74609375 & 0.75546875 & 0.73203125 & 0.7747 & • & 0.748 & 0.76015625 \\ \hline
-%	\end{tabular} 	
-%\end{table}
-
 
 \begin{table}
 	\caption{	\label{tab:results} Zestawienie wyników klasyfikacji. Tabela przedstawia trafność klasyfikacji osiąganą przez LibSVM dla różnych funkcji jądrowych przy domyślnych ustawieniach oraz wyniki uzyskane za pomocą przeszukiwania Grid Search dostępnego wraz z biblioteką LibSVM.}
@@ -160,43 +167,24 @@ Aby ocenić dobór parametrów procesu ewolucyjnego zapisywano wartości fitness
 
 \begin{table}
 	\caption{	\label{tab:results2} Zestawienie wyników klasyfikacji. Tabela przedstawia trafność klasyfikacji osiąganą przez poszczególne algorytmy dla przetestowanych zbiorów danych. Wyniki algorytmów K-Tree, Kernel-GP i EKM pochodzą z prac omówionych w rozdziale \ref{sec:evokernel}.}
-	\begin{tabular}{||r||n{1}{4}||n{1}{4}|n{1}{4}|n{1}{4}||n{1}{4}||}
+	\begin{tabular}{||r||n{1}{4}||n{1}{4}|n{1}{4}|n{1}{4}||n{1}{4}|n{1}{4}||}
 	\hline 
-	 & \multicolumn{5}{c||}{Algorytm} \\ 
+	 & \multicolumn{6}{c||}{Algorytm} \\ 
 	\hline 
-	Zbiór danych & {Grid LibSVM} & {K-Tree} & {Kernel-GP} & {EKM} & \textbf{New Kernel-GP} \\ 
+	Zbiór danych & {Grid LibSVM} & {K-Tree} & {Kernel-GP} & {EKM} & \textbf{Kernel-GP+} & \textbf{Kernel-GP+ 10-fold CV} \\ 
 	\hline \hline
-	Breast & 0.972 & • & 0.955 & 0.970 & 0.97222932 \\ \hline
-	Heart & 0.844 & 0.822 & 0.776 &  • &  0.84074075 \\ \hline
-	Ionosphere & 0.952 & 0.943 & 0.940 & 0.905 & 0.93162 \\ \hline
-	Liver & 0.739 & 0.723 & • & 0.691 & 0.70495799 \\ \hline
-	Pima & 0.777 & 0.775 & • & 0.748 & 0.77266 \\ \hline
+	Breast & 0.972 & • & 0.955 & 0.970 & 0.95693432 & 0.97222932 \\ \hline
+	Heart & 0.844 & 0.822 & 0.776 &  • & 0.82888889 & 0.84074075 \\ \hline
+	Ionosphere & 0.952 & 0.943 & 0.940 & 0.905 & 0.93162 &  • \\ \hline
+	Liver & 0.739 & 0.723 & • & 0.691 & 0.70496 & 0.70495799 \\ \hline
+	Pima & 0.777 & 0.775 & • & 0.748 & 0.77266 & • \\ \hline
 	\end{tabular} 	
 \end{table}
 
 
-%\begin{table}[htbp]
-%\caption{Średnia wartość prawdopodobieństwa przypisana właściwej klasie}
-%\begin{center}
-%	\begin{tabular}{|l||n{1}{4}|n{1}{4}|n{1}{4}|n{1}{4}|}
-%		\hline 
-%		& \multicolumn{4}{c|}{Algorytm} \\ 
-%		\hline
-%		Zbiór danych & {SMV Poly} & {SVM RBF} & {SVM Sigmoid} & {New KernelGP} \\ \hline \hline
-%		Breast & 0.952839 & 0.951593 & 0.946545 & •  \\ \hline
-%		Heart & 0.737089 & 0.752142 & 0.759086 & •  \\ \hline
-%		Ionosphere & 0.793675 & 0.901037 & 0.750996 & 0.902296 \\ \hline
-%		Liver & 0.537505 & 0.537623 & 0.530987 & 0.584991 \\ \hline
-%		Pima & 0.645106 & 0.68108 & 0.657695 & 0.676421 \\ \hline
-%	\end{tabular}
-%\end{center}
-%\label{tab:results-prob}
-%\end{table}
-
-
-
+\subsection{Trafność}
 	
-	Jak widać na rysunkach \ref{fig:acc-breast}-\ref{fig:probability-heart} sprawność algorytmu zależy zarówno od zbioru danych jak i od wybranej miary jakości.
+	Jak widać na rysunkach \ref{fig:acc-breast}-\ref{fig:acc-pima} osiągana jakość klasyfikacji jest mocno zależna od konkretnego zbioru danych. Dla zbiorów \emph{ionosphere} i \emph{liver disorders} i \emph{pima diabetes} algorytm \emph{Kernel GP+} osiąga lepsze wyniki niż SVM ze standardowymi funkcjami jądrowymi. dla zbiorów \emph{breast}, \emph{heart} i \emph{ionosphere} widoczna jest poprawa wyników wraz z kolejnymi pokoleniami algorytmu ewolucyjnego. W przypadku zbioru \emph{liver disorders} już około piątego pokolenia algorytm osiąga \emph{plateau} i dalej trafność oscyluje wokół poziomu $ 70\% $. Może to oznaczać, że rozmiar populacji jest na tyle duży, że już w początkowej populacji znajduje się rozwiązanie zbliżone do optymalnego.
 	
 	\begin{figure}
 		\includegraphics[scale=0.90]{figures/results/accuracy/accuracy-breast}
@@ -215,34 +203,48 @@ Aby ocenić dobór parametrów procesu ewolucyjnego zapisywano wartości fitness
 	
 	\begin{figure}
 		\includegraphics[scale=0.90]{figures/results/accuracy/accuracy-liver-disorders}
-		\caption{Trafność (\english{accuracy}) klasyfikacji dla zbioru \emph{liver} w funkcji czasu wykonania (ilości pokoleń).\label{fig:acc-liver}}
+		\caption{Trafność (\english{accuracy}) klasyfikacji dla zbioru \emph{live disorders} w funkcji czasu wykonania (ilości pokoleń).\label{fig:acc-liver}}
 	\end{figure}
 		
 	\begin{figure}
 		\includegraphics[scale=0.90]{figures/results/accuracy/accuracy-pima-diabetes}
-		\caption{Trafność (\english{accuracy}) klasyfikacji dla zbioru \emph{pima} w funkcji czasu wykonania (ilości pokoleń).\label{fig:acc-pima}}
+		\caption{Trafność (\english{accuracy}) klasyfikacji dla zbioru \emph{pima diabetes} w funkcji czasu wykonania (ilości pokoleń).\label{fig:acc-pima}}
 	\end{figure} 
+
+%\FloatBarrier
+%\subsection{Miara F1}
+%	
+%	\begin{figure}
+%		\includegraphics[scale=0.90]{figures/results/f1/f1-breast}
+%		\caption{Wartość miary F1 dla wyników klasyfikacji zbioru \emph{breast} w funkcji czasu wykonania (ilości pokoleń).\label{fig:f1-breast}}
+%	\end{figure}
+%	
+%	\begin{figure}
+%		\includegraphics[scale=0.90]{figures/results/f1/f1-heart}
+%		\caption{Wartość miary F1 dla wyników klasyfikacji zbioru \emph{heart} w funkcji czasu wykonania (ilości pokoleń).\label{fig:f1-heart}}
+%	\end{figure}
+
+
+
+%\FloatBarrier
+%\subsection{Miara MCC}
+%	
+%	\begin{figure}
+%		\includegraphics[scale=0.90]{figures/results/mcc/mcc-breast}
+%		\caption{Wartość miary \emph{Mathews Correlation Coefficent} (\akronim{mcc}) dla wyników klasyfikacji zbioru \emph{breast} w funkcji czasu wykonania (ilości pokoleń).\label{fig:mcc-breast}}
+%	\end{figure}
+%	
+%	\begin{figure}
+%		\includegraphics[scale=0.90]{figures/results/mcc/mcc-heart}
+%		\caption{Wartość miary \emph{Mathews Correlation Coefficent} dla wyników klasyfikacji zbioru \emph{heart} w funkcji czasu wykonania (ilości pokoleń).\label{fig:mcc-heart}}
+%	\end{figure}
 	
-	\begin{figure}
-		\includegraphics[scale=0.90]{figures/results/f1/f1-breast}
-		\caption{Wartość miary F1 dla wyników klasyfikacji zbioru \emph{breast} w funkcji czasu wykonania (ilości pokoleń).\label{fig:f1-breast}}
-	\end{figure}
-	
-	\begin{figure}
-		\includegraphics[scale=0.90]{figures/results/f1/f1-heart}
-		\caption{Wartość miary F1 dla wyników klasyfikacji zbioru \emph{heart} w funkcji czasu wykonania (ilości pokoleń).\label{fig:f1-heart}}
-	\end{figure}
-	
-	\begin{figure}
-		\includegraphics[scale=0.90]{figures/results/mcc/mcc-breast}
-		\caption{Wartość miary \emph{Mathews Correlation Coefficent} (\akronim{mcc}) dla wyników klasyfikacji zbioru \emph{breast} w funkcji czasu wykonania (ilości pokoleń).\label{fig:mcc-breast}}
-	\end{figure}
-	
-	\begin{figure}
-		\includegraphics[scale=0.90]{figures/results/mcc/mcc-heart}
-		\caption{Wartość miary \emph{Mathews Correlation Coefficent} dla wyników klasyfikacji zbioru \emph{heart} w funkcji czasu wykonania (ilości pokoleń).\label{fig:mcc-heart}}
-	\end{figure}
-	
+
+
+\FloatBarrier
+\subsection{Prawdopodobieństwo}
+Wykresy \ref{fig:probability-breast} -- \ref{fig:probability-pima-diabetes} ukazują zmieniającą się wraz z kolejnymi pokoleniami wartość miary średniego prawdopodobieństwa przypisywanego przez klasyfikator klasie, do której rzeczywiście należy dany przypadek, opisanej w części \ref{sec:measures}. Dla zbiorów breast i liver obserwujemy wzrost wartości tej miary i osiąganie wyników lepszych niż standardowy SVM. W przypadku zbioru \emph{heart} występuje zjawisko przeuczenia, które uniemożliwia algorytmowi osiągnięcie wyników na poziomie tych osiąganych przez SVM z kernelem sigmoidalnym.
+
 	\begin{figure}
 		\includegraphics[scale=0.90]{figures/results/probability/probability-breast}
 		\caption{Średnia wartość prawdopodobieństwa przypisywanego przez SVM właściwej dla klasyfikowanego przykłau klasie w funkcji czasu wykonania (ilości pokoleń). Zbiór \emph{breast}\label{fig:probability-breast}}
@@ -403,6 +405,8 @@ W celu przeanalizowania źródła czasochłonności obliczeń Kernel-GP podczas 
 
 Patrząc na wykresy \ref{fig:time-all-breast} i \ref{fig:time-some-breast} widać, że narzut związany z mechanizmami algorytmu GP nie jest znaczący. Problem stanowi spora zmienność czasów wykonania algorytmu Kernel-GP - odchylenie standardowe czasu wykonania czasami jest większe niż średnia. Jest to przypuszczalnie spowodowane użyciem funkcji jądrowych, które nie są dodatnio określone (na przykład funkcja sigmoidalna) i dla których rozwiązywany przez SVM problem optymalizacji może nie być wypukły. Czas wykonania nie rośnie liniowo wraz z liczbą dokonywanych ocen generowanych funkcji - dla 10 pokoleń wielkości 10 osobników, a więc 100 ewaluacji, czas wykonania jest co najwyżej 10 razy większy niż przy jednym osobniku i jednym pokoleniu, czyli 1 ewaluacji. Jest to spowodowane pewnym stałym kosztem obliczeniowym  związanym z inicjalizacją procesu ewolucyjnego, która wykonuje się tylko raz oraz z tym, że osobniki identyczne do już ocenianych nie są oceniane po raz drugi. Im proces ewolucyjny trwa dłużej, tym bardziej homogeniczna staje się populacja a co za tym idzie więcej występuje w niej identycznych osobników.
 
+Porównanie czasów przeszukiwania metodą \emph{Grid search}, dostępną jako skrypt dostarczany z bibliotekę \emph{LibSVM}, z czasami wykonania algorytmu \emph{Kernel GP+} jest zasadne, ponieważ oba algorytmy osiągają zbliżoną jakość klasyfikacji (patrz tabela \ref{tab:results2}). Niestety, pod względem szybkości działania \emph{Kernel-GP} jest nieporównywalnie gorszy od Grid Search. Osiągnięcie wyników ukazanych w tabeli \ref{tab:results2} zajmuje temu pierwszemu od stu, do nawet ponad tysiąca sekund (z użyciem pięcio-krotnej walidacji krzyżowej), podczas gdy Grid search znajduje swoje rozwiązanie po kilku--kilkunastu sekundach. Przyczyną tego stanu rzeczy jest fakt, że przestrzeń, którą przeszukuje szybszy algorytm jest znacznie mniejsza: manipulacji ulegają jedynie dwa parametry: \emph{C} i \emph{gamma}.
+
 \begin{table}[htbp]
 \caption{Czasy uczenia na zbiorze uczącym i klasyfikacji zbioru testującego przez klasyfikator LibSVM.}
 \begin{tabular}{|l|c|c|c|c|}
@@ -412,8 +416,8 @@ dataset & LibSVM linear & LibSVM polynomial & LibSVM rbf & LibSVM Sigmoid \\ \hl
 breast & $ 0.55\pm 0.05 $ & $ 0.59\pm 0.04 $ & $ 0.51\pm 0.04 $ & $ 0.52\pm 0.05 $ \\ \hline
 heart & $ 0.53\pm 0.03 $ & $ 0.55\pm 0.05 $ & $ 0.48\pm 0.03 $ & $ 0.49\pm 0.05 $ \\ \hline
 ionosphere & $ 0.78\pm 0.02 $ & $ 0.82\pm 0.03 $ & $ 0.76\pm 0.06 $ & $ 0.84\pm 0.07 $ \\ \hline
-Liver-disorders & $ 0.54\pm 0.07 $ & $ 0.54\pm 0.04 $ & $ 0.54\pm 0.04 $ & $ 0.54\pm 0.03 $ \\ \hline
-Pima-diabetes & $ 0.81\pm 0.08 $ & $ 0.77\pm 0.03 $ & $ 0.81\pm 0.07 $ & $ 0.81\pm 0.04 $ \\ \hline
+liver disorders & $ 0.54\pm 0.07 $ & $ 0.54\pm 0.04 $ & $ 0.54\pm 0.04 $ & $ 0.54\pm 0.03 $ \\ \hline
+pima diabetes & $ 0.81\pm 0.08 $ & $ 0.77\pm 0.03 $ & $ 0.81\pm 0.07 $ & $ 0.81\pm 0.04 $ \\ \hline
 \end{tabular}
 \label{tab:results-time-LSVM}
 \end{table}
@@ -425,11 +429,11 @@ Pima-diabetes & $ 0.81\pm 0.08 $ & $ 0.77\pm 0.03 $ & $ 0.81\pm 0.07 $ & $ 0.81\
 \hline
  & \multicolumn{ 6}{c|}{GP-generated Kernels} \\ \hline
 dataset & GP Linear & GP Poly & GP RBF & GP Sigmoid & GP(P=1, G=1) & GP(P=10, G=10) \\ \hline
-breast & $ 0.6\pm 0.12 $ & $ 0.64\pm 0.1 $ & $ 0.71\pm 0.1 $ & $ 0.72\pm 0.16 $ & $ 0.89\pm 0.07 $ & $ 8.02\pm 9.2 $ \\ \hline
+breast & $ 0.60\pm 0.12 $ & $ 0.64\pm 0.10 $ & $ 0.71\pm 0.10 $ & $ 0.72\pm 0.16 $ & $ 0.89\pm 0.07 $ & $ 8.02\pm 9.2 $ \\ \hline
 heart & $ 0.54\pm 0.12 $ & $ 0.67\pm 0.15 $ & $ 0.62\pm 0.12 $ & $ 0.64\pm 0.07 $ & $ 4.05\pm 3.64 $ & $ 18.14\pm 20.49 $ \\ \hline
 ionosphere & $ 0.71\pm 0.12 $ & $ 0.73\pm 0.18 $ & $ 0.81\pm 0.16 $ & $ 0.76\pm 0.13 $ & $ 1.41\pm 0.7 $ & $ 5.88\pm 2.7 $ \\ \hline
 Liver-disorders & $ 0.63\pm 0.1 $ & $ 0.67\pm 0.13 $ & $ 0.68\pm 0.12 $ & $ 0.67\pm 0.12 $ & $ 0.75\pm 0.16 $ & $ 5.66\pm 3.87 $ \\ \hline
-Pima-diabetes & $ 0.85\pm 0.12 $ & $ 0.93\pm 0.12 $ & $ 0.9\pm 0.09 $ & $ 1\pm 0.13 $ & $ 6.26\pm 11.48 $ & $ 6.3\pm 1.16 $ \\ \hline
+Pima-diabetes & $ 0.85\pm 0.12 $ & $ 0.93\pm 0.12 $ & $ 0.90\pm 0.09 $ & $ 1.0\pm 0.13 $ & $ 6.26\pm 11.48 $ & $ 6.30\pm 1.16 $ \\ \hline
 \end{tabular}
 \label{tab:results-time-GP}
 \end{table}
@@ -445,9 +449,9 @@ Pima-diabetes & $ 0.85\pm 0.12 $ & $ 0.93\pm 0.12 $ & $ 0.9\pm 0.09 $ & $ 1\pm 0
 \end{figure} 
 
 
+\section{Wnioski}
+Przedstawione w rozdziale wyniki pokazują, że zastosowany algorytm programowania genetycznego działa - można zaobserwować wzrost funkcji fitness wraz kolejnymi pokoleniami. W większości przebadanych przypadków algorytm \emph{Kernel GP+} okazał się skuteczny: pozwalał na znalezienie takiej funkcji jądrowej i jej parametrów, które dawały lepsze wyniki klasyfikacji niż klasyfikator \emph{SVM} ze standardowymi funkcjami jądrowymi i parametrami. Z drugiej strony, osiągane przez ten algorytm wyniki klasyfikacji są nie lepsze niż te otrzymane z pomocą przeszukiwania \emph{grid search}, przy czym to drugie jest znacznie mniej czasochłonne. Analiza funkcji jądrowych, które w procesie ewolucyjnym osiągały najwyższe wartości fitness wykazuje, że zazwyczaj były to standardowe funkcje jądrowe. Stąd nasuwa się wniosek, że standardowe funkcje jądrowe używane najczęściej w metodach jądrowych są wystarczające i należy skupić się na optymalizacji ich parametrów, oraz parametrów samego klasyfikatora SVM takich jak parametr $ C $. Warto dodać, że parametr C nie podlegał manipulacji w algorytmie \emph{Kernel GP+}.
 
-\section{Użycie pamięci}
-
-\section{Posdumowanie wyników}
+Choć różnice metodologiczne w przeprowadzaniu eksperymentów nie pozwalają na istotne statystycznie porównanie, to można zaryzykować stwierdzenie, że w porównaniu z podobnymi podejściami generującymi funkcje jądrowe za pomocą programowania genetycznego algorytm \emph{Kernel GP+} wykazuje się lepszą lub porównywalną trafnością klasyfikacji. Szczególnie dobrze wypada porównanie go z oryginalnym algorytmem \emph{Kernel GP}.
 
 \clearpage
