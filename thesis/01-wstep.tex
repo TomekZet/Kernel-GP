@@ -12,14 +12,23 @@ Umiejętność uczenia się jest podawana jako jeden z wyznaczników inteligencj
 
 Niniejsza praca dotyczy zagadnień należących do dwóch wspomnianych powyżej dziedzin sztucznej inteligencji: \emph{Uczenia maszynowego} oraz \emph{Obliczeń ewolucyjnych}. Pierwsza z nich jest w pracy reprezentowana przez \emph{maszyny wektorów wspierających} (\english{Support Vector Machines} (SVM)), będące rodzajem systemu klasyfikującego. Drugą reprezentuje programowanie genetyczne.
 
+Klasyfikator \emph{SVM}, do klasyfikacji danych nieseparowalnych liniowo używa \emph{funkcji jądrowych}. Na skuteczność klasyfikacji znaczący wpływ ma dobór odpowiedniej funkcji jądrowej. Aby zwolnić użytkownika klasyfikatora od konieczności samodzielnego doboru funkcji jądrowej w poniższej pracy zaproponowano użycie programowania genetycznego w celu automatyzacji tego procesu.
+
 
 \section{Cel i~zakres pracy}
-Celem niniejszej pracy jest stworzenie oraz analiza wyników działania algorytmu programowania genetycznego optymalizującego działanie klasyfikatora SVM.
+Celem niniejszej pracy jest stworzenie oraz analiza wyników działania algorytmu programowania genetycznego optymalizującego działanie klasyfikatora \emph{SVM}. Algorytm ten ma poprzez modyfikację funkcji jądrowej używanej przez SVM wpływać pozytywnie na skuteczność klasyfikacji danego zbioru danych dokonywanej przez \emph{SVM}. Szczegółowe cele pracy to:
+\begin{itemize}
+	\item analiza literatury - dokonanie przeglądu istniejącej literatury dotyczącej optymalizacji algorytmu SVM a w szczególności tej dotyczącej generowania funkcji jądrowych za pomocą programowania genetycznego
+	\item implementacja algorytmu - zaprojektowanie i implementacja algorytmu, który za pomocą programowania genetycznego znajduje funkcje jądrowe, które przyczyniają się do osiągnięcia możliwie najlepszej skuteczności klasyfikacji danych przez \emph{SVM}
+	\item testowanie i ulepszenie algorytmu - testy działania algorytm i wprowadzanie w nim zmian oraz modyfikacja jego parametrów aż do osiągnięcia pożądanych rezultatów
+	\item przeprowadzenie eksperymentów - eksperymentalna ocena skuteczności działania algorytmu dla różnych zbiorów danych
+	\item analiza wyników - analiza wyników przeprowadzonych eksperymentów mająca na celu ocenę skuteczności algorytmu oraz jego porównanie z podobnymi podejściami.
+\end{itemize}
 
 \section{Struktura pracy}
 Struktura pracy jest następująca: rozdział drugi przedstawia ważniejsze zagadnienia teoretyczne związane z pracą oraz zawiera przegląd literatury.
-W rozdziale trzecim opisano zaimplementowany algorytm oraz przedstawiono sposób jego implementacji. 
-Rozdział czwarty przedstawia wyniki działania algorytmu na standardowych zbiorach danych używanych do testowania algorytmów maszynowego uczenia. 
+W rozdziale trzecim opisano stworzony algorytm oraz przedstawiono sposób jego implementacji. 
+Rozdział czwarty przedstawia wyniki eksperymentalnej oceny skuteczności działania algorytmu.
 Rozdział piąty zawiera podsumowanie.
 
 

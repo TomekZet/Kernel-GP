@@ -1,5 +1,5 @@
 
-\chapter{Wyniki działania algorytmu na popularnych zbiorach danych}
+\chapter{Eksperymentalna ocena skuteczności algorytmu}
 
 \section{Metodologia pomiarów}
 	Oszacowanie trafności klasyfikacji osiąganej przez skonstruowany system było dokonywane na dwa sposoby. Pierwszy z nich (\english{random subsampling}) polegał na podziale zbioru danych na zbiór uczący i \emph{testujący}, a w przypadku algorytmu \emph{Kernel-GP+} również wydzieleniu ze zbioru uczącego podzbioru \emph{walidującego}, używanego do obliczania miary przystosowania (fitness) podczas przebiegu algorytmu genetycznego. Ponieważ sposób podziału zbioru danych ma wpływ na osiąganą trafność klasyfikacji, dokonywano 5 takich podziałów a następnie wyciągano średnią oraz odchylenie standardowe z wyników otrzymanych dla tych podziałów. Ta procedura dotyczyła zarówno testowania algorytmu \emph{Kernel-GP} jak i porównawczych testów klasyfikatora SVM z biblioteki \emph{LibSVM}. Dla obu algorytmów stosowano te same podziały danych, przy czym w przypadku klasyfikatora \emph{LibSVM} ze zbioru uczącego nie wydzielano zbioru testującego.
@@ -44,32 +44,34 @@ Tabela \ref{tab:params-gp} przedstawia użyte w eksperymentach wartości paramet
 \section{Opis zbiorów danych}
 	Do oceny pracy algorytmu użyto standardowych zbiorów danych służących do testowania systemów maszynowego uczenia się, dostępnych na stronie biblioteki \emph{LIBSVM} \cite{chang_libsvm:_2011}  oraz w repozytorium UCI \cite{Bache+Lichman:2013} [\ref{url:uci}]. Zbiory zostały opisane w tabelce \ref{tab:datasets}. Użyte nazwy zbiorów są zgodne z tymi ze strony libsvm [\ref{url:libsvm}].
 
-\newcolumntype{Z}{>{\centering\arraybackslash}m{17mm}}
+\newcolumntype{Z}{>{\centering\arraybackslash}m{16mm}}
 
 \begin{table}[ht]
 	\caption{Zbiory danych użyte do testowania systemu. W przypadku eksperymentów przeprowadzanych z zastosowaniem walidacji krzyżowej zbiór walidujący nie był wyodrębniany.\label{tab:datasets}} 	
 %	\begin{tabular}{|p{2cm}||r|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
-	\begin{tabulary}{1.0\textwidth}{|r||r|r|r|r|r|r|}
+	\begin{tabulary}{0.9\textwidth}{|r||r|r|r|r|r|r|}
 		\hline 
 		\multicolumn{1}{|Z||}{Nazwa zbioru}   & \multicolumn{1}{Z|}{Liczba klas}  & \multicolumn{1}{Z|}{ Liczba atrybutów}  & \multicolumn{1}{Z|}{ Wielkość zbioru}  & \multicolumn{1}{Z|}{ Wielkość zbioru uczącego}  & \multicolumn{1}{Z|}{Wielkość zbioru testującego}  & \multicolumn{1}{Z|}{Wielkość zbioru walidującego} \\
 		\hline \hline
-		Iris & 3 & 4 & 150 & 68 & 33 & 49  \\ 
-		\hline 
-		Letter & 26 & 16 & 15000 & 9000 & 4400 & 6600\\ 
-		\hline 
-		DNA & 3 & 180 & 2000 & 1435 & 700 & 1051 \\ 
-		\hline 
-		Vowel & 11 & 10 & 528 & 447 & 217 & 326 \\ 
-		\hline
+%		Iris & 3 & 4 & 150 & 68 & 33 & 49  \\ 
+%		\hline 
+%		Letter & 26 & 16 & 15000 & 9000 & 4400 & 6600\\ 
+%		\hline 
+%		DNA & 3 & 180 & 2000 & 1435 & 700 & 1051 \\ 
+%		\hline 
+%		Vowel & 11 & 10 & 528 & 447 & 217 & 326 \\ 
+%		\hline
 		Breast cancer & 2 & 10 & 683 & 409 & 274 & 33.00\% \\ \hline
 		Heart (statlog)& 2 & 13 & 270 & 180 & 90 & 33.00\% \\ \hline
 		Ionosphere & 2 & 34 & 351 & 234 & 117 & 33.00\% \\ \hline
 		Liver disorders & 2 & 6 & 345 & 230 & 115 & 33.00\% \\ \hline
-		Pima (diabets) & 2 & 8 & 768 & 512 & 256 & 33.00\% \\ \hline
+		Pima diabetes & 2 & 8 & 768 & 512 & 256 & 33.00\% \\ \hline
 		
 	\end{tabulary} 	
 \end{table}
 
+
+\newcolumntype{Z}{>{\centering\arraybackslash}m{20mm}}
 \begin{table}[ht]
 \caption{Zbiory danych użyte do testowania systemu.\label{tab:datasets2}} 	
 %	\begin{tabular}{|p{2.5cm}||p{2.5cm}|p{2.5cm}|p{1.5cm}|p{3cm}|}
@@ -77,12 +79,12 @@ Tabela \ref{tab:params-gp} przedstawia użyte w eksperymentach wartości paramet
 	\hline 
 	Nazwa zbioru  & \multicolumn{1}{Z|}{Liczba atrybutów ciągłych}  & \multicolumn{1}{Z|}{Liczba atrybutów nominalnych}  & \multicolumn{1}{Z|}{Liczba klas}  & \multicolumn{1}{Z|}{Proporcje klas} \\ 
 	\hline \hline
-	DNA & 0 & 180 & 3 & 464/485/1051  \\ 
-	\hline 
-	Vowel & 10 & 0 & 11 & Każda klasa 48 razy \\ 
-	\hline 
+%	DNA & 0 & 180 & 3 & 464/485/1051  \\ 
+%	\hline 
+%	Vowel & 10 & 0 & 11 & Każda klasa 48 razy \\ 
+%	\hline 
 	Breast & 10 & 0 & 2 & 239/444 \\ \hline
-	Heart & 7 & 6 & 2 & 150/120 \\ \hline
+	Heart (statlog) & 7 & 6 & 2 & 150/120 \\ \hline
 	Ionosphere & 34 & 0 & 2 & 225/126 \\ \hline
 	Liver & 6 & 0 & 2 & 200/145 \\ \hline
 	Pima & 8 & 0 & 2 & 500/268 \\ \hline
@@ -92,7 +94,7 @@ Tabela \ref{tab:params-gp} przedstawia użyte w eksperymentach wartości paramet
 
 \FloatBarrier
 \section{Fitness}
-Aby ocenić dobór parametrów procesu ewolucyjnego zapisywano wartości fitness osiągane przez najlepszego osobnika w każdym pokoleniu. Wartości te zostały przedstawione na wykresach przedstawiających wartość fitness najlepszego osobnika w funkcji czasu trwania algorytmu (ilości dotychczas wygenerowanych populacji), czyli tak zwanych \english{fitness graphs}. Na wykresach \ref{fig:fit-heart} -- \ref{fig:fit-pima-diabetes} widać jak zmienia się wartość funkcji fitness wraz z kolejnymi pokoleniami dla różnych miar jakości klasyfikacji użytych jako funkcja fitness (miary te zostały opisane w części \ref{sec:measures} a ich użycie w części \ref{sec:ewaluacja}).
+Aby ocenić dobór parametrów procesu ewolucyjnego zapisywano wartości fitness osiągane przez najlepszego osobnika w każdym pokoleniu. Zostały one przedstawione na wykresach   jako funkcja czasu trwania algorytmu (ilości dotychczas wygenerowanych populacji). Na wykresach \ref{fig:fit-heart} -- \ref{fig:fit-pima-diabetes} widać jak zmienia się wartość funkcji fitness wraz z kolejnymi pokoleniami dla różnych miar jakości klasyfikacji użytych jako funkcja fitness (miary te zostały opisane w części \ref{sec:measures} a ich użycie w części \ref{sec:ewaluacja}).
 
 Dla wszystkich przetestowanych zbiorów widać, że fitness najlepszego osobnika w kolejnych pokoleniach rośnie, a przynajmniej nie maleje. To, że przystosowanie nigdy nie maleje jest wynikiem zastosowania mechanizmu \emph{elit} (opisanego w części \ref{sec:mutation}). Niestety, w przypadku zbiorów \emph{breast} (rys. \ref{fig:fit-breast} i \emph{liver disorders} (rys. \ref{fig:fit-liver-disorders} fitness dość szybko (ok. 15-tego pokolenia) przestaje rosnąć. Jest to moment, w którym można by zakończyć algorytm ewolucyjny, choć a-priori ciężko określić kiedy należy to zrobić - na przykład w przypadku zbioru \emph{ionosphere} (rys. \ref{fig:fit-ionosphere} po chwilowym wypłaszczeniu funkcji przystosowania (pokolenia 10-20) zaczyna ona znowu rosnąć.
 

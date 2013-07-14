@@ -8,43 +8,43 @@
 \contentsline {subsection}{\numberline {2.1.1}Systemy klasyfikuj\IeC {\k a}ce}{5}{subsection.2.1.1}
 \contentsline {subsubsection}{Formalizacja problemu klasyfikacji}{5}{section*.1}
 \contentsline {subsubsection}{Metody oceny skuteczno\IeC {\'s}ci klasyfikacji}{5}{section*.2}
-\contentsline {subsection}{\numberline {2.1.2}Miary skuteczno\IeC {\'s}ci klasyfikacji}{6}{subsection.2.1.2}
+\contentsline {subsubsection}{Miary skuteczno\IeC {\'s}ci klasyfikacji}{6}{section*.3}
 \contentsline {section}{\numberline {2.2}SVM --- Maszyny wektor\IeC {\'o}w wspieraj\IeC {\k a}cych}{7}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Klasyfikatory liniowe}{7}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Maszyny wektor\IeC {\'o}w wspieraj\IeC {\k a}cych}{10}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}Funkcje j\IeC {\k a}drowe}{12}{subsection.2.2.3}
-\contentsline {subsubsection}{Algorytmy wykorzystuj\IeC {\k a}ce funkcje j\IeC {\k a}drowe}{13}{section*.3}
+\contentsline {subsubsection}{Algorytmy wykorzystuj\IeC {\k a}ce funkcje j\IeC {\k a}drowe}{13}{section*.4}
 \contentsline {subsection}{\numberline {2.2.4}Klasyfikacja wi\IeC {\k e}cej ni\IeC {\.z} dw\IeC {\'o}ch klas}{14}{subsection.2.2.4}
-\contentsline {subsubsection}{Jeden przeciw wszystkim}{14}{section*.4}
-\contentsline {subsubsection}{Klasyfikacja parami}{14}{section*.5}
+\contentsline {subsubsection}{Jeden przeciw wszystkim}{14}{section*.5}
+\contentsline {subsubsection}{Klasyfikacja parami}{14}{section*.6}
 \contentsline {section}{\numberline {2.3}Obliczenia ewolucyjne}{14}{section.2.3}
-\contentsline {subsubsection}{Selekcja}{15}{section*.6}
-\contentsline {subsubsection}{Krzy\IeC {\.z}owanie}{17}{section*.7}
-\contentsline {subsubsection}{Mutacja}{17}{section*.8}
-\contentsline {subsubsection}{Genotyp}{17}{section*.9}
+\contentsline {subsubsection}{Selekcja}{15}{section*.7}
+\contentsline {subsubsection}{Krzy\IeC {\.z}owanie}{17}{section*.8}
+\contentsline {subsubsection}{Mutacja}{17}{section*.9}
+\contentsline {subsubsection}{Genotyp}{17}{section*.10}
 \contentsline {subsection}{\numberline {2.3.1}Programowanie genetyczne}{17}{subsection.2.3.1}
-\contentsline {subsubsection}{Inicjalizacja populacji}{18}{section*.10}
-\contentsline {subsubsection}{Krzy\IeC {\.z}owanie}{19}{section*.11}
-\contentsline {subsubsection}{Mutacja}{19}{section*.12}
-\contentsline {subsubsection}{Selekcja}{20}{section*.13}
+\contentsline {subsubsection}{Inicjalizacja populacji}{18}{section*.11}
+\contentsline {subsubsection}{Krzy\IeC {\.z}owanie}{19}{section*.12}
+\contentsline {subsubsection}{Mutacja}{19}{section*.13}
+\contentsline {subsubsection}{Selekcja}{20}{section*.14}
 \contentsline {section}{\numberline {2.4}Optymalizacja parametr\IeC {\'o}w SVM --- przegl\IeC {\k a}d literatury}{21}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Miary przystosowania (fitness)}{21}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}Optymalizacja parametr\IeC {\'o}w}{22}{subsection.2.4.2}
 \contentsline {subsection}{\numberline {2.4.3}Ewolucja kerneli}{22}{subsection.2.4.3}
-\contentsline {subsubsection}{Genetic Kernel SVM}{22}{section*.14}
-\contentsline {subsubsection}{KTree}{23}{section*.15}
-\contentsline {subsubsection}{Evolutionary Kernel Machine}{24}{section*.16}
-\contentsline {subsubsection}{Kernel GP}{24}{section*.17}
+\contentsline {subsubsection}{Genetic Kernel SVM}{22}{section*.15}
+\contentsline {subsubsection}{KTree}{23}{section*.16}
+\contentsline {subsubsection}{Evolutionary Kernel Machine}{24}{section*.17}
+\contentsline {subsubsection}{Kernel GP}{24}{section*.18}
 \contentsline {chapter}{\chapternumberline {3}Algorytm Kernel GP+}{26}{chapter.3}
 \contentsline {section}{\numberline {3.1}Opis algorytmu}{26}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Inicjalizacja populacji}{27}{subsection.3.1.1}
-\contentsline {subsubsection}{Generowanie funkcji}{27}{section*.18}
+\contentsline {subsubsection}{Generowanie funkcji}{27}{section*.19}
 \contentsline {subsection}{\numberline {3.1.2}Ewaluacja kerneli}{28}{subsection.3.1.2}
 \contentsline {subsection}{\numberline {3.1.3}Selekcja i zapobieganie przerostowi}{29}{subsection.3.1.3}
 \contentsline {subsection}{\numberline {3.1.4}Krzy\IeC {\.z}owanie i mutacja}{29}{subsection.3.1.4}
 \contentsline {subsection}{\numberline {3.1.5}Walidacja rozwi\IeC {\k a}zania}{30}{subsection.3.1.5}
 \contentsline {section}{\numberline {3.2}Implementacja}{30}{section.3.2}
-\contentsline {chapter}{\chapternumberline {4}Wyniki dzia\IeC {\l }ania algorytmu na popularnych zbiorach danych}{33}{chapter.4}
+\contentsline {chapter}{\chapternumberline {4}Eksperymentalna ocena skuteczno\IeC {\'s}ci algorytmu}{33}{chapter.4}
 \contentsline {section}{\numberline {4.1}Metodologia pomiar\IeC {\'o}w}{33}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Parametry procesu ewolucyjnego}{34}{subsection.4.1.1}
 \contentsline {section}{\numberline {4.2}Opis zbior\IeC {\'o}w danych}{34}{section.4.2}
@@ -57,5 +57,5 @@
 \contentsline {chapter}{\chapternumberline {5}Podsumowanie}{50}{chapter.5}
 \contentsline {section}{\numberline {5.1}Napotkane problemy}{50}{section.5.1}
 \contentsline {section}{\numberline {5.2}Kierunek dalszych prac}{51}{section.5.2}
-\contentsline {chapter}{Literatura}{52}{section*.20}
-\contentsline {chapter}{Zasoby internetowe}{54}{section*.22}
+\contentsline {chapter}{Literatura}{52}{section*.21}
+\contentsline {chapter}{Zasoby internetowe}{54}{section*.23}
