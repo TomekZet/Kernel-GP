@@ -25,8 +25,10 @@ public class Linear extends GPNode {
 			Problem problem) 
 	{
 		SVMData data = (SVMData)input;
-		
-        svm_node[] x = data.X;
+		//Eval selection node
+		children[0].eval(state,thread,data,stack,individual,problem);
+        
+		svm_node[] x = data.X;
 		svm_node[] y = data.Y;		   
 					
 		data.val = libsvm.SVC_Q_GP.dot(x,y);

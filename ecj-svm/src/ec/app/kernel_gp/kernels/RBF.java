@@ -33,6 +33,9 @@ public class RBF extends GPNode {
 			ADFStack stack, GPIndividual individual, Problem problem) {
 
 		SVMData data = (SVMData)input;
+		//Eval selection node
+		children[0].eval(state,thread,data,stack,individual,problem);
+
         svm_node[] x = data.X;
 		svm_node[] y = data.Y;
 		
@@ -83,7 +86,7 @@ public class RBF extends GPNode {
 			sum = (x_square + y_square -2*libsvm.SVC_Q_GP.dot(x,y));
 		}
 
-		children[0].eval(state,thread,data,stack,individual,problem);
+		children[1].eval(state,thread,data,stack,individual,problem);
 		double gamma = data.val;
 
 		data.val =	Math.exp(-gamma*sum);

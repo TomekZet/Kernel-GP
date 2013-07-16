@@ -41,18 +41,20 @@ public class Poly extends GPNode {
         
         
 		SVMData data = (SVMData)input;
+		//Eval selection node
+		children[0].eval(state,thread,data,stack,individual,problem);
 		
         svm_node[] x = data.X;
 		svm_node[] y = data.Y;		   
 		
 		
-		children[0].eval(state,thread,data,stack,individual,problem);
+		children[1].eval(state,thread,data,stack,individual,problem);
 		double gamma = data.val;
 
-		children[1].eval(state,thread,data,stack,individual,problem);
+		children[2].eval(state,thread,data,stack,individual,problem);
 		double coef0 = data.val;
 		
-		children[2].eval(state,thread,data,stack,individual,problem);
+		children[3].eval(state,thread,data,stack,individual,problem);
 		int degree = (int)data.val;
 			
 		data.val = SVC_Q_GP.powi(gamma*libsvm.SVC_Q_GP.dot(x,y)+coef0,degree);

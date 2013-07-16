@@ -37,17 +37,17 @@ stat = ec.app.kernel_gp.KozaStatisticsGP
 stat.gather-full=true
 
 quit-on-run-complete = true
+
 init = ec.gp.GPInitializer
-pop.subpop.0.duplicate-retries = 20
+pop.subpop.0.duplicate-retries = 10
 
-gp.tc.0.init = ec.gp.koza.GrowBuilder
 gp.tc.0.init.min-depth = 2
-gp.tc.0.init.max-depth = 9
+gp.tc.0.init.max-depth = 5
 
-gp.koza.xover.maxdepth = 4
-gp.koza.mutate.maxdepth = 5
+gp.koza.xover.maxdepth = 3
+gp.koza.mutate.maxdepth = 4
 gp.koza.grow.min-depth = 2
-gp.koza.grow.max-depth = 9
+gp.koza.grow.max-depth = 5
 
 pop.subpop.0.species.pipe = ec.breed.MultiBreedingPipeline
 pop.subpop.0.species.pipe.num-sources = 2
@@ -67,11 +67,27 @@ pop.subpop.0.species.pipe.num-sources = 2
 
 breed.elite.0 = 1
 
+
+#breed.reproduce.source.0 = ec.parsimony.DoubleTournamentSelection
+#gp.koza.xover.source.0 = ec.parsimony.DoubleTournamentSelection
+#gp.koza.mutate.source.0 = ec.parsimony.DoubleTournamentSelection
+#gp.breed.mutate-erc.source.0 = ec.parsimony.DoubleTournamentSelection
+##
+#
+## Final tournament
+#select.double-tournament.size = 7
+#select.double-tournament.pick-worst = false
+## Qualifying tournaments
+#select.double-tournament.size2 = 7
+#select.double-tournament.pick-worst2 = false
+## Make the qualifying tournament based on size
+#select.double-tournament.do-length-first = true
+
+
 breed.reproduce.source.0 = ec.parsimony.BucketTournamentSelection
 gp.koza.xover.source.0 = ec.parsimony.BucketTournamentSelection
 gp.koza.mutate.source.0 = ec.parsimony.BucketTournamentSelection
 gp.breed.mutate-erc.source.0 = ec.parsimony.BucketTournamentSelection
-
 
 
 breed.reproduce.source.0.num-buckets = 10
@@ -83,8 +99,8 @@ select.bucket-tournament.size = 7
 gp.breed.mutate-erc.tries = 1
 gp.breed.mutate-erc.ns.0 = ec.gp.koza.KozaNodeSelector
 gp.breed.mutate-erc.ns.0.root = 0.1 
-gp.breed.mutate-erc.ns.0.terminal = 0.6 
-gp.breed.mutate-erc.ns.0.nonterminal = 0.3 
+gp.breed.mutate-erc.ns.0.terminal = 0.6
+gp.breed.mutate-erc.ns.0.nonterminal = 0.3
 #####################################################
 
 # First, we're gonna change the number of trees in
@@ -98,8 +114,10 @@ pop.subpop.0.species.ind.numtrees = 1
 pop.subpop.0.species.ind.tree.0 = ec.gp.GPTree
 pop.subpop.0.species.ind.tree.0.tc = tc0
 
+
 #################################################
-gp.type.a.size = 5
+### Data Types ###
+gp.type.a.size = 8
 
 
 #A double value, returned by a Kernel
@@ -117,6 +135,15 @@ gp.type.a.3.name = c_coef
 #ERC constant
 gp.type.a.4.name = c_a
 
+#ERC constant C parameter
+gp.type.a.5.name = c_C
+
+#ERC vector constant
+gp.type.a.6.name = c_vector
+
+#SVM Node passed to kernels from select node
+gp.type.a.7.name = svm_node
+
 #################################################
 #Tree constraints
 gp.tc.size = 1
@@ -128,43 +155,49 @@ gp.tc.0.init = ec.gp.koza.GrowBuilder
 
 # We set the default for HalfBuilder to be a ramp of 2--6,
 # with a grow probability of 0.5
-gp.koza.half.min-depth = 3
-gp.koza.half.max-depth = 6
+gp.koza.half.min-depth = 2
+gp.koza.half.max-depth = 5
 
 ##################################################
 #Node constraints
-gp.nc.size = 11
+gp.nc.size = 15
 
 
 #Standard kernel function with 0 constants
 gp.nc.0 = ec.gp.GPNodeConstraints
 gp.nc.0.name = nc_kernel_0
 gp.nc.0.returns = double
-gp.nc.0.size = 0
+gp.nc.0.size = 1
+gp.nc.0.child.0 = svm_node
 
 #Standard kernel function with 1 constant
 gp.nc.1 = ec.gp.GPNodeConstraints
 gp.nc.1.name = nc_kernel_1
 gp.nc.1.returns = double
-gp.nc.1.size = 1
-gp.nc.1.child.0 = c_gamma
+gp.nc.1.size = 2
+gp.nc.1.child.0 = svm_node
+gp.nc.1.child.1 = c_gamma
 
 #Standard kernel function with 2 constants
 gp.nc.2 = ec.gp.GPNodeConstraints
 gp.nc.2.name = nc_kernel_2
 gp.nc.2.returns = double
-gp.nc.2.size = 2
-gp.nc.2.child.0 = c_gamma
-gp.nc.2.child.1 = c_coef
+gp.nc.2.size = 3
+gp.nc.2.child.0 = svm_node
+gp.nc.2.child.1 = c_gamma
+gp.nc.2.child.2 = c_coef
+
+
 
 #Standard kernel function with 3 constants
 gp.nc.3 = ec.gp.GPNodeConstraints
 gp.nc.3.name = nc_kernel_3
 gp.nc.3.returns = double
-gp.nc.3.size = 3
-gp.nc.3.child.0 = c_gamma
-gp.nc.3.child.1 = c_coef
-gp.nc.3.child.2 = c_degree
+gp.nc.3.size = 4
+gp.nc.3.child.0 = svm_node
+gp.nc.3.child.1 = c_gamma
+gp.nc.3.child.2 = c_coef
+gp.nc.3.child.3 = c_degree
 
 
 #Constant modification of kernel - for ex. exp(kernel)
@@ -214,6 +247,32 @@ gp.nc.10.name = nc_erca
 gp.nc.10.returns = c_a
 gp.nc.10.size = 0
 
+#Terminal with ERC constant
+gp.nc.11 = ec.gp.GPNodeConstraints
+gp.nc.11.name = nc_C
+gp.nc.11.returns = c_C
+gp.nc.11.size = 0
+
+#Select terminal - does nothing, selects all atru=ibutes
+gp.nc.12 = ec.gp.GPNodeConstraints
+gp.nc.12.name = nc_select_t
+gp.nc.12.returns = svm_node
+gp.nc.12.size = 0
+
+#Select node - selects atributes from input svm_node vector
+gp.nc.13 = ec.gp.GPNodeConstraints
+gp.nc.13.name = nc_select
+gp.nc.13.returns = svm_node
+gp.nc.13.size = 1
+gp.nc.13.child.0 = c_vector
+
+#ERC binary vector used by select node
+gp.nc.14 = ec.gp.GPNodeConstraints
+gp.nc.14.name = nc_ercvector
+gp.nc.14.returns = c_vector
+gp.nc.14.size = 0
+
+
 ##################################################
 # We have one tree with one function set
 
@@ -221,7 +280,7 @@ gp.fs.size = 1
 
 gp.fs.0 = ec.gp.GPFunctionSet
 gp.fs.0.name = f0
-gp.fs.0.size = 17
+gp.fs.0.size = 15
 
 
 ###Terminals
@@ -242,58 +301,74 @@ gp.fs.0.func.2.nc = nc_ercdegree
 gp.fs.0.func.3 = ec.app.kernel_gp.parameters.ERCa
 gp.fs.0.func.3.nc = nc_erca
 
+##ERC Binary vector used by select node 
+gp.fs.0.func.4 = ec.app.kernel_gp.parameters.ERCvector
+gp.fs.0.func.4.nc = nc_ercvector
 ###Functions producing kernel from other kernel(s)
 #Addition function used to combine two kernels into one (k+k)
-gp.fs.0.func.4 = ec.app.kernel_gp.operators.Add
-gp.fs.0.func.4.nc = nc_k-combination2
-
-#Multiplication function used to combine two kernels into one (k*k)
-gp.fs.0.func.5 = ec.app.kernel_gp.operators.Mul
+gp.fs.0.func.5 = ec.app.kernel_gp.operators.Add
 gp.fs.0.func.5.nc = nc_k-combination2
 
+#Multiplication function used to combine two kernels into one (k*k)
+gp.fs.0.func.6 = ec.app.kernel_gp.operators.Mul
+gp.fs.0.func.6.nc = nc_k-combination2
+
 #Expotential (e^k)
-gp.fs.0.func.6 = ec.app.kernel_gp.operators.Exp
-gp.fs.0.func.6.nc = nc_k-combination1
+gp.fs.0.func.7 = ec.app.kernel_gp.operators.Exp
+gp.fs.0.func.7.nc = nc_k-combination1
 
 #Multiplication of kernel by double (a*k)
-gp.fs.0.func.7 = ec.app.kernel_gp.operators.aMul
-gp.fs.0.func.7.nc = nc_k-combination-c
+gp.fs.0.func.8 = ec.app.kernel_gp.operators.aMul
+gp.fs.0.func.8.nc = nc_k-combination-c
+
+#######Functinos used for atrubites selection
+#Select - node which selects subset of values from svm_node vector  
+
+#Select terminal - does nothing - selects all atributes
+gp.fs.0.func.9 = ec.app.kernel_gp.operators.Select_terminal
+gp.fs.0.func.9.nc = nc_select_t
+
+##Selection node
+gp.fs.0.func.10 = ec.app.kernel_gp.operators.Select
+gp.fs.0.func.10.nc = nc_select
+
+#RBF - standard kernel function 
+gp.fs.0.func.11 = ec.app.kernel_gp.kernels.RBF
+gp.fs.0.func.11.nc = nc_kernel_1
+
+#Linear - standard kernel function
+gp.fs.0.func.12 = ec.app.kernel_gp.kernels.Linear
+gp.fs.0.func.12.nc = nc_kernel_0
 
 
 ###Standard Kernels
-#Polynomial - standard kernel function  
-gp.fs.0.func.8 = ec.app.kernel_gp.kernels.Poly
-gp.fs.0.func.8.nc = nc_kernel_3
+##Polynomial - standard kernel function  
+gp.fs.0.func.13 = ec.app.kernel_gp.kernels.Poly
+gp.fs.0.func.13.nc = nc_kernel_3
+#
+##Sigmoid - standard kernel function
+gp.fs.0.func.14 = ec.app.kernel_gp.kernels.Sigmoid
+gp.fs.0.func.14.nc = nc_kernel_2
 
-#RBF - standard kernel function 
-gp.fs.0.func.9 = ec.app.kernel_gp.kernels.RBF
-gp.fs.0.func.9.nc = nc_kernel_1
+###Power - standard kernel function  
+#gp.fs.0.func.14 = ec.app.kernel_gp.kernels.Power
+#gp.fs.0.func.14.nc = nc_kernel_3
 
-#Sigmoid - standard kernel function
-gp.fs.0.func.10 = ec.app.kernel_gp.kernels.Sigmoid
-gp.fs.0.func.10.nc = nc_kernel_2
+###Logarithmic - standard kernel function
+#gp.fs.0.func.15 = ec.app.kernel_gp.kernels.Log
+#gp.fs.0.func.15.nc = nc_kernel_1
 
-#Linear - standard kernel function
-gp.fs.0.func.11 = ec.app.kernel_gp.kernels.Linear
-gp.fs.0.func.11.nc = nc_kernel_0
+###Expotential - standard kernel function 
+#gp.fs.0.func.16 = ec.app.kernel_gp.kernels.Expotential
+#gp.fs.0.func.16.nc = nc_kernel_1
 
-#Logarithmic - standard kernel function
-gp.fs.0.func.12 = ec.app.kernel_gp.kernels.Log
-gp.fs.0.func.12.nc = nc_kernel_1
 
-#Cauchy - standard kernel function 
-gp.fs.0.func.13 = ec.app.kernel_gp.kernels.Cauchy
-gp.fs.0.func.13.nc = nc_kernel_1
+###Cauchy - standard kernel function 
+#gp.fs.0.func.17 = ec.app.kernel_gp.kernels.Cauchy
+#gp.fs.0.func.17.nc = nc_kernel_1
 
-#Expotential - standard kernel function 
-gp.fs.0.func.14 = ec.app.kernel_gp.kernels.Expotential
-gp.fs.0.func.14.nc = nc_kernel_1
+###TStudent - standard kernel function  
+#gp.fs.0.func.18 = ec.app.kernel_gp.kernels.TStudent
+#gp.fs.0.func.18.nc = nc_kernel_1
 
-#Power - standard kernel function  
-gp.fs.0.func.15 = ec.app.kernel_gp.kernels.Power
-gp.fs.0.func.15.nc = nc_kernel_1
-
-#TStudent - standard kernel function  
-gp.fs.0.func.16 = ec.app.kernel_gp.kernels.TStudent
-gp.fs.0.func.16.nc = nc_kernel_1
 

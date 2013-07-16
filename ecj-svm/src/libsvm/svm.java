@@ -225,7 +225,7 @@ abstract class Kernel extends QMatrix {
 		else x_square = null;
 	}
 
-	static double dot(svm_node[] x, svm_node[] y)
+	public static double dot(svm_node[] x, svm_node[] y)
 	{
 		double sum = 0;
 		int xlen = x.length;
@@ -437,7 +437,8 @@ class Solver {
 		// optimization step
 
 		int iter = 0;
-		int max_iter = Math.max(10000000, l>Integer.MAX_VALUE/100 ? Integer.MAX_VALUE : 100*l);
+//		int max_iter = Math.max(10000000, l>Integer.MAX_VALUE/100 ? Integer.MAX_VALUE : 100*l);
+		int max_iter = Math.max(1000000, l>Integer.MAX_VALUE/100 ? Integer.MAX_VALUE : 100*l);
 		int counter = Math.min(l,1000)+1;
 		int[] working_set = new int[2];
 
@@ -1542,7 +1543,7 @@ public class svm {
 
 	// label: label name, start: begin of each class, count: #data of classes, perm: indices to the original data
 	// perm, length l, must be allocated before calling this subroutine
-	private static void svm_group_classes(svm_problem prob, int[] nr_class_ret, int[][] label_ret, 
+	public static void svm_group_classes(svm_problem prob, int[] nr_class_ret, int[][] label_ret, 
 			int[][] start_ret, int[][] count_ret, int[] perm)
 	{
 		int l = prob.l;
@@ -1958,7 +1959,8 @@ public class svm {
 			int begin = fold_start[i];
 			int end = fold_start[i+1];
 			int j,k;
-			svm_gp_problem subprob = new svm_gp_problem();
+			svm_gp_problem subprob;// = new svm_gp_problem();
+			subprob = prob.semi_clone();
 
 			subprob.l = l-(end-begin);
 			subprob.x = new svm_node[subprob.l][];

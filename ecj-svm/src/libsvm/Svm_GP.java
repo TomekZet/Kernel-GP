@@ -18,7 +18,7 @@ import ec.gp.GPData;
  *
  */
 
-public class Svm_GP extends svm {
+public class svm_GP extends svm {
 	
 	public static EvolutionState state; 
 	public static Individual ind;
@@ -70,7 +70,7 @@ public class Svm_GP extends svm {
 	}
 
 	public static void setState(EvolutionState state) {
-		Svm_GP.state = state;
+		svm_GP.state = state;
 	}
 
 	public static Individual getInd() {
@@ -78,7 +78,7 @@ public class Svm_GP extends svm {
 	}
 
 	public static void setInd(Individual ind) {
-		Svm_GP.ind = ind;
+		svm_GP.ind = ind;
 	}
 
 	public static int getSubpopulation() {
@@ -86,7 +86,7 @@ public class Svm_GP extends svm {
 	}
 
 	public static void setSubpopulation(int subpopulation) {
-		Svm_GP.subpopulation = subpopulation;
+		svm_GP.subpopulation = subpopulation;
 	}
 
 	public static int getThreadnum() {
@@ -94,7 +94,7 @@ public class Svm_GP extends svm {
 	}
 
 	public static void setThreadnum(int threadnum) {
-		Svm_GP.threadnum = threadnum;
+		svm_GP.threadnum = threadnum;
 	}
 
 	public static Kernel_GP_problem getProblem() {
@@ -102,7 +102,7 @@ public class Svm_GP extends svm {
 	}
 
 	public static void setProblem(Kernel_GP_problem problem) {
-		Svm_GP.problem = problem;
+		svm_GP.problem = problem;
 	}
 
 	public static GPData getInput() {
@@ -110,7 +110,7 @@ public class Svm_GP extends svm {
 	}
 
 	public static void setInput(GPData input) {
-		Svm_GP.input = input;
+		svm_GP.input = input;
 	}
 
 	public static ADFStack getStack() {
@@ -118,7 +118,7 @@ public class Svm_GP extends svm {
 	}
 
 	public static void setStack(ADFStack stack) {
-		Svm_GP.stack = stack;
+		svm_GP.stack = stack;
 	}
 	
 }

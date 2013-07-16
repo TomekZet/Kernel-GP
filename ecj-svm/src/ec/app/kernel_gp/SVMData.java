@@ -11,8 +11,9 @@ import libsvm.svm_node;
 
 public class SVMData extends GPData 
 {
-	  public svm_node[] X = new svm_node[0]; //passed from terminals to kernels
-	  public svm_node[] Y = new svm_node[0]; //passed from terminals to kernels
+	  public svm_node[] X = new svm_node[0]; //passed from select to kernels
+	  public svm_node[] Y = new svm_node[0]; //passed from select to kernels
+	  public boolean[] select_vector = new boolean[0]; //passed from erc vector to select
 	  public double X2; //passed from terminals to kernels
 	  public double Y2; //passed from terminals to kernels
 	  public double val = 0;  //pased from kernel or agregates to agregates

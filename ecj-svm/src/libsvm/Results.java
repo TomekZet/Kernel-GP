@@ -27,7 +27,15 @@ public class Results {
     public Results(){
     	this(0);
     }
-
+    
+    public Results(int nr_classes, float acc, float mcc, float f1, float prob){
+    	accuracy = acc;
+    	meanf1 = f1;
+    	meanMCC = mcc;
+    	meanProbability = new Double(prob);
+    	counts = new HashMap<Integer, HashMap<String, Float>>(nr_classes);
+    }
+    
 	/**
 	 * @return the accuracy
 	 */

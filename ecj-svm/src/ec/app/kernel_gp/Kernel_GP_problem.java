@@ -15,7 +15,7 @@ import java.util.StringTokenizer;
 import java.util.Vector;
 
 import libsvm.Results;
-import libsvm.svm;
+import libsvm.svm_GP;
 import libsvm.svm_gp_problem;
 import libsvm.svm_model;
 import libsvm.svm_node;
@@ -36,9 +36,11 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm {
 	static public svm_parameter svm_params = new svm_parameter();
 	static public int logNumber = 0;
 	public svm_gp_problem svm_probl_train; // set by read_problem
-	public svm_gp_problem svm_probl_test;
+	public svm_gp_problem svm_probl_trainval; // set by read_problem
+	public svm_gp_problem svm_probl_valid;
 	private String train_file_name;
-	private String test_file_name;
+	private String valid_file_name;
+	private String trainval_file_name;
 	private String output_file_name;
 	private String fitness_measure;
 	private String kernel;
@@ -60,10 +62,18 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm {
 
 		read_and_set_parameters(state, base);
 
-		if (svm_probl_train == null) {
+		if (cv && svm_probl_train == null){
+			try {
+				svm_probl_trainval = read_problem(trainval_file_name);
+			} catch (Exception e) {
+				System.err.println(e);
+			}
+		}
+		
+		else if (svm_probl_train == null || svm_probl_valid == null) {
 			try {
 				svm_probl_train = read_problem(train_file_name);
-				svm_probl_test = read_problem(test_file_name);
+				svm_probl_valid = read_problem(valid_file_name);
 			} catch (Exception e) {
 				System.err.println(e);
 			}
@@ -80,56 +90,116 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm {
 		KozaFitness f = ((KozaFitness) ind.fitness);
 		long start = System.nanoTime();
 		Results results = new Results();
-
+		
+		((GPIndividual) ind).trees[0].printTreeForHumans(state, logNumber);
 		if (!ind.evaluated) // don't bother reevaluating
 		{
-			double[] target = new double[svm_probl_train.l];
-			int i;
 			double correct = 0;
 
-			svm_probl_train.ind = ((GPIndividual) ind);
-			svm_probl_train.input = input;
-
-			svm_probl_test.ind = ((GPIndividual) ind);
-			svm_probl_test.input = input;
-
 			if (cv) {
-				svm.svm_cross_validation(svm_probl_train, svm_params, nr_fold,
-						target);
 
-				for (i = 0; i < svm_probl_train.l; i++) {
-					if (target[i] == svm_probl_train.y[i])
+				double[] target = new double[svm_probl_trainval.l];
+				svm_probl_trainval.ind = ((GPIndividual) ind);
+				svm_probl_trainval.input = input;
+				svm_probl_trainval.state = state;
+				svm_probl_trainval.subpopulation = subpopulation;
+				svm_probl_trainval.threadnum = threadnum;
+				
+				try{
+					
+					//System.err.println("Using "+nr_fold+"-fold Cross-Validation");
+					
+					svm_GP.svm_cross_validation(svm_probl_trainval, svm_params, nr_fold,
+							target);
+				}
+				catch (ArrayIndexOutOfBoundsException e){
+
+					int l = svm_probl_trainval.l;
+					int[] tmp_nr_class = new int[1];
+					int[][] tmp_label = new int[1][];
+					int[][] tmp_start = new int[1][];
+					int[][] tmp_count = new int[1][];			
+					int[] perm = new int[l];
+
+					// group training data of the same class to get nr_classes
+					svm_GP.svm_group_classes(svm_probl_trainval,tmp_nr_class,tmp_label,tmp_start,tmp_count,perm);
+					int nr_class = tmp_nr_class[0];
+					results = new Results(nr_class, 0.0f, 0.0f, 0.0f, 0.0f);
+				}
+				
+				
+				for (int i = 0; i < svm_probl_trainval.l; i++) {
+					if (target[i] == svm_probl_trainval.y[i])
 						++correct;
 				}
-				results.accuracy = (float) (correct / svm_probl_train.l);
+				results.accuracy = (float) (correct / svm_probl_trainval.l);
 				f.setStandardizedFitness(
 						state,
 						(float) ((1 - results.accuracy) / (results.accuracy + 0.00000000000000000001)));
-			} else {
+			}
+			
+			else 
+			{
 				/*
 				 * TODO: use double svm_predict_probability(const struct
 				 * svm_model *model, const struct svm_node *x, double*
 				 * prob_estimates)
 				 */
 
-				svm_model model = svm.svm_train(svm_probl_train, svm_params);
-				results = libsvm.Svm_predict_gp.predict_problem(svm_probl_test,
-						model);
+				double[] target = new double[svm_probl_train.l];
+				
+				svm_probl_train.ind = ((GPIndividual) ind);
+				svm_probl_train.input = input;
+				svm_probl_train.state = state;
+				svm_probl_train.subpopulation = subpopulation;
+				svm_probl_train.threadnum = threadnum;
+				
+				
+				svm_probl_valid.ind = ((GPIndividual) ind);
+				svm_probl_valid.input = input;
+				svm_probl_valid.state = state;
+				svm_probl_valid.subpopulation = subpopulation;
+				svm_probl_valid.threadnum = threadnum;
+				
+				svm_model model = null;
+				try{
+					model = svm_GP.svm_train(svm_probl_train, svm_params);
+				}
+				catch (ArrayIndexOutOfBoundsException e){
+					model = null;
+					int l = svm_probl_train.l;
+					int[] tmp_nr_class = new int[1];
+					int[][] tmp_label = new int[1][];
+					int[][] tmp_start = new int[1][];
+					int[][] tmp_count = new int[1][];			
+					int[] perm = new int[l];
+
+					// group training data of the same class to get nr_classes
+					svm_GP.svm_group_classes(svm_probl_train,tmp_nr_class,tmp_label,tmp_start,tmp_count,perm);
+					int nr_class = tmp_nr_class[0];
+					results = new Results(nr_class, 0.0f, 0.0f, 0.0f, 0.0f);
+				}
+				
+				if(model != null)
+					results = libsvm.Svm_predict_gp.predict_problem(svm_probl_valid, model);
+
+				float fi = 0.0000000000001f;
+				
 				if (fitness_measure.equalsIgnoreCase("accuracy"))
 					f.setStandardizedFitness(
 							state,
-							(float) ((1 - results.accuracy) / (results.accuracy + 0.00000000000000000001f)));
+							(float) ((1 - results.accuracy) / (results.accuracy + fi)));
 				else if (fitness_measure.equalsIgnoreCase("f1"))
 					f.setStandardizedFitness(
 							state,
-							1.0f / results.meanf1 + 0.00000000000000000001f - 1.0f);
+							1.0f / results.meanf1 + fi - 1.0f);
 				else if (fitness_measure.equalsIgnoreCase("mcc")) {
-					float _fitness = 1.0f / ((results.meanMCC + 1) / 2.0f + 0.0000000000001f) - 1.0f;
+					float _fitness = 1.0f / ((results.meanMCC + 1) / 2.0f + fi) - 1.0f;
 					f.setStandardizedFitness(state, _fitness);
 				} else if (fitness_measure.equalsIgnoreCase("probability")) {
 					f.setStandardizedFitness(
 							state,
-							(float) ((1 - results.meanProbability) / (results.meanProbability + 0.00000000000000000001)));
+							(float) ((1 - results.meanProbability) / (results.meanProbability + fi)));
 				}
 			}
 			ind.evaluated = true;
@@ -139,12 +209,12 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm {
 			long time = System.nanoTime() - start;
 			double time_seconds = (double) time / 1000000000;
 	
-			((GPIndividual) ind).trees[0].printTreeForHumans(state, logNumber);
+			//((GPIndividual) ind).trees[0].printTreeForHumans(state, logNumber);
 			String message = "";
 			if (cv)
 				message += "CV Accuracy = " + 100.0 * results.accuracy + "%\n";
 			else {
-				message += "Test Accuracy = " + 100.0 * results.accuracy + "%\n";
+				message += "Valid Accuracy = " + 100.0 * results.accuracy + "%\n";
 				message += "F1 Measure = " + results.meanf1 + "\n";
 				message += "MCC = " + results.meanMCC + "\n";
 				message += "Probability = " + results.meanProbability + "\n";
@@ -153,6 +223,7 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm {
 			message += "Standardized Fitness = " + f.standardizedFitness() + "\n";
 			message += "Adjusted Fitness = " + f.fitness() + "\n\n";
 			state.output.print(message, logNumber);
+			//System.err.print(message);
 		}
 	}
 
@@ -168,7 +239,8 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm {
 	public svm_parameter read_and_set_parameters(final EvolutionState state,
 			final Parameter base) {
 		Parameter train_path_param = new Parameter("train-file");
-		Parameter test_path_param = new Parameter("test-file");
+		Parameter trainval_path_param = new Parameter("trainval-file");
+		Parameter valid_path_param = new Parameter("valid-file");
 		Parameter output_path_param = new Parameter("output-file");
 		Parameter cv_param = new Parameter("cross-validation");
 		Parameter nr_fold_param = new Parameter("cv-folds");
@@ -182,7 +254,8 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm {
 		Parameter disable_logging_param = new Parameter("disable_logging");
 
 		train_file_name = state.parameters.getString(train_path_param, null);
-		test_file_name = state.parameters.getString(test_path_param, null);
+		valid_file_name = state.parameters.getString(valid_path_param, null);
+		trainval_file_name = state.parameters.getString(trainval_path_param, null);
 		cv = state.parameters.getBoolean(cv_param, null, false);
 		nr_fold = state.parameters.getInt(nr_fold_param, null, 4);
 		output_file_name = state.parameters.getString(output_path_param, null);
@@ -209,7 +282,7 @@ public class Kernel_GP_problem extends GPProblem implements SimpleProblemForm {
 				null, 1);
 
 		double epsilon = state.parameters.getDoubleWithDefault(epsilon_param,
-				null, 0.001);
+				null, 0.01);
 		double cost = state.parameters
 				.getDoubleWithDefault(cost_param, null, 1);
 

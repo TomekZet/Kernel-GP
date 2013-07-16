@@ -32,7 +32,7 @@ public class Power extends GPNode {
         svm_node[] x = data.X;
       	svm_node[] y = data.Y;		   
 		
-		children[0].eval(state,thread,data,stack,individual,problem);
+		children[2].eval(state,thread,data,stack,individual,problem);
 		double d = data.val;		
 		
 		data.val = - Math.pow(SVC_Q_GP.magnitude(SVC_Q_GP.vector_difference(x, y)), d);

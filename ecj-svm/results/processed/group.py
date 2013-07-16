@@ -10,29 +10,96 @@ import string
 import os
 
 
-def group(data, column_nr, prefix=''):
+def group(data, headersDict, column_nr, prefix='', sort_column_nr=None, cols_to_divide=[]):
     groups = {}
+    
+    if sort_column_nr:
+        data = sorted(data, key=lambda line: string.split(line)[sort_column_nr])
     for i, line in enumerate(data):
        row = string.split(line)
+       for col in cols_to_divide:
+           col_nr = headersDict.get(col, None)
+           if col_nr and col_nr < len(row):
+               v = float(row[col_nr])
+               v /= 100
+               row[col_nr] = str(v)             
        groups.setdefault('-'.join((prefix, row[column_nr])), []).append(' '.join(row))
     return groups
 
 
 
-def multi_group(data, columns):
-    headers = string.split(data[0])
-    headersDict = dict([(h,i) for i, h in enumerate(headers)])
+def multi_group(data, headersDict, columns, sort_column, cols_to_divide=[]):
+    
+    sort_column_nr = headersDict.get(sort_column, None)
     
     groups = {'result':data[1:]}
     for column in columns:
         column_nr = headersDict.get(column)
         result = {}        
         for value, g in groups.items():
-            result.update(group(g, column_nr, "%s.%s" % (value, column)))
+            result.update(group(g, headersDict, column_nr, "%s.%s" % (value, column), sort_column_nr, cols_to_divide))
         groups = result
     return result, headers
            
-        
+ 
+
+if __name__ == '__main__':
+   
+    
+   parser = argparse.ArgumentParser(description='Splits datasets by grouping it according to data in column given as argument. Each group is written to a different file.')
+   parser.add_argument('-i', '--input', help='Input file path')
+   parser.add_argument('-c', '--columns', nargs="+", help='Number of column to group by', type=int)
+   parser.add_argument('-n', '--names', nargs="+", help='Name of column to group by (assumes that column names are unique', type=str, default='generations')
+   parser.add_argument('-s', '--sort', help='Name of column to sort by', type=str, default=None)
+   parser.add_argument('-d', '--divide', help='Name of column(s) to to divide by 100', type=str, nargs="+", default=[])
+
+   args = parser.parse_args()
+   
+   with open(args.input, 'r') as f:
+       data = f.readlines()
+   
+   headers = string.split(data[0])
+   headersDict = dict([(h,i) for i, h in enumerate(headers)])
+   
+   groups, headers = multi_group(data, headersDict, args.names, args.sort, cols_to_divide=args.divide)
+   
+   input_file_name = args.input
+   input_file_name = os.path.split(input_file_name)[1]
+
+   
+   for name, group in groups.iteritems():
+      with open("grouped/"+input_file_name+'.'+name+'.dat', 'w') as out:
+          out.write(' '.join(headers)+'\n')
+          for i, line in enumerate(group):
+               out.write(' '.join([str(i)] + string.split(line)[1:])+'\n')
+   
+   
+#   c = args.column
+#   headers = ''
+#   groups = {}
+#   with open(args.input, 'r') as f:
+#       headers = string.split(f.readline())
+#       headersDict = dict([(h,i) for i, h in enumerate(headers)])
+#       if args.name:
+#           c = headersDict.get(args.name, c)
+#       columns = len(headers)
+#       for line in f:
+#          line = string.split(line)
+#          #Some rows may be shorter due to smaller number of acuuracy and time measurments
+#          line[-3:-3] = ['NaN' for i in range(columns-len(line))]
+#          groups.setdefault(line[c], []).append(line)
+#              
+#   input_file_name = args.input
+#   input_file_name = os.path.split(args.input)[1]
+#   for val, group in groups.items():
+#       with open("grouped/"+input_file_name+'.'+headers[c]+'-'+val+'.dat', 'w') as out:
+#           out.write(' '.join(headers)+'\n')
+#           for i, line in enumerate(group):
+#               out.write(str(i)+' '+' '.join(line[1:])+'\n')
+       
+   
+   
+       
 def test():
     
     data = [
@@ -97,56 +164,3 @@ def test():
         }
     }           
     
-
-
-if __name__ == '__main__':
-   
-    
-   parser = argparse.ArgumentParser(description='Splits datasets by grouping it according to data in column given as argument. Each group is written to a different file.')
-   parser.add_argument('-i', '--input', help='Input file path')
-   parser.add_argument('-c', '--columns', nargs="+", help='Number of column to group by', type=int)
-   parser.add_argument('-n', '--names', nargs="+", help='Name of column to group by (assumes that column names are unique', type=str, default='generations')
-
-   args = parser.parse_args()
-   
-   with open(args.input, 'r') as f:
-       data = f.readlines()
-   
-   groups, headers = multi_group(data, args.names)
-   
-   input_file_name = args.input
-   input_file_name = os.path.split(input_file_name)[1]
-   
-   for name, group in groups.iteritems():
-      with open("grouped/"+input_file_name+'.'+name+'.dat', 'w') as out:
-          out.write(' '.join(headers)+'\n')
-          for i, line in enumerate(group):
-               out.write(' '.join([str(i)] + string.split(line)[1:])+'\n')
-   
-   
-#   c = args.column
-#   headers = ''
-#   groups = {}
-#   with open(args.input, 'r') as f:
-#       headers = string.split(f.readline())
-#       headersDict = dict([(h,i) for i, h in enumerate(headers)])
-#       if args.name:
-#           c = headersDict.get(args.name, c)
-#       columns = len(headers)
-#       for line in f:
-#          line = string.split(line)
-#          #Some rows may be shorter due to smaller number of acuuracy and time measurments
-#          line[-3:-3] = ['NaN' for i in range(columns-len(line))]
-#          groups.setdefault(line[c], []).append(line)
-#              
-#   input_file_name = args.input
-#   input_file_name = os.path.split(args.input)[1]
-#   for val, group in groups.items():
-#       with open("grouped/"+input_file_name+'.'+headers[c]+'-'+val+'.dat', 'w') as out:
-#           out.write(' '.join(headers)+'\n')
-#           for i, line in enumerate(group):
-#               out.write(str(i)+' '+' '.join(line[1:])+'\n')
-       
-   
-   
-   
